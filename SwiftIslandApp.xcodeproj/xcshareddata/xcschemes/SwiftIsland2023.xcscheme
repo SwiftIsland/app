@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2AEDC4922A4A030F00CD0180"
-               BuildableName = "SwiftIsland2023.app"
-               BlueprintName = "SwiftIsland2023"
-               ReferencedContainer = "container:SwiftIsland2023.xcodeproj">
+               BuildableName = "SwiftIslandApp.app"
+               BlueprintName = "SwiftIslandApp"
+               ReferencedContainer = "container:SwiftIslandApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,9 +35,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2AEDC4A22A4A031100CD0180"
-               BuildableName = "SwiftIsland2023Tests.xctest"
-               BlueprintName = "SwiftIsland2023Tests"
-               ReferencedContainer = "container:SwiftIsland2023.xcodeproj">
+               BuildableName = "SwiftIslandAppTests.xctest"
+               BlueprintName = "SwiftIslandAppTests"
+               ReferencedContainer = "container:SwiftIslandApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -46,9 +46,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2AEDC4AC2A4A031100CD0180"
-               BuildableName = "SwiftIsland2023UITests.xctest"
-               BlueprintName = "SwiftIsland2023UITests"
-               ReferencedContainer = "container:SwiftIsland2023.xcodeproj">
+               BuildableName = "SwiftIslandAppUITests.xctest"
+               BlueprintName = "SwiftIslandAppUITests"
+               ReferencedContainer = "container:SwiftIslandApp.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -68,9 +68,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2AEDC4922A4A030F00CD0180"
-            BuildableName = "SwiftIsland2023.app"
-            BlueprintName = "SwiftIsland2023"
-            ReferencedContainer = "container:SwiftIsland2023.xcodeproj">
+            BuildableName = "SwiftIslandApp.app"
+            BlueprintName = "SwiftIslandApp"
+            ReferencedContainer = "container:SwiftIslandApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -85,9 +85,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2AEDC4922A4A030F00CD0180"
-            BuildableName = "SwiftIsland2023.app"
-            BlueprintName = "SwiftIsland2023"
-            ReferencedContainer = "container:SwiftIsland2023.xcodeproj">
+            BuildableName = "SwiftIslandApp.app"
+            BlueprintName = "SwiftIslandApp"
+            ReferencedContainer = "container:SwiftIslandApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
