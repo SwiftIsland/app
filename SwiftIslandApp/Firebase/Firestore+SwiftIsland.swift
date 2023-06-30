@@ -5,12 +5,14 @@ extension Firestore {
     static var db = Firestore.firestore()
 
     static func get<R: Request>(request: R) async throws -> [R.Output] {
-        guard let limit = request.limit else {
-            return try await self.get(request.path)
+        var query: Query = db.collection(request.path)
+
+        if let predicate = request.queryPredicate {
+            debugPrint("Using predicate!")
+            query = query.filter(using: predicate)
         }
 
-        return try await db.collection(request.path)
-            .limit(to: limit)
+        return try await query
             .getDocuments()
             .documents
             .compactMap { $0.data(as: R.Output.self) }

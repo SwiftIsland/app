@@ -14,6 +14,8 @@ struct ConferencePageView: View {
                 ConferenceHeaderView()
                 ConferenceBoxTicket()
                     .padding(.vertical, 6)
+                ConferenceBoxMentors()
+                    .padding(.vertical, 6)
             }
         }
     }

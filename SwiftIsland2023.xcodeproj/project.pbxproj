@@ -24,6 +24,9 @@
 		2A16EB602A4F65EC00CC881D /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2A16EB5F2A4F65EC00CC881D /* FirebaseFirestoreSwift */; };
 		2A16EB622A4F65EC00CC881D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2A16EB612A4F65EC00CC881D /* FirebaseStorage */; };
 		2A16EB642A4F6CC200CC881D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A16EB632A4F6CC200CC881D /* GoogleService-Info.plist */; };
+		2A16EB662A4F6D9500CC881D /* Mentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A16EB652A4F6D9500CC881D /* Mentor.swift */; };
+		2A16EB692A4F714F00CC881D /* AllMentorsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A16EB682A4F714F00CC881D /* AllMentorsRequest.swift */; };
+		2A16EB6B2A4F723E00CC881D /* ConferenceBoxMentors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A16EB6A2A4F723E00CC881D /* ConferenceBoxMentors.swift */; };
 		2AEDC4972A4A030F00CD0180 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEDC4962A4A030F00CD0180 /* MainApp.swift */; };
 		2AEDC49B2A4A031000CD0180 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AEDC49A2A4A031000CD0180 /* Assets.xcassets */; };
 		2AEDC49E2A4A031000CD0180 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AEDC49D2A4A031000CD0180 /* Preview Assets.xcassets */; };
@@ -65,6 +68,9 @@
 		2A16EB4C2A4F655500CC881D /* DocumentSnapshot+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DocumentSnapshot+Data.swift"; sourceTree = "<group>"; };
 		2A16EB4F2A4F655500CC881D /* Firestore+SwiftIsland.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Firestore+SwiftIsland.swift"; sourceTree = "<group>"; };
 		2A16EB632A4F6CC200CC881D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		2A16EB652A4F6D9500CC881D /* Mentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mentor.swift; sourceTree = "<group>"; };
+		2A16EB682A4F714F00CC881D /* AllMentorsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMentorsRequest.swift; sourceTree = "<group>"; };
+		2A16EB6A2A4F723E00CC881D /* ConferenceBoxMentors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxMentors.swift; sourceTree = "<group>"; };
 		2AEDC4932A4A030F00CD0180 /* SwiftIsland2023.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftIsland2023.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AEDC4962A4A030F00CD0180 /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
 		2AEDC49A2A4A031000CD0180 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -145,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				2A16EB442A4F622800CC881D /* ConferenceBoxTicket.swift */,
+				2A16EB6A2A4F723E00CC881D /* ConferenceBoxMentors.swift */,
 			);
 			path = Boxes;
 			sourceTree = "<group>";
@@ -152,6 +159,7 @@
 		2A16EB472A4F655500CC881D /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
+				2A16EB672A4F713B00CC881D /* Requests */,
 				2A16EB4D2A4F655500CC881D /* Entities */,
 				2A16EB492A4F655500CC881D /* Dictionary+Firestore.swift */,
 				2A16EB4C2A4F655500CC881D /* DocumentSnapshot+Data.swift */,
@@ -166,8 +174,17 @@
 		2A16EB4D2A4F655500CC881D /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				2A16EB652A4F6D9500CC881D /* Mentor.swift */,
 			);
 			path = Entities;
+			sourceTree = "<group>";
+		};
+		2A16EB672A4F713B00CC881D /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				2A16EB682A4F714F00CC881D /* AllMentorsRequest.swift */,
+			);
+			path = Requests;
 			sourceTree = "<group>";
 		};
 		2AEDC48A2A4A030F00CD0180 = {
@@ -404,10 +421,13 @@
 				2A16EB522A4F655500CC881D /* Firestore+Encodable.swift in Sources */,
 				2AEDC4972A4A030F00CD0180 /* MainApp.swift in Sources */,
 				2A16EB532A4F655500CC881D /* Firestore+Response.swift in Sources */,
+				2A16EB662A4F6D9500CC881D /* Mentor.swift in Sources */,
 				2A16EB512A4F655500CC881D /* Dictionary+Firestore.swift in Sources */,
+				2A16EB692A4F714F00CC881D /* AllMentorsRequest.swift in Sources */,
 				2A16EB412A4CDD4A00CC881D /* Color+Helper.swift in Sources */,
 				2A16EB562A4F655500CC881D /* Firestore+SwiftIsland.swift in Sources */,
 				2A16EB452A4F622800CC881D /* ConferenceBoxTicket.swift in Sources */,
+				2A16EB6B2A4F723E00CC881D /* ConferenceBoxMentors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
