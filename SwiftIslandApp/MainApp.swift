@@ -4,9 +4,14 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct MainApp: App {
+    init() {
+        FirebaseApp.configure()
+    }
+
     var body: some Scene {
         WindowGroup {
             TabBarView()
