@@ -12,6 +12,8 @@ struct ConferencePageView: View {
                 .ignoresSafeArea()
             ScrollView {
                 ConferenceHeaderView()
+                ConferenceBoxTicket()
+                    .padding(.vertical, 6)
             }
         }
     }

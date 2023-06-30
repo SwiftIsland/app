@@ -11,6 +11,7 @@
 		2A16EB3B2A4CDB3600CC881D /* WorkSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A16EB392A4CDB3600CC881D /* WorkSans-Regular.ttf */; };
 		2A16EB3C2A4CDB3600CC881D /* WorkSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A16EB3A2A4CDB3600CC881D /* WorkSans-Bold.ttf */; };
 		2A16EB412A4CDD4A00CC881D /* Color+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A16EB402A4CDD4A00CC881D /* Color+Helper.swift */; };
+		2A16EB452A4F622800CC881D /* ConferenceBoxTicket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A16EB442A4F622800CC881D /* ConferenceBoxTicket.swift */; };
 		2AEDC4972A4A030F00CD0180 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEDC4962A4A030F00CD0180 /* MainApp.swift */; };
 		2AEDC49B2A4A031000CD0180 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AEDC49A2A4A031000CD0180 /* Assets.xcassets */; };
 		2AEDC49E2A4A031000CD0180 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AEDC49D2A4A031000CD0180 /* Preview Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		2A16EB3A2A4CDB3600CC881D /* WorkSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Bold.ttf"; sourceTree = "<group>"; };
 		2A16EB402A4CDD4A00CC881D /* Color+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Helper.swift"; sourceTree = "<group>"; };
 		2A16EB422A4CDEFC00CC881D /* SwiftIsland2023-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "SwiftIsland2023-Info.plist"; sourceTree = "<group>"; };
+		2A16EB442A4F622800CC881D /* ConferenceBoxTicket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxTicket.swift; sourceTree = "<group>"; };
 		2AEDC4932A4A030F00CD0180 /* SwiftIsland2023.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftIsland2023.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AEDC4962A4A030F00CD0180 /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
 		2AEDC49A2A4A031000CD0180 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -115,6 +117,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		2A16EB432A4F621B00CC881D /* Boxes */ = {
+			isa = PBXGroup;
+			children = (
+				2A16EB442A4F622800CC881D /* ConferenceBoxTicket.swift */,
+			);
+			path = Boxes;
+			sourceTree = "<group>";
+		};
 		2AEDC48A2A4A030F00CD0180 = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +186,7 @@
 		2AEDC4C12A4A087400CD0180 /* Conference */ = {
 			isa = PBXGroup;
 			children = (
+				2A16EB432A4F621B00CC881D /* Boxes */,
 				2A16EB342A4CDA3200CC881D /* HeaderView */,
 				2AEDC4C22A4A089100CD0180 /* ConferencePageView.swift */,
 			);
@@ -332,6 +343,7 @@
 				2AEDC4C62A4A08AF00CD0180 /* TabBarView.swift in Sources */,
 				2AEDC4972A4A030F00CD0180 /* MainApp.swift in Sources */,
 				2A16EB412A4CDD4A00CC881D /* Color+Helper.swift in Sources */,
+				2A16EB452A4F622800CC881D /* ConferenceBoxTicket.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -495,8 +507,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -504,9 +516,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = se.apptrix.SwiftIsland2023;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -525,8 +540,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -534,9 +549,12 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = se.apptrix.SwiftIsland2023;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -17,4 +17,8 @@ extension Color {
     static var conferenceBackgroundTo: Color {
         Color("ConferenceBackgroundTo")
     }
+
+    static var ticketText: Color {
+        Color("TicketText")
+    }
 }
