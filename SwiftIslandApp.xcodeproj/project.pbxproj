@@ -71,6 +71,7 @@
 		2A16EB652A4F6D9500CC881D /* Mentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mentor.swift; sourceTree = "<group>"; };
 		2A16EB682A4F714F00CC881D /* AllMentorsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMentorsRequest.swift; sourceTree = "<group>"; };
 		2A16EB6A2A4F723E00CC881D /* ConferenceBoxMentors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxMentors.swift; sourceTree = "<group>"; };
+		2AE242552A4F8210007FFCC5 /* SwiftIslandApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftIslandApp.entitlements; sourceTree = "<group>"; };
 		2AEDC4932A4A030F00CD0180 /* SwiftIslandApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftIslandApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AEDC4962A4A030F00CD0180 /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
 		2AEDC49A2A4A031000CD0180 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -211,6 +212,7 @@
 		2AEDC4952A4A030F00CD0180 /* SwiftIslandApp */ = {
 			isa = PBXGroup;
 			children = (
+				2AE242552A4F8210007FFCC5 /* SwiftIslandApp.entitlements */,
 				2A16EB472A4F655500CC881D /* Firebase */,
 				2A16EB3D2A4CDB3A00CC881D /* Extensions */,
 				2A16EB372A4CDB0400CC881D /* Resources */,
@@ -581,6 +583,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftIslandApp/SwiftIslandApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftIslandApp/Preview Content\"";
@@ -614,6 +617,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SwiftIslandApp/SwiftIslandApp.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftIslandApp/Preview Content\"";
