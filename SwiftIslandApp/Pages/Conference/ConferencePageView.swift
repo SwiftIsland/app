@@ -10,12 +10,26 @@ struct ConferencePageView: View {
         ZStack {
             LinearGradient(colors: [.conferenceBackgroundFrom, .conferenceBackgroundTo], startPoint: UnitPoint(x: 0, y: 0.1), endPoint: UnitPoint(x: 1, y: 1))
                 .ignoresSafeArea()
-            ScrollView {
-                ConferenceHeaderView()
-                ConferenceBoxTicket()
-                    .padding(.vertical, 6)
-                ConferenceBoxMentors()
-                    .padding(.vertical, 6)
+
+            GeometryReader { geo in
+                ScrollView(.vertical) {
+                    ConferenceHeaderView()
+                    ConferenceBoxTicket()
+                        .padding(.vertical, 6)
+
+                    VStack(alignment: .leading) {
+                        Text("Mentors this year")
+                            .font(.subheadline)
+                            .foregroundColor(.secondary)
+                            .padding(.horizontal, 30)
+                            .padding(.vertical, 0)
+                        ConferenceBoxMentors()
+                            .frame(height: geo.size.width * 0.50)
+                    }
+
+                    ConferenceBoxTicket()
+                        .padding(.vertical, 6)
+                }
             }
         }
     }

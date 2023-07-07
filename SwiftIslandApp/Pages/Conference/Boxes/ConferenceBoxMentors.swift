@@ -16,8 +16,20 @@ struct ConferenceBoxMentors: View {
                 ProgressView()
                 Text("Fetching mentors")
             } else {
-                ForEach(mentors) { mentor in
-                    Text("Mentor: \(mentor.firstName)")
+                GeometryReader { geo in
+                    TabView {
+                        ForEach(mentors) { mentor in
+                            ZStack {
+                                Button(action: {
+                                    debugPrint("Do something")
+                                }, label: {
+                                    ConferenceBoxMentorsMentor(mentor: mentor)
+                                        .frame(maxWidth: geo.size.width - 40, alignment: .topLeading)
+                                })
+                            }
+                        }
+                    }
+                    .tabViewStyle(.page(indexDisplayMode: .never))
                 }
             }
         }
@@ -41,6 +53,9 @@ struct ConferenceBoxMentors: View {
 
 struct ConferenceBoxMentors_Previews: PreviewProvider {
     static var previews: some View {
+
+
         ConferenceBoxMentors()
     }
 }
+
