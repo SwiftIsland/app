@@ -26,9 +26,6 @@ struct ConferencePageView: View {
                         ConferenceBoxMentors()
                             .frame(height: geo.size.width * 0.50)
                     }
-
-                    ConferenceBoxTicket()
-                        .padding(.vertical, 6)
                 }
             }
         }
