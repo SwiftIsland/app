@@ -14,11 +14,10 @@ struct TabBarView: View {
             case .home:
                 ConferencePageView()
             }
-            
-            TabBarBarView(selectedItem: $selectedItem)
+
         }
         .safeAreaInset(edge: .bottom) {
-            Color.clear.frame(height: 44)
+            TabBarBarView(selectedItem: $selectedItem)
         }
     }
 }

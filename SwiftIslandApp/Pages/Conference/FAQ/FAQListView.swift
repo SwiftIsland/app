@@ -7,44 +7,66 @@ import SwiftUI
 import FirebaseAuth
 import FirebaseFirestore
 
-struct ConferenceBoxFAQ: View {
+struct FAQListView: View {
     @State var faqList: [FAQItem] = []
+    @State private var searchText = ""
+    @State private var isSearching = false
 
-    var body: some View {
-        List {
-            Section(header: Text("FAQ")) {
-                ForEach(faqList) { faqItem in
-                    NavigationLink(value: faqItem) {
-                        ConferenceBoxFAQItem(faqItem: faqItem, short: true)
-                    }
-                }
-                NavigationLink(value: faqList) {
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text("More")
-                                .font(.body)
-                                .fontWeight(.semibold)
-                            Text("More answers can be found on the FAQ page")
-                                .font(.callout)
-                                .fontWeight(.regular)
-                                .foregroundColor(.secondary)
-                        }
-                    }
-                }
+    var preselectedItem: FAQItem?
+
+    private var filter: [FAQItem] {
+        if !searchText.isEmpty {
+            return faqList.filter { faqItem in
+                faqItem.question.localizedCaseInsensitiveContains(searchText) ||
+                faqItem.answer.localizedCaseInsensitiveContains(searchText)
             }
-        }
-        .listRowBackground(Color.clear)
-        .onAppear {
-            fetchFAQ()
+        } else {
+            return faqList
         }
     }
 
-    private func fetchFAQ() {
+    var body: some View {
+        ScrollViewReader { scrollViewProxy in
+            List {
+                Section(header: Text("FAQ")) {
+                    ForEach(filter) { faqItem in
+                        ConferenceBoxFAQItem(faqItem: faqItem, short: false)
+                    }
+                }
+            }
+            .navigationTitle("FAQ")
+            .listRowBackground(Color.clear)
+            .onChange(of: searchText) { newValue in
+                isSearching = !searchText.isEmpty
+            }
+            .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search") {
+                ForEach(filter) { faqItem in
+                    Text("\(faqItem.question)")
+                        .searchCompletion("\(faqItem.question)")
+                }
+            }
+            .onAppear {
+                if !isPreview {
+                    fetchFAQ(scrollViewProxy: scrollViewProxy)
+                }
+            }
+            .safeAreaInset(edge: .bottom) {
+                Color.clear.frame(height: 44)
+            }
+        }
+    }
+
+    private func fetchFAQ(scrollViewProxy: ScrollViewProxy) {
         Task {
             let request = AllFAQRequest()
             do {
                 let faqs: [FAQItem] = try await Firestore.get(request: request)
                 self.faqList = Array(faqs.prefix(upTo: 4))
+
+                if let preselectedItem {
+                    debugPrint("SCROLLING!")
+                    scrollViewProxy.scrollTo(preselectedItem.id)
+                }
             } catch {
                 debugPrint("Error fetching FAQ list. Error: \(error.localizedDescription)")
             }
@@ -52,7 +74,7 @@ struct ConferenceBoxFAQ: View {
     }
 }
 
-struct ConferenceBoxFAQ_Previews: PreviewProvider {
+struct FAQListView_Previews: PreviewProvider {
     static var previews: some View {
         let faqList = [
             FAQItem(id: "1", question: "Are there different kind of rooms?", answer: "Yes. The venue has bungalows and regular hotel rooms. Bungalows have 3 bedrooms, are more spacious, and have a shared kitchen and living room, while the Hotel Rooms have a private bathrooms. With your ticket you always get a private bedroom and you buy a ticket you can specify a preferred room type. While we try to accommodate everyone towards their preference, we can't guarantee you the room-type of your choice."),
@@ -62,7 +84,8 @@ struct ConferenceBoxFAQ_Previews: PreviewProvider {
         ]
 
         NavigationStack {
-            ConferenceBoxFAQ(faqList: faqList)
+            FAQListView(faqList: faqList)
         }
     }
 }
+

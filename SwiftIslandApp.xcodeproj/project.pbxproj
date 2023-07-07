@@ -31,6 +31,9 @@
 		2AC7DCF12A58B5E600DB9F6D /* ConferenceBoxFAQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DCF02A58B5E600DB9F6D /* ConferenceBoxFAQ.swift */; };
 		2AC7DD022A58C95700DB9F6D /* FAQItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DD012A58C95700DB9F6D /* FAQItem.swift */; };
 		2AC7DD042A58C9B800DB9F6D /* AllFAQRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DD032A58C9B800DB9F6D /* AllFAQRequests.swift */; };
+		2AC7DD072A58CD2000DB9F6D /* FAQListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DD062A58CD2000DB9F6D /* FAQListView.swift */; };
+		2AC7DD092A58CFDD00DB9F6D /* ConferenceBoxFAQItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DD082A58CFDD00DB9F6D /* ConferenceBoxFAQItem.swift */; };
+		2AC7DD0B2A58D07E00DB9F6D /* View+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DD0A2A58D07E00DB9F6D /* View+Preview.swift */; };
 		2AE2425D2A520C7A007FFCC5 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE2425C2A520C7A007FFCC5 /* ImageDownloader.swift */; };
 		2AE2425F2A521E4F007FFCC5 /* Collection+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE2425E2A521E4F007FFCC5 /* Collection+Safe.swift */; };
 		2AEDC4972A4A030F00CD0180 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEDC4962A4A030F00CD0180 /* MainApp.swift */; };
@@ -81,6 +84,9 @@
 		2AC7DCF02A58B5E600DB9F6D /* ConferenceBoxFAQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxFAQ.swift; sourceTree = "<group>"; };
 		2AC7DD012A58C95700DB9F6D /* FAQItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQItem.swift; sourceTree = "<group>"; };
 		2AC7DD032A58C9B800DB9F6D /* AllFAQRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFAQRequests.swift; sourceTree = "<group>"; };
+		2AC7DD062A58CD2000DB9F6D /* FAQListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQListView.swift; sourceTree = "<group>"; };
+		2AC7DD082A58CFDD00DB9F6D /* ConferenceBoxFAQItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxFAQItem.swift; sourceTree = "<group>"; };
+		2AC7DD0A2A58D07E00DB9F6D /* View+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Preview.swift"; sourceTree = "<group>"; };
 		2AE242552A4F8210007FFCC5 /* SwiftIslandApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftIslandApp.entitlements; sourceTree = "<group>"; };
 		2AE2425C2A520C7A007FFCC5 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		2AE2425E2A521E4F007FFCC5 /* Collection+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Safe.swift"; sourceTree = "<group>"; };
@@ -158,6 +164,7 @@
 				2A16EB402A4CDD4A00CC881D /* Color+Helper.swift */,
 				2AE2425C2A520C7A007FFCC5 /* ImageDownloader.swift */,
 				2AE2425E2A521E4F007FFCC5 /* Collection+Safe.swift */,
+				2AC7DD0A2A58D07E00DB9F6D /* View+Preview.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -169,6 +176,7 @@
 				2A16EB6A2A4F723E00CC881D /* ConferenceBoxMentors.swift */,
 				2AC7DCEE2A58AA5800DB9F6D /* ConferenceBoxMentorsMentor.swift */,
 				2AC7DCF02A58B5E600DB9F6D /* ConferenceBoxFAQ.swift */,
+				2AC7DD082A58CFDD00DB9F6D /* ConferenceBoxFAQItem.swift */,
 			);
 			path = Boxes;
 			sourceTree = "<group>";
@@ -204,6 +212,14 @@
 				2AC7DD032A58C9B800DB9F6D /* AllFAQRequests.swift */,
 			);
 			path = Requests;
+			sourceTree = "<group>";
+		};
+		2AC7DD052A58CD1100DB9F6D /* FAQ */ = {
+			isa = PBXGroup;
+			children = (
+				2AC7DD062A58CD2000DB9F6D /* FAQListView.swift */,
+			);
+			path = FAQ;
 			sourceTree = "<group>";
 		};
 		2AEDC48A2A4A030F00CD0180 = {
@@ -270,6 +286,7 @@
 		2AEDC4C12A4A087400CD0180 /* Conference */ = {
 			isa = PBXGroup;
 			children = (
+				2AC7DD052A58CD1100DB9F6D /* FAQ */,
 				2A16EB432A4F621B00CC881D /* Boxes */,
 				2A16EB342A4CDA3200CC881D /* HeaderView */,
 				2AEDC4C22A4A089100CD0180 /* ConferencePageView.swift */,
@@ -444,14 +461,17 @@
 				2A16EB662A4F6D9500CC881D /* Mentor.swift in Sources */,
 				2AE2425F2A521E4F007FFCC5 /* Collection+Safe.swift in Sources */,
 				2A16EB512A4F655500CC881D /* Dictionary+Firestore.swift in Sources */,
+				2AC7DD092A58CFDD00DB9F6D /* ConferenceBoxFAQItem.swift in Sources */,
 				2AC7DCF12A58B5E600DB9F6D /* ConferenceBoxFAQ.swift in Sources */,
 				2AC7DD022A58C95700DB9F6D /* FAQItem.swift in Sources */,
 				2A16EB692A4F714F00CC881D /* AllMentorsRequest.swift in Sources */,
 				2AC7DCEF2A58AA5800DB9F6D /* ConferenceBoxMentorsMentor.swift in Sources */,
 				2A16EB412A4CDD4A00CC881D /* Color+Helper.swift in Sources */,
 				2A16EB562A4F655500CC881D /* Firestore+SwiftIsland.swift in Sources */,
+				2AC7DD072A58CD2000DB9F6D /* FAQListView.swift in Sources */,
 				2A16EB452A4F622800CC881D /* ConferenceBoxTicket.swift in Sources */,
 				2AE2425D2A520C7A007FFCC5 /* ImageDownloader.swift in Sources */,
+				2AC7DD0B2A58D07E00DB9F6D /* View+Preview.swift in Sources */,
 				2A16EB6B2A4F723E00CC881D /* ConferenceBoxMentors.swift in Sources */,
 				2AC7DD042A58C9B800DB9F6D /* AllFAQRequests.swift in Sources */,
 			);

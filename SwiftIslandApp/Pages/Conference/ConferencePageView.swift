@@ -31,10 +31,16 @@ struct ConferencePageView: View {
                         }
 
                         ConferenceBoxFAQ()
-                        .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
-                        .scrollContentBackground(.hidden)
+                            .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
+                            .scrollContentBackground(.hidden)
                     }
                 }
+            }
+            .navigationDestination(for: [FAQItem].self) { _ in
+                FAQListView()
+            }
+            .navigationDestination(for: FAQItem.self) { item in
+                FAQListView(preselectedItem: item)
             }
         }
     }
