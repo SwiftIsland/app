@@ -47,6 +47,13 @@ struct ConferenceHeaderView: View {
 
 struct ConferenceHeaderView_Previews: PreviewProvider {
     static var previews: some View {
-        ConferenceHeaderView()
+        Group {
+            ConferenceHeaderView()
+                .preferredColorScheme(.light)
+                .previewDisplayName("Light mode")
+            ConferenceHeaderView()
+                .preferredColorScheme(.dark)
+                .previewDisplayName("Dark mode")
+        }
     }
 }

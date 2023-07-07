@@ -172,11 +172,11 @@
 		2A16EB432A4F621B00CC881D /* Boxes */ = {
 			isa = PBXGroup;
 			children = (
-				2A16EB442A4F622800CC881D /* ConferenceBoxTicket.swift */,
-				2A16EB6A2A4F723E00CC881D /* ConferenceBoxMentors.swift */,
-				2AC7DCEE2A58AA5800DB9F6D /* ConferenceBoxMentorsMentor.swift */,
 				2AC7DCF02A58B5E600DB9F6D /* ConferenceBoxFAQ.swift */,
 				2AC7DD082A58CFDD00DB9F6D /* ConferenceBoxFAQItem.swift */,
+				2A16EB6A2A4F723E00CC881D /* ConferenceBoxMentors.swift */,
+				2AC7DCEE2A58AA5800DB9F6D /* ConferenceBoxMentorsMentor.swift */,
+				2A16EB442A4F622800CC881D /* ConferenceBoxTicket.swift */,
 			);
 			path = Boxes;
 			sourceTree = "<group>";
