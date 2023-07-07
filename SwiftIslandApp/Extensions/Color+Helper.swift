@@ -21,4 +21,8 @@ extension Color {
     static var ticketText: Color {
         Color("TicketText")
     }
+
+    static var questionMarkColor: Color {
+        Color("QuestionMarkColor")
+    }
 }

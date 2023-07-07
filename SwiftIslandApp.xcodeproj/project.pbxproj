@@ -28,6 +28,7 @@
 		2A16EB692A4F714F00CC881D /* AllMentorsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A16EB682A4F714F00CC881D /* AllMentorsRequest.swift */; };
 		2A16EB6B2A4F723E00CC881D /* ConferenceBoxMentors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A16EB6A2A4F723E00CC881D /* ConferenceBoxMentors.swift */; };
 		2AC7DCEF2A58AA5800DB9F6D /* ConferenceBoxMentorsMentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DCEE2A58AA5800DB9F6D /* ConferenceBoxMentorsMentor.swift */; };
+		2AC7DCF12A58B5E600DB9F6D /* ConferenceBoxFAQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DCF02A58B5E600DB9F6D /* ConferenceBoxFAQ.swift */; };
 		2AE2425D2A520C7A007FFCC5 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE2425C2A520C7A007FFCC5 /* ImageDownloader.swift */; };
 		2AE2425F2A521E4F007FFCC5 /* Collection+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE2425E2A521E4F007FFCC5 /* Collection+Safe.swift */; };
 		2AEDC4972A4A030F00CD0180 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEDC4962A4A030F00CD0180 /* MainApp.swift */; };
@@ -75,6 +76,7 @@
 		2A16EB682A4F714F00CC881D /* AllMentorsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMentorsRequest.swift; sourceTree = "<group>"; };
 		2A16EB6A2A4F723E00CC881D /* ConferenceBoxMentors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxMentors.swift; sourceTree = "<group>"; };
 		2AC7DCEE2A58AA5800DB9F6D /* ConferenceBoxMentorsMentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxMentorsMentor.swift; sourceTree = "<group>"; };
+		2AC7DCF02A58B5E600DB9F6D /* ConferenceBoxFAQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxFAQ.swift; sourceTree = "<group>"; };
 		2AE242552A4F8210007FFCC5 /* SwiftIslandApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftIslandApp.entitlements; sourceTree = "<group>"; };
 		2AE2425C2A520C7A007FFCC5 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		2AE2425E2A521E4F007FFCC5 /* Collection+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Safe.swift"; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 				2A16EB442A4F622800CC881D /* ConferenceBoxTicket.swift */,
 				2A16EB6A2A4F723E00CC881D /* ConferenceBoxMentors.swift */,
 				2AC7DCEE2A58AA5800DB9F6D /* ConferenceBoxMentorsMentor.swift */,
+				2AC7DCF02A58B5E600DB9F6D /* ConferenceBoxFAQ.swift */,
 			);
 			path = Boxes;
 			sourceTree = "<group>";
@@ -435,6 +438,7 @@
 				2A16EB662A4F6D9500CC881D /* Mentor.swift in Sources */,
 				2AE2425F2A521E4F007FFCC5 /* Collection+Safe.swift in Sources */,
 				2A16EB512A4F655500CC881D /* Dictionary+Firestore.swift in Sources */,
+				2AC7DCF12A58B5E600DB9F6D /* ConferenceBoxFAQ.swift in Sources */,
 				2A16EB692A4F714F00CC881D /* AllMentorsRequest.swift in Sources */,
 				2AC7DCEF2A58AA5800DB9F6D /* ConferenceBoxMentorsMentor.swift in Sources */,
 				2A16EB412A4CDD4A00CC881D /* Color+Helper.swift in Sources */,
