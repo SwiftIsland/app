@@ -137,7 +137,7 @@ struct PracticalPageView: View {
                         })
                     }
                 }
-                .listRowBackground(Color.clear)
+                .scrollContentBackground(.hidden)
             }
             .navigationTitle("Practical")
         }
