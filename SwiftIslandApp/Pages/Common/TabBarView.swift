@@ -13,6 +13,8 @@ struct TabBarView: View {
             switch selectedItem {
             case .home:
                 ConferencePageView()
+            case .practical:
+                PracticalPageView()
             }
 
         }

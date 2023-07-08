@@ -14,15 +14,15 @@ struct TabItem: Identifiable, Equatable {
 
 enum Tab: CaseIterable {
     case home
-//    case workshops
+    case practical
 //    case account
 
     var tabItem: TabItem {
         switch self {
         case .home:
             return TabItem(title: "Conference", imageName: "person.3")
-//        case .workshops:
-//            return TabItem(title: "Workshops", imageName: "pencil.and.ruler")
+        case .practical:
+            return TabItem(title: "Practical", imageName: "wallet.pass")
 //        case .account:
 //            return TabItem(title: "Account", imageName: "person.crop.circle")
         }
