@@ -138,6 +138,9 @@ struct PracticalPageView: View {
                     }
                 }
                 .scrollContentBackground(.hidden)
+                .safeAreaInset(edge: .bottom) {
+                    Color.clear.frame(height: 44)
+                }
             }
             .navigationTitle("Practical")
         }
