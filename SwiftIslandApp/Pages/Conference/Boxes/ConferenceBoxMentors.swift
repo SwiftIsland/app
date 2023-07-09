@@ -4,11 +4,9 @@
 //
 
 import SwiftUI
-import FirebaseAuth
-import FirebaseFirestore
 
 struct ConferenceBoxMentors: View {
-    @State private var mentors: [Mentor] = []
+    @Binding var mentors: [Mentor]
 
     var body: some View {
         VStack {
@@ -23,8 +21,10 @@ struct ConferenceBoxMentors: View {
                                 Button(action: {
                                     debugPrint("Do something")
                                 }, label: {
-                                    ConferenceBoxMentorsMentor(mentor: mentor)
-                                        .frame(maxWidth: geo.size.width - 40, alignment: .topLeading)
+                                    NavigationLink(value: mentor) {
+                                        ConferenceBoxMentorsMentor(mentor: mentor)
+                                            .frame(maxWidth: geo.size.width - 40, alignment: .topLeading)
+                                    }
                                 })
                             }
                         }
@@ -33,29 +33,15 @@ struct ConferenceBoxMentors: View {
                 }
             }
         }
-        .onAppear {
-            fetchMentors()
-        }
-    }
-
-    private func fetchMentors() {
-        Task {
-            let request = AllMentorsRequest()
-            do {
-                let mentors = try await Firestore.get(request: request)
-                self.mentors = mentors
-            } catch {
-                debugPrint("Could not fetch mentors. Error: \(error.localizedDescription)")
-            }
-        }
     }
 }
 
 struct ConferenceBoxMentors_Previews: PreviewProvider {
     static var previews: some View {
-
-
-        ConferenceBoxMentors()
+        let mentors = [
+            Mentor(userId: "1", firstName: "John", lastName: "Appleseed", userType: .mentor, headerImageUrl: nil)
+        ]
+        ConferenceBoxMentors(mentors: .constant(mentors))
     }
 }
 

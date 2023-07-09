@@ -6,6 +6,8 @@
 import SwiftUI
 
 struct PracticalPageView: View {
+    @State private var directionSheetOpen = false
+
     private let iconMaxWidth: CGFloat = 32
 
     var body: some View {

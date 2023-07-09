@@ -23,3 +23,5 @@ struct Mentor: Response {
 extension Mentor: Identifiable {
     var id: String { userId }
 }
+
+extension Mentor: Hashable { }

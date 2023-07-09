@@ -4,8 +4,11 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
 
 struct ConferencePageView: View {
+    @State private var mentors: [Mentor] = []
+
     var body: some View {
         NavigationStack {
             ZStack {
@@ -25,7 +28,7 @@ struct ConferencePageView: View {
                                 .padding(.horizontal, 40)
                                 .padding(.top, 6)
                                 .padding(.bottom, 0)
-                            ConferenceBoxMentors()
+                            ConferenceBoxMentors(mentors: $mentors)
                                 .frame(height: geo.size.width * 0.50)
                                 .padding(.vertical, 0)
                         }
@@ -41,6 +44,24 @@ struct ConferencePageView: View {
             }
             .navigationDestination(for: FAQItem.self) { item in
                 FAQListView(preselectedItem: item)
+            }
+            .navigationDestination(for: Mentor.self) { mentor in
+                ConferenceMentorsView(mentors: mentors, selectedMentor: mentor)
+            }
+            .onAppear {
+                fetchMentors()
+            }
+        }
+    }
+
+    private func fetchMentors() {
+        Task {
+            let request = AllMentorsRequest()
+            do {
+                let mentors = try await Firestore.get(request: request)
+                self.mentors = mentors
+            } catch {
+                debugPrint("Could not fetch mentors. Error: \(error.localizedDescription)")
             }
         }
     }

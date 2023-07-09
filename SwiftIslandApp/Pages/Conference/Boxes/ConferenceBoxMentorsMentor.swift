@@ -32,12 +32,24 @@ struct ConferenceBoxMentorsMentor: View {
                     .background(.thinMaterial)
                 }
                 .background {
-                    AsyncImage(url: url) { image in
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                    } placeholder: {
-                        ProgressView()
+                    AsyncImage(
+                        url: url,
+                        transaction: Transaction(animation: .easeInOut)
+                    ) { phase in
+                        switch phase {
+                        case .empty:
+                            ProgressView()
+                        case .success(let image):
+                            image
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+//                                .transition(.easeInOut(duration: 0.2))
+                        case .failure:
+                            Image(systemName: "wifi.slash")
+                                .foregroundColor(.secondary)
+                        @unknown default:
+                            EmptyView()
+                        }
                     }
                 }
             } else {
