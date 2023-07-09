@@ -17,16 +17,11 @@ struct ConferenceBoxMentors: View {
                 GeometryReader { geo in
                     TabView {
                         ForEach(mentors) { mentor in
-                            ZStack {
-                                Button(action: {
-                                    debugPrint("Do something")
-                                }, label: {
-                                    NavigationLink(value: mentor) {
-                                        ConferenceBoxMentorsMentor(mentor: mentor)
-                                            .frame(maxWidth: geo.size.width - 40, alignment: .topLeading)
-                                    }
-                                })
+                            NavigationLink(value: mentor) {
+                                ConferenceBoxMentorsMentor(mentor: mentor)
+                                    .frame(maxWidth: geo.size.width - 40, alignment: .topLeading)
                             }
+                            .buttonStyle(.plain)
                         }
                     }
                     .tabViewStyle(.page(indexDisplayMode: .never))
