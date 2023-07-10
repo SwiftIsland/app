@@ -10,7 +10,7 @@ struct ConferenceBoxMentorsMentor: View {
 
     var body: some View {
         ZStack {
-            if let headerImageUrl = mentor.headerImageUrl, let url = URL(string: headerImageUrl) {
+            if let url = mentor.headerImageUrl {
                 VStack(alignment: .leading) {
                     Spacer()
                     VStack(alignment: .leading) {
@@ -43,7 +43,6 @@ struct ConferenceBoxMentorsMentor: View {
                             image
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
-//                                .transition(.easeInOut(duration: 0.2))
                         case .failure:
                             Image(systemName: "wifi.slash")
                                 .foregroundColor(.secondary)
@@ -66,7 +65,12 @@ struct ConferenceBoxMentorsMentor: View {
 
 struct ConferenceBoxMentorsMentor_Previews: PreviewProvider {
     static var previews: some View {
-        let mentor = Mentor(userId: "1", firstName: "John", lastName: "Appleseed", userType: .mentor, headerImageUrl: "https://firebasestorage.googleapis.com:443/v0/b/swiftisland-fc283.appspot.com/o/images%2FuserHeaders%2FF701EB5B-6B98-4F0E-B99D-5F59E55C3B45.jpeg?alt=media&token=8df7a837-e378-41ce-aeb7-c1e70f70d9e1")
+        let mentor = Mentor(userId: "1",
+                            firstName: "John",
+                            lastName: "Appleseed",
+                            userType: .mentor,
+                            headerImageUrl: URL(string: "https://firebasestorage.googleapis.com:443/v0/b/swiftisland-fc283.appspot.com/o/images%2FuserHeaders%2FF701EB5B-6B98-4F0E-B99D-5F59E55C3B45.jpeg?alt=media&token=8df7a837-e378-41ce-aeb7-c1e70f70d9e1"),
+                            highResImageUrl: nil)
         ConferenceBoxMentorsMentor(mentor: mentor)
     }
 }

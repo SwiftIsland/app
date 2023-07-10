@@ -17,7 +17,8 @@ struct Mentor: Response {
     let firstName: String
     let lastName: String
     let userType: UserInfoType
-    let headerImageUrl: String?
+    let headerImageUrl: URL?
+    let highResImageUrl: URL?
 }
 
 extension Mentor: Identifiable {

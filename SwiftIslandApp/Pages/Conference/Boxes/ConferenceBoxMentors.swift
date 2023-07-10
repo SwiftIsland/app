@@ -12,7 +12,6 @@ struct ConferenceBoxMentors: View {
         VStack {
             if mentors.isEmpty {
                 ProgressView()
-                Text("Fetching mentors")
             } else {
                 GeometryReader { geo in
                     TabView {
@@ -34,7 +33,7 @@ struct ConferenceBoxMentors: View {
 struct ConferenceBoxMentors_Previews: PreviewProvider {
     static var previews: some View {
         let mentors = [
-            Mentor(userId: "1", firstName: "John", lastName: "Appleseed", userType: .mentor, headerImageUrl: nil)
+            Mentor(userId: "1", firstName: "John", lastName: "Appleseed", userType: .mentor, headerImageUrl: nil, highResImageUrl: nil)
         ]
         ConferenceBoxMentors(mentors: .constant(mentors))
     }
