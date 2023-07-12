@@ -7,8 +7,24 @@ import SwiftUI
 
 struct PuzzleView: View {
     @Binding var puzzle: Puzzle
+    @State var solution: String = ""
     var body: some View {
-        Text("Puzzle \(puzzle.id)")
+        VStack(alignment: .center) {
+            Image("BoxTicketBackground")
+            Text("Puzzle \(puzzle.id)")
+            HStack(spacing: 20) {
+                TextField("Solution", text:$solution)
+                Button("Submit") {
+                    print("Text", solution)
+                    if (solution == "\(puzzle.id)") {
+                        print("Correct")
+                    } else {
+                        print("Wrong16")
+                        solution = ""
+                    }
+                }
+            }
+        }.padding(20)
     }
 }
 
