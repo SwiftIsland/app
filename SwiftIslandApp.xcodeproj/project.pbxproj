@@ -50,6 +50,7 @@
 		B3E8367F2A5EE37700E63BE3 /* PuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E8367E2A5EE37700E63BE3 /* PuzzleView.swift */; };
 		B3E836812A5EE8B300E63BE3 /* PuzzlePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E836802A5EE8B300E63BE3 /* PuzzlePageView.swift */; };
 		B3E836832A5EE90D00E63BE3 /* PlaygroundItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E836822A5EE90D00E63BE3 /* PlaygroundItem.swift */; };
+		B3E836872A5EF5ED00E63BE3 /* PuzzleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E836862A5EF5ED00E63BE3 /* PuzzleItemView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +114,7 @@
 		B3E8367E2A5EE37700E63BE3 /* PuzzleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleView.swift; sourceTree = "<group>"; };
 		B3E836802A5EE8B300E63BE3 /* PuzzlePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzlePageView.swift; sourceTree = "<group>"; };
 		B3E836822A5EE90D00E63BE3 /* PlaygroundItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundItem.swift; sourceTree = "<group>"; };
+		B3E836862A5EF5ED00E63BE3 /* PuzzleItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleItemView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -350,6 +352,7 @@
 			children = (
 				B3E8367E2A5EE37700E63BE3 /* PuzzleView.swift */,
 				B3E836802A5EE8B300E63BE3 /* PuzzlePageView.swift */,
+				B3E836862A5EF5ED00E63BE3 /* PuzzleItemView.swift */,
 			);
 			path = "Puzzle Hunt";
 			sourceTree = "<group>";
@@ -516,6 +519,7 @@
 				2A16EB512A4F655500CC881D /* Dictionary+Firestore.swift in Sources */,
 				B3E8367F2A5EE37700E63BE3 /* PuzzleView.swift in Sources */,
 				2AC7DD092A58CFDD00DB9F6D /* ConferenceBoxFAQItem.swift in Sources */,
+				B3E836872A5EF5ED00E63BE3 /* PuzzleItemView.swift in Sources */,
 				2AC7DCF12A58B5E600DB9F6D /* ConferenceBoxFAQ.swift in Sources */,
 				2AC7DD022A58C95700DB9F6D /* FAQItem.swift in Sources */,
 				2A16EB692A4F714F00CC881D /* AllMentorsRequest.swift in Sources */,

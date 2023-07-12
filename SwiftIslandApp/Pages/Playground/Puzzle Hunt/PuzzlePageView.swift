@@ -11,21 +11,23 @@ struct Puzzle: Identifiable, Hashable {
     var enabled: Bool = [true,false].randomElement() ?? false
 }
 
+let spacing: CGFloat = 20
+
 struct PuzzlePageView: View {
-    @State var items: [Puzzle] = (1...20).map({Puzzle(id: $0)})
-    let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    @State var items: [Puzzle] = (1...16).map({Puzzle(id: $0)})
+    let columns = Array(repeatElement(GridItem(.fixed(puzzleItemSize), spacing: spacing), count: 4))
     var body: some View {
         NavigationStack {
-            LazyVGrid(columns: columns, spacing: 20) {
+            LazyVGrid(columns: columns, spacing: spacing) {
                     ForEach($items) { puzzle in
                         if (puzzle.enabled.wrappedValue) {
                             NavigationLink(destination: {
                                 PuzzleView(puzzle: puzzle)
                             }, label: {
-                                Text("\(puzzle.id)")
+                                PuzzleItemView(puzzle: puzzle.wrappedValue)
                             })
                         } else {
-                            Text("\(puzzle.id)")
+                            PuzzleItemView(puzzle: puzzle.wrappedValue)
                         }
                     }
             }.navigationTitle("Puzzle Hunt")
