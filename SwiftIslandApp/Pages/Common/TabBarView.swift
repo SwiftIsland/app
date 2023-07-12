@@ -15,8 +15,9 @@ struct TabBarView: View {
                 ConferencePageView()
             case .practical:
                 PracticalPageView()
+            case .playground:
+                PlaygroundPageView()
             }
-
         }
         .safeAreaInset(edge: .bottom) {
             TabBarBarView(selectedItem: $selectedItem)

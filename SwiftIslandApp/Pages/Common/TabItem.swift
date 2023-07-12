@@ -15,6 +15,7 @@ struct TabItem: Identifiable, Equatable {
 enum Tab: CaseIterable {
     case home
     case practical
+    case playground
 //    case account
 
     var tabItem: TabItem {
@@ -23,6 +24,8 @@ enum Tab: CaseIterable {
             return TabItem(title: "Conference", imageName: "person.3")
         case .practical:
             return TabItem(title: "Practical", imageName: "wallet.pass")
+        case .playground:
+            return TabItem(title: "Playground", imageName: "figure.play")
 //        case .account:
 //            return TabItem(title: "Account", imageName: "person.crop.circle")
         }

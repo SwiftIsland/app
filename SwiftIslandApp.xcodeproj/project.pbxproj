@@ -46,6 +46,10 @@
 		2AEDC4C62A4A08AF00CD0180 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEDC4C52A4A08AF00CD0180 /* TabBarView.swift */; };
 		2AEDC4CA2A4A0CB500CD0180 /* TabBarBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEDC4C92A4A0CB500CD0180 /* TabBarBarView.swift */; };
 		2AEDC4CC2A4A0CDF00CD0180 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEDC4CB2A4A0CDF00CD0180 /* TabItem.swift */; };
+		B3E8367C2A5ECB4400E63BE3 /* PlaygroundPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E8367B2A5ECB4400E63BE3 /* PlaygroundPageView.swift */; };
+		B3E8367F2A5EE37700E63BE3 /* PuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E8367E2A5EE37700E63BE3 /* PuzzleView.swift */; };
+		B3E836812A5EE8B300E63BE3 /* PuzzlePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E836802A5EE8B300E63BE3 /* PuzzlePageView.swift */; };
+		B3E836832A5EE90D00E63BE3 /* PlaygroundItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3E836822A5EE90D00E63BE3 /* PlaygroundItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -105,6 +109,10 @@
 		2AEDC4C52A4A08AF00CD0180 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		2AEDC4C92A4A0CB500CD0180 /* TabBarBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarBarView.swift; sourceTree = "<group>"; };
 		2AEDC4CB2A4A0CDF00CD0180 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		B3E8367B2A5ECB4400E63BE3 /* PlaygroundPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundPageView.swift; sourceTree = "<group>"; };
+		B3E8367E2A5EE37700E63BE3 /* PuzzleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleView.swift; sourceTree = "<group>"; };
+		B3E836802A5EE8B300E63BE3 /* PuzzlePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzlePageView.swift; sourceTree = "<group>"; };
+		B3E836822A5EE90D00E63BE3 /* PlaygroundItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -297,6 +305,7 @@
 		2AEDC4C02A4A086F00CD0180 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				B3E8367A2A5ECB0100E63BE3 /* Playground */,
 				2AEDC4C42A4A08A600CD0180 /* Common */,
 				2AEDC4C12A4A087400CD0180 /* Conference */,
 				2AC7DD0C2A59F36C00DB9F6D /* Practical */,
@@ -324,6 +333,25 @@
 				2AEDC4CB2A4A0CDF00CD0180 /* TabItem.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		B3E8367A2A5ECB0100E63BE3 /* Playground */ = {
+			isa = PBXGroup;
+			children = (
+				B3E8367D2A5EE36800E63BE3 /* Puzzle Hunt */,
+				B3E8367B2A5ECB4400E63BE3 /* PlaygroundPageView.swift */,
+				B3E836822A5EE90D00E63BE3 /* PlaygroundItem.swift */,
+			);
+			path = Playground;
+			sourceTree = "<group>";
+		};
+		B3E8367D2A5EE36800E63BE3 /* Puzzle Hunt */ = {
+			isa = PBXGroup;
+			children = (
+				B3E8367E2A5EE37700E63BE3 /* PuzzleView.swift */,
+				B3E836802A5EE8B300E63BE3 /* PuzzlePageView.swift */,
+			);
+			path = "Puzzle Hunt";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -473,16 +501,20 @@
 				2A16EB502A4F655500CC881D /* Firestore+Request.swift in Sources */,
 				2AEDC4C32A4A089100CD0180 /* ConferencePageView.swift in Sources */,
 				2A16EB362A4CDA4200CC881D /* ConferenceHeaderView.swift in Sources */,
+				B3E836832A5EE90D00E63BE3 /* PlaygroundItem.swift in Sources */,
 				2AEDC4CC2A4A0CDF00CD0180 /* TabItem.swift in Sources */,
 				2AEDC4CA2A4A0CB500CD0180 /* TabBarBarView.swift in Sources */,
 				2AEDC4C62A4A08AF00CD0180 /* TabBarView.swift in Sources */,
+				B3E836812A5EE8B300E63BE3 /* PuzzlePageView.swift in Sources */,
 				2A16EB542A4F655500CC881D /* DocumentSnapshot+Data.swift in Sources */,
 				2A16EB522A4F655500CC881D /* Firestore+Encodable.swift in Sources */,
 				2AEDC4972A4A030F00CD0180 /* MainApp.swift in Sources */,
 				2A16EB532A4F655500CC881D /* Firestore+Response.swift in Sources */,
 				2A16EB662A4F6D9500CC881D /* Mentor.swift in Sources */,
+				B3E8367C2A5ECB4400E63BE3 /* PlaygroundPageView.swift in Sources */,
 				2AE2425F2A521E4F007FFCC5 /* Collection+Safe.swift in Sources */,
 				2A16EB512A4F655500CC881D /* Dictionary+Firestore.swift in Sources */,
+				B3E8367F2A5EE37700E63BE3 /* PuzzleView.swift in Sources */,
 				2AC7DD092A58CFDD00DB9F6D /* ConferenceBoxFAQItem.swift in Sources */,
 				2AC7DCF12A58B5E600DB9F6D /* ConferenceBoxFAQ.swift in Sources */,
 				2AC7DD022A58C95700DB9F6D /* FAQItem.swift in Sources */,
