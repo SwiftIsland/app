@@ -16,6 +16,11 @@ struct ConferenceMentorsView: View {
                     ForEach(mentors){ mentor in
                         ConferenceMentorsMentorView(mentor: mentor)
                             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
+                            .mask {
+                                Rectangle()
+                                    .frame(width: UIScreen.main.bounds.width)
+                            }
+                            .ignoresSafeArea()
                     }
                 }
             }
@@ -28,6 +33,7 @@ struct ConferenceMentorsView: View {
         }
         .ignoresSafeArea()
         .toolbarBackground(.ultraThinMaterial.opacity(0), for: .navigationBar)
+        .toolbarRole(.editor)
     }
 }
 
@@ -38,38 +44,5 @@ struct ConferenceMentorsView_Previews: PreviewProvider {
         ]
 
         ConferenceMentorsView(mentors: mentors, selectedMentor: nil)
-    }
-}
-
-struct ConferenceMentorsMentorView: View {
-    let mentor: Mentor
-
-    var body: some View {
-        ZStack {
-            if let highResImageUrl = mentor.highResImageUrl {
-                AsyncImage(
-                    url: highResImageUrl,
-                    transaction: Transaction(animation: .easeInOut)
-                ) { phase in
-                    switch phase {
-                    case .empty:
-                        ProgressView()
-                    case .success(let image):
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(width: UIScreen.main.bounds.width)
-                    case .failure:
-                        Image(systemName: "wifi.slash")
-                            .foregroundColor(.secondary)
-                    @unknown default:
-                        EmptyView()
-                    }
-                }
-            } else {
-                Text("No high-res image for \(mentor.firstName)")
-            }
-        }
-        .frame(width: UIScreen.main.bounds.width)
     }
 }

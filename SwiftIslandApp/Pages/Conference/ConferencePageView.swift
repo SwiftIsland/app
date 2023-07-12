@@ -52,6 +52,7 @@ struct ConferencePageView: View {
                 fetchMentors()
             }
         }
+        .accentColor(.white)
     }
 
     private func fetchMentors() {

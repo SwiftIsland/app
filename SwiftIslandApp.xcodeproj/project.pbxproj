@@ -36,6 +36,7 @@
 		2AC7DD0B2A58D07E00DB9F6D /* View+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DD0A2A58D07E00DB9F6D /* View+Preview.swift */; };
 		2AC7DD0F2A59F37D00DB9F6D /* PracticalPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DD0E2A59F37D00DB9F6D /* PracticalPageView.swift */; };
 		2AC7DD132A5B1FD000DB9F6D /* ConferenceMentorsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DD122A5B1FD000DB9F6D /* ConferenceMentorsView.swift */; };
+		2AC7DD172A5F2D9200DB9F6D /* ConferenceMentorsMentorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DD162A5F2D9200DB9F6D /* ConferenceMentorsMentorView.swift */; };
 		2AE2425D2A520C7A007FFCC5 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE2425C2A520C7A007FFCC5 /* ImageDownloader.swift */; };
 		2AE2425F2A521E4F007FFCC5 /* Collection+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE2425E2A521E4F007FFCC5 /* Collection+Safe.swift */; };
 		2AEDC4972A4A030F00CD0180 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEDC4962A4A030F00CD0180 /* MainApp.swift */; };
@@ -91,6 +92,7 @@
 		2AC7DD0A2A58D07E00DB9F6D /* View+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Preview.swift"; sourceTree = "<group>"; };
 		2AC7DD0E2A59F37D00DB9F6D /* PracticalPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticalPageView.swift; sourceTree = "<group>"; };
 		2AC7DD122A5B1FD000DB9F6D /* ConferenceMentorsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceMentorsView.swift; sourceTree = "<group>"; };
+		2AC7DD162A5F2D9200DB9F6D /* ConferenceMentorsMentorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceMentorsMentorView.swift; sourceTree = "<group>"; };
 		2AE242552A4F8210007FFCC5 /* SwiftIslandApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftIslandApp.entitlements; sourceTree = "<group>"; };
 		2AE2425C2A520C7A007FFCC5 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		2AE2425E2A521E4F007FFCC5 /* Collection+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Safe.swift"; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 			isa = PBXGroup;
 			children = (
 				2AC7DD122A5B1FD000DB9F6D /* ConferenceMentorsView.swift */,
+				2AC7DD162A5F2D9200DB9F6D /* ConferenceMentorsMentorView.swift */,
 			);
 			path = Mentors;
 			sourceTree = "<group>";
@@ -490,6 +493,7 @@
 				2AC7DCEF2A58AA5800DB9F6D /* ConferenceBoxMentorsMentor.swift in Sources */,
 				2A16EB412A4CDD4A00CC881D /* Color+Helper.swift in Sources */,
 				2A16EB562A4F655500CC881D /* Firestore+SwiftIsland.swift in Sources */,
+				2AC7DD172A5F2D9200DB9F6D /* ConferenceMentorsMentorView.swift in Sources */,
 				2AC7DD0F2A59F37D00DB9F6D /* PracticalPageView.swift in Sources */,
 				2AC7DD072A58CD2000DB9F6D /* FAQListView.swift in Sources */,
 				2A16EB452A4F622800CC881D /* ConferenceBoxTicket.swift in Sources */,

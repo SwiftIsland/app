@@ -25,4 +25,8 @@ extension Color {
     static var questionMarkColor: Color {
         Color("QuestionMarkColor")
     }
+
+    static var boxText: Color {
+        Color("BoxText")
+    }
 }
