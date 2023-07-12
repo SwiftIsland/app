@@ -94,7 +94,7 @@
 		2AE242552A4F8210007FFCC5 /* SwiftIslandApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftIslandApp.entitlements; sourceTree = "<group>"; };
 		2AE2425C2A520C7A007FFCC5 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		2AE2425E2A521E4F007FFCC5 /* Collection+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Safe.swift"; sourceTree = "<group>"; };
-		2AEDC4932A4A030F00CD0180 /* SwiftIslandApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftIslandApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AEDC4932A4A030F00CD0180 /* Swift Island.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift Island.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AEDC4962A4A030F00CD0180 /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
 		2AEDC49A2A4A031000CD0180 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2AEDC49D2A4A031000CD0180 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -256,7 +256,7 @@
 		2AEDC4942A4A030F00CD0180 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2AEDC4932A4A030F00CD0180 /* SwiftIslandApp.app */,
+				2AEDC4932A4A030F00CD0180 /* Swift Island.app */,
 				2AEDC4A32A4A031100CD0180 /* SwiftIslandAppTests.xctest */,
 				2AEDC4AD2A4A031100CD0180 /* SwiftIslandAppUITests.xctest */,
 			);
@@ -329,9 +329,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2AEDC4922A4A030F00CD0180 /* SwiftIslandApp */ = {
+		2AEDC4922A4A030F00CD0180 /* Swift Island */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2AEDC4B72A4A031100CD0180 /* Build configuration list for PBXNativeTarget "SwiftIslandApp" */;
+			buildConfigurationList = 2AEDC4B72A4A031100CD0180 /* Build configuration list for PBXNativeTarget "Swift Island" */;
 			buildPhases = (
 				2AEDC48F2A4A030F00CD0180 /* Sources */,
 				2AEDC4902A4A030F00CD0180 /* Frameworks */,
@@ -341,7 +341,7 @@
 			);
 			dependencies = (
 			);
-			name = SwiftIslandApp;
+			name = "Swift Island";
 			packageProductDependencies = (
 				2A16EB592A4F65EC00CC881D /* FirebaseAnalytics */,
 				2A16EB5B2A4F65EC00CC881D /* FirebaseAuth */,
@@ -350,7 +350,7 @@
 				2A16EB612A4F65EC00CC881D /* FirebaseStorage */,
 			);
 			productName = SwiftIsland2023;
-			productReference = 2AEDC4932A4A030F00CD0180 /* SwiftIslandApp.app */;
+			productReference = 2AEDC4932A4A030F00CD0180 /* Swift Island.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2AEDC4A22A4A031100CD0180 /* SwiftIslandAppTests */ = {
@@ -429,7 +429,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2AEDC4922A4A030F00CD0180 /* SwiftIslandApp */,
+				2AEDC4922A4A030F00CD0180 /* Swift Island */,
 				2AEDC4A22A4A031100CD0180 /* SwiftIslandAppTests */,
 				2AEDC4AC2A4A031100CD0180 /* SwiftIslandAppUITests */,
 			);
@@ -521,12 +521,12 @@
 /* Begin PBXTargetDependency section */
 		2AEDC4A52A4A031100CD0180 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2AEDC4922A4A030F00CD0180 /* SwiftIslandApp */;
+			target = 2AEDC4922A4A030F00CD0180 /* Swift Island */;
 			targetProxy = 2AEDC4A42A4A031100CD0180 /* PBXContainerItemProxy */;
 		};
 		2AEDC4AF2A4A031100CD0180 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2AEDC4922A4A030F00CD0180 /* SwiftIslandApp */;
+			target = 2AEDC4922A4A030F00CD0180 /* Swift Island */;
 			targetProxy = 2AEDC4AE2A4A031100CD0180 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -659,6 +659,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SwiftIslandApp-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Swift Island";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -693,6 +694,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SwiftIslandApp-Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Swift Island";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -802,7 +804,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2AEDC4B72A4A031100CD0180 /* Build configuration list for PBXNativeTarget "SwiftIslandApp" */ = {
+		2AEDC4B72A4A031100CD0180 /* Build configuration list for PBXNativeTarget "Swift Island" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2AEDC4B82A4A031100CD0180 /* Debug */,

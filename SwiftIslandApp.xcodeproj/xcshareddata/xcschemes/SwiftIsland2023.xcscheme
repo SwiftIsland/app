@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2AEDC4922A4A030F00CD0180"
-               BuildableName = "SwiftIslandApp.app"
-               BlueprintName = "SwiftIslandApp"
+               BuildableName = "Swift Island.app"
+               BlueprintName = "Swift Island"
                ReferencedContainer = "container:SwiftIslandApp.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -68,8 +68,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2AEDC4922A4A030F00CD0180"
-            BuildableName = "SwiftIslandApp.app"
-            BlueprintName = "SwiftIslandApp"
+            BuildableName = "Swift Island.app"
+            BlueprintName = "Swift Island"
             ReferencedContainer = "container:SwiftIslandApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -85,8 +85,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2AEDC4922A4A030F00CD0180"
-            BuildableName = "SwiftIslandApp.app"
-            BlueprintName = "SwiftIslandApp"
+            BuildableName = "Swift Island.app"
+            BlueprintName = "Swift Island"
             ReferencedContainer = "container:SwiftIslandApp.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
