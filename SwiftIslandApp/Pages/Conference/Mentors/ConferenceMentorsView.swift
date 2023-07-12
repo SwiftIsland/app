@@ -40,7 +40,7 @@ struct ConferenceMentorsView: View {
 struct ConferenceMentorsView_Previews: PreviewProvider {
     static var previews: some View {
         let mentors = [
-            Mentor(userId: "1", firstName: "John", lastName: "Appleseed", userType: .mentor, headerImageUrl: nil, highResImageUrl: nil)
+            Mentor.forPreview(highResImageUrl: URL(string: "https://firebasestorage.googleapis.com/v0/b/swiftisland-fc283.appspot.com/o/images%2FuserHighRes%2FPaul_Peelen_3A60E527-1D64-43C1-B4AB-CBFB0B4030C7.jpeg?alt=media&token=46608fee-981a-440a-a8b1-4c280ea15d42"))
         ]
 
         ConferenceMentorsView(mentors: mentors, selectedMentor: nil)

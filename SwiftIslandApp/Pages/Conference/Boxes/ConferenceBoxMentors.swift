@@ -33,7 +33,7 @@ struct ConferenceBoxMentors: View {
 struct ConferenceBoxMentors_Previews: PreviewProvider {
     static var previews: some View {
         let mentors = [
-            Mentor(userId: "1", firstName: "John", lastName: "Appleseed", userType: .mentor, headerImageUrl: nil, highResImageUrl: nil)
+            Mentor.forPreview()
         ]
         ConferenceBoxMentors(mentors: .constant(mentors))
     }

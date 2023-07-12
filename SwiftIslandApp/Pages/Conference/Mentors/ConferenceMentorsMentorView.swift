@@ -41,6 +41,11 @@ struct ConferenceMentorsMentorView: View {
                     Text("\(mentor.firstName) \(mentor.lastName)")
                         .font(.title)
                         .foregroundColor(.boxText)
+                    if let description = mentor.description {
+                        Text(description)
+                            .font(.body)
+                            .foregroundColor(.boxText)
+                    }
                 }
                 .padding()
                 .frame(maxWidth: .infinity, alignment:.topLeading)
@@ -65,12 +70,7 @@ struct ConferenceMentorsMentorView: View {
 
 struct ConferenceMentorsMentorView_Previews: PreviewProvider {
     static var previews: some View {
-        let mentor = Mentor(userId: "",
-                            firstName: "John",
-                            lastName: "Appleseed",
-                            userType: .mentor,
-                            headerImageUrl: nil,
-                            highResImageUrl:  URL(string: "https://firebasestorage.googleapis.com:443/v0/b/swiftisland-fc283.appspot.com/o/images%2FuserHighRes%2FPaul_Peelen_DB6B127E-6F9C-4508-A479-74A797855DC9.jpeg?alt=media&token=3da43de6-9fe5-4e62-88c0-72897b07edb8")!)
+        let mentor = Mentor.forPreview(headerImageUrl: URL(string: "https://firebasestorage.googleapis.com:443/v0/b/swiftisland-fc283.appspot.com/o/images%2FuserHighRes%2FPaul_Peelen_DB6B127E-6F9C-4508-A479-74A797855DC9.jpeg?alt=media&token=3da43de6-9fe5-4e62-88c0-72897b07edb8")!)
 
         Group {
             ConferenceMentorsMentorView(mentor: mentor)

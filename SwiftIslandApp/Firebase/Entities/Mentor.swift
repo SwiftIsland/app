@@ -19,6 +19,7 @@ struct Mentor: Response {
     let userType: UserInfoType
     let headerImageUrl: URL?
     let highResImageUrl: URL?
+    let description: String?
 }
 
 extension Mentor: Identifiable {
@@ -26,3 +27,21 @@ extension Mentor: Identifiable {
 }
 
 extension Mentor: Hashable { }
+
+extension Mentor {
+    static func forPreview(userId: String = "1",
+                           firstName: String = "John",
+                           lastName: String = "Appleseed",
+                           userType: UserInfoType = .mentor,
+                           headerImageUrl: URL? = nil,
+                           highResImageUrl: URL? = nil,
+                           description: String? = nil) -> Mentor {
+        Mentor(userId: userId,
+               firstName: firstName,
+               lastName: lastName,
+               userType: userType,
+               headerImageUrl: headerImageUrl,
+               highResImageUrl: highResImageUrl,
+               description: description)
+    }
+}
