@@ -8,11 +8,12 @@ import SwiftUI
 
 struct PlaygroundPageView: View {
     var body: some View {
-        NavigationStack {
-            List {
-                PlaygroundItem(title: "Puzzle Hunt", { PuzzlePageView() })
-            }.navigationTitle("Playground")
-        }
+        PuzzlePageView()
+//        NavigationStack {
+//            List {
+//                PlaygroundItem(title: "Puzzle Hunt", { PuzzlePageView() })
+//            }.navigationTitle("Playground")
+//        }
     }
 }
 
