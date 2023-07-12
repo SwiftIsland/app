@@ -7,6 +7,8 @@ import SwiftUI
 
 struct Puzzle: Identifiable, Hashable {
     let id: Int
+    // FIXME: This should be based on NFC tags scanned instead of random
+    var enabled: Bool = [true,false].randomElement() ?? false
 }
 
 struct PuzzlePageView: View {
@@ -14,15 +16,19 @@ struct PuzzlePageView: View {
     let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     var body: some View {
         NavigationStack {
-            LazyVGrid(columns: columns) {
+            LazyVGrid(columns: columns, spacing: 20) {
                     ForEach($items) { puzzle in
-                        NavigationLink(destination: {
-                            PuzzleView(puzzle: puzzle)
-                        }, label: {
+                        if (puzzle.enabled.wrappedValue) {
+                            NavigationLink(destination: {
+                                PuzzleView(puzzle: puzzle)
+                            }, label: {
+                                Text("\(puzzle.id)")
+                            })
+                        } else {
                             Text("\(puzzle.id)")
-                        })
+                        }
                     }
-            }
+            }.navigationTitle("Puzzle Hunt")
         }
     }
 }
