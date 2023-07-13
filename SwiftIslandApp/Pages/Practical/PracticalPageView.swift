@@ -4,9 +4,11 @@
 //
 
 import SwiftUI
+import CoreLocation
 
 struct PracticalPageView: View {
     @State private var directionSheetOpen = false
+    @State private var isShowingMapView = false
 
     private let iconMaxWidth: CGFloat = 32
 
@@ -36,10 +38,19 @@ struct PracticalPageView: View {
                     }
 
                     Section(header: Text("Getting here")) {
-                        HStack {
-                            Text("Make sure you get here the right way!\nIn order to do so, we've put together some guides to make it a little easier for you.")
-                                .font(.subheadline)
+                        Button {
+                            debugPrint("Foobar")
+                            isShowingMapView.toggle()
+                        } label: {
+                            VStack {
+                                let location = Location(coordinate: CLLocationCoordinate2D(latitude: 53.11478763673313, longitude: 4.8972633598615065))
+                                GettingThereMapView(locations: [location])
+                                    .padding(0)
+                                    .allowsHitTesting(false)
+                            }
+                            .frame(minHeight: 110)
                         }
+                        .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
                         NavigationLink(destination: {
                             Text("Hassle Free Ticket")
                         }, label: {
