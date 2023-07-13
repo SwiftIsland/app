@@ -6,11 +6,12 @@
 import SwiftUI
 
 struct ConferenceBoxMentorsMentor: View {
+    var namespace: Namespace.ID
     let mentor: Mentor
 
     var body: some View {
         ZStack {
-            if let url = mentor.headerImageUrl {
+            if let url = mentor.highResImageUrl {
                 VStack(alignment: .leading) {
                     Spacer()
                     VStack(alignment: .leading) {
@@ -19,19 +20,26 @@ struct ConferenceBoxMentorsMentor: View {
                                 .font(.title2)
                                 .fontWeight(.light)
                                 .foregroundColor(.primary)
+                                .matchedGeometryEffect(id: "mentorName", in: namespace)
                                 .padding(.horizontal)
+                            Text(mentor.description ?? "")
+                                .font(.body)
+                                .lineLimit(1)
+                                .foregroundColor(.boxText)
+                                .hidden()
+                                .matchedGeometryEffect(id: "mentorDescription", in: namespace)
                             Spacer()
                             Image(systemName: "chevron.right")
                                 .foregroundColor(.primary)
                                 .padding(.trailing, 5)
                         }
                     }
-                    .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal, 5)
                     .padding(.vertical, 10)
                     .background(.thinMaterial)
+                    .matchedGeometryEffect(id: "background", in: namespace)
                 }
-                .background {
+                .background(alignment: .top) {
                     AsyncImage(
                         url: url,
                         transaction: Transaction(animation: .easeInOut)
@@ -42,7 +50,8 @@ struct ConferenceBoxMentorsMentor: View {
                         case .success(let image):
                             image
                                 .resizable()
-                                .aspectRatio(contentMode: .fill)
+                                .scaledToFill()
+                                .matchedGeometryEffect(id: "mentorImage", in: namespace)
                         case .failure:
                             Image(systemName: "wifi.slash")
                                 .foregroundColor(.secondary)
@@ -64,8 +73,10 @@ struct ConferenceBoxMentorsMentor: View {
 }
 
 struct ConferenceBoxMentorsMentor_Previews: PreviewProvider {
+    @Namespace static var namespace
+
     static var previews: some View {
-        let mentor = Mentor.forPreview(headerImageUrl: URL(string: "https://firebasestorage.googleapis.com:443/v0/b/swiftisland-fc283.appspot.com/o/images%2FuserHeaders%2FF701EB5B-6B98-4F0E-B99D-5F59E55C3B45.jpeg?alt=media&token=8df7a837-e378-41ce-aeb7-c1e70f70d9e1"))
-        ConferenceBoxMentorsMentor(mentor: mentor)
+        let mentor = Mentor.forPreview(highResImageUrl: URL(string: "https://firebasestorage.googleapis.com/v0/b/swiftisland-fc283.appspot.com/o/images%2FuserHighRes%2FPaul_Peelen_3A60E527-1D64-43C1-B4AB-CBFB0B4030C7.jpeg?alt=media&token=46608fee-981a-440a-a8b1-4c280ea15d42"))
+        ConferenceBoxMentorsMentor(namespace: namespace, mentor: mentor)
     }
 }

@@ -7,6 +7,11 @@ import SwiftUI
 import FirebaseFirestore
 
 struct ConferencePageView: View {
+    var namespace: Namespace.ID
+
+    @Binding var selectedMentor: Mentor?
+    @Binding var isShowingMentor: Bool
+
     @State private var mentors: [Mentor] = []
 
     var body: some View {
@@ -28,7 +33,10 @@ struct ConferencePageView: View {
                                 .padding(.horizontal, 40)
                                 .padding(.top, 6)
                                 .padding(.bottom, 0)
-                            ConferenceBoxMentors(mentors: $mentors)
+                            ConferenceBoxMentors(namespace: namespace,
+                                                 mentors: $mentors,
+                                                 isShowingMentor: $isShowingMentor,
+                                                 selectedMentor: $selectedMentor)
                                 .frame(height: geo.size.width * 0.50)
                                 .padding(.vertical, 0)
                         }
@@ -44,9 +52,6 @@ struct ConferencePageView: View {
             }
             .navigationDestination(for: FAQItem.self) { item in
                 FAQListView(preselectedItem: item)
-            }
-            .navigationDestination(for: Mentor.self) { mentor in
-                ConferenceMentorsView(mentors: mentors, selectedMentor: mentor)
             }
             .onAppear {
                 fetchMentors()
@@ -69,7 +74,9 @@ struct ConferencePageView: View {
 }
 
 struct ConferencePageView_Previews: PreviewProvider {
+    @Namespace static var namespace
+
     static var previews: some View {
-        ConferencePageView()
+        ConferencePageView(namespace: namespace, selectedMentor: .constant(nil), isShowingMentor: .constant(false))
     }
 }
