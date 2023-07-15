@@ -24,7 +24,6 @@
 		2A16EB602A4F65EC00CC881D /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2A16EB5F2A4F65EC00CC881D /* FirebaseFirestoreSwift */; };
 		2A16EB622A4F65EC00CC881D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2A16EB612A4F65EC00CC881D /* FirebaseStorage */; };
 		2A16EB642A4F6CC200CC881D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A16EB632A4F6CC200CC881D /* GoogleService-Info.plist */; };
-		2A16EB662A4F6D9500CC881D /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A16EB652A4F6D9500CC881D /* Member.swift */; };
 		2A17F0C22A6075BF0055E214 /* MentorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A17F0C12A6075BF0055E214 /* MentorView.swift */; };
 		2A17F0C62A608D990055E214 /* Mentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A17F0C52A608D990055E214 /* Mentor.swift */; };
 		2A17F0C82A608E030055E214 /* FetchMentorsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A17F0C72A608E030055E214 /* FetchMentorsRequest.swift */; };
@@ -79,7 +78,6 @@
 		2A16EB4C2A4F655500CC881D /* DocumentSnapshot+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DocumentSnapshot+Data.swift"; sourceTree = "<group>"; };
 		2A16EB4F2A4F655500CC881D /* Firestore+SwiftIsland.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Firestore+SwiftIsland.swift"; sourceTree = "<group>"; };
 		2A16EB632A4F6CC200CC881D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		2A16EB652A4F6D9500CC881D /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		2A17F0C12A6075BF0055E214 /* MentorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorView.swift; sourceTree = "<group>"; };
 		2A17F0C52A608D990055E214 /* Mentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mentor.swift; sourceTree = "<group>"; };
 		2A17F0C72A608E030055E214 /* FetchMentorsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMentorsRequest.swift; sourceTree = "<group>"; };
@@ -201,7 +199,6 @@
 		2A16EB4D2A4F655500CC881D /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				2A16EB652A4F6D9500CC881D /* Member.swift */,
 				2AC7DD012A58C95700DB9F6D /* FAQItem.swift */,
 				2A17F0C52A608D990055E214 /* Mentor.swift */,
 			);
@@ -489,7 +486,6 @@
 				2A16EB522A4F655500CC881D /* Firestore+Encodable.swift in Sources */,
 				2AEDC4972A4A030F00CD0180 /* MainApp.swift in Sources */,
 				2A16EB532A4F655500CC881D /* Firestore+Response.swift in Sources */,
-				2A16EB662A4F6D9500CC881D /* Member.swift in Sources */,
 				2AE2425F2A521E4F007FFCC5 /* Collection+Safe.swift in Sources */,
 				2A16EB512A4F655500CC881D /* Dictionary+Firestore.swift in Sources */,
 				2AC7DD092A58CFDD00DB9F6D /* ConferenceBoxFAQItem.swift in Sources */,
