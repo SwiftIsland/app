@@ -33,12 +33,24 @@ struct ConferencePageView: View {
                                 .padding(.horizontal, 40)
                                 .padding(.top, 6)
                                 .padding(.bottom, 0)
-                            ConferenceBoxMentors(namespace: namespace,
-                                                 mentors: $mentors,
-                                                 isShowingMentor: $isShowingMentor,
-                                                 selectedMentor: $selectedMentor)
-                                .frame(height: geo.size.width * 0.50)
-                                .padding(.vertical, 0)
+                            TabView {
+                                ForEach(mentors) { mentor in
+                                    MentorView(namespace: namespace, mentor: mentor, isShowContent: $isShowingMentor)
+                                        .matchedGeometryEffect(id: mentor.id, in: namespace)
+                                        .mask {
+                                            RoundedRectangle(cornerRadius: 15, style: .continuous)
+                                        }
+                                        .padding(.horizontal, 20)
+                                        .onTapGesture {
+                                            withAnimation(.interactiveSpring(response: 0.55, dampingFraction: 0.8)) {
+                                                self.selectedMentor = mentor
+                                                self.isShowingMentor.toggle()
+                                            }
+                                        }
+                                }
+                            }
+                            .tabViewStyle(.page(indexDisplayMode: .automatic))
+                            .frame(height: geo.size.width * 0.50)
                         }
 
                         ConferenceBoxFAQ()
@@ -62,12 +74,9 @@ struct ConferencePageView: View {
 
     private func fetchMentors() {
         Task {
-            let request = AllMentorsRequest()
+            let request = FetchMentorsRequest()
             do {
-                let mentors = try await Firestore.get(request: request)
-                self.mentors = mentors
-            } catch {
-                debugPrint("Could not fetch mentors. Error: \(error.localizedDescription)")
+                self.mentors = try await Firestore.get(request: request)
             }
         }
     }

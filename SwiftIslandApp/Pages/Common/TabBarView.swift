@@ -21,15 +21,16 @@ struct TabBarView: View {
                 case .practical:
                     PracticalPageView()
                 }
-
             }
             .safeAreaInset(edge: .bottom) {
                 TabBarBarView(selectedItem: $selectedItem)
+                    .opacity(isShowingMentor ? 0 : 1)
             }
 
             if let mentor = selectedMentor, isShowingMentor {
-                let bindingMentor = Binding { mentor } set: { selectedMentor = $0 }
-                ConferenceMentorView(namespace: namespace, mentor: bindingMentor, isShowingMentor: $isShowingMentor)
+                MentorView(namespace: namespace, mentor: mentor, isShowContent: $isShowingMentor)
+                    .matchedGeometryEffect(id: mentor.id, in: namespace)
+                    .ignoresSafeArea()
             }
         }
     }

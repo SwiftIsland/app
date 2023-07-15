@@ -24,10 +24,10 @@
 		2A16EB602A4F65EC00CC881D /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 2A16EB5F2A4F65EC00CC881D /* FirebaseFirestoreSwift */; };
 		2A16EB622A4F65EC00CC881D /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 2A16EB612A4F65EC00CC881D /* FirebaseStorage */; };
 		2A16EB642A4F6CC200CC881D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A16EB632A4F6CC200CC881D /* GoogleService-Info.plist */; };
-		2A16EB662A4F6D9500CC881D /* Mentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A16EB652A4F6D9500CC881D /* Mentor.swift */; };
-		2A16EB692A4F714F00CC881D /* AllMentorsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A16EB682A4F714F00CC881D /* AllMentorsRequest.swift */; };
-		2A16EB6B2A4F723E00CC881D /* ConferenceBoxMentors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A16EB6A2A4F723E00CC881D /* ConferenceBoxMentors.swift */; };
-		2AC7DCEF2A58AA5800DB9F6D /* ConferenceBoxMentorsMentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DCEE2A58AA5800DB9F6D /* ConferenceBoxMentorsMentor.swift */; };
+		2A16EB662A4F6D9500CC881D /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A16EB652A4F6D9500CC881D /* Member.swift */; };
+		2A17F0C22A6075BF0055E214 /* MentorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A17F0C12A6075BF0055E214 /* MentorView.swift */; };
+		2A17F0C62A608D990055E214 /* Mentor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A17F0C52A608D990055E214 /* Mentor.swift */; };
+		2A17F0C82A608E030055E214 /* FetchMentorsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A17F0C72A608E030055E214 /* FetchMentorsRequest.swift */; };
 		2AC7DCF12A58B5E600DB9F6D /* ConferenceBoxFAQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DCF02A58B5E600DB9F6D /* ConferenceBoxFAQ.swift */; };
 		2AC7DD022A58C95700DB9F6D /* FAQItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DD012A58C95700DB9F6D /* FAQItem.swift */; };
 		2AC7DD042A58C9B800DB9F6D /* AllFAQRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DD032A58C9B800DB9F6D /* AllFAQRequests.swift */; };
@@ -35,7 +35,6 @@
 		2AC7DD092A58CFDD00DB9F6D /* ConferenceBoxFAQItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DD082A58CFDD00DB9F6D /* ConferenceBoxFAQItem.swift */; };
 		2AC7DD0B2A58D07E00DB9F6D /* View+Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DD0A2A58D07E00DB9F6D /* View+Preview.swift */; };
 		2AC7DD0F2A59F37D00DB9F6D /* PracticalPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DD0E2A59F37D00DB9F6D /* PracticalPageView.swift */; };
-		2AC7DD172A5F2D9200DB9F6D /* ConferenceMentorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DD162A5F2D9200DB9F6D /* ConferenceMentorView.swift */; };
 		2ACF55A42A605BA300C051FC /* GettingThereMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ACF55A32A605BA300C051FC /* GettingThereMapView.swift */; };
 		2AE2425D2A520C7A007FFCC5 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE2425C2A520C7A007FFCC5 /* ImageDownloader.swift */; };
 		2AE2425F2A521E4F007FFCC5 /* Collection+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE2425E2A521E4F007FFCC5 /* Collection+Safe.swift */; };
@@ -80,10 +79,10 @@
 		2A16EB4C2A4F655500CC881D /* DocumentSnapshot+Data.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DocumentSnapshot+Data.swift"; sourceTree = "<group>"; };
 		2A16EB4F2A4F655500CC881D /* Firestore+SwiftIsland.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Firestore+SwiftIsland.swift"; sourceTree = "<group>"; };
 		2A16EB632A4F6CC200CC881D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		2A16EB652A4F6D9500CC881D /* Mentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mentor.swift; sourceTree = "<group>"; };
-		2A16EB682A4F714F00CC881D /* AllMentorsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMentorsRequest.swift; sourceTree = "<group>"; };
-		2A16EB6A2A4F723E00CC881D /* ConferenceBoxMentors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxMentors.swift; sourceTree = "<group>"; };
-		2AC7DCEE2A58AA5800DB9F6D /* ConferenceBoxMentorsMentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxMentorsMentor.swift; sourceTree = "<group>"; };
+		2A16EB652A4F6D9500CC881D /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		2A17F0C12A6075BF0055E214 /* MentorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorView.swift; sourceTree = "<group>"; };
+		2A17F0C52A608D990055E214 /* Mentor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mentor.swift; sourceTree = "<group>"; };
+		2A17F0C72A608E030055E214 /* FetchMentorsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMentorsRequest.swift; sourceTree = "<group>"; };
 		2AC7DCF02A58B5E600DB9F6D /* ConferenceBoxFAQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxFAQ.swift; sourceTree = "<group>"; };
 		2AC7DD012A58C95700DB9F6D /* FAQItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQItem.swift; sourceTree = "<group>"; };
 		2AC7DD032A58C9B800DB9F6D /* AllFAQRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFAQRequests.swift; sourceTree = "<group>"; };
@@ -91,7 +90,6 @@
 		2AC7DD082A58CFDD00DB9F6D /* ConferenceBoxFAQItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxFAQItem.swift; sourceTree = "<group>"; };
 		2AC7DD0A2A58D07E00DB9F6D /* View+Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Preview.swift"; sourceTree = "<group>"; };
 		2AC7DD0E2A59F37D00DB9F6D /* PracticalPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticalPageView.swift; sourceTree = "<group>"; };
-		2AC7DD162A5F2D9200DB9F6D /* ConferenceMentorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceMentorView.swift; sourceTree = "<group>"; };
 		2ACF55A32A605BA300C051FC /* GettingThereMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GettingThereMapView.swift; sourceTree = "<group>"; };
 		2AE242552A4F8210007FFCC5 /* SwiftIslandApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftIslandApp.entitlements; sourceTree = "<group>"; };
 		2AE2425C2A520C7A007FFCC5 /* ImageDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
@@ -167,9 +165,9 @@
 		2A16EB3D2A4CDB3A00CC881D /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				2AE2425E2A521E4F007FFCC5 /* Collection+Safe.swift */,
 				2A16EB402A4CDD4A00CC881D /* Color+Helper.swift */,
 				2AE2425C2A520C7A007FFCC5 /* ImageDownloader.swift */,
-				2AE2425E2A521E4F007FFCC5 /* Collection+Safe.swift */,
 				2AC7DD0A2A58D07E00DB9F6D /* View+Preview.swift */,
 			);
 			path = Extensions;
@@ -180,8 +178,6 @@
 			children = (
 				2AC7DCF02A58B5E600DB9F6D /* ConferenceBoxFAQ.swift */,
 				2AC7DD082A58CFDD00DB9F6D /* ConferenceBoxFAQItem.swift */,
-				2A16EB6A2A4F723E00CC881D /* ConferenceBoxMentors.swift */,
-				2AC7DCEE2A58AA5800DB9F6D /* ConferenceBoxMentorsMentor.swift */,
 				2A16EB442A4F622800CC881D /* ConferenceBoxTicket.swift */,
 			);
 			path = Boxes;
@@ -205,8 +201,9 @@
 		2A16EB4D2A4F655500CC881D /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				2A16EB652A4F6D9500CC881D /* Mentor.swift */,
+				2A16EB652A4F6D9500CC881D /* Member.swift */,
 				2AC7DD012A58C95700DB9F6D /* FAQItem.swift */,
+				2A17F0C52A608D990055E214 /* Mentor.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -214,8 +211,8 @@
 		2A16EB672A4F713B00CC881D /* Requests */ = {
 			isa = PBXGroup;
 			children = (
-				2A16EB682A4F714F00CC881D /* AllMentorsRequest.swift */,
 				2AC7DD032A58C9B800DB9F6D /* AllFAQRequests.swift */,
+				2A17F0C72A608E030055E214 /* FetchMentorsRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -240,7 +237,7 @@
 		2AC7DD102A5B1FBF00DB9F6D /* Mentors */ = {
 			isa = PBXGroup;
 			children = (
-				2AC7DD162A5F2D9200DB9F6D /* ConferenceMentorView.swift */,
+				2A17F0C12A6075BF0055E214 /* MentorView.swift */,
 			);
 			path = Mentors;
 			sourceTree = "<group>";
@@ -488,28 +485,27 @@
 				2AEDC4CA2A4A0CB500CD0180 /* TabBarBarView.swift in Sources */,
 				2AEDC4C62A4A08AF00CD0180 /* TabBarView.swift in Sources */,
 				2A16EB542A4F655500CC881D /* DocumentSnapshot+Data.swift in Sources */,
+				2A17F0C62A608D990055E214 /* Mentor.swift in Sources */,
 				2A16EB522A4F655500CC881D /* Firestore+Encodable.swift in Sources */,
 				2AEDC4972A4A030F00CD0180 /* MainApp.swift in Sources */,
 				2A16EB532A4F655500CC881D /* Firestore+Response.swift in Sources */,
-				2A16EB662A4F6D9500CC881D /* Mentor.swift in Sources */,
+				2A16EB662A4F6D9500CC881D /* Member.swift in Sources */,
 				2AE2425F2A521E4F007FFCC5 /* Collection+Safe.swift in Sources */,
 				2A16EB512A4F655500CC881D /* Dictionary+Firestore.swift in Sources */,
 				2AC7DD092A58CFDD00DB9F6D /* ConferenceBoxFAQItem.swift in Sources */,
 				2AC7DCF12A58B5E600DB9F6D /* ConferenceBoxFAQ.swift in Sources */,
+				2A17F0C22A6075BF0055E214 /* MentorView.swift in Sources */,
 				2AC7DD022A58C95700DB9F6D /* FAQItem.swift in Sources */,
-				2A16EB692A4F714F00CC881D /* AllMentorsRequest.swift in Sources */,
-				2AC7DCEF2A58AA5800DB9F6D /* ConferenceBoxMentorsMentor.swift in Sources */,
 				2A16EB412A4CDD4A00CC881D /* Color+Helper.swift in Sources */,
 				2ACF55A42A605BA300C051FC /* GettingThereMapView.swift in Sources */,
 				2A16EB562A4F655500CC881D /* Firestore+SwiftIsland.swift in Sources */,
-				2AC7DD172A5F2D9200DB9F6D /* ConferenceMentorView.swift in Sources */,
 				2AC7DD0F2A59F37D00DB9F6D /* PracticalPageView.swift in Sources */,
 				2AC7DD072A58CD2000DB9F6D /* FAQListView.swift in Sources */,
 				2A16EB452A4F622800CC881D /* ConferenceBoxTicket.swift in Sources */,
 				2AE2425D2A520C7A007FFCC5 /* ImageDownloader.swift in Sources */,
 				2AC7DD0B2A58D07E00DB9F6D /* View+Preview.swift in Sources */,
-				2A16EB6B2A4F723E00CC881D /* ConferenceBoxMentors.swift in Sources */,
 				2AC7DD042A58C9B800DB9F6D /* AllFAQRequests.swift in Sources */,
+				2A17F0C82A608E030055E214 /* FetchMentorsRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
