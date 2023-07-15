@@ -98,7 +98,7 @@ struct PracticalPageView: View {
                         })
                     }
 
-                    Section(header: Text("At the conference (too far away)")) {
+                    Section(header: Text("At the conference")) {
                         VStack(alignment: .center) {
                             HStack{
                                 Spacer()

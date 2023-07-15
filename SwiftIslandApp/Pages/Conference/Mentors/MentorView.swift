@@ -23,21 +23,21 @@ struct MentorView: View {
                         Color.white
                             .cornerRadius(15)
                         VStack(alignment: .leading) {
-                            let uiImage = UIImage(named: mentor.imageName)! // Only needed for getting the size of the image
-                            Image(mentor.imageName)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: geometry.size.width, height: isShowContent ? geometry.size.height * 0.6 : min(uiImage.size.height/4, 250))
-                                .border(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.1), width: isShowContent ? 0 : 1)
-                                .cornerRadius(15)
-                                .overlay(
-                                    MentorExcerptView(namespace: namespace, headline: "\(mentor.name)", isShowContent: $isShowContent)
-                                        .cornerRadius(isShowContent ? 0 : 15)
-                                        .offset(CGSize(width: 0, height: !isShowContent ? -40 : 0))
-                                        .matchedGeometryEffect(id: "\(mentor.id)-mentorExcerptView", in: namespace)
-                                )
-                                .matchedGeometryEffect(id: "\(mentor.id)-imageName", in: namespace)
-
+                            if let uiImage = UIImage(named: mentor.imageName) { // UIImage only needed for getting the size of the image
+                                Image(mentor.imageName)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: geometry.size.width, height: isShowContent ? geometry.size.height * 0.6 : min(uiImage.size.height/4, 250))
+                                    .border(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.1), width: isShowContent ? 0 : 1)
+                                    .cornerRadius(15)
+                                    .overlay(
+                                        MentorExcerptView(namespace: namespace, headline: "\(mentor.name)", isShowContent: $isShowContent)
+                                            .cornerRadius(isShowContent ? 0 : 15)
+                                            .offset(CGSize(width: 0, height: !isShowContent ? -40 : 0))
+                                            .matchedGeometryEffect(id: "\(mentor.id)-mentorExcerptView", in: namespace)
+                                    )
+                                    .matchedGeometryEffect(id: "\(mentor.id)-imageName", in: namespace)
+                            }
                             // Content
                             if isShowContent {
                                 Text(mentor.description)
@@ -110,7 +110,7 @@ struct MentorExcerptView: View {
                         VStack(alignment: .leading) {
                             Text(headline)
                                 .font(.title2)
-                                .fontWeight(.bold)
+                                .fontWeight(isShowContent ? .bold : .light)
                                 .foregroundColor(.primary)
                                 .minimumScaleFactor(0.1)
                                 .lineLimit(2)
