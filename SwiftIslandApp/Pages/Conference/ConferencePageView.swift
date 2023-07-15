@@ -7,6 +7,11 @@ import SwiftUI
 import FirebaseFirestore
 
 struct ConferencePageView: View {
+    var namespace: Namespace.ID
+
+    @Binding var selectedMentor: Mentor?
+    @Binding var isShowingMentor: Bool
+
     @State private var mentors: [Mentor] = []
 
     var body: some View {
@@ -28,9 +33,24 @@ struct ConferencePageView: View {
                                 .padding(.horizontal, 40)
                                 .padding(.top, 6)
                                 .padding(.bottom, 0)
-                            ConferenceBoxMentors(mentors: $mentors)
-                                .frame(height: geo.size.width * 0.50)
-                                .padding(.vertical, 0)
+                            TabView {
+                                ForEach(mentors) { mentor in
+                                    MentorView(namespace: namespace, mentor: mentor, isShowContent: $isShowingMentor)
+                                        .matchedGeometryEffect(id: mentor.id, in: namespace)
+                                        .mask {
+                                            RoundedRectangle(cornerRadius: 15, style: .continuous)
+                                        }
+                                        .padding(.horizontal, 20)
+                                        .onTapGesture {
+                                            withAnimation(.interactiveSpring(response: 0.55, dampingFraction: 0.8)) {
+                                                self.selectedMentor = mentor
+                                                self.isShowingMentor.toggle()
+                                            }
+                                        }
+                                }
+                            }
+                            .tabViewStyle(.page(indexDisplayMode: .never))
+                            .frame(height: geo.size.width * 0.50)
                         }
 
                         ConferenceBoxFAQ()
@@ -45,9 +65,6 @@ struct ConferencePageView: View {
             .navigationDestination(for: FAQItem.self) { item in
                 FAQListView(preselectedItem: item)
             }
-            .navigationDestination(for: Mentor.self) { mentor in
-                ConferenceMentorsView(mentors: mentors, selectedMentor: mentor)
-            }
             .onAppear {
                 fetchMentors()
             }
@@ -57,19 +74,18 @@ struct ConferencePageView: View {
 
     private func fetchMentors() {
         Task {
-            let request = AllMentorsRequest()
+            let request = FetchMentorsRequest()
             do {
-                let mentors = try await Firestore.get(request: request)
-                self.mentors = mentors
-            } catch {
-                debugPrint("Could not fetch mentors. Error: \(error.localizedDescription)")
+                self.mentors = try await Firestore.get(request: request)
             }
         }
     }
 }
 
 struct ConferencePageView_Previews: PreviewProvider {
+    @Namespace static var namespace
+
     static var previews: some View {
-        ConferencePageView()
+        ConferencePageView(namespace: namespace, selectedMentor: .constant(nil), isShowingMentor: .constant(false))
     }
 }

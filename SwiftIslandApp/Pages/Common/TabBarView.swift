@@ -6,20 +6,32 @@
 import SwiftUI
 
 struct TabBarView: View {
+    @Namespace private var namespace
     @State private var selectedItem: Tab = .home
 
+    @State private var isShowingMentor = false
+    @State private var selectedMentor: Mentor?
+
     var body: some View {
-        ZStack(alignment: .bottom) {
-            switch selectedItem {
-            case .home:
-                ConferencePageView()
-            case .practical:
-                PracticalPageView()
+        ZStack {
+            ZStack(alignment: .bottom) {
+                switch selectedItem {
+                case .home:
+                    ConferencePageView(namespace: namespace, selectedMentor: $selectedMentor, isShowingMentor: $isShowingMentor)
+                case .practical:
+                    PracticalPageView()
+                }
+            }
+            .safeAreaInset(edge: .bottom) {
+                TabBarBarView(selectedItem: $selectedItem)
+                    .opacity(isShowingMentor ? 0 : 1)
             }
 
-        }
-        .safeAreaInset(edge: .bottom) {
-            TabBarBarView(selectedItem: $selectedItem)
+            if let mentor = selectedMentor, isShowingMentor {
+                MentorView(namespace: namespace, mentor: mentor, isShowContent: $isShowingMentor)
+                    .matchedGeometryEffect(id: mentor.id, in: namespace)
+                    .ignoresSafeArea()
+            }
         }
     }
 }
