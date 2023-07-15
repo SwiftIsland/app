@@ -6,6 +6,8 @@
 import SwiftUI
 
 struct ConferenceHeaderView: View {
+    private let startDate = Date(timeIntervalSince1970: 1693897200)
+
     var body: some View {
         VStack(spacing: 13) {
             Image("Logo")
@@ -25,7 +27,7 @@ struct ConferenceHeaderView: View {
                     VStack {
                         Text("Sept 5-6")
                             .font(.custom("WorkSans-Bold", size: 18))
-                        Text("XX days left")
+                        Text(startDate.relativeDateDisplay())
                             .font(.custom("WorkSans-Regular", size: 14))
                     }
                 }
@@ -55,5 +57,11 @@ struct ConferenceHeaderView_Previews: PreviewProvider {
                 .preferredColorScheme(.dark)
                 .previewDisplayName("Dark mode")
         }
+    }
+}
+
+private extension Date {
+    func relativeDateDisplay() -> String {
+        RelativeDateTimeFormatter().localizedString(for: self, relativeTo: Date())
     }
 }
