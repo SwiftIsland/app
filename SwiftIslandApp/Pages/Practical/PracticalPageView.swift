@@ -100,11 +100,25 @@ struct PracticalPageView: View {
 
                     Section(header: Text("At the conference (too far away)")) {
                         VStack(alignment: .center) {
-                            Image(systemName: "sailboat")
-                                .foregroundColor(.questionMarkColor)
-                                .padding()
-                                .font(.title)
-                            Text("Once you are at the conference, you'll find more information here. So, make your way here and when you are close enough, we'll update this list for you!")
+                            HStack{
+                                Spacer()
+                                Image(systemName: "qrcode.viewfinder")
+                                    .foregroundColor(.questionMarkColor)
+                                    .padding()
+                                    .font(.title)
+                                Spacer()
+                                Image(systemName: "wave.3.forward")
+                                    .foregroundColor(.questionMarkColor)
+                                    .padding()
+                                    .font(.title)
+                                Spacer()
+                                Image(systemName: "map.fill")
+                                    .foregroundColor(.questionMarkColor)
+                                    .padding()
+                                    .font(.title)
+                                Spacer()
+                            }
+                            Text("Once you are at the conference, you'll find more information here.\n\nIf you do not wish to share your location, tap the **NFC tag** or scan the **QR code** at the reception to enable this section.")
                                 .font(.subheadline)
                                 .multilineTextAlignment(.center)
                         }
