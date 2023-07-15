@@ -49,7 +49,7 @@ struct ConferencePageView: View {
                                         }
                                 }
                             }
-                            .tabViewStyle(.page(indexDisplayMode: .automatic))
+                            .tabViewStyle(.page(indexDisplayMode: .never))
                             .frame(height: geo.size.width * 0.50)
                         }
 
