@@ -31,11 +31,12 @@ struct MentorView: View {
                                 .border(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.1), width: isShowContent ? 0 : 1)
                                 .cornerRadius(15)
                                 .overlay(
-                                    MentorExcerptView(namespace: namespace, headline: "\(mentor.name)", subHeadline: "Sub headline", isShowContent: $isShowContent)
+                                    MentorExcerptView(namespace: namespace, headline: "\(mentor.name)", isShowContent: $isShowContent)
                                         .cornerRadius(isShowContent ? 0 : 15)
                                         .offset(CGSize(width: 0, height: !isShowContent ? -40 : 0))
+                                        .matchedGeometryEffect(id: "\(mentor.id)-mentorExcerptView", in: namespace)
                                 )
-                                .matchedGeometryEffect(id: "imageName", in: namespace)
+                                .matchedGeometryEffect(id: "\(mentor.id)-imageName", in: namespace)
 
                             // Content
                             if isShowContent {
@@ -93,7 +94,6 @@ struct MentorView_Previews: PreviewProvider {
 struct MentorExcerptView: View {
     var namespace: Namespace.ID
     let headline: String
-    let subHeadline: String
 
     @Binding var isShowContent: Bool
 
@@ -115,7 +115,7 @@ struct MentorExcerptView: View {
                                 .minimumScaleFactor(0.1)
                                 .lineLimit(2)
                                 .padding(.bottom, isShowContent ? 5 : 0)
-                                .matchedGeometryEffect(id: "headline", in: namespace)
+                                .matchedGeometryEffect(id: "\(headline)-headline", in: namespace)
                         }
                         .padding(.horizontal)
                         .padding(.bottom)
