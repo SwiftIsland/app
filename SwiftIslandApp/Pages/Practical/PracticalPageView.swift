@@ -135,20 +135,6 @@ struct PracticalPageView: View {
                                     .dynamicTypeSize(.small ... .medium)
                             }
                         })
-                        NavigationLink(destination: {
-                            Text("Scan QR code")
-                        }, label: {
-                            HStack {
-                                Image(systemName: "qrcode.viewfinder")
-                                    .foregroundColor(.questionMarkColor)
-                                    .frame(maxWidth: iconMaxWidth)
-                                VStack(alignment: .leading) {
-                                    Text("Scan QR code")
-                                        .font(.body)
-                                        .dynamicTypeSize(.small ... .medium)
-                                }
-                            }
-                        })
                     }
 
                     Section(header: Text("At the conference (Device has NO NFC)")) {
@@ -180,20 +166,6 @@ struct PracticalPageView: View {
                                 Text("Am I there yet?")
                                     .font(.body)
                                     .dynamicTypeSize(.small ... .medium)
-                            }
-                        })
-                        NavigationLink(destination: {
-                            Text("Scan QR code")
-                        }, label: {
-                            HStack {
-                                Image(systemName: "qrcode.viewfinder")
-                                    .foregroundColor(.questionMarkColor)
-                                    .frame(maxWidth: iconMaxWidth)
-                                VStack(alignment: .leading) {
-                                    Text("Scan QR code")
-                                        .font(.body)
-                                        .dynamicTypeSize(.small ... .medium)
-                                }
                             }
                         })
                     }
