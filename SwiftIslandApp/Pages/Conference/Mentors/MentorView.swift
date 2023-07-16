@@ -10,17 +10,18 @@ struct MentorView: View {
     let mentor: Mentor
 
     @Binding var isShowContent: Bool
+    @State private var offset: CGSize = .zero
 
     var body: some View {
         GeometryReader { geometry in
             ZStack(alignment: .topTrailing) {
                 // Hack for having the bottom of the scrollview not show the view behind... need to find a better solution when there is time.
-                Color.white
+                Color.background
                     .frame(width: geometry.size.width, height: geometry.size.height)
                     .offset(CGSize(width: 0, height: geometry.size.height / 2))
-                ScrollView {
+                ScrollViewOffset {
                     ZStack {
-                        Color.white
+                        Color.background
                             .cornerRadius(15)
                         VStack(alignment: .leading) {
                             if let uiImage = UIImage(named: mentor.imageName) { // UIImage only needed for getting the size of the image
@@ -49,6 +50,10 @@ struct MentorView: View {
                             }
                         }
                     }
+                } onOffsetChange: { offset in
+                    if offset > 115 {
+                        dismissView()
+                    }
                 }
                 .scrollDisabled(!isShowContent)
 
@@ -58,13 +63,11 @@ struct MentorView: View {
                         Spacer()
 
                         Button {
-                            withAnimation(.easeInOut) {
-                                isShowContent.toggle()
-                            }
+                            dismissView()
                         } label: {
                             Image(systemName: "xmark.circle.fill")
                                 .font(.system(size: 26))
-                                .foregroundColor(.white)
+                                .foregroundColor(.background)
                                 .opacity(0.7)
                         }
                     }
@@ -72,6 +75,12 @@ struct MentorView: View {
                     .padding(.trailing)
                 }
             }
+        }
+    }
+
+    func dismissView() {
+        withAnimation(.interactiveSpring(response: 0.55, dampingFraction: 0.8)) {
+            isShowContent.toggle()
         }
     }
 }
@@ -104,7 +113,7 @@ struct MentorExcerptView: View {
             Rectangle()
                 .frame(minHeight: 60, maxHeight: isShowContent ? 120 : 60)
                 .background(.thinMaterial.opacity(isShowContent ? 0 : 1))
-                .background(isShowContent ? .white : .clear)
+                .background(isShowContent ? Color.background : .clear)
                 .overlay(
                     HStack {
                         VStack(alignment: .leading) {
