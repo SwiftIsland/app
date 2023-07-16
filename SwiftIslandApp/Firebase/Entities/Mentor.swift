@@ -12,6 +12,7 @@ struct Mentor: Response {
     let twitter: URL?
     let web: URL?
     let linkedIn: URL?
+    let order: Int
 }
 
 extension Mentor: Identifiable {
@@ -24,14 +25,16 @@ extension Mentor {
                            name: String = "John Appleseed",
                            twitter: URL? = nil,
                            web: URL? = nil,
-                           linkedIn: URL? = nil) -> Mentor {
+                           linkedIn: URL? = nil,
+                           order: Int = 0) -> Mentor {
         Mentor(
             description: description,
             imageName: imageName,
             name: name,
             twitter: twitter,
             web: web,
-            linkedIn: linkedIn
+            linkedIn: linkedIn,
+            order: order
         )
     }
 }

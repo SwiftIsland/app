@@ -76,7 +76,7 @@ struct ConferencePageView: View {
         Task {
             let request = FetchMentorsRequest()
             do {
-                self.mentors = try await Firestore.get(request: request)
+                self.mentors = try await Firestore.get(request: request).sorted(by: { $0.order < $1.order })
             }
         }
     }
