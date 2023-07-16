@@ -31,6 +31,7 @@
 		2A7F12792A640730007C28EA /* ScrollViewOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F12782A640730007C28EA /* ScrollViewOffset.swift */; };
 		2A7F127F2A6488EC007C28EA /* RequestLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F127E2A6488EC007C28EA /* RequestLocationView.swift */; };
 		2A7F12812A64891F007C28EA /* LinearGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F12802A64891F007C28EA /* LinearGradient.swift */; };
+		2A7F12832A648C59007C28EA /* SwiftIslandButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F12822A648C59007C28EA /* SwiftIslandButtonStyle.swift */; };
 		2AC7DCF12A58B5E600DB9F6D /* ConferenceBoxFAQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DCF02A58B5E600DB9F6D /* ConferenceBoxFAQ.swift */; };
 		2AC7DD022A58C95700DB9F6D /* FAQItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DD012A58C95700DB9F6D /* FAQItem.swift */; };
 		2AC7DD042A58C9B800DB9F6D /* AllFAQRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DD032A58C9B800DB9F6D /* AllFAQRequests.swift */; };
@@ -87,6 +88,9 @@
 		2A17F0C72A608E030055E214 /* FetchMentorsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchMentorsRequest.swift; sourceTree = "<group>"; };
 		2A7F12762A6401C4007C28EA /* NFCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCManager.swift; sourceTree = "<group>"; };
 		2A7F12782A640730007C28EA /* ScrollViewOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewOffset.swift; sourceTree = "<group>"; };
+		2A7F127E2A6488EC007C28EA /* RequestLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLocationView.swift; sourceTree = "<group>"; };
+		2A7F12802A64891F007C28EA /* LinearGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearGradient.swift; sourceTree = "<group>"; };
+		2A7F12822A648C59007C28EA /* SwiftIslandButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftIslandButtonStyle.swift; sourceTree = "<group>"; };
 		2AC7DCF02A58B5E600DB9F6D /* ConferenceBoxFAQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxFAQ.swift; sourceTree = "<group>"; };
 		2AC7DD012A58C95700DB9F6D /* FAQItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQItem.swift; sourceTree = "<group>"; };
 		2AC7DD032A58C9B800DB9F6D /* AllFAQRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFAQRequests.swift; sourceTree = "<group>"; };
@@ -172,6 +176,8 @@
 				2AE2425E2A521E4F007FFCC5 /* Collection+Safe.swift */,
 				2A16EB402A4CDD4A00CC881D /* Color+Helper.swift */,
 				2AE2425C2A520C7A007FFCC5 /* ImageDownloader.swift */,
+				2A7F12802A64891F007C28EA /* LinearGradient.swift */,
+				2A7F12822A648C59007C28EA /* SwiftIslandButtonStyle.swift */,
 				2AC7DD0A2A58D07E00DB9F6D /* View+Preview.swift */,
 			);
 			path = Extensions;
@@ -229,6 +235,14 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		2A7F127D2A6488E2007C28EA /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				2A7F127E2A6488EC007C28EA /* RequestLocationView.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 		2AC7DD052A58CD1100DB9F6D /* FAQ */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +254,7 @@
 		2AC7DD0C2A59F36C00DB9F6D /* Practical */ = {
 			isa = PBXGroup;
 			children = (
+				2A7F127D2A6488E2007C28EA /* Location */,
 				2ACF55A22A605B9300C051FC /* GettingThere */,
 				2AC7DD0E2A59F37D00DB9F6D /* PracticalPageView.swift */,
 			);
@@ -503,6 +518,7 @@
 				2A16EB522A4F655500CC881D /* Firestore+Encodable.swift in Sources */,
 				2AEDC4972A4A030F00CD0180 /* MainApp.swift in Sources */,
 				2A16EB532A4F655500CC881D /* Firestore+Response.swift in Sources */,
+				2A7F12832A648C59007C28EA /* SwiftIslandButtonStyle.swift in Sources */,
 				2AE2425F2A521E4F007FFCC5 /* Collection+Safe.swift in Sources */,
 				2A16EB512A4F655500CC881D /* Dictionary+Firestore.swift in Sources */,
 				2AC7DD092A58CFDD00DB9F6D /* ConferenceBoxFAQItem.swift in Sources */,
@@ -512,6 +528,7 @@
 				2A7F12772A6401C4007C28EA /* NFCManager.swift in Sources */,
 				2A16EB412A4CDD4A00CC881D /* Color+Helper.swift in Sources */,
 				2ACF55A42A605BA300C051FC /* GettingThereMapView.swift in Sources */,
+				2A7F127F2A6488EC007C28EA /* RequestLocationView.swift in Sources */,
 				2A7F12812A64891F007C28EA /* LinearGradient.swift in Sources */,
 				2A16EB562A4F655500CC881D /* Firestore+SwiftIsland.swift in Sources */,
 				2AC7DD0F2A59F37D00DB9F6D /* PracticalPageView.swift in Sources */,
