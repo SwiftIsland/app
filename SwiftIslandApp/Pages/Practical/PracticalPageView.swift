@@ -16,8 +16,7 @@ struct PracticalPageView: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                LinearGradient(colors: [.conferenceBackgroundFrom, .conferenceBackgroundTo], startPoint: UnitPoint(x: 0, y: 0.1), endPoint: UnitPoint(x: 1, y: 1))
-                    .ignoresSafeArea()
+                LinearGradient.defaultBackground
 
                 List {
                     Section(header: Text("Before you leave")) {
