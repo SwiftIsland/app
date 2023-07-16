@@ -9,6 +9,7 @@ import CoreLocation
 struct PracticalPageView: View {
     @State private var directionSheetOpen = false
     @State private var isShowingMapView = false
+    @State private var isShowingQRCodeReader = false
 
     private let iconMaxWidth: CGFloat = 32
 
@@ -129,16 +130,9 @@ struct PracticalPageView: View {
                                 Image(systemName: "location")
                                     .foregroundColor(.questionMarkColor)
                                     .frame(maxWidth: iconMaxWidth)
-                                VStack(alignment: .leading) {
-                                    Text("Am I there yet?")
-                                        .font(.body)
-                                        .dynamicTypeSize(.small ... .medium)
-
-                                    Text("We'll request your location to verify you are on site.")
-                                        .font(.footnote)
-                                        .foregroundColor(.secondary)
-                                        .dynamicTypeSize(.small ... .medium)
-                                }
+                                Text("Am I there yet?")
+                                    .font(.body)
+                                    .dynamicTypeSize(.small ... .medium)
                             }
                         })
                         NavigationLink(destination: {
@@ -183,16 +177,9 @@ struct PracticalPageView: View {
                                 Image(systemName: "location")
                                     .foregroundColor(.questionMarkColor)
                                     .frame(maxWidth: iconMaxWidth)
-                                VStack(alignment: .leading) {
-                                    Text("Am I there yet?")
-                                        .font(.body)
-                                        .dynamicTypeSize(.small ... .medium)
-
-                                    Text("We'll request your location to verify you are on site.")
-                                        .font(.footnote)
-                                        .foregroundColor(.secondary)
-                                        .dynamicTypeSize(.small ... .medium)
-                                }
+                                Text("Am I there yet?")
+                                    .font(.body)
+                                    .dynamicTypeSize(.small ... .medium)
                             }
                         })
                         NavigationLink(destination: {
@@ -209,47 +196,6 @@ struct PracticalPageView: View {
                                 }
                             }
                         })
-                    }
-
-                    Section(header: Text("At the conference")) {
-                        VStack(alignment: .center) {
-                            HStack{
-                                Spacer()
-                                Image(systemName: "qrcode.viewfinder")
-                                    .foregroundColor(.questionMarkColor)
-                                    .padding()
-                                    .font(.title)
-                                Spacer()
-                                Image(systemName: "wave.3.forward")
-                                    .foregroundColor(.questionMarkColor)
-                                    .padding()
-                                    .font(.title)
-                                Spacer()
-                                Image(systemName: "map.fill")
-                                    .foregroundColor(.questionMarkColor)
-                                    .padding()
-                                    .font(.title)
-                                Spacer()
-                            }
-                            Text("Scan the **NFC tag** or **QR code** at the reception to confirm you have arrived.")
-                                .font(.subheadline)
-                                .multilineTextAlignment(.center)
-                        }
-                        HStack {
-                            Image(systemName: "location")
-                                .foregroundColor(.questionMarkColor)
-                                .frame(maxWidth: iconMaxWidth)
-                            VStack(alignment: .leading) {
-                                Text("Am I there yet?")
-                                    .font(.body)
-                                    .dynamicTypeSize(.small ... .medium)
-
-                                Text("We'll request your location to verify you are on site.")
-                                    .font(.footnote)
-                                    .foregroundColor(.secondary)
-                                    .dynamicTypeSize(.small ... .medium)
-                            }
-                        }
                     }
 
                     Section(header: Text("At the conference (User is here)")) {
@@ -299,6 +245,9 @@ struct PracticalPageView: View {
             }
             .navigationTitle("Practical")
         }
+//        .sheet(isPresented: $isShowingQRCodeReader) {
+//
+//        }
     }
 }
 

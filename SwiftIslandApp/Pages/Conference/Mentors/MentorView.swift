@@ -28,13 +28,13 @@ struct MentorView: View {
                                 Image(mentor.imageName)
                                     .resizable()
                                     .scaledToFill()
-                                    .frame(width: geometry.size.width, height: isShowContent ? geometry.size.height * 0.6 : min(uiImage.size.height/4, 250))
+                                    .frame(width: geometry.size.width, height: isShowContent ? geometry.size.height * 0.6 : min(uiImage.size.height / 4, geometry.size.height))
                                     .border(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.1), width: isShowContent ? 0 : 1)
                                     .cornerRadius(15)
                                     .overlay(
                                         MentorExcerptView(namespace: namespace, headline: "\(mentor.name)", isShowContent: $isShowContent)
                                             .cornerRadius(isShowContent ? 0 : 15)
-                                            .offset(CGSize(width: 0, height: !isShowContent ? -40 : 0))
+                                            .offset(CGSize(width: 0, height: !isShowContent ? 10 : 0))
                                             .matchedGeometryEffect(id: "\(mentor.id)-mentorExcerptView", in: namespace)
                                     )
                                     .matchedGeometryEffect(id: "\(mentor.id)-imageName", in: namespace)
@@ -109,7 +109,6 @@ struct MentorExcerptView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Spacer()
-
             Rectangle()
                 .frame(minHeight: 60, maxHeight: isShowContent ? 120 : 60)
                 .background(.thinMaterial.opacity(isShowContent ? 0 : 1))
