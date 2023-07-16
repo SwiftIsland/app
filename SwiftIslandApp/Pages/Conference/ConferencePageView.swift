@@ -9,8 +9,9 @@ import FirebaseFirestore
 struct ConferencePageView: View {
     var namespace: Namespace.ID
 
-    @Binding var selectedMentor: Mentor?
+    @State private var selectedMentor: Mentor?
     @Binding var isShowingMentor: Bool
+    @State private var mayShowMentorNextMentor: Bool = true
 
     @State private var mentors: [Mentor] = []
 
@@ -42,9 +43,14 @@ struct ConferencePageView: View {
                                         }
                                         .padding(.horizontal, 20)
                                         .onTapGesture {
-                                            withAnimation(.interactiveSpring(response: 0.55, dampingFraction: 0.8)) {
-                                                self.selectedMentor = mentor
-                                                self.isShowingMentor.toggle()
+                                            if mayShowMentorNextMentor {
+                                                mayShowMentorNextMentor = false
+                                                selectedMentor = mentor
+                                                withAnimation(.interactiveSpring(response: 0.55, dampingFraction: 0.8)) {
+                                                    isShowingMentor = true
+                                                }
+                                            } else {
+                                                debugPrint("Too soon to show next mentor animation")
                                             }
                                         }
                                 }
@@ -57,6 +63,16 @@ struct ConferencePageView: View {
                             .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
                             .scrollContentBackground(.hidden)
                     }
+                }
+
+                if let mentor = selectedMentor, isShowingMentor {
+                    MentorView(namespace: namespace, mentor: mentor, isShowContent: $isShowingMentor)
+                        .matchedGeometryEffect(id: mentor.id, in: namespace)
+                        .ignoresSafeArea()
+                        .onDisappear {
+                            mayShowMentorNextMentor = true
+                            debugPrint("Done!")
+                        }
                 }
             }
             .navigationDestination(for: [FAQItem].self) { _ in
@@ -76,7 +92,7 @@ struct ConferencePageView: View {
         Task {
             let request = FetchMentorsRequest()
             do {
-                self.mentors = try await Firestore.get(request: request).sorted(by: { $0.order < $1.order })
+                mentors = try await Firestore.get(request: request).sorted(by: { $0.order < $1.order })
             }
         }
     }
@@ -86,6 +102,6 @@ struct ConferencePageView_Previews: PreviewProvider {
     @Namespace static var namespace
 
     static var previews: some View {
-        ConferencePageView(namespace: namespace, selectedMentor: .constant(nil), isShowingMentor: .constant(false))
+        ConferencePageView(namespace: namespace, isShowingMentor: .constant(false))
     }
 }

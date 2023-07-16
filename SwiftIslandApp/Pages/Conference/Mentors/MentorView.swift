@@ -80,7 +80,7 @@ struct MentorView: View {
 
     func dismissView() {
         withAnimation(.interactiveSpring(response: 0.55, dampingFraction: 0.8)) {
-            isShowContent.toggle()
+            isShowContent = false
         }
     }
 }
