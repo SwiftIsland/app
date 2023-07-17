@@ -32,6 +32,8 @@
 		2A7F127F2A6488EC007C28EA /* RequestLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F127E2A6488EC007C28EA /* RequestLocationView.swift */; };
 		2A7F12812A64891F007C28EA /* LinearGradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F12802A64891F007C28EA /* LinearGradient.swift */; };
 		2A7F12832A648C59007C28EA /* SwiftIslandButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F12822A648C59007C28EA /* SwiftIslandButtonStyle.swift */; };
+		2A7F12852A65DBEA007C28EA /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F12842A65DBEA007C28EA /* LocationManager.swift */; };
+		2A7F12882A65E354007C28EA /* SectionAtTheConferenceNotActivated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F12872A65E354007C28EA /* SectionAtTheConferenceNotActivated.swift */; };
 		2AC7DCF12A58B5E600DB9F6D /* ConferenceBoxFAQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DCF02A58B5E600DB9F6D /* ConferenceBoxFAQ.swift */; };
 		2AC7DD022A58C95700DB9F6D /* FAQItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DD012A58C95700DB9F6D /* FAQItem.swift */; };
 		2AC7DD042A58C9B800DB9F6D /* AllFAQRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DD032A58C9B800DB9F6D /* AllFAQRequests.swift */; };
@@ -91,6 +93,8 @@
 		2A7F127E2A6488EC007C28EA /* RequestLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLocationView.swift; sourceTree = "<group>"; };
 		2A7F12802A64891F007C28EA /* LinearGradient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinearGradient.swift; sourceTree = "<group>"; };
 		2A7F12822A648C59007C28EA /* SwiftIslandButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftIslandButtonStyle.swift; sourceTree = "<group>"; };
+		2A7F12842A65DBEA007C28EA /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		2A7F12872A65E354007C28EA /* SectionAtTheConferenceNotActivated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionAtTheConferenceNotActivated.swift; sourceTree = "<group>"; };
 		2AC7DCF02A58B5E600DB9F6D /* ConferenceBoxFAQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxFAQ.swift; sourceTree = "<group>"; };
 		2AC7DD012A58C95700DB9F6D /* FAQItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQItem.swift; sourceTree = "<group>"; };
 		2AC7DD032A58C9B800DB9F6D /* AllFAQRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFAQRequests.swift; sourceTree = "<group>"; };
@@ -231,6 +235,7 @@
 			children = (
 				2A7F12762A6401C4007C28EA /* NFCManager.swift */,
 				2A7F12782A640730007C28EA /* ScrollViewOffset.swift */,
+				2A7F12842A65DBEA007C28EA /* LocationManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -273,6 +278,7 @@
 			isa = PBXGroup;
 			children = (
 				2ACF55A32A605BA300C051FC /* GettingThereMapView.swift */,
+				2A7F12872A65E354007C28EA /* SectionAtTheConferenceNotActivated.swift */,
 			);
 			path = GettingThere;
 			sourceTree = "<group>";
@@ -520,6 +526,7 @@
 				2A16EB532A4F655500CC881D /* Firestore+Response.swift in Sources */,
 				2A7F12832A648C59007C28EA /* SwiftIslandButtonStyle.swift in Sources */,
 				2AE2425F2A521E4F007FFCC5 /* Collection+Safe.swift in Sources */,
+				2A7F12852A65DBEA007C28EA /* LocationManager.swift in Sources */,
 				2A16EB512A4F655500CC881D /* Dictionary+Firestore.swift in Sources */,
 				2AC7DD092A58CFDD00DB9F6D /* ConferenceBoxFAQItem.swift in Sources */,
 				2AC7DCF12A58B5E600DB9F6D /* ConferenceBoxFAQ.swift in Sources */,
@@ -535,6 +542,7 @@
 				2AC7DD072A58CD2000DB9F6D /* FAQListView.swift in Sources */,
 				2A16EB452A4F622800CC881D /* ConferenceBoxTicket.swift in Sources */,
 				2AE2425D2A520C7A007FFCC5 /* ImageDownloader.swift in Sources */,
+				2A7F12882A65E354007C28EA /* SectionAtTheConferenceNotActivated.swift in Sources */,
 				2AC7DD0B2A58D07E00DB9F6D /* View+Preview.swift in Sources */,
 				2AC7DD042A58C9B800DB9F6D /* AllFAQRequests.swift in Sources */,
 				2A17F0C82A608E030055E214 /* FetchMentorsRequest.swift in Sources */,

@@ -6,12 +6,20 @@
 import SwiftUI
 import CoreLocation
 
+enum RequestLocationAction {
+    case shareLocation
+    case openSettings
+    case canceled
+}
+
 struct RequestLocationView: View {
     @Environment(\.dismiss) var dismiss
 
     let locationManager = CLLocationManager()
 
     @State private var authorizationStatus: CLAuthorizationStatus?
+
+    let selectedAction: (RequestLocationAction) -> Void
 
     var body: some View {
         ZStack {
@@ -32,14 +40,14 @@ struct RequestLocationView: View {
                     Text("Unfortunately you have denied this app to access your location. If you wish to give this app access, you need to change the settings.")
 
                     Button("Open settings") {
-                        UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+                        selectedAction(.openSettings)
                     }
                     .buttonStyle(SwiftIslandButtonStyle())
                     .padding(.top, 25)
                     .padding(.bottom, 5)
                 } else {
                     Button("Share location") {
-                        checkLocationManagerAuthorization()
+                        selectedAction(.shareLocation)
                     }
                     .buttonStyle(SwiftIslandButtonStyle())
                     .padding(.top, 25)
@@ -47,7 +55,7 @@ struct RequestLocationView: View {
                 }
 
                 Button("Cancel") {
-                    dismiss()
+                    selectedAction(.canceled)
                 }
                 .foregroundColor(.primary)
             }
@@ -58,33 +66,18 @@ struct RequestLocationView: View {
         .onAppear {
             authorizationStatus = locationManager.authorizationStatus
         }
+        .interactiveDismissDisabled()
     }
-
-    private func checkLocationManagerAuthorization() {
-        switch locationManager.authorizationStatus {
-        case .notDetermined:
-            print("::: -> Location: notDetermined")
-            locationManager.requestWhenInUseAuthorization()
-        case .authorizedAlways, .authorizedWhenInUse:
-            print("::: -> Location: authorizedWhenInUse")
-            locationManager.startUpdatingLocation()
-        case .denied, .restricted:
-            print("::: -> Location: denied")
-        default:
-            break
-        }
-    }
-
 }
 
 struct RequestLocationView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            RequestLocationView()
+            RequestLocationView(selectedAction: { _ in })
                 .preferredColorScheme(.light)
                 .environment(\.sizeCategory, .extraSmall)
                 .previewDisplayName("Light")
-            RequestLocationView()
+            RequestLocationView(selectedAction: { _ in })
                 .environment(\.sizeCategory, .extraExtraExtraLarge)
                 .preferredColorScheme(.dark)
                 .previewDisplayName("Dark")
