@@ -34,6 +34,8 @@
 		2A7F12832A648C59007C28EA /* SwiftIslandButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F12822A648C59007C28EA /* SwiftIslandButtonStyle.swift */; };
 		2A7F12852A65DBEA007C28EA /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F12842A65DBEA007C28EA /* LocationManager.swift */; };
 		2A7F12882A65E354007C28EA /* SectionAtTheConferenceNotActivated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F12872A65E354007C28EA /* SectionAtTheConferenceNotActivated.swift */; };
+		2A7F128B2A69CB2C007C28EA /* Defaults in Frameworks */ = {isa = PBXBuildFile; productRef = 2A7F128A2A69CB2C007C28EA /* Defaults */; };
+		2A7F128D2A69CC39007C28EA /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F128C2A69CC39007C28EA /* Defaults.swift */; };
 		2AC7DCF12A58B5E600DB9F6D /* ConferenceBoxFAQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DCF02A58B5E600DB9F6D /* ConferenceBoxFAQ.swift */; };
 		2AC7DD022A58C95700DB9F6D /* FAQItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DD012A58C95700DB9F6D /* FAQItem.swift */; };
 		2AC7DD042A58C9B800DB9F6D /* AllFAQRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DD032A58C9B800DB9F6D /* AllFAQRequests.swift */; };
@@ -95,6 +97,7 @@
 		2A7F12822A648C59007C28EA /* SwiftIslandButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftIslandButtonStyle.swift; sourceTree = "<group>"; };
 		2A7F12842A65DBEA007C28EA /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		2A7F12872A65E354007C28EA /* SectionAtTheConferenceNotActivated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionAtTheConferenceNotActivated.swift; sourceTree = "<group>"; };
+		2A7F128C2A69CC39007C28EA /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
 		2AC7DCF02A58B5E600DB9F6D /* ConferenceBoxFAQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxFAQ.swift; sourceTree = "<group>"; };
 		2AC7DD012A58C95700DB9F6D /* FAQItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQItem.swift; sourceTree = "<group>"; };
 		2AC7DD032A58C9B800DB9F6D /* AllFAQRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFAQRequests.swift; sourceTree = "<group>"; };
@@ -124,6 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A7F128B2A69CB2C007C28EA /* Defaults in Frameworks */,
 				2A16EB5A2A4F65EC00CC881D /* FirebaseAnalytics in Frameworks */,
 				2A16EB5C2A4F65EC00CC881D /* FirebaseAuth in Frameworks */,
 				2A16EB5E2A4F65EC00CC881D /* FirebaseFirestore in Frameworks */,
@@ -236,6 +240,7 @@
 				2A7F12762A6401C4007C28EA /* NFCManager.swift */,
 				2A7F12782A640730007C28EA /* ScrollViewOffset.swift */,
 				2A7F12842A65DBEA007C28EA /* LocationManager.swift */,
+				2A7F128C2A69CC39007C28EA /* Defaults.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -307,15 +312,15 @@
 		2AEDC4952A4A030F00CD0180 /* SwiftIslandApp */ = {
 			isa = PBXGroup;
 			children = (
-				2A7F12752A6401B9007C28EA /* Utilities */,
-				2AE242552A4F8210007FFCC5 /* SwiftIslandApp.entitlements */,
-				2A16EB472A4F655500CC881D /* Firebase */,
 				2A16EB3D2A4CDB3A00CC881D /* Extensions */,
-				2A16EB372A4CDB0400CC881D /* Resources */,
+				2A16EB472A4F655500CC881D /* Firebase */,
 				2AEDC4C02A4A086F00CD0180 /* Pages */,
-				2AEDC4962A4A030F00CD0180 /* MainApp.swift */,
-				2AEDC49A2A4A031000CD0180 /* Assets.xcassets */,
 				2AEDC49C2A4A031000CD0180 /* Preview Content */,
+				2A16EB372A4CDB0400CC881D /* Resources */,
+				2A7F12752A6401B9007C28EA /* Utilities */,
+				2AEDC49A2A4A031000CD0180 /* Assets.xcassets */,
+				2AEDC4962A4A030F00CD0180 /* MainApp.swift */,
+				2AE242552A4F8210007FFCC5 /* SwiftIslandApp.entitlements */,
 			);
 			path = SwiftIslandApp;
 			sourceTree = "<group>";
@@ -390,6 +395,7 @@
 				2A16EB5D2A4F65EC00CC881D /* FirebaseFirestore */,
 				2A16EB5F2A4F65EC00CC881D /* FirebaseFirestoreSwift */,
 				2A16EB612A4F65EC00CC881D /* FirebaseStorage */,
+				2A7F128A2A69CB2C007C28EA /* Defaults */,
 			);
 			productName = SwiftIsland2023;
 			productReference = 2AEDC4932A4A030F00CD0180 /* SwiftIslandApp.app */;
@@ -466,6 +472,7 @@
 			mainGroup = 2AEDC48A2A4A030F00CD0180;
 			packageReferences = (
 				2A16EB582A4F65EC00CC881D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				2A7F12892A69CB2C007C28EA /* XCRemoteSwiftPackageReference "Defaults" */,
 			);
 			productRefGroup = 2AEDC4942A4A030F00CD0180 /* Products */;
 			projectDirPath = "";
@@ -534,6 +541,7 @@
 				2AC7DD022A58C95700DB9F6D /* FAQItem.swift in Sources */,
 				2A7F12772A6401C4007C28EA /* NFCManager.swift in Sources */,
 				2A16EB412A4CDD4A00CC881D /* Color+Helper.swift in Sources */,
+				2A7F128D2A69CC39007C28EA /* Defaults.swift in Sources */,
 				2ACF55A42A605BA300C051FC /* GettingThereMapView.swift in Sources */,
 				2A7F127F2A6488EC007C28EA /* RequestLocationView.swift in Sources */,
 				2A7F12812A64891F007C28EA /* LinearGradient.swift in Sources */,
@@ -888,6 +896,14 @@
 				minimumVersion = 10.0.0;
 			};
 		};
+		2A7F12892A69CB2C007C28EA /* XCRemoteSwiftPackageReference "Defaults" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/sindresorhus/Defaults";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.2.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -915,6 +931,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2A16EB582A4F65EC00CC881D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		2A7F128A2A69CB2C007C28EA /* Defaults */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A7F12892A69CB2C007C28EA /* XCRemoteSwiftPackageReference "Defaults" */;
+			productName = Defaults;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

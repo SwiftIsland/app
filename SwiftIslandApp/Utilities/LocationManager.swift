@@ -39,6 +39,35 @@ final class LocationManager: NSObject, ObservableObject {
             coreLocationManager.requestLocation()
         }
     }
+
+    /// Determines if the given coordinates lie within the boundaries of Texel in the Netherlands or Ingarö in Stockholm.
+    ///
+    /// This function checks if the given `CLLocationCoordinate2D` parameter lies within the defined boundaries for the islands of Texel or Ingarö.
+    ///
+    /// - Parameter coordinate: The `CLLocationCoordinate2D` value representing a location's latitude and longitude.
+    /// - Returns: A `Bool` indicating whether the given coordinates lie within the boundaries of Texel or Ingarö. Returns `true` if they do, `false` otherwise.
+    /// - Note: The boundaries defined in this function are approximations and may not exactly match the geographical boundaries of the islands.
+    /// - Warning: For more precise results, consider using a more detailed geographical model or library that can handle complex polygon shapes.
+    func isCoordinateInTexel(_ coordinate: CLLocationCoordinate2D) -> Bool {
+        let texelMin = CLLocationCoordinate2D(latitude: 52.9797199311885, longitude: 4.650365369448815)
+        let texelMax = CLLocationCoordinate2D(latitude: 53.19324793605265, longitude: 4.966470908970561)
+
+        let ingaroMin = CLLocationCoordinate2D(latitude: 59.27564, longitude: 18.43983)
+        let ingaroMax = CLLocationCoordinate2D(latitude: 59.2844, longitude: 18.460)
+
+        let isCoordinateInTexel = coordinate.latitude >= texelMin.latitude &&
+            coordinate.latitude <= texelMax.latitude &&
+            coordinate.longitude >= texelMin.longitude &&
+            coordinate.longitude <= texelMax.longitude
+
+        let isCoordinateInIngaro = coordinate.latitude >= ingaroMin.latitude &&
+            coordinate.latitude <= ingaroMax.latitude &&
+            coordinate.longitude >= ingaroMin.longitude &&
+            coordinate.longitude <= ingaroMax.longitude
+
+        return isCoordinateInTexel || isCoordinateInIngaro
+    }
+
 }
 
 extension LocationManager: CLLocationManagerDelegate {

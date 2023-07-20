@@ -5,10 +5,13 @@
 
 import SwiftUI
 import CoreLocation
+import Defaults
 
 struct PracticalPageView: View {
 
     private let iconMaxWidth: CGFloat = 32
+
+    @Default(.userIsActivated) private var userIsActivated
 
     var body: some View {
         NavigationStack {
@@ -20,9 +23,11 @@ struct PracticalPageView: View {
 
                     SectionGettingHere(iconMaxWidth: iconMaxWidth)
 
-                    SectionAtTheConferenceNotActivated(iconMaxWidth: iconMaxWidth)
-
-                    SectionAtTheConference(iconMaxWidth: iconMaxWidth)
+                    if userIsActivated {
+                        SectionAtTheConference(iconMaxWidth: iconMaxWidth)
+                    } else {
+                        SectionAtTheConferenceNotActivated(iconMaxWidth: iconMaxWidth)
+                    }
                 }
                 .scrollContentBackground(.hidden)
                 .safeAreaInset(edge: .bottom) {

@@ -4,6 +4,7 @@
 //
 
 import SwiftUI
+import Defaults
 
 private enum ActionStatus {
     case idle
@@ -148,6 +149,9 @@ private extension SectionAtTheConferenceNotActivated {
                 }
 
                 // Do something with the location
+                if locationManager.isCoordinateInTexel(location) {
+                    Defaults[.userIsActivated] = true
+                }
 
                 actionStatus = .completed
             } catch {
