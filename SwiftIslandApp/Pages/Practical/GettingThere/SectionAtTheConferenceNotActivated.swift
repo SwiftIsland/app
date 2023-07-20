@@ -18,6 +18,8 @@ struct SectionAtTheConferenceNotActivated: View {
 
     @State private var isShowingLocationPermissionView = false
     @State private var actionStatus: ActionStatus = .idle
+    @State private var showingAlert = false
+    @Default(.userIsActivated) private var userIsActivated
 
     private let hasNFC = NFCManager.deviceHasNFCSupport()
     @StateObject private var locationManager = LocationManager()
@@ -112,6 +114,13 @@ struct SectionAtTheConferenceNotActivated: View {
             }
             .presentationDetents([.medium])
         }
+        .alert(isPresented: $showingAlert) {
+            Alert(title: Text(userIsActivated ? "👋🏻" : "😢"),
+                  message: Text(userIsActivated ?
+                                "Welcome! Glad to see you have arrived!\n\nPlease make sure to check-in if you haven't already.\nThere are now a few new options available on this page." :
+                                    "Unfortunately it doesn't look like you are on the island just yet.\n\nPlease give it a go later or try the QR code \(hasNFC ? "or NFC tag " : "")at the reception."),
+                  dismissButton: .default(Text("Got it!")))
+        }
     }
 }
 
@@ -150,10 +159,13 @@ private extension SectionAtTheConferenceNotActivated {
 
                 // Do something with the location
                 if locationManager.isCoordinateInTexel(location) {
-                    Defaults[.userIsActivated] = true
+                    withAnimation {
+                        userIsActivated = true
+                    }
                 }
 
                 actionStatus = .completed
+                showingAlert = true
             } catch {
                 actionStatus = .failed
             }
