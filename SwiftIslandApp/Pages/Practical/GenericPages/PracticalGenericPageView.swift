@@ -16,7 +16,7 @@ struct PracticalGenericPageView: View {
                 Section {
                     if page.imageName != "" {
                         VStack {
-                            Image("schiphol")
+                            Image(page.imageName)
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                         }
