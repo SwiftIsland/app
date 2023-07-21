@@ -48,7 +48,8 @@ struct PracticalPageView_Previews: PreviewProvider {
     static var previews: some View {
         let appDataModel = AppDataModel()
         appDataModel.pages = [
-            Page(id: "schiphol", title: "", content: "", imageName: "schiphol")
+            Page(id: "schiphol", title: "", content: "", imageName: "schiphol"),
+            Page(id: "joinSlack", title: "", content: "https://join.slack.com/t/swiftisland/shared_invite/abc-123-def", imageName: "")
         ]
 
         return Group {
@@ -196,6 +197,7 @@ struct SectionGettingHere: View {
 
 struct SectionAtTheConference: View {
     let iconMaxWidth: CGFloat
+    @EnvironmentObject private var appDataModel: AppDataModel
 
     var body: some View {
         Section(header: Text("At the conference")) {
@@ -225,17 +227,24 @@ struct SectionAtTheConference: View {
                         .dynamicTypeSize(.small ... .medium)
                 }
             })
-            NavigationLink(destination: {
-                Text("Slack")
-            }, label: {
-                HStack {
-                    Image(systemName: "message")
-                        .foregroundColor(.questionMarkColor)
-                        .frame(maxWidth: iconMaxWidth)
-                    Text("Join our Slack")
-                        .dynamicTypeSize(.small ... .medium)
+            if let joinSlack = appDataModel.pages.first(where: { $0.id == "joinSlack" }) {
+                Button {
+                    UIApplication.shared.open(URL(string: joinSlack.content)!)
+                } label: {
+                    HStack {
+                        Image(systemName: "message")
+                            .foregroundColor(.questionMarkColor)
+                            .frame(maxWidth: iconMaxWidth)
+                        Text("Join our Slack")
+                            .dynamicTypeSize(.small ... .medium)
+                            .foregroundColor(.primary)
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .font(.footnote)
+                            .foregroundColor(.secondary)
+                    }
                 }
-            })
+            }
         }
     }
 }
