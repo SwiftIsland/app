@@ -9,11 +9,11 @@ import FirebaseFirestore
 struct ConferencePageView: View {
     var namespace: Namespace.ID
 
+    @EnvironmentObject private var appDataModel: AppDataModel
+
     @State private var selectedMentor: Mentor?
     @Binding var isShowingMentor: Bool
     @State private var mayShowMentorNextMentor: Bool = true
-
-    @State private var mentors: [Mentor] = []
 
     var body: some View {
         NavigationStack {
@@ -34,7 +34,7 @@ struct ConferencePageView: View {
                                 .padding(.top, 6)
                                 .padding(.bottom, 0)
                             TabView {
-                                ForEach(mentors) { mentor in
+                                ForEach(appDataModel.mentors) { mentor in
                                     MentorView(namespace: namespace, mentor: mentor, isShowContent: $isShowingMentor)
                                         .matchedGeometryEffect(id: mentor.id, in: namespace)
                                         .mask {
@@ -80,20 +80,8 @@ struct ConferencePageView: View {
             .navigationDestination(for: FAQItem.self) { item in
                 FAQListView(preselectedItem: item)
             }
-            .onAppear {
-                fetchMentors()
-            }
         }
         .accentColor(.white)
-    }
-
-    private func fetchMentors() {
-        Task {
-            let request = FetchMentorsRequest()
-            do {
-                mentors = try await Firestore.get(request: request).sorted(by: { $0.order < $1.order })
-            }
-        }
     }
 }
 

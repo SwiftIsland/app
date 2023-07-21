@@ -6,10 +6,12 @@
 import SwiftUI
 import CoreLocation
 import Defaults
+import FirebaseFirestore
 
 struct PracticalPageView: View {
 
     private let iconMaxWidth: CGFloat = 32
+    @State private var pages: [Page] = []
 
     @Default(.userIsActivated) private var userIsActivated
 
@@ -35,6 +37,18 @@ struct PracticalPageView: View {
                 }
             }
             .navigationTitle("Practical")
+            .onAppear {
+
+            }
+        }
+    }
+
+    func fetchPages() {
+        Task {
+            let request = PagesRequest()
+            do {
+                pages = try await Firestore.get(request: request)
+            }
         }
     }
 }

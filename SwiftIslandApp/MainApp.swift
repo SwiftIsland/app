@@ -12,9 +12,20 @@ struct MainApp: App {
         FirebaseApp.configure()
     }
 
+    @StateObject private var appDataModel = AppDataModel()
+
     var body: some Scene {
         WindowGroup {
-            TabBarView()
+            ZStack {
+                if case .loaded = appDataModel.appState {
+                    TabBarView()
+                        .environmentObject(appDataModel)
+                } else {
+                    SwiftIslandLogo(isAnimating: true)
+                        .frame(maxWidth: 250)
+                        .padding(20)
+                }
+            }
         }
     }
 }

@@ -33,4 +33,30 @@ extension Color {
     static var boxText: Color {
         Color("BoxText")
     }
+
+    // Swift Island Logo Colors
+    
+    static var yellowLight: Color {
+        Color("yellowLight")
+    }
+    
+    static var yellowDark: Color {
+        Color("yellowDark")
+    }
+    
+    static var orangeLight: Color {
+        Color("orangeLight")
+    }
+    
+    static var orangeDark: Color {
+        Color("orangeDark")
+    }
+    
+    static var redLight: Color {
+        Color("redLight")
+    }
+    
+    static var redDark: Color {
+        Color("redDark")
+    }
 }
