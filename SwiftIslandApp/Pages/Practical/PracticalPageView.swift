@@ -37,17 +37,8 @@ struct PracticalPageView: View {
                 }
             }
             .navigationTitle("Practical")
-            .onAppear {
-
-            }
-        }
-    }
-
-    func fetchPages() {
-        Task {
-            let request = PagesRequest()
-            do {
-                pages = try await Firestore.get(request: request)
+            .navigationDestination(for: Page.self) { page in
+                PracticalGenericPageView(page: page)
             }
         }
     }
@@ -55,12 +46,19 @@ struct PracticalPageView: View {
 
 struct PracticalPageView_Previews: PreviewProvider {
     static var previews: some View {
-        Group {
+        let appDataModel = AppDataModel()
+        appDataModel.pages = [
+            Page(id: "schiphol", title: "", content: "", imageName: "schiphol")
+        ]
+
+        return Group {
             PracticalPageView()
                 .previewDisplayName("Light mode")
+                .environmentObject(appDataModel)
             PracticalPageView()
                 .preferredColorScheme(.dark)
                 .previewDisplayName("Dark mode")
+                .environmentObject(appDataModel)
         }
     }
 }
@@ -89,10 +87,63 @@ struct SectionBeforeYouLeave: View {
     }
 }
 
+private enum SubPage {
+    case hassleFree
+    case schiphol
+    case directions
+    case onLocation
+
+    var icon: Image {
+        let systemName: String
+
+        switch self {
+        case .hassleFree:
+            systemName = "ticket"
+        case .schiphol:
+            systemName = "airplane.arrival"
+        case .directions:
+            systemName = "bicycle"
+        case .onLocation:
+            systemName = "mappin.and.ellipse"
+        }
+
+        return Image(systemName: systemName)
+    }
+
+    var title: String {
+        switch self {
+        case .hassleFree:
+            return "Hassle Free Ticket"
+        case .schiphol:
+            return "At Schiphol"
+        case .directions:
+            return "Directions"
+        case .onLocation:
+            return "On Location"
+        }
+    }
+
+    var firebaseId: String {
+        switch self {
+        case .hassleFree:
+            return "hassleFree"
+        case .schiphol:
+            return "schiphol"
+        case .directions:
+            return "directions"
+        case .onLocation:
+            return "onLocation"
+        }
+    }
+}
+
 struct SectionGettingHere: View {
     let iconMaxWidth: CGFloat
 
+    @EnvironmentObject private var appDataModel: AppDataModel
     @State private var isShowingMapView = false
+
+    private let pages: [SubPage] = [.hassleFree, .schiphol, .directions, .onLocation]
 
     var body: some View {
         Section(header: Text("Getting here")) {
@@ -108,51 +159,37 @@ struct SectionGettingHere: View {
                 .frame(minHeight: 110)
             }
             .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
-            NavigationLink(destination: {
-                Text("Hassle Free Ticket")
-            }, label: {
-                HStack {
-                    Image(systemName: "ticket")
-                        .foregroundColor(.questionMarkColor)
-                        .frame(maxWidth: iconMaxWidth)
-                    Text("Hassle Free Ticket")
-                        .dynamicTypeSize(.small ... .medium)
-                }
-            })
-            NavigationLink(destination: {
-                Text("Schiphol")
-            }, label: {
-                HStack {
-                    Image(systemName: "airplane.arrival")
-                        .foregroundColor(.questionMarkColor)
-                        .frame(maxWidth: iconMaxWidth)
-                    Text("At Schiphol")
-                        .dynamicTypeSize(.small ... .medium)
-                }
-            })
 
-            NavigationLink(destination: {
-                Text("Directions")
-            }, label: {
-                HStack {
-                    Image(systemName: "bicycle")
-                        .foregroundColor(.questionMarkColor)
-                        .frame(maxWidth: iconMaxWidth)
-                    Text("Directions")
-                        .dynamicTypeSize(.small ... .medium)
+            ForEach(pages, id:\.self) { subPage in
+                getLink(forSubPage: subPage)
+            }
+        }
+    }
+
+    private func getLink(forSubPage subPage: SubPage) -> some View {
+        ZStack {
+            if let page = appDataModel.pages.first(where: { $0.id == subPage.firebaseId }) {
+                NavigationLink(value: page) {
+                    HStack {
+                        subPage.icon
+                            .foregroundColor(.questionMarkColor)
+                            .frame(maxWidth: iconMaxWidth)
+                        Text(subPage.title)
+                            .dynamicTypeSize(.small ... .medium)
+                    }
                 }
-            })
-            NavigationLink(destination: {
-                Text("On location")
-            }, label: {
-                HStack {
-                    Image(systemName: "mappin.and.ellipse")
-                        .foregroundColor(.questionMarkColor)
-                        .frame(maxWidth: iconMaxWidth)
-                    Text("On Location")
-                        .dynamicTypeSize(.small ... .medium)
+            } else {
+                VStack(alignment: .leading) {
+                    Text("**Error**")
+                        .font(.body)
+                        .foregroundColor(.redLight)
+                        .dynamicTypeSize(.medium)
+                    Text("Sub page with id *`\(subPage.firebaseId)`* was not found in Firestore pages.")
+                        .font(.footnote)
+                        .foregroundColor(.secondary)
+                        .dynamicTypeSize(.medium)
                 }
-            })
+            }
         }
     }
 }

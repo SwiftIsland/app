@@ -28,7 +28,9 @@ final class AppDataModel: ObservableObject {
     )
 
     init() {
-        fetchData()
+        if !isShowingPreview() {
+            fetchData()
+        }
     }
 }
 
@@ -60,9 +62,14 @@ private extension AppDataModel {
     func fetchPages() async -> [Page] {
         let request = PagesRequest()
         do {
-            return try await Firestore.get(request: request)
+            let pages = try await Firestore.get(request: request)
+
+            print("GOT PAGES!")
+            print(pages)
+
+            return pages
         } catch {
-            logger.error("Error getting mentor documents: \(error, privacy: .public)")
+            logger.error("Error getting page documents: \(error, privacy: .public)")
             return []
         }
     }
