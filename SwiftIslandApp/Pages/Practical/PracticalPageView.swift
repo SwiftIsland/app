@@ -8,6 +8,8 @@ import CoreLocation
 import Defaults
 import FirebaseFirestore
 
+// MARK: - Main page
+
 struct PracticalPageView: View {
 
     private let iconMaxWidth: CGFloat = 32
@@ -44,6 +46,8 @@ struct PracticalPageView: View {
     }
 }
 
+// MARK: - Preview
+
 struct PracticalPageView_Previews: PreviewProvider {
     static var previews: some View {
         let appDataModel = AppDataModel()
@@ -63,6 +67,8 @@ struct PracticalPageView_Previews: PreviewProvider {
         }
     }
 }
+
+// MARK: - Sub section: Before you leave
 
 struct SectionBeforeYouLeave: View {
     let iconMaxWidth: CGFloat
@@ -88,55 +94,7 @@ struct SectionBeforeYouLeave: View {
     }
 }
 
-private enum SubPage {
-    case hassleFree
-    case schiphol
-    case directions
-    case onLocation
-
-    var icon: Image {
-        let systemName: String
-
-        switch self {
-        case .hassleFree:
-            systemName = "ticket"
-        case .schiphol:
-            systemName = "airplane.arrival"
-        case .directions:
-            systemName = "bicycle"
-        case .onLocation:
-            systemName = "mappin.and.ellipse"
-        }
-
-        return Image(systemName: systemName)
-    }
-
-    var title: String {
-        switch self {
-        case .hassleFree:
-            return "Hassle Free Ticket"
-        case .schiphol:
-            return "At Schiphol"
-        case .directions:
-            return "Directions"
-        case .onLocation:
-            return "On Location"
-        }
-    }
-
-    var firebaseId: String {
-        switch self {
-        case .hassleFree:
-            return "hassleFree"
-        case .schiphol:
-            return "schiphol"
-        case .directions:
-            return "directions"
-        case .onLocation:
-            return "onLocation"
-        }
-    }
-}
+// MARK: - Sub section: Getting here
 
 struct SectionGettingHere: View {
     let iconMaxWidth: CGFloat
@@ -195,6 +153,8 @@ struct SectionGettingHere: View {
     }
 }
 
+// MARK: - Sub section: At the conference
+
 struct SectionAtTheConference: View {
     let iconMaxWidth: CGFloat
     @EnvironmentObject private var appDataModel: AppDataModel
@@ -245,6 +205,58 @@ struct SectionAtTheConference: View {
                     }
                 }
             }
+        }
+    }
+}
+
+// MARK: - Helper functionality
+
+private enum SubPage {
+    case hassleFree
+    case schiphol
+    case directions
+    case onLocation
+
+    var icon: Image {
+        let systemName: String
+
+        switch self {
+        case .hassleFree:
+            systemName = "ticket"
+        case .schiphol:
+            systemName = "airplane.arrival"
+        case .directions:
+            systemName = "bicycle"
+        case .onLocation:
+            systemName = "mappin.and.ellipse"
+        }
+
+        return Image(systemName: systemName)
+    }
+
+    var title: String {
+        switch self {
+        case .hassleFree:
+            return "Hassle Free Ticket"
+        case .schiphol:
+            return "At Schiphol"
+        case .directions:
+            return "Directions"
+        case .onLocation:
+            return "On Location"
+        }
+    }
+
+    var firebaseId: String {
+        switch self {
+        case .hassleFree:
+            return "hassleFree"
+        case .schiphol:
+            return "schiphol"
+        case .directions:
+            return "directions"
+        case .onLocation:
+            return "onLocation"
         }
     }
 }
