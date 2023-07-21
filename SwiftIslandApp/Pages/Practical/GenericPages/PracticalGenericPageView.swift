@@ -18,7 +18,7 @@ struct PracticalGenericPageView: View {
                         VStack {
                             Image("schiphol")
                                 .resizable()
-                                .aspectRatio(CGSize(width: 3, height: 1), contentMode: .fit)
+                                .aspectRatio(contentMode: .fit)
                         }
                         .frame(minHeight: 110)
                         .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
@@ -40,11 +40,22 @@ struct PracticalGenericPageView: View {
 
 struct PracticalGenericPageView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationStack {
-            PracticalGenericPageView(page: Page.forPreview(id: "schiphol",
-                                                           title: "At schiphol",
-                                                           imageName: "schiphol"))
-                .previewDisplayName("At Schiphol")
+        let pages: [Page] = [
+            Page.forPreview(id: "schiphol",
+                            title: "At schiphol",
+                            imageName: "schiphol")
+        ]
+
+        Group {
+            ForEach(pages, id:\.self) { page in
+                PracticalGenericPageView(page: page)
+                    .preferredColorScheme(.light)
+                    .previewDisplayName("\(page.title) Light")
+
+                PracticalGenericPageView(page: page)
+                    .preferredColorScheme(.dark)
+                    .previewDisplayName("\(page.title) Dark")
+            }
         }
     }
 }
