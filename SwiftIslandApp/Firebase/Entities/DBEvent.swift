@@ -5,8 +5,8 @@
 
 import Foundation
 
-struct AllEvents: Request {
-    typealias Output = DBEvent
-
-    var path = "events"
+struct DBEvent: Response {
+    let id: String
+    let activityId: String
+    let startDate: Date
 }

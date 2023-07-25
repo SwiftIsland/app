@@ -34,6 +34,10 @@ final class AppDataModel: ObservableObject {
             fetchData()
         }
     }
+
+    func nextEvent() -> Event? {
+        events.sorted(by: { $0.startDate < $1.startDate }).first
+    }
 }
 
 private extension AppDataModel {
@@ -71,7 +75,12 @@ private extension AppDataModel {
 
     func fetchEvents() async -> [Event] {
         let request = AllEvents()
-        return await fetchFromFirebase(forRequest: request)
+        let dbEvents = await fetchFromFirebase(forRequest: request)
+
+        return dbEvents.compactMap { dbEvent in
+            guard let activity = activities.first(where: { $0.id == dbEvent.activityId }) else { return nil }
+            return Event(dbEvent: dbEvent, activity: activity)
+        }.sorted(by: { $0.startDate < $1.startDate })
     }
 
     /// Performs the fetch on Firebase with a logger if an issue arrises

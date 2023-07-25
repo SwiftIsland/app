@@ -55,7 +55,8 @@
 		2AE43FAE2A6C21B3009078E3 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE43FAD2A6C21B3009078E3 /* Activity.swift */; };
 		2AE43FF52A701ADF009078E3 /* AllActivitiesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE43FF42A701ADF009078E3 /* AllActivitiesRequest.swift */; };
 		2AE43FF92A701E8A009078E3 /* AllEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE43FF82A701E8A009078E3 /* AllEvents.swift */; };
-		2AE43FFB2A701EA9009078E3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE43FFA2A701EA9009078E3 /* Event.swift */; };
+		2AE43FFB2A701EA9009078E3 /* DBEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE43FFA2A701EA9009078E3 /* DBEvent.swift */; };
+		2AE43FFD2A70266B009078E3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE43FFC2A70266B009078E3 /* Event.swift */; };
 		2AEDC4972A4A030F00CD0180 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEDC4962A4A030F00CD0180 /* MainApp.swift */; };
 		2AEDC49B2A4A031000CD0180 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AEDC49A2A4A031000CD0180 /* Assets.xcassets */; };
 		2AEDC49E2A4A031000CD0180 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AEDC49D2A4A031000CD0180 /* Preview Assets.xcassets */; };
@@ -128,7 +129,8 @@
 		2AE43FAD2A6C21B3009078E3 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		2AE43FF42A701ADF009078E3 /* AllActivitiesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllActivitiesRequest.swift; sourceTree = "<group>"; };
 		2AE43FF82A701E8A009078E3 /* AllEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEvents.swift; sourceTree = "<group>"; };
-		2AE43FFA2A701EA9009078E3 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		2AE43FFA2A701EA9009078E3 /* DBEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBEvent.swift; sourceTree = "<group>"; };
+		2AE43FFC2A70266B009078E3 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		2AEDC4932A4A030F00CD0180 /* SwiftIslandApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftIslandApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AEDC4962A4A030F00CD0180 /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
 		2AEDC49A2A4A031000CD0180 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -244,7 +246,8 @@
 				2AC7DD012A58C95700DB9F6D /* FAQItem.swift */,
 				2A17F0C52A608D990055E214 /* Mentor.swift */,
 				2A7F12912A69DB26007C28EA /* Page.swift */,
-				2AE43FFA2A701EA9009078E3 /* Event.swift */,
+				2AE43FFA2A701EA9009078E3 /* DBEvent.swift */,
+				2AE43FFC2A70266B009078E3 /* Event.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -565,6 +568,7 @@
 				2A16EB362A4CDA4200CC881D /* ConferenceHeaderView.swift in Sources */,
 				2AE43FAC2A6B1A8C009078E3 /* View+PercentageOffset.swift in Sources */,
 				2AEDC4CC2A4A0CDF00CD0180 /* TabItem.swift in Sources */,
+				2AE43FFD2A70266B009078E3 /* Event.swift in Sources */,
 				2AEDC4CA2A4A0CB500CD0180 /* TabBarBarView.swift in Sources */,
 				2AEDC4C62A4A08AF00CD0180 /* TabBarView.swift in Sources */,
 				2A16EB542A4F655500CC881D /* DocumentSnapshot+Data.swift in Sources */,
@@ -576,7 +580,7 @@
 				2A7F12832A648C59007C28EA /* SwiftIslandButtonStyle.swift in Sources */,
 				2A7F12902A69D9C7007C28EA /* PracticalGenericPageView.swift in Sources */,
 				2A7F12962A6B14CD007C28EA /* AppDataModel.swift in Sources */,
-				2AE43FFB2A701EA9009078E3 /* Event.swift in Sources */,
+				2AE43FFB2A701EA9009078E3 /* DBEvent.swift in Sources */,
 				2AE2425F2A521E4F007FFCC5 /* Collection+Safe.swift in Sources */,
 				2A7F12852A65DBEA007C28EA /* LocationManager.swift in Sources */,
 				2A16EB512A4F655500CC881D /* Dictionary+Firestore.swift in Sources */,
