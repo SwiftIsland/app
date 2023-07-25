@@ -135,7 +135,7 @@
 		2AE43FFC2A70266B009078E3 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		2AE43FFE2A702999009078E3 /* ConferenceBoxEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxEvent.swift; sourceTree = "<group>"; };
 		2AE440002A702BC0009078E3 /* Date+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatting.swift"; sourceTree = "<group>"; };
-		2AEDC4932A4A030F00CD0180 /* SwiftIslandApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftIslandApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2AEDC4932A4A030F00CD0180 /* Swift Island.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift Island.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AEDC4962A4A030F00CD0180 /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
 		2AEDC49A2A4A031000CD0180 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2AEDC49D2A4A031000CD0180 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -249,11 +249,11 @@
 			isa = PBXGroup;
 			children = (
 				2AE43FAD2A6C21B3009078E3 /* Activity.swift */,
+				2AE43FFA2A701EA9009078E3 /* DBEvent.swift */,
+				2AE43FFC2A70266B009078E3 /* Event.swift */,
 				2AC7DD012A58C95700DB9F6D /* FAQItem.swift */,
 				2A17F0C52A608D990055E214 /* Mentor.swift */,
 				2A7F12912A69DB26007C28EA /* Page.swift */,
-				2AE43FFA2A701EA9009078E3 /* DBEvent.swift */,
-				2AE43FFC2A70266B009078E3 /* Event.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -262,10 +262,10 @@
 			isa = PBXGroup;
 			children = (
 				2AE43FF42A701ADF009078E3 /* AllActivitiesRequest.swift */,
+				2AE43FF82A701E8A009078E3 /* AllEvents.swift */,
 				2AC7DD032A58C9B800DB9F6D /* AllFAQRequests.swift */,
 				2A17F0C72A608E030055E214 /* AllMentorsRequest.swift */,
 				2A7F12932A69DBD1007C28EA /* AllPagesRequest.swift */,
-				2AE43FF82A701E8A009078E3 /* AllEvents.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -349,7 +349,7 @@
 		2AEDC4942A4A030F00CD0180 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2AEDC4932A4A030F00CD0180 /* SwiftIslandApp.app */,
+				2AEDC4932A4A030F00CD0180 /* Swift Island.app */,
 				2AEDC4A32A4A031100CD0180 /* SwiftIslandAppTests.xctest */,
 				2AEDC4AD2A4A031100CD0180 /* SwiftIslandAppUITests.xctest */,
 			);
@@ -413,8 +413,8 @@
 		2AEDC4C42A4A08A600CD0180 /* Common */ = {
 			isa = PBXGroup;
 			children = (
-				2AEDC4C52A4A08AF00CD0180 /* TabBarView.swift */,
 				2AEDC4C92A4A0CB500CD0180 /* TabBarBarView.swift */,
+				2AEDC4C52A4A08AF00CD0180 /* TabBarView.swift */,
 				2AEDC4CB2A4A0CDF00CD0180 /* TabItem.swift */,
 			);
 			path = Common;
@@ -445,7 +445,7 @@
 				2A7F128A2A69CB2C007C28EA /* Defaults */,
 			);
 			productName = SwiftIsland2023;
-			productReference = 2AEDC4932A4A030F00CD0180 /* SwiftIslandApp.app */;
+			productReference = 2AEDC4932A4A030F00CD0180 /* Swift Island.app */;
 			productType = "com.apple.product-type.application";
 		};
 		2AEDC4A22A4A031100CD0180 /* SwiftIslandAppTests */ = {
@@ -786,7 +786,7 @@
 				);
 				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nl.swiftisland.app;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Swift Island";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -820,7 +820,7 @@
 				);
 				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nl.swiftisland.app;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Swift Island";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
