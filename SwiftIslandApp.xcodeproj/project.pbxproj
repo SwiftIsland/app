@@ -61,6 +61,8 @@
 		2AE440012A702BC0009078E3 /* Date+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE440002A702BC0009078E3 /* Date+Formatting.swift */; };
 		2AE440042A705C8B009078E3 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE440032A705C8B009078E3 /* ScheduleView.swift */; };
 		2AE440062A705E5C009078E3 /* ScheduleCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE440052A705E5C009078E3 /* ScheduleCalendarView.swift */; };
+		2AE440082A706211009078E3 /* ScheduleTimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE440072A706211009078E3 /* ScheduleTimelineView.swift */; };
+		2AE4400A2A706246009078E3 /* Date+HourHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE440092A706246009078E3 /* Date+HourHelpers.swift */; };
 		2AEDC4972A4A030F00CD0180 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEDC4962A4A030F00CD0180 /* MainApp.swift */; };
 		2AEDC49B2A4A031000CD0180 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AEDC49A2A4A031000CD0180 /* Assets.xcassets */; };
 		2AEDC49E2A4A031000CD0180 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AEDC49D2A4A031000CD0180 /* Preview Assets.xcassets */; };
@@ -139,6 +141,8 @@
 		2AE440002A702BC0009078E3 /* Date+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatting.swift"; sourceTree = "<group>"; };
 		2AE440032A705C8B009078E3 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
 		2AE440052A705E5C009078E3 /* ScheduleCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCalendarView.swift; sourceTree = "<group>"; };
+		2AE440072A706211009078E3 /* ScheduleTimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTimelineView.swift; sourceTree = "<group>"; };
+		2AE440092A706246009078E3 /* Date+HourHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+HourHelpers.swift"; sourceTree = "<group>"; };
 		2AEDC4932A4A030F00CD0180 /* Swift Island.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift Island.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AEDC4962A4A030F00CD0180 /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
 		2AEDC49A2A4A031000CD0180 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -219,6 +223,7 @@
 				2A7F12822A648C59007C28EA /* SwiftIslandButtonStyle.swift */,
 				2AE43FAB2A6B1A8C009078E3 /* View+PercentageOffset.swift */,
 				2AC7DD0A2A58D07E00DB9F6D /* View+Preview.swift */,
+				2AE440092A706246009078E3 /* Date+HourHelpers.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -344,6 +349,7 @@
 			children = (
 				2AE440032A705C8B009078E3 /* ScheduleView.swift */,
 				2AE440052A705E5C009078E3 /* ScheduleCalendarView.swift */,
+				2AE440072A706211009078E3 /* ScheduleTimelineView.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -591,6 +597,7 @@
 				2AE43FFD2A70266B009078E3 /* Event.swift in Sources */,
 				2AEDC4CA2A4A0CB500CD0180 /* TabBarBarView.swift in Sources */,
 				2AEDC4C62A4A08AF00CD0180 /* TabBarView.swift in Sources */,
+				2AE4400A2A706246009078E3 /* Date+HourHelpers.swift in Sources */,
 				2A16EB542A4F655500CC881D /* DocumentSnapshot+Data.swift in Sources */,
 				2A17F0C62A608D990055E214 /* Mentor.swift in Sources */,
 				2A16EB522A4F655500CC881D /* Firestore+Encodable.swift in Sources */,
@@ -624,6 +631,7 @@
 				2AE440062A705E5C009078E3 /* ScheduleCalendarView.swift in Sources */,
 				2AC7DD072A58CD2000DB9F6D /* FAQListView.swift in Sources */,
 				2A16EB452A4F622800CC881D /* ConferenceBoxTicket.swift in Sources */,
+				2AE440082A706211009078E3 /* ScheduleTimelineView.swift in Sources */,
 				2AE2425D2A520C7A007FFCC5 /* ImageDownloader.swift in Sources */,
 				2A7F12882A65E354007C28EA /* SectionAtTheConferenceNotActivated.swift in Sources */,
 				2AC7DD0B2A58D07E00DB9F6D /* View+Preview.swift in Sources */,

@@ -7,8 +7,11 @@ import SwiftUI
 
 struct ScheduleView: View {
 
+    @EnvironmentObject private var appDataModel: AppDataModel
+
     @State private var hourSpacing = 24.0
     @State private var hourHeight = 25.0
+    @State private var selectedDate = Date()
 
     private let hours: [String] = {
         let df = DateFormatter()
@@ -28,6 +31,11 @@ struct ScheduleView: View {
         ScrollView {
             ZStack {
                 ScheduleCalendarView(hours: hours, hourSpacing: $hourSpacing, hourHeight: $hourHeight)
+
+                let calendar = Calendar.current
+                if calendar.isDateInToday(selectedDate) {
+                    ScheduleTimelineView(hourSpacing: $hourSpacing, hourHeight: $hourHeight)
+                }
             }
             .safeAreaInset(edge: .bottom) {
                 Color.clear.frame(height: 62)
@@ -39,8 +47,11 @@ struct ScheduleView: View {
 
 struct ScheduleView_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationStack {
+        let appDataModel = AppDataModel()
+
+        return NavigationStack {
             ScheduleView()
+                .environmentObject(appDataModel)
         }
     }
 }
@@ -49,25 +60,5 @@ private extension Locale {
     static var is24Hour: Bool {
         let dateFormat = DateFormatter.dateFormat(fromTemplate: "j", options: 0, locale: Locale.current)!
         return dateFormat.firstIndex(of: "a") != nil
-    }
-}
-
-private extension Date {
-    func atHour(_ hour: Int, minute: Int = 0, second: Int = 0) -> Date? {
-        let calendar = Calendar.current
-        var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self)
-
-        components.hour = hour
-        components.minute = minute
-        components.second = second
-
-        return calendar.date(from: components)
-    }
-
-    var hour: Int? {
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self)
-
-        return components.hour
     }
 }
