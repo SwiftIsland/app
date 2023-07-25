@@ -53,6 +53,7 @@
 		2AE2425F2A521E4F007FFCC5 /* Collection+Safe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE2425E2A521E4F007FFCC5 /* Collection+Safe.swift */; };
 		2AE43FAC2A6B1A8C009078E3 /* View+PercentageOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE43FAB2A6B1A8C009078E3 /* View+PercentageOffset.swift */; };
 		2AE43FAE2A6C21B3009078E3 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE43FAD2A6C21B3009078E3 /* Activity.swift */; };
+		2AE43FF52A701ADF009078E3 /* FetchAllActivitiesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE43FF42A701ADF009078E3 /* FetchAllActivitiesRequest.swift */; };
 		2AEDC4972A4A030F00CD0180 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEDC4962A4A030F00CD0180 /* MainApp.swift */; };
 		2AEDC49B2A4A031000CD0180 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AEDC49A2A4A031000CD0180 /* Assets.xcassets */; };
 		2AEDC49E2A4A031000CD0180 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AEDC49D2A4A031000CD0180 /* Preview Assets.xcassets */; };
@@ -123,6 +124,7 @@
 		2AE2425E2A521E4F007FFCC5 /* Collection+Safe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Collection+Safe.swift"; sourceTree = "<group>"; };
 		2AE43FAB2A6B1A8C009078E3 /* View+PercentageOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+PercentageOffset.swift"; sourceTree = "<group>"; };
 		2AE43FAD2A6C21B3009078E3 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
+		2AE43FF42A701ADF009078E3 /* FetchAllActivitiesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchAllActivitiesRequest.swift; sourceTree = "<group>"; };
 		2AEDC4932A4A030F00CD0180 /* SwiftIslandApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftIslandApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AEDC4962A4A030F00CD0180 /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
 		2AEDC49A2A4A031000CD0180 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -248,6 +250,7 @@
 				2AC7DD032A58C9B800DB9F6D /* AllFAQRequests.swift */,
 				2A17F0C72A608E030055E214 /* FetchMentorsRequest.swift */,
 				2A7F12932A69DBD1007C28EA /* PagesRequest.swift */,
+				2AE43FF42A701ADF009078E3 /* FetchAllActivitiesRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -255,11 +258,11 @@
 		2A7F12752A6401B9007C28EA /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				2A7F12952A6B14CD007C28EA /* AppDataModel.swift */,
+				2A7F128C2A69CC39007C28EA /* Defaults.swift */,
+				2A7F12842A65DBEA007C28EA /* LocationManager.swift */,
 				2A7F12762A6401C4007C28EA /* NFCManager.swift */,
 				2A7F12782A640730007C28EA /* ScrollViewOffset.swift */,
-				2A7F12842A65DBEA007C28EA /* LocationManager.swift */,
-				2A7F128C2A69CC39007C28EA /* Defaults.swift */,
-				2A7F12952A6B14CD007C28EA /* AppDataModel.swift */,
 				2A7F12972A6B19E0007C28EA /* SwiftIslandLogo.swift */,
 			);
 			path = Utilities;
@@ -563,6 +566,7 @@
 				2A16EB522A4F655500CC881D /* Firestore+Encodable.swift in Sources */,
 				2AEDC4972A4A030F00CD0180 /* MainApp.swift in Sources */,
 				2A16EB532A4F655500CC881D /* Firestore+Response.swift in Sources */,
+				2AE43FF52A701ADF009078E3 /* FetchAllActivitiesRequest.swift in Sources */,
 				2A7F12832A648C59007C28EA /* SwiftIslandButtonStyle.swift in Sources */,
 				2A7F12902A69D9C7007C28EA /* PracticalGenericPageView.swift in Sources */,
 				2A7F12962A6B14CD007C28EA /* AppDataModel.swift in Sources */,

@@ -21,6 +21,7 @@ final class AppDataModel: ObservableObject {
     @Published var appState = AppState.initialising
     @Published var mentors: [Mentor] = []
     @Published var pages: [Page] = []
+    @Published var activities: [Activity] = []
 
     private let logger = Logger(
         subsystem: Bundle.main.bundleIdentifier!,
@@ -39,6 +40,7 @@ private extension AppDataModel {
         Task {
             mentors = await fetchMentors()
             pages = await fetchPages()
+            activities = await fetchActivities()
 
             appState = .loaded
         }
@@ -48,28 +50,31 @@ private extension AppDataModel {
     /// - Returns: Array of `Mentor`
     func fetchMentors() async -> [Mentor] {
         let request = FetchMentorsRequest()
-
-        do {
-            return try await Firestore.get(request: request).sorted(by: { $0.order < $1.order })
-        } catch {
-            logger.error("Error getting mentor documents: \(error, privacy: .public)")
-            return []
-        }
+        return await fetchFromFirebase(forRequest: request).sorted(by: { $0.order < $1.order })
     }
 
     /// Fetches all the pages from Firebase and stores
-    /// - Returns: Array `Page`
+    /// - Returns: Array of `Page`
     func fetchPages() async -> [Page] {
         let request = PagesRequest()
+        return await fetchFromFirebase(forRequest: request)
+    }
+
+    /// Fetches all the activities
+    /// - Returns: Array of `Activity`
+    func fetchActivities() async -> [Activity] {
+        let request = FetchAllActivitiesRequest()
+        return await fetchFromFirebase(forRequest: request)
+    }
+
+    /// Performs the fetch on Firebase with a logger if an issue arrises
+    /// - Parameter request: The request to preform
+    /// - Returns: The output
+    func fetchFromFirebase<R: Request>(forRequest request: R) async -> [R.Output] {
         do {
-            let pages = try await Firestore.get(request: request)
-
-            print("GOT PAGES!")
-            print(pages)
-
-            return pages
+            return try await Firestore.get(request: request)
         } catch {
-            logger.error("Error getting page documents: \(error, privacy: .public)")
+            logger.error("Error getting documents for request with path \(request.path): \(error, privacy: .public)")
             return []
         }
     }
