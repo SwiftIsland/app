@@ -8,7 +8,6 @@ extension Firestore {
         var query: Query = db.collection(request.path)
 
         if let predicate = request.queryPredicate {
-            debugPrint("Using predicate!")
             query = query.filter(using: predicate)
         }
 

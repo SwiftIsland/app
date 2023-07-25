@@ -77,14 +77,10 @@ private extension AppDataModel {
         let request = AllEvents()
         let dbEvents = await fetchFromFirebase(forRequest: request)
 
-        debugPrint("dbEvents: \(dbEvents)")
-
         let events: [Event] = dbEvents.compactMap { dbEvent in
             guard let activity = activities.first(where: { $0.id == dbEvent.activityId }) else { return nil }
             return Event(dbEvent: dbEvent, activity: activity)
         }.sorted(by: { $0.startDate < $1.startDate })
-
-        debugPrint("All events: \(events)")
 
         return events
     }

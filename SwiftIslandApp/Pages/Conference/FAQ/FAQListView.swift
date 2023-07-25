@@ -64,7 +64,6 @@ struct FAQListView: View {
                 self.faqList = Array(faqs.prefix(upTo: 4))
 
                 if let preselectedItem {
-                    debugPrint("SCROLLING!")
                     scrollViewProxy.scrollTo(preselectedItem.id)
                 }
             } catch {

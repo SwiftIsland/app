@@ -76,7 +76,6 @@ struct ConferencePageView: View {
                         .ignoresSafeArea()
                         .onDisappear {
                             mayShowMentorNextMentor = true
-                            debugPrint("Done!")
                         }
                 }
             }

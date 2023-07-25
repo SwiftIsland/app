@@ -23,8 +23,6 @@ enum Tab: CaseIterable {
             return TabItem(title: "Conference", imageName: "person.3")
         case .practical:
             return TabItem(title: "Practical", imageName: "wallet.pass")
-//        case .account:
-//            return TabItem(title: "Account", imageName: "person.crop.circle")
         }
     }
 }

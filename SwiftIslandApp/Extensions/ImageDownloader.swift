@@ -14,10 +14,8 @@ struct LazyImage<I: View>: View {
         self.url = url
 
         if let cachedImage = ImageCache.getImage(forURL: url) {
-            debugPrint("Using cache")
             self.content = content(Image(uiImage: cachedImage))
         } else {
-            debugPrint("Fetching")
             self.content = nil
         }
     }
