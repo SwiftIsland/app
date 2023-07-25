@@ -59,9 +59,3 @@ struct ConferenceHeaderView_Previews: PreviewProvider {
         }
     }
 }
-
-private extension Date {
-    func relativeDateDisplay() -> String {
-        RelativeDateTimeFormatter().localizedString(for: self, relativeTo: Date())
-    }
-}

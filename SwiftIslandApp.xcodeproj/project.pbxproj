@@ -57,6 +57,8 @@
 		2AE43FF92A701E8A009078E3 /* AllEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE43FF82A701E8A009078E3 /* AllEvents.swift */; };
 		2AE43FFB2A701EA9009078E3 /* DBEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE43FFA2A701EA9009078E3 /* DBEvent.swift */; };
 		2AE43FFD2A70266B009078E3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE43FFC2A70266B009078E3 /* Event.swift */; };
+		2AE43FFF2A702999009078E3 /* ConferenceBoxEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE43FFE2A702999009078E3 /* ConferenceBoxEvent.swift */; };
+		2AE440012A702BC0009078E3 /* Date+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE440002A702BC0009078E3 /* Date+Formatting.swift */; };
 		2AEDC4972A4A030F00CD0180 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEDC4962A4A030F00CD0180 /* MainApp.swift */; };
 		2AEDC49B2A4A031000CD0180 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AEDC49A2A4A031000CD0180 /* Assets.xcassets */; };
 		2AEDC49E2A4A031000CD0180 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AEDC49D2A4A031000CD0180 /* Preview Assets.xcassets */; };
@@ -131,6 +133,8 @@
 		2AE43FF82A701E8A009078E3 /* AllEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEvents.swift; sourceTree = "<group>"; };
 		2AE43FFA2A701EA9009078E3 /* DBEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBEvent.swift; sourceTree = "<group>"; };
 		2AE43FFC2A70266B009078E3 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
+		2AE43FFE2A702999009078E3 /* ConferenceBoxEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxEvent.swift; sourceTree = "<group>"; };
+		2AE440002A702BC0009078E3 /* Date+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatting.swift"; sourceTree = "<group>"; };
 		2AEDC4932A4A030F00CD0180 /* SwiftIslandApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftIslandApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AEDC4962A4A030F00CD0180 /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
 		2AEDC49A2A4A031000CD0180 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -210,6 +214,7 @@
 				2A7F12822A648C59007C28EA /* SwiftIslandButtonStyle.swift */,
 				2AC7DD0A2A58D07E00DB9F6D /* View+Preview.swift */,
 				2AE43FAB2A6B1A8C009078E3 /* View+PercentageOffset.swift */,
+				2AE440002A702BC0009078E3 /* Date+Formatting.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 				2AC7DCF02A58B5E600DB9F6D /* ConferenceBoxFAQ.swift */,
 				2AC7DD082A58CFDD00DB9F6D /* ConferenceBoxFAQItem.swift */,
 				2A16EB442A4F622800CC881D /* ConferenceBoxTicket.swift */,
+				2AE43FFE2A702999009078E3 /* ConferenceBoxEvent.swift */,
 			);
 			path = Boxes;
 			sourceTree = "<group>";
@@ -575,10 +581,12 @@
 				2A17F0C62A608D990055E214 /* Mentor.swift in Sources */,
 				2A16EB522A4F655500CC881D /* Firestore+Encodable.swift in Sources */,
 				2AEDC4972A4A030F00CD0180 /* MainApp.swift in Sources */,
+				2AE43FFF2A702999009078E3 /* ConferenceBoxEvent.swift in Sources */,
 				2A16EB532A4F655500CC881D /* Firestore+Response.swift in Sources */,
 				2AE43FF52A701ADF009078E3 /* AllActivitiesRequest.swift in Sources */,
 				2A7F12832A648C59007C28EA /* SwiftIslandButtonStyle.swift in Sources */,
 				2A7F12902A69D9C7007C28EA /* PracticalGenericPageView.swift in Sources */,
+				2AE440012A702BC0009078E3 /* Date+Formatting.swift in Sources */,
 				2A7F12962A6B14CD007C28EA /* AppDataModel.swift in Sources */,
 				2AE43FFB2A701EA9009078E3 /* DBEvent.swift in Sources */,
 				2AE2425F2A521E4F007FFCC5 /* Collection+Safe.swift in Sources */,

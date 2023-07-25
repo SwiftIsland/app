@@ -12,7 +12,7 @@ struct Activity: Response {
     let mentors: [String]
     let type: String
     let imageName: String?
-    let duration: TimeInterval
+    let duration: Double
 }
 
 extension Activity: Identifiable { }

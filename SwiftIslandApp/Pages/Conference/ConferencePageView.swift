@@ -58,6 +58,12 @@ struct ConferencePageView: View {
                             .frame(height: geo.size.width * 0.50)
                         }
 
+                        if let nextEvent = appDataModel.nextEvent() {
+                            ConferenceBoxEvent(event: nextEvent)
+                        } else {
+                            Text("Could not find the next event")
+                        }
+
                         ConferenceBoxFAQ()
                             .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
                             .scrollContentBackground(.hidden)
@@ -89,6 +95,20 @@ struct ConferencePageView_Previews: PreviewProvider {
     @Namespace static var namespace
 
     static var previews: some View {
-        ConferencePageView(namespace: namespace, isShowingMentor: .constant(false))
+        let dbEvent = DBEvent(id: "1", activityId: "1", startDate: Date().addingTimeInterval(60))
+        let activity = Activity(id: "1",
+                                title: "Lorum Ipsum",
+                                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum maximus quam, eget egestas nisi accumsan eget. Phasellus egestas tristique tortor, vel interdum lorem porta non.",
+                                mentors: [],
+                                type: "foobar",
+                                imageName: nil,
+                                duration: 60*60)
+        let event = Event(dbEvent: dbEvent, activity: activity)
+
+        let appDataModel = AppDataModel()
+        appDataModel.events = [event]
+
+        return ConferencePageView(namespace: namespace, isShowingMentor: .constant(false))
+            .environmentObject(appDataModel)
     }
 }
