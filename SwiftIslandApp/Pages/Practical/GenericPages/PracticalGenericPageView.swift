@@ -23,7 +23,8 @@ struct PracticalGenericPageView: View {
                         .frame(minHeight: 110)
                         .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
                     }
-                    Text(LocalizedStringKey(page.content))
+                    let content = page.content.replacing("\\n", with: "\n")
+                    Text(LocalizedStringKey(content))
                         .dynamicTypeSize(DynamicTypeSize.small ... DynamicTypeSize.large)
                         .tint(.questionMarkColor)
                 }
