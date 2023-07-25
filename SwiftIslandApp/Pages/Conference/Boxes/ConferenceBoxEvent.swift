@@ -18,13 +18,26 @@ struct ConferenceBoxEvent: View {
                 .padding(.bottom, 0)
             ZStack {
                 Color.secondarySystemGroupedBackground
-                VStack(alignment: .leading, spacing: 8) {
-                    Text(event.activity.title)
-                        .font(.title)
+                VStack(alignment: .leading, spacing: 0) {
+                    Text(event.activity.type.rawValue)
+                        .font(.caption)
+                        .foregroundColor(.secondary)
+                        .fontWeight(.light)
+                    HStack {
+                        Circle()
+                            .fill(event.activity.type.color)
+                            .frame(width: 7)
+                        Text(event.activity.title)
+                            .font(.title)
+                    }
+                    .padding(.bottom, 8)
                     HStack {
                         Text(event.startDate.formatted())
+                            .font(.caption)
+                            .foregroundColor(.secondary)
                         Spacer()
                         Text(event.startDate.relativeDateDisplay())
+                            .font(.caption)
                     }
                 }
                 .padding()
@@ -33,7 +46,6 @@ struct ConferenceBoxEvent: View {
                 RoundedRectangle(cornerRadius: 10, style: .continuous)
             }
             .padding(.horizontal)
-//            .frame(minHeight: 150)
         }
         .padding(.top)
     }
@@ -45,8 +57,6 @@ struct ConferenceNextEvent_Previews: PreviewProvider {
         let activity = Activity.forPreview()
         let event = Event(dbEvent: dbEvent, activity: activity)
 
-        List {
-            ConferenceBoxEvent(event: event)
-        }
+        ConferenceBoxEvent(event: event)
     }
 }
