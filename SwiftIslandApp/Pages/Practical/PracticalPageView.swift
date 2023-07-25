@@ -200,7 +200,7 @@ struct SectionAtTheConference: View {
                     .font(.subheadline)
             }
             NavigationLink(destination: {
-                Text("Schedule")
+                ScheduleView()
             }, label: {
                 HStack {
                     Image(systemName: "calendar.day.timeline.leading")

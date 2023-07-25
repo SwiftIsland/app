@@ -59,6 +59,8 @@
 		2AE43FFD2A70266B009078E3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE43FFC2A70266B009078E3 /* Event.swift */; };
 		2AE43FFF2A702999009078E3 /* ConferenceBoxEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE43FFE2A702999009078E3 /* ConferenceBoxEvent.swift */; };
 		2AE440012A702BC0009078E3 /* Date+Formatting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE440002A702BC0009078E3 /* Date+Formatting.swift */; };
+		2AE440042A705C8B009078E3 /* ScheduleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE440032A705C8B009078E3 /* ScheduleView.swift */; };
+		2AE440062A705E5C009078E3 /* ScheduleCalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE440052A705E5C009078E3 /* ScheduleCalendarView.swift */; };
 		2AEDC4972A4A030F00CD0180 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEDC4962A4A030F00CD0180 /* MainApp.swift */; };
 		2AEDC49B2A4A031000CD0180 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AEDC49A2A4A031000CD0180 /* Assets.xcassets */; };
 		2AEDC49E2A4A031000CD0180 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AEDC49D2A4A031000CD0180 /* Preview Assets.xcassets */; };
@@ -135,6 +137,8 @@
 		2AE43FFC2A70266B009078E3 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		2AE43FFE2A702999009078E3 /* ConferenceBoxEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxEvent.swift; sourceTree = "<group>"; };
 		2AE440002A702BC0009078E3 /* Date+Formatting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Formatting.swift"; sourceTree = "<group>"; };
+		2AE440032A705C8B009078E3 /* ScheduleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleView.swift; sourceTree = "<group>"; };
+		2AE440052A705E5C009078E3 /* ScheduleCalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleCalendarView.swift; sourceTree = "<group>"; };
 		2AEDC4932A4A030F00CD0180 /* Swift Island.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift Island.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AEDC4962A4A030F00CD0180 /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
 		2AEDC49A2A4A031000CD0180 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -335,6 +339,15 @@
 			path = GettingThere;
 			sourceTree = "<group>";
 		};
+		2AE440022A705C55009078E3 /* Schedule */ = {
+			isa = PBXGroup;
+			children = (
+				2AE440032A705C8B009078E3 /* ScheduleView.swift */,
+				2AE440052A705E5C009078E3 /* ScheduleCalendarView.swift */,
+			);
+			path = Schedule;
+			sourceTree = "<group>";
+		};
 		2AEDC48A2A4A030F00CD0180 = {
 			isa = PBXGroup;
 			children = (
@@ -391,6 +404,7 @@
 		2AEDC4C02A4A086F00CD0180 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				2AE440022A705C55009078E3 /* Schedule */,
 				2AEDC4C42A4A08A600CD0180 /* Common */,
 				2AEDC4C12A4A087400CD0180 /* Conference */,
 				2AC7DD0C2A59F36C00DB9F6D /* Practical */,
@@ -604,8 +618,10 @@
 				2AE43FAE2A6C21B3009078E3 /* Activity.swift in Sources */,
 				2AE43FF92A701E8A009078E3 /* AllEvents.swift in Sources */,
 				2A7F12812A64891F007C28EA /* LinearGradient.swift in Sources */,
+				2AE440042A705C8B009078E3 /* ScheduleView.swift in Sources */,
 				2A16EB562A4F655500CC881D /* Firestore+SwiftIsland.swift in Sources */,
 				2AC7DD0F2A59F37D00DB9F6D /* PracticalPageView.swift in Sources */,
+				2AE440062A705E5C009078E3 /* ScheduleCalendarView.swift in Sources */,
 				2AC7DD072A58CD2000DB9F6D /* FAQListView.swift in Sources */,
 				2A16EB452A4F622800CC881D /* ConferenceBoxTicket.swift in Sources */,
 				2AE2425D2A520C7A007FFCC5 /* ImageDownloader.swift in Sources */,
