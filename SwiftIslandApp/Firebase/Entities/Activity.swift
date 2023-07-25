@@ -3,14 +3,14 @@
 // Copyright © 2023 AppTrix AB. All rights reserved.
 //
 
-import Foundation
+import SwiftUI
 
 struct Activity: Response {
     let id: String
     let title: String
     let description: String
     let mentors: [String]
-    let type: String
+    let type: ActivityType
     let imageName: String?
     let duration: Double
 }
@@ -18,3 +18,47 @@ struct Activity: Response {
 extension Activity: Identifiable { }
 
 extension Activity: Hashable { }
+
+extension Activity {
+    static func forPreview(id: String = "1",
+                           title: String = "Lorum Ipsum",
+                           description: String = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum maximus quam, eget egestas nisi accumsan eget. Phasellus egestas tristique tortor, vel interdum lorem porta non.",
+                           mentors: [String] = [],
+                           type: ActivityType = .workshop,
+                           imageName: String? = nil,
+                           duration: Double = 60 * 60) -> Activity {
+        Activity(id: id,
+                 title: title,
+                 description: description,
+                 mentors: mentors,
+                 type: type,
+                 imageName: imageName,
+                 duration: duration)
+    }
+}
+
+enum ActivityType: String, Codable, CaseIterable {
+    case workshop = "Workshop"
+    case socialActivity = "Social"
+    case food = "Food"
+    case mandatoryEventActivity = "Mandatory event activity"
+    case excursion = "Excursion"
+    case inviteOnly = "Invite only activity"
+
+    var color: Color {
+        switch self {
+        case .workshop:
+            return .purple
+        case .socialActivity:
+            return .yellowDark
+        case .food:
+            return .green
+        case .mandatoryEventActivity:
+            return .redDark
+        case .excursion:
+            return .orangeDark
+        case .inviteOnly:
+            return .purple
+        }
+    }
+}

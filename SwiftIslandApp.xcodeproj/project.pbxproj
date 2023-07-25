@@ -209,12 +209,12 @@
 			children = (
 				2AE2425E2A521E4F007FFCC5 /* Collection+Safe.swift */,
 				2A16EB402A4CDD4A00CC881D /* Color+Helper.swift */,
+				2AE440002A702BC0009078E3 /* Date+Formatting.swift */,
 				2AE2425C2A520C7A007FFCC5 /* ImageDownloader.swift */,
 				2A7F12802A64891F007C28EA /* LinearGradient.swift */,
 				2A7F12822A648C59007C28EA /* SwiftIslandButtonStyle.swift */,
-				2AC7DD0A2A58D07E00DB9F6D /* View+Preview.swift */,
 				2AE43FAB2A6B1A8C009078E3 /* View+PercentageOffset.swift */,
-				2AE440002A702BC0009078E3 /* Date+Formatting.swift */,
+				2AC7DD0A2A58D07E00DB9F6D /* View+Preview.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -222,10 +222,10 @@
 		2A16EB432A4F621B00CC881D /* Boxes */ = {
 			isa = PBXGroup;
 			children = (
+				2AE43FFE2A702999009078E3 /* ConferenceBoxEvent.swift */,
 				2AC7DCF02A58B5E600DB9F6D /* ConferenceBoxFAQ.swift */,
 				2AC7DD082A58CFDD00DB9F6D /* ConferenceBoxFAQItem.swift */,
 				2A16EB442A4F622800CC881D /* ConferenceBoxTicket.swift */,
-				2AE43FFE2A702999009078E3 /* ConferenceBoxEvent.swift */,
 			);
 			path = Boxes;
 			sourceTree = "<group>";

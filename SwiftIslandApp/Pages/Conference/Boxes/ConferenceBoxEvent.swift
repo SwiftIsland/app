@@ -10,14 +10,14 @@ struct ConferenceBoxEvent: View {
 
     var body: some View {
         VStack(alignment: .leading) {
-            Text("Mentors this year".uppercased())
+            Text("Next up".uppercased())
                 .font(.caption)
                 .foregroundColor(.secondary)
                 .padding(.horizontal, 40)
                 .padding(.top, 6)
                 .padding(.bottom, 0)
             ZStack {
-                Color.white
+                Color.secondarySystemGroupedBackground
                 VStack(alignment: .leading, spacing: 8) {
                     Text(event.activity.title)
                         .font(.title)
@@ -32,22 +32,17 @@ struct ConferenceBoxEvent: View {
             .mask {
                 RoundedRectangle(cornerRadius: 10, style: .continuous)
             }
-            .padding()
-            .frame(minHeight: 150)
+            .padding(.horizontal)
+//            .frame(minHeight: 150)
         }
+        .padding(.top)
     }
 }
 
 struct ConferenceNextEvent_Previews: PreviewProvider {
     static var previews: some View {
         let dbEvent = DBEvent(id: "1", activityId: "1", startDate: Date().addingTimeInterval(60))
-        let activity = Activity(id: "1",
-                                title: "Lorum Ipsum",
-                                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum maximus quam, eget egestas nisi accumsan eget. Phasellus egestas tristique tortor, vel interdum lorem porta non.",
-                                mentors: [],
-                                type: "foobar",
-                                imageName: nil,
-                                duration: 60*60)
+        let activity = Activity.forPreview()
         let event = Event(dbEvent: dbEvent, activity: activity)
 
         List {

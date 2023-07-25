@@ -4,10 +4,19 @@
 //
 
 import SwiftUI
+import UIKit
 
 extension Color {
     static var background: Color {
         Color("background")
+    }
+
+    static var systemGroupedBackground: Color {
+        Color(UIColor.systemGroupedBackground)
+    }
+
+    static var secondarySystemGroupedBackground: Color {
+        Color(UIColor.secondarySystemGroupedBackground)
     }
 
     static var logoText: Color {

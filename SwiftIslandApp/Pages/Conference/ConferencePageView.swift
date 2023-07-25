@@ -96,13 +96,7 @@ struct ConferencePageView_Previews: PreviewProvider {
 
     static var previews: some View {
         let dbEvent = DBEvent(id: "1", activityId: "1", startDate: Date().addingTimeInterval(60))
-        let activity = Activity(id: "1",
-                                title: "Lorum Ipsum",
-                                description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum maximus quam, eget egestas nisi accumsan eget. Phasellus egestas tristique tortor, vel interdum lorem porta non.",
-                                mentors: [],
-                                type: "foobar",
-                                imageName: nil,
-                                duration: 60*60)
+        let activity = Activity.forPreview()
         let event = Event(dbEvent: dbEvent, activity: activity)
 
         let appDataModel = AppDataModel()
