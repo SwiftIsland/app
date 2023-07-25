@@ -101,8 +101,9 @@ struct SectionGettingHere: View {
 
     @EnvironmentObject private var appDataModel: AppDataModel
     @State private var isShowingMapView = false
+    @State private var directionSheetShowing = false
 
-    private let pages: [SubPage] = [.hassleFree, .schiphol, .directions]
+    private let pages: [SubPage] = [.hassleFree, .schiphol]
 
     var body: some View {
         Section(header: Text("Getting here")) {
@@ -121,6 +122,39 @@ struct SectionGettingHere: View {
 
             ForEach(pages, id:\.self) { subPage in
                 getLink(forSubPage: subPage)
+            }
+
+            Button {
+                directionSheetShowing = true
+            } label: {
+                HStack {
+                    Image(systemName: "bicycle")
+                        .foregroundColor(.questionMarkColor)
+                        .frame(maxWidth: iconMaxWidth)
+                    Text("Directions")
+                        .dynamicTypeSize(.small ... .medium)
+                        .foregroundColor(.primary)
+                    Spacer()
+                    Image(systemName: "chevron.right")
+                        .font(.footnote)
+                        .foregroundColor(.secondary)
+                }
+            }
+        }
+        .confirmationDialog("Which app would you like to use?", isPresented: $directionSheetShowing, titleVisibility: .visible) {
+            Button("Apple Maps") {
+                let url = URL(string: "https://maps.apple.com/?address=Stuifweg%2013,%201794%20HA%20Oosterend,%20Netherlands&auid=15837284651049995092&ll=53.114790,4.897070&lsp=9902&q=Prins%20Hendrik")!
+                UIApplication.shared.open(url)
+            }
+
+            Button("Google Maps") {
+                let url = URL(string: "https://www.google.com/maps/dir/Restaurant+Prins+Hendrik,+Stuifweg+13,+1794+HA+Oosterend,+Netherlands/@53.1148113,4.8946637,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x47cf337d48cfb191:0x26980e939a31392a!2m2!1d4.8972386!2d53.1148081")!
+                UIApplication.shared.open(url)
+            }
+
+            Button("Waze") {
+                let url = URL(string: "https://ul.waze.com/ul?place=ChIJh_hkzwszz0cRZK8on-VKmHE&ll=53.11485850%2C4.89709170&navigate=yes")!
+                UIApplication.shared.open(url)
             }
         }
     }
@@ -214,7 +248,6 @@ struct SectionAtTheConference: View {
 private enum SubPage {
     case hassleFree
     case schiphol
-    case directions
 
     var icon: Image {
         let systemName: String
@@ -224,8 +257,6 @@ private enum SubPage {
             systemName = "ticket"
         case .schiphol:
             systemName = "airplane.arrival"
-        case .directions:
-            systemName = "bicycle"
         }
 
         return Image(systemName: systemName)
@@ -237,8 +268,6 @@ private enum SubPage {
             return "Hassle Free Ticket"
         case .schiphol:
             return "At Schiphol"
-        case .directions:
-            return "Directions"
         }
     }
 
@@ -248,8 +277,6 @@ private enum SubPage {
             return "hassleFree"
         case .schiphol:
             return "schiphol"
-        case .directions:
-            return "directions"
         }
     }
 }

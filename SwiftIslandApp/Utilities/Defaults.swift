@@ -6,5 +6,5 @@
 import Defaults
 
 extension Defaults.Keys {
-    static let userIsActivated = Key<Bool>("userActivated", default: false)
+    static let userIsActivated = Key<Bool>("userActivated", default: true)
 }
