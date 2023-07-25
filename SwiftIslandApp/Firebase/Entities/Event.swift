@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct Event {
+struct Event: Response {
     let id: String
     let activityId: String
     let startDate: Date
