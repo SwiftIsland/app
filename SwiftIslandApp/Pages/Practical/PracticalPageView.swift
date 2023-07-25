@@ -102,7 +102,7 @@ struct SectionGettingHere: View {
     @EnvironmentObject private var appDataModel: AppDataModel
     @State private var isShowingMapView = false
 
-    private let pages: [SubPage] = [.hassleFree, .schiphol, .directions, .onLocation]
+    private let pages: [SubPage] = [.hassleFree, .schiphol, .directions]
 
     var body: some View {
         Section(header: Text("Getting here")) {
@@ -215,7 +215,6 @@ private enum SubPage {
     case hassleFree
     case schiphol
     case directions
-    case onLocation
 
     var icon: Image {
         let systemName: String
@@ -227,8 +226,6 @@ private enum SubPage {
             systemName = "airplane.arrival"
         case .directions:
             systemName = "bicycle"
-        case .onLocation:
-            systemName = "mappin.and.ellipse"
         }
 
         return Image(systemName: systemName)
@@ -242,8 +239,6 @@ private enum SubPage {
             return "At Schiphol"
         case .directions:
             return "Directions"
-        case .onLocation:
-            return "On Location"
         }
     }
 
@@ -255,8 +250,6 @@ private enum SubPage {
             return "schiphol"
         case .directions:
             return "directions"
-        case .onLocation:
-            return "onLocation"
         }
     }
 }
