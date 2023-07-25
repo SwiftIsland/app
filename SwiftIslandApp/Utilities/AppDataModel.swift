@@ -22,6 +22,7 @@ final class AppDataModel: ObservableObject {
     @Published var mentors: [Mentor] = []
     @Published var pages: [Page] = []
     @Published var activities: [Activity] = []
+    @Published var events: [Event] = []
 
     private let logger = Logger(
         subsystem: Bundle.main.bundleIdentifier!,
@@ -41,6 +42,7 @@ private extension AppDataModel {
             mentors = await fetchMentors()
             pages = await fetchPages()
             activities = await fetchActivities()
+            events = await fetchEvents()
 
             appState = .loaded
         }
@@ -64,6 +66,11 @@ private extension AppDataModel {
     /// - Returns: Array of `Activity`
     func fetchActivities() async -> [Activity] {
         let request = AllActivitiesRequest()
+        return await fetchFromFirebase(forRequest: request)
+    }
+
+    func fetchEvents() async -> [Event] {
+        let request = AllEvents()
         return await fetchFromFirebase(forRequest: request)
     }
 
