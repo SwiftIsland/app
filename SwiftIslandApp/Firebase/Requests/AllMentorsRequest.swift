@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct FetchMentorsRequest: Request {
+struct AllMentorsRequest: Request {
     typealias Output = Mentor
 
     var path = "mentors"

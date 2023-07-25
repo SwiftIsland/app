@@ -49,21 +49,21 @@ private extension AppDataModel {
     /// Fetches all the mentors from Firebase
     /// - Returns: Array of `Mentor`
     func fetchMentors() async -> [Mentor] {
-        let request = FetchMentorsRequest()
+        let request = AllMentorsRequest()
         return await fetchFromFirebase(forRequest: request).sorted(by: { $0.order < $1.order })
     }
 
     /// Fetches all the pages from Firebase and stores
     /// - Returns: Array of `Page`
     func fetchPages() async -> [Page] {
-        let request = PagesRequest()
+        let request = AllPagesRequest()
         return await fetchFromFirebase(forRequest: request)
     }
 
     /// Fetches all the activities
     /// - Returns: Array of `Activity`
     func fetchActivities() async -> [Activity] {
-        let request = FetchAllActivitiesRequest()
+        let request = AllActivitiesRequest()
         return await fetchFromFirebase(forRequest: request)
     }
 

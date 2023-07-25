@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct PagesRequest: Request {
+struct AllPagesRequest: Request {
     typealias Output = Page
 
     var path = "pages"

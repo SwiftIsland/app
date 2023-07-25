@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct FetchAllActivitiesRequest: Request {
+struct AllActivitiesRequest: Request {
     typealias Output = Activity
 
     var path = "activities"
