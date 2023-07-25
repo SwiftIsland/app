@@ -1,5 +1,5 @@
 <p align="center">
-    <img src ="Logo.png" alt="SwiftUIKit Logo" title="Swift Island 2023" width=200 />
+    <img src ="Logo.png" alt="Swift Island Logo" title="Swift Island 2023" width=200 />
 </p>
 
 <p align="center">
