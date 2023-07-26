@@ -6,7 +6,7 @@
 import SwiftUI
 
 struct PlaceAnnotationView: View {
-    @State private var showTitle = true
+    @State private var showTitle = false
     var color: Color = .red
     let title: String
 
