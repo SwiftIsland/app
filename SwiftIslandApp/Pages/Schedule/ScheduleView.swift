@@ -72,7 +72,7 @@ struct ScheduleView: View {
                                         .font(.caption)
                                         .foregroundColor(.secondary)
                                     Picker("What is your favorite color?", selection: $selectedDayTag) {
-                                        Text("Monday").tag(4) // 4th of september
+                                        Text("Monday").tag(4) // 4th of September
                                         Text("Tuesday").tag(5)
                                         Text("Wednesday").tag(6)
                                         Text("Thursday").tag(7)
