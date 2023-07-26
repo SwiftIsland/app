@@ -7,14 +7,20 @@ import SwiftUI
 
 struct ScheduleView: View {
 
+    private struct EventPositions {
+        var id: String
+        var sharePositionWith: [String] = []
+        var position: CGRect
+    }
+
     @EnvironmentObject private var appDataModel: AppDataModel
 
     @State private var hourSpacing = 24.0
     @State private var hourHeight = 25.0
     @State private var selectedDate: Date? = Calendar.current.date(from: DateComponents(year: 2023, month: 9, day: 4))
     @State private var showPopover = false
-
     @State private var selectedDayTag = 4
+    @State private var events: [Event] = []
 
     private let hours: [String] = {
         let df = DateFormatter()
@@ -29,12 +35,13 @@ struct ScheduleView: View {
 
         return hours
     }()
-
-    let dateFormatter: DateFormatter = {
+    private let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.setLocalizedDateFormatFromTemplate("MMMdd")
         return dateFormatter
     }()
+    private let leadingPadding = 70.0
+    private let boxSpacing = 5.0
 
     var body: some View {
         ScrollView {
@@ -44,6 +51,20 @@ struct ScheduleView: View {
                 let calendar = Calendar.current
                 if let selectedDate, calendar.isDateInToday(selectedDate) {
                     ScheduleTimelineView(hourSpacing: $hourSpacing, hourHeight: $hourHeight)
+                }
+
+                GeometryReader { geo in
+                    let width = (geo.size.width - leadingPadding)
+
+                    ForEach(events) { event in
+                        let boxWidth = (width / Double(event.columnCount + 1)) - boxSpacing
+                        EventView(event: event)
+                            .offset(CGSize(width: boxWidth * Double(event.column) + (boxSpacing * Double(event.column)), height: (event.coordinates?.minY ?? 0) + 22))
+                            .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y:5)
+                            .frame(width: boxWidth, height: event.coordinates?.height ?? 20)
+                    }
+                    .padding(.top, 12)
+                    .padding(.leading, leadingPadding)
                 }
             }
             .safeAreaInset(edge: .bottom) {
@@ -71,7 +92,7 @@ struct ScheduleView: View {
                                     Text("Select day")
                                         .font(.caption)
                                         .foregroundColor(.secondary)
-                                    Picker("What is your favorite color?", selection: $selectedDayTag) {
+                                    Picker("Select conference day", selection: $selectedDayTag) {
                                         Text("Monday").tag(4) // 4th of September
                                         Text("Tuesday").tag(5)
                                         Text("Wednesday").tag(6)
@@ -88,7 +109,75 @@ struct ScheduleView: View {
         }
         .onChange(of: selectedDayTag) { newValue in
             self.selectedDate = Calendar.current.date(from: DateComponents(year: 2023, month: 9, day: selectedDayTag))
+            updateContent()
         }
+        .onAppear {
+            updateContent()
+        }
+    }
+
+    private func updateContent() {
+        guard let date = selectedDate else { return }
+        let allEvents = appDataModel.events
+
+        let filteredEvents = allEvents.filter {
+            return Calendar.current.isDate($0.startDate, inSameDayAs: date)
+        }
+
+        self.events = filteredEvents
+        calculateCoordinates(forEvents: filteredEvents)
+    }
+
+    private func calculateCoordinates(forEvents events: [Event]) {
+        var eventList: [Event] = []
+
+        var pos: [EventPositions] = []
+
+        let actualHourHeight = hourHeight + hourSpacing
+        let heightPerSecond = (actualHourHeight / 60) / 60
+
+        // Go over each event and check if there is another event ongoing at the same time
+        events.forEach { event in
+            let activity = event.activity
+            var event = event
+
+            guard let startHour = event.startDate.hour, let dateHour = Date().atHour(startHour) else { return }
+            let secondsSinceStartOfDay = abs(Date().atHour(0)?.timeIntervalSince(dateHour) ?? 0)
+
+            let frame = CGRect(x: 0, y: secondsSinceStartOfDay * heightPerSecond, width: 60, height: activity.duration * heightPerSecond)
+            event.coordinates = frame
+
+            let positionedEvents = pos.filter {
+                ($0.position.minY >= frame.origin.y && $0.position.minY < frame.maxY) ||
+                ($0.position.maxY >= frame.origin.y && $0.position.maxY < frame.maxY)
+            }
+
+            event.column = positionedEvents.count
+            event.columnCount = positionedEvents.count
+
+            let returnList = eventList.map {
+                var event = $0
+                if positionedEvents.contains(where: { $0.id == event.id }) {
+                    event.columnCount = event.columnCount + 1
+                }
+                return event
+            }
+            eventList = returnList
+            eventList.append(event)
+
+            pos.append(EventPositions(id: event.id, sharePositionWith: positionedEvents.map { $0.id }, position: frame))
+        }
+
+        self.events = eventList
+    }
+
+    private func calculateOffset(event: Event) -> Double {
+        guard let startHour = event.startDate.hour, let dateHour = Date().atHour(startHour) else { return 0 }
+
+        let actualHourHeight = hourHeight + hourSpacing
+        let heightPerSecond = (actualHourHeight / 60) / 60
+        let secondsSinceStartOfDay = abs(Date().atHour(0)?.timeIntervalSince(dateHour) ?? 0)
+        return secondsSinceStartOfDay * heightPerSecond
     }
 }
 

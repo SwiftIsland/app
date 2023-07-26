@@ -12,6 +12,10 @@ struct Event {
     let activity: Activity
     let duration: TimeInterval
 
+    var coordinates: CGRect?
+    var column: Int = 0
+    var columnCount: Int = 0
+
     init(dbEvent: DBEvent, activity: Activity) {
         self.id = dbEvent.id
         self.startDate = dbEvent.startDate
@@ -20,3 +24,5 @@ struct Event {
         self.activity = activity
     }
 }
+
+extension Event: Identifiable { }
