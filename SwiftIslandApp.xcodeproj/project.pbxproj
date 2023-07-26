@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2A090BD32A71AA5A003553D2 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A090BD22A71AA5A003553D2 /* Location.swift */; };
+		2A090BD52A71AE7F003553D2 /* AllLocationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A090BD42A71AE7F003553D2 /* AllLocationsRequest.swift */; };
+		2A090BD72A71B0E9003553D2 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A090BD62A71B0E9003553D2 /* MapView.swift */; };
+		2A090BD92A71BAFF003553D2 /* PlaceAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A090BD82A71BAFF003553D2 /* PlaceAnnotationView.swift */; };
 		2A16EB362A4CDA4200CC881D /* ConferenceHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A16EB352A4CDA4200CC881D /* ConferenceHeaderView.swift */; };
 		2A16EB3B2A4CDB3600CC881D /* WorkSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A16EB392A4CDB3600CC881D /* WorkSans-Regular.ttf */; };
 		2A16EB3C2A4CDB3600CC881D /* WorkSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A16EB3A2A4CDB3600CC881D /* WorkSans-Bold.ttf */; };
@@ -54,7 +58,7 @@
 		2AE43FAC2A6B1A8C009078E3 /* View+PercentageOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE43FAB2A6B1A8C009078E3 /* View+PercentageOffset.swift */; };
 		2AE43FAE2A6C21B3009078E3 /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE43FAD2A6C21B3009078E3 /* Activity.swift */; };
 		2AE43FF52A701ADF009078E3 /* AllActivitiesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE43FF42A701ADF009078E3 /* AllActivitiesRequest.swift */; };
-		2AE43FF92A701E8A009078E3 /* AllEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE43FF82A701E8A009078E3 /* AllEvents.swift */; };
+		2AE43FF92A701E8A009078E3 /* AllEventsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE43FF82A701E8A009078E3 /* AllEventsRequest.swift */; };
 		2AE43FFB2A701EA9009078E3 /* DBEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE43FFA2A701EA9009078E3 /* DBEvent.swift */; };
 		2AE43FFD2A70266B009078E3 /* Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE43FFC2A70266B009078E3 /* Event.swift */; };
 		2AE43FFF2A702999009078E3 /* ConferenceBoxEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE43FFE2A702999009078E3 /* ConferenceBoxEvent.swift */; };
@@ -92,6 +96,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2A090BD22A71AA5A003553D2 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		2A090BD42A71AE7F003553D2 /* AllLocationsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllLocationsRequest.swift; sourceTree = "<group>"; };
+		2A090BD62A71B0E9003553D2 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		2A090BD82A71BAFF003553D2 /* PlaceAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAnnotationView.swift; sourceTree = "<group>"; };
 		2A16EB352A4CDA4200CC881D /* ConferenceHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceHeaderView.swift; sourceTree = "<group>"; };
 		2A16EB392A4CDB3600CC881D /* WorkSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Regular.ttf"; sourceTree = "<group>"; };
 		2A16EB3A2A4CDB3600CC881D /* WorkSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Bold.ttf"; sourceTree = "<group>"; };
@@ -135,7 +143,7 @@
 		2AE43FAB2A6B1A8C009078E3 /* View+PercentageOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+PercentageOffset.swift"; sourceTree = "<group>"; };
 		2AE43FAD2A6C21B3009078E3 /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		2AE43FF42A701ADF009078E3 /* AllActivitiesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllActivitiesRequest.swift; sourceTree = "<group>"; };
-		2AE43FF82A701E8A009078E3 /* AllEvents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEvents.swift; sourceTree = "<group>"; };
+		2AE43FF82A701E8A009078E3 /* AllEventsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllEventsRequest.swift; sourceTree = "<group>"; };
 		2AE43FFA2A701EA9009078E3 /* DBEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBEvent.swift; sourceTree = "<group>"; };
 		2AE43FFC2A70266B009078E3 /* Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Event.swift; sourceTree = "<group>"; };
 		2AE43FFE2A702999009078E3 /* ConferenceBoxEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxEvent.swift; sourceTree = "<group>"; };
@@ -263,6 +271,7 @@
 				2AE43FFA2A701EA9009078E3 /* DBEvent.swift */,
 				2AE43FFC2A70266B009078E3 /* Event.swift */,
 				2AC7DD012A58C95700DB9F6D /* FAQItem.swift */,
+				2A090BD22A71AA5A003553D2 /* Location.swift */,
 				2A17F0C52A608D990055E214 /* Mentor.swift */,
 				2A7F12912A69DB26007C28EA /* Page.swift */,
 			);
@@ -273,10 +282,11 @@
 			isa = PBXGroup;
 			children = (
 				2AE43FF42A701ADF009078E3 /* AllActivitiesRequest.swift */,
-				2AE43FF82A701E8A009078E3 /* AllEvents.swift */,
+				2AE43FF82A701E8A009078E3 /* AllEventsRequest.swift */,
 				2AC7DD032A58C9B800DB9F6D /* AllFAQRequests.swift */,
 				2A17F0C72A608E030055E214 /* AllMentorsRequest.swift */,
 				2A7F12932A69DBD1007C28EA /* AllPagesRequest.swift */,
+				2A090BD42A71AE7F003553D2 /* AllLocationsRequest.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -298,6 +308,8 @@
 			isa = PBXGroup;
 			children = (
 				2A7F127E2A6488EC007C28EA /* RequestLocationView.swift */,
+				2A090BD62A71B0E9003553D2 /* MapView.swift */,
+				2A090BD82A71BAFF003553D2 /* PlaceAnnotationView.swift */,
 			);
 			path = Location;
 			sourceTree = "<group>";
@@ -598,6 +610,7 @@
 				2AE43FAC2A6B1A8C009078E3 /* View+PercentageOffset.swift in Sources */,
 				2AEDC4CC2A4A0CDF00CD0180 /* TabItem.swift in Sources */,
 				2AE43FFD2A70266B009078E3 /* Event.swift in Sources */,
+				2A090BD52A71AE7F003553D2 /* AllLocationsRequest.swift in Sources */,
 				2AEDC4CA2A4A0CB500CD0180 /* TabBarBarView.swift in Sources */,
 				2AEDC4C62A4A08AF00CD0180 /* TabBarView.swift in Sources */,
 				2AE4400A2A706246009078E3 /* Date+HourHelpers.swift in Sources */,
@@ -614,6 +627,7 @@
 				2A7F12962A6B14CD007C28EA /* AppDataModel.swift in Sources */,
 				2AE43FFB2A701EA9009078E3 /* DBEvent.swift in Sources */,
 				2AE2425F2A521E4F007FFCC5 /* Collection+Safe.swift in Sources */,
+				2A090BD92A71BAFF003553D2 /* PlaceAnnotationView.swift in Sources */,
 				2A7F12852A65DBEA007C28EA /* LocationManager.swift in Sources */,
 				2A16EB512A4F655500CC881D /* Dictionary+Firestore.swift in Sources */,
 				2AC7DD092A58CFDD00DB9F6D /* ConferenceBoxFAQItem.swift in Sources */,
@@ -626,9 +640,10 @@
 				2ACF55A42A605BA300C051FC /* GettingThereMapView.swift in Sources */,
 				2A7F127F2A6488EC007C28EA /* RequestLocationView.swift in Sources */,
 				2AE43FAE2A6C21B3009078E3 /* Activity.swift in Sources */,
-				2AE43FF92A701E8A009078E3 /* AllEvents.swift in Sources */,
+				2AE43FF92A701E8A009078E3 /* AllEventsRequest.swift in Sources */,
 				2A7F12812A64891F007C28EA /* LinearGradient.swift in Sources */,
 				2AE440042A705C8B009078E3 /* ScheduleView.swift in Sources */,
+				2A090BD32A71AA5A003553D2 /* Location.swift in Sources */,
 				2AE4400E2A717CE4009078E3 /* EventView.swift in Sources */,
 				2A16EB562A4F655500CC881D /* Firestore+SwiftIsland.swift in Sources */,
 				2AC7DD0F2A59F37D00DB9F6D /* PracticalPageView.swift in Sources */,
@@ -636,6 +651,7 @@
 				2AC7DD072A58CD2000DB9F6D /* FAQListView.swift in Sources */,
 				2A16EB452A4F622800CC881D /* ConferenceBoxTicket.swift in Sources */,
 				2AE440082A706211009078E3 /* ScheduleTimelineView.swift in Sources */,
+				2A090BD72A71B0E9003553D2 /* MapView.swift in Sources */,
 				2AE2425D2A520C7A007FFCC5 /* ImageDownloader.swift in Sources */,
 				2A7F12882A65E354007C28EA /* SectionAtTheConferenceNotActivated.swift in Sources */,
 				2AC7DD0B2A58D07E00DB9F6D /* View+Preview.swift in Sources */,

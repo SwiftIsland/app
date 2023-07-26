@@ -38,6 +38,13 @@ final class AppDataModel: ObservableObject {
     func nextEvent() -> Event? {
         events.sorted(by: { $0.startDate < $1.startDate }).first
     }
+
+    /// Fetches all the stored locations
+    /// - Returns: Array of `Location`
+    func fetchLocations() async -> [Location] {
+        let request = AllLocationsRequest()
+        return await fetchFromFirebase(forRequest: request)
+    }
 }
 
 private extension AppDataModel {
@@ -74,7 +81,7 @@ private extension AppDataModel {
     }
 
     func fetchEvents() async -> [Event] {
-        let request = AllEvents()
+        let request = AllEventsRequest()
         let dbEvents = await fetchFromFirebase(forRequest: request)
 
         let events: [Event] = dbEvents.compactMap { dbEvent in

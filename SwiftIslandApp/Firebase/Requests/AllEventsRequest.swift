@@ -5,7 +5,7 @@
 
 import Foundation
 
-struct AllEvents: Request {
+struct AllEventsRequest: Request {
     typealias Output = DBEvent
 
     var path = "events"

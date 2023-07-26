@@ -43,6 +43,7 @@ struct PracticalPageView: View {
                 PracticalGenericPageView(page: page)
             }
         }
+        .tint(.questionMarkColor)
     }
 }
 
@@ -111,7 +112,7 @@ struct SectionGettingHere: View {
                 isShowingMapView.toggle()
             } label: {
                 VStack {
-                    let location = Location(coordinate: CLLocationCoordinate2D(latitude: 53.11478763673313, longitude: 4.8972633598615065))
+                    let location = GettingThereLocation(coordinate: CLLocationCoordinate2D(latitude: 53.11478763673313, longitude: 4.8972633598615065))
                     GettingThereMapView(locations: [location])
                         .padding(0)
                         .allowsHitTesting(false)
@@ -211,7 +212,7 @@ struct SectionAtTheConference: View {
                 }
             })
             NavigationLink(destination: {
-                Text("Map")
+                MapView()
             }, label: {
                 HStack {
                     Image(systemName: "map")

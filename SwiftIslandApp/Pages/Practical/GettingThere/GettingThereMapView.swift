@@ -12,7 +12,7 @@ struct GettingThereMapView: View {
                                                    span: MKCoordinateSpan(latitudeDelta: 0.5,
                                                                           longitudeDelta: 0.5))
 
-    let locations: [Location]
+    let locations: [GettingThereLocation]
 
     var body: some View {
         Map(coordinateRegion: $region, annotationItems: locations) {
@@ -24,7 +24,7 @@ struct GettingThereMapView: View {
 
 struct GettingThereMapView_Previews: PreviewProvider {
     static var previews: some View {
-        let location = Location(coordinate: CLLocationCoordinate2D(latitude: 53.11478763673313, longitude: 4.8972633598615065))
+        let location = GettingThereLocation(coordinate: CLLocationCoordinate2D(latitude: 53.11478763673313, longitude: 4.8972633598615065))
 
         Group {
             GettingThereMapView(locations: [location])
@@ -37,11 +37,11 @@ struct GettingThereMapView_Previews: PreviewProvider {
     }
 }
 
-struct Location {
+struct GettingThereLocation {
     let coordinate: CLLocationCoordinate2D
 }
 
-extension Location: Identifiable {
+extension GettingThereLocation: Identifiable {
     var id: String {
         "\(coordinate.latitude):\(coordinate.longitude)"
     }
