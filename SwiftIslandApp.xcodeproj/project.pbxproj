@@ -410,10 +410,10 @@
 		2AEDC4C02A4A086F00CD0180 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
-				2AE440022A705C55009078E3 /* Schedule */,
 				2AEDC4C42A4A08A600CD0180 /* Common */,
 				2AEDC4C12A4A087400CD0180 /* Conference */,
 				2AC7DD0C2A59F36C00DB9F6D /* Practical */,
+				2AE440022A705C55009078E3 /* Schedule */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
