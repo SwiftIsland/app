@@ -7,4 +7,5 @@ import Defaults
 
 extension Defaults.Keys {
     static let userIsActivated = Key<Bool>("userActivated", default: false)
+    static let packingItems = Key<[PackingItem]>("packingList", default: [])
 }

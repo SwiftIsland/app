@@ -7,6 +7,7 @@ import Foundation
 import FirebaseFirestore
 import os.log
 import SwiftUI
+import Defaults
 
 /// The state of the app, if the app is loading data, this state will be `initialising`.
 enum AppState {
@@ -45,6 +46,21 @@ final class AppDataModel: ObservableObject {
     func fetchLocations() async {
         let request = AllLocationsRequest()
         self.locations = await fetchFromFirebase(forRequest: request)
+    }
+
+    /// Fetches items for packinglist. If none are stored locally, it'll get the list from Firebase.
+    /// - Returns: Array of `PackingItem`
+    func fetchPackingListItems() async -> [PackingItem] {
+        if Defaults[.packingItems].isEmpty {
+            debugPrint("Fetching from firebase...")
+            let firebaseItems = await fetchPackingListItemsFromFirebase()
+
+            debugPrint("Got items: \(firebaseItems)")
+            Defaults[.packingItems] = firebaseItems
+            return firebaseItems
+        }
+
+        return Defaults[.packingItems]
     }
 }
 
@@ -103,5 +119,12 @@ private extension AppDataModel {
             logger.error("Error getting documents for request with path \(request.path): \(error, privacy: .public)")
             return []
         }
+    }
+
+    /// Fetches the default setup of the packing items available on Firebase. Should only be fetched once per instance
+    /// - Returns: Array of `PackingItem` from firebase
+    func fetchPackingListItemsFromFirebase() async -> [PackingItem] {
+        let request = AllPackingListItems()
+        return await fetchFromFirebase(forRequest: request)
     }
 }

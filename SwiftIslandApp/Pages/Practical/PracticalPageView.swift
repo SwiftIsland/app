@@ -56,7 +56,7 @@ struct PracticalPageView: View {
                 case .schedule:
                     ScheduleView()
                 case .packlist:
-                    Text("PACKLIST!")
+                    PacklistView()
                 }
             }
         }
@@ -92,7 +92,7 @@ struct SectionBeforeYouLeave: View {
     let iconMaxWidth: CGFloat
 
     @EnvironmentObject private var appDataModel: AppDataModel
-    
+
     var body: some View {
         Section(header: Text("Before you leave")) {
             HStack {
