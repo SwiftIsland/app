@@ -11,8 +11,8 @@ struct MapView: View {
 
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 53.11478763673313,
                                                                                   longitude: 4.8972633598615065),
-                                                   span: MKCoordinateSpan(latitudeDelta: 0.001,
-                                                                          longitudeDelta: 0.001))
+                                                   span: MKCoordinateSpan(latitudeDelta: 0.01,
+                                                                          longitudeDelta: 0.01))
     @State private var showFilterPopover = false
     @State private var locationTypes: [LocationTypeSelection] = []
     @State private var filteredLocation: [Location] = []

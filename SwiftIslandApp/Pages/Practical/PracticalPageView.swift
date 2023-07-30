@@ -10,25 +10,32 @@ import FirebaseFirestore
 
 // MARK: - Main page
 
+private enum NavigationPage {
+    case map
+    case schedule
+    case packlist
+}
+
 struct PracticalPageView: View {
 
     private let iconMaxWidth: CGFloat = 32
     @State private var pages: [Page] = []
+    @State private var navigationPath = NavigationPath()
 
     @Default(.userIsActivated) private var userIsActivated
 
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $navigationPath) {
             ZStack {
                 LinearGradient.defaultBackground
 
                 List {
                     SectionBeforeYouLeave(iconMaxWidth: iconMaxWidth)
 
-                    SectionGettingHere(iconMaxWidth: iconMaxWidth)
+                    SectionGettingHere(iconMaxWidth: iconMaxWidth, navPath: $navigationPath)
 
                     if userIsActivated {
-                        SectionAtTheConference(iconMaxWidth: iconMaxWidth)
+                        SectionAtTheConference(iconMaxWidth: iconMaxWidth, navPath: $navigationPath)
                     } else {
                         SectionAtTheConferenceNotActivated(iconMaxWidth: iconMaxWidth)
                     }
@@ -41,6 +48,16 @@ struct PracticalPageView: View {
             .navigationTitle("Practical")
             .navigationDestination(for: Page.self) { page in
                 PracticalGenericPageView(page: page)
+            }
+            .navigationDestination(for: NavigationPage.self) { subPage in
+                switch subPage {
+                case .map:
+                    MapView()
+                case .schedule:
+                    ScheduleView()
+                case .packlist:
+                    Text("PACKLIST!")
+                }
             }
         }
         .tint(.questionMarkColor)
@@ -80,9 +97,7 @@ struct SectionBeforeYouLeave: View {
                 Text("Make sure you are all set for a few days of awesome workshops.")
                     .font(.subheadline)
             }
-            NavigationLink(destination: {
-                Text("Packlist")
-            }, label: {
+            NavigationLink(value: NavigationPage.packlist) {
                 HStack {
                     Image(systemName: "suitcase.rolling")
                         .foregroundColor(.questionMarkColor)
@@ -90,7 +105,7 @@ struct SectionBeforeYouLeave: View {
                     Text("Packlist")
                         .dynamicTypeSize(.small ... .medium)
                 }
-            })
+            }
         }
     }
 }
@@ -101,6 +116,9 @@ struct SectionGettingHere: View {
     let iconMaxWidth: CGFloat
 
     @EnvironmentObject private var appDataModel: AppDataModel
+
+    @Binding var navPath: NavigationPath
+
     @State private var isShowingMapView = false
     @State private var directionSheetShowing = false
 
@@ -109,13 +127,16 @@ struct SectionGettingHere: View {
     var body: some View {
         Section(header: Text("Getting here")) {
             Button {
-                isShowingMapView.toggle()
+                navPath.append(NavigationPage.map)
             } label: {
                 VStack {
                     let location = GettingThereLocation(coordinate: CLLocationCoordinate2D(latitude: 53.11478763673313, longitude: 4.8972633598615065))
-                    GettingThereMapView(locations: [location])
-                        .padding(0)
-                        .allowsHitTesting(false)
+                        GettingThereMapView(locations: [location])
+                            .padding(0)
+                            .allowsHitTesting(false)
+                            .onTapGesture {
+                                debugPrint("")
+                            }
                 }
                 .frame(minHeight: 110)
             }
@@ -194,15 +215,15 @@ struct SectionAtTheConference: View {
     let iconMaxWidth: CGFloat
     @EnvironmentObject private var appDataModel: AppDataModel
 
+    @Binding var navPath: NavigationPath
+
     var body: some View {
         Section(header: Text("At the conference")) {
             HStack {
                 Text("You made it! We are very happy too see you made it to the conference!")
                     .font(.subheadline)
             }
-            NavigationLink(destination: {
-                ScheduleView()
-            }, label: {
+            NavigationLink(value: NavigationPage.schedule) {
                 HStack {
                     Image(systemName: "calendar.day.timeline.leading")
                         .foregroundColor(.questionMarkColor)
@@ -210,18 +231,7 @@ struct SectionAtTheConference: View {
                     Text("Checkout the schedule")
                         .dynamicTypeSize(.small ... .medium)
                 }
-            })
-            NavigationLink(destination: {
-                MapView()
-            }, label: {
-                HStack {
-                    Image(systemName: "map")
-                        .foregroundColor(.questionMarkColor)
-                        .frame(maxWidth: iconMaxWidth)
-                    Text("Map")
-                        .dynamicTypeSize(.small ... .medium)
-                }
-            })
+            }
             if let joinSlack = appDataModel.pages.first(where: { $0.id == "joinSlack" }) {
                 Button {
                     UIApplication.shared.open(URL(string: joinSlack.content)!)
