@@ -91,6 +91,8 @@ struct PracticalPageView_Previews: PreviewProvider {
 struct SectionBeforeYouLeave: View {
     let iconMaxWidth: CGFloat
 
+    @EnvironmentObject private var appDataModel: AppDataModel
+    
     var body: some View {
         Section(header: Text("Before you leave")) {
             HStack {
@@ -104,6 +106,24 @@ struct SectionBeforeYouLeave: View {
                         .frame(maxWidth: iconMaxWidth)
                     Text("Packlist")
                         .dynamicTypeSize(.small ... .medium)
+                }
+            }
+            if let joinSlack = appDataModel.pages.first(where: { $0.id == "joinSlack" }) {
+                Button {
+                    UIApplication.shared.open(URL(string: joinSlack.content)!)
+                } label: {
+                    HStack {
+                        Image(systemName: "message")
+                            .foregroundColor(.questionMarkColor)
+                            .frame(maxWidth: iconMaxWidth)
+                        Text("Join our Slack")
+                            .dynamicTypeSize(.small ... .medium)
+                            .foregroundColor(.primary)
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .font(.footnote)
+                            .foregroundColor(.secondary)
+                    }
                 }
             }
         }
@@ -230,24 +250,6 @@ struct SectionAtTheConference: View {
                         .frame(maxWidth: iconMaxWidth)
                     Text("Checkout the schedule")
                         .dynamicTypeSize(.small ... .medium)
-                }
-            }
-            if let joinSlack = appDataModel.pages.first(where: { $0.id == "joinSlack" }) {
-                Button {
-                    UIApplication.shared.open(URL(string: joinSlack.content)!)
-                } label: {
-                    HStack {
-                        Image(systemName: "message")
-                            .foregroundColor(.questionMarkColor)
-                            .frame(maxWidth: iconMaxWidth)
-                        Text("Join our Slack")
-                            .dynamicTypeSize(.small ... .medium)
-                            .foregroundColor(.primary)
-                        Spacer()
-                        Image(systemName: "chevron.right")
-                            .font(.footnote)
-                            .foregroundColor(.secondary)
-                    }
                 }
             }
         }
