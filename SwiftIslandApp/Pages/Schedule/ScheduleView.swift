@@ -86,8 +86,7 @@ struct ScheduleView: View {
                             )
                             .popover(isPresented: $showPopover,
                                      attachmentAnchor: .point(.bottom),
-                                     arrowEdge: .top,
-                                     content: {
+                                     arrowEdge: .top) {
                                 VStack(alignment: .trailing) {
                                     Text("Select day")
                                         .font(.caption)
@@ -102,7 +101,7 @@ struct ScheduleView: View {
                                 }
                                 .padding()
                                 .presentationCompactAdaptation(.popover)
-                            })
+                            }
                     }
                 }
             }

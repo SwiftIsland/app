@@ -23,6 +23,7 @@ final class AppDataModel: ObservableObject {
     @Published var pages: [Page] = []
     @Published var activities: [Activity] = []
     @Published var events: [Event] = []
+    @Published var locations: [Location] = []
 
     private let logger = Logger(
         subsystem: Bundle.main.bundleIdentifier!,
@@ -41,9 +42,9 @@ final class AppDataModel: ObservableObject {
 
     /// Fetches all the stored locations
     /// - Returns: Array of `Location`
-    func fetchLocations() async -> [Location] {
+    func fetchLocations() async {
         let request = AllLocationsRequest()
-        return await fetchFromFirebase(forRequest: request)
+        self.locations = await fetchFromFirebase(forRequest: request)
     }
 }
 

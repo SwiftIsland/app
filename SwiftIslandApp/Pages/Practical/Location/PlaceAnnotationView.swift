@@ -7,13 +7,12 @@ import SwiftUI
 
 struct PlaceAnnotationView: View {
     @State private var showTitle = false
-    var color: Color = .red
-    let title: String
+    let location: Location
 
     var body: some View {
         VStack(spacing: 0) {
             VStack {
-                Text(title)
+                Text(location.title)
                     .font(.callout)
                     .padding(.vertical, 5)
                     .padding(.horizontal, 9)
@@ -29,11 +28,11 @@ struct PlaceAnnotationView: View {
 
             Image(systemName: "mappin.circle.fill")
                 .font(.title)
-                .foregroundColor(color)
+                .foregroundColor(location.type.color)
 
             Image(systemName: "arrowtriangle.down.fill")
                 .font(.caption)
-                .foregroundColor(color)
+                .foregroundColor(location.type.color)
                 .offset(x: 0, y: -5)
         }
         .onTapGesture {
@@ -49,13 +48,13 @@ struct PlaceAnnotationView_Previews: PreviewProvider {
         Group {
             ZStack {
                 Color.purple
-                PlaceAnnotationView(title: "Lorum Ipsum")
+                PlaceAnnotationView(location: Location.forPreview())
             }
             .previewDisplayName("Light")
             .preferredColorScheme(.light)
             ZStack {
                 Color.purple
-                PlaceAnnotationView(title: "Lorum Ipsum")
+                PlaceAnnotationView(location: Location.forPreview())
             }
             .previewDisplayName("Dark")
             .preferredColorScheme(.dark)
