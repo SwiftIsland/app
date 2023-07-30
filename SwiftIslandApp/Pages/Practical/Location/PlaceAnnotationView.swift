@@ -26,7 +26,7 @@ struct PlaceAnnotationView: View {
             .opacity(showTitle ? 1 : 0)
             .padding(.bottom, 2)
 
-            Image(systemName: "mappin.circle.fill")
+            location.type.icon
                 .font(.title)
                 .foregroundColor(location.type.color)
 
@@ -48,14 +48,31 @@ struct PlaceAnnotationView_Previews: PreviewProvider {
         Group {
             ZStack {
                 Color.purple
-                PlaceAnnotationView(location: Location.forPreview())
+                VStack {
+                    PlaceAnnotationView(location: Location.forPreview(type: .venue))
+                    PlaceAnnotationView(location: Location.forPreview(type: .restaurant))
+                    PlaceAnnotationView(location: Location.forPreview(type: .poi))
+                    PlaceAnnotationView(location: Location.forPreview(type: .bungalow))
+                    PlaceAnnotationView(location: Location.forPreview(type: .workshopRoom))
+                    PlaceAnnotationView(location: Location.forPreview(type: .restroom))
+                    PlaceAnnotationView(location: Location.forPreview(type: .parking))
+                    PlaceAnnotationView(location: Location.forPreview(type: .unknown))
+                }
             }
             .previewDisplayName("Light")
             .preferredColorScheme(.light)
             ZStack {
-                Color.purple
-                PlaceAnnotationView(location: Location.forPreview())
-            }
+                Color.black
+                VStack {
+                    PlaceAnnotationView(location: Location.forPreview(type: .venue))
+                    PlaceAnnotationView(location: Location.forPreview(type: .restaurant))
+                    PlaceAnnotationView(location: Location.forPreview(type: .poi))
+                    PlaceAnnotationView(location: Location.forPreview(type: .bungalow))
+                    PlaceAnnotationView(location: Location.forPreview(type: .workshopRoom))
+                    PlaceAnnotationView(location: Location.forPreview(type: .restroom))
+                    PlaceAnnotationView(location: Location.forPreview(type: .parking))
+                    PlaceAnnotationView(location: Location.forPreview(type: .unknown))
+                }            }
             .previewDisplayName("Dark")
             .preferredColorScheme(.dark)
         }

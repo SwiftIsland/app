@@ -140,4 +140,25 @@ enum LocationType: String, CaseIterable, Identifiable {
             return "Unknown type"
         }
     }
+
+    var icon: Image {
+        switch self {
+        case .restaurant:
+            return Image(systemName: "fork.knife.circle.fill")
+        case .poi:
+            return Image(systemName: "binoculars.fill")
+        case .restroom:
+            return Image(systemName: "toilet.circle.fill")
+        case .venue:
+            return Image(systemName: "info.circle.fill")
+        case .bungalow:
+            return Image(systemName: "house.and.flag.circle.fill")
+        case .workshopRoom:
+            return Image(systemName: "graduationcap.circle.fill")
+        case .parking:
+            return Image(systemName: "parkingsign.circle.fill")
+        default:
+            return Image(systemName: "mappin.circle.fill")
+        }
+    }
 }

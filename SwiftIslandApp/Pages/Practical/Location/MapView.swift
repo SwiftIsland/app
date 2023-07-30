@@ -55,9 +55,11 @@ struct MapView: View {
                                         Text(locationType.locationType.title)
                                         Spacer()
                                         Toggle(locationType.id, isOn: $locationType.isSelected)
+                                            .labelsHidden()
                                     }
                                 }
                             }
+                            .foregroundColor(.primary)
                             .padding()
                             .presentationCompactAdaptation(.popover)
                         }
