@@ -30,7 +30,7 @@ struct PacklistView: View {
                     }
                     .padding()
                 } else {
-                    ForEach(packingItems.filter { !$0.checked }) { packingItem in
+                    ForEach(unpackedItems) { packingItem in
                         HStack {
                             VStack(alignment: .leading) {
                                 Text(packingItem.title)
@@ -57,27 +57,42 @@ struct PacklistView: View {
             }
 
             Section {
-                ForEach(packingItems.filter { $0.checked }) { packingItem in
-                    HStack {
-                        VStack(alignment: .leading) {
-                            Text(packingItem.title)
-                                .font(.body)
-                                .foregroundColor(.primary)
-                            Text(packingItem.subTitle)
-                                .font(.footnote)
-                                .foregroundColor(.secondary)
-                        }
-                        Spacer()
-                        Button {
-                            withAnimation {
-                                toggleItem(packingItem)
-                            }
-                        } label: {
-                            Image(systemName: "checkmark.circle.fill")
-                                .foregroundColor(.secondary)
-                        }
+                let packedItems = packingItems.filter { $0.checked }
+
+                if packedItems.isEmpty {
+                    VStack {
+                        Text("🎒")
+                            .font(.title)
+                            .padding()
+                        Text("You haven't checked anything yet. Check the items you've checked and they'll move over here.")
+                            .font(.footnote)
+                            .foregroundColor(.secondary)
+                            .multilineTextAlignment(.center)
+                            .padding(.bottom)
                     }
-                    .matchedGeometryEffect(id: packingItem.id, in: namespace)
+                } else {
+                    ForEach(packedItems) { packingItem in
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text(packingItem.title)
+                                    .font(.body)
+                                    .foregroundColor(.primary)
+                                Text(packingItem.subTitle)
+                                    .font(.footnote)
+                                    .foregroundColor(.secondary)
+                            }
+                            Spacer()
+                            Button {
+                                withAnimation {
+                                    toggleItem(packingItem)
+                                }
+                            } label: {
+                                Image(systemName: "checkmark.circle.fill")
+                                    .foregroundColor(.secondary)
+                            }
+                        }
+                        .matchedGeometryEffect(id: packingItem.id, in: namespace)
+                    }
                 }
             } header: {
                 Text("Already Packed")
