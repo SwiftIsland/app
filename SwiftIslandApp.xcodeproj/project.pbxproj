@@ -304,14 +304,14 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		2A7F127D2A6488E2007C28EA /* Location */ = {
+		2A7F127D2A6488E2007C28EA /* Map */ = {
 			isa = PBXGroup;
 			children = (
 				2A7F127E2A6488EC007C28EA /* RequestLocationView.swift */,
 				2A090BD62A71B0E9003553D2 /* MapView.swift */,
 				2A090BD82A71BAFF003553D2 /* PlaceAnnotationView.swift */,
 			);
-			path = Location;
+			path = Map;
 			sourceTree = "<group>";
 		};
 		2A7F128E2A69D9B5007C28EA /* GenericPages */ = {
@@ -334,7 +334,7 @@
 			isa = PBXGroup;
 			children = (
 				2A7F128E2A69D9B5007C28EA /* GenericPages */,
-				2A7F127D2A6488E2007C28EA /* Location */,
+				2A7F127D2A6488E2007C28EA /* Map */,
 				2ACF55A22A605B9300C051FC /* GettingThere */,
 				2AC7DD0E2A59F37D00DB9F6D /* PracticalPageView.swift */,
 			);
