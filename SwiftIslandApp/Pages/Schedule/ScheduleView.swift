@@ -23,7 +23,7 @@ struct ScheduleView: View {
     @State private var events: [Event] = []
 
     private let startHourOfDay = 6
-    private let hours: [String] = {
+    private var hours: [String] {
         let df = DateFormatter()
         df.dateFormat = Locale.is24Hour ? "HH:mm" : "h a"
 
@@ -35,7 +35,7 @@ struct ScheduleView: View {
         }
 
         return hours
-    }()
+    }
     private let dateFormatter: DateFormatter = {
         let dateFormatter = DateFormatter()
         dateFormatter.setLocalizedDateFormatFromTemplate("MMMdd")
@@ -151,7 +151,7 @@ struct ScheduleView: View {
 
             let positionedEvents = pos.filter {
                 ($0.position.minY >= frame.origin.y && $0.position.minY < frame.maxY) ||
-                ($0.position.maxY >= frame.origin.y && $0.position.maxY < frame.maxY)
+                ($0.position.maxY > frame.origin.y && $0.position.maxY <= frame.maxY)
             }
 
             event.column = positionedEvents.count
@@ -187,9 +187,12 @@ struct ScheduleView_Previews: PreviewProvider {
     static var previews: some View {
         let appDataModel = AppDataModel()
 
-        var selectedDate = Calendar.current.date(from: DateComponents(year: 2023, month: 9, day: 4, hour: 9))!
+        let selectedDate = Calendar.current.date(from: DateComponents(year: 2023, month: 9, day: 4, hour: 9))!
+        let secondDate = Calendar.current.date(from: DateComponents(year: 2023, month: 9, day: 4, hour: 10))!
         let events = [
-            Event.forPreview(startDate: selectedDate)
+            Event.forPreview(startDate: selectedDate),
+            Event.forPreview(id: "2", startDate: secondDate, activity: Activity.forPreview(id: "2", type: .socialActivity)),
+            Event.forPreview(id: "3", startDate: selectedDate, activity: Activity.forPreview(id: "3", type: .meal))
         ]
         appDataModel.events = events
 
