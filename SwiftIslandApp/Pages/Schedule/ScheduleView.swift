@@ -43,6 +43,8 @@ struct ScheduleView: View {
     private let leadingPadding = 70.0
     private let boxSpacing = 5.0
 
+    @State private var foo: Event?
+
     var body: some View {
         ScrollView {
             ZStack {
@@ -59,7 +61,7 @@ struct ScheduleView: View {
                     ForEach(events) { event in
                         let boxWidth = (width / Double(event.columnCount + 1)) - boxSpacing
                         EventView(event: event)
-                            .offset(CGSize(width: boxWidth * Double(event.column) + (boxSpacing * Double(event.column)), height: (event.coordinates?.minY ?? 0) + 22))
+                            .offset(CGSize(width: boxWidth * Double(event.column) + (boxSpacing * Double(event.column)), height: (event.coordinates?.minY ?? 0)))
                             .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y:5)
                             .frame(width: boxWidth, height: event.coordinates?.height ?? 20)
                     }
@@ -184,6 +186,12 @@ struct ScheduleView_Previews: PreviewProvider {
     static var previews: some View {
         let appDataModel = AppDataModel()
 
+        var selectedDate = Calendar.current.date(from: DateComponents(year: 2023, month: 9, day: 4, hour: 9))!
+        let events = [
+            Event.forPreview(startDate: selectedDate)
+        ]
+        appDataModel.events = events
+
         return Group {
             NavigationStack {
                 ScheduleView()
@@ -191,7 +199,7 @@ struct ScheduleView_Previews: PreviewProvider {
             }
             .previewDisplayName("Light")
             .preferredColorScheme(.light)
-            
+
             NavigationStack {
                 ScheduleView()
                     .environmentObject(appDataModel)

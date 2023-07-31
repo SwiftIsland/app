@@ -8,6 +8,9 @@ import SwiftUI
 struct EventView: View {
     let event: Event
 
+    // For opening Event details
+    @State private var showEventSheet = false
+
     var body: some View {
         let mainColor = event.activity.type.color
         let endDate = event.startDate.addingTimeInterval(event.activity.duration)
@@ -55,6 +58,13 @@ struct EventView: View {
                 RoundedRectangle(cornerRadius: 6)
                     .frame(maxHeight: .infinity)
             )
+        }
+        .onTapGesture {
+            showEventSheet = true
+        }
+        .sheet(isPresented: $showEventSheet) {
+            EventDetailsView(event: event)
+                .presentationDetents([.medium])
         }
     }
 }

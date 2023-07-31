@@ -26,3 +26,26 @@ struct Event {
 }
 
 extension Event: Identifiable { }
+
+extension Event: Equatable { }
+
+extension Event {
+    static func forPreview(id: String = "1",
+                           startDate: Date = Date(timeIntervalSinceNow: 60*60),
+                           endDate: Date = Date(timeIntervalSinceNow: (60*60)*2),
+                           activity: Activity = Activity.forPreview(),
+                           duration: TimeInterval = 60*60) -> Event {
+        Event(id: id, startDate: startDate, endDate: endDate, activity: activity, duration: duration)
+    }
+
+    internal init(id: String, startDate: Date, endDate: Date, activity: Activity, duration: TimeInterval, coordinates: CGRect? = nil, column: Int = 0, columnCount: Int = 0) {
+        self.id = id
+        self.startDate = startDate
+        self.endDate = endDate
+        self.activity = activity
+        self.duration = duration
+        self.coordinates = coordinates
+        self.column = column
+        self.columnCount = columnCount
+    }
+}
