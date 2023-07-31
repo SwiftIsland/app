@@ -34,6 +34,8 @@
 		2A18CE3B2A76E71900969214 /* PacklistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18CE3A2A76E71900969214 /* PacklistView.swift */; };
 		2A18CE3D2A76E7A700969214 /* PackingItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18CE3C2A76E7A700969214 /* PackingItem.swift */; };
 		2A18CE3F2A76E82400969214 /* AllPackingListItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18CE3E2A76E82400969214 /* AllPackingListItems.swift */; };
+		2A18CE422A773D3A00969214 /* SectionBeforeYouLeave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18CE412A773D3A00969214 /* SectionBeforeYouLeave.swift */; };
+		2A18CE442A773D7F00969214 /* SectionGettingHere.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18CE432A773D7F00969214 /* SectionGettingHere.swift */; };
 		2A7F12772A6401C4007C28EA /* NFCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F12762A6401C4007C28EA /* NFCManager.swift */; };
 		2A7F12792A640730007C28EA /* ScrollViewOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F12782A640730007C28EA /* ScrollViewOffset.swift */; };
 		2A7F127F2A6488EC007C28EA /* RequestLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F127E2A6488EC007C28EA /* RequestLocationView.swift */; };
@@ -122,6 +124,8 @@
 		2A18CE3A2A76E71900969214 /* PacklistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacklistView.swift; sourceTree = "<group>"; };
 		2A18CE3C2A76E7A700969214 /* PackingItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackingItem.swift; sourceTree = "<group>"; };
 		2A18CE3E2A76E82400969214 /* AllPackingListItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPackingListItems.swift; sourceTree = "<group>"; };
+		2A18CE412A773D3A00969214 /* SectionBeforeYouLeave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionBeforeYouLeave.swift; sourceTree = "<group>"; };
+		2A18CE432A773D7F00969214 /* SectionGettingHere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionGettingHere.swift; sourceTree = "<group>"; };
 		2A7F12762A6401C4007C28EA /* NFCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCManager.swift; sourceTree = "<group>"; };
 		2A7F12782A640730007C28EA /* ScrollViewOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewOffset.swift; sourceTree = "<group>"; };
 		2A7F127E2A6488EC007C28EA /* RequestLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestLocationView.swift; sourceTree = "<group>"; };
@@ -307,6 +311,17 @@
 			path = Packlist;
 			sourceTree = "<group>";
 		};
+		2A18CE402A773CFE00969214 /* Practical */ = {
+			isa = PBXGroup;
+			children = (
+				2ACF55A22A605B9300C051FC /* GettingThere */,
+				2A7F128F2A69D9C7007C28EA /* PracticalGenericPageView.swift */,
+				2A18CE412A773D3A00969214 /* SectionBeforeYouLeave.swift */,
+				2A18CE432A773D7F00969214 /* SectionGettingHere.swift */,
+			);
+			path = Practical;
+			sourceTree = "<group>";
+		};
 		2A7F12752A6401B9007C28EA /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,14 +345,6 @@
 			path = Map;
 			sourceTree = "<group>";
 		};
-		2A7F128E2A69D9B5007C28EA /* GenericPages */ = {
-			isa = PBXGroup;
-			children = (
-				2A7F128F2A69D9C7007C28EA /* PracticalGenericPageView.swift */,
-			);
-			path = GenericPages;
-			sourceTree = "<group>";
-		};
 		2AC7DD052A58CD1100DB9F6D /* FAQ */ = {
 			isa = PBXGroup;
 			children = (
@@ -349,8 +356,7 @@
 		2AC7DD0C2A59F36C00DB9F6D /* Practical */ = {
 			isa = PBXGroup;
 			children = (
-				2A7F128E2A69D9B5007C28EA /* GenericPages */,
-				2ACF55A22A605B9300C051FC /* GettingThere */,
+				2A18CE402A773CFE00969214 /* Practical */,
 				2A7F127D2A6488E2007C28EA /* Map */,
 				2A18CE392A76E70800969214 /* Packlist */,
 				2AC7DD0E2A59F37D00DB9F6D /* PracticalPageView.swift */,
@@ -378,10 +384,10 @@
 		2AE440022A705C55009078E3 /* Schedule */ = {
 			isa = PBXGroup;
 			children = (
-				2AE440032A705C8B009078E3 /* ScheduleView.swift */,
+				2AE4400D2A717CE4009078E3 /* EventView.swift */,
 				2AE440052A705E5C009078E3 /* ScheduleCalendarView.swift */,
 				2AE440072A706211009078E3 /* ScheduleTimelineView.swift */,
-				2AE4400D2A717CE4009078E3 /* EventView.swift */,
+				2AE440032A705C8B009078E3 /* ScheduleView.swift */,
 			);
 			path = Schedule;
 			sourceTree = "<group>";
@@ -626,6 +632,7 @@
 				2A7F12792A640730007C28EA /* ScrollViewOffset.swift in Sources */,
 				2A16EB362A4CDA4200CC881D /* ConferenceHeaderView.swift in Sources */,
 				2AE43FAC2A6B1A8C009078E3 /* View+PercentageOffset.swift in Sources */,
+				2A18CE422A773D3A00969214 /* SectionBeforeYouLeave.swift in Sources */,
 				2AEDC4CC2A4A0CDF00CD0180 /* TabItem.swift in Sources */,
 				2AE43FFD2A70266B009078E3 /* Event.swift in Sources */,
 				2A090BD52A71AE7F003553D2 /* AllLocationsRequest.swift in Sources */,
@@ -645,6 +652,7 @@
 				2A7F12902A69D9C7007C28EA /* PracticalGenericPageView.swift in Sources */,
 				2AE440012A702BC0009078E3 /* Date+Formatting.swift in Sources */,
 				2A7F12962A6B14CD007C28EA /* AppDataModel.swift in Sources */,
+				2A18CE442A773D7F00969214 /* SectionGettingHere.swift in Sources */,
 				2AE43FFB2A701EA9009078E3 /* DBEvent.swift in Sources */,
 				2AE2425F2A521E4F007FFCC5 /* Collection+Safe.swift in Sources */,
 				2A090BD92A71BAFF003553D2 /* PlaceAnnotationView.swift in Sources */,

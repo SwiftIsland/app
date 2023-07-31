@@ -191,7 +191,7 @@ struct ScheduleView_Previews: PreviewProvider {
             }
             .previewDisplayName("Light")
             .preferredColorScheme(.light)
-
+            
             NavigationStack {
                 ScheduleView()
                     .environmentObject(appDataModel)
