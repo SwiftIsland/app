@@ -33,22 +33,56 @@ struct MainApp: App {
             }
         }
     }
+}
+
+private extension MainApp {
 
     func handleOpenURL(_ url: URL) {
-        guard
-            let components = URLComponents(url: url, resolvingAgainstBaseURL: true),
-                components.host == "swiftisland.nl"
-        else { return }
-        guard
-            let actionQI = components.queryItems?.first(where: { $0.name.lowercased() == "action" })?.value?.lowercased(),
-            let action = AppActions(rawValue: actionQI)
-        else { return }
+        guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true), components.host == "swiftisland.nl" else { return }
 
-        appActionTriggered = action
+        let actions = components.queryItems?.compactMap { URLTask(rawValue: $0) }
+        actions?.forEach { handleUrlTask($0) }
+    }
 
-        switch action {
+    func handleUrlTask(_ urlTask: URLTask) {
+        switch urlTask {
+        case .action(let appAction):
+            handleAppAction(appAction)
+        case .ticket(let slur):
+            handleTicketSlur(slur)
+        }
+    }
+
+    func handleAppAction(_ appAction: AppActions) {
+        appActionTriggered = appAction
+
+        switch appAction {
         case .atTheConference:
             Defaults[.userIsActivated] = true
+        }
+    }
+
+    func handleTicketSlur(_ slur: String) {
+        
+
+        debugPrint("Got SLUR: \(slur)")
+    }
+}
+
+enum URLTask {
+    case action(appAction: AppActions)
+    case ticket(slur: String)
+
+    init?(rawValue: URLQueryItem) {
+        switch rawValue.name {
+        case "action":
+            guard let value = rawValue.value, let actionTriggered = AppActions(rawValue: value) else { return nil }
+            self = .action(appAction: actionTriggered)
+        case "ticket":
+            guard let value = rawValue.value else { return nil }
+            self = .ticket(slur: value)
+        default:
+            return nil
         }
     }
 }

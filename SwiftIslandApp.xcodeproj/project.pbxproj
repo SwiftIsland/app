@@ -51,6 +51,7 @@
 		2A7F12942A69DBD1007C28EA /* AllPagesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F12932A69DBD1007C28EA /* AllPagesRequest.swift */; };
 		2A7F12962A6B14CD007C28EA /* AppDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F12952A6B14CD007C28EA /* AppDataModel.swift */; };
 		2A7F12982A6B19E0007C28EA /* SwiftIslandLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F12972A6B19E0007C28EA /* SwiftIslandLogo.swift */; };
+		2AB3AE902A77FF0E00F3ECB2 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB3AE8F2A77FF0E00F3ECB2 /* KeychainManager.swift */; };
 		2AC7DCF12A58B5E600DB9F6D /* ConferenceBoxFAQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DCF02A58B5E600DB9F6D /* ConferenceBoxFAQ.swift */; };
 		2AC7DD022A58C95700DB9F6D /* FAQItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DD012A58C95700DB9F6D /* FAQItem.swift */; };
 		2AC7DD042A58C9B800DB9F6D /* AllFAQRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DD032A58C9B800DB9F6D /* AllFAQRequests.swift */; };
@@ -141,6 +142,7 @@
 		2A7F12932A69DBD1007C28EA /* AllPagesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllPagesRequest.swift; sourceTree = "<group>"; };
 		2A7F12952A6B14CD007C28EA /* AppDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataModel.swift; sourceTree = "<group>"; };
 		2A7F12972A6B19E0007C28EA /* SwiftIslandLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftIslandLogo.swift; sourceTree = "<group>"; };
+		2AB3AE8F2A77FF0E00F3ECB2 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		2AC7DCF02A58B5E600DB9F6D /* ConferenceBoxFAQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxFAQ.swift; sourceTree = "<group>"; };
 		2AC7DD012A58C95700DB9F6D /* FAQItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQItem.swift; sourceTree = "<group>"; };
 		2AC7DD032A58C9B800DB9F6D /* AllFAQRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFAQRequests.swift; sourceTree = "<group>"; };
@@ -265,7 +267,6 @@
 			isa = PBXGroup;
 			children = (
 				2A16EB672A4F713B00CC881D /* Requests */,
-				2A16EB4D2A4F655500CC881D /* Entities */,
 				2A16EB492A4F655500CC881D /* Dictionary+Firestore.swift */,
 				2A16EB4C2A4F655500CC881D /* DocumentSnapshot+Data.swift */,
 				2A16EB4A2A4F655500CC881D /* Firestore+Encodable.swift */,
@@ -333,6 +334,7 @@
 				2A7F12762A6401C4007C28EA /* NFCManager.swift */,
 				2A7F12782A640730007C28EA /* ScrollViewOffset.swift */,
 				2A7F12972A6B19E0007C28EA /* SwiftIslandLogo.swift */,
+				2AB3AE8F2A77FF0E00F3ECB2 /* KeychainManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -345,6 +347,14 @@
 				2A090BD82A71BAFF003553D2 /* PlaceAnnotationView.swift */,
 			);
 			path = Map;
+			sourceTree = "<group>";
+		};
+		2AB3AF632A7812FC00F3ECB2 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2A16EB4D2A4F655500CC881D /* Entities */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 		2AC7DD052A58CD1100DB9F6D /* FAQ */ = {
@@ -419,6 +429,7 @@
 		2AEDC4952A4A030F00CD0180 /* SwiftIslandApp */ = {
 			isa = PBXGroup;
 			children = (
+				2AB3AF632A7812FC00F3ECB2 /* Data */,
 				2A16EB3D2A4CDB3A00CC881D /* Extensions */,
 				2A16EB472A4F655500CC881D /* Firebase */,
 				2AEDC4C02A4A086F00CD0180 /* Pages */,
@@ -636,6 +647,7 @@
 				2A16EB362A4CDA4200CC881D /* ConferenceHeaderView.swift in Sources */,
 				2AE43FAC2A6B1A8C009078E3 /* View+PercentageOffset.swift in Sources */,
 				2A18CE422A773D3A00969214 /* SectionBeforeYouLeave.swift in Sources */,
+				2AB3AE902A77FF0E00F3ECB2 /* KeychainManager.swift in Sources */,
 				2AEDC4CC2A4A0CDF00CD0180 /* TabItem.swift in Sources */,
 				2AE43FFD2A70266B009078E3 /* Event.swift in Sources */,
 				2A090BD52A71AE7F003553D2 /* AllLocationsRequest.swift in Sources */,
