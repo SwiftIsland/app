@@ -1,6 +1,6 @@
 import Foundation
 
-protocol Request {
+public protocol Request {
     associatedtype Output: Response
 
     var path: String { get set }
@@ -10,7 +10,7 @@ protocol Request {
 }
 
 // Setup default values
-extension Request {
+public extension Request {
     var output: Output? { nil }
     var queryPredicate: NSPredicate? { nil }
     var updatedDataFields: Codable? { nil }

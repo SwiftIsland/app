@@ -5,6 +5,7 @@
 
 import SwiftUI
 import FirebaseFirestore
+import SwiftIslandDataLogic
 
 struct ConferencePageView: View {
     var namespace: Namespace.ID

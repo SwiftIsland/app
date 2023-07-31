@@ -4,6 +4,7 @@
 //
 
 import SwiftUI
+import SwiftIslandDataLogic
 
 struct EventView: View {
     let event: Event

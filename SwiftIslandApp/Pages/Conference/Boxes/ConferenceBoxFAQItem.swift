@@ -4,6 +4,7 @@
 //
 
 import SwiftUI
+import SwiftIslandDataLogic
 
 struct ConferenceBoxFAQItem: View {
     let faqItem: FAQItem
@@ -32,6 +33,6 @@ struct ConferenceBoxFAQItem: View {
 
 struct ConferenceBoxFAQItem_Previews: PreviewProvider {
     static var previews: some View {
-        ConferenceBoxFAQItem(faqItem: FAQItem(id: "1", question: "Lorum ipsum", answer: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tortor orci, lobortis eget feugiat vel, condimentum eget urna. Duis luctus purus mi, et posuere diam viverra eget."), short: true)
+        ConferenceBoxFAQItem(faqItem: FAQItem.forPreview(), short: true)
     }
 }

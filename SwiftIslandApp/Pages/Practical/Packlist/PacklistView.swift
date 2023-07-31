@@ -5,6 +5,7 @@
 
 import SwiftUI
 import Defaults
+import SwiftIslandDataLogic
 
 struct PacklistView: View {
     @Namespace private var namespace

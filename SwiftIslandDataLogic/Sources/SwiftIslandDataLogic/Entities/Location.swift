@@ -9,21 +9,21 @@ import Firebase
 import FirebaseFirestoreSwift
 import SwiftUI
 
-enum LocationError: Error {
+public enum LocationError: Error {
     case parsingErrorDataNotFound
 }
 
-struct Location: Response {
-    let id: String
-    let title: String
-    let type: LocationType
-    let coordinate: CLLocationCoordinate2D
+public struct Location: Response {
+    public let id: String
+    public let title: String
+    public let type: LocationType
+    public let coordinate: CLLocationCoordinate2D
 
-    enum CodingKeys: CodingKey {
+    private enum CodingKeys: CodingKey {
         case id, title, coordinate, type
     }
     
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decode(String.self, forKey: .id)
         self.title = try container.decode(String.self, forKey: .title)
@@ -45,7 +45,7 @@ struct Location: Response {
         self.type = type
     }
 
-    func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(self.id, forKey: .id)
         try container.encode(self.title, forKey: .title)
@@ -54,8 +54,10 @@ struct Location: Response {
         let coordinates = ["latitude": coordinate.latitude, "longitude": coordinate.longitude]
         try container.encode(coordinates, forKey: .coordinate)
     }
-    
-    static func forPreview(id: String = "1",
+}
+
+extension Location {
+    public static func forPreview(id: String = "1",
                            title: String = "Lorum Ipsum",
                            type: LocationType = .unknown,
                            coordinate: CLLocationCoordinate2D = CLLocationCoordinate2D(latitude: 53.11486048459769,
@@ -67,7 +69,7 @@ struct Location: Response {
 extension Location: Identifiable { }
 
 extension Location: Equatable {
-    static func == (lhs: Location, rhs: Location) -> Bool {
+    public static func == (lhs: Location, rhs: Location) -> Bool {
         lhs.id == rhs.id
     }
 }
@@ -87,7 +89,7 @@ extension CLLocationCoordinate2D: Codable {
     }
 }
 
-enum LocationType: String, CaseIterable, Identifiable {
+public enum LocationType: String, CaseIterable, Identifiable {
     case venue
     case restaurant
     case poi
@@ -97,9 +99,9 @@ enum LocationType: String, CaseIterable, Identifiable {
     case parking
     case unknown
 
-    var id: String { self.rawValue }
+    public var id: String { self.rawValue }
 
-    var color: Color {
+    public var color: Color {
         switch self {
         case .venue:
             return  .yellow
@@ -120,7 +122,7 @@ enum LocationType: String, CaseIterable, Identifiable {
         }
     }
 
-    var title: String {
+    public var title: String {
         switch self {
         case .venue:
             return "Venue"
@@ -141,7 +143,7 @@ enum LocationType: String, CaseIterable, Identifiable {
         }
     }
 
-    var icon: Image {
+    public var icon: Image {
         switch self {
         case .restaurant:
             return Image(systemName: "fork.knife.circle.fill")

@@ -4,6 +4,7 @@
 //
 
 import SwiftUI
+import SwiftIslandDataLogic
 
 struct MentorView: View {
     var namespace: Namespace.ID

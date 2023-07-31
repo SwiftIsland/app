@@ -6,11 +6,11 @@
 import Foundation
 import Defaults
 
-struct PackingItem: Response {
-    let id: String
-    let title: String
-    let subTitle: String
-    var checked: Bool
+public struct PackingItem: Response {
+    public let id: String
+    public let title: String
+    public let subTitle: String
+    public var checked: Bool
 }
 
 extension PackingItem: Identifiable { }
