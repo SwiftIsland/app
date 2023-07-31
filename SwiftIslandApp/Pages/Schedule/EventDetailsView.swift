@@ -11,7 +11,6 @@ struct EventDetailsView: View {
     var body: some View {
         VStack(alignment: .leading) {
             ZStack {
-                Color.secondarySystemGroupedBackground
                 VStack(alignment: .leading, spacing: 0) {
                     Text(event.activity.type.rawValue)
                         .font(.caption)
@@ -56,6 +55,13 @@ struct EventDetailsView: View {
 
 struct EventDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        EventDetailsView(event: Event.forPreview())
+        Group {
+            EventDetailsView(event: Event.forPreview())
+                .previewDisplayName("Light")
+                .preferredColorScheme(.light)
+            EventDetailsView(event: Event.forPreview())
+                .previewDisplayName("Dark")
+                .preferredColorScheme(.dark)
+        }
     }
 }
