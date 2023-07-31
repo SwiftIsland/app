@@ -15,7 +15,7 @@ struct EventDetailsView: View {
                 VStack(alignment: .leading, spacing: 0) {
                     Text(event.activity.type.rawValue)
                         .font(.caption)
-                        .foregroundColor(.secondary)
+                        .foregroundColor(event.activity.type.color)
                         .fontWeight(.light)
                     HStack {
                         Circle()
