@@ -24,14 +24,28 @@ struct EventView: View {
                         .padding(.top, 4)
                         .fontWeight(.semibold)
                         .dynamicTypeSize(.small ... .large)
-                    Text("\(event.startDate.formatted(date: .omitted, time: .shortened)) - \(endDate.formatted(date: .omitted, time: .shortened))")
-                        .foregroundColor(mainColor)
-                        .font(.caption2)
-                        .dynamicTypeSize(.small ... .large)
-                    Text("Duration: \(Int(event.activity.duration / 60)) min")
-                        .foregroundColor(mainColor)
-                        .font(.caption2)
-                        .dynamicTypeSize(.small ... .large)
+                    if (event.activity.duration / 60) < 60 {
+                        if event.columnCount > 0 {
+                            Text("\(event.startDate.formatted(date: .omitted, time: .shortened)), \(Int(event.activity.duration / 60)) min")
+                                .foregroundColor(mainColor)
+                                .font(.caption2)
+                                .dynamicTypeSize(.small ... .large)
+                        } else {
+                            Text("\(event.startDate.formatted(date: .omitted, time: .shortened)) - \(endDate.formatted(date: .omitted, time: .shortened)), \(Int(event.activity.duration / 60)) min")
+                                .foregroundColor(mainColor)
+                                .font(.caption2)
+                                .dynamicTypeSize(.small ... .large)
+                        }
+                    } else {
+                        Text("\(event.startDate.formatted(date: .omitted, time: .shortened)) - \(endDate.formatted(date: .omitted, time: .shortened))")
+                            .foregroundColor(mainColor)
+                            .font(.caption2)
+                            .dynamicTypeSize(.small ... .large)
+                        Text("Duration: \(Int(event.activity.duration / 60)) min")
+                            .foregroundColor(mainColor)
+                            .font(.caption2)
+                            .dynamicTypeSize(.small ... .large)
+                    }
                     Spacer()
                 }
                 .padding(.horizontal, 8)

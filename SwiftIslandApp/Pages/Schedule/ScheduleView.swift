@@ -143,8 +143,8 @@ struct ScheduleView: View {
             let activity = event.activity
             var event = event
 
-            guard let startHour = event.startDate.hour, let dateHour = Date().atHour(startHour - startHourOfDay) else { return }
-            let secondsSinceStartOfDay = abs(Date().atHour(0)?.timeIntervalSince(dateHour) ?? 0)
+//            guard let startHour = event.startDate.hour, let dateHour = selectedDate.atHour(startHour - startHourOfDay) else { return }
+            let secondsSinceStartOfDay = abs(selectedDate!.atHour(startHourOfDay)?.timeIntervalSince(event.startDate) ?? 0)
 
             let frame = CGRect(x: 0, y: secondsSinceStartOfDay * heightPerSecond, width: 60, height: activity.duration * heightPerSecond)
             event.coordinates = frame
@@ -189,10 +189,14 @@ struct ScheduleView_Previews: PreviewProvider {
 
         let selectedDate = Calendar.current.date(from: DateComponents(year: 2023, month: 9, day: 4, hour: 9))!
         let secondDate = Calendar.current.date(from: DateComponents(year: 2023, month: 9, day: 4, hour: 10))!
+        let thirdDate = Calendar.current.date(from: DateComponents(year: 2023, month: 9, day: 4, hour: 7, minute: 15))!
+        let fouthDate = Calendar.current.date(from: DateComponents(year: 2023, month: 9, day: 4, hour: 7, minute: 30))!
         let events = [
             Event.forPreview(startDate: selectedDate),
             Event.forPreview(id: "2", startDate: secondDate, activity: Activity.forPreview(id: "2", type: .socialActivity)),
-            Event.forPreview(id: "3", startDate: selectedDate, activity: Activity.forPreview(id: "3", type: .meal))
+            Event.forPreview(id: "3", startDate: selectedDate, activity: Activity.forPreview(id: "3", type: .transport)),
+            Event.forPreview(id: "4", startDate: thirdDate, activity: Activity.forPreview(id: "4", type: .socialActivity, duration: 45 * 60)),
+            Event.forPreview(id: "5", startDate: fouthDate, activity: Activity.forPreview(id: "5", type: .meal))
         ]
         appDataModel.events = events
 
