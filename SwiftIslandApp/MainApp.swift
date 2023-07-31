@@ -15,14 +15,15 @@ struct MainApp: App {
 
     @StateObject private var appDataModel = AppDataModel()
     @State private var appActionTriggered: AppActions? = nil
-
     @State private var ticketToShow: Ticket?
+
+    @State private var storedTickets: [Ticket] = []
 
     var body: some Scene {
         WindowGroup {
             ZStack {
                 if case .loaded = appDataModel.appState {
-                    TabBarView(appActionTriggered: $appActionTriggered)
+                    TabBarView(appActionTriggered: $appActionTriggered, storedTickets: $storedTickets)
                         .environmentObject(appDataModel)
                 } else {
                     SwiftIslandLogo(isAnimating: true)
@@ -40,6 +41,9 @@ struct MainApp: App {
                     Text("The ticket ID provided was invalid")
                 }
             })
+            .onAppear {
+                self.storedTickets = (try? KeychainManager.shared.get(key: .tickets) ?? []) ?? []
+            }
         }
     }
 }
@@ -85,6 +89,7 @@ private extension MainApp {
 
                 try KeychainManager.shared.store(key: .tickets, data: storedTickets)
                 self.ticketToShow = ticket
+                self.storedTickets.append(ticket)
             }
         } catch {
             // TODO: Show error view for keychain issue, which should never happen

@@ -11,13 +11,14 @@ struct TabBarView: View {
     @Binding var appActionTriggered: AppActions?
 
     @State private var isShowingMentor = false
+    @Binding var storedTickets: [Ticket]
 
     var body: some View {
         ZStack {
             ZStack(alignment: .bottom) {
                 switch selectedItem {
                 case .home:
-                    ConferencePageView(namespace: namespace, isShowingMentor: $isShowingMentor)
+                    ConferencePageView(namespace: namespace, isShowingMentor: $isShowingMentor, storedTickets: $storedTickets)
                 case .practical:
                     PracticalPageView()
                 case .schedule:
@@ -52,9 +53,9 @@ struct TabBarView: View {
 struct TabbarView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            TabBarView(appActionTriggered: .constant(nil))
+            TabBarView(appActionTriggered: .constant(nil), storedTickets: .constant([]))
                 .previewDisplayName("Light mode")
-            TabBarView(appActionTriggered: .constant(nil))
+            TabBarView(appActionTriggered: .constant(nil), storedTickets: .constant([]))
                 .preferredColorScheme(.dark)
                 .previewDisplayName("Dark mode")
         }
