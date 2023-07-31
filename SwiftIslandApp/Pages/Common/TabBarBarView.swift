@@ -15,7 +15,7 @@ struct TabBarBarView: View {
     var body: some View {
         HStack {
             Spacer()
-            ForEach(Tab.allCases, id:\.self) { tab in
+            ForEach(Tab.availableItems, id:\.self) { tab in
                 let tabItem = tab.tabItem
                 Button {
                     selectedItem = tab

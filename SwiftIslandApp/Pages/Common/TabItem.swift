@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import Defaults
 
 struct TabItem: Identifiable, Equatable {
     let id = UUID()
@@ -15,7 +16,15 @@ struct TabItem: Identifiable, Equatable {
 enum Tab: CaseIterable {
     case home
     case practical
-//    case account
+    case schedule
+
+    static var availableItems: [Tab] {
+        if Defaults[.userIsActivated] {
+            return [.home, .practical, .schedule]
+        } else {
+            return [.home, .practical]
+        }
+    }
 
     var tabItem: TabItem {
         switch self {
@@ -23,6 +32,8 @@ enum Tab: CaseIterable {
             return TabItem(title: "Conference", imageName: "person.3")
         case .practical:
             return TabItem(title: "Practical", imageName: "wallet.pass")
+        case .schedule:
+            return TabItem(title: "Schedule", imageName: "calendar.day.timeline.left")
         }
     }
 }

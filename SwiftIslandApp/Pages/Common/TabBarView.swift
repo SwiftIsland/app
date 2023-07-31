@@ -20,6 +20,10 @@ struct TabBarView: View {
                     ConferencePageView(namespace: namespace, isShowingMentor: $isShowingMentor)
                 case .practical:
                     PracticalPageView()
+                case .schedule:
+                    NavigationStack {
+                        ScheduleView()
+                    }
                 }
             }
             .safeAreaInset(edge: .bottom) {
