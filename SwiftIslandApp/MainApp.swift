@@ -16,6 +16,8 @@ struct MainApp: App {
     @StateObject private var appDataModel = AppDataModel()
     @State private var appActionTriggered: AppActions? = nil
 
+    @State private var ticketToShow: Ticket?
+
     var body: some Scene {
         WindowGroup {
             ZStack {
@@ -31,6 +33,9 @@ struct MainApp: App {
             .onOpenURL { url in
                 handleOpenURL(url)
             }
+            .sheet(item: $ticketToShow, content: { ticket in
+                Text("Showing ticket!\n\(ticket.id)")
+            })
         }
     }
 }
@@ -62,10 +67,25 @@ private extension MainApp {
         }
     }
 
+    /// This method handles the storing of the ticket to the keychain and presenting the result
+    /// - Parameter slur: The slur to store
     func handleTicketSlur(_ slur: String) {
-        
+        do {
+            var storedTickets: [Ticket] = (try? KeychainManager.shared.get(key: .tickets) ?? []) ?? []
 
-        debugPrint("Got SLUR: \(slur)")
+            if let ticket = storedTickets.first(where: { $0.id == slur }) {
+                self.ticketToShow = ticket
+            } else {
+                let ticket = Ticket(id: slur, addDate: Date(), name: "Ticket \(max(storedTickets.count, 1))")
+                storedTickets.append(ticket)
+
+                try KeychainManager.shared.store(key: .tickets, data: storedTickets)
+                self.ticketToShow = ticket
+            }
+        } catch {
+            // TODO: Show error view for keychain issue, which should never happen
+            debugPrint("Error handling keychain items! Error: \(error)")
+        }
     }
 }
 

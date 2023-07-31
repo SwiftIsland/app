@@ -14,19 +14,21 @@ enum MigrationErrors: Error {
 }
 
 enum KeychainAttrAccount {
-    case ticket
+    case tickets
 
     var rawValue: String {
         switch self {
-        case .ticket:
-            return "ticket"
+        case .tickets:
+            return "tickets"
         }
     }
 }
 
 protocol KeychainManaging {
     func get(key: KeychainAttrAccount) throws -> String?
+    func get<T: Decodable>(key: KeychainAttrAccount) throws -> T?
     func delete(key: KeychainAttrAccount) throws
+    func store<T: Encodable>(key: KeychainAttrAccount, data: T) throws
 }
 
 class KeychainManager: KeychainManaging {
@@ -37,57 +39,18 @@ class KeychainManager: KeychainManaging {
     }
 
     func get(key: KeychainAttrAccount) throws -> String? {
-        let queryLoad = [
-            kSecClass: kSecClassGenericPassword,
-            kSecAttrAccount: key.rawValue,
-            kSecReturnData: kCFBooleanTrue as Any,
-            kSecMatchLimit: kSecMatchLimitOne,
-            kSecAttrAccessGroup: accessGroup
-        ] as [String: Any]
-
-        var result: AnyObject?
-
-        let resultCodeLoad = withUnsafeMutablePointer(to: &result) {
-            SecItemCopyMatching(queryLoad as CFDictionary, UnsafeMutablePointer($0))
+        guard let data: Data = try get(key: key) else { return nil }
+        if let value = String(data: data, encoding: .utf8) {
+            return value
         }
 
-        if resultCodeLoad == noErr {
-            if let result = result as? Data, let value = String(data: result, encoding: .utf8) {
-                return value
-            }
-            return nil
-        } else {
-            throw MigrationErrors.errorLoading(resultCodeLoad)
-        }
+        return nil
     }
 
-    func get<T: Codable>(key: KeychainAttrAccount) throws -> T {
+    func get<T: Decodable>(key: KeychainAttrAccount) throws -> T? {
+        guard let data: Data = try get(key: key) else { return nil }
 
-    }
-
-    func get(key: KeychainAttrAccount) throws -> Data {
-        let queryLoad = [
-            kSecClass: kSecClassGenericPassword,
-            kSecAttrAccount: key.rawValue,
-            kSecReturnData: kCFBooleanTrue as Any,
-            kSecMatchLimit: kSecMatchLimitOne,
-            kSecAttrAccessGroup: accessGroup
-        ] as [String: Any]
-
-        var result: AnyObject?
-
-        let resultCodeLoad = withUnsafeMutablePointer(to: &result) {
-            SecItemCopyMatching(queryLoad as CFDictionary, UnsafeMutablePointer($0))
-        }
-
-        if resultCodeLoad == noErr {
-            if let result = result as? Data, let value = String(data: result, encoding: .utf8) {
-                return value
-            }
-            return nil
-        } else {
-            throw MigrationErrors.errorLoading(resultCodeLoad)
-        }
+        return try JSONDecoder().decode(T.self, from: data)
     }
 
     func delete(key: KeychainAttrAccount) throws {
@@ -101,6 +64,52 @@ class KeychainManager: KeychainManaging {
 
         if result != noErr && result != errSecItemNotFound {
             throw MigrationErrors.errorDeleting(result)
+        }
+    }
+
+    func store<T: Encodable>(key: KeychainAttrAccount, data: T) throws {
+        let data = try JSONEncoder().encode(data)
+
+        let query = [
+            kSecClass: kSecClassGenericPassword,
+            kSecAttrAccount: key.rawValue,
+            kSecValueData: data,
+            kSecAttrAccessGroup: accessGroup
+        ] as [String: Any]
+        SecItemDelete(query as CFDictionary)
+
+        let result = SecItemAdd(query as CFDictionary, nil)
+
+        if result != noErr {
+            throw MigrationErrors.errorSaving(result)
+        }
+    }
+}
+
+private extension KeychainManager {
+
+    func get(key: KeychainAttrAccount) throws -> Data? {
+        let queryLoad = [
+            kSecClass: kSecClassGenericPassword,
+            kSecAttrAccount: key.rawValue,
+            kSecReturnData: kCFBooleanTrue as Any,
+            kSecMatchLimit: kSecMatchLimitOne,
+            kSecAttrAccessGroup: accessGroup
+        ] as [String: Any]
+
+        var result: AnyObject?
+
+        let resultCodeLoad = withUnsafeMutablePointer(to: &result) {
+            SecItemCopyMatching(queryLoad as CFDictionary, UnsafeMutablePointer($0))
+        }
+
+        if resultCodeLoad == noErr {
+            if let data = result as? Data {
+                return data
+            }
+            return nil
+        } else {
+            throw MigrationErrors.errorLoading(resultCodeLoad)
         }
     }
 }

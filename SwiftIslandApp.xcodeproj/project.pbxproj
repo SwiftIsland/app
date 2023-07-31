@@ -52,6 +52,7 @@
 		2A7F12962A6B14CD007C28EA /* AppDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F12952A6B14CD007C28EA /* AppDataModel.swift */; };
 		2A7F12982A6B19E0007C28EA /* SwiftIslandLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F12972A6B19E0007C28EA /* SwiftIslandLogo.swift */; };
 		2AB3AE902A77FF0E00F3ECB2 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB3AE8F2A77FF0E00F3ECB2 /* KeychainManager.swift */; };
+		2AB3AF652A78134300F3ECB2 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB3AF642A78134300F3ECB2 /* Ticket.swift */; };
 		2AC7DCF12A58B5E600DB9F6D /* ConferenceBoxFAQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DCF02A58B5E600DB9F6D /* ConferenceBoxFAQ.swift */; };
 		2AC7DD022A58C95700DB9F6D /* FAQItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DD012A58C95700DB9F6D /* FAQItem.swift */; };
 		2AC7DD042A58C9B800DB9F6D /* AllFAQRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DD032A58C9B800DB9F6D /* AllFAQRequests.swift */; };
@@ -143,6 +144,7 @@
 		2A7F12952A6B14CD007C28EA /* AppDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataModel.swift; sourceTree = "<group>"; };
 		2A7F12972A6B19E0007C28EA /* SwiftIslandLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftIslandLogo.swift; sourceTree = "<group>"; };
 		2AB3AE8F2A77FF0E00F3ECB2 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		2AB3AF642A78134300F3ECB2 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
 		2AC7DCF02A58B5E600DB9F6D /* ConferenceBoxFAQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxFAQ.swift; sourceTree = "<group>"; };
 		2AC7DD012A58C95700DB9F6D /* FAQItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQItem.swift; sourceTree = "<group>"; };
 		2AC7DD032A58C9B800DB9F6D /* AllFAQRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFAQRequests.swift; sourceTree = "<group>"; };
@@ -288,6 +290,7 @@
 				2A17F0C52A608D990055E214 /* Mentor.swift */,
 				2A18CE3C2A76E7A700969214 /* PackingItem.swift */,
 				2A7F12912A69DB26007C28EA /* Page.swift */,
+				2AB3AF642A78134300F3ECB2 /* Ticket.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -670,6 +673,7 @@
 				2A7F12962A6B14CD007C28EA /* AppDataModel.swift in Sources */,
 				2A18CE442A773D7F00969214 /* SectionGettingHere.swift in Sources */,
 				2AE43FFB2A701EA9009078E3 /* DBEvent.swift in Sources */,
+				2AB3AF652A78134300F3ECB2 /* Ticket.swift in Sources */,
 				2AE2425F2A521E4F007FFCC5 /* Collection+Safe.swift in Sources */,
 				2A090BD92A71BAFF003553D2 /* PlaceAnnotationView.swift in Sources */,
 				2A7F12852A65DBEA007C28EA /* LocationManager.swift in Sources */,
