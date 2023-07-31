@@ -12,3 +12,5 @@ struct Ticket: Codable {
 }
 
 extension Ticket: Identifiable { }
+
+extension Ticket: Equatable { }

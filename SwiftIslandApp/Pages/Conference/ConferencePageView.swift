@@ -106,7 +106,7 @@ struct ConferencePageView: View {
                                     VStack(alignment: .leading) {
                                         ForEach(storedTickets) { ticket in
                                             Button {
-                                                ticketToShow = ticket
+                                                // Handled below
                                             } label: {
                                                 HStack(spacing: 8) {
                                                     Image(systemName: "ticket")
@@ -128,10 +128,6 @@ struct ConferencePageView: View {
                                                         .font(.footnote)
                                                 }
                                                 .padding(.vertical, 3)
-                                                .onLongPressGesture {
-                                                    debugPrint("Long press")
-                                                    showDeleteAction = true
-                                                }
                                                 .confirmationDialog("Would you like to delete this ticket from the app?", isPresented: $showDeleteAction, titleVisibility: .visible) {
                                                     Button("Delete", role: .destructive) {
                                                         showDeleteAction = false
@@ -141,6 +137,13 @@ struct ConferencePageView: View {
                                                         }
                                                         self.storedTickets = filteredStoredTickets
                                                     }
+                                                }
+                                                .onTapGesture {
+                                                    isShowingTicketPopover = false
+                                                    ticketToShow = ticket
+                                                }
+                                                .onLongPressGesture {
+                                                    showDeleteAction.toggle()
                                                 }
                                             }
                                         }

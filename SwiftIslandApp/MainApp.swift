@@ -16,7 +16,6 @@ struct MainApp: App {
     @StateObject private var appDataModel = AppDataModel()
     @State private var appActionTriggered: AppActions? = nil
     @State private var ticketToShow: Ticket?
-
     @State private var storedTickets: [Ticket] = []
 
     var body: some Scene {
@@ -34,7 +33,9 @@ struct MainApp: App {
             .onOpenURL { url in
                 handleOpenURL(url)
             }
-            .sheet(item: $ticketToShow, content: { ticket in
+            .sheet(item: $ticketToShow, onDismiss: {
+                debugPrint("Dismissed!")
+            }, content: { ticket in
                 if let url = URL(string: "https://ti.to/swiftisland/2023/tickets/\(ticket.id)") {
                     SafariWebView(url: url)
                 } else {

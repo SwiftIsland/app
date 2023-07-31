@@ -42,7 +42,7 @@ enum ActivityType: String, Codable, CaseIterable {
     case socialActivity = "Social"
     case meal = "Meal"
     case mandatoryEventActivity = "Mandatory event activity"
-    case excursion = "Excursion"
+    case transport = "Transport"
     case inviteOnly = "Invite only activity"
 
     var color: Color {
@@ -55,7 +55,7 @@ enum ActivityType: String, Codable, CaseIterable {
             return .green
         case .mandatoryEventActivity:
             return .redDark
-        case .excursion:
+        case .transport:
             return .orangeDark
         case .inviteOnly:
             return .purple
