@@ -22,13 +22,14 @@ struct ScheduleView: View {
     @State private var selectedDayTag = 4
     @State private var events: [Event] = []
 
+    private let startHourOfDay = 6
     private let hours: [String] = {
         let df = DateFormatter()
         df.dateFormat = Locale.is24Hour ? "HH:mm" : "h a"
 
         var hours: [String] = []
 
-        for hour in 0...24 {
+        for hour in startHourOfDay...24 {
             let date = Date().atHour(hour)!
             hours.append(df.string(from: date))
         }
@@ -142,7 +143,7 @@ struct ScheduleView: View {
             let activity = event.activity
             var event = event
 
-            guard let startHour = event.startDate.hour, let dateHour = Date().atHour(startHour) else { return }
+            guard let startHour = event.startDate.hour, let dateHour = Date().atHour(startHour - startHourOfDay) else { return }
             let secondsSinceStartOfDay = abs(Date().atHour(0)?.timeIntervalSince(dateHour) ?? 0)
 
             let frame = CGRect(x: 0, y: secondsSinceStartOfDay * heightPerSecond, width: 60, height: activity.duration * heightPerSecond)
