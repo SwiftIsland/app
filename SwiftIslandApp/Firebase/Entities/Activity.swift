@@ -40,7 +40,7 @@ extension Activity {
 enum ActivityType: String, Codable, CaseIterable {
     case workshop = "Workshop"
     case socialActivity = "Social"
-    case food = "Food"
+    case meal = "Meal"
     case mandatoryEventActivity = "Mandatory event activity"
     case excursion = "Excursion"
     case inviteOnly = "Invite only activity"
@@ -51,7 +51,7 @@ enum ActivityType: String, Codable, CaseIterable {
             return .purple
         case .socialActivity:
             return .yellowDark
-        case .food:
+        case .meal:
             return .green
         case .mandatoryEventActivity:
             return .redDark
