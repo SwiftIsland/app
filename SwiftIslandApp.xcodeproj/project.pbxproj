@@ -53,6 +53,7 @@
 		2A7F12982A6B19E0007C28EA /* SwiftIslandLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F12972A6B19E0007C28EA /* SwiftIslandLogo.swift */; };
 		2AB3AE902A77FF0E00F3ECB2 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB3AE8F2A77FF0E00F3ECB2 /* KeychainManager.swift */; };
 		2AB3AF652A78134300F3ECB2 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB3AF642A78134300F3ECB2 /* Ticket.swift */; };
+		2AB3AF672A78199600F3ECB2 /* SafariWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB3AF662A78199600F3ECB2 /* SafariWebView.swift */; };
 		2AC7DCF12A58B5E600DB9F6D /* ConferenceBoxFAQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DCF02A58B5E600DB9F6D /* ConferenceBoxFAQ.swift */; };
 		2AC7DD022A58C95700DB9F6D /* FAQItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DD012A58C95700DB9F6D /* FAQItem.swift */; };
 		2AC7DD042A58C9B800DB9F6D /* AllFAQRequests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DD032A58C9B800DB9F6D /* AllFAQRequests.swift */; };
@@ -145,6 +146,7 @@
 		2A7F12972A6B19E0007C28EA /* SwiftIslandLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftIslandLogo.swift; sourceTree = "<group>"; };
 		2AB3AE8F2A77FF0E00F3ECB2 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		2AB3AF642A78134300F3ECB2 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
+		2AB3AF662A78199600F3ECB2 /* SafariWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebView.swift; sourceTree = "<group>"; };
 		2AC7DCF02A58B5E600DB9F6D /* ConferenceBoxFAQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxFAQ.swift; sourceTree = "<group>"; };
 		2AC7DD012A58C95700DB9F6D /* FAQItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQItem.swift; sourceTree = "<group>"; };
 		2AC7DD032A58C9B800DB9F6D /* AllFAQRequests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllFAQRequests.swift; sourceTree = "<group>"; };
@@ -338,6 +340,7 @@
 				2A7F12782A640730007C28EA /* ScrollViewOffset.swift */,
 				2A7F12972A6B19E0007C28EA /* SwiftIslandLogo.swift */,
 				2AB3AE8F2A77FF0E00F3ECB2 /* KeychainManager.swift */,
+				2AB3AF662A78199600F3ECB2 /* SafariWebView.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -652,6 +655,7 @@
 				2A18CE422A773D3A00969214 /* SectionBeforeYouLeave.swift in Sources */,
 				2AB3AE902A77FF0E00F3ECB2 /* KeychainManager.swift in Sources */,
 				2AEDC4CC2A4A0CDF00CD0180 /* TabItem.swift in Sources */,
+				2AB3AF672A78199600F3ECB2 /* SafariWebView.swift in Sources */,
 				2AE43FFD2A70266B009078E3 /* Event.swift in Sources */,
 				2A090BD52A71AE7F003553D2 /* AllLocationsRequest.swift in Sources */,
 				2AEDC4CA2A4A0CB500CD0180 /* TabBarBarView.swift in Sources */,

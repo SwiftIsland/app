@@ -34,7 +34,11 @@ struct MainApp: App {
                 handleOpenURL(url)
             }
             .sheet(item: $ticketToShow, content: { ticket in
-                Text("Showing ticket!\n\(ticket.id)")
+                if let url = URL(string: "https://ti.to/swiftisland/2023/tickets/\(ticket.id)") {
+                    SafariWebView(url: url)
+                } else {
+                    Text("The ticket ID provided was invalid")
+                }
             })
         }
     }
