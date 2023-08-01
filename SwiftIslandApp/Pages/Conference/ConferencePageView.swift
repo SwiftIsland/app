@@ -4,7 +4,6 @@
 //
 
 import SwiftUI
-import FirebaseFirestore
 import SwiftIslandDataLogic
 
 struct ConferencePageView: View {

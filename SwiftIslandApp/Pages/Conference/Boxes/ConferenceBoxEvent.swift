@@ -54,10 +54,6 @@ struct ConferenceBoxEvent: View {
 
 struct ConferenceNextEvent_Previews: PreviewProvider {
     static var previews: some View {
-        let dbEvent = DBEvent(id: "1", activityId: "1", startDate: Date().addingTimeInterval(60))
-        let activity = Activity.forPreview()
-        let event = Event(dbEvent: dbEvent, activity: activity)
-
-        ConferenceBoxEvent(event: event)
+        ConferenceBoxEvent(event: Event.forPreview())
     }
 }

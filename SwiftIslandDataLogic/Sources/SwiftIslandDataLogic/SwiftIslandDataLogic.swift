@@ -1,13 +1,24 @@
 import SwiftUI
 import os.log
+import Firebase
 import FirebaseFirestore
 
+/// SwiftIslandDataLogic is the data logic module for the Swift Island apps.
+/// This package handles the communication between the app and the firebase backend. It also provides the entities needed for the client apps to function properly.
+///
+/// The client app is required to embed the `GoogleService-Info.plist` file into their project and make sure the Firebase project is setup properly. This package might offer support
+/// for more things that the client app is able to use, depending on the rules setup in the firebase project.
+///
+/// When launching the app, make sure to call the `SwiftIslandDataLogic.configure()` method. This will configure a default Firebase app.
 public class SwiftIslandDataLogic: ObservableObject {
 
     @Published var activities: [Activity] = []
 
-    public init() {
-        
+    public init() { }
+
+    /// Configures SwiftIslandDataLogic's dependencies. Required to be run at launch.
+    public static func configure() {
+        FirebaseApp.configure()
     }
 
     private let logger = Logger(
@@ -36,7 +47,9 @@ public class SwiftIslandDataLogic: ObservableObject {
         return await fetchFromFirebase(forRequest: request)
     }
 
-    /// Fetches all the activities
+    /// Fetches all the activities available.
+    ///
+    /// Each activity is seperate from an event; an activity is unique, such as "VisionOS Workshop", but it can happen multiple times.
     /// - Returns: Array of `Activity`
     public func fetchActivities() async -> [Activity] {
         let request = AllActivitiesRequest()

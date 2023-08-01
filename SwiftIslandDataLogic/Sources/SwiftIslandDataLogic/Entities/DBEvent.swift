@@ -5,7 +5,7 @@
 
 import Foundation
 
-public struct DBEvent: Response {
+internal struct DBEvent: Response {
     public let id: String
     public let activityId: String
     public let startDate: Date

@@ -5,6 +5,14 @@
 
 import Foundation
 
+/// An event is an scheduled activity.
+///
+/// - Parameters:
+///   - id: The ID of the event
+///   - startDate: The start time of the event as `Date`
+///   - endDate: The end time of the event as `Date`
+///   - activity: The ``activity`` bound to the event
+///   - duration: The duration of the event in seconds.
 public struct Event {
     public let id: String
     public let startDate: Date
@@ -16,7 +24,7 @@ public struct Event {
     public var column: Int = 0
     public var columnCount: Int = 0
 
-    public init(dbEvent: DBEvent, activity: Activity) {
+    internal init(dbEvent: DBEvent, activity: Activity) {
         self.id = dbEvent.id
         self.startDate = dbEvent.startDate
         self.endDate = dbEvent.startDate.addingTimeInterval(activity.duration)
@@ -30,6 +38,16 @@ extension Event: Identifiable { }
 extension Event: Equatable { }
 
 extension Event {
+
+    /// Only meant to be used for Preview purposes. Might change in the future.
+    ///
+    /// - Parameters:
+    ///   - id: The ID of the event
+    ///   - startDate: The start time of the event as `Date`
+    ///   - endDate: The end time of the event as `Date`
+    ///   - activity: The ``activity`` bound to the event
+    ///   - duration: The duration of the event in seconds.
+    /// - Returns: an ``Event``
     public static func forPreview(id: String = "1",
                            startDate: Date = Date(timeIntervalSinceNow: 60*60),
                            endDate: Date = Date(timeIntervalSinceNow: (60*60)*2),

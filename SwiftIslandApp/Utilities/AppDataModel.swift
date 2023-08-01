@@ -4,7 +4,6 @@
 //
 
 import Foundation
-import FirebaseFirestore
 import os.log
 import SwiftUI
 import Defaults

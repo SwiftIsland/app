@@ -4,8 +4,6 @@
 //
 
 import SwiftUI
-import FirebaseAuth
-import FirebaseFirestore
 import SwiftIslandDataLogic
 
 struct ConferenceBoxFAQ: View {

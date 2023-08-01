@@ -6,11 +6,12 @@
 import SwiftUI
 import Firebase
 import Defaults
+import SwiftIslandDataLogic
 
 @main
 struct MainApp: App {
     init() {
-        FirebaseApp.configure()
+        SwiftIslandDataLogic.configure()
     }
 
     @StateObject private var appDataModel = AppDataModel()

@@ -6,7 +6,6 @@
 import SwiftUI
 import CoreLocation
 import Defaults
-import FirebaseFirestore
 import SwiftIslandDataLogic
 
 // MARK: - Main page
