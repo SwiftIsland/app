@@ -4,6 +4,7 @@
 //
 
 import Defaults
+import SwiftIslandDataLogic
 
 extension Defaults.Keys {
     static let userIsActivated = Key<Bool>("userActivated", default: false)

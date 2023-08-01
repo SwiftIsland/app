@@ -5,12 +5,12 @@
 
 import Foundation
 
-struct DBEvent: Response {
-    let id: String
-    let activityId: String
-    let startDate: Date
+internal struct DBEvent: Response {
+    public let id: String
+    public let activityId: String
+    public let startDate: Date
 
-    init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decode(String.self, forKey: .id)
         self.activityId = try container.decode(String.self, forKey: .activityId)
@@ -20,7 +20,7 @@ struct DBEvent: Response {
         self.startDate = date
     }
 
-    init(id: String, activityId: String, startDate: Date) {
+    public init(id: String, activityId: String, startDate: Date) {
         self.id = id
         self.activityId = activityId
         self.startDate = startDate

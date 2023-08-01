@@ -5,6 +5,7 @@
 
 import SwiftUI
 import MapKit
+import SwiftIslandDataLogic
 
 struct MapView: View {
     @EnvironmentObject private var appDataModel: AppDataModel

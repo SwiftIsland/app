@@ -4,6 +4,7 @@
 //
 
 import SwiftUI
+import SwiftIslandDataLogic
 
 struct PlaceAnnotationView: View {
     @State private var showTitle = false

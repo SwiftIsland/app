@@ -6,7 +6,7 @@
 import SwiftUI
 import CoreLocation
 import Defaults
-import FirebaseFirestore
+import SwiftIslandDataLogic
 
 // MARK: - Main page
 
@@ -70,8 +70,8 @@ struct PracticalPageView_Previews: PreviewProvider {
     static var previews: some View {
         let appDataModel = AppDataModel()
         appDataModel.pages = [
-            Page(id: "schiphol", title: "", content: "", imageName: "schiphol"),
-            Page(id: "joinSlack", title: "", content: "https://join.slack.com/t/swiftisland/shared_invite/abc-123-def", imageName: "")
+            Page.forPreview(id: "schiphol", imageName: "schiphol"),
+            Page.forPreview(id: "joinSlack", content: "https://join.slack.com/t/swiftisland/shared_invite/abc-123-def", imageName: "")
         ]
 
         return Group {

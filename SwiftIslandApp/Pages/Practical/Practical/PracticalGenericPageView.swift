@@ -4,6 +4,7 @@
 //
 
 import SwiftUI
+import SwiftIslandDataLogic
 
 struct PracticalGenericPageView: View {
     let page: Page
