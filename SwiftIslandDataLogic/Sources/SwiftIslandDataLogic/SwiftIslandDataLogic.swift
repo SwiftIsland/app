@@ -51,14 +51,22 @@ public class SwiftIslandDataLogic: ObservableObject {
     ///
     /// Each activity is seperate from an event; an activity is unique, such as "VisionOS Workshop", but it can happen multiple times.
     /// - Returns: Array of `Activity`
+    @discardableResult
     public func fetchActivities() async -> [Activity] {
         let request = AllActivitiesRequest()
-        return await fetchFromFirebase(forRequest: request)
+
+        let activities = await fetchFromFirebase(forRequest: request)
+        self.activities = activities
+        return activities
     }
 
     /// Fetches the db events from firebase and converts them to a `Event`
     /// - Returns: Array of `Event`
     public func fetchEvents() async -> [Event] {
+        if activities.isEmpty {
+            await fetchActivities()
+        }
+
         let request = AllEventsRequest()
         let dbEvents = await fetchFromFirebase(forRequest: request)
 

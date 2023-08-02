@@ -144,7 +144,6 @@ struct ScheduleView: View {
             let activity = event.activity
             var event = event
 
-//            guard let startHour = event.startDate.hour, let dateHour = selectedDate.atHour(startHour - startHourOfDay) else { return }
             let secondsSinceStartOfDay = abs(selectedDate!.atHour(startHourOfDay)?.timeIntervalSince(event.startDate) ?? 0)
 
             let frame = CGRect(x: 0, y: secondsSinceStartOfDay * heightPerSecond, width: 60, height: activity.duration * heightPerSecond)

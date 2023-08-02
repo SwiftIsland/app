@@ -86,7 +86,7 @@ struct EventView: View {
 
 struct EventView_Previews: PreviewProvider {
     static var previews: some View {
-        let event = Event(dbEvent: DBEvent(id: "1", activityId: "1", startDate: Date(timeIntervalSinceNow: 60*60)), activity: Activity.forPreview())
+        let event = Event.forPreview()
 
         Group {
             EventView(event: event)
