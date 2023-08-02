@@ -10,7 +10,7 @@ struct ConferenceBoxTicket: View {
         ZStack {
             Image("BoxTicketBackground")
             Button(action: {
-                debugPrint("Do something")
+                UIApplication.shared.open(URL(string: "https://ti.to/swiftisland/2023")!)
             }, label: {
                 Text("Tickets")
                     .padding(.vertical, 8)
