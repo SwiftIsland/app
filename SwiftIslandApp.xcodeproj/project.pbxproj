@@ -80,6 +80,7 @@
 		2AEDC4C62A4A08AF00CD0180 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEDC4C52A4A08AF00CD0180 /* TabBarView.swift */; };
 		2AEDC4CA2A4A0CB500CD0180 /* TabBarBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEDC4C92A4A0CB500CD0180 /* TabBarBarView.swift */; };
 		2AEDC4CC2A4A0CDF00CD0180 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEDC4CB2A4A0CDF00CD0180 /* TabItem.swift */; };
+		2AF19ED32A7B04A500134E0B /* ConferencePageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF19ED22A7B04A500134E0B /* ConferencePageContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,7 +96,7 @@
 			containerPortal = 2AEDC48B2A4A030F00CD0180 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2AEDC4922A4A030F00CD0180;
-			remoteInfo = SwiftIsland2023;
+			remoteInfo = SwiftIsland;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -184,6 +185,7 @@
 		2AEDC4C52A4A08AF00CD0180 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		2AEDC4C92A4A0CB500CD0180 /* TabBarBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarBarView.swift; sourceTree = "<group>"; };
 		2AEDC4CB2A4A0CDF00CD0180 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		2AF19ED22A7B04A500134E0B /* ConferencePageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferencePageContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -519,6 +521,7 @@
 				2A16EB432A4F621B00CC881D /* Boxes */,
 				2A16EB342A4CDA3200CC881D /* HeaderView */,
 				2AEDC4C22A4A089100CD0180 /* ConferencePageView.swift */,
+				2AF19ED22A7B04A500134E0B /* ConferencePageContentView.swift */,
 			);
 			path = Conference;
 			sourceTree = "<group>";
@@ -575,7 +578,7 @@
 				2A7F128A2A69CB2C007C28EA /* Defaults */,
 				2A3AB6582A7871030089CF7E /* SwiftIslandDataLogic */,
 			);
-			productName = SwiftIsland2023;
+			productName = SwiftIsland;
 			productReference = 2AEDC4932A4A030F00CD0180 /* Swift Island.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -596,7 +599,7 @@
 			packageProductDependencies = (
 				2A987AA02A7ADF5A00EE15DF /* SwiftIslandDataLogic */,
 			);
-			productName = SwiftIsland2023Tests;
+			productName = SwiftIslandTests;
 			productReference = 2AEDC4A32A4A031100CD0180 /* SwiftIslandAppTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -705,6 +708,7 @@
 				2A7F12792A640730007C28EA /* ScrollViewOffset.swift in Sources */,
 				2A16EB362A4CDA4200CC881D /* ConferenceHeaderView.swift in Sources */,
 				2AE43FAC2A6B1A8C009078E3 /* View+PercentageOffset.swift in Sources */,
+				2AF19ED32A7B04A500134E0B /* ConferencePageContentView.swift in Sources */,
 				2A18CE422A773D3A00969214 /* SectionBeforeYouLeave.swift in Sources */,
 				2AB3AE902A77FF0E00F3ECB2 /* KeychainManager.swift in Sources */,
 				2AEDC4CC2A4A0CDF00CD0180 /* TabItem.swift in Sources */,

@@ -17,66 +17,21 @@ struct ConferencePageView: View {
     @State private var ticketToShow: Ticket?
     @State private var isShowingTicketPopover = false
     @State private var showDeleteAction = false
-    @State private var nextEvent: Event?
 
     @Binding var storedTickets: [Ticket]
+
 
     var body: some View {
         NavigationStack {
             ZStack {
                 LinearGradient.defaultBackground
 
-                GeometryReader { geo in
-                    ScrollView(.vertical) {
-                        ConferenceHeaderView()
-                        ConferenceBoxTicket()
-                            .padding(.vertical, 6)
+                ConferencePageContentView(namespace: namespace,
+                                          isShowingMentor: $isShowingMentor,
+                                          mayShowMentorNextMentor: $mayShowMentorNextMentor,
+                                          selectedMentor: $selectedMentor)
 
-                        VStack(alignment: .leading) {
-                            Text("Mentors this year".uppercased())
-                                .font(.caption)
-                                .foregroundColor(.secondary)
-                                .padding(.horizontal, 40)
-                                .padding(.top, 6)
-                                .padding(.bottom, 0)
-                            TabView {
-                                ForEach(appDataModel.mentors) { mentor in
-                                    MentorView(namespace: namespace, mentor: mentor, isShowContent: $isShowingMentor)
-                                        .matchedGeometryEffect(id: mentor.id, in: namespace)
-                                        .mask {
-                                            RoundedRectangle(cornerRadius: 15, style: .continuous)
-                                        }
-                                        .padding(.horizontal, 20)
-                                        .onTapGesture {
-                                            if mayShowMentorNextMentor {
-                                                mayShowMentorNextMentor = false
-                                                selectedMentor = mentor
-                                                withAnimation(.interactiveSpring(response: 0.55, dampingFraction: 0.8)) {
-                                                    isShowingMentor = true
-                                                }
-                                            } else {
-                                                debugPrint("Too soon to show next mentor animation")
-                                            }
-                                        }
-                                }
-                            }
-                            .tabViewStyle(.page(indexDisplayMode: .never))
-                            .frame(minHeight: geo.size.width * 0.80)
-                        }
-
-                        if let nextEvent {
-                            ConferenceBoxEvent(event: nextEvent)
-                        } else {
-                            ProgressView()
-                        }
-
-                        // Removed for now.
-//                        ConferenceBoxFAQ()
-//                            .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
-//                            .scrollContentBackground(.hidden)
-                    }
-                }
-
+                // The Mentor view when a mentor is selected
                 if let mentor = selectedMentor, isShowingMentor {
                     MentorView(namespace: namespace, mentor: mentor, isShowContent: $isShowingMentor)
                         .matchedGeometryEffect(id: mentor.id, in: namespace)
@@ -86,6 +41,7 @@ struct ConferencePageView: View {
                         }
                 }
 
+                // The tickets button (top right) as well as the popover and the safari view
                 if storedTickets.count > 0 && !isShowingMentor {
                     HStack {
                         Button {
@@ -175,11 +131,6 @@ struct ConferencePageView: View {
                 Text("The ticket ID provided was invalid")
             }
         })
-        .onAppear {
-            Task {
-                self.nextEvent = await appDataModel.nextEvent()
-            }
-        }
     }
 }
 
