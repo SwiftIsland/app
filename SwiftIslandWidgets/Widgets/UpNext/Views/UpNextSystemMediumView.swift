@@ -47,17 +47,29 @@ struct UpNextSystemMediumView: View {
                 }
                 .dynamicTypeSize(DynamicTypeSize.small ... DynamicTypeSize.xLarge)
             } else {
-                VStack(alignment: .center) {
-                    Image("Logo")
-                        .resizable()
-                        .aspectRatio(CGSize(width: 1, height: 1), contentMode: .fit)
-                        .frame(width: 36)
-                        .shadow(color: .primary.opacity(0.2), radius: 5, x: 0, y: 0)
-                    Text("There are no more events to show here!\n\nWe hope to see you again in 2024!")
-                        .font(.footnote)
-                        .fontWeight(.light)
-                        .multilineTextAlignment(.center)
-                        .padding()
+                if entry.isTooFarInTheFuture {
+                    VStack(alignment: .center) {
+                        Text("Up Next")
+                            .font(.body)
+                        Text("Sure, _early bird gets the worm_, but you are a little too early just yet 😉\n\nCheck back here a few days before the event.")
+                            .font(.footnote)
+                            .fontWeight(.light)
+                            .multilineTextAlignment(.center)
+                            .padding()
+                    }
+                } else {
+                    VStack(alignment: .center) {
+                        Image("Logo")
+                            .resizable()
+                            .aspectRatio(CGSize(width: 1, height: 1), contentMode: .fit)
+                            .frame(width: 36)
+                            .shadow(color: .primary.opacity(0.2), radius: 5, x: 0, y: 0)
+                        Text("There are no more events to show here!\n\nWe hope to see you again in 2024!")
+                            .font(.footnote)
+                            .fontWeight(.light)
+                            .multilineTextAlignment(.center)
+                            .padding()
+                    }
                 }
             }
         }
@@ -81,6 +93,16 @@ struct UpNextSystemMedium_Previews: PreviewProvider {
             .preferredColorScheme(.dark)
             .dynamicTypeSize(.xxxLarge)
             .previewDisplayName("Medium dark xxxLarge font")
+
+        UpNextSystemMediumView(entry: UpNextEntry.isTooFarAhead())
+            .previewContext(WidgetPreviewContext(family: .systemMedium))
+            .preferredColorScheme(.light)
+            .previewDisplayName("Too early light")
+
+        UpNextSystemMediumView(entry: UpNextEntry.isTooFarAhead())
+            .previewContext(WidgetPreviewContext(family: .systemMedium))
+            .preferredColorScheme(.dark)
+            .previewDisplayName("Too early dark")
 
         UpNextSystemMediumView(entry: UpNextEntry.noMoreEvents())
             .previewContext(WidgetPreviewContext(family: .systemMedium))

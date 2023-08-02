@@ -27,11 +27,15 @@ struct UpNextProvider: TimelineProvider {
             var entries: [UpNextEntry] = []
 
             if futureEvents.count > 0 {
-                futureEvents.forEach { event in
-                    entries.append(Entry(date: event.startDate, event: event))
+                if let firstEvent = futureEvents.first, firstEvent.startDate.timeIntervalSinceNow > ((24 * 60) * 7) {
+                    entries.append(Entry(date: .now, event: nil, isTooFarInTheFuture: true))
+                } else {
+                    futureEvents.forEach { event in
+                        entries.append(Entry(date: event.startDate, event: event, isTooFarInTheFuture: false))
+                    }
                 }
             } else {
-                entries.append(Entry(date: .now, event: nil))
+                entries.append(Entry(date: .now, event: nil, isTooFarInTheFuture: false))
             }
 
             let timeline = Timeline(entries: entries, policy: .atEnd)
