@@ -35,13 +35,19 @@ final class AppDataModel: ObservableObject {
     init(dataLogic: DataLogic = SwiftIslandDataLogic()) {
         self.dataLogic = dataLogic
         if !isShowingPreview() {
-            fetchData()
+            Task {
+                await fetchData()
+            }
         }
     }
 
     @MainActor
-    func nextEvent() -> Event? {
-        events.sorted(by: { $0.startDate < $1.startDate }).first(where: { $0.startDate > Date() })
+    func nextEvent() async -> Event? {
+        if events.count == 0 {
+            self.events = await fetchEvents()
+        }
+
+        return events.sorted(by: { $0.startDate < $1.startDate }).first(where: { $0.startDate > Date() })
     }
 
     /// Fetches all the stored locations
@@ -69,6 +75,7 @@ final class AppDataModel: ObservableObject {
 }
 
 private extension AppDataModel {
+    @MainActor
     func fetchData() {
         Task {
             mentors = await fetchMentors()
@@ -82,22 +89,26 @@ private extension AppDataModel {
 
     /// Fetches all the mentors from Firebase
     /// - Returns: Array of `Mentor`
+    @MainActor
     func fetchMentors() async -> [Mentor] {
         await dataLogic.fetchMentors()
     }
 
     /// Fetches all the pages from Firebase and stores
     /// - Returns: Array of `Page`
+    @MainActor
     func fetchPages() async -> [Page] {
         await dataLogic.fetchPages()
     }
 
     /// Fetches all the activities
     /// - Returns: Array of `Activity`
+    @MainActor
     func fetchActivities() async -> [Activity] {
         return await dataLogic.fetchActivities()
     }
 
+    @MainActor
     func fetchEvents() async -> [Event] {
         return await dataLogic.fetchEvents()
     }

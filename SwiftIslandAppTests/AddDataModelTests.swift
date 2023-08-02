@@ -10,24 +10,19 @@ import SwiftIslandDataLogic
 final class AddDataModelTests: XCTestCase {
 
     var dataLogicMock: DataLogicMock!
-    var sut: AppDataModel!
 
     override func setUpWithError() throws {
         dataLogicMock = DataLogicMock()
-
-        sut = AppDataModel(dataLogic: dataLogicMock)
     }
 
     override func tearDownWithError() throws {
-        sut = nil
         dataLogicMock = nil
     }
 
     // MARK: - Next Event
-
-    func testNextEvent_allFutureEvents_shouldReturnFirstEvent() {
+    @MainActor
+    func testNextEvent_allFutureEvents_shouldReturnFirstEvent() async {
         // Given
-        let expectation = XCTestExpectation(description: "Wait for the correct event.")
         let events = [
             Event.forPreview(id: "1", startDate: Date(timeIntervalSinceNow: 60)),
             Event.forPreview(id: "2", startDate: Date(timeIntervalSinceNow: 61)),
@@ -37,22 +32,16 @@ final class AddDataModelTests: XCTestCase {
         ]
         dataLogicMock.fetchEventsReturnValue = events
 
-        Task {
-            // When
-            let result = await sut.nextEvent()
+        // When
+        let sut = AppDataModel(dataLogic: dataLogicMock)
+        let result = await sut.nextEvent()
 
-            // Then
-            XCTAssertEqual(result?.id, "1")
-
-            expectation.fulfill()
-        }
-
-        wait(for: [expectation])
+        // Then
+        XCTAssertEqual(result?.id, "1")
     }
 
-    func testNextEvent_someFutureEvents_shouldReturnThirdEvent() {
+    func testNextEvent_someFutureEvents_shouldReturnThirdEvent() async {
         // Given
-        let expectation = XCTestExpectation(description: "Wait for the correct event.")
         let events = [
             Event.forPreview(id: "1", startDate: Date(timeIntervalSinceNow: -60)),
             Event.forPreview(id: "2", startDate: Date(timeIntervalSinceNow: -59)),
@@ -62,22 +51,16 @@ final class AddDataModelTests: XCTestCase {
         ]
         dataLogicMock.fetchEventsReturnValue = events
 
-        Task {
-            // When
-            let result = await sut.nextEvent()
+        // When
+        let sut = AppDataModel(dataLogic: dataLogicMock)
+        let result = await sut.nextEvent()
 
-            // Then
-            XCTAssertEqual(result?.id, "3")
-
-            expectation.fulfill()
-        }
-
-        wait(for: [expectation])
+        // Then
+        XCTAssertEqual(result?.id, "3")
     }
 
-    func testNextEvent_allEventsHavePassed_shouldReturnNil() {
+    func testNextEvent_allEventsHavePassed_shouldReturnNil() async {
         // Given
-        let expectation = XCTestExpectation(description: "Wait for the correct event.")
         let events = [
             Event.forPreview(id: "1", startDate: Date(timeIntervalSinceNow: -60)),
             Event.forPreview(id: "2", startDate: Date(timeIntervalSinceNow: -59)),
@@ -87,68 +70,55 @@ final class AddDataModelTests: XCTestCase {
         ]
         dataLogicMock.fetchEventsReturnValue = events
 
-        Task {
-            // When
-            let result = await sut.nextEvent()
+        // When
+        let sut = AppDataModel(dataLogic: dataLogicMock)
+        let result = await sut.nextEvent()
 
-            // Then
-            XCTAssertNil(result)
-
-            expectation.fulfill()
-        }
-
-        wait(for: [expectation])
+        // Then
+        XCTAssertNil(result)
     }
 
-    func testNextEvent_noEvents_shouldReturnNil() {
+    func testNextEvent_noEvents_shouldReturnNil() async {
         // Given
-        let expectation = XCTestExpectation(description: "Wait for the correct event.")
         dataLogicMock.fetchEventsReturnValue = []
 
-        Task {
-            // When
-            let result = await sut.nextEvent()
+        // When
+        let sut = AppDataModel(dataLogic: dataLogicMock)
+        let result = await sut.nextEvent()
 
-            // Then
-            XCTAssertNil(result)
-
-            expectation.fulfill()
-        }
-
-        wait(for: [expectation])
+        // Then
+        XCTAssertNil(result)
     }
 
     // MARK: - Locations
 
-    func testFetchLocations_existingLocations_shouldReturnLocations() {
-        let expectation = XCTestExpectation(description: "Wait for the correct fetching of locations.")
+    func testFetchLocations_existingLocations_shouldReturnLocations() async {
+        // Given
         dataLogicMock.fetchLocationsReturnValue = [
             Location.forPreview(id: "1"),
             Location.forPreview(id: "2")
         ]
 
-        Task {
-            await sut.fetchLocations()
-            XCTAssertEqual(sut.locations.count, 2)
+        // When
+        let sut = AppDataModel(dataLogic: dataLogicMock)
+        await sut.fetchLocations()
 
-            expectation.fulfill()
-        }
-
-        wait(for: [expectation])
+        // Then
+        let locations = await sut.locations
+        XCTAssertEqual(locations.count, 2)
     }
 
-    func testFetchLocations_existingLocations_shouldReturnNoLocations() {
-        let expectation = XCTestExpectation(description: "Wait for the correct fetching of locations.")
+    func testFetchLocations_existingLocations_shouldReturnNoLocations() async {
+        // Given
         dataLogicMock.fetchLocationsReturnValue = []
 
-        Task {
-            await sut.fetchLocations()
-            XCTAssertEqual(sut.locations.count, 0)
+        // When
+        let sut = AppDataModel(dataLogic: dataLogicMock)
+        await sut.fetchLocations()
 
-            expectation.fulfill()
-        }
-
-        wait(for: [expectation])
+        // Then
+        let locations = await sut.locations
+        XCTAssertEqual(locations.count, 0)
     }
 }
 
@@ -202,6 +172,4 @@ internal class DataLogicMock: DataLogic {
     func fetchFAQItems() async -> [FAQItem] {
         return fetchFAQItemsReturnValue
     }
-
-
 }
