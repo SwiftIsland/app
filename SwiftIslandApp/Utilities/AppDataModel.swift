@@ -17,7 +17,6 @@ enum AppState {
 
 /// AppDataModel hold app data that is used by multiple views and is shared as an environment variable to the views.
 /// This class is used on the main dispatch queue
-@MainActor
 final class AppDataModel: ObservableObject {
     @Published var appState = AppState.initialising
     @Published var mentors: [Mentor] = []
@@ -31,26 +30,30 @@ final class AppDataModel: ObservableObject {
         category: String(describing: AppDataModel.self)
     )
 
-    private let dataLogic = SwiftIslandDataLogic()
+    private let dataLogic: DataLogic
 
-    init() {
+    init(dataLogic: DataLogic = SwiftIslandDataLogic()) {
+        self.dataLogic = dataLogic
         if !isShowingPreview() {
             fetchData()
         }
     }
 
+    @MainActor
     func nextEvent() -> Event? {
-        events.sorted(by: { $0.startDate < $1.startDate }).first
+        events.sorted(by: { $0.startDate < $1.startDate }).first(where: { $0.startDate > Date() })
     }
 
     /// Fetches all the stored locations
     /// - Returns: Array of `Location`
+    @MainActor
     func fetchLocations() async {
         self.locations = await dataLogic.fetchLocations()
     }
 
-    /// Fetches items for packinglist. If none are stored locally, it'll get the list from Firebase.
+    /// Fetches items for packing list. If none are stored locally, it'll get the list from Firebase.
     /// - Returns: Array of `PackingItem`
+    @MainActor
     func fetchPackingListItems() async -> [PackingItem] {
         if Defaults[.packingItems].isEmpty {
             debugPrint("Fetching from firebase...")
