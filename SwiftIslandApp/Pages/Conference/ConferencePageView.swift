@@ -122,6 +122,9 @@ struct ConferencePageView: View {
             .navigationDestination(for: FAQItem.self) { item in
                 FAQListView(preselectedItem: item)
             }
+            .safeAreaInset(edge: .bottom) {
+                Color.clear.frame(height: 44)
+            }
         }
         .accentColor(.white)
         .sheet(item: $ticketToShow, content: { ticket in

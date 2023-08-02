@@ -19,7 +19,6 @@ struct PercentageOffset: ViewModifier  {
     @State private var size: CGSize = .zero
 
     func body(content: Content) -> some View {
-
         content
             .background( GeometryReader { geo in Color.clear.onAppear { size = geo.size }})
             .offset(x: size.width * x, y: size.height * y)
