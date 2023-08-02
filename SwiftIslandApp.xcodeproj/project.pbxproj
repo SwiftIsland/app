@@ -784,14 +784,14 @@
 				DEVELOPMENT_TEAM = 6B3SHVL3L5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftIslandWidgets/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = SwiftIslandWidgets;
+				INFOPLIST_KEY_CFBundleDisplayName = "Swift Island Widgets";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 AppTrix AB. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nl.swiftisland.app.SwiftIslandWidgets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -811,14 +811,14 @@
 				DEVELOPMENT_TEAM = 6B3SHVL3L5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftIslandWidgets/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = SwiftIslandWidgets;
+				INFOPLIST_KEY_CFBundleDisplayName = "Swift Island Widgets";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2023 AppTrix AB. All rights reserved.";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nl.swiftisland.app.SwiftIslandWidgets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
@@ -965,7 +965,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nl.swiftisland.app;
 				PRODUCT_NAME = "Swift Island";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -1000,7 +1000,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 2.0.0;
+				MARKETING_VERSION = 2.1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nl.swiftisland.app;
 				PRODUCT_NAME = "Swift Island";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
