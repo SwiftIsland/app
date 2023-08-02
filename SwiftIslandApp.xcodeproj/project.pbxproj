@@ -20,6 +20,7 @@
 		2A18CE422A773D3A00969214 /* SectionBeforeYouLeave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18CE412A773D3A00969214 /* SectionBeforeYouLeave.swift */; };
 		2A18CE442A773D7F00969214 /* SectionGettingHere.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18CE432A773D7F00969214 /* SectionGettingHere.swift */; };
 		2A18CE462A77403800969214 /* EventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18CE452A77403800969214 /* EventDetailsView.swift */; };
+		2A37FB6A2A7B06AE0062E63A /* ConferenceBoxMentors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A37FB692A7B06AE0062E63A /* ConferenceBoxMentors.swift */; };
 		2A3AB6592A7871030089CF7E /* SwiftIslandDataLogic in Frameworks */ = {isa = PBXBuildFile; productRef = 2A3AB6582A7871030089CF7E /* SwiftIslandDataLogic */; };
 		2A3AB65B2A78744B0089CF7E /* ActivityType+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3AB65A2A78744B0089CF7E /* ActivityType+Color.swift */; };
 		2A7F12772A6401C4007C28EA /* NFCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F12762A6401C4007C28EA /* NFCManager.swift */; };
@@ -129,6 +130,7 @@
 		2A18CE412A773D3A00969214 /* SectionBeforeYouLeave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionBeforeYouLeave.swift; sourceTree = "<group>"; };
 		2A18CE432A773D7F00969214 /* SectionGettingHere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionGettingHere.swift; sourceTree = "<group>"; };
 		2A18CE452A77403800969214 /* EventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsView.swift; sourceTree = "<group>"; };
+		2A37FB692A7B06AE0062E63A /* ConferenceBoxMentors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxMentors.swift; sourceTree = "<group>"; };
 		2A3AB6562A7870C80089CF7E /* SwiftIslandDataLogic */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SwiftIslandDataLogic; sourceTree = "<group>"; };
 		2A3AB65A2A78744B0089CF7E /* ActivityType+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityType+Color.swift"; sourceTree = "<group>"; };
 		2A7F12762A6401C4007C28EA /* NFCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCManager.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				2AC7DCF02A58B5E600DB9F6D /* ConferenceBoxFAQ.swift */,
 				2AC7DD082A58CFDD00DB9F6D /* ConferenceBoxFAQItem.swift */,
 				2A16EB442A4F622800CC881D /* ConferenceBoxTicket.swift */,
+				2A37FB692A7B06AE0062E63A /* ConferenceBoxMentors.swift */,
 			);
 			path = Boxes;
 			sourceTree = "<group>";
@@ -730,6 +733,7 @@
 				2A090BD92A71BAFF003553D2 /* PlaceAnnotationView.swift in Sources */,
 				2A7F12852A65DBEA007C28EA /* LocationManager.swift in Sources */,
 				2AC7DD092A58CFDD00DB9F6D /* ConferenceBoxFAQItem.swift in Sources */,
+				2A37FB6A2A7B06AE0062E63A /* ConferenceBoxMentors.swift in Sources */,
 				2AC7DCF12A58B5E600DB9F6D /* ConferenceBoxFAQ.swift in Sources */,
 				2A17F0C22A6075BF0055E214 /* MentorView.swift in Sources */,
 				2A7F12772A6401C4007C28EA /* NFCManager.swift in Sources */,
@@ -783,6 +787,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6B3SHVL3L5;
@@ -795,9 +800,10 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.1.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nl.swiftisland.app.SwiftIslandWidgets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -810,6 +816,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 6B3SHVL3L5;
@@ -822,9 +829,10 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.1.0;
+				MARKETING_VERSION = 2.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = nl.swiftisland.app.SwiftIslandWidgets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
