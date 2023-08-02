@@ -60,7 +60,7 @@ struct ConferencePageView: View {
                                 }
                             }
                             .tabViewStyle(.page(indexDisplayMode: .never))
-                            .frame(height: geo.size.width * 0.50)
+                            .frame(minHeight: geo.size.width * 0.80)
                         }
 
                         if let nextEvent = appDataModel.nextEvent() {

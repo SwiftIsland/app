@@ -29,7 +29,7 @@ struct MentorView: View {
                                 Image(mentor.imageName)
                                     .resizable()
                                     .scaledToFill()
-                                    .frame(width: geometry.size.width, height: isShowContent ? geometry.size.height * 0.6 : min(uiImage.size.height / 4, geometry.size.height))
+                                    .frame(width: geometry.size.width, height: isShowContent ? geometry.size.height * 0.6 : geometry.size.height)
                                     .border(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.1), width: isShowContent ? 0 : 1)
                                     .cornerRadius(15)
                                     .overlay(
