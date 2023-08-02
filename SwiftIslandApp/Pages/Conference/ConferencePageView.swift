@@ -85,7 +85,7 @@ struct ConferencePageView: View {
                         }
                 }
 
-                if storedTickets.count > 0 {
+                if storedTickets.count > 0 && !isShowingMentor {
                     HStack {
                         Button {
                             if storedTickets.count == 1 {
