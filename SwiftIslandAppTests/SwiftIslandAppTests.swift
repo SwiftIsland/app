@@ -4,7 +4,7 @@
 //
 
 import XCTest
-@testable import SwiftIsland2023
+@testable import Swift_Island
 
 final class SwiftIsland2023Tests: XCTestCase {
 
