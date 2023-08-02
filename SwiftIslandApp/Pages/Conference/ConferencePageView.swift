@@ -69,9 +69,10 @@ struct ConferencePageView: View {
                             Text("Could not find the next event")
                         }
 
-                        ConferenceBoxFAQ()
-                            .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
-                            .scrollContentBackground(.hidden)
+                        // Removed for now.
+//                        ConferenceBoxFAQ()
+//                            .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
+//                            .scrollContentBackground(.hidden)
                     }
                 }
 
