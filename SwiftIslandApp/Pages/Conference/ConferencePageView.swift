@@ -17,6 +17,7 @@ struct ConferencePageView: View {
     @State private var ticketToShow: Ticket?
     @State private var isShowingTicketPopover = false
     @State private var showDeleteAction = false
+    @State private var nextEvent: Event?
 
     @Binding var storedTickets: [Ticket]
 
@@ -63,10 +64,10 @@ struct ConferencePageView: View {
                             .frame(minHeight: geo.size.width * 0.80)
                         }
 
-                        if let nextEvent = appDataModel.nextEvent() {
+                        if let nextEvent {
                             ConferenceBoxEvent(event: nextEvent)
                         } else {
-                            Text("Could not find the next event")
+                            ProgressView()
                         }
 
                         // Removed for now.
@@ -174,6 +175,11 @@ struct ConferencePageView: View {
                 Text("The ticket ID provided was invalid")
             }
         })
+        .onAppear {
+            Task {
+                self.nextEvent = await appDataModel.nextEvent()
+            }
+        }
     }
 }
 
