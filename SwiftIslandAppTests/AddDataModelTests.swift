@@ -104,7 +104,7 @@ final class AddDataModelTests: XCTestCase {
         await sut.fetchLocations()
 
         // Then
-        let locations = await sut.locations
+        let locations = sut.locations
         XCTAssertEqual(locations.count, 2)
     }
 
@@ -117,7 +117,7 @@ final class AddDataModelTests: XCTestCase {
         await sut.fetchLocations()
 
         // Then
-        let locations = await sut.locations
+        let locations = sut.locations
         XCTAssertEqual(locations.count, 0)
     }
 }
