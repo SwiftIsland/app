@@ -69,7 +69,7 @@ struct PacklistView: View {
                             Text("🎒")
                                 .font(.title)
                                 .padding()
-                            Text("You haven't checked anything yet. Check the items you've checked and they'll move over here.")
+                            Text("You haven't checked anything yet. Check the items you've packed and they'll move over here.")
                                 .font(.footnote)
                                 .foregroundColor(.secondary)
                                 .multilineTextAlignment(.center)
