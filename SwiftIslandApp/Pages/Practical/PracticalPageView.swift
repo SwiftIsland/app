@@ -71,7 +71,8 @@ struct PracticalPageView_Previews: PreviewProvider {
         let appDataModel = AppDataModel()
         appDataModel.pages = [
             Page.forPreview(id: "schiphol", imageName: "schiphol"),
-            Page.forPreview(id: "joinSlack", content: "https://join.slack.com/t/swiftisland/shared_invite/abc-123-def", imageName: "")
+            Page.forPreview(id: "joinSlack", content: "https://join.slack.com/t/swiftisland/shared_invite/abc-123-def", imageName: ""),
+            Page.forPreview(id: "codeOfConduct", content: "Code of conduct", imageName: "")
         ]
 
         return Group {
@@ -107,6 +108,17 @@ struct SectionAtTheConference: View {
                         .frame(maxWidth: iconMaxWidth)
                     Text("Checkout the schedule")
                         .dynamicTypeSize(.small ... .medium)
+                }
+            }
+            if let codeOfConduct = appDataModel.pages.first(where: { $0.id == "codeOfConduct" }) {
+                NavigationLink(value: codeOfConduct) {
+                    HStack {
+                        Image(systemName: "text.book.closed")
+                            .foregroundColor(.questionMarkColor)
+                            .frame(maxWidth: iconMaxWidth)
+                        Text("Code of Conduct")
+                            .dynamicTypeSize(.small ... .medium)
+                    }
                 }
             }
         }
