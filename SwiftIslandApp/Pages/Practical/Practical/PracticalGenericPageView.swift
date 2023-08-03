@@ -34,7 +34,7 @@ struct PracticalGenericPageView: View {
         .navigationTitle(page.title)
         .scrollContentBackground(.hidden)
         .safeAreaInset(edge: .bottom) {
-            Color.clear.frame(height: 44)
+            Color.clear.frame(height: UIDevice.current.hasNotch ? 88 : 66)
         }
         .navigationBarTitleDisplayMode(.inline)
     }

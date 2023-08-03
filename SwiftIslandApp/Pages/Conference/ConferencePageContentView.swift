@@ -40,6 +40,8 @@ struct ConferencePageContentView: View {
                         ProgressView()
                     }
                 } else {
+                    ConferenceHeaderView()
+
                     if let nextEvent {
                         ConferenceBoxEvent(event: nextEvent)
                     } else {

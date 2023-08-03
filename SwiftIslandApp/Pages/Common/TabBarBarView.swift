@@ -39,10 +39,10 @@ struct TabBarBarView: View {
             }
         }
         .padding(.top)
-        .frame(height: 88, alignment: .top)
+        .frame(height: UIDevice.current.hasNotch ? 88 : 66, alignment: .top)
         .background(.ultraThinMaterial)
         .frame(maxHeight: .infinity, alignment: .bottom)
-        .ignoresSafeArea()
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
 

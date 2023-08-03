@@ -4,21 +4,26 @@
 //
 
 import SwiftUI
+import Defaults
 
 struct ConferenceHeaderView: View {
     private let startDate = Date(timeIntervalSince1970: 1693897200)
 
+    @Default(.userIsActivated) private var userIsActivated
+
     var body: some View {
         VStack(spacing: 13) {
-            Image("Logo")
-            VStack(spacing: 0) {
-                Text("Swift")
-                    .font(.custom("WorkSans-Bold", size: 64))
-                    .foregroundColor(.logoText)
-                Text("Island")
-                    .font(.custom("WorkSans-Regular", size: 60))
-                    .foregroundColor(.logoText)
-                    .offset(CGSize(width: 0, height: -20))
+            if !userIsActivated {
+                Image("Logo")
+                VStack(spacing: 0) {
+                    Text("Swift")
+                        .font(.custom("WorkSans-Bold", size: 64))
+                        .foregroundColor(.logoText)
+                    Text("Island")
+                        .font(.custom("WorkSans-Regular", size: 60))
+                        .foregroundColor(.logoText)
+                        .offset(CGSize(width: 0, height: -20))
+                }
             }
             HStack {
                 Spacer()
@@ -43,6 +48,7 @@ struct ConferenceHeaderView: View {
                 }
                 Spacer()
             }
+            .padding(.top, userIsActivated ? 30 : 0)
         }
     }
 }

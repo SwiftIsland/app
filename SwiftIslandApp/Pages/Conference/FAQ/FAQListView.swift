@@ -52,7 +52,7 @@ struct FAQListView: View {
                 }
             }
             .safeAreaInset(edge: .bottom) {
-                Color.clear.frame(height: 44)
+                Color.clear.frame(height: UIDevice.current.hasNotch ? 88 : 66)
             }
         }
     }

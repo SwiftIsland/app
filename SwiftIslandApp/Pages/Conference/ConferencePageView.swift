@@ -123,7 +123,7 @@ struct ConferencePageView: View {
                 FAQListView(preselectedItem: item)
             }
             .safeAreaInset(edge: .bottom) {
-                Color.clear.frame(height: 44)
+                Color.clear.frame(height: UIDevice.current.hasNotch ? 88 : 66)
             }
         }
         .accentColor(.white)

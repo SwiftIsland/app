@@ -72,7 +72,7 @@ struct ScheduleView: View {
                 }
             }
             .safeAreaInset(edge: .bottom) {
-                Color.clear.frame(height: 62)
+                Color.clear.frame(height: UIDevice.current.hasNotch ? 88 : 66)
             }
             .navigationTitle("Event Schedule")
             .toolbar {

@@ -21,6 +21,7 @@
 		2A18CE442A773D7F00969214 /* SectionGettingHere.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18CE432A773D7F00969214 /* SectionGettingHere.swift */; };
 		2A18CE462A77403800969214 /* EventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18CE452A77403800969214 /* EventDetailsView.swift */; };
 		2A37FB6A2A7B06AE0062E63A /* ConferenceBoxMentors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A37FB692A7B06AE0062E63A /* ConferenceBoxMentors.swift */; };
+		2A37FB902A7C14CB0062E63A /* UIDevice+HasNotch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A37FB8F2A7C14CB0062E63A /* UIDevice+HasNotch.swift */; };
 		2A3AB6592A7871030089CF7E /* SwiftIslandDataLogic in Frameworks */ = {isa = PBXBuildFile; productRef = 2A3AB6582A7871030089CF7E /* SwiftIslandDataLogic */; };
 		2A3AB65B2A78744B0089CF7E /* ActivityType+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3AB65A2A78744B0089CF7E /* ActivityType+Color.swift */; };
 		2A7F12772A6401C4007C28EA /* NFCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F12762A6401C4007C28EA /* NFCManager.swift */; };
@@ -131,6 +132,7 @@
 		2A18CE432A773D7F00969214 /* SectionGettingHere.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionGettingHere.swift; sourceTree = "<group>"; };
 		2A18CE452A77403800969214 /* EventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsView.swift; sourceTree = "<group>"; };
 		2A37FB692A7B06AE0062E63A /* ConferenceBoxMentors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxMentors.swift; sourceTree = "<group>"; };
+		2A37FB8F2A7C14CB0062E63A /* UIDevice+HasNotch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+HasNotch.swift"; sourceTree = "<group>"; };
 		2A3AB6562A7870C80089CF7E /* SwiftIslandDataLogic */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SwiftIslandDataLogic; sourceTree = "<group>"; };
 		2A3AB65A2A78744B0089CF7E /* ActivityType+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityType+Color.swift"; sourceTree = "<group>"; };
 		2A7F12762A6401C4007C28EA /* NFCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCManager.swift; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				2AE43FAB2A6B1A8C009078E3 /* View+PercentageOffset.swift */,
 				2AC7DD0A2A58D07E00DB9F6D /* View+Preview.swift */,
 				2A3AB65A2A78744B0089CF7E /* ActivityType+Color.swift */,
+				2A37FB8F2A7C14CB0062E63A /* UIDevice+HasNotch.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -755,6 +758,7 @@
 				2AE2425D2A520C7A007FFCC5 /* ImageDownloader.swift in Sources */,
 				2A7F12882A65E354007C28EA /* SectionAtTheConferenceNotActivated.swift in Sources */,
 				2AC7DD0B2A58D07E00DB9F6D /* View+Preview.swift in Sources */,
+				2A37FB902A7C14CB0062E63A /* UIDevice+HasNotch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
