@@ -69,6 +69,7 @@ struct ConferencePageView: View {
                                                 HStack(spacing: 8) {
                                                     Image(systemName: "ticket")
                                                         .foregroundColor(.questionMarkColor)
+                                                        .frame(width: 32)
                                                     VStack(alignment: .leading) {
                                                         Text(ticket.name)
                                                             .foregroundColor(.primary)
@@ -86,22 +87,38 @@ struct ConferencePageView: View {
                                                         .font(.footnote)
                                                 }
                                                 .padding(.vertical, 3)
-                                                .confirmationDialog("Would you like to delete this ticket from the app?", isPresented: $showDeleteAction, titleVisibility: .visible) {
-                                                    Button("Delete", role: .destructive) {
-                                                        showDeleteAction = false
-                                                        let filteredStoredTickets = storedTickets.filter { $0.id != ticket.id }
-                                                        if !isPreview {
-                                                            try? KeychainManager.shared.store(key: .tickets, data: filteredStoredTickets)
-                                                        }
-                                                        self.storedTickets = filteredStoredTickets
-                                                    }
-                                                }
                                                 .onTapGesture {
                                                     isShowingTicketPopover = false
                                                     ticketToShow = ticket
                                                 }
-                                                .onLongPressGesture {
-                                                    showDeleteAction.toggle()
+                                            }
+                                        }
+                                        HStack(spacing: 8) {
+                                            Image(systemName: "trash")
+                                                .foregroundColor(.red)
+                                                .frame(width: 32)
+                                            VStack(alignment: .leading) {
+                                                Text("Remove tickets")
+                                                    .foregroundColor(.red)
+                                                    .font(.body)
+                                                    .fontWeight(.light)
+                                                    .dynamicTypeSize(DynamicTypeSize.small ... DynamicTypeSize.medium)
+                                            }
+                                        }
+                                        .padding(.vertical, 3)
+                                        .onTapGesture {
+//                                            isShowingTicketPopover = false
+                                            showDeleteAction = true
+                                        }
+                                        .confirmationDialog("Which ticket would you like to delete from the app?", isPresented: $showDeleteAction, titleVisibility: .visible) {
+                                            ForEach(storedTickets) { ticket in
+                                                Button("Delete \(ticket.name)", role: .destructive) {
+                                                    showDeleteAction = false
+                                                    let filteredStoredTickets = storedTickets.filter { $0.id != ticket.id }
+                                                    if !isPreview {
+                                                        try? KeychainManager.shared.store(key: .tickets, data: filteredStoredTickets)
+                                                    }
+                                                    self.storedTickets = filteredStoredTickets
                                                 }
                                             }
                                         }

@@ -86,7 +86,7 @@ private extension MainApp {
             if let ticket = storedTickets.first(where: { $0.id == slur }) {
                 self.ticketToShow = ticket
             } else {
-                let ticket = Ticket(id: slur, addDate: Date(), name: "Ticket \(max(storedTickets.count + 1, 2))")
+                let ticket = Ticket(id: slur, addDate: Date(), name: "Ticket \(max(storedTickets.count + 1, 1))")
                 storedTickets.append(ticket)
 
                 try KeychainManager.shared.store(key: .tickets, data: storedTickets)
