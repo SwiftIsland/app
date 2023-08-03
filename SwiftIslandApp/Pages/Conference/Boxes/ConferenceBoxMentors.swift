@@ -25,30 +25,36 @@ struct ConferenceBoxMentors: View {
                 .padding(.horizontal, 40)
                 .padding(.top, 6)
                 .padding(.bottom, 0)
-            TabView {
-                ForEach(appDataModel.mentors) { mentor in
-                    MentorView(namespace: namespace, mentor: mentor, isShowContent: $isShowingMentor)
-                        .matchedGeometryEffect(id: mentor.id, in: namespace)
-                        .mask {
-                            RoundedRectangle(cornerRadius: 15, style: .continuous)
-                        }
-                        .padding(.horizontal, 20)
-                        .onTapGesture {
-                            if mayShowMentorNextMentor {
-                                mayShowMentorNextMentor = false
-                                selectedMentor = mentor
-                                withAnimation(.interactiveSpring(response: 0.55, dampingFraction: 0.8)) {
-                                    isShowingMentor = true
+//            GeometryReader { geo in
+                ScrollView(.horizontal) {
+                    HStack {
+                        ForEach(appDataModel.mentors.shuffled()) { mentor in
+                            MentorView(namespace: namespace, mentor: mentor, isShowContent: $isShowingMentor)
+                                .matchedGeometryEffect(id: mentor.id, in: namespace)
+                                .mask {
+                                    RoundedRectangle(cornerRadius: 15, style: .continuous)
                                 }
-                            } else {
-                                debugPrint("Too soon to show next mentor animation")
-                            }
+                                .padding(.horizontal, 20)
+                                .onTapGesture {
+                                    if mayShowMentorNextMentor {
+                                        mayShowMentorNextMentor = false
+                                        selectedMentor = mentor
+                                        withAnimation(.interactiveSpring(response: 0.55, dampingFraction: 0.8)) {
+                                            isShowingMentor = true
+                                        }
+                                    } else {
+                                        debugPrint("Too soon to show next mentor animation")
+                                    }
+                                }
+                                .frame(width: geo.size.width * 0.8)
+                                .frame(minHeight: geo.size.width * 0.80)
                         }
+                    }
+//                    .frame(minHeight: geo.size.width * 0.80)
                 }
+                .frame(minHeight: geo.size.width * 0.80)
             }
-            .tabViewStyle(.page(indexDisplayMode: .never))
-            .frame(minHeight: geo.size.width * 0.80)
-        }
+//        }
     }
 }
 
@@ -57,7 +63,16 @@ struct ConferenceBoxMentors_Previews: PreviewProvider {
 
     static var previews: some View {
         let appDataModel = AppDataModel()
-        GeometryReader { geo in
+
+        let mentors = [
+            Mentor.forPreview(name: "1"),
+            Mentor.forPreview(name: "2"),
+            Mentor.forPreview(name: "3")
+        ]
+
+        appDataModel.mentors = mentors
+
+        return GeometryReader { geo in
             ConferenceBoxMentors(namespace: namespace, geo: geo, isShowingMentor: .constant(false), mayShowMentorNextMentor: .constant(true), selectedMentor: .constant(nil))
                 .environmentObject(appDataModel)
         }
