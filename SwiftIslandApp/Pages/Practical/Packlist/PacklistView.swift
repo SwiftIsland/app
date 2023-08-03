@@ -109,6 +109,9 @@ struct PacklistView: View {
             }
         }
         .navigationTitle("Packlist")
+        .safeAreaInset(edge: .bottom) {
+            Color.clear.frame(height: UIDevice.current.hasNotch ? 88 : 66)
+        }
     }
 
     func toggleItem(_ packingItem: PackingItem) {
