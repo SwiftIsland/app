@@ -14,103 +14,107 @@ struct PacklistView: View {
     @State private var packingItems: [PackingItem] = []
 
     var body: some View {
-        List {
-            Section {
-                let unpackedItems = packingItems.filter { !$0.checked }
+        ZStack {
+            LinearGradient.defaultBackground
+            List {
+                Section {
+                    let unpackedItems = packingItems.filter { !$0.checked }
 
-                if unpackedItems.isEmpty {
-                    VStack {
-                        Image(systemName: "checkmark.circle")
-                            .foregroundColor(.green)
-                            .font(.title)
-                            .padding()
-                        Text("All done! It seems you have packed all the items from the list!\n\n🎒 💪🏻")
-                            .font(.body)
-                            .foregroundColor(.primary)
-                            .multilineTextAlignment(.center)
-                    }
-                    .padding()
-                } else {
-                    ForEach(unpackedItems) { packingItem in
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text(packingItem.title)
-                                    .font(.body)
-                                    .foregroundColor(.primary)
-                                Text(packingItem.subTitle)
-                                    .font(.footnote)
-                                    .foregroundColor(.secondary)
-                            }
-                            Spacer()
-                            Button {
-                                withAnimation {
-                                    toggleItem(packingItem)
-                                }
-                            } label: {
-                                Image(systemName: "circle")
-                            }
+                    if unpackedItems.isEmpty {
+                        VStack {
+                            Image(systemName: "checkmark.circle")
+                                .foregroundColor(.green)
+                                .font(.title)
+                                .padding()
+                            Text("All done! It seems you have packed all the items from the list!\n\n🎒 💪🏻")
+                                .font(.body)
+                                .foregroundColor(.primary)
+                                .multilineTextAlignment(.center)
                         }
-                        .matchedGeometryEffect(id: packingItem.id, in: namespace)
-                    }
-                }
-            } header: {
-                Text("Unpacked")
-            }
-
-            Section {
-                let packedItems = packingItems.filter { $0.checked }
-
-                if packedItems.isEmpty {
-                    VStack {
-                        Text("🎒")
-                            .font(.title)
-                            .padding()
-                        Text("You haven't checked anything yet. Check the items you've checked and they'll move over here.")
-                            .font(.footnote)
-                            .foregroundColor(.secondary)
-                            .multilineTextAlignment(.center)
-                            .padding(.bottom)
-                    }
-                } else {
-                    ForEach(packedItems) { packingItem in
-                        HStack {
-                            VStack(alignment: .leading) {
-                                Text(packingItem.title)
-                                    .font(.body)
-                                    .foregroundColor(.primary)
-                                Text(packingItem.subTitle)
-                                    .font(.footnote)
-                                    .foregroundColor(.secondary)
-                            }
-                            Spacer()
-                            Button {
-                                withAnimation {
-                                    toggleItem(packingItem)
+                        .padding()
+                    } else {
+                        ForEach(unpackedItems) { packingItem in
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Text(packingItem.title)
+                                        .font(.body)
+                                        .foregroundColor(.primary)
+                                    Text(packingItem.subTitle)
+                                        .font(.footnote)
+                                        .foregroundColor(.secondary)
                                 }
-                            } label: {
-                                Image(systemName: "checkmark.circle.fill")
-                                    .foregroundColor(.secondary)
+                                Spacer()
+                                Button {
+                                    withAnimation {
+                                        toggleItem(packingItem)
+                                    }
+                                } label: {
+                                    Image(systemName: "circle")
+                                }
                             }
+                            .matchedGeometryEffect(id: packingItem.id, in: namespace)
                         }
-                        .matchedGeometryEffect(id: packingItem.id, in: namespace)
                     }
+                } header: {
+                    Text("Unpacked")
                 }
-            } header: {
-                Text("Already Packed")
-            } footer: {
-                Text("All items in this list are stored locally in your user defaults and not shared with others.")
-                    .font(.footnote)
-                    .foregroundColor(.secondary)
+
+                Section {
+                    let packedItems = packingItems.filter { $0.checked }
+
+                    if packedItems.isEmpty {
+                        VStack {
+                            Text("🎒")
+                                .font(.title)
+                                .padding()
+                            Text("You haven't checked anything yet. Check the items you've checked and they'll move over here.")
+                                .font(.footnote)
+                                .foregroundColor(.secondary)
+                                .multilineTextAlignment(.center)
+                                .padding(.bottom)
+                        }
+                    } else {
+                        ForEach(packedItems) { packingItem in
+                            HStack {
+                                VStack(alignment: .leading) {
+                                    Text(packingItem.title)
+                                        .font(.body)
+                                        .foregroundColor(.primary)
+                                    Text(packingItem.subTitle)
+                                        .font(.footnote)
+                                        .foregroundColor(.secondary)
+                                }
+                                Spacer()
+                                Button {
+                                    withAnimation {
+                                        toggleItem(packingItem)
+                                    }
+                                } label: {
+                                    Image(systemName: "checkmark.circle.fill")
+                                        .foregroundColor(.secondary)
+                                }
+                            }
+                            .matchedGeometryEffect(id: packingItem.id, in: namespace)
+                        }
+                    }
+                } header: {
+                    Text("Already Packed")
+                } footer: {
+                    Text("All items in this list are stored locally in your user defaults and not shared with others.")
+                        .font(.footnote)
+                        .foregroundColor(.secondary)
+                }
             }
-        }
-        .onAppear {
-            Task {
-                self.packingItems = await appDataModel.fetchPackingListItems()
+            .scrollContentBackground(.hidden)
+            .onAppear {
+                Task {
+                    self.packingItems = await appDataModel.fetchPackingListItems()
+                }
             }
+            .navigationTitle("Packlist")
+            .safeAreaInset(edge: .bottom) {
+                Color.clear.frame(height: UIDevice.current.hasNotch ? 88 : 66)
         }
-        .navigationTitle("Packlist")
-        .safeAreaInset(edge: .bottom) {
-            Color.clear.frame(height: UIDevice.current.hasNotch ? 88 : 66)
         }
     }
 
