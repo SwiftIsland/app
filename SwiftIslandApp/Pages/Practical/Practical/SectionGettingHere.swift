@@ -98,16 +98,19 @@ struct SectionGettingHere: View {
                 let url = URL(string: "https://maps.apple.com/?address=Stuifweg%2013,%201794%20HA%20Oosterend,%20Netherlands&auid=15837284651049995092&ll=53.114790,4.897070&lsp=9902&q=Prins%20Hendrik")!
                 UIApplication.shared.open(url)
             }
+            .textCase(.none)
 
             Button("Google Maps") {
-                let url = URL(string: "https://www.google.com/maps/dir/Restaurant+Prins+Hendrik,+Stuifweg+13,+1794+HA+Oosterend,+Netherlands/@53.1148113,4.8946637,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x47cf337d48cfb191:0x26980e939a31392a!2m2!1d4.8972386!2d53.1148081")!
+                let url = URL(string: "https://www.google.com/maps/dir//Hotel+%26+Bungalowpark+Prins+Hendrik,+Stuifweg+13,+1794+HA+Oosterend,+Netherlands/@53.1148617,4.8945168,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x47cf330bcf64f887:0x71984ae59f28af64!2m2!1d4.8972431!2d53.1148524?entry=ttu")!
                 UIApplication.shared.open(url)
             }
+            .textCase(.none)
 
             Button("Waze") {
                 let url = URL(string: "https://ul.waze.com/ul?place=ChIJh_hkzwszz0cRZK8on-VKmHE&ll=53.11485850%2C4.89709170&navigate=yes")!
                 UIApplication.shared.open(url)
             }
+            .textCase(.none)
         }
     }
 
