@@ -38,10 +38,12 @@ struct PacklistView: View {
                                 VStack(alignment: .leading) {
                                     Text(packingItem.title)
                                         .font(.body)
-                                        .foregroundColor(.primary)
-                                    Text(packingItem.subTitle)
-                                        .font(.footnote)
-                                        .foregroundColor(.secondary)
+                                        .foregroundColor(.primary)                                        
+                                    if packingItem.subTitle != "" {
+                                        Text(packingItem.subTitle)
+                                            .font(.footnote)
+                                            .foregroundColor(.secondary)
+                                    }
                                 }
                                 Spacer()
                                 Button {
