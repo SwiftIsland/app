@@ -121,7 +121,7 @@ public class SwiftIslandDataLogic: DataLogic, ObservableObject {
     /// - Returns: Array of `PackingItem` from firebase
     public func fetchPackingListItemsFromFirebase() async -> [PackingItem] {
         let request = AllPackingListItems()
-        return await fetchFromFirebase(forRequest: request)
+        return await fetchFromFirebase(forRequest: request).sorted(by: { $0.order < $1.order })
     }
 
     public func fetchFAQItems() async -> [FAQItem] {
