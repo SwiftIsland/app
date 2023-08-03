@@ -82,9 +82,11 @@ struct PacklistView: View {
                                     Text(packingItem.title)
                                         .font(.body)
                                         .foregroundColor(.primary)
-                                    Text(packingItem.subTitle)
-                                        .font(.footnote)
-                                        .foregroundColor(.secondary)
+                                    if packingItem.subTitle != "" {
+                                        Text(packingItem.subTitle)
+                                            .font(.footnote)
+                                            .foregroundColor(.secondary)
+                                    }
                                 }
                                 Spacer()
                                 Button {
