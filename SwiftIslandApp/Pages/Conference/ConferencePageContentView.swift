@@ -22,7 +22,7 @@ struct ConferencePageContentView: View {
 
     var body: some View {
         GeometryReader { geo in
-            ScrollView(.vertical) {
+            ScrollView(.vertical, showsIndicators: false) {
                 if !userIsActivated {
                     ConferenceHeaderView()
                     ConferenceBoxTicket()
