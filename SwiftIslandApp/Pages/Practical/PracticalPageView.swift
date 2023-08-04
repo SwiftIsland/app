@@ -77,6 +77,25 @@ struct PracticalPageView: View {
                             }
                             .buttonStyle(.plain)
                         }
+                        Link(destination: URL(string: "https://apps.apple.com/app/id1468876096?action=write-review")!) {
+                            HStack(alignment: .center) {
+                                Image(systemName: "star.fill")
+                                    .foregroundColor(.questionMarkColor)
+                                    .frame(maxWidth: iconMaxWidth)
+                                VStack(alignment: .leading) {
+                                    Text("Rate the Swift Island app")
+                                        .padding(2)
+                                        .foregroundColor(.primary)
+                                        .dynamicTypeSize(.medium ... .accessibility1)
+                                        .buttonStyle(.plain)
+                                }
+                                Spacer()
+                                Image(systemName: "arrow.up.right")
+                                    .foregroundColor(.secondary)
+                                    .font(.footnote)
+                            }
+                            .buttonStyle(.plain)
+                        }
                     } header: {
                         Text("App")
                     } footer: {
