@@ -7,6 +7,7 @@ import SwiftUI
 import CoreLocation
 import Defaults
 import SwiftIslandDataLogic
+import AckGenUI
 
 // MARK: - Main page
 
@@ -14,6 +15,7 @@ enum NavigationPage {
     case map
     case schedule
     case packlist
+    case acknowledgement
 }
 
 struct PracticalPageView: View {
@@ -39,6 +41,30 @@ struct PracticalPageView: View {
                     } else {
                         SectionAtTheConferenceNotActivated(iconMaxWidth: iconMaxWidth)
                     }
+
+                    Section {
+                        NavigationLink(value: NavigationPage.acknowledgement) {
+                            HStack(alignment: .top) {
+                                Image(systemName: "medal")
+                                    .foregroundColor(.questionMarkColor)
+                                    .frame(maxWidth: iconMaxWidth)
+                                VStack(alignment: .leading) {
+                                    Text("Acknowledgements")
+                                        .padding(2)
+                                        .foregroundColor(.primary)
+                                        .dynamicTypeSize(.medium ... .accessibility1)
+                                        .buttonStyle(.plain)
+                                }
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    } header: {
+                        Text("App info")
+                    } footer: {
+                        Text("App version: \(Bundle.main.appVersionLong) (\(Bundle.main.appBuild))")
+                            .dynamicTypeSize(.small ... .medium)
+                    }
+
                 }
                 .scrollContentBackground(.hidden)
                 .safeAreaInset(edge: .bottom) {
@@ -57,6 +83,13 @@ struct PracticalPageView: View {
                     ScheduleView()
                 case .packlist:
                     PacklistView()
+                case .acknowledgement:
+                    ZStack {
+                        LinearGradient.defaultBackground
+                        AcknowledgementsList()
+                            .navigationTitle("#CreditsPageTitle")
+                            .scrollContentBackground(.hidden)
+                    }
                 }
             }
         }

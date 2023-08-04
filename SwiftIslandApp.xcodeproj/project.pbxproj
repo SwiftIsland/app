@@ -22,6 +22,10 @@
 		2A18CE462A77403800969214 /* EventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18CE452A77403800969214 /* EventDetailsView.swift */; };
 		2A37FB6A2A7B06AE0062E63A /* ConferenceBoxMentors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A37FB692A7B06AE0062E63A /* ConferenceBoxMentors.swift */; };
 		2A37FB902A7C14CB0062E63A /* UIDevice+HasNotch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A37FB8F2A7C14CB0062E63A /* UIDevice+HasNotch.swift */; };
+		2A37FB932A7D3EB20062E63A /* AckGen in Frameworks */ = {isa = PBXBuildFile; productRef = 2A37FB922A7D3EB20062E63A /* AckGen */; };
+		2A37FB952A7D3EB20062E63A /* AckGenUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2A37FB942A7D3EB20062E63A /* AckGenUI */; };
+		2A37FB982A7D3EFC0062E63A /* Acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A37FB972A7D3EFC0062E63A /* Acknowledgements.plist */; };
+		2A37FB9A2A7D3F890062E63A /* Bundle+Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A37FB992A7D3F890062E63A /* Bundle+Version.swift */; };
 		2A3AB6592A7871030089CF7E /* SwiftIslandDataLogic in Frameworks */ = {isa = PBXBuildFile; productRef = 2A3AB6582A7871030089CF7E /* SwiftIslandDataLogic */; };
 		2A3AB65B2A78744B0089CF7E /* ActivityType+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3AB65A2A78744B0089CF7E /* ActivityType+Color.swift */; };
 		2A7F12772A6401C4007C28EA /* NFCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F12762A6401C4007C28EA /* NFCManager.swift */; };
@@ -133,6 +137,8 @@
 		2A18CE452A77403800969214 /* EventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsView.swift; sourceTree = "<group>"; };
 		2A37FB692A7B06AE0062E63A /* ConferenceBoxMentors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxMentors.swift; sourceTree = "<group>"; };
 		2A37FB8F2A7C14CB0062E63A /* UIDevice+HasNotch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+HasNotch.swift"; sourceTree = "<group>"; };
+		2A37FB972A7D3EFC0062E63A /* Acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Acknowledgements.plist; sourceTree = "<group>"; };
+		2A37FB992A7D3F890062E63A /* Bundle+Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Version.swift"; sourceTree = "<group>"; };
 		2A3AB6562A7870C80089CF7E /* SwiftIslandDataLogic */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SwiftIslandDataLogic; sourceTree = "<group>"; };
 		2A3AB65A2A78744B0089CF7E /* ActivityType+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityType+Color.swift"; sourceTree = "<group>"; };
 		2A7F12762A6401C4007C28EA /* NFCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCManager.swift; sourceTree = "<group>"; };
@@ -209,6 +215,8 @@
 			files = (
 				2A7F128B2A69CB2C007C28EA /* Defaults in Frameworks */,
 				2A3AB6592A7871030089CF7E /* SwiftIslandDataLogic in Frameworks */,
+				2A37FB932A7D3EB20062E63A /* AckGen in Frameworks */,
+				2A37FB952A7D3EB20062E63A /* AckGenUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +271,7 @@
 				2AC7DD0A2A58D07E00DB9F6D /* View+Preview.swift */,
 				2A3AB65A2A78744B0089CF7E /* ActivityType+Color.swift */,
 				2A37FB8F2A7C14CB0062E63A /* UIDevice+HasNotch.swift */,
+				2A37FB992A7D3F890062E63A /* Bundle+Version.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -455,6 +464,7 @@
 		2AEDC48A2A4A030F00CD0180 = {
 			isa = PBXGroup;
 			children = (
+				2A37FB972A7D3EFC0062E63A /* Acknowledgements.plist */,
 				2A3AB6552A7870C80089CF7E /* Packages */,
 				2A16EB632A4F6CC200CC881D /* GoogleService-Info.plist */,
 				2A16EB422A4CDEFC00CC881D /* SwiftIslandApp-Info.plist */,
@@ -573,6 +583,7 @@
 				2AEDC4902A4A030F00CD0180 /* Frameworks */,
 				2AEDC4912A4A030F00CD0180 /* Resources */,
 				2A987AD92A7AE4B000EE15DF /* Embed Foundation Extensions */,
+				2A37FB962A7D3EBE0062E63A /* Generating Acknowledgement */,
 			);
 			buildRules = (
 			);
@@ -583,6 +594,8 @@
 			packageProductDependencies = (
 				2A7F128A2A69CB2C007C28EA /* Defaults */,
 				2A3AB6582A7871030089CF7E /* SwiftIslandDataLogic */,
+				2A37FB922A7D3EB20062E63A /* AckGen */,
+				2A37FB942A7D3EB20062E63A /* AckGenUI */,
 			);
 			productName = SwiftIsland;
 			productReference = 2AEDC4932A4A030F00CD0180 /* Swift Island.app */;
@@ -643,6 +656,7 @@
 			mainGroup = 2AEDC48A2A4A030F00CD0180;
 			packageReferences = (
 				2A7F12892A69CB2C007C28EA /* XCRemoteSwiftPackageReference "Defaults" */,
+				2A37FB912A7D3EB20062E63A /* XCRemoteSwiftPackageReference "AckGen" */,
 			);
 			productRefGroup = 2AEDC4942A4A030F00CD0180 /* Products */;
 			projectDirPath = "";
@@ -672,6 +686,7 @@
 				2A16EB3B2A4CDB3600CC881D /* WorkSans-Regular.ttf in Resources */,
 				2AEDC49E2A4A031000CD0180 /* Preview Assets.xcassets in Resources */,
 				2A16EB642A4F6CC200CC881D /* GoogleService-Info.plist in Resources */,
+				2A37FB982A7D3EFC0062E63A /* Acknowledgements.plist in Resources */,
 				2AEDC49B2A4A031000CD0180 /* Assets.xcassets in Resources */,
 				2A16EB3C2A4CDB3600CC881D /* WorkSans-Bold.ttf in Resources */,
 			);
@@ -685,6 +700,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A37FB962A7D3EBE0062E63A /* Generating Acknowledgement */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generating Acknowledgement";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "DIR=$PROJECT_TEMP_DIR/../../../SourcePackages/checkouts/AckGen\nif [ -d \"$DIR\" ]; then\n  cd $DIR\n  SDKROOT=(xcrun --sdk macosx --show-sdk-path)\n  swift run ackgen\nelse\n  echo \"warning: AckGen not found. Please install the package via SPM (https://github.com/MartinP7r/AckGen#installation)\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2A987AC12A7AE4AF00EE15DF /* Sources */ = {
@@ -713,6 +749,7 @@
 				2AEDC4C32A4A089100CD0180 /* ConferencePageView.swift in Sources */,
 				2A7F12792A640730007C28EA /* ScrollViewOffset.swift in Sources */,
 				2A16EB362A4CDA4200CC881D /* ConferenceHeaderView.swift in Sources */,
+				2A37FB9A2A7D3F890062E63A /* Bundle+Version.swift in Sources */,
 				2AE43FAC2A6B1A8C009078E3 /* View+PercentageOffset.swift in Sources */,
 				2AF19ED32A7B04A500134E0B /* ConferencePageContentView.swift in Sources */,
 				2A18CE422A773D3A00969214 /* SectionBeforeYouLeave.swift in Sources */,
@@ -1110,6 +1147,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2A37FB912A7D3EB20062E63A /* XCRemoteSwiftPackageReference "AckGen" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MartinP7r/AckGen.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.7;
+			};
+		};
 		2A7F12892A69CB2C007C28EA /* XCRemoteSwiftPackageReference "Defaults" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sindresorhus/Defaults";
@@ -1121,6 +1166,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		2A37FB922A7D3EB20062E63A /* AckGen */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A37FB912A7D3EB20062E63A /* XCRemoteSwiftPackageReference "AckGen" */;
+			productName = AckGen;
+		};
+		2A37FB942A7D3EB20062E63A /* AckGenUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A37FB912A7D3EB20062E63A /* XCRemoteSwiftPackageReference "AckGen" */;
+			productName = AckGenUI;
+		};
 		2A3AB6582A7871030089CF7E /* SwiftIslandDataLogic */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SwiftIslandDataLogic;
