@@ -28,7 +28,7 @@ struct ConferenceBoxMentors: View {
 //            GeometryReader { geo in
                 ScrollView(.horizontal) {
                     HStack {
-                        ForEach(appDataModel.mentors.shuffled()) { mentor in
+                        ForEach(appDataModel.mentors) { mentor in
                             MentorView(namespace: namespace, mentor: mentor, isShowContent: $isShowingMentor)
                                 .matchedGeometryEffect(id: mentor.id, in: namespace)
                                 .mask {

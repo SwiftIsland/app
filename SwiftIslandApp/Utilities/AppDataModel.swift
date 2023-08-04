@@ -78,7 +78,7 @@ private extension AppDataModel {
     @MainActor
     func fetchData() {
         Task {
-            mentors = await fetchMentors()
+            mentors = await fetchMentors().shuffled()
             pages = await fetchPages()
             activities = await fetchActivities()
             events = await fetchEvents()
