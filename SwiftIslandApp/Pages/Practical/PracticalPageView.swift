@@ -16,6 +16,7 @@ enum NavigationPage {
     case schedule
     case packlist
     case acknowledgement
+    case source
 }
 
 struct PracticalPageView: View {
@@ -58,8 +59,26 @@ struct PracticalPageView: View {
                             }
                             .buttonStyle(.plain)
                         }
+                        NavigationLink(value: NavigationPage.source) {
+                            HStack(alignment: .top) {
+                                Image("github-icon")
+                                    .resizable()
+                                    .aspectRatio(CGSize(width: 334, height: 344), contentMode: .fit)
+                                    .frame(maxWidth: iconMaxWidth * 0.7)
+                                    .foregroundColor(.questionMarkColor)
+                                    .frame(maxWidth: iconMaxWidth)
+                                VStack(alignment: .leading) {
+                                    Text("Source code")
+                                        .padding(2)
+                                        .foregroundColor(.primary)
+                                        .dynamicTypeSize(.medium ... .accessibility1)
+                                        .buttonStyle(.plain)
+                                }
+                            }
+                            .buttonStyle(.plain)
+                        }
                     } header: {
-                        Text("App info")
+                        Text("App")
                     } footer: {
                         Text("App version: \(Bundle.main.appVersionLong) (\(Bundle.main.appBuild))")
                             .dynamicTypeSize(.small ... .medium)
@@ -90,6 +109,11 @@ struct PracticalPageView: View {
                             .navigationTitle("#CreditsPageTitle")
                             .scrollContentBackground(.hidden)
                     }
+                    .safeAreaInset(edge: .bottom) {
+                        Color.clear.frame(height: UIDevice.current.hasNotch ? 88 : 66)
+                    }
+                case .source:
+                    SourceView()
                 }
             }
         }

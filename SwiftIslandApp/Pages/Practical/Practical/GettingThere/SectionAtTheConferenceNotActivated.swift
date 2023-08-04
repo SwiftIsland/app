@@ -48,11 +48,11 @@ struct SectionAtTheConferenceNotActivated: View {
                     Spacer()
                 }
                 if hasNFC {
-                    Text("Scan the **NFC tag** or **QR code** at the reception to confirm you have arrived.")
+                    Text("Use your location or scan the **NFC tag** or **QR code** at the reception to confirm you have arrived.")
                         .font(.subheadline)
                         .multilineTextAlignment(.center)
                 } else {
-                    Text("Scan the **QR code** at the reception to confirm you have arrived.")
+                    Text("Use your location or scan the **QR code** at the reception to confirm you have arrived.")
                         .font(.subheadline)
                         .multilineTextAlignment(.center)
                 }
