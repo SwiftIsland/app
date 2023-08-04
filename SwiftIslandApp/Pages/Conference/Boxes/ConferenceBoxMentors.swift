@@ -26,7 +26,7 @@ struct ConferenceBoxMentors: View {
                 .padding(.top, 6)
                 .padding(.bottom, 0)
 //            GeometryReader { geo in
-                ScrollView(.horizontal) {
+                ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
                         ForEach(appDataModel.mentors) { mentor in
                             MentorView(namespace: namespace, mentor: mentor, isShowContent: $isShowingMentor)
