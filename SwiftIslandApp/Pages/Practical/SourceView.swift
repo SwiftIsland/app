@@ -76,7 +76,6 @@ struct SourceView: View {
                             let url = URL(string: "https://www.twitter.com/swiftislandnl")!
                             UIApplication.shared.open(url)
                         }
-                        .buttonStyle(.plain)
                         Spacer()
                         Image(systemName: "arrow.up.right")
                     }
@@ -86,7 +85,6 @@ struct SourceView: View {
                                 let url = URL(string: "https://www.github.com/SwiftIsland/app")!
                                 UIApplication.shared.open(url)
                             }
-                            .buttonStyle(.plain)
                             Text("_The repo might not yet be public, but when it is... you'll find it here._")
                                 .font(.footnote)
                                 .fontWeight(.light)
