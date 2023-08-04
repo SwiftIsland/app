@@ -25,36 +25,33 @@ struct ConferenceBoxMentors: View {
                 .padding(.horizontal, 40)
                 .padding(.top, 6)
                 .padding(.bottom, 0)
-//            GeometryReader { geo in
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack {
-                        ForEach(appDataModel.mentors) { mentor in
-                            MentorView(namespace: namespace, mentor: mentor, isShowContent: $isShowingMentor)
-                                .matchedGeometryEffect(id: mentor.id, in: namespace)
-                                .mask {
-                                    RoundedRectangle(cornerRadius: 15, style: .continuous)
-                                }
-                                .padding(.horizontal, 20)
-                                .onTapGesture {
-                                    if mayShowMentorNextMentor {
-                                        mayShowMentorNextMentor = false
-                                        selectedMentor = mentor
-                                        withAnimation(.interactiveSpring(response: 0.55, dampingFraction: 0.8)) {
-                                            isShowingMentor = true
-                                        }
-                                    } else {
-                                        debugPrint("Too soon to show next mentor animation")
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack {
+                    ForEach(appDataModel.mentors) { mentor in
+                        MentorView(namespace: namespace, mentor: mentor, isShowContent: $isShowingMentor)
+                            .matchedGeometryEffect(id: mentor.id, in: namespace)
+                            .mask {
+                                RoundedRectangle(cornerRadius: 15, style: .continuous)
+                            }
+                            .padding(.horizontal, 20)
+                            .onTapGesture {
+                                if mayShowMentorNextMentor {
+                                    mayShowMentorNextMentor = false
+                                    selectedMentor = mentor
+                                    withAnimation(.interactiveSpring(response: 0.55, dampingFraction: 0.8)) {
+                                        isShowingMentor = true
                                     }
+                                } else {
+                                    debugPrint("Too soon to show next mentor animation")
                                 }
-                                .frame(width: geo.size.width * 0.8)
-                                .frame(minHeight: geo.size.width * 0.80)
-                        }
+                            }
+                            .frame(width: geo.size.width * 0.8)
+                            .frame(minHeight: geo.size.width * 0.80)
                     }
-//                    .frame(minHeight: geo.size.width * 0.80)
                 }
-                .frame(minHeight: geo.size.width * 0.80)
             }
-//        }
+            .frame(minHeight: geo.size.width * 0.80)
+        }
     }
 }
 

@@ -10,6 +10,15 @@
       }
     },
     {
+      "identity" : "ackgen",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/MartinP7r/AckGen.git",
+      "state" : {
+        "revision" : "f7ea8c15fd1410991d5aaa4e234901a6ff555fc9",
+        "version" : "0.1.7"
+      }
+    },
+    {
       "identity" : "defaults",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/sindresorhus/Defaults",
