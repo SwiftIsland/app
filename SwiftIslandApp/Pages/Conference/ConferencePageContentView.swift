@@ -36,6 +36,8 @@ struct ConferencePageContentView: View {
                         mayShowMentorNextMentor: $mayShowMentorNextMentor,
                         selectedMentor: $selectedMentor)
 
+                    ConferenceBoxWeather()
+
                     if let nextEvent {
                         ConferenceBoxEvent(event: nextEvent)
                     } else {
@@ -56,6 +58,8 @@ struct ConferencePageContentView: View {
                         isShowingMentor: $isShowingMentor,
                         mayShowMentorNextMentor: $mayShowMentorNextMentor,
                         selectedMentor: $selectedMentor)
+
+                    ConferenceBoxWeather()
                 }
                 // Removed for now.
                 //                        ConferenceBoxFAQ()

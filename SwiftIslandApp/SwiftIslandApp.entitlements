@@ -13,5 +13,7 @@
 	<array>
 		<string>TAG</string>
 	</array>
+	<key>com.apple.developer.weatherkit</key>
+	<true/>
 </dict>
 </plist>

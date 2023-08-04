@@ -8,6 +8,8 @@ import os.log
 import SwiftUI
 import Defaults
 import SwiftIslandDataLogic
+import WeatherKit
+import CoreLocation
 
 /// The state of the app, if the app is loading data, this state will be `initialising`.
 enum AppState {
@@ -25,6 +27,7 @@ final class AppDataModel: ObservableObject {
     @Published var events: [Event] = []
     @Published var locations: [Location] = []
     @Published var tickets: [Ticket] = []
+    @Published var weather: Weather?
     @Published var puzzles: [Puzzle] = []
 
     private let logger = Logger(
@@ -33,6 +36,7 @@ final class AppDataModel: ObservableObject {
     )
 
     private let dataLogic: DataLogic
+    private lazy var weatherService = WeatherService()
 
     init(dataLogic: DataLogic = SwiftIslandDataLogic()) {
         self.dataLogic = dataLogic
@@ -88,6 +92,15 @@ final class AppDataModel: ObservableObject {
 
         Defaults[.packingItems] = firebaseItems
         return firebaseItems
+    }
+
+    @MainActor
+    func getCurrentWeather() async -> CurrentWeather? {
+        if weather == nil {
+            await getWeather()
+        }
+
+        return weather?.currentWeather
     }
 
     func updateTickets() async -> [Ticket] {
@@ -171,6 +184,16 @@ private extension AppDataModel {
 
     func fetchEvents() async -> [Event] {
         await dataLogic.fetchEvents()
+    }
+
+    @MainActor
+    func getWeather() async {
+        do {
+            let weatherLocation = CLLocation(latitude: 53.11478763673313, longitude: 4.8972633598615065)
+            self.weather = try await weatherService.weather(for: weatherLocation)
+        } catch {
+            logger.error("Unable to retrieve the weather for location, error: \(error, privacy: .public)")
+        }
     }
 }
 
