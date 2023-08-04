@@ -20,25 +20,33 @@ struct ConferenceBoxEvent: View {
             ZStack {
                 Color.secondarySystemGroupedBackground
                 VStack(alignment: .leading, spacing: 0) {
-                    Text(event.activity.type.rawValue)
-                        .font(.caption)
-                        .foregroundColor(.secondary)
-                        .fontWeight(.light)
-                    HStack {
-                        Circle()
-                            .fill(event.activity.type.color)
-                            .frame(width: 7)
-                        Text(event.activity.title)
-                            .font(.title)
-                    }
-                    .padding(.bottom, 8)
-                    HStack {
-                        Text(event.startDate.formatted())
+                    if event.startDate.timeIntervalSinceNow > ((24 * 60) * 7) {
+                        Text("Sure, _early bird gets the worm_, but you are a little too early just yet 😉\n\nCheck back here a few days before the event.")
+                            .font(.footnote)
+                            .fontWeight(.light)
+                            .multilineTextAlignment(.center)
+                            .padding()
+                    } else {
+                        Text(event.activity.type.rawValue)
                             .font(.caption)
                             .foregroundColor(.secondary)
-                        Spacer()
-                        Text(event.startDate.relativeDateDisplay())
-                            .font(.caption)
+                            .fontWeight(.light)
+                        HStack {
+                            Circle()
+                                .fill(event.activity.type.color)
+                                .frame(width: 7)
+                            Text(event.activity.title)
+                                .font(.title)
+                        }
+                        .padding(.bottom, 8)
+                        HStack {
+                            Text(event.startDate.formatted())
+                                .font(.caption)
+                                .foregroundColor(.secondary)
+                            Spacer()
+                            Text(event.startDate.relativeDateDisplay())
+                                .font(.caption)
+                        }
                     }
                 }
                 .padding()
