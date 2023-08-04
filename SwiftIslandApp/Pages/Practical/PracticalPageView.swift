@@ -7,6 +7,7 @@ import SwiftUI
 import CoreLocation
 import Defaults
 import SwiftIslandDataLogic
+import AckGenUI
 
 // MARK: - Main page
 
@@ -14,6 +15,8 @@ enum NavigationPage {
     case map
     case schedule
     case packlist
+    case acknowledgement
+    case source
 }
 
 struct PracticalPageView: View {
@@ -39,6 +42,48 @@ struct PracticalPageView: View {
                     } else {
                         SectionAtTheConferenceNotActivated(iconMaxWidth: iconMaxWidth)
                     }
+
+                    Section {
+                        NavigationLink(value: NavigationPage.acknowledgement) {
+                            HStack(alignment: .top) {
+                                Image(systemName: "medal")
+                                    .foregroundColor(.questionMarkColor)
+                                    .frame(maxWidth: iconMaxWidth)
+                                VStack(alignment: .leading) {
+                                    Text("Acknowledgements")
+                                        .padding(2)
+                                        .foregroundColor(.primary)
+                                        .dynamicTypeSize(.medium ... .accessibility1)
+                                        .buttonStyle(.plain)
+                                }
+                            }
+                            .buttonStyle(.plain)
+                        }
+                        NavigationLink(value: NavigationPage.source) {
+                            HStack(alignment: .top) {
+                                Image("github-icon")
+                                    .resizable()
+                                    .aspectRatio(CGSize(width: 334, height: 344), contentMode: .fit)
+                                    .frame(maxWidth: iconMaxWidth * 0.7)
+                                    .foregroundColor(.questionMarkColor)
+                                    .frame(maxWidth: iconMaxWidth)
+                                VStack(alignment: .leading) {
+                                    Text("Source code")
+                                        .padding(2)
+                                        .foregroundColor(.primary)
+                                        .dynamicTypeSize(.medium ... .accessibility1)
+                                        .buttonStyle(.plain)
+                                }
+                            }
+                            .buttonStyle(.plain)
+                        }
+                    } header: {
+                        Text("App")
+                    } footer: {
+                        Text("App version: \(Bundle.main.appVersionLong) (\(Bundle.main.appBuild))")
+                            .dynamicTypeSize(.small ... .medium)
+                    }
+
                 }
                 .scrollContentBackground(.hidden)
                 .safeAreaInset(edge: .bottom) {
@@ -57,6 +102,18 @@ struct PracticalPageView: View {
                     ScheduleView()
                 case .packlist:
                     PacklistView()
+                case .acknowledgement:
+                    ZStack {
+                        LinearGradient.defaultBackground
+                        AcknowledgementsList()
+                            .navigationTitle("#CreditsPageTitle")
+                            .scrollContentBackground(.hidden)
+                    }
+                    .safeAreaInset(edge: .bottom) {
+                        Color.clear.frame(height: UIDevice.current.hasNotch ? 88 : 66)
+                    }
+                case .source:
+                    SourceView()
                 }
             }
         }
