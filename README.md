@@ -3,7 +3,7 @@
 </p>
 
 <p align="center">
-<img alt="App Store" src="https://img.shields.io/itunes/v/nl.swiftisland.app?label=App Store">
+	<img alt="App Store" src="https://img.shields.io/itunes/v/1468876096?label=App%20Store">
     <img src="https://img.shields.io/badge/platform-SwiftUI-blue.svg" alt="Swift UI" title="Swift UI" />
     <br/>
     <a href="https://twitter.com/swiftislandnl">
