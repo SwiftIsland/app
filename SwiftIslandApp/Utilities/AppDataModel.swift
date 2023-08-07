@@ -41,7 +41,8 @@ final class AppDataModel: ObservableObject {
         }
     }
 
-    @MainActor
+    /// Checks the event list and pick the next event from it
+    /// - Returns: The next event, if there is any
     func nextEvent() async -> Event? {
         if events.count == 0 {
             self.events = await fetchEvents()
@@ -59,13 +60,9 @@ final class AppDataModel: ObservableObject {
 
     /// Fetches items for packing list. If none are stored locally, it'll get the list from Firebase.
     /// - Returns: Array of `PackingItem`
-    @MainActor
     func fetchPackingListItems() async -> [PackingItem] {
         if Defaults[.packingItems].isEmpty {
-            debugPrint("Fetching from firebase...")
             let firebaseItems = await dataLogic.fetchPackingListItemsFromFirebase()
-
-            debugPrint("Got items: \(firebaseItems)")
             Defaults[.packingItems] = firebaseItems
             return firebaseItems
         }
@@ -89,27 +86,23 @@ private extension AppDataModel {
 
     /// Fetches all the mentors from Firebase
     /// - Returns: Array of `Mentor`
-    @MainActor
     func fetchMentors() async -> [Mentor] {
         await dataLogic.fetchMentors()
     }
 
     /// Fetches all the pages from Firebase and stores
     /// - Returns: Array of `Page`
-    @MainActor
     func fetchPages() async -> [Page] {
         await dataLogic.fetchPages()
     }
 
     /// Fetches all the activities
     /// - Returns: Array of `Activity`
-    @MainActor
     func fetchActivities() async -> [Activity] {
-        return await dataLogic.fetchActivities()
+        await dataLogic.fetchActivities()
     }
 
-    @MainActor
     func fetchEvents() async -> [Event] {
-        return await dataLogic.fetchEvents()
+        await dataLogic.fetchEvents()
     }
 }

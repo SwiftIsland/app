@@ -107,7 +107,6 @@ struct ConferencePageView: View {
                                         }
                                         .padding(.vertical, 3)
                                         .onTapGesture {
-//                                            isShowingTicketPopover = false
                                             showDeleteAction = true
                                         }
                                         .confirmationDialog("Which ticket would you like to delete from the app?", isPresented: $showDeleteAction, titleVisibility: .visible) {

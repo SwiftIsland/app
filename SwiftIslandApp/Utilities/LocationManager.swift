@@ -42,7 +42,7 @@ final class LocationManager: NSObject, ObservableObject {
 
     /// Determines if the given coordinates lie within the boundaries of Texel in the Netherlands or Ingarö in Stockholm.
     ///
-    /// This function checks if the given `CLLocationCoordinate2D` parameter lies within the defined boundaries for the islands of Texel or Ingarö.
+    /// This function checks if the given `CLLocationCoordinate2D` parameter lies within the defined boundaries for the islands of Texel or Ingarö (For testing by Paul Peelen).
     ///
     /// - Parameter coordinate: The `CLLocationCoordinate2D` value representing a location's latitude and longitude.
     /// - Returns: A `Bool` indicating whether the given coordinates lie within the boundaries of Texel or Ingarö. Returns `true` if they do, `false` otherwise.

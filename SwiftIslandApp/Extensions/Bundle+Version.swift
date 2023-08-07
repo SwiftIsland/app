@@ -8,7 +8,6 @@ import Foundation
 extension Bundle {
     var appBuild: String { getInfo("CFBundleVersion") }
     var appVersionLong: String { getInfo("CFBundleShortVersionString") }
-    //public var appVersionShort: String { getInfo("CFBundleShortVersion") }
 
     func getInfo(_ str: String) -> String { infoDictionary?[str] as? String ?? "⚠️" }
 }
