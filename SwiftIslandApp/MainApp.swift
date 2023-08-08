@@ -29,6 +29,7 @@ struct MainApp: App {
                     SwiftIslandLogo(isAnimating: true)
                         .frame(maxWidth: 250)
                         .padding(20)
+                        .shadow(radius: 20)
                 }
             }
             .onOpenURL { url in
