@@ -111,13 +111,9 @@ struct ConferencePageView: View {
                                         }
                                         .confirmationDialog("Which ticket would you like to delete from the app?", isPresented: $showDeleteAction, titleVisibility: .visible) {
                                             ForEach(storedTickets) { ticket in
-                                                Button("Delete \(ticket.name)", role: .destructive) {
+                                                Button("Delete \(ticket.name) - \(ticket.title)", role: .destructive) {
                                                     showDeleteAction = false
-//                                                    let filteredStoredTickets = storedTickets.filter { $0.id != ticket.id }
-//                                                    if !isPreview {
-//                                                        try? KeychainManager.shared.store(key: .tickets, data: filteredStoredTickets)
-//                                                    }
-//                                                    self.storedTickets = filteredStoredTickets
+                                                    try? appDataModel.removeTicket(ticket: ticket)
                                                 }
                                             }
                                         }

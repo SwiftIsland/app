@@ -100,6 +100,19 @@ final class AppDataModel: ObservableObject {
         try KeychainManager.shared.store(key: .tickets, data: tickets)
         return ticket
     }
+    
+    func removeTicket(ticket: Ticket) throws {
+        guard let index = tickets.firstIndex(where: { $0.id == ticket.id }) else { return }
+        Task {
+            let finished = await MainActor.run {
+                self.tickets.remove(at: index)
+                return true
+            }
+            if (finished) {
+                try KeychainManager.shared.store(key: .tickets, data: tickets)
+            }
+        }
+    }
 }
 
 private extension AppDataModel {
