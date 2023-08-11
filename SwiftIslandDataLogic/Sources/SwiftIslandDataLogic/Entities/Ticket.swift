@@ -53,6 +53,10 @@ extension Ticket {
     public var title: String {
         return releaseTitle
     }
+    
+    public var titoURL: URL? {
+        URL(string: "https://ti.to/swiftisland/2023/tickets/\(slug)")
+    }
 }
 
 

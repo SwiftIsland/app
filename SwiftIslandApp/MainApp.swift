@@ -37,7 +37,7 @@ struct MainApp: App {
             .sheet(item: $ticketToShow, onDismiss: {
                 debugPrint("Dismissed!")
             }, content: { ticket in
-                if let url = URL(string: "https://ti.to/swiftisland/2023/tickets/\(ticket.id)") {
+                if let url = ticket.titoURL {
                     SafariWebView(url: url)
                 } else {
                     Text("The ticket ID provided was invalid")
