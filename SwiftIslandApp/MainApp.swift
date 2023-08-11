@@ -43,9 +43,6 @@ struct MainApp: App {
                     Text("The ticket ID provided was invalid")
                 }
             })
-//            .onAppear {
-//                self.storedTickets = (try? KeychainManager.shared.get(key: .tickets) ?? []) ?? []
-//            }
         }
     }
 }
