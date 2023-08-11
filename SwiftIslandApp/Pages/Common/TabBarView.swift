@@ -5,6 +5,7 @@
 
 import SwiftUI
 import Defaults
+import SwiftIslandDataLogic
 
 struct TabBarView: View {
     @Namespace private var namespace
@@ -12,7 +13,7 @@ struct TabBarView: View {
     @Binding var appActionTriggered: AppActions?
 
     @State private var isShowingMentor = false
-    @Binding var storedTickets: [Ticket]
+    @EnvironmentObject private var appDataModel: AppDataModel
     @State private var maskWidth: CGFloat = 1000
     @State private var maskAlpha: CGFloat = 0
     @State private var showTicketReminder = false
@@ -22,7 +23,7 @@ struct TabBarView: View {
             ZStack(alignment: .bottom) {
                 switch selectedItem {
                 case .home:
-                    ConferencePageView(namespace: namespace, isShowingMentor: $isShowingMentor, storedTickets: $storedTickets)
+                    ConferencePageView(namespace: namespace, isShowingMentor: $isShowingMentor)
                         .onAppear {
                             checkShowTicketReminder()
                         }
@@ -88,13 +89,13 @@ struct TabBarView: View {
             handleAppAction()
         }.onChange(of: appActionTriggered) { newValue in
             handleAppAction()
-        }.onChange(of: storedTickets) { newValue in
+        }.onChange(of: appDataModel.tickets) { newValue in
             checkShowTicketReminder()
         }
     }
 
     func checkShowTicketReminder() {
-        if storedTickets.count > 0 && !Defaults[.hasShownTicketReminder] && selectedItem == .home {
+        if appDataModel.tickets.count > 0 && !Defaults[.hasShownTicketReminder] && selectedItem == .home {
             showTicketReminder = true
         }
     }
@@ -114,9 +115,9 @@ struct TabBarView: View {
 struct TabbarView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            TabBarView(appActionTriggered: .constant(nil), storedTickets: .constant([]))
+            TabBarView(appActionTriggered: .constant(nil))
                 .previewDisplayName("Light mode")
-            TabBarView(appActionTriggered: .constant(nil), storedTickets: .constant([]))
+            TabBarView(appActionTriggered: .constant(nil))
                 .preferredColorScheme(.dark)
                 .previewDisplayName("Dark mode")
         }

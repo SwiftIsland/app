@@ -17,13 +17,12 @@ struct MainApp: App {
     @StateObject private var appDataModel = AppDataModel()
     @State private var appActionTriggered: AppActions? = nil
     @State private var ticketToShow: Ticket?
-    @State private var storedTickets: [Ticket] = []
 
     var body: some Scene {
         WindowGroup {
             ZStack {
                 if case .loaded = appDataModel.appState {
-                    TabBarView(appActionTriggered: $appActionTriggered, storedTickets: $storedTickets)
+                    TabBarView(appActionTriggered: $appActionTriggered)
                         .environmentObject(appDataModel)
                 } else {
                     SwiftIslandLogo(isAnimating: true)
@@ -44,9 +43,9 @@ struct MainApp: App {
                     Text("The ticket ID provided was invalid")
                 }
             })
-            .onAppear {
-                self.storedTickets = (try? KeychainManager.shared.get(key: .tickets) ?? []) ?? []
-            }
+//            .onAppear {
+//                self.storedTickets = (try? KeychainManager.shared.get(key: .tickets) ?? []) ?? []
+//            }
         }
     }
 }
@@ -64,8 +63,15 @@ private extension MainApp {
         switch urlTask {
         case .action(let appAction):
             handleAppAction(appAction)
-        case .ticket(let slur):
-            handleTicketSlur(slur)
+        case .ticket(let slug):
+            Task {
+                do {
+                    try await handleTicketSlug(slug)
+                }
+                catch {
+                    print(error)
+                }
+            }
         }
     }
 
@@ -80,30 +86,19 @@ private extension MainApp {
 
     /// This method handles the storing of the ticket to the keychain and presenting the result
     /// - Parameter slur: The slur to store
-    func handleTicketSlur(_ slur: String) {
+    func handleTicketSlug(_ slug: String) async throws {
         do {
-            var storedTickets: [Ticket] = (try? KeychainManager.shared.get(key: .tickets) ?? []) ?? []
-
-            if let ticket = storedTickets.first(where: { $0.id == slur }) {
-                self.ticketToShow = ticket
-            } else {
-                let ticket = Ticket(id: slur, addDate: Date(), name: "Ticket \(max(storedTickets.count + 1, 1))")
-                storedTickets.append(ticket)
-
-                try KeychainManager.shared.store(key: .tickets, data: storedTickets)
-                self.ticketToShow = ticket
-                self.storedTickets.append(ticket)
-            }
+            self.ticketToShow = try await appDataModel.addTicket(slug: slug)
         } catch {
-            // TODO: Show error view for keychain issue, which should never happen
-            debugPrint("Error handling keychain items! Error: \(error)")
+            // TODO: Show error view for requesting and adding to the keychain
+            debugPrint("Error adding ticket! Error: \(error)")
         }
     }
 }
 
 enum URLTask {
     case action(appAction: AppActions)
-    case ticket(slur: String)
+    case ticket(slug: String)
 
     init?(rawValue: URLQueryItem) {
         switch rawValue.name {
@@ -112,7 +107,7 @@ enum URLTask {
             self = .action(appAction: actionTriggered)
         case "ticket":
             guard let value = rawValue.value else { return nil }
-            self = .ticket(slur: value)
+            self = .ticket(slug: value)
         default:
             return nil
         }

@@ -8,8 +8,8 @@
 import Foundation
 
 public struct Ticket {
-    let id: Int
-    let slug: String
+    public let id: Int
+    public let slug: String
     let firstName: String
     let lastName: String
     let releaseTitle: String
@@ -27,7 +27,7 @@ public struct Ticket {
     }
 }
 
-extension Ticket:Decodable {
+extension Ticket: Decodable, Encodable {
     enum CodingKeys : String, CodingKey {
         case id = "id"
         case slug = "slug"
@@ -40,6 +40,21 @@ extension Ticket:Decodable {
         case updatedAt = "updated_at"
     }
 }
+
+extension Ticket: Identifiable { }
+
+extension Ticket: Equatable { }
+
+extension Ticket {
+    public var name: String {
+        return "\(firstName) \(lastName)"
+    }
+    
+    public var title: String {
+        return releaseTitle
+    }
+}
+
 
 //extension Ticket {
 //    func accomodation(checkinList: String) async throws -> String? {
