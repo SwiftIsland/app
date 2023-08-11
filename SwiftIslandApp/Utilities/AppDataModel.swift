@@ -89,11 +89,11 @@ final class AppDataModel: ObservableObject {
         let ticket = try await dataLogic.fetchTicket(slug: slug, from: checkinListSlug)
         
         if let index = tickets.firstIndex(where: { $0.slug == ticket.slug }) {
-            DispatchQueue.main.async {
+            await MainActor.run {
                 self.tickets[index] = ticket
             }
         } else {
-            DispatchQueue.main.async {
+            await MainActor.run {
                 self.tickets.append(ticket)
             }
         }
@@ -104,13 +104,11 @@ final class AppDataModel: ObservableObject {
     func removeTicket(ticket: Ticket) throws {
         guard let index = tickets.firstIndex(where: { $0.id == ticket.id }) else { return }
         Task {
-            let finished = await MainActor.run {
+            await MainActor.run {
                 self.tickets.remove(at: index)
-                return true
+                return
             }
-            if (finished) {
-                try KeychainManager.shared.store(key: .tickets, data: tickets)
-            }
+            try KeychainManager.shared.store(key: .tickets, data: tickets)
         }
     }
 }
