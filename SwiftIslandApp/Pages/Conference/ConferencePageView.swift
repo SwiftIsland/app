@@ -18,9 +18,6 @@ struct ConferencePageView: View {
     @State private var isShowingTicketPopover = false
     @State private var showDeleteAction = false
 
-//    @Binding var storedTickets: [Ticket]
-
-
     var body: some View {
         NavigationStack {
             ZStack {
