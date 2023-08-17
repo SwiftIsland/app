@@ -60,7 +60,6 @@
 		2A987AFA2A7AECA600EE15DF /* ActivityType+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3AB65A2A78744B0089CF7E /* ActivityType+Color.swift */; };
 		2A987AFB2A7AECC300EE15DF /* UpNextSystemSmallView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A987AF42A7AEAEC00EE15DF /* UpNextSystemSmallView.swift */; };
 		2AB3AE902A77FF0E00F3ECB2 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB3AE8F2A77FF0E00F3ECB2 /* KeychainManager.swift */; };
-		2AB3AF652A78134300F3ECB2 /* Ticket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB3AF642A78134300F3ECB2 /* Ticket.swift */; };
 		2AB3AF672A78199600F3ECB2 /* SafariWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AB3AF662A78199600F3ECB2 /* SafariWebView.swift */; };
 		2AC7DCF12A58B5E600DB9F6D /* ConferenceBoxFAQ.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DCF02A58B5E600DB9F6D /* ConferenceBoxFAQ.swift */; };
 		2AC7DD072A58CD2000DB9F6D /* FAQListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AC7DD062A58CD2000DB9F6D /* FAQListView.swift */; };
@@ -163,7 +162,6 @@
 		2A987AEA2A7AE76A00EE15DF /* UpNextEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpNextEntry.swift; sourceTree = "<group>"; };
 		2A987AF42A7AEAEC00EE15DF /* UpNextSystemSmallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpNextSystemSmallView.swift; sourceTree = "<group>"; };
 		2AB3AE8F2A77FF0E00F3ECB2 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
-		2AB3AF642A78134300F3ECB2 /* Ticket.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ticket.swift; sourceTree = "<group>"; };
 		2AB3AF662A78199600F3ECB2 /* SafariWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebView.swift; sourceTree = "<group>"; };
 		2AC7DCF02A58B5E600DB9F6D /* ConferenceBoxFAQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxFAQ.swift; sourceTree = "<group>"; };
 		2AC7DD062A58CD2000DB9F6D /* FAQListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQListView.swift; sourceTree = "<group>"; };
@@ -277,14 +275,6 @@
 			path = Boxes;
 			sourceTree = "<group>";
 		};
-		2A16EB4D2A4F655500CC881D /* Entities */ = {
-			isa = PBXGroup;
-			children = (
-				2AB3AF642A78134300F3ECB2 /* Ticket.swift */,
-			);
-			path = Entities;
-			sourceTree = "<group>";
-		};
 		2A18CE392A76E70800969214 /* Packlist */ = {
 			isa = PBXGroup;
 			children = (
@@ -395,14 +385,6 @@
 			path = Entries;
 			sourceTree = "<group>";
 		};
-		2AB3AF632A7812FC00F3ECB2 /* Data */ = {
-			isa = PBXGroup;
-			children = (
-				2A16EB4D2A4F655500CC881D /* Entities */,
-			);
-			path = Data;
-			sourceTree = "<group>";
-		};
 		2AC7DD052A58CD1100DB9F6D /* FAQ */ = {
 			isa = PBXGroup;
 			children = (
@@ -480,7 +462,6 @@
 		2AEDC4952A4A030F00CD0180 /* SwiftIslandApp */ = {
 			isa = PBXGroup;
 			children = (
-				2AB3AF632A7812FC00F3ECB2 /* Data */,
 				2A16EB3D2A4CDB3A00CC881D /* Extensions */,
 				2AEDC4C02A4A086F00CD0180 /* Pages */,
 				2AEDC49C2A4A031000CD0180 /* Preview Content */,
@@ -759,7 +740,6 @@
 				2AE440012A702BC0009078E3 /* Date+Formatting.swift in Sources */,
 				2A7F12962A6B14CD007C28EA /* AppDataModel.swift in Sources */,
 				2A18CE442A773D7F00969214 /* SectionGettingHere.swift in Sources */,
-				2AB3AF652A78134300F3ECB2 /* Ticket.swift in Sources */,
 				2A090BD92A71BAFF003553D2 /* PlaceAnnotationView.swift in Sources */,
 				2A7F12852A65DBEA007C28EA /* LocationManager.swift in Sources */,
 				2AC7DD092A58CFDD00DB9F6D /* ConferenceBoxFAQItem.swift in Sources */,

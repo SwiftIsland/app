@@ -7,46 +7,58 @@ import SwiftUI
 
 struct SwiftIslandLogo: View {
     let isAnimating: Bool
-
-    private let colorRange: [Color] = [.yellowLight, .yellowDark, .orangeLight, .orangeDark, .redLight, .redDark]
-    private let minDuration = 1.0
-    private let maxDuration = 2.0
-
+        
     @State private var shapeColorsTopLeft = Color.yellowDark
     @State private var shapeColorsTopRight = Color.yellowLight
     @State private var shapeColorsMiddleLeft = Color.orangeLight
     @State private var shapeColorsMiddleRight = Color.orangeDark
     @State private var shapeColorsBottomLeft = Color.redDark
     @State private var shapeColorsBottomRight = Color.redLight
+    
+    @State private var animationDuration = 0.75 * 6
+    @State private var rotationTopLeft = 0.0
+    @State private var rotationTopRight = 0.0
+    @State private var rotationMiddleLeft = 0.0
+    @State private var rotationMidldleRight = 0.0
+    @State private var rotationBottomLeft = 0.0
+    @State private var rotationBottomRight = 0.0
+    @State private var animateIn = false
+    @State private var anchor: UnitPoint = .bottom
 
-    @State private var durationAnimationTopLeft = 0.1
-    @State private var durationAnimationTopRight = 0.1
-    @State private var durationAnimationMiddleLeft = 0.1
-    @State private var durationAnimationMiddleRight = 0.1
-    @State private var durationAnimationBottomLeft = 0.1
-    @State private var durationAnimationBottomRight = 0.1
-
+    
     var body: some View {
-
+        
         VStack(spacing: 0) {
-
+            
             HStack(spacing: 0) {
-                Triangle()
-                    .fill(shapeColorsTopLeft)
-                    .aspectRatio(CGSize(width: 2, height: 1), contentMode: .fit)
-                    .padding(0)
-                    .percentageOffset(x: 0.25)
-                    .onReceive(Timer.publish(every: durationAnimationTopLeft, on: .main, in: .common).autoconnect()) { _ in
-                        handleColorChange(shapeColor: $shapeColorsTopLeft, animationDuration: $durationAnimationTopLeft)
-                    }
                 Triangle()
                     .fill(shapeColorsTopRight)
                     .aspectRatio(CGSize(width: 2, height: 1), contentMode: .fit)
                     .rotationEffect(Angle(degrees: 180))
                     .padding(0)
-                    .percentageOffset(x: -0.25)
-                    .onReceive(Timer.publish(every: durationAnimationTopRight, on: .main, in: .common).autoconnect()) { _ in
-                        handleColorChange(shapeColor: $shapeColorsTopRight, animationDuration: $durationAnimationTopRight)
+                    .rotation3DEffect(
+                        Angle(degrees: rotationTopRight),
+                        axis: (x: 1.0, y: 0, z: 0),
+                        anchor: anchor,
+                        perspective: 0
+                    )
+                    .percentageOffset(x: 0.75)
+                    .onReceive(Timer.publish(every: animationDuration, on: .main, in: .common).autoconnect()) { _ in
+                        animateRotation(rotation: $rotationTopRight, order: 0, reverse: true)
+                    }
+                Triangle()
+                  .fill(shapeColorsTopLeft)
+                    .aspectRatio(CGSize(width: 2, height: 1), contentMode: .fit)
+                    .padding(0)
+                    .rotation3DEffect(
+                        Angle(degrees: rotationTopLeft),
+                        axis: (x: 1.0, y: 0, z: 0),
+                        anchor: anchor,
+                        perspective: 0
+                    )
+                    .percentageOffset(x: -0.75)
+                    .onReceive(Timer.publish(every: animationDuration, on: .main, in: .common).autoconnect()) { _ in
+                        animateRotation(rotation: $rotationTopLeft, order: 1)
                     }
             }
             HStack(spacing: 0) {
@@ -55,57 +67,84 @@ struct SwiftIslandLogo: View {
                     .aspectRatio(CGSize(width: 2, height: 1), contentMode: .fit)
                     .rotationEffect(Angle(degrees: 180))
                     .padding(0)
+                    .rotation3DEffect(
+                        Angle(degrees: rotationMiddleLeft),
+                        axis: (x: 1.0, y: 0, z: 0),
+                        anchor: anchor,
+                        perspective: 0
+                    )
+
                     .percentageOffset(x: 0.25)
-                    .onReceive(Timer.publish(every: durationAnimationMiddleLeft, on: .main, in: .common).autoconnect()) { _ in
-                        handleColorChange(shapeColor: $shapeColorsMiddleLeft, animationDuration: $durationAnimationMiddleLeft)
+                    .onReceive(Timer.publish(every: animationDuration, on: .main, in: .common).autoconnect()) { _ in
+                        animateRotation(rotation: $rotationMiddleLeft, order: 2, reverse: true)
+
                     }
                 Triangle()
                     .fill(shapeColorsMiddleRight)
                     .aspectRatio(CGSize(width: 2, height: 1), contentMode: .fit)
                     .padding(0)
+                    .rotation3DEffect(
+                        Angle(degrees: rotationMidldleRight),
+                        axis: (x: 1.0, y: 0, z: 0),
+                        anchor: anchor,
+                        perspective: 0
+                    )
                     .percentageOffset(x: -0.25)
-                    .onReceive(Timer.publish(every: durationAnimationMiddleRight, on: .main, in: .common).autoconnect()) { _ in
-                        handleColorChange(shapeColor: $shapeColorsMiddleRight, animationDuration: $durationAnimationMiddleRight)
+                    .onReceive(Timer.publish(every: animationDuration, on: .main, in: .common).autoconnect()) { _ in
+                        animateRotation(rotation: $rotationMidldleRight, order: 3)
                     }
             }
             HStack(spacing: 0) {
-                Triangle()
-                    .fill(shapeColorsBottomLeft)
-                    .aspectRatio(CGSize(width: 2, height: 1), contentMode: .fit)
-                    .padding(0)
-                    .percentageOffset(x: 0.25)
-                    .onReceive(Timer.publish(every: durationAnimationBottomLeft, on: .main, in: .common).autoconnect()) { _ in
-                        handleColorChange(shapeColor: $shapeColorsBottomLeft, animationDuration: $durationAnimationBottomLeft)
-                    }
                 Triangle()
                     .fill(shapeColorsBottomRight)
                     .aspectRatio(CGSize(width: 2, height: 1), contentMode: .fit)
                     .rotationEffect(Angle(degrees: 180))
                     .padding(0)
-                    .percentageOffset(x: -0.25)
-                    .onReceive(Timer.publish(every: durationAnimationBottomRight, on: .main, in: .common).autoconnect()) { _ in
-                        handleColorChange(shapeColor: $shapeColorsBottomRight, animationDuration: $durationAnimationBottomRight)
+                    .rotation3DEffect(
+                        Angle(degrees: rotationBottomRight),
+                        axis: (x: 1.0, y: 0, z: 0),
+                        anchor: anchor,
+                        perspective: 0
+                    )
+                    .percentageOffset(x: 0.75)
+                    .onReceive(Timer.publish(every: animationDuration, on: .main, in: .common).autoconnect()) { _ in
+                        animateRotation(rotation: $rotationBottomRight, order: 4, reverse: true)
+                    }
+                Triangle()
+                    .fill(shapeColorsBottomLeft)
+                    .aspectRatio(CGSize(width: 2, height: 1), contentMode: .fit)
+                    .padding(0)
+                    .rotation3DEffect(
+                        Angle(degrees: rotationBottomLeft),
+                        axis: (x: 1.0, y: 0, z: 0),
+                        anchor: anchor,
+                        perspective: 0
+                    )
+
+                    .percentageOffset(x: -0.75)
+                    .onReceive(Timer.publish(every: animationDuration, on: .main, in: .common).autoconnect()) { _ in
+                        animateRotation(rotation: $rotationBottomLeft, order: 5)
                     }
             }
         }
         .shadow(radius: 0)
         .padding(0)
-        .onAppear {
-            durationAnimationTopLeft = Double.random(in: minDuration...maxDuration)
-            durationAnimationTopRight = Double.random(in: minDuration...maxDuration)
-            durationAnimationMiddleLeft = Double.random(in: minDuration...maxDuration)
-            durationAnimationMiddleRight = Double.random(in: minDuration...maxDuration)
-            durationAnimationBottomLeft = Double.random(in: minDuration...maxDuration)
-            durationAnimationBottomRight = Double.random(in: minDuration...maxDuration)
-        }
     }
+    
+    private func animateRotation(rotation: Binding<Double>, order: Int = 0, reverse: Bool = false) {
+        if (isAnimating) {
 
-    private func handleColorChange(shapeColor: Binding<Color>, animationDuration: Binding<Double>) {
-        if isAnimating {
-            withAnimation(.easeInOut(duration: animationDuration.wrappedValue)) {
-                shapeColor.wrappedValue = colorRange.randomElement() ?? shapeColor.wrappedValue
+            withAnimation(.interpolatingSpring(mass: 1, stiffness: 200, damping: 40, initialVelocity: 0).delay(0.75 * Double(order))) {
+                let new: Double = animateIn ? 0 : (reverse ? -90 : 90)
+                rotation.wrappedValue = new
+                if order == 0 {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + animationDuration-0.01) {
+                        animateIn = !animateIn
+                        anchor = animateIn ? .bottom : .top
+                    }
+                }
             }
-            animationDuration.wrappedValue = Double.random(in: minDuration...maxDuration)
+
         }
     }
 }

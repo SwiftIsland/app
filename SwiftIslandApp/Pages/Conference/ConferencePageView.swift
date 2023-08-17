@@ -18,7 +18,7 @@ struct ConferencePageView: View {
     @State private var isShowingTicketPopover = false
     @State private var showDeleteAction = false
 
-    @Binding var storedTickets: [Ticket]
+//    @Binding var storedTickets: [Ticket]
 
 
     var body: some View {
@@ -40,7 +40,7 @@ struct ConferencePageView: View {
                             mayShowMentorNextMentor = true
                         }
                 }
-
+                let storedTickets = appDataModel.tickets
                 // The tickets button (top right) as well as the popover and the safari view
                 if storedTickets.count > 0 && !isShowingMentor {
                     HStack {
@@ -76,7 +76,7 @@ struct ConferencePageView: View {
                                                             .font(.body)
                                                             .fontWeight(.light)
                                                             .dynamicTypeSize(DynamicTypeSize.small ... DynamicTypeSize.medium)
-                                                        Text("Added \(ticket.addDate.relativeDateDisplay())")
+                                                        Text(ticket.title)
                                                             .foregroundColor(.secondary)
                                                             .font(.footnote)
                                                             .dynamicTypeSize(DynamicTypeSize.small ... DynamicTypeSize.medium)
@@ -111,13 +111,9 @@ struct ConferencePageView: View {
                                         }
                                         .confirmationDialog("Which ticket would you like to delete from the app?", isPresented: $showDeleteAction, titleVisibility: .visible) {
                                             ForEach(storedTickets) { ticket in
-                                                Button("Delete \(ticket.name)", role: .destructive) {
+                                                Button("Delete \(ticket.name) - \(ticket.title)", role: .destructive) {
                                                     showDeleteAction = false
-                                                    let filteredStoredTickets = storedTickets.filter { $0.id != ticket.id }
-                                                    if !isPreview {
-                                                        try? KeychainManager.shared.store(key: .tickets, data: filteredStoredTickets)
-                                                    }
-                                                    self.storedTickets = filteredStoredTickets
+                                                    try? appDataModel.removeTicket(ticket: ticket)
                                                 }
                                             }
                                         }
@@ -144,7 +140,7 @@ struct ConferencePageView: View {
         }
         .accentColor(.white)
         .sheet(item: $ticketToShow, content: { ticket in
-            if let url = URL(string: "https://ti.to/swiftisland/2023/tickets/\(ticket.id)") {
+            if let url = ticket.titoURL {
                 SafariWebView(url: url)
             } else {
                 Text("The ticket ID provided was invalid")
@@ -162,13 +158,17 @@ struct ConferencePageView_Previews: PreviewProvider {
         let appDataModel = AppDataModel()
         appDataModel.events = [event]
 
-        let tickets = [
-            Ticket(id: "1", addDate: Date(timeIntervalSinceNow: -308), name: "Ticket 1"),
-            Ticket(id: "2", addDate: Date(timeIntervalSinceNow: -(11 * 60)), name: "Ticket 2"),
-            Ticket(id: "3", addDate: Date(timeIntervalSinceNow: -((24 * 3) * 60)), name: "Ticket 3")
+        let ticket = """
+        {"id":9973691,"slug":"ti_pVxPdTDrCZE92Fr4PMiZEdA","first_name":"Sidney","last_name":"de Koning","release_title":"Organizer Ticket","reference":"RD2J-1","registration_reference":"RD2J","tags":null,"created_at":"2023-07-07T07:28:34.000Z","updated_at":"2023-07-07T07:32:17.000Z"}
+        """
+        appDataModel.tickets = [
+//            Ticket(from: ticket.data(using: .utf8)!)
+//            Ticket(id: "1", addDate: Date(timeIntervalSinceNow: -308), name: "Ticket 1"),
+//            Ticket(id: "2", addDate: Date(timeIntervalSinceNow: -(11 * 60)), name: "Ticket 2"),
+//            Ticket(id: "3", addDate: Date(timeIntervalSinceNow: -((24 * 3) * 60)), name: "Ticket 3")
         ]
 
-        return ConferencePageView(namespace: namespace, isShowingMentor: .constant(false), storedTickets: .constant(tickets))
+        return ConferencePageView(namespace: namespace, isShowingMentor: .constant(false))
             .environmentObject(appDataModel)
     }
 }

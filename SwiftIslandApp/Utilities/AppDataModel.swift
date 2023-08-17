@@ -15,6 +15,8 @@ enum AppState {
     case loaded
 }
 
+let checkinListSlug = "chk_pFTTuxa0daVl9rVYGI3l3qg"
+
 /// AppDataModel hold app data that is used by multiple views and is shared as an environment variable to the views.
 /// This class is used on the main dispatch queue
 final class AppDataModel: ObservableObject {
@@ -24,6 +26,7 @@ final class AppDataModel: ObservableObject {
     @Published var activities: [Activity] = []
     @Published var events: [Event] = []
     @Published var locations: [Location] = []
+    @Published var tickets: [Ticket] = []
 
     private let logger = Logger(
         subsystem: Bundle.main.bundleIdentifier!,
@@ -69,6 +72,45 @@ final class AppDataModel: ObservableObject {
 
         return Defaults[.packingItems]
     }
+    
+    func updateTickets() async -> [Ticket] {
+        let storedTickets: [Ticket] = (try? KeychainManager.shared.get(key: .tickets) ?? []) ?? []
+        var updatedTickets: [Ticket] = []
+        // Todo make these request perform in parralel using an AsyncStream
+        for ticket in storedTickets {
+            // We never throw a way a ticket, if it can't be fetch, just use the stored version
+            let updatedTicket = (try? await dataLogic.fetchTicket(slug: ticket.slug, from: checkinListSlug)) ?? ticket
+            updatedTickets.append(updatedTicket)
+        }
+        return updatedTickets
+    }
+    
+    func addTicket(slug: String) async throws -> Ticket {
+        let ticket = try await dataLogic.fetchTicket(slug: slug, from: checkinListSlug)
+        
+        if let index = tickets.firstIndex(where: { $0.slug == ticket.slug }) {
+            await MainActor.run {
+                self.tickets[index] = ticket
+            }
+        } else {
+            await MainActor.run {
+                self.tickets.append(ticket)
+            }
+        }
+        try KeychainManager.shared.store(key: .tickets, data: tickets)
+        return ticket
+    }
+    
+    func removeTicket(ticket: Ticket) throws {
+        guard let index = tickets.firstIndex(where: { $0.id == ticket.id }) else { return }
+        Task {
+            await MainActor.run {
+                self.tickets.remove(at: index)
+                return
+            }
+            try KeychainManager.shared.store(key: .tickets, data: tickets)
+        }
+    }
 }
 
 private extension AppDataModel {
@@ -79,7 +121,7 @@ private extension AppDataModel {
             pages = await fetchPages()
             activities = await fetchActivities()
             events = await fetchEvents()
-
+            tickets = await updateTickets()
             appState = .loaded
         }
     }
@@ -106,3 +148,4 @@ private extension AppDataModel {
         await dataLogic.fetchEvents()
     }
 }
+
