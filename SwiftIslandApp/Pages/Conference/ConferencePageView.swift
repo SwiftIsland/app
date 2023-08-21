@@ -159,7 +159,7 @@ struct ConferencePageView_Previews: PreviewProvider {
         {"id":9973691,"slug":"ti_pVxPdTDrCZE92Fr4PMiZEdA","first_name":"Sidney","last_name":"de Koning","release_title":"Organizer Ticket","reference":"RD2J-1","registration_reference":"RD2J","tags":null,"created_at":"2023-07-07T07:28:34.000Z","updated_at":"2023-07-07T07:32:17.000Z"}
         """
         appDataModel.tickets = [
-//            Ticket(from: ticket.data(using: .utf8)!)
+            try! Ticket(from: ticket.data(using: .utf8)!)
 //            Ticket(id: "1", addDate: Date(timeIntervalSinceNow: -308), name: "Ticket 1"),
 //            Ticket(id: "2", addDate: Date(timeIntervalSinceNow: -(11 * 60)), name: "Ticket 2"),
 //            Ticket(id: "3", addDate: Date(timeIntervalSinceNow: -((24 * 3) * 60)), name: "Ticket 3")
