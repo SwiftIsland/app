@@ -29,14 +29,22 @@ struct TicketsView: View {
                             Image("Logo").padding(-10)
                             Spacer()
                             if let editURL = ticket.editURL {
-                                Button(action: {
-                                    UIApplication.shared.open(editURL)
-                                }) {
+                                NavigationLink(destination: {
+                                    WebView(url: editURL)
+                                        .navigationTitle("Edit")
+                                        .toolbarBackground(
+                                                                Color.black,
+                                                                for: .navigationBar)
+                                        .toolbarColorScheme(.dark, for: .navigationBar)
+                                        .toolbarBackground(.visible, for: .navigationBar)
+                                }, label: {
                                     Image(systemName: "pencil.circle")
                                         .resizable()
                                         .frame(width: 25, height: 25)
                                         .foregroundColor(.questionMarkColor)
-                                }
+                                })
+                                
+
                             } else {
                                 Spacer()
                             }
