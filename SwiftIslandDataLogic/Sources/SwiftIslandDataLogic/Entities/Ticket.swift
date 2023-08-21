@@ -18,7 +18,7 @@ public struct Ticket {
     let createdAt: Date
     let updatedAt: Date
     
-    init(from data: Data) throws {
+    public init(from data: Data) throws {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
         let decoder = JSONDecoder()
