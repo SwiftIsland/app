@@ -45,6 +45,8 @@ extension Ticket: Identifiable { }
 
 extension Ticket: Equatable { }
 
+extension Ticket: Hashable { }
+
 extension Ticket {
     public var name: String {
         return "\(firstName) \(lastName)"
@@ -54,25 +56,25 @@ extension Ticket {
         return releaseTitle
     }
     
+    public var icon: String {
+        switch(releaseTitle) {
+        case "Conference Ticket": return "ticket.fill"
+        case "Hassle-free Travel": return "bus.fill"
+        default: return "ticket.fill"
+        }
+    }
+    
     public var titoURL: URL? {
         URL(string: "https://ti.to/swiftisland/2023/tickets/\(slug)")
     }
 }
 
-
-//extension Ticket {
-//    func accomodation(checkinList: String) async throws -> String? {
-//        let answers = try await getAnswers(for: checkinList)
-//        return answers.first(where: { $0.ticketId == self.id })?.humanizedResponse
-//    }
-//}
-
 public struct Answer {
     let id: Int
     let ticketId: Int
-    let questionId: Int
+    public let questionId: Int
     let response: String
-    let humanizedResponse: String
+    public let humanizedResponse: String
 }
 
 extension Answer: Decodable {

@@ -146,7 +146,7 @@ internal class DataLogicMock: DataLogic {
     
     var fetchTicketReturnValue: Ticket = try! Ticket(from: ticketJSON.data(using: .utf8)!)
     
-    var fetchAnswersReturnValue: [Answer] = []
+    var fetchAnswersReturnValue: [Ticket:[Answer]] = [:]
 
     required init() { }
 
@@ -186,7 +186,7 @@ internal class DataLogicMock: DataLogic {
         return fetchTicketReturnValue
     }
     
-    func fetchAnswers(for checkinList: String) async throws -> [Answer] {
+    func fetchAnswers(for tickets: [Ticket], in checkinList: String) async throws -> [Ticket:[Answer]] {
         return fetchAnswersReturnValue
     }
 
