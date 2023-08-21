@@ -60,13 +60,15 @@ struct TicketsView: View {
                                 
                             }.foregroundColor(.secondary)
                                 .font(.title2)
-                            if let accomodation = accomodation(for: ticket) {
-                                HStack {
-                                    Image(systemName: "bed.double.fill")
-                                    Text(accomodation)
-                                }.foregroundColor(.secondary)
-                                    .font(.title3)
+                            let accomodation = accomodation(for: ticket)
+                            HStack {
+                                Image(systemName: "bed.double.fill")
+                                Text(accomodation ?? "TBD")
                             }
+                            .foregroundColor(.secondary)
+                            .font(.title3)
+                            .opacity(accomodation == nil ? 0 : 1)
+                        
                         }
                         Image(uiImage: ticket.qrCode!).resizable().scaledToFit()
                             .frame(width: 200, height: 200)
