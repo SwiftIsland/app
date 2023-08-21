@@ -82,7 +82,7 @@ private extension MainApp {
     }
 
     /// This method handles the storing of the ticket to the keychain and presenting the result
-    /// - Parameter slur: The slur to store
+    /// - Parameter slug: The slug to store
     func handleTicketSlug(_ slug: String) async throws {
         do {
             self.ticketToShow = try await appDataModel.addTicket(slug: slug)
