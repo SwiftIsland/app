@@ -7,6 +7,10 @@ import XCTest
 import SwiftIslandDataLogic
 @testable import Swift_Island
 
+let ticketJSON = """
+        {"id":9973691,"slug":"ti_testslug","first_name":"Sidney","last_name":"de Koning","release_title":"Organizer Ticket","reference":"RD2J-1","registration_reference":"RD2J","tags":null,"created_at":"2023-07-07T07:28:34.000Z","updated_at":"2023-07-07T07:32:17.000Z"}
+        """
+
 final class AddDataModelTests: XCTestCase {
 
     var dataLogicMock: DataLogicMock!
@@ -123,6 +127,7 @@ final class AddDataModelTests: XCTestCase {
 }
 
 internal class DataLogicMock: DataLogic {
+    
     static var configureInvokeCount = 0
 
     var fetchLocationsReturnValue: [Location] = []
@@ -138,6 +143,10 @@ internal class DataLogicMock: DataLogic {
     var fetchPackingListItemsFromFirebaseReturnValue: [PackingItem] = []
 
     var fetchFAQItemsReturnValue: [FAQItem] = []
+    
+    var fetchTicketReturnValue: Ticket = try! Ticket(from: ticketJSON.data(using: .utf8)!)
+    
+    var fetchAnswersReturnValue: [Answer] = []
 
     required init() { }
 
@@ -172,4 +181,13 @@ internal class DataLogicMock: DataLogic {
     func fetchFAQItems() async -> [FAQItem] {
         return fetchFAQItemsReturnValue
     }
+    
+    func fetchTicket(slug: String, from checkinList: String) async throws -> Ticket {
+        return fetchTicketReturnValue
+    }
+    
+    func fetchAnswers(for checkinList: String) async throws -> [Answer] {
+        return fetchAnswersReturnValue
+    }
+
 }
