@@ -67,6 +67,10 @@ extension Ticket {
     public var titoURL: URL? {
         URL(string: "https://ti.to/swiftisland/2023/tickets/\(slug)")
     }
+    
+    public var editURL: URL? {
+        URL(string: "https://ti.to/swiftisland/2023/tickets/\(slug)/settings")
+    }
 }
 
 public struct Answer {

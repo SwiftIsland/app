@@ -11,46 +11,77 @@ import CoreImage.CIFilterBuiltins
 
 struct TicketsView: View {
     @EnvironmentObject private var appDataModel: AppDataModel
-    @State var currentId: Int?
+    @State var currentTicket: Ticket?
+    @State var answers: [Ticket:[Answer]] = [:]
+    
+    func accomodation(for ticket: Ticket) -> String? {
+        // TODO: select the correct question
+        return answers[ticket]?.first?.humanizedResponse
+    }
     var body: some View {
-        List {
-            ForEach(appDataModel.tickets) { ticket in
-                let isActive = currentId == ticket.id
-                Section {
+        VStack {
+            TabView {
+                ForEach(appDataModel.tickets) { ticket in
                     VStack {
-                        HStack {
-                            Image(systemName: "ticket")
-                                .foregroundColor(.questionMarkColor)
-                                .frame(width: 32)
-                            VStack(alignment: .leading) {
-                                Text(ticket.name)
-                                    .foregroundColor(.primary)
-                                    .font(.body)
-                                    .fontWeight(.light)
-                                    .dynamicTypeSize(DynamicTypeSize.small ... DynamicTypeSize.medium)
-                                Text(ticket.title)
-                                    .foregroundColor(.secondary)
-                                    .font(.footnote)
-                                    .dynamicTypeSize(DynamicTypeSize.small ... DynamicTypeSize.medium)
-                            }
+                        HStack(alignment: .top) {
                             Spacer()
-                            Image(systemName: isActive ? "chevron.down" : "chevron.right")
-                                .foregroundColor(.secondary)
-                                .font(.footnote)
+                            Spacer()
+                            Image("Logo").padding(-10)
+                            Spacer()
+                            if let editURL = ticket.editURL {
+                                Button(action: {
+                                    UIApplication.shared.open(editURL)
+                                }) {
+                                    Image(systemName: "pencil.circle")
+                                        .resizable()
+                                        .frame(width: 25, height: 25)
+                                        .foregroundColor(.questionMarkColor)
+                                }
+                            } else {
+                                Spacer()
+                            }
+                            
                         }
-                        if isActive {
-                            Image(uiImage: ticket.qrCode!).resizable().scaledToFit().frame(width: 200, height: 200)
+                        VStack(alignment: .leading) {
+                            Text(ticket.name)
+                                .foregroundColor(.primary)
+                                .font(.largeTitle)
+                            HStack {
+                                Image(systemName: ticket.icon)
+                                Text(ticket.title)
+                                
+                            }.foregroundColor(.secondary)
+                                .font(.title2)
+                            if let accomodation = accomodation(for: ticket) {
+                                HStack {
+                                    Image(systemName: "bed.double.fill")
+                                    Text(accomodation)
+                                }.foregroundColor(.secondary)
+                                    .font(.title3)
+                            }
                         }
+                        Image(uiImage: ticket.qrCode!).resizable().scaledToFit()
+                            .frame(width: 200, height: 200)
                     }
-                }.onTapGesture {
-                    currentId = isActive ? nil : ticket.id
+                    .padding(20)
+                    .frame(maxWidth: .infinity)
+                    .background(.ultraThickMaterial)
+                    .cornerRadius(20)
+                    .padding(20)
                 }
-                
             }
-            .padding(.vertical, 10)
-            
+            .tabViewStyle(.page(indexDisplayMode: .automatic))
         }
-    .navigationTitle("Tickets")
+        .background(.black)
+        .task {
+            answers = (try? await appDataModel.fetchAnswers(for: appDataModel.tickets)) ?? [:]
+        }
+        .navigationTitle("Tickets")
+        .toolbarBackground(
+                        Color.black,
+                        for: .navigationBar)
+        .toolbarColorScheme(.dark, for: .navigationBar)
+        .toolbarBackground(.visible, for: .navigationBar)
     }
 }
 
@@ -98,7 +129,7 @@ extension Ticket {
         filter.message = Data(slug.utf8)
         let qrTransform = CGAffineTransform(scaleX: 12, y: 12)
         guard let ciImage = filter.outputImage?.transformed(by: qrTransform),
-              let cgImage = context.createCGImage(ciImage, from: ciImage.extent)
+      let cgImage = context.createCGImage(ciImage, from: ciImage.extent)
         else { return nil }
         return UIImage(cgImage: cgImage)
     }
