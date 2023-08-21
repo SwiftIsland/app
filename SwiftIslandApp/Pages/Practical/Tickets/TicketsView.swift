@@ -90,29 +90,6 @@ extension String {
     }
 }
 
-extension StringProtocol {
-    var qrCode: UIImage? {
-        guard
-            let data = data(using: .isoLatin1),
-            let outputImage = CIFilter(name: "CIQRCodeGenerator",
-                              parameters: ["inputMessage": data, "inputCorrectionLevel": "M"])?.outputImage
-        else { return nil }
-        let size = outputImage.extent.integral
-        let output = CGSize(width: 250, height: 250)
-        let format = UIGraphicsImageRendererFormat()
-        format.scale = UIScreen.main.scale
-        return UIGraphicsImageRenderer(size: output, format: format).image { _ in outputImage
-            .transformed(by: .init(scaleX: output.width/size.width, y: output.height/size.height))
-            .image
-            .draw(in: .init(origin: .zero, size: output))
-        }
-    }
-}
-extension CIImage {
-    var image: UIImage { .init(ciImage: self) }
-}
-
-
 let context = CIContext()
 let filter = CIFilter.qrCodeGenerator()
 
