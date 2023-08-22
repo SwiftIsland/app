@@ -138,6 +138,6 @@ struct PacklistView: View {
 struct PacklistView_Previews: PreviewProvider {
     static var previews: some View {
         PacklistView()
-            .environmentObject(AppDataModel())
+            .environmentObject(AppDataModel(checkinListSlug: ""))
     }
 }

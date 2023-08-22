@@ -15,8 +15,6 @@ enum AppState {
     case loaded
 }
 
-let checkinListSlug = "chk_pFTTuxa0daVl9rVYGI3l3qg"
-
 /// AppDataModel hold app data that is used by multiple views and is shared as an environment variable to the views.
 /// This class is used on the main dispatch queue
 final class AppDataModel: ObservableObject {
@@ -28,6 +26,8 @@ final class AppDataModel: ObservableObject {
     @Published var locations: [Location] = []
     @Published var tickets: [Ticket] = []
 
+    private let checkinListSlug: String
+
     private let logger = Logger(
         subsystem: Bundle.main.bundleIdentifier!,
         category: String(describing: AppDataModel.self)
@@ -35,7 +35,8 @@ final class AppDataModel: ObservableObject {
 
     private let dataLogic: DataLogic
 
-    init(dataLogic: DataLogic = SwiftIslandDataLogic()) {
+    init(checkinListSlug: String, dataLogic: DataLogic = SwiftIslandDataLogic()) {
+        self.checkinListSlug = checkinListSlug
         self.dataLogic = dataLogic
         if !isShowingPreview() {
             Task {

@@ -14,7 +14,7 @@ struct MainApp: App {
         SwiftIslandDataLogic.configure()
     }
 
-    @StateObject private var appDataModel = AppDataModel()
+    @StateObject private var appDataModel = AppDataModel(checkinListSlug: checkinListSlug)
     @State private var appActionTriggered: AppActions? = nil
     @State private var showTicketAlert: Bool = false
     @State private var showTicketMessage: String = ""
