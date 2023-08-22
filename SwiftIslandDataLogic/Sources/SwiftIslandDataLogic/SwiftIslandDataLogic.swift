@@ -47,6 +47,10 @@ public protocol DataLogic {
         
 }
 
+enum DataLogicError: Error {
+    case incorrectSlug
+}
+
 /// SwiftIslandDataLogic is the data logic module for the Swift Island apps.
 /// This package handles the communication between the app and the firebase backend. It also provides the entities needed for the client apps to function properly.
 ///
@@ -135,7 +139,9 @@ public class SwiftIslandDataLogic: DataLogic, ObservableObject {
     }
     
     public func fetchTicket(slug: String, from checkinList: String) async throws -> Ticket {
-        let url = URL(string: "https://checkin.tito.io/checkin_lists/\(checkinList)/tickets/\(slug)")!
+        guard let url = URL(string: "https://checkin.tito.io/checkin_lists/\(checkinList)/tickets/\(slug)") else {
+            throw DataLogicError.incorrectSlug
+        }
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
         let decoder = JSONDecoder()
