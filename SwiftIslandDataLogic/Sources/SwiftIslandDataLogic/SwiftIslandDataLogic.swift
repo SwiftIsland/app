@@ -43,7 +43,7 @@ public protocol DataLogic {
     
     func fetchTicket(slug: String, from checkinList: String) async throws -> Ticket
     
-    func fetchAnswers(for tickets: [Ticket], in checkinList: String) async throws -> [Ticket:[Answer]]
+    func fetchAnswers(for tickets: [Ticket], in checkinList: String) async throws -> [Int:[Answer]]
         
 }
 
@@ -148,11 +148,11 @@ public class SwiftIslandDataLogic: DataLogic, ObservableObject {
         return try await fetchModel(Array<Answer>.self, from: url)
     }
     
-    public func fetchAnswers(for tickets: [Ticket], in checkinList: String) async throws -> [Ticket:[Answer]] {
+    public func fetchAnswers(for tickets: [Ticket], in checkinList: String) async throws -> [Int:[Answer]] {
         let allAnswers = try await fetchAnswers(for: checkinList)
-        var result: [Ticket:[Answer]] = [:]
+        var result: [Int:[Answer]] = [:]
         for ticket in tickets {
-            result[ticket] = allAnswers.filter({ $0.ticketId == ticket.id })
+            result[ticket.id] = allAnswers.filter({ $0.ticketId == ticket.id })
         }
         return result
     }

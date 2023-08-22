@@ -12,13 +12,13 @@ import CoreImage.CIFilterBuiltins
 struct TicketsView: View {
     @EnvironmentObject private var appDataModel: AppDataModel
     @State var currentTicket: Ticket = Ticket.empty
-    @State var answers: [Ticket:[Answer]] = [:]
+    @State var answers: [Int:[Answer]] = [:]
     @State var failedPasteAlert: String? = nil
     @State var presentFailedPasteAlert: Bool = false
     
     func accomodation(for ticket: Ticket) -> String? {
         // TODO: select the correct question, not just the first
-        return answers[ticket]?.first?.humanizedResponse
+        return answers[ticket.id]?.first?.humanizedResponse
     }
     func addTicketFromPasteBoard() {
         if let text = UIPasteboard.general.string {
