@@ -21,37 +21,37 @@ struct TicketsView: View {
         return answers[ticket.id]?.first?.humanizedResponse
     }
     func addTicketFromPasteBoard() {
-        if let text = UIPasteboard.general.string {
-            if let url = URL(string: text) {
-                if url.host == "ti.to" {
-                    var path = url.pathComponents
-                    let slug = path.popLast()
-                    if let slug = slug, path.last == "tickets" {
-                        Task {
-                            do {
-                                if let ticket = try await appDataModel.updateTicket(slug: slug) {
-                                    currentTicket = ticket
-                                }
-                            } catch {
-                                presentFailedPasteAlert = true
-                                failedPasteAlert = "Failed to find ticket\n\n\(error)"
-                            }
-                        }
-                    } else {
-                        presentFailedPasteAlert = true
-                        failedPasteAlert = "Please copy a ti.to ticket URL\n\n\(url.absoluteString)"
-                    }
-                } else {
-                    presentFailedPasteAlert = true
-                    failedPasteAlert = "Please copy a ti.to URL\n\n\(url.absoluteString)"
-                }
-            } else {
-                presentFailedPasteAlert = true
-                failedPasteAlert = "Please copy an URL\n\n\(text)"
-            }
-        } else {
+        guard let text = UIPasteboard.general.string else {
             presentFailedPasteAlert = true
             failedPasteAlert = "Nothing on the clipboard, or no clipboard access"
+            return
+        }
+        guard let url = URL(string: text) else {
+            presentFailedPasteAlert = true
+            failedPasteAlert = "Please copy an URL\n\n\(text)"
+            return
+        }
+        guard url.host == "ti.to" else {
+            presentFailedPasteAlert = true
+            failedPasteAlert = "Please copy a ti.to URL\n\n\(url.absoluteString)"
+            return
+        }
+        var path = url.pathComponents
+        let slug = path.popLast()
+        guard let slug = slug, path.last == "tickets" else {
+            presentFailedPasteAlert = true
+            failedPasteAlert = "Please copy a ti.to/tickets URL\n\n\(url.absoluteString)"
+            return
+        }
+        Task {
+            do {
+                if let ticket = try await appDataModel.updateTicket(slug: slug) {
+                    currentTicket = ticket
+                }
+            } catch {
+                presentFailedPasteAlert = true
+                failedPasteAlert = "Failed to find ticket\n\n\(error)"
+            }
         }
     }
     var body: some View {
