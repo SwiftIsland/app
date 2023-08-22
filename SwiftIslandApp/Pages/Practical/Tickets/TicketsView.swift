@@ -67,37 +67,33 @@ struct TicketsView: View {
                 TabView(selection: $currentTicket) {
                     ForEach(appDataModel.tickets) { ticket in
                         VStack {
-                            HStack(alignment: .top) {
-                                Spacer()
-                                Spacer()
-                                Image("Logo").padding(-10)
-                                Spacer()
+                            ZStack(alignment: .top) {
+                                Image("Logo").padding(-11)
                                 if ticket.editURL != nil {
-                                    NavigationLink(destination: {
-                                        TicketEditView(ticket: ticket)
+                                    HStack {
+                                        Spacer()
+                                        NavigationLink(destination: {
+                                            TicketEditView(ticket: ticket)
                                             .onDisappear {
-                                            Task {
-                                                do {
-                                                    if let ticket = try await appDataModel.updateTicket(slug: ticket.slug, add: false) {
-                                                        currentTicket = ticket
+                                                Task {
+                                                    do {
+                                                        if let ticket = try await appDataModel.updateTicket(slug: ticket.slug, add: false) {
+                                                            currentTicket = ticket
+                                                        }
+                                                    } catch {
+                                                        presentFailedPasteAlert = true
+                                                        failedPasteAlert = "Failed to find ticket\n\n\(error)"
                                                     }
-                                                } catch {
-                                                    presentFailedPasteAlert = true
-                                                    failedPasteAlert = "Failed to find ticket\n\n\(error)"
                                                 }
                                             }
-                                            
-                                        }
-                                    }, label: {
-                                        Image(systemName: "pencil.circle")
-                                            .resizable()
-                                            .frame(width: 25, height: 25)
-                                            .foregroundColor(.questionMarkColor)
-                                    })
-                                } else {
-                                    Spacer()
+                                        }, label: {
+                                            Image(systemName: "pencil.circle")
+                                                .resizable()
+                                                .frame(width: 25, height: 25)
+                                                .foregroundColor(.questionMarkColor)
+                                        })
+                                    }
                                 }
-
                             }
                             VStack(alignment: .leading) {
                                 Text(ticket.name)
