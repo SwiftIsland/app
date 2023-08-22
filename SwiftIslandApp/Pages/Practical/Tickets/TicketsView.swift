@@ -11,68 +11,114 @@ import CoreImage.CIFilterBuiltins
 
 struct TicketsView: View {
     @EnvironmentObject private var appDataModel: AppDataModel
-    @State var currentTicket: Ticket?
+    @State var currentTicket: Ticket = Ticket.empty
     @State var answers: [Ticket:[Answer]] = [:]
+    @State var failedPasteAlert: String? = nil
+    @State var presentFailedPasteAlert: Bool = false
     
     func accomodation(for ticket: Ticket) -> String? {
         // TODO: select the correct question, not just the first
         return answers[ticket]?.first?.humanizedResponse
     }
+    func addTicketFromPasteBoard() {
+        if let text = UIPasteboard.general.string {
+            if let url = URL(string: text) {
+                if url.host == "ti.to" {
+                    var path = url.pathComponents
+                    let slug = path.popLast()
+                    if let slug = slug, path.last == "tickets" {
+                        Task {
+                            do {
+                                currentTicket = try await appDataModel.addTicket(slug: slug)
+                            } catch {
+                                print(error)
+                                presentFailedPasteAlert = true
+                                failedPasteAlert = "Failed to find ticket\n\n\(error)"
+                            }
+                        }
+                    } else {
+                        presentFailedPasteAlert = true
+                        failedPasteAlert = "Please paste a ti.to ticket URL\n\n\(url.absoluteString)"
+                    }
+                } else {
+                    presentFailedPasteAlert = true
+                    failedPasteAlert = "Please paste a ti.to URL\n\n\(url.absoluteString)"
+                }
+            } else {
+                presentFailedPasteAlert = true
+                failedPasteAlert = "Please paste an URL\n\n\(text)"
+            }
+        } else {
+            presentFailedPasteAlert = true
+            failedPasteAlert = "Nothing on the clipboard, or no clipboard access"
+        }
+    }
     var body: some View {
         VStack {
-            TabView {
-                ForEach(appDataModel.tickets) { ticket in
-                    VStack {
-                        HStack(alignment: .top) {
-                            Spacer()
-                            Spacer()
-                            Image("Logo").padding(-10)
-                            Spacer()
-                            if ticket.editURL != nil {
-                                NavigationLink(destination: {
-                                    TicketEditView(ticket: ticket)
-                                }, label: {
-                                    Image(systemName: "pencil.circle")
-                                        .resizable()
-                                        .frame(width: 25, height: 25)
-                                        .foregroundColor(.questionMarkColor)
-                                })
-                            } else {
-                                Spacer()
-                            }
-                            
-                        }
-                        VStack(alignment: .leading) {
-                            Text(ticket.name)
-                                .foregroundColor(.primary)
-                                .font(.largeTitle)
-                            HStack {
-                                Image(systemName: ticket.icon)
-                                Text(ticket.title)
-                                
-                            }.foregroundColor(.secondary)
-                                .font(.title2)
-                            let accomodation = accomodation(for: ticket)
-                            HStack {
-                                Image(systemName: "bed.double.fill")
-                                Text(accomodation ?? "TBD")
-                            }
-                            .foregroundColor(.secondary)
-                            .font(.title3)
-                            .opacity(accomodation == nil ? 0 : 1)
-                        
-                        }
-                        Image(uiImage: ticket.qrCode!).resizable().scaledToFit()
-                            .frame(width: 200, height: 200)
-                    }
-                    .padding(20)
-                    .frame(maxWidth: .infinity)
-                    .background(.ultraThickMaterial)
-                    .cornerRadius(20)
-                    .padding(20)
+            if (appDataModel.tickets.count == 0 ) {
+                ZStack {
+                    Color.black
+                    Text("Add tickets by copying your tito ticket URL")
+                        .foregroundColor(.white)
+                        .multilineTextAlignment(.center)
                 }
+            } else {
+                TabView(selection: $currentTicket) {
+                    ForEach(appDataModel.tickets) { ticket in
+                        VStack {
+                            HStack(alignment: .top) {
+                                Spacer()
+                                Spacer()
+                                Image("Logo").padding(-10)
+                                Spacer()
+                                if ticket.editURL != nil {
+                                    NavigationLink(destination: {
+                                        TicketEditView(ticket: ticket)
+                                    }, label: {
+                                        Image(systemName: "pencil.circle")
+                                            .resizable()
+                                            .frame(width: 25, height: 25)
+                                            .foregroundColor(.questionMarkColor)
+                                    })
+                                } else {
+                                    Spacer()
+                                }
+
+                            }
+                            VStack(alignment: .leading) {
+                                Text(ticket.name)
+                                    .foregroundColor(.primary)
+                                    .font(.largeTitle)
+                                HStack {
+                                    Image(systemName: ticket.icon)
+                                    Text(ticket.title)
+                                }.foregroundColor(.secondary)
+                                    .font(.title2)
+                                let accomodation = accomodation(for: ticket)
+                                HStack {
+                                    Image(systemName: "bed.double.fill")
+                                    Text(accomodation ?? "TBD")
+                                }
+                                .foregroundColor(.secondary)
+                                .font(.title3)
+                                .opacity(accomodation == nil ? 0 : 1)
+
+                            }
+                            Image(uiImage: ticket.qrCode!).resizable().scaledToFit()
+                                .frame(width: 200, height: 200)
+                        }
+                        .padding(20)
+                        .frame(maxWidth: .infinity)
+                        .background(.ultraThickMaterial)
+                        .cornerRadius(20)
+                        .padding(20)
+                        .tag(ticket)
+                    }
+                }
+                .foregroundColor(.white)
+                .tabViewStyle(.page(indexDisplayMode: .always))
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 100, trailing: 0))
             }
-            .tabViewStyle(.page(indexDisplayMode: .automatic))
         }
         .background(.black)
         .task {
@@ -80,10 +126,28 @@ struct TicketsView: View {
         }
         .navigationTitle("Tickets")
         .toolbarBackground(
-                        Color.black,
-                        for: .navigationBar)
+            Color.black,
+            for: .navigationBar)
         .toolbarColorScheme(.dark, for: .navigationBar)
         .toolbarBackground(.visible, for: .navigationBar)
+        .toolbar {
+            ToolbarItem() {
+                Button {
+                    addTicketFromPasteBoard()
+                } label: {
+                    Text("Paste URL")
+                }
+                
+            }
+        }.alert("Failed to paste ticket URL", isPresented: $presentFailedPasteAlert) {
+            Button("OK") {
+                presentFailedPasteAlert = false
+                failedPasteAlert = nil
+            }
+        } message: {
+            Text(failedPasteAlert ?? "")
+        }
+
     }
 }
 
