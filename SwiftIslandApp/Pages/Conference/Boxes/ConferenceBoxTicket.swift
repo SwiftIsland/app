@@ -12,7 +12,7 @@ struct ConferenceBoxTicket: View {
             Button(action: {
                 UIApplication.shared.open(URL(string: "https://ti.to/swiftisland/2023")!)
             }, label: {
-                Text("Tickets")
+                Text("Buy Tickets")
                     .padding(.vertical, 8)
                     .padding(.horizontal, 16)
                     .font(.custom("WorkSans-Bold", size: 32))
