@@ -74,6 +74,9 @@ struct TicketsView: View {
                                         Spacer()
                                         NavigationLink(destination: {
                                             TicketEditView(ticket: ticket)
+                                            .safeAreaInset(edge: .bottom) {
+                                                Color.clear.frame(height: UIDevice.current.hasNotch ? 46 : 58)
+                                            }
                                             .onDisappear {
                                                 Task {
                                                     do {
