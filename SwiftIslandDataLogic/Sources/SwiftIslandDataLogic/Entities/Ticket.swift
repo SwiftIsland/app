@@ -18,6 +18,18 @@ public struct Ticket {
     let createdAt: Date
     let updatedAt: Date
     
+    init() {
+        self.id = 0
+        self.slug = ""
+        self.firstName = ""
+        self.lastName = ""
+        self.releaseTitle = ""
+        self.reference = ""
+        self.registrationReference = ""
+        self.createdAt = Date()
+        self.updatedAt = Date()
+    }
+    
     public init(from data: Data) throws {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
@@ -48,6 +60,8 @@ extension Ticket: Equatable { }
 extension Ticket: Hashable { }
 
 extension Ticket {
+    public static let empty: Ticket = Ticket()
+    
     public var name: String {
         return "\(firstName) \(lastName)"
     }
