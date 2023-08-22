@@ -86,7 +86,7 @@ private extension MainApp {
     /// - Parameter slug: The slug to store
     func handleTicketSlug(_ slug: String) async throws {
         do {
-            let ticket = try await appDataModel.addTicket(slug: slug)
+            let ticket = try await appDataModel.addOrUpdateTicket(slug: slug)
             showTicketAlert = true
             showTicketMessage = "\(ticket.title) ticket for \(ticket.name) was added successfully."
         } catch {

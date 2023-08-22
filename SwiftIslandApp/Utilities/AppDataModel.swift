@@ -73,6 +73,7 @@ final class AppDataModel: ObservableObject {
         return Defaults[.packingItems]
     }
     
+
     func updateTickets() async -> [Ticket] {
         let storedTickets: [Ticket] = (try? KeychainManager.shared.get(key: .tickets) ?? []) ?? []
         var updatedTickets: [Ticket] = []
@@ -85,7 +86,7 @@ final class AppDataModel: ObservableObject {
         return updatedTickets
     }
     
-    func addTicket(slug: String) async throws -> Ticket {
+    func addOrUpdateTicket(slug: String) async throws -> Ticket {
         let ticket = try await dataLogic.fetchTicket(slug: slug, from: checkinListSlug)
         
         if let index = tickets.firstIndex(where: { $0.slug == ticket.slug }) {
@@ -152,6 +153,5 @@ private extension AppDataModel {
     func fetchEvents() async -> [Event] {
         await dataLogic.fetchEvents()
     }
-    
 }
 

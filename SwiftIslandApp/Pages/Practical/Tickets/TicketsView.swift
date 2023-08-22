@@ -29,7 +29,7 @@ struct TicketsView: View {
                     if let slug = slug, path.last == "tickets" {
                         Task {
                             do {
-                                currentTicket = try await appDataModel.addTicket(slug: slug)
+                                currentTicket = try await appDataModel.addOrUpdateTicket(slug: slug)
                             } catch {
                                 presentFailedPasteAlert = true
                                 failedPasteAlert = "Failed to find ticket\n\n\(error)"
@@ -73,6 +73,17 @@ struct TicketsView: View {
                                 if ticket.editURL != nil {
                                     NavigationLink(destination: {
                                         TicketEditView(ticket: ticket)
+                                            .onDisappear {
+                                            Task {
+                                                do {
+                                                    currentTicket = try await appDataModel.addOrUpdateTicket(slug: ticket.slug)
+                                                } catch {
+                                                    presentFailedPasteAlert = true
+                                                    failedPasteAlert = "Failed to find ticket\n\n\(error)"
+                                                }
+                                            }
+                                            
+                                        }
                                     }, label: {
                                         Image(systemName: "pencil.circle")
                                             .resizable()
