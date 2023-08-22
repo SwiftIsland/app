@@ -34,6 +34,7 @@ struct MainApp: App {
             .onOpenURL { url in
                 handleOpenURL(url)
             }
+            // TODO: Make this a navigation path to the actual ticket
             .sheet(item: $ticketToShow, onDismiss: {
                 debugPrint("Dismissed!")
             }, content: { ticket in
