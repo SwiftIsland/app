@@ -38,15 +38,15 @@ struct TicketsView: View {
                         }
                     } else {
                         presentFailedPasteAlert = true
-                        failedPasteAlert = "Please paste a ti.to ticket URL\n\n\(url.absoluteString)"
+                        failedPasteAlert = "Please copy a ti.to ticket URL\n\n\(url.absoluteString)"
                     }
                 } else {
                     presentFailedPasteAlert = true
-                    failedPasteAlert = "Please paste a ti.to URL\n\n\(url.absoluteString)"
+                    failedPasteAlert = "Please copy a ti.to URL\n\n\(url.absoluteString)"
                 }
             } else {
                 presentFailedPasteAlert = true
-                failedPasteAlert = "Please paste an URL\n\n\(text)"
+                failedPasteAlert = "Please copy an URL\n\n\(text)"
             }
         } else {
             presentFailedPasteAlert = true
