@@ -71,9 +71,13 @@ extension Ticket {
     }
     
     public var icon: String {
-        switch(releaseTitle) {
-        case "Conference Ticket": return "ticket.fill"
-        case "Hassle-free Travel": return "bus.fill"
+        switch(releaseTitle.lowercased()) {
+        case "conference ticket": return "ticket.fill"
+        case "hassle-free travel": return "bus.fill"
+        case "super early bird": return "bird"
+        case "child ticket": return "figure.and.child.holdinghands"
+        case "mentor ticket","mentor ticket without hassle free travel": return "graduationcap"
+        case "significant other ❤️": return "heart.circle.fill"
         default: return "ticket.fill"
         }
     }
