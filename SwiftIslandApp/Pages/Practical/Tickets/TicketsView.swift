@@ -31,7 +31,6 @@ struct TicketsView: View {
                             do {
                                 currentTicket = try await appDataModel.addTicket(slug: slug)
                             } catch {
-                                print(error)
                                 presentFailedPasteAlert = true
                                 failedPasteAlert = "Failed to find ticket\n\n\(error)"
                             }
@@ -58,7 +57,7 @@ struct TicketsView: View {
             if (appDataModel.tickets.count == 0 ) {
                 ZStack {
                     Color.black
-                    Text("Add tickets by copying your tito ticket URL")
+                    Text("Add tickets by pasting your ti.to/tickets URL")
                         .foregroundColor(.white)
                         .multilineTextAlignment(.center)
                 }
