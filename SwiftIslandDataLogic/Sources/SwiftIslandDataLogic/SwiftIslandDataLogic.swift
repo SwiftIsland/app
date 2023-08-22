@@ -43,7 +43,7 @@ public protocol DataLogic {
     
     func fetchTicket(slug: String, from checkinList: String) async throws -> Ticket
     
-    func fetchAnswers(for checkinList: String) async throws -> [Answer]
+    func fetchAnswers(for tickets: [Ticket], in checkinList: String) async throws -> [Ticket:[Answer]]
         
 }
 
@@ -146,6 +146,15 @@ public class SwiftIslandDataLogic: DataLogic, ObservableObject {
     public func fetchAnswers(for checkinList: String) async throws -> [Answer] {
         let url = URL(string: "https://checkin.tito.io/checkin_lists/\(checkinList)/answers")!
         return try await fetchModel(Array<Answer>.self, from: url)
+    }
+    
+    public func fetchAnswers(for tickets: [Ticket], in checkinList: String) async throws -> [Ticket:[Answer]] {
+        let allAnswers = try await fetchAnswers(for: checkinList)
+        var result: [Ticket:[Answer]] = [:]
+        for ticket in tickets {
+            result[ticket] = allAnswers.filter({ $0.ticketId == ticket.id })
+        }
+        return result
     }
 }
 

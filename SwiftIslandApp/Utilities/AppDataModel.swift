@@ -111,6 +111,11 @@ final class AppDataModel: ObservableObject {
             try KeychainManager.shared.store(key: .tickets, data: tickets)
         }
     }
+    
+    func fetchAnswers(for tickets: [Ticket]) async throws -> [Ticket:[Answer]] {
+        return try await dataLogic.fetchAnswers(for: tickets, in: checkinListSlug)
+    }
+
 }
 
 private extension AppDataModel {
@@ -147,5 +152,6 @@ private extension AppDataModel {
     func fetchEvents() async -> [Event] {
         await dataLogic.fetchEvents()
     }
+    
 }
 

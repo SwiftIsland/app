@@ -17,6 +17,7 @@ enum NavigationPage {
     case packlist
     case acknowledgement
     case source
+    case tickets
 }
 
 struct PracticalPageView: View {
@@ -119,6 +120,8 @@ struct PracticalPageView: View {
                     MapView()
                 case .schedule:
                     ScheduleView()
+                case .tickets:
+                    TicketsView()
                 case .packlist:
                     PacklistView()
                 case .acknowledgement:

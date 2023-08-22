@@ -18,6 +18,18 @@ public struct Ticket {
     let createdAt: Date
     let updatedAt: Date
     
+    init() {
+        self.id = 0
+        self.slug = ""
+        self.firstName = ""
+        self.lastName = ""
+        self.releaseTitle = ""
+        self.reference = ""
+        self.registrationReference = ""
+        self.createdAt = Date()
+        self.updatedAt = Date()
+    }
+    
     public init(from data: Data) throws {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
@@ -45,7 +57,11 @@ extension Ticket: Identifiable { }
 
 extension Ticket: Equatable { }
 
+extension Ticket: Hashable { }
+
 extension Ticket {
+    public static let empty: Ticket = Ticket()
+    
     public var name: String {
         return "\(firstName) \(lastName)"
     }
@@ -54,25 +70,33 @@ extension Ticket {
         return releaseTitle
     }
     
+    public var icon: String {
+        switch(releaseTitle.lowercased()) {
+        case "conference ticket": return "ticket.fill"
+        case "hassle-free travel": return "bus.fill"
+        case "super early bird": return "bird"
+        case "child ticket": return "figure.and.child.holdinghands"
+        case "mentor ticket","mentor ticket without hassle free travel": return "graduationcap"
+        case "significant other ❤️": return "heart.circle.fill"
+        default: return "ticket.fill"
+        }
+    }
+    
     public var titoURL: URL? {
         URL(string: "https://ti.to/swiftisland/2023/tickets/\(slug)")
     }
+    
+    public var editURL: URL? {
+        URL(string: "https://ti.to/swiftisland/2023/tickets/\(slug)/settings")
+    }
 }
-
-
-//extension Ticket {
-//    func accomodation(checkinList: String) async throws -> String? {
-//        let answers = try await getAnswers(for: checkinList)
-//        return answers.first(where: { $0.ticketId == self.id })?.humanizedResponse
-//    }
-//}
 
 public struct Answer {
     let id: Int
     let ticketId: Int
-    let questionId: Int
+    public let questionId: Int
     let response: String
-    let humanizedResponse: String
+    public let humanizedResponse: String
 }
 
 extension Answer: Decodable {

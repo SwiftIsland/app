@@ -16,6 +16,15 @@ struct SectionBeforeYouLeave: View {
                 Text("Make sure you are all set for a few days of awesome workshops.")
                     .font(.subheadline)
             }
+            NavigationLink(value: NavigationPage.tickets) {
+                HStack {
+                    Image(systemName: "ticket")
+                        .foregroundColor(.questionMarkColor)
+                        .frame(maxWidth: iconMaxWidth)
+                    Text("Tickets")
+                        .dynamicTypeSize(.small ... .medium)
+                }
+            }
             NavigationLink(value: NavigationPage.packlist) {
                 HStack {
                     Image(systemName: "suitcase.rolling")

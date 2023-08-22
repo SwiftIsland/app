@@ -16,7 +16,8 @@ struct MainApp: App {
 
     @StateObject private var appDataModel = AppDataModel()
     @State private var appActionTriggered: AppActions? = nil
-    @State private var ticketToShow: Ticket?
+    @State private var showTicketAlert: Bool = false
+    @State private var showTicketMessage: String = ""
 
     var body: some Scene {
         WindowGroup {
@@ -34,14 +35,14 @@ struct MainApp: App {
             .onOpenURL { url in
                 handleOpenURL(url)
             }
-            .sheet(item: $ticketToShow, onDismiss: {
-                debugPrint("Dismissed!")
-            }, content: { ticket in
-                if let url = ticket.titoURL {
-                    SafariWebView(url: url)
-                } else {
-                    Text("The ticket ID provided was invalid")
+            // TODO: Make this a navigation path to the actual ticket
+            .alert("Ticket Added", isPresented: $showTicketAlert, actions: {
+                Button("OK") {
+                    showTicketAlert = false
+                    showTicketMessage = ""
                 }
+            }, message: {
+                Text("\(showTicketMessage)\n\nYou can find your ticket under Practical → Before you leave → Tickets")
             })
         }
     }
@@ -82,10 +83,12 @@ private extension MainApp {
     }
 
     /// This method handles the storing of the ticket to the keychain and presenting the result
-    /// - Parameter slur: The slur to store
+    /// - Parameter slug: The slug to store
     func handleTicketSlug(_ slug: String) async throws {
         do {
-            self.ticketToShow = try await appDataModel.addTicket(slug: slug)
+            let ticket = try await appDataModel.addTicket(slug: slug)
+            showTicketAlert = true
+            showTicketMessage = "\(ticket.title) ticket for \(ticket.name) was added successfully."
         } catch {
             // TODO: Show error view for requesting and adding to the keychain
             debugPrint("Error adding ticket! Error: \(error)")

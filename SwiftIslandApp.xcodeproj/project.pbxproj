@@ -83,6 +83,9 @@
 		2AEDC4CA2A4A0CB500CD0180 /* TabBarBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEDC4C92A4A0CB500CD0180 /* TabBarBarView.swift */; };
 		2AEDC4CC2A4A0CDF00CD0180 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEDC4CB2A4A0CDF00CD0180 /* TabItem.swift */; };
 		2AF19ED32A7B04A500134E0B /* ConferencePageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF19ED22A7B04A500134E0B /* ConferencePageContentView.swift */; };
+		B3C626422A942291002754A8 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C626412A942291002754A8 /* WebView.swift */; };
+		B3C626442A94956A002754A8 /* TicketEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C626432A94956A002754A8 /* TicketEditView.swift */; };
+		B3F7EEF42A86D6BB001D69B6 /* TicketsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7EEF32A86D6BB001D69B6 /* TicketsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -188,6 +191,9 @@
 		2AEDC4C92A4A0CB500CD0180 /* TabBarBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarBarView.swift; sourceTree = "<group>"; };
 		2AEDC4CB2A4A0CDF00CD0180 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
 		2AF19ED22A7B04A500134E0B /* ConferencePageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferencePageContentView.swift; sourceTree = "<group>"; };
+		B3C626412A942291002754A8 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		B3C626432A94956A002754A8 /* TicketEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketEditView.swift; sourceTree = "<group>"; };
+		B3F7EEF32A86D6BB001D69B6 /* TicketsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -323,6 +329,7 @@
 				2A7F12782A640730007C28EA /* ScrollViewOffset.swift */,
 				2A7F12822A648C59007C28EA /* SwiftIslandButtonStyle.swift */,
 				2A7F12972A6B19E0007C28EA /* SwiftIslandLogo.swift */,
+				B3C626412A942291002754A8 /* WebView.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -396,6 +403,7 @@
 		2AC7DD0C2A59F36C00DB9F6D /* Practical */ = {
 			isa = PBXGroup;
 			children = (
+				B3F7EEF52A86D6C5001D69B6 /* Tickets */,
 				2A18CE402A773CFE00969214 /* Practical */,
 				2A7F127D2A6488E2007C28EA /* Map */,
 				2A18CE392A76E70800969214 /* Packlist */,
@@ -522,6 +530,15 @@
 				2AEDC4CB2A4A0CDF00CD0180 /* TabItem.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		B3F7EEF52A86D6C5001D69B6 /* Tickets */ = {
+			isa = PBXGroup;
+			children = (
+				B3F7EEF32A86D6BB001D69B6 /* TicketsView.swift */,
+				B3C626432A94956A002754A8 /* TicketEditView.swift */,
+			);
+			path = Tickets;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -721,6 +738,7 @@
 				2AEDC4C32A4A089100CD0180 /* ConferencePageView.swift in Sources */,
 				2A7F12792A640730007C28EA /* ScrollViewOffset.swift in Sources */,
 				2A16EB362A4CDA4200CC881D /* ConferenceHeaderView.swift in Sources */,
+				B3C626442A94956A002754A8 /* TicketEditView.swift in Sources */,
 				2A37FB9A2A7D3F890062E63A /* Bundle+Version.swift in Sources */,
 				2AE43FAC2A6B1A8C009078E3 /* View+PercentageOffset.swift in Sources */,
 				2AF19ED32A7B04A500134E0B /* ConferencePageContentView.swift in Sources */,
@@ -744,6 +762,7 @@
 				2A7F12852A65DBEA007C28EA /* LocationManager.swift in Sources */,
 				2AC7DD092A58CFDD00DB9F6D /* ConferenceBoxFAQItem.swift in Sources */,
 				2A37FB6A2A7B06AE0062E63A /* ConferenceBoxMentors.swift in Sources */,
+				B3C626422A942291002754A8 /* WebView.swift in Sources */,
 				2AC7DCF12A58B5E600DB9F6D /* ConferenceBoxFAQ.swift in Sources */,
 				2A17F0C22A6075BF0055E214 /* MentorView.swift in Sources */,
 				2A7F12772A6401C4007C28EA /* NFCManager.swift in Sources */,
@@ -754,6 +773,7 @@
 				2A7F12812A64891F007C28EA /* LinearGradient.swift in Sources */,
 				2AE440042A705C8B009078E3 /* ScheduleView.swift in Sources */,
 				2AE4400E2A717CE4009078E3 /* EventView.swift in Sources */,
+				B3F7EEF42A86D6BB001D69B6 /* TicketsView.swift in Sources */,
 				2AC7DD0F2A59F37D00DB9F6D /* PracticalPageView.swift in Sources */,
 				2AE440062A705E5C009078E3 /* ScheduleCalendarView.swift in Sources */,
 				2AC7DD072A58CD2000DB9F6D /* FAQListView.swift in Sources */,
@@ -980,6 +1000,7 @@
 				INFOPLIST_FILE = "SwiftIslandApp-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Swift Island";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We only use your location to verify that you are at the conference. Once we know, we don't use it anymore.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -1020,6 +1041,7 @@
 				INFOPLIST_FILE = "SwiftIslandApp-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Swift Island";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We only use your location to verify that you are at the conference. Once we know, we don't use it anymore.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
