@@ -1,8 +1,6 @@
 //
-//  File.swift
-//  
-//
-//  Created by Niels van Hoorn on 2023-08-11.
+// Created by Niels van Hoorn for the use in the Swift Island app
+// Copyright © 2023 AppTrix AB. All rights reserved.
 //
 
 import Foundation
@@ -29,13 +27,17 @@ public struct Ticket {
         self.createdAt = Date()
         self.updatedAt = Date()
     }
-    
-    public init(from data: Data) throws {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
-        let decoder = JSONDecoder()
-        decoder.dateDecodingStrategy = .formatted(dateFormatter)
-        self = try decoder.decode(Ticket.self, from: data)
+
+    internal init(id: Int, slug: String, firstName: String, lastName: String, releaseTitle: String, reference: String, registrationReference: String, createdAt: Date, updatedAt: Date) {
+        self.id = id
+        self.slug = slug
+        self.firstName = firstName
+        self.lastName = lastName
+        self.releaseTitle = releaseTitle
+        self.reference = reference
+        self.registrationReference = registrationReference
+        self.createdAt = createdAt
+        self.updatedAt = updatedAt
     }
 }
 
@@ -54,9 +56,7 @@ extension Ticket: Decodable, Encodable {
 }
 
 extension Ticket: Identifiable { }
-
 extension Ticket: Equatable { }
-
 extension Ticket: Hashable { }
 
 extension Ticket {
@@ -90,6 +90,32 @@ extension Ticket {
         URL(string: "https://ti.to/swiftisland/2023/tickets/\(slug)/settings")
     }
 }
+
+// MARK: - SwiftUI Preview helper
+
+extension Ticket {
+    static public func forPreview(id: Int = 1,
+                                  slug: String = "abc123",
+                                  firstName: String = "John",
+                                  lastName: String = "Appleseed",
+                                  releaseTitle: String = "Conference Ticket",
+                                  reference: String = "R2D2-1",
+                                  registrationReference: String = "R2D2",
+                                  createdAt: Date = Date(timeIntervalSinceNow: ((60*60)*24)*5), // 5 days ago
+                                  updatedAt: Date = Date(timeIntervalSinceNow: ((60*60)*24)*1)) -> Ticket { // 1 day ago
+        Ticket(id: id,
+               slug: slug,
+               firstName: firstName,
+               lastName: lastName,
+               releaseTitle: releaseTitle,
+               reference: reference,
+               registrationReference: registrationReference,
+               createdAt: createdAt,
+               updatedAt: updatedAt)
+    }
+}
+
+// MARK: - Answer
 
 public struct Answer {
     let id: Int
