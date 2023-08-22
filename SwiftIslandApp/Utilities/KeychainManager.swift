@@ -35,7 +35,7 @@ class KeychainManager: KeychainManaging {
     static var shared = KeychainManager()
 
     private var accessGroup: String {
-        return "6B3SHVL3L5.nl.swiftisland.app"
+        return "V38QRBT6X5.nl.swiftisland.app"
     }
 
     func get(key: KeychainAttrAccount) throws -> String? {
