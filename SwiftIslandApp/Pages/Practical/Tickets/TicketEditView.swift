@@ -14,6 +14,7 @@ struct TicketEditView: View {
         // Not nice, but shouldnt show this view for tickets without editURL
         WebView(url: ticket.editURL!)
             .navigationTitle("Edit")
+            .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(Color.black, for: .navigationBar)
             .toolbarColorScheme(.dark, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
