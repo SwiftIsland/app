@@ -15,7 +15,7 @@ struct TicketsView: View {
     @State var answers: [Ticket:[Answer]] = [:]
     
     func accomodation(for ticket: Ticket) -> String? {
-        // TODO: select the correct question
+        // TODO: select the correct question, not just the first
         return answers[ticket]?.first?.humanizedResponse
     }
     var body: some View {
@@ -28,23 +28,15 @@ struct TicketsView: View {
                             Spacer()
                             Image("Logo").padding(-10)
                             Spacer()
-                            if let editURL = ticket.editURL {
+                            if ticket.editURL != nil {
                                 NavigationLink(destination: {
-                                    WebView(url: editURL)
-                                        .navigationTitle("Edit")
-                                        .toolbarBackground(
-                                                                Color.black,
-                                                                for: .navigationBar)
-                                        .toolbarColorScheme(.dark, for: .navigationBar)
-                                        .toolbarBackground(.visible, for: .navigationBar)
+                                    TicketEditView(ticket: ticket)
                                 }, label: {
                                     Image(systemName: "pencil.circle")
                                         .resizable()
                                         .frame(width: 25, height: 25)
                                         .foregroundColor(.questionMarkColor)
                                 })
-                                
-
                             } else {
                                 Spacer()
                             }
