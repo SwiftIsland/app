@@ -131,7 +131,9 @@ struct TicketsView: View {
                 }
                 .foregroundColor(.white)
                 .tabViewStyle(.page(indexDisplayMode: .automatic))
-                .padding(EdgeInsets(top: 0, leading: 0, bottom: 100, trailing: 0))
+                .safeAreaInset(edge: .bottom) {
+                    Color.clear.frame(height: UIDevice.current.hasNotch ? 88 : 66)
+                }
             }
         }
         .background(.black)
