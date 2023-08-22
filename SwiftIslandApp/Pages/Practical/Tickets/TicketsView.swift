@@ -29,7 +29,9 @@ struct TicketsView: View {
                     if let slug = slug, path.last == "tickets" {
                         Task {
                             do {
-                                currentTicket = try await appDataModel.addOrUpdateTicket(slug: slug)
+                                if let ticket = try await appDataModel.updateTicket(slug: slug) {
+                                    currentTicket = ticket
+                                }
                             } catch {
                                 presentFailedPasteAlert = true
                                 failedPasteAlert = "Failed to find ticket\n\n\(error)"
@@ -76,7 +78,9 @@ struct TicketsView: View {
                                             .onDisappear {
                                             Task {
                                                 do {
-                                                    currentTicket = try await appDataModel.addOrUpdateTicket(slug: ticket.slug)
+                                                    if let ticket = try await appDataModel.updateTicket(slug: ticket.slug, add: false) {
+                                                        currentTicket = ticket
+                                                    }
                                                 } catch {
                                                     presentFailedPasteAlert = true
                                                     failedPasteAlert = "Failed to find ticket\n\n\(error)"
@@ -126,7 +130,7 @@ struct TicketsView: View {
                     }
                 }
                 .foregroundColor(.white)
-                .tabViewStyle(.page(indexDisplayMode: .always))
+                .tabViewStyle(.page(indexDisplayMode: .automatic))
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 100, trailing: 0))
             }
         }

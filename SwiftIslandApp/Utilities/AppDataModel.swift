@@ -86,16 +86,20 @@ final class AppDataModel: ObservableObject {
         return updatedTickets
     }
     
-    func addOrUpdateTicket(slug: String) async throws -> Ticket {
+    
+    func updateTicket(slug: String, add: Bool = true) async throws -> Ticket? {
         let ticket = try await dataLogic.fetchTicket(slug: slug, from: checkinListSlug)
-        
         if let index = tickets.firstIndex(where: { $0.slug == ticket.slug }) {
             await MainActor.run {
                 self.tickets[index] = ticket
             }
         } else {
-            await MainActor.run {
-                self.tickets.append(ticket)
+            if add {
+                await MainActor.run {
+                    self.tickets.append(ticket)
+                }
+            } else {
+                return nil
             }
         }
         try KeychainManager.shared.store(key: .tickets, data: tickets)

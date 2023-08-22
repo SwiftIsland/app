@@ -86,9 +86,10 @@ private extension MainApp {
     /// - Parameter slug: The slug to store
     func handleTicketSlug(_ slug: String) async throws {
         do {
-            let ticket = try await appDataModel.addOrUpdateTicket(slug: slug)
-            showTicketAlert = true
-            showTicketMessage = "\(ticket.title) ticket for \(ticket.name) was added successfully."
+            if let ticket = try await appDataModel.updateTicket(slug: slug) {
+                showTicketAlert = true
+                showTicketMessage = "\(ticket.title) ticket for \(ticket.name) was added successfully."
+            }
         } catch {
             // TODO: Show error view for requesting and adding to the keychain
             debugPrint("Error adding ticket! Error: \(error)")
