@@ -9,6 +9,7 @@ import CoreLocation
 private enum SubPage {
     case hassleFree
     case schiphol
+	case travel
 
     var icon: Image {
         let systemName: String
@@ -18,6 +19,8 @@ private enum SubPage {
             systemName = "ticket"
         case .schiphol:
             systemName = "airplane.arrival"
+		case .travel:
+			systemName = "backpack"
         }
 
         return Image(systemName: systemName)
@@ -29,6 +32,8 @@ private enum SubPage {
             return "Hassle Free Ticket"
         case .schiphol:
             return "At Schiphol"
+		case .travel:
+			return "Travel instructions"
         }
     }
 
@@ -38,6 +43,8 @@ private enum SubPage {
             return "hassleFree"
         case .schiphol:
             return "schiphol"
+		case .travel:
+			return "travel"
         }
     }
 }
@@ -52,7 +59,7 @@ struct SectionGettingHere: View {
     @State private var isShowingMapView = false
     @State private var directionSheetShowing = false
 
-    private let pages: [SubPage] = [.hassleFree, .schiphol]
+	private let pages: [SubPage] = [.hassleFree, .schiphol, .travel]
 
     var body: some View {
         Section(header: Text("Getting here")) {
