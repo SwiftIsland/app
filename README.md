@@ -26,6 +26,15 @@ In order to build and run this app, you will need access to the Firebase project
 
 The project is build for Xcode 14 and upwards and the minimal deployment target is iOS 16 for now.
 
+## Setup
+### Tickets
+If you wish to access ticket functionality you need to have a Tito token. This token should be stored inside `/SwiftIslandApp/Resources/Secrets.json`. This file is ignored and should not be pushed to the repo. The contents of the file should be as follows:
+```json
+{
+    "CHECKIN_LIST_SLUG": "<# TITO SLUG #>"
+}
+```
+
 ## Author
 This app is mainly build by [Paul Peelen](https://paulpeelen.com) [[Github](https://github.com/ppeelen)] [[Twitter](https://twitter.com/ppeelen)], for use for Swift Island 2023.
 

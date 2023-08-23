@@ -44,11 +44,8 @@ struct TicketEditView: View {
 struct TicketEditView_Previews: PreviewProvider {
     static var previews: some View {
         let appDataModel = AppDataModel()
-        let ticket1 = """
-        {"id":9973611,"slug":"ti_pVxPdTDrCZE92Fr4PMiZEdA","first_name":"Paul","last_name":"Peelen","release_title":"Conference Ticket","reference":"RD2J-1","registration_reference":"RD2J","tags":null,"created_at":"2023-07-07T07:28:34.000Z","updated_at":"2023-07-07T07:32:17.000Z"}
-        """
-        
-        let ticket = try! Ticket(from: ticket1.data(using: .utf8)!)
+        let ticket = Ticket.forPreview(firstName: "Paul" , lastName: "Peelen")
+
         NavigationStack {
             TicketEditView(ticket: ticket)
         }.environmentObject(appDataModel)
