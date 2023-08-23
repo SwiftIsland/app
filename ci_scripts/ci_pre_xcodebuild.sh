@@ -8,7 +8,7 @@
 # Move to the place where the scripts are located.
 cd $CI_WORKSPACE/ci_scripts || exit 1
 
-printf "{\"CHECKIN_LIST_SLUG\":\"%s\"}" "$CHECKIN_LIST_SLUG" >> ${SOURCE_ROOT}/SwiftIslandApp/Resources/Secrets.json
+printf "{\"CHECKIN_LIST_SLUG\":\"%s\"}" "$CHECKIN_LIST_SLUG" >> ../SwiftIslandApp/Resources/Secrets.json
 
 echo "Wrote Secrets.json file."
 
