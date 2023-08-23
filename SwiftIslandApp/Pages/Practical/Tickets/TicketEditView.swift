@@ -43,7 +43,7 @@ struct TicketEditView: View {
 
 struct TicketEditView_Previews: PreviewProvider {
     static var previews: some View {
-        let appDataModel = AppDataModel(checkinListSlug: "dummy")
+        let appDataModel = AppDataModel()
         let ticket = Ticket.forPreview(firstName: "Paul" , lastName: "Peelen")
 
         NavigationStack {

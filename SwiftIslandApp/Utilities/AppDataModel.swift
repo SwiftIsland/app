@@ -26,8 +26,6 @@ final class AppDataModel: ObservableObject {
     @Published var locations: [Location] = []
     @Published var tickets: [Ticket] = []
 
-    private let checkinListSlug: String
-
     private let logger = Logger(
         subsystem: Bundle.main.bundleIdentifier!,
         category: String(describing: AppDataModel.self)
@@ -35,8 +33,7 @@ final class AppDataModel: ObservableObject {
 
     private let dataLogic: DataLogic
 
-    init(checkinListSlug: String, dataLogic: DataLogic = SwiftIslandDataLogic()) {
-        self.checkinListSlug = checkinListSlug
+    init(dataLogic: DataLogic = SwiftIslandDataLogic()) {
         self.dataLogic = dataLogic
         if !isShowingPreview() {
             Task {
@@ -78,10 +75,10 @@ final class AppDataModel: ObservableObject {
     func updateTickets() async -> [Ticket] {
         let storedTickets: [Ticket] = (try? KeychainManager.shared.get(key: .tickets) ?? []) ?? []
         var updatedTickets: [Ticket] = []
-        // Todo make these request perform in parralel using an AsyncStream
+        // Todo make these request perform in parallel using an AsyncStream
         for ticket in storedTickets {
             // We never throw a way a ticket, if it can't be fetch, just use the stored version
-            let updatedTicket = (try? await dataLogic.fetchTicket(slug: ticket.slug, from: checkinListSlug)) ?? ticket
+            let updatedTicket = (try? await dataLogic.fetchTicket(slug: ticket.slug, from: Secrets.checkinListSlug)) ?? ticket
             updatedTickets.append(updatedTicket)
         }
         return updatedTickets
@@ -89,7 +86,7 @@ final class AppDataModel: ObservableObject {
     
     
     func updateTicket(slug: String, add: Bool = true) async throws -> Ticket? {
-        let ticket = try await dataLogic.fetchTicket(slug: slug, from: checkinListSlug)
+        let ticket = try await dataLogic.fetchTicket(slug: slug, from: Secrets.checkinListSlug)
         if let index = tickets.firstIndex(where: { $0.slug == ticket.slug }) {
             await MainActor.run {
                 self.tickets[index] = ticket
@@ -119,9 +116,8 @@ final class AppDataModel: ObservableObject {
     }
     
     func fetchAnswers(for tickets: [Ticket]) async throws -> [Int:[Answer]] {
-        return try await dataLogic.fetchAnswers(for: tickets, in: checkinListSlug)
+        return try await dataLogic.fetchAnswers(for: tickets, in: Secrets.checkinListSlug)
     }
-
 }
 
 private extension AppDataModel {
@@ -160,3 +156,16 @@ private extension AppDataModel {
     }
 }
 
+private struct Secrets {
+    private static func secrets() throws -> [String: Any] {
+        let fileName = "Secrets"
+        guard let path = Bundle.main.path(forResource: fileName, ofType: "json") else { return [:] }
+
+        let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
+        return try JSONSerialization.jsonObject(with: data) as? [String: Any] ?? [:]
+    }
+
+    static var checkinListSlug: String {
+        return (try? secrets()["CHECKIN_LIST_SLUG"] as? String) ?? ""
+    }
+}

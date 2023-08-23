@@ -59,7 +59,7 @@ struct ConferenceBoxMentors_Previews: PreviewProvider {
     @Namespace static var namespace
 
     static var previews: some View {
-        let appDataModel = AppDataModel(checkinListSlug: "")
+        let appDataModel = AppDataModel()
 
         let mentors = [
             Mentor.forPreview(name: "1"),

@@ -55,7 +55,7 @@ struct ConferencePageView_Previews: PreviewProvider {
     static var previews: some View {
         let event = Event.forPreview()
 
-        let appDataModel = AppDataModel(checkinListSlug: "")
+        let appDataModel = AppDataModel()
         appDataModel.events = [event]
 
         return ConferencePageView(namespace: namespace, isShowingMentor: .constant(false))

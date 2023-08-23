@@ -147,7 +147,7 @@ struct PracticalPageView: View {
 
 struct PracticalPageView_Previews: PreviewProvider {
     static var previews: some View {
-        let appDataModel = AppDataModel(checkinListSlug: "")
+        let appDataModel = AppDataModel()
         appDataModel.pages = [
             Page.forPreview(id: "schiphol", imageName: "schiphol"),
             Page.forPreview(id: "joinSlack", content: "https://join.slack.com/t/swiftisland/shared_invite/abc-123-def", imageName: ""),

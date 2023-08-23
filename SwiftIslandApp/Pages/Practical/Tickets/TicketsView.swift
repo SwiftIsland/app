@@ -170,7 +170,7 @@ struct TicketsView_Previews: PreviewProvider {
     @Namespace static var namespace
 
     static var previews: some View {
-        let appDataModel = AppDataModel(checkinListSlug: "")
+        let appDataModel = AppDataModel()
 
         let ticket1 = Ticket.forPreview(firstName: "Sidney" , lastName: "de Koning", releaseTitle: "Organizer Ticket")
         let ticket2 = Ticket.forPreview(firstName: "Paul" , lastName: "Peelen")

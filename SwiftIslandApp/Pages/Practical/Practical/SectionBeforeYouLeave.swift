@@ -60,7 +60,7 @@ struct SectionBeforeYouLeave_Previews: PreviewProvider {
     static var previews: some View {
         List {
             SectionBeforeYouLeave(iconMaxWidth: 32)
-                .environmentObject(AppDataModel(checkinListSlug: ""))
+                .environmentObject(AppDataModel())
         }
     }
 }

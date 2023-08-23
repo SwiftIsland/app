@@ -87,7 +87,7 @@ struct MapView: View {
 
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
-        let appDataModel = AppDataModel(checkinListSlug: "")
+        let appDataModel = AppDataModel()
 
         let locations = [
             Location.forPreview(id: "0", title: "End or minor street", type: .venue, coordinate: CLLocationCoordinate2D(latitude: 53.114887, longitude: 4.897275)),

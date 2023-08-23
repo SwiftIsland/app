@@ -146,7 +146,7 @@ struct SectionGettingHere_Previews: PreviewProvider {
     static var previews: some View {
         List {
             SectionGettingHere(iconMaxWidth: 32, navPath: .constant(NavigationPath()))
-                .environmentObject(AppDataModel(checkinListSlug: ""))
+                .environmentObject(AppDataModel())
         }
     }
 }
