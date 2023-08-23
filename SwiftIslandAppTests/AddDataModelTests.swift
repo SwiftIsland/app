@@ -144,7 +144,7 @@ internal class DataLogicMock: DataLogic {
 
     var fetchFAQItemsReturnValue: [FAQItem] = []
     
-    var fetchTicketReturnValue: Ticket = try! Ticket(from: ticketJSON.data(using: .utf8)!)
+    var fetchTicketReturnValue = Ticket.forPreview()
     
     var fetchAnswersReturnValue: [Int:[Answer]] = [:]
 

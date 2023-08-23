@@ -75,6 +75,7 @@
 		2AE440082A706211009078E3 /* ScheduleTimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE440072A706211009078E3 /* ScheduleTimelineView.swift */; };
 		2AE4400E2A717CE4009078E3 /* EventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE4400D2A717CE4009078E3 /* EventView.swift */; };
 		2AE45DA72A7D42B800AF2B9D /* SourceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AE45DA62A7D42B800AF2B9D /* SourceView.swift */; };
+		2AECBFB52A95DD58001FBFA9 /* Secrets.json in Resources */ = {isa = PBXBuildFile; fileRef = 2AECBFB42A95DB43001FBFA9 /* Secrets.json */; };
 		2AEDC4972A4A030F00CD0180 /* MainApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEDC4962A4A030F00CD0180 /* MainApp.swift */; };
 		2AEDC49B2A4A031000CD0180 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AEDC49A2A4A031000CD0180 /* Assets.xcassets */; };
 		2AEDC49E2A4A031000CD0180 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2AEDC49D2A4A031000CD0180 /* Preview Assets.xcassets */; };
@@ -184,6 +185,8 @@
 		2AE440072A706211009078E3 /* ScheduleTimelineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTimelineView.swift; sourceTree = "<group>"; };
 		2AE4400D2A717CE4009078E3 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		2AE45DA62A7D42B800AF2B9D /* SourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceView.swift; sourceTree = "<group>"; };
+		2AECBFB22A95D792001FBFA9 /* ci_pre_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_pre_xcodebuild.sh; sourceTree = "<group>"; };
+		2AECBFB42A95DB43001FBFA9 /* Secrets.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Secrets.json; sourceTree = "<group>"; };
 		2AEDC4932A4A030F00CD0180 /* Swift Island.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift Island.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AEDC4962A4A030F00CD0180 /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
 		2AEDC49A2A4A031000CD0180 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -247,6 +250,7 @@
 			isa = PBXGroup;
 			children = (
 				2A16EB382A4CDB3600CC881D /* Fonts */,
+				2AECBFB42A95DB43001FBFA9 /* Secrets.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -451,9 +455,18 @@
 			path = Schedule;
 			sourceTree = "<group>";
 		};
+		2AECBFB12A95D769001FBFA9 /* ci_scripts */ = {
+			isa = PBXGroup;
+			children = (
+				2AECBFB22A95D792001FBFA9 /* ci_pre_xcodebuild.sh */,
+			);
+			path = ci_scripts;
+			sourceTree = "<group>";
+		};
 		2AEDC48A2A4A030F00CD0180 = {
 			isa = PBXGroup;
 			children = (
+				2AECBFB12A95D769001FBFA9 /* ci_scripts */,
 				2A3AB6552A7870C80089CF7E /* Packages */,
 				2AEDC4952A4A030F00CD0180 /* SwiftIslandApp */,
 				2AEDC4A62A4A031100CD0180 /* SwiftIslandAppTests */,
@@ -686,6 +699,7 @@
 				2A16EB642A4F6CC200CC881D /* GoogleService-Info.plist in Resources */,
 				2A37FB982A7D3EFC0062E63A /* Acknowledgements.plist in Resources */,
 				2AEDC49B2A4A031000CD0180 /* Assets.xcassets in Resources */,
+				2AECBFB52A95DD58001FBFA9 /* Secrets.json in Resources */,
 				2A16EB3C2A4CDB3600CC881D /* WorkSans-Bold.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

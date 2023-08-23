@@ -47,8 +47,14 @@ public protocol DataLogic {
         
 }
 
-enum DataLogicError: Error {
+public enum DataLogicError: Error {
     case incorrectSlug
+    case requestError(message: String)
+    case unknowError
+}
+
+struct TitoAPIError: Error, Decodable {
+    let message: String
 }
 
 /// SwiftIslandDataLogic is the data logic module for the Swift Island apps.
@@ -181,7 +187,16 @@ private extension SwiftIslandDataLogic {
     func fetchModel<M: Decodable>(_ model: M.Type, from url: URL, decoder: JSONDecoder = JSONDecoder()) async throws -> M {
         var urlRequest = URLRequest(url: url)
         urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
-        let (data,_) = try await URLSession.shared.data(for: urlRequest)
+        let (data,response) = try await URLSession.shared.data(for: urlRequest)
+        guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+            if let error = try? decoder.decode(TitoAPIError.self, from: data) {
+                throw DataLogicError.requestError(message: error.message)
+            } else if let error = String(data: data, encoding: .utf8) {
+                throw DataLogicError.requestError(message: error)
+            } else {
+                throw DataLogicError.unknowError
+            }
+        }
         let model = try decoder.decode(M.self, from: data)
         return model
     }
