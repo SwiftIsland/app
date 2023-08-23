@@ -157,15 +157,15 @@ private extension AppDataModel {
 }
 
 private struct Secrets {
-    private static func secrets() throws -> [String: Any] {
+    private static func secrets() throws -> [String: String] {
         let fileName = "Secrets"
         guard let path = Bundle.main.path(forResource: fileName, ofType: "json") else { return [:] }
 
         let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
-        return try JSONSerialization.jsonObject(with: data) as? [String: Any] ?? [:]
+        return try JSONSerialization.jsonObject(with: data) as? [String: String] ?? [:]
     }
 
     static var checkinListSlug: String {
-        return (try? secrets()["CHECKIN_LIST_SLUG"] as? String) ?? ""
+        return (try? secrets()["CHECKIN_LIST_SLUG"]) ?? ""
     }
 }
