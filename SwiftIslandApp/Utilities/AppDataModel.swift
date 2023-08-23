@@ -116,7 +116,7 @@ final class AppDataModel: ObservableObject {
     }
     
     func fetchAnswers(for tickets: [Ticket]) async throws -> [Int:[Answer]] {
-        return try await dataLogic.fetchAnswers(for: tickets, in: Secrets.checkinListSlug)
+        try await dataLogic.fetchAnswers(for: tickets, in: Secrets.checkinListSlug)
     }
 }
 
@@ -166,6 +166,6 @@ private struct Secrets {
     }
 
     static var checkinListSlug: String {
-        return (try? secrets()["CHECKIN_LIST_SLUG"]) ?? ""
+        (try? secrets()["CHECKIN_LIST_SLUG"]) ?? ""
     }
 }

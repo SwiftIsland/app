@@ -15,18 +15,6 @@ public struct Ticket {
     let registrationReference: String
     let createdAt: Date
     let updatedAt: Date
-    
-    init() {
-        self.id = 0
-        self.slug = ""
-        self.firstName = ""
-        self.lastName = ""
-        self.releaseTitle = ""
-        self.reference = ""
-        self.registrationReference = ""
-        self.createdAt = Date()
-        self.updatedAt = Date()
-    }
 
     internal init(id: Int, slug: String, firstName: String, lastName: String, releaseTitle: String, reference: String, registrationReference: String, createdAt: Date, updatedAt: Date) {
         self.id = id
@@ -38,6 +26,10 @@ public struct Ticket {
         self.registrationReference = registrationReference
         self.createdAt = createdAt
         self.updatedAt = updatedAt
+    }
+
+    init() {
+        self.init(id: 0, slug: "", firstName: "", lastName: "", releaseTitle: "", reference: "", registrationReference: "", createdAt: Date(), updatedAt: Date())
     }
 }
 
