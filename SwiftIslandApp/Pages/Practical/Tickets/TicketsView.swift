@@ -10,11 +10,13 @@ import CoreImage
 import CoreImage.CIFilterBuiltins
 
 struct TicketsView: View {
+    @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject private var appDataModel: AppDataModel
     @State var currentTicket: Ticket = Ticket.empty
     @State var answers: [Int:[Answer]] = [:]
     @State var failedPasteAlert: String? = nil
     @State var presentFailedPasteAlert: Bool = false
+    
     
     func accomodation(for ticket: Ticket) -> String? {
         // TODO: select the correct question, not just the first
@@ -132,23 +134,17 @@ struct TicketsView: View {
                         .tag(ticket)
                     }
                 }
-                .foregroundColor(.white)
                 .tabViewStyle(.page(indexDisplayMode: .automatic))
+                .indexViewStyle(.page(backgroundDisplayMode: colorScheme == .light ? .always : .automatic))
                 .safeAreaInset(edge: .bottom) {
                     Color.clear.frame(height: UIDevice.current.hasNotch ? 88 : 66)
                 }
             }
         }
-        .background(.black)
         .task {
             answers = (try? await appDataModel.fetchAnswers(for: appDataModel.tickets)) ?? [:]
         }
         .navigationTitle("Tickets")
-        .toolbarBackground(
-            Color.black,
-            for: .navigationBar)
-        .toolbarColorScheme(.dark, for: .navigationBar)
-        .toolbarBackground(.visible, for: .navigationBar)
         .toolbar {
             ToolbarItem() {
                 Button {
