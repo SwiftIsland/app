@@ -48,9 +48,13 @@ struct TicketsView: View {
                 if let ticket = try await appDataModel.updateTicket(slug: slug) {
                     currentTicket = ticket
                 }
+            } catch DataLogicError.requestError(message: let message) {
+                presentFailedPasteAlert = true
+                failedPasteAlert = "Failed to find ticket\n\n\(message)"
             } catch {
                 presentFailedPasteAlert = true
                 failedPasteAlert = "Failed to find ticket\n\n\(error)"
+
             }
         }
     }
