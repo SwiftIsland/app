@@ -34,7 +34,7 @@ public extension Activity {
     ///   - id: The ID of the activity
     ///   - title: Activity title
     ///   - description: Activity description
-    ///   - mentors: The ID's of the mentors for the activity. Can be an empty array if no Mentors are assigned
+    ///   - mentors: The ID's of the mentors for the activity. Can be an empty array if not Mentors are assigned
     ///   - type: The ``ActivityType`` of the activity
     ///   - duration: The duration of the activity in seconds
     /// - Returns: `Activity`
