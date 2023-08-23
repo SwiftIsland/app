@@ -86,6 +86,9 @@
 		B3C626422A942291002754A8 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C626412A942291002754A8 /* WebView.swift */; };
 		B3C626442A94956A002754A8 /* TicketEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C626432A94956A002754A8 /* TicketEditView.swift */; };
 		B3F7EEF42A86D6BB001D69B6 /* TicketsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7EEF32A86D6BB001D69B6 /* TicketsView.swift */; };
+		2E19CADE2A7EEC9700177B61 /* UpNextSystemLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E19CADD2A7EEC9700177B61 /* UpNextSystemLargeView.swift */; };
+		2E19CAE02A7EF7B100177B61 /* UpNextSystemRectangularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E19CADF2A7EF7B100177B61 /* UpNextSystemRectangularView.swift */; };
+		2E19CAE22A7EFD9800177B61 /* UpNextSystemCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E19CAE12A7EFD9800177B61 /* UpNextSystemCircularView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -194,6 +197,9 @@
 		B3C626412A942291002754A8 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		B3C626432A94956A002754A8 /* TicketEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketEditView.swift; sourceTree = "<group>"; };
 		B3F7EEF32A86D6BB001D69B6 /* TicketsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsView.swift; sourceTree = "<group>"; };
+		2E19CADD2A7EEC9700177B61 /* UpNextSystemLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpNextSystemLargeView.swift; sourceTree = "<group>"; };
+		2E19CADF2A7EF7B100177B61 /* UpNextSystemRectangularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpNextSystemRectangularView.swift; sourceTree = "<group>"; };
+		2E19CAE12A7EFD9800177B61 /* UpNextSystemCircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpNextSystemCircularView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -378,7 +384,10 @@
 			isa = PBXGroup;
 			children = (
 				2A987AE22A7AE54E00EE15DF /* UpNextEntryView.swift */,
+				2E19CADF2A7EF7B100177B61 /* UpNextSystemRectangularView.swift */,
+				2E19CAE12A7EFD9800177B61 /* UpNextSystemCircularView.swift */,
 				2A987AE72A7AE70400EE15DF /* UpNextSystemMediumView.swift */,
+				2E19CADD2A7EEC9700177B61 /* UpNextSystemLargeView.swift */,
 				2A987AF42A7AEAEC00EE15DF /* UpNextSystemSmallView.swift */,
 			);
 			path = Views;
@@ -717,11 +726,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				2A987AF82A7AEBA300EE15DF /* Date+Formatting.swift in Sources */,
+				2E19CADE2A7EEC9700177B61 /* UpNextSystemLargeView.swift in Sources */,
 				2A987AF72A7AEB9700EE15DF /* Color+Helper.swift in Sources */,
 				2A987AF02A7AEA1F00EE15DF /* UpNextProvider.swift in Sources */,
 				2A987AF92A7AEC4300EE15DF /* LinearGradient.swift in Sources */,
 				2A987AEF2A7AEA1F00EE15DF /* UpNextEntryView.swift in Sources */,
+				2E19CAE02A7EF7B100177B61 /* UpNextSystemRectangularView.swift in Sources */,
 				2A987AED2A7AEA1F00EE15DF /* UpNextSystemMediumView.swift in Sources */,
+				2E19CAE22A7EFD9800177B61 /* UpNextSystemCircularView.swift in Sources */,
 				2A987ACC2A7AE4AF00EE15DF /* SwiftIslandWidgetsBundle.swift in Sources */,
 				2A987AEE2A7AEA1F00EE15DF /* UpNextWidget.swift in Sources */,
 				2A987AEC2A7AEA1900EE15DF /* UpNextEntry.swift in Sources */,
@@ -819,7 +831,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = V38QRBT6X5;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftIslandWidgets/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Swift Island Widgets";
@@ -848,7 +860,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = V38QRBT6X5;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftIslandWidgets/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Swift Island Widgets";
