@@ -22,8 +22,8 @@ struct TicketsView: View {
         // TODO: select the correct question, not just the first
         return answers[ticket.id]?.first?.humanizedResponse
     }
-    func addTicketFromPasteBoard() {
-        guard let text = UIPasteboard.general.string else {
+    func addTicketFromPasteBoard(text: String?) {
+        guard let text = text else {
             presentFailedPasteAlert = true
             failedPasteAlert = "Nothing on the clipboard, or no clipboard access"
             return
@@ -63,11 +63,13 @@ struct TicketsView: View {
     var body: some View {
         VStack {
             if (appDataModel.tickets.count == 0 ) {
-                ZStack {
-                    Color.black
+                VStack(spacing: 10) {
+                    Image(systemName: "ticket").resizable().aspectRatio(contentMode: .fit).foregroundColor(Color.questionMarkColor).frame(width: 50)
                     Text("Add tickets by pasting your ti.to/tickets URL")
-                        .foregroundColor(.white)
                         .multilineTextAlignment(.center)
+                    PasteButton(payloadType: String.self, onPaste: { strings in
+                        addTicketFromPasteBoard(text: strings.first)
+                    }).padding(20)
                 }
             } else {
                 TabView(selection: $currentTicket) {
@@ -146,13 +148,12 @@ struct TicketsView: View {
         }
         .navigationTitle("Tickets")
         .toolbar {
+            if appDataModel.tickets.count > 0 {
             ToolbarItem() {
-                Button {
-                    addTicketFromPasteBoard()
-                } label: {
-                    Text("Paste URL")
+                    PasteButton(payloadType: String.self, onPaste: { strings in
+                        addTicketFromPasteBoard(text: strings.first)
+                    })
                 }
-                
             }
         }.alert("Failed to paste ticket URL", isPresented: $presentFailedPasteAlert) {
             Button("OK") {
