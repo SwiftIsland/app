@@ -14,52 +14,13 @@ struct TicketsView: View {
     @EnvironmentObject private var appDataModel: AppDataModel
     @State var currentTicket: Ticket = Ticket.empty
     @State var answers: [Int:[Answer]] = [:]
-    @State var failedPasteAlert: String? = nil
-    @State var presentFailedPasteAlert: Bool = false
     
     
     func accomodation(for ticket: Ticket) -> String? {
         // TODO: select the correct question, not just the first
         return answers[ticket.id]?.first?.humanizedResponse
     }
-    func addTicketFromPasteBoard(text: String?) {
-        guard let text = text else {
-            presentFailedPasteAlert = true
-            failedPasteAlert = "Nothing on the clipboard, or no clipboard access"
-            return
-        }
-        guard let url = URL(string: text) else {
-            presentFailedPasteAlert = true
-            failedPasteAlert = "Please copy an URL\n\n\(text)"
-            return
-        }
-        guard url.host == "ti.to" else {
-            presentFailedPasteAlert = true
-            failedPasteAlert = "Please copy a ti.to URL\n\n\(url.absoluteString)"
-            return
-        }
-        var path = url.pathComponents
-        let slug = path.popLast()
-        guard let slug = slug, path.last == "tickets" else {
-            presentFailedPasteAlert = true
-            failedPasteAlert = "Please copy a ti.to/tickets URL\n\n\(url.absoluteString)"
-            return
-        }
-        Task {
-            do {
-                if let ticket = try await appDataModel.updateTicket(slug: slug) {
-                    currentTicket = ticket
-                }
-            } catch DataLogicError.requestError(message: let message) {
-                presentFailedPasteAlert = true
-                failedPasteAlert = "Failed to find ticket\n\n\(message)"
-            } catch {
-                presentFailedPasteAlert = true
-                failedPasteAlert = "Failed to find ticket\n\n\(error)"
-
-            }
-        }
-    }
+    
     var body: some View {
         VStack {
             if (appDataModel.tickets.count == 0 ) {
@@ -67,9 +28,7 @@ struct TicketsView: View {
                     Image(systemName: "ticket").resizable().aspectRatio(contentMode: .fit).foregroundColor(Color.questionMarkColor).frame(width: 50)
                     Text("Add tickets by pasting your ti.to/tickets URL")
                         .multilineTextAlignment(.center)
-                    PasteButton(payloadType: String.self, onPaste: { strings in
-                        addTicketFromPasteBoard(text: strings.first)
-                    }).padding(20)
+                    TicketAddButton(currentTicket: $currentTicket).padding(20)
                 }
             } else {
                 TabView(selection: $currentTicket) {
@@ -92,8 +51,7 @@ struct TicketsView: View {
                                                             currentTicket = ticket
                                                         }
                                                     } catch {
-                                                        presentFailedPasteAlert = true
-                                                        failedPasteAlert = "Failed to find ticket\n\n\(error)"
+                                                        // TODO: some error handling here, but it's pretty unlikely that the ticket suddenly does not exist
                                                     }
                                                 }
                                             }
@@ -149,19 +107,10 @@ struct TicketsView: View {
         .navigationTitle("Tickets")
         .toolbar {
             if appDataModel.tickets.count > 0 {
-            ToolbarItem() {
-                    PasteButton(payloadType: String.self, onPaste: { strings in
-                        addTicketFromPasteBoard(text: strings.first)
-                    })
+                ToolbarItem() {
+                    TicketAddButton(currentTicket: $currentTicket)
                 }
             }
-        }.alert("Failed to paste ticket URL", isPresented: $presentFailedPasteAlert) {
-            Button("OK") {
-                presentFailedPasteAlert = false
-                failedPasteAlert = nil
-            }
-        } message: {
-            Text(failedPasteAlert ?? "")
         }
 
     }

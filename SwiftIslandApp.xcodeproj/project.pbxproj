@@ -86,6 +86,7 @@
 		2AF19ED32A7B04A500134E0B /* ConferencePageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF19ED22A7B04A500134E0B /* ConferencePageContentView.swift */; };
 		B3C626422A942291002754A8 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C626412A942291002754A8 /* WebView.swift */; };
 		B3C626442A94956A002754A8 /* TicketEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C626432A94956A002754A8 /* TicketEditView.swift */; };
+		B3F443032A9765E700AFDF43 /* TicketAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F443022A9765E700AFDF43 /* TicketAddButton.swift */; };
 		B3F7EEF42A86D6BB001D69B6 /* TicketsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7EEF32A86D6BB001D69B6 /* TicketsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -196,6 +197,7 @@
 		2AF19ED22A7B04A500134E0B /* ConferencePageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferencePageContentView.swift; sourceTree = "<group>"; };
 		B3C626412A942291002754A8 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		B3C626432A94956A002754A8 /* TicketEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketEditView.swift; sourceTree = "<group>"; };
+		B3F443022A9765E700AFDF43 /* TicketAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketAddButton.swift; sourceTree = "<group>"; };
 		B3F7EEF32A86D6BB001D69B6 /* TicketsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -550,6 +552,7 @@
 			children = (
 				B3F7EEF32A86D6BB001D69B6 /* TicketsView.swift */,
 				B3C626432A94956A002754A8 /* TicketEditView.swift */,
+				B3F443022A9765E700AFDF43 /* TicketAddButton.swift */,
 			);
 			path = Tickets;
 			sourceTree = "<group>";
@@ -753,6 +756,7 @@
 				2A7F12792A640730007C28EA /* ScrollViewOffset.swift in Sources */,
 				2A16EB362A4CDA4200CC881D /* ConferenceHeaderView.swift in Sources */,
 				B3C626442A94956A002754A8 /* TicketEditView.swift in Sources */,
+				B3F443032A9765E700AFDF43 /* TicketAddButton.swift in Sources */,
 				2A37FB9A2A7D3F890062E63A /* Bundle+Version.swift in Sources */,
 				2AE43FAC2A6B1A8C009078E3 /* View+PercentageOffset.swift in Sources */,
 				2AF19ED32A7B04A500134E0B /* ConferencePageContentView.swift in Sources */,
