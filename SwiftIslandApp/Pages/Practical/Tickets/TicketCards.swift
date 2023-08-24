@@ -97,8 +97,8 @@ struct TicketCards: View {
             Color.clear.frame(height: UIDevice.current.hasNotch ? 88 : 66)
         }
         .task {
-                    answers = (try? await appDataModel.fetchAnswers(for: appDataModel.tickets)) ?? [:]
-                }
+            answers = (try? await appDataModel.fetchAnswers(for: appDataModel.tickets)) ?? [:]
+        }
     }
 }
 
