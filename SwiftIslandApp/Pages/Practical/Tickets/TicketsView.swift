@@ -10,18 +10,12 @@ import CoreImage
 import CoreImage.CIFilterBuiltins
 
 struct TicketsView: View {
-    @Environment(\.colorScheme) var colorScheme
+    
     @EnvironmentObject private var appDataModel: AppDataModel
     @State var currentTicket: Ticket = Ticket.empty
-    @State var answers: [Int:[Answer]] = [:]
     @State var failedPasteAlert: String? = nil
     @State var presentFailedPasteAlert: Bool = false
     
-    
-    func accomodation(for ticket: Ticket) -> String? {
-        // TODO: select the correct question, not just the first
-        return answers[ticket.id]?.first?.humanizedResponse
-    }
     func addTicketFromPasteBoard() {
         guard let text = UIPasteboard.general.string else {
             presentFailedPasteAlert = true
@@ -70,91 +64,20 @@ struct TicketsView: View {
                         .multilineTextAlignment(.center)
                 }
             } else {
-                TabView(selection: $currentTicket) {
-                    ForEach(appDataModel.tickets) { ticket in
-                        VStack {
-                            ZStack(alignment: .top) {
-                                Image("Logo").padding(-11)
-                                if ticket.editURL != nil {
-                                    HStack {
-                                        Spacer()
-                                        NavigationLink(destination: {
-                                            TicketEditView(ticket: ticket)
-                                            .safeAreaInset(edge: .bottom) {
-                                                Color.clear.frame(height: UIDevice.current.hasNotch ? 46 : 58)
-                                            }
-                                            .onDisappear {
-                                                Task {
-                                                    do {
-                                                        if let ticket = try await appDataModel.updateTicket(slug: ticket.slug, add: false) {
-                                                            currentTicket = ticket
-                                                        }
-                                                    } catch {
-                                                        presentFailedPasteAlert = true
-                                                        failedPasteAlert = "Failed to find ticket\n\n\(error)"
-                                                    }
-                                                }
-                                            }
-                                        }, label: {
-                                            Image(systemName: "pencil.circle")
-                                                .resizable()
-                                                .frame(width: 25, height: 25)
-                                                .foregroundColor(.questionMarkColor)
-                                        })
-                                    }
-                                }
-                            }
-                            VStack(alignment: .leading) {
-                                Text(ticket.name)
-                                    .foregroundColor(.primary)
-                                    .font(.largeTitle)
-                                HStack {
-                                    Image(systemName: ticket.icon)
-                                    Text(ticket.title)
-                                }.foregroundColor(.secondary)
-                                    .font(.title2)
-                                let accomodation = accomodation(for: ticket)
-                                HStack {
-                                    Image(systemName: "bed.double.fill")
-                                    Text(accomodation ?? "TBD")
-                                }
-                                .foregroundColor(.secondary)
-                                .font(.title3)
-                                .opacity(accomodation == nil ? 0 : 1)
-
-                            }
-                            Image(uiImage: ticket.qrCode!).resizable().scaledToFit()
-                                .frame(width: 200, height: 200)
-                        }
-                        .padding(20)
-                        .frame(maxWidth: .infinity)
-                        .background(.ultraThickMaterial)
-                        .cornerRadius(20)
-                        .padding(20)
-                        .tag(ticket)
-                    }
-                }
-                .tabViewStyle(.page(indexDisplayMode: .automatic))
-                .indexViewStyle(.page(backgroundDisplayMode: colorScheme == .light ? .always : .automatic))
-                .safeAreaInset(edge: .bottom) {
-                    Color.clear.frame(height: UIDevice.current.hasNotch ? 88 : 66)
-                }
+                TicketCards(currentTicket: $currentTicket, failedPasteAlert: $failedPasteAlert, presentFailedPasteAlert: $presentFailedPasteAlert)
             }
-        }
-        .task {
-            answers = (try? await appDataModel.fetchAnswers(for: appDataModel.tickets)) ?? [:]
         }
         .navigationTitle("Tickets")
         .toolbar {
-            ToolbarItem() {
+            ToolbarItem {
                 Button {
                     addTicketFromPasteBoard()
                 } label: {
                     Text("Paste URL")
                 }
-                
             }
-        }.alert("Failed to paste ticket URL", isPresented: $presentFailedPasteAlert) {
+        }
+        .alert("Failed to paste ticket URL", isPresented: $presentFailedPasteAlert) {
             Button("OK") {
                 presentFailedPasteAlert = false
                 failedPasteAlert = nil
@@ -162,7 +85,6 @@ struct TicketsView: View {
         } message: {
             Text(failedPasteAlert ?? "")
         }
-
     }
 }
 

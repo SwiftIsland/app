@@ -86,6 +86,7 @@
 		2AF19ED32A7B04A500134E0B /* ConferencePageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF19ED22A7B04A500134E0B /* ConferencePageContentView.swift */; };
 		B3C626422A942291002754A8 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C626412A942291002754A8 /* WebView.swift */; };
 		B3C626442A94956A002754A8 /* TicketEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C626432A94956A002754A8 /* TicketEditView.swift */; };
+		B3F443012A96D3E500AFDF43 /* TicketCards.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F443002A96D3E500AFDF43 /* TicketCards.swift */; };
 		B3F7EEF42A86D6BB001D69B6 /* TicketsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F7EEF32A86D6BB001D69B6 /* TicketsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -196,6 +197,7 @@
 		2AF19ED22A7B04A500134E0B /* ConferencePageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferencePageContentView.swift; sourceTree = "<group>"; };
 		B3C626412A942291002754A8 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		B3C626432A94956A002754A8 /* TicketEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketEditView.swift; sourceTree = "<group>"; };
+		B3F443002A96D3E500AFDF43 /* TicketCards.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketCards.swift; sourceTree = "<group>"; };
 		B3F7EEF32A86D6BB001D69B6 /* TicketsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -550,6 +552,7 @@
 			children = (
 				B3F7EEF32A86D6BB001D69B6 /* TicketsView.swift */,
 				B3C626432A94956A002754A8 /* TicketEditView.swift */,
+				B3F443002A96D3E500AFDF43 /* TicketCards.swift */,
 			);
 			path = Tickets;
 			sourceTree = "<group>";
@@ -782,6 +785,7 @@
 				2A7F12772A6401C4007C28EA /* NFCManager.swift in Sources */,
 				2A16EB412A4CDD4A00CC881D /* Color+Helper.swift in Sources */,
 				2A7F128D2A69CC39007C28EA /* Defaults.swift in Sources */,
+				B3F443012A96D3E500AFDF43 /* TicketCards.swift in Sources */,
 				2ACF55A42A605BA300C051FC /* GettingThereMapView.swift in Sources */,
 				2A7F127F2A6488EC007C28EA /* RequestLocationView.swift in Sources */,
 				2A7F12812A64891F007C28EA /* LinearGradient.swift in Sources */,
