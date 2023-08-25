@@ -164,6 +164,7 @@ struct PracticalPageView_Previews: PreviewProvider {
 }
 
 // MARK: - Sub section: At the conference
+let spotTheSealActive = true
 
 struct SectionAtTheConference: View {
     let iconMaxWidth: CGFloat
@@ -196,6 +197,23 @@ struct SectionAtTheConference: View {
                             .dynamicTypeSize(.small ... .medium)
                     }
                 }
+            }
+            if (spotTheSealActive) {
+                NavigationLink(destination: { PuzzlePageView() }) {
+                    HStack {
+                        Image("seal").resizable().aspectRatio(contentMode:.fit)
+                            .foregroundColor(.questionMarkColor)
+                            .frame(maxWidth: iconMaxWidth)
+                        Text("Spot the Seal")
+                            .dynamicTypeSize(.small ... .medium)
+                    }
+                }.navigationDestination(for: Puzzle.self, destination: { puzzle in
+                    PuzzleView(puzzle: puzzle)
+                })
+                .navigationDestination(for: Hint.self, destination: { hint in
+                    HintView(hint: hint)
+                })
+
             }
         }
     }

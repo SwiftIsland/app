@@ -82,6 +82,10 @@
 		2AEDC4C32A4A089100CD0180 /* ConferencePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEDC4C22A4A089100CD0180 /* ConferencePageView.swift */; };
 		2AEDC4C62A4A08AF00CD0180 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEDC4C52A4A08AF00CD0180 /* TabBarView.swift */; };
 		2AF19ED32A7B04A500134E0B /* ConferencePageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF19ED22A7B04A500134E0B /* ConferencePageContentView.swift */; };
+		B3733D772A9951B10069D490 /* PuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3733D732A9951B10069D490 /* PuzzleView.swift */; };
+		B3733D782A9951B10069D490 /* HintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3733D742A9951B10069D490 /* HintView.swift */; };
+		B3733D792A9951B10069D490 /* PuzzleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3733D752A9951B10069D490 /* PuzzleItemView.swift */; };
+		B3733D7A2A9951B10069D490 /* PuzzlePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3733D762A9951B10069D490 /* PuzzlePageView.swift */; };
 		B3C626422A942291002754A8 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C626412A942291002754A8 /* WebView.swift */; };
 		B3C626442A94956A002754A8 /* TicketEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C626432A94956A002754A8 /* TicketEditView.swift */; };
 		B3F443032A9765E700AFDF43 /* TicketAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F443022A9765E700AFDF43 /* TicketAddButton.swift */; };
@@ -191,6 +195,10 @@
 		2AEDC4C22A4A089100CD0180 /* ConferencePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferencePageView.swift; sourceTree = "<group>"; };
 		2AEDC4C52A4A08AF00CD0180 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		2AF19ED22A7B04A500134E0B /* ConferencePageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferencePageContentView.swift; sourceTree = "<group>"; };
+		B3733D732A9951B10069D490 /* PuzzleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuzzleView.swift; sourceTree = "<group>"; };
+		B3733D742A9951B10069D490 /* HintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HintView.swift; sourceTree = "<group>"; };
+		B3733D752A9951B10069D490 /* PuzzleItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuzzleItemView.swift; sourceTree = "<group>"; };
+		B3733D762A9951B10069D490 /* PuzzlePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuzzlePageView.swift; sourceTree = "<group>"; };
 		B3C626412A942291002754A8 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		B3C626432A94956A002754A8 /* TicketEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketEditView.swift; sourceTree = "<group>"; };
 		B3F443022A9765E700AFDF43 /* TicketAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketAddButton.swift; sourceTree = "<group>"; };
@@ -405,6 +413,7 @@
 		2AC7DD0C2A59F36C00DB9F6D /* Practical */ = {
 			isa = PBXGroup;
 			children = (
+				B3733D722A9951600069D490 /* Spot the Seal */,
 				B3F7EEF52A86D6C5001D69B6 /* Tickets */,
 				2A18CE402A773CFE00969214 /* Practical */,
 				2A7F127D2A6488E2007C28EA /* Map */,
@@ -539,6 +548,17 @@
 				2AEDC4C52A4A08AF00CD0180 /* TabBarView.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		B3733D722A9951600069D490 /* Spot the Seal */ = {
+			isa = PBXGroup;
+			children = (
+				B3733D742A9951B10069D490 /* HintView.swift */,
+				B3733D752A9951B10069D490 /* PuzzleItemView.swift */,
+				B3733D762A9951B10069D490 /* PuzzlePageView.swift */,
+				B3733D732A9951B10069D490 /* PuzzleView.swift */,
+			);
+			path = "Spot the Seal";
 			sourceTree = "<group>";
 		};
 		B3F7EEF52A86D6C5001D69B6 /* Tickets */ = {
@@ -745,8 +765,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B3733D772A9951B10069D490 /* PuzzleView.swift in Sources */,
 				2A7F12982A6B19E0007C28EA /* SwiftIslandLogo.swift in Sources */,
 				2AEDC4C32A4A089100CD0180 /* ConferencePageView.swift in Sources */,
+				B3733D792A9951B10069D490 /* PuzzleItemView.swift in Sources */,
 				2A7F12792A640730007C28EA /* ScrollViewOffset.swift in Sources */,
 				2A16EB362A4CDA4200CC881D /* ConferenceHeaderView.swift in Sources */,
 				B3C626442A94956A002754A8 /* TicketEditView.swift in Sources */,
@@ -780,12 +802,14 @@
 				2A7F128D2A69CC39007C28EA /* Defaults.swift in Sources */,
 				2ACF55A42A605BA300C051FC /* GettingThereMapView.swift in Sources */,
 				2A7F127F2A6488EC007C28EA /* RequestLocationView.swift in Sources */,
+				B3733D7A2A9951B10069D490 /* PuzzlePageView.swift in Sources */,
 				2A7F12812A64891F007C28EA /* LinearGradient.swift in Sources */,
 				2AE440042A705C8B009078E3 /* ScheduleView.swift in Sources */,
 				2AE4400E2A717CE4009078E3 /* EventView.swift in Sources */,
 				B3F7EEF42A86D6BB001D69B6 /* TicketsView.swift in Sources */,
 				2AC7DD0F2A59F37D00DB9F6D /* PracticalPageView.swift in Sources */,
 				2AE440062A705E5C009078E3 /* ScheduleCalendarView.swift in Sources */,
+				B3733D782A9951B10069D490 /* HintView.swift in Sources */,
 				2AC7DD072A58CD2000DB9F6D /* FAQListView.swift in Sources */,
 				2A16EB452A4F622800CC881D /* ConferenceBoxTicket.swift in Sources */,
 				2AE440082A706211009078E3 /* ScheduleTimelineView.swift in Sources */,
