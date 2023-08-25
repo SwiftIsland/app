@@ -59,16 +59,17 @@ struct PuzzlePageView: View {
     @State var items: [Puzzle] = (1...16).map({Puzzle(id: "\($0)")})
     let columns = Array(repeatElement(GridItem(.flexible(minimum: 44), spacing: 0), count: 4))
     var body: some View {
-            LazyVGrid(columns: columns, spacing: spacing) {
-                ForEach($items) { puzzle in
-                    NavigationLink(value: puzzle.wrappedValue, label: {
-                        PuzzleItemView(puzzle: puzzle.wrappedValue) 
-                    })
-                }
-            }.padding(20)
-            .navigationTitle("Spot the Seal")
-            .navigationBarItems(trailing: Button("Reset", action: { Defaults.reset(.puzzleStatus) }))
-            Text("Hints").font(.title)
+        LazyVGrid(columns: columns, spacing: spacing) {
+            ForEach($items) { puzzle in
+                NavigationLink(value: puzzle.wrappedValue, label: {
+                    PuzzleItemView(puzzle: puzzle.wrappedValue) 
+                }).isDetailLink(false)
+            }
+        }
+        .padding(20)
+        .navigationTitle("Spot the Seal")
+        .navigationBarItems(trailing: Button("Reset", action: { Defaults.reset(.puzzleStatus) }))
+        Text("Hints").font(.title)
     }
 }
 

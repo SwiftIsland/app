@@ -18,6 +18,7 @@ enum NavigationPage {
     case acknowledgement
     case source
     case tickets
+    case spotTheSeal
 }
 
 struct PracticalPageView: View {
@@ -133,8 +134,11 @@ struct PracticalPageView: View {
                     }
                 case .source:
                     SourceView()
+                case .spotTheSeal:
+                    PuzzlePageView()
                 }
             }
+
         }
         .tint(.questionMarkColor)
     }
@@ -199,7 +203,7 @@ struct SectionAtTheConference: View {
                 }
             }
             if (spotTheSealActive) {
-                NavigationLink(destination: { PuzzlePageView() }) {
+                NavigationLink(value: NavigationPage.spotTheSeal) {
                     HStack {
                         Image("seal").resizable().aspectRatio(contentMode:.fit)
                             .foregroundColor(.questionMarkColor)
@@ -207,13 +211,10 @@ struct SectionAtTheConference: View {
                         Text("Spot the Seal")
                             .dynamicTypeSize(.small ... .medium)
                     }
-                }.navigationDestination(for: Puzzle.self, destination: { puzzle in
+                }
+                .navigationDestination(for: Puzzle.self) { puzzle in
                     PuzzleView(puzzle: puzzle)
-                })
-                .navigationDestination(for: Hint.self, destination: { hint in
-                    HintView(hint: hint)
-                })
-
+                }
             }
         }
     }
