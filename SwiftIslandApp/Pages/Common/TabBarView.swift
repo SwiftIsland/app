@@ -49,6 +49,8 @@ struct TabBarView: View {
             switch appActionTriggered {
             case .atTheConference:
                 selectedItem = .practical
+            case .atHome:
+                selectedItem = .home
             }
 
             self.appActionTriggered = nil

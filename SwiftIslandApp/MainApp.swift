@@ -79,6 +79,8 @@ private extension MainApp {
         switch appAction {
         case .atTheConference:
             Defaults[.userIsActivated] = true
+        case .atHome:
+            Defaults[.userIsActivated] = false
         }
     }
 
@@ -117,4 +119,5 @@ enum URLTask {
 
 enum AppActions: String {
     case atTheConference = "attheconference"
+    case atHome = "athome"
 }
