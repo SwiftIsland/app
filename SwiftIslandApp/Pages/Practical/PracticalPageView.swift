@@ -211,10 +211,7 @@ struct SectionAtTheConference: View {
                         Text("Spot the Seal")
                             .dynamicTypeSize(.small ... .medium)
                     }
-                }
-                .navigationDestination(for: Puzzle.self) { puzzle in
-                    PuzzleView(puzzle: puzzle)
-                }
+                }                
             }
         }
     }

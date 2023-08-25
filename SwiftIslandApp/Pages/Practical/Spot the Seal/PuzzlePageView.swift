@@ -69,7 +69,11 @@ struct PuzzlePageView: View {
         .padding(20)
         .navigationTitle("Spot the Seal")
         .navigationBarItems(trailing: Button("Reset", action: { Defaults.reset(.puzzleStatus) }))
+        .navigationDestination(for: Puzzle.self) { puzzle in
+            PuzzleView(puzzle: puzzle)
+        }
         Text("Hints").font(.title)
+        
     }
 }
 
