@@ -1,7 +1,7 @@
 name: iOS Build and Test
 
 on:
-  push:
+  pull_request:
     branches:
       - main
 jobs:
