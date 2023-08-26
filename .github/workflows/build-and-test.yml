@@ -6,7 +6,8 @@ on:
       - main
 jobs:
   buildAndTest:
-    runs-on: macos-12
+    name: Build and Test the app
+    runs-on: macos-13
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -18,5 +19,5 @@ jobs:
             -project SwiftIslandApp.xcodeproj \
             -scheme SwiftIsland \
             -sdk iphonesimulator \
-            -destination 'platform=iOS Simulator,name=Any iOS Simulator Device,OS=16.4' \
+            -destination 'platform=iOS Simulator,name=Any iOS Simulator Device,OS=17.0' \
             test
