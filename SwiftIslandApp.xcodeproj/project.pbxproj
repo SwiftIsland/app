@@ -82,6 +82,12 @@
 		2AEDC4C32A4A089100CD0180 /* ConferencePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEDC4C22A4A089100CD0180 /* ConferencePageView.swift */; };
 		2AEDC4C62A4A08AF00CD0180 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEDC4C52A4A08AF00CD0180 /* TabBarView.swift */; };
 		2AF19ED32A7B04A500134E0B /* ConferencePageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF19ED22A7B04A500134E0B /* ConferencePageContentView.swift */; };
+		B332ADF72A9A813C00557AA7 /* truchet-tiles.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B332ADF12A9A813900557AA7 /* truchet-tiles.pdf */; };
+		B332ADF82A9A813C00557AA7 /* double-names.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B332ADF22A9A813B00557AA7 /* double-names.pdf */; };
+		B332ADF92A9A813C00557AA7 /* valuta.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B332ADF32A9A813B00557AA7 /* valuta.pdf */; };
+		B332ADFA2A9A813C00557AA7 /* game-of-life.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B332ADF42A9A813B00557AA7 /* game-of-life.pdf */; };
+		B332ADFB2A9A813C00557AA7 /* marquee.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B332ADF52A9A813C00557AA7 /* marquee.pdf */; };
+		B332ADFC2A9A813C00557AA7 /* mills.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B332ADF62A9A813C00557AA7 /* mills.pdf */; };
 		B3733D772A9951B10069D490 /* PuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3733D732A9951B10069D490 /* PuzzleView.swift */; };
 		B3733D782A9951B10069D490 /* HintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3733D742A9951B10069D490 /* HintView.swift */; };
 		B3733D792A9951B10069D490 /* PuzzleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3733D752A9951B10069D490 /* PuzzleItemView.swift */; };
@@ -195,6 +201,12 @@
 		2AEDC4C22A4A089100CD0180 /* ConferencePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferencePageView.swift; sourceTree = "<group>"; };
 		2AEDC4C52A4A08AF00CD0180 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		2AF19ED22A7B04A500134E0B /* ConferencePageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferencePageContentView.swift; sourceTree = "<group>"; };
+		B332ADF12A9A813900557AA7 /* truchet-tiles.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "truchet-tiles.pdf"; sourceTree = "<group>"; };
+		B332ADF22A9A813B00557AA7 /* double-names.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "double-names.pdf"; sourceTree = "<group>"; };
+		B332ADF32A9A813B00557AA7 /* valuta.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = valuta.pdf; sourceTree = "<group>"; };
+		B332ADF42A9A813B00557AA7 /* game-of-life.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "game-of-life.pdf"; sourceTree = "<group>"; };
+		B332ADF52A9A813C00557AA7 /* marquee.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = marquee.pdf; sourceTree = "<group>"; };
+		B332ADF62A9A813C00557AA7 /* mills.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = mills.pdf; sourceTree = "<group>"; };
 		B3733D732A9951B10069D490 /* PuzzleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuzzleView.swift; sourceTree = "<group>"; };
 		B3733D742A9951B10069D490 /* HintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HintView.swift; sourceTree = "<group>"; };
 		B3733D752A9951B10069D490 /* PuzzleItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuzzleItemView.swift; sourceTree = "<group>"; };
@@ -249,6 +261,7 @@
 		2A16EB372A4CDB0400CC881D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B332ADF02A9A812500557AA7 /* Puzzles */,
 				2A16EB382A4CDB3600CC881D /* Fonts */,
 				2AECBFB42A95DB43001FBFA9 /* Secrets.json */,
 			);
@@ -550,6 +563,19 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		B332ADF02A9A812500557AA7 /* Puzzles */ = {
+			isa = PBXGroup;
+			children = (
+				B332ADF22A9A813B00557AA7 /* double-names.pdf */,
+				B332ADF42A9A813B00557AA7 /* game-of-life.pdf */,
+				B332ADF52A9A813C00557AA7 /* marquee.pdf */,
+				B332ADF62A9A813C00557AA7 /* mills.pdf */,
+				B332ADF12A9A813900557AA7 /* truchet-tiles.pdf */,
+				B332ADF32A9A813B00557AA7 /* valuta.pdf */,
+			);
+			path = Puzzles;
+			sourceTree = "<group>";
+		};
 		B3733D722A9951600069D490 /* Spot the Seal */ = {
 			isa = PBXGroup;
 			children = (
@@ -704,11 +730,17 @@
 			files = (
 				2A16EB3B2A4CDB3600CC881D /* WorkSans-Regular.ttf in Resources */,
 				2AEDC49E2A4A031000CD0180 /* Preview Assets.xcassets in Resources */,
+				B332ADF82A9A813C00557AA7 /* double-names.pdf in Resources */,
+				B332ADFB2A9A813C00557AA7 /* marquee.pdf in Resources */,
 				2A16EB642A4F6CC200CC881D /* GoogleService-Info.plist in Resources */,
 				2A37FB982A7D3EFC0062E63A /* Acknowledgements.plist in Resources */,
 				2AEDC49B2A4A031000CD0180 /* Assets.xcassets in Resources */,
+				B332ADFA2A9A813C00557AA7 /* game-of-life.pdf in Resources */,
+				B332ADFC2A9A813C00557AA7 /* mills.pdf in Resources */,
 				2AECBFB52A95DD58001FBFA9 /* Secrets.json in Resources */,
+				B332ADF72A9A813C00557AA7 /* truchet-tiles.pdf in Resources */,
 				2A16EB3C2A4CDB3600CC881D /* WorkSans-Bold.ttf in Resources */,
+				B332ADF92A9A813C00557AA7 /* valuta.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

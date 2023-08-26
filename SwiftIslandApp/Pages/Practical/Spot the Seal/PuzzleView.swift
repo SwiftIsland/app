@@ -24,7 +24,7 @@ struct PDFViewUI : UIViewRepresentable {
         if let url = url {
             pdfView.document = PDFDocument(url: url)
         }
-//        pdfView.scaleFactor = 1.2
+        pdfView.scaleFactor = 0.1
         return pdfView
     }
     
@@ -39,7 +39,7 @@ struct PuzzleView: View {
     var body: some View {
         
         VStack(alignment: .center) {
-            let url = Bundle.main.url(forResource: "1", withExtension: "pdf")
+            let url = Bundle.main.url(forResource: puzzle.filename, withExtension: "pdf")
             if let url = url {
                 ZStack {
                     PDFViewUI(url: url)        
@@ -73,7 +73,7 @@ struct PuzzleView: View {
 }
 
 struct PuzzleView_Previews: PreviewProvider {
-    @State static var puzzle = Puzzle.forPreview(number: "16")
+    @State static var puzzle = Puzzle.forPreview(number: "16", filename: "marquee")
     static var previews: some View {
         PuzzleView( puzzle: $puzzle.wrappedValue)
     }
