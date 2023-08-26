@@ -18,5 +18,5 @@ jobs:
             -project SwiftIslandApp.xcodeproj \
             -scheme SwiftIsland \
             -sdk iphonesimulator \
-            -destination 'platform=iOS Simulator,name=iPhone 14 pro,OS=16.4' \
+            -destination 'platform=iOS Simulator,name=Any iOS Simulator Device,OS=16.4' \
             test
