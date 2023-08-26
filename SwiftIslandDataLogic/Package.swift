@@ -1,4 +1,4 @@
-// swift-tools-version: 5.8
+// swift-tools-version: 5.7.1
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
@@ -21,8 +21,7 @@ let package = Package(
             dependencies: [
                 .product(name: "Defaults", package: "Defaults"),
                 .product(name: "FirebaseFirestoreSwift", package: "firebase-ios-sdk"),
-                .product(name: "FirebaseFirestore", package: "firebase-ios-sdk"),
-//                .product(name: "FirebaseStorage", package: "firebase-ios-sdk")
+                .product(name: "FirebaseFirestore", package: "firebase-ios-sdk")
             ]),
         .testTarget(
             name: "SwiftIslandDataLogicTests",
