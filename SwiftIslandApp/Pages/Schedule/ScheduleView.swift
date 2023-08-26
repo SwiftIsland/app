@@ -71,9 +71,6 @@ struct ScheduleView: View {
                     .padding(.leading, leadingPadding)
                 }
             }
-            .safeAreaInset(edge: .bottom) {
-                Color.clear.frame(height: UIDevice.current.hasNotch ? 88 : 66)
-            }
             .navigationTitle("Event Schedule")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {

@@ -51,9 +51,6 @@ struct FAQListView: View {
                     fetchFAQ(scrollViewProxy: scrollViewProxy)
                 }
             }
-            .safeAreaInset(edge: .bottom) {
-                Color.clear.frame(height: UIDevice.current.hasNotch ? 88 : 66)
-            }
         }
     }
 

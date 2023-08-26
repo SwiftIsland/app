@@ -29,15 +29,15 @@ struct TicketEditView: View {
                 }
             }
             .confirmationDialog("Are you sure you want to\n delete this ticket from the app?", isPresented: $showDeleteConfirmation, titleVisibility: .visible) {
-                
+
                     Button("Delete", role: .destructive) {
                         showDeleteConfirmation = false
                         try? appDataModel.removeTicket(ticket: ticket)
-                            
+
                     }
                 }
-            
-        
+
+
     }
 }
 

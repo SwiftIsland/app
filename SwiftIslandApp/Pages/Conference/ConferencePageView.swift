@@ -41,9 +41,6 @@ struct ConferencePageView: View {
             .navigationDestination(for: FAQItem.self) { item in
                 FAQListView(preselectedItem: item)
             }
-            .safeAreaInset(edge: .bottom) {
-                Color.clear.frame(height: UIDevice.current.hasNotch ? 88 : 66)
-            }
         }
         .accentColor(.white)
     }
@@ -57,6 +54,11 @@ struct ConferencePageView_Previews: PreviewProvider {
 
         let appDataModel = AppDataModel()
         appDataModel.events = [event]
+        appDataModel.mentors = [
+            Mentor.forPreview(name: "Person 1"),
+            Mentor.forPreview(name: "Person 2"),
+            Mentor.forPreview(name: "Person 3")
+        ]
 
         return ConferencePageView(namespace: namespace, isShowingMentor: .constant(false))
             .environmentObject(appDataModel)
