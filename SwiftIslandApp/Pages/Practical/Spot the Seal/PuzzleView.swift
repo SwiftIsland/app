@@ -6,6 +6,7 @@
 import SwiftUI
 import PDFKit
 import Defaults
+import SwiftIslandDataLogic
 
 struct PDFViewUI : UIViewRepresentable {
     let pdfView = PDFView()
@@ -50,7 +51,7 @@ struct PuzzleView: View {
                     }
                 .aspectRatio(1, contentMode: .fit)
             } 
-            Text(puzzle.description)
+            Text(puzzle.question)
             Spacer()
             HStack(spacing: 20) {
                 TextField("Solution", text:$solution)
@@ -72,7 +73,7 @@ struct PuzzleView: View {
 }
 
 struct PuzzleView_Previews: PreviewProvider {
-    @State static var puzzle = Puzzle(id: "16")
+    @State static var puzzle = Puzzle.forPreview(number: "16")
     static var previews: some View {
         PuzzleView( puzzle: $puzzle.wrappedValue)
     }

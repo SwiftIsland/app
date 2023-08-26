@@ -5,6 +5,7 @@
 
 import SwiftUI
 import Defaults
+import SwiftIslandDataLogic
 
 extension Defaults.Keys {
     static let puzzleStatus = Key<[String: PuzzleState]>("puzzleStatus", default: [:])
@@ -28,12 +29,7 @@ enum PuzzleState: String, Defaults.Serializable {
     }
 }
 
-struct Puzzle: Identifiable, Hashable {
-    let id: String
-    var title: String {
-        return "Puzzle \(id)"
-    }
-    let description: String = "Puzzle description\nWith a really long name and some more text\nthat wont fit in one go"
+extension Puzzle {
     var state: PuzzleState {
         get {
             Defaults[.puzzleStatus][id] ?? .NotFound
@@ -55,24 +51,34 @@ struct Puzzle: Identifiable, Hashable {
 let spacing: CGFloat = 0
 
 struct PuzzlePageView: View {
+    @EnvironmentObject private var appDataModel: AppDataModel
     @Default(.puzzleStatus) var puzzleStatus
-    @State var items: [Puzzle] = (1...16).map({Puzzle(id: "\($0)")})
+    @State var items: [Puzzle] = []
     let columns = Array(repeatElement(GridItem(.flexible(minimum: 44), spacing: 0), count: 4))
     var body: some View {
-        LazyVGrid(columns: columns, spacing: spacing) {
-            ForEach($items) { puzzle in
-                NavigationLink(value: puzzle.wrappedValue, label: {
-                    PuzzleItemView(puzzle: puzzle.wrappedValue) 
-                }).isDetailLink(false)
+        VStack {
+            if (items.count == 0) {
+                Text("Loading...")
+            } else {
+                LazyVGrid(columns: columns, spacing: spacing) {
+                    ForEach($items) { puzzle in
+                        NavigationLink(value: puzzle.wrappedValue, label: {
+                            PuzzleItemView(puzzle: puzzle.wrappedValue)
+                        }).isDetailLink(false)
+                    }
+                }
+                .padding(20)
+                .navigationTitle("Spot the Seal")
+                .navigationBarItems(trailing: Button("Reset", action: { Defaults.reset(.puzzleStatus) }))
+                .navigationDestination(for: Puzzle.self) { puzzle in
+                    PuzzleView(puzzle: puzzle)
+                }
+                Text("Hints").font(.title)
             }
         }
-        .padding(20)
-        .navigationTitle("Spot the Seal")
-        .navigationBarItems(trailing: Button("Reset", action: { Defaults.reset(.puzzleStatus) }))
-        .navigationDestination(for: Puzzle.self) { puzzle in
-            PuzzleView(puzzle: puzzle)
+        .task {
+            items = (try? await appDataModel.fetchPuzzles()) ?? []
         }
-        Text("Hints").font(.title)
         
     }
 }

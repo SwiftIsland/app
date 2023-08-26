@@ -118,6 +118,10 @@ final class AppDataModel: ObservableObject {
     func fetchAnswers(for tickets: [Ticket]) async throws -> [Int:[Answer]] {
         try await dataLogic.fetchAnswers(for: tickets, in: Secrets.checkinListSlug)
     }
+    
+    func fetchPuzzles() async throws -> [Puzzle] {
+        try await dataLogic.fetchPuzzles()
+    }
 }
 
 private extension AppDataModel {

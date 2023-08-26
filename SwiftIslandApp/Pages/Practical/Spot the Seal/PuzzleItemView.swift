@@ -4,6 +4,7 @@
 //
 
 import SwiftUI
+import SwiftIslandDataLogic
 
 let sealAngle: Double = 24
 let fromAngle: Double = -45 - sealAngle
@@ -92,8 +93,8 @@ struct PuzzleItemView: View {
 struct PuzzleItemView_Previews: PreviewProvider {
     static var previews: some View {
         Grid {
-            PuzzleItemView(puzzle: Puzzle(id: "1"))
-            PuzzleItemView(puzzle: Puzzle(id: "15"))
+            PuzzleItemView(puzzle: Puzzle.forPreview(number: "1"))
+            PuzzleItemView(puzzle: Puzzle.forPreview(number: "15"))
         }
     }
 }
