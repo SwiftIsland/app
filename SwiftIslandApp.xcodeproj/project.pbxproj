@@ -88,8 +88,8 @@
 		B332ADFA2A9A813C00557AA7 /* game-of-life.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B332ADF42A9A813B00557AA7 /* game-of-life.pdf */; };
 		B332ADFB2A9A813C00557AA7 /* marquee.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B332ADF52A9A813C00557AA7 /* marquee.pdf */; };
 		B332ADFC2A9A813C00557AA7 /* mills.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B332ADF62A9A813C00557AA7 /* mills.pdf */; };
+		B354DDE52A9BEEE700C24461 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B354DDE42A9BEEE700C24461 /* Utils.swift */; };
 		B3733D772A9951B10069D490 /* PuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3733D732A9951B10069D490 /* PuzzleView.swift */; };
-		B3733D782A9951B10069D490 /* HintView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3733D742A9951B10069D490 /* HintView.swift */; };
 		B3733D792A9951B10069D490 /* PuzzleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3733D752A9951B10069D490 /* PuzzleItemView.swift */; };
 		B3733D7A2A9951B10069D490 /* PuzzlePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3733D762A9951B10069D490 /* PuzzlePageView.swift */; };
 		B3C626422A942291002754A8 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C626412A942291002754A8 /* WebView.swift */; };
@@ -207,8 +207,8 @@
 		B332ADF42A9A813B00557AA7 /* game-of-life.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "game-of-life.pdf"; sourceTree = "<group>"; };
 		B332ADF52A9A813C00557AA7 /* marquee.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = marquee.pdf; sourceTree = "<group>"; };
 		B332ADF62A9A813C00557AA7 /* mills.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = mills.pdf; sourceTree = "<group>"; };
+		B354DDE42A9BEEE700C24461 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		B3733D732A9951B10069D490 /* PuzzleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuzzleView.swift; sourceTree = "<group>"; };
-		B3733D742A9951B10069D490 /* HintView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HintView.swift; sourceTree = "<group>"; };
 		B3733D752A9951B10069D490 /* PuzzleItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuzzleItemView.swift; sourceTree = "<group>"; };
 		B3733D762A9951B10069D490 /* PuzzlePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuzzlePageView.swift; sourceTree = "<group>"; };
 		B3C626412A942291002754A8 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
@@ -579,10 +579,10 @@
 		B3733D722A9951600069D490 /* Spot the Seal */ = {
 			isa = PBXGroup;
 			children = (
-				B3733D742A9951B10069D490 /* HintView.swift */,
 				B3733D752A9951B10069D490 /* PuzzleItemView.swift */,
 				B3733D762A9951B10069D490 /* PuzzlePageView.swift */,
 				B3733D732A9951B10069D490 /* PuzzleView.swift */,
+				B354DDE42A9BEEE700C24461 /* Utils.swift */,
 			);
 			path = "Spot the Seal";
 			sourceTree = "<group>";
@@ -826,6 +826,7 @@
 				2A7F12852A65DBEA007C28EA /* LocationManager.swift in Sources */,
 				2AC7DD092A58CFDD00DB9F6D /* ConferenceBoxFAQItem.swift in Sources */,
 				2A37FB6A2A7B06AE0062E63A /* ConferenceBoxMentors.swift in Sources */,
+				B354DDE52A9BEEE700C24461 /* Utils.swift in Sources */,
 				B3C626422A942291002754A8 /* WebView.swift in Sources */,
 				2AC7DCF12A58B5E600DB9F6D /* ConferenceBoxFAQ.swift in Sources */,
 				2A17F0C22A6075BF0055E214 /* MentorView.swift in Sources */,
@@ -841,7 +842,6 @@
 				B3F7EEF42A86D6BB001D69B6 /* TicketsView.swift in Sources */,
 				2AC7DD0F2A59F37D00DB9F6D /* PracticalPageView.swift in Sources */,
 				2AE440062A705E5C009078E3 /* ScheduleCalendarView.swift in Sources */,
-				B3733D782A9951B10069D490 /* HintView.swift in Sources */,
 				2AC7DD072A58CD2000DB9F6D /* FAQListView.swift in Sources */,
 				2A16EB452A4F622800CC881D /* ConferenceBoxTicket.swift in Sources */,
 				2AE440082A706211009078E3 /* ScheduleTimelineView.swift in Sources */,

@@ -8,6 +8,11 @@ import PDFKit
 import Defaults
 import SwiftIslandDataLogic
 
+struct Hint: Decodable, Encodable {
+    let text: String
+    let forPuzzle: String
+}
+
 struct PDFViewUI : UIViewRepresentable {
     let pdfView = PDFView()
     var url: URL?
@@ -52,16 +57,16 @@ struct PuzzleView: View {
                 .aspectRatio(1, contentMode: .fit)
             } 
             Text(puzzle.question)
-            Spacer()
             HStack(spacing: 20) {
                 TextField("Solution", text:$solution)
                 Button("Check") {
                     print("Text", solution)
-                    if (solution == "\(puzzle.id)") {
-                        print("Correct")
-                        puzzle.state = .Solved
-                    } else {
-                        print("Wrong16")
+                    do {
+                        let hint = try decrypt(value: puzzle.encryptedHint, solution: solution, type: Hint.self)
+                            print("Correct")
+                            puzzle.state = .Solved
+                    } catch {
+                        print("Wrong16 \(error)")
                         solution = ""
                     }
                 }
