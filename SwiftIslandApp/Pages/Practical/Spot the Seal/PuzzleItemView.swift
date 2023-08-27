@@ -18,10 +18,12 @@ struct PuzzleItemView: View {
     @State var puzzle: Puzzle
     @State var scale: Double = 1
     @State var flipAngle: CGFloat
+    @State var isCurrent: Bool = false
     
-    init(puzzle: Puzzle) {
+    init(puzzle: Puzzle, isCurrent: Bool = false) {
         self.puzzle = puzzle
-        self.flipAngle = puzzle.state == .Activated || puzzle.state == .Solved ? 180 : 0
+        self.isCurrent = isCurrent
+        self.flipAngle = puzzle.state == .Solved ? 180 : 0
     }
 
     var body: some View {
@@ -48,43 +50,49 @@ struct PuzzleItemView: View {
                 .scaleEffect(scale)
         }.aspectRatio(1, contentMode: .fit)
     switch (puzzle.state) {
-    case .NotFound, .Found, .Nearby:
-        // A bit hacky, but I couldn't find another way to disable the navigation for these
-//        stack.onTapGesture {
-//            
-//        }
-        stack.onTapGesture {
-            let next = puzzle.state.next
-            puzzle.state = next
-            switch(next) {
-            case .Found:
-                scale = 20
-                withAnimation(.easeInOut(duration: 0.3)) {
-                    scale = 1
-                }
-            case .Nearby:
-                scale = 1
-                let baseAnimation = Animation.easeInOut(duration: 0.2)
-                let repeated = baseAnimation.repeatForever(autoreverses: true)
-                withAnimation(repeated) {
-                    scale = 1.07
-                }
-            case .Activated:
-                flipAngle = 0
-                scale = 1
-                withAnimation(Animation.easeInOut(duration: 0.25)) {
-                    flipAngle = 180
-                }
-            default: 
-                scale = 1
-            }
-        }
-    case .Activated, .Solved:
+    case .Found:
         stack
-//        .onTapGesture {
+            .onAppear {
+                print("onAppear \(isCurrent)")
+                if (isCurrent) {
+                    scale = 20
+                    withAnimation(.easeInOut(duration: 0.3)) {
+                        scale = 1
+                    }
+                }
+            }
+    case .Solved:
+        stack
+    case .NotFound, .Nearby, .Activated:
+        // A bit hacky, but I couldn't find another way to disable the navigation for these
+        stack.onTapGesture {
+            
+        }
+//        stack.onTapGesture {
 //            let next = puzzle.state.next
 //            puzzle.state = next
-//        }
+//            switch(next) {
+//            case .Found:
+//                scale = 20
+//                withAnimation(.easeInOut(duration: 0.3)) {
+//                    scale = 1
+//                }
+//            case .Nearby:
+//                scale = 1
+//                let baseAnimation = Animation.easeInOut(duration: 0.2)
+//                let repeated = baseAnimation.repeatForever(autoreverses: true)
+//                withAnimation(repeated) {
+//                    scale = 1.07
+//                }
+//            case .Activated:
+//                flipAngle = 0
+//                scale = 1
+//                withAnimation(Animation.easeInOut(duration: 0.25)) {
+//                    flipAngle = 180
+//                }
+//            default:
+//                scale = 1
+//            }
     }
         
     }

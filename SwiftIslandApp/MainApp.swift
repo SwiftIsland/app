@@ -18,6 +18,7 @@ struct MainApp: App {
     @State private var appActionTriggered: AppActions? = nil
     @State private var showTicketAlert: Bool = false
     @State private var showTicketMessage: String = ""
+    @State private var currentPuzzleSlug: String?
 
     var body: some Scene {
         WindowGroup {
@@ -37,7 +38,14 @@ struct MainApp: App {
             }
             .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { activity in
                 if let url = activity.webpageURL {
-                   handleOpenURL(url)
+                    handleOpenURL(url)
+                }
+            }
+            .sheet(isPresented: .constant(currentPuzzleSlug != nil), onDismiss: {
+                currentPuzzleSlug = nil
+            }) {
+                NavigationStack {
+                    PuzzlePageView(currentPuzzleSlug: $currentPuzzleSlug.wrappedValue).environmentObject(appDataModel)
                 }
             }
             // TODO: Make this a navigation path to the actual ticket
@@ -75,7 +83,14 @@ private extension MainApp {
                     print(error)
                 }
             }
+        case .seal(let slug):
+            let currentStatus = Defaults[.puzzleStatus][slug]
+            if currentStatus == nil || currentStatus == .NotFound {
+                Defaults[.puzzleStatus][slug] = .Found
+            }
+            currentPuzzleSlug = slug
         }
+        
     }
 
     func handleAppAction(_ appAction: AppActions) {
@@ -107,6 +122,7 @@ private extension MainApp {
 enum URLTask {
     case action(appAction: AppActions)
     case ticket(slug: String)
+    case seal(slug: String)
 
     init?(rawValue: URLQueryItem) {
         switch rawValue.name {
@@ -116,6 +132,9 @@ enum URLTask {
         case "ticket":
             guard let value = rawValue.value else { return nil }
             self = .ticket(slug: value)
+        case "seal":
+            guard let value = rawValue.value else { return nil }
+            self = .seal(slug: value)
         default:
             return nil
         }
