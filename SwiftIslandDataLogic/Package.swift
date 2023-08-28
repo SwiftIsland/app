@@ -22,6 +22,9 @@ let package = Package(
                 .product(name: "Defaults", package: "Defaults"),
                 .product(name: "FirebaseFirestoreSwift", package: "firebase-ios-sdk"),
                 .product(name: "FirebaseFirestore", package: "firebase-ios-sdk")
+            ],
+            swiftSettings: [
+                .unsafeFlags(["-suppress-warnings"]),
             ]),
         .testTarget(
             name: "SwiftIslandDataLogicTests",
