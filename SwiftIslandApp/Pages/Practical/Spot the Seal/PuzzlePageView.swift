@@ -66,9 +66,6 @@ struct PuzzleGrid: View {
         .padding(20)
         .navigationTitle("Spot the Seal")
         .navigationBarItems(trailing: Button("Reset", action: { Defaults.reset(.puzzleStatus) }))
-        .navigationDestination(for: Puzzle.self) { puzzle in
-            PuzzleView(puzzle: puzzle)
-        }
     }
 }
 
@@ -95,6 +92,9 @@ struct PuzzlePageView: View {
         }
         .task {
             await appDataModel.fetchPuzzles()
+        }
+        .navigationDestination(for: Puzzle.self) { puzzle in
+            PuzzleView(puzzle: puzzle)
         }
         
     }
