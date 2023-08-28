@@ -35,6 +35,11 @@ struct MainApp: App {
             .onOpenURL { url in
                 handleOpenURL(url)
             }
+            .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { activity in
+                if let url = activity.webpageURL {
+                   handleOpenURL(url)
+                }
+            }
             // TODO: Make this a navigation path to the actual ticket
             .alert("Ticket Added", isPresented: $showTicketAlert, actions: {
                 Button("OK") {
