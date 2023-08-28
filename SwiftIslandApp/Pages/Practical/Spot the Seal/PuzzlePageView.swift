@@ -54,7 +54,7 @@ struct PuzzlePageView: View {
     @EnvironmentObject private var appDataModel: AppDataModel
     @Default(.puzzleStatus) var puzzleStatus
     @State var items: [Puzzle] = []
-    @State var currentPuzzleSlug: String? = nil
+    @State var currentPuzzleSlug: String?
     let columns = Array(repeatElement(GridItem(.flexible(minimum: 44), spacing: 0), count: 4))
     var body: some View {
         VStack {
@@ -75,6 +75,7 @@ struct PuzzlePageView: View {
                     PuzzleView(puzzle: puzzle)
                 }
                 Text("Hints").font(.title)
+                // TODO add all hints here
             }
         }
         .task {
