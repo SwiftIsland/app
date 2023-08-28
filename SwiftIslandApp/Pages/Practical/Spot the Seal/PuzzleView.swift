@@ -41,6 +41,7 @@ struct PDFViewUI : UIViewRepresentable {
 struct PuzzleView: View {
     @State var puzzle: Puzzle
     @State var solution: String = ""
+    @Default(.puzzleStatus) var puzzleStatus
     var body: some View {
         
         VStack(alignment: .center) {
@@ -55,21 +56,26 @@ struct PuzzleView: View {
                         .colorInvert()                        
                     }
                 .aspectRatio(1, contentMode: .fit)
-            } 
-            Text(puzzle.question)
-            HStack(spacing: 20) {
-                TextField("Solution", text:$solution)
-                Button("Check") {
-                    print("Text", solution)
-                    do {
-                        let hint = try decrypt(value: puzzle.encryptedHint, solution: solution, type: Hint.self)
-                            print("Correct")
-                            puzzle.state = .Solved
-                    } catch {
-                        print("Wrong16 \(error)")
-                        solution = ""
+            }
+            if (puzzle.state != .Solved) {
+                Text(puzzle.question)
+                HStack(spacing: 20) {
+                    TextField("Solution", text:$solution)
+                    Button("Check") {
+                        do {
+                            let hint = try decrypt(value: puzzle.encryptedHint, solution: solution, type: Hint.self)
+                            withAnimation {
+                                puzzle.state = .Solved
+                            }
+                                
+                        } catch {
+                            print("Wrong16 \(error)")
+                            solution = ""
+                        }
                     }
                 }
+            } else {
+                Image(systemName: "checkmark.seal").resizable().aspectRatio(contentMode: .fit).foregroundColor(.questionMarkColor).frame(width: 100)
             }
         }.padding(20)
             .navigationTitle(puzzle.title)
