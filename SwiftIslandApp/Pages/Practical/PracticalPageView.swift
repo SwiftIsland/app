@@ -106,13 +106,13 @@ struct PracticalPageView: View {
 
                 }
                 .scrollContentBackground(.hidden)
-                .safeAreaInset(edge: .bottom) {
-                    Color.clear.frame(height: UIDevice.current.hasNotch ? 88 : 66)
-                }
             }
             .navigationTitle("Practical")
             .navigationDestination(for: Page.self) { page in
                 PracticalGenericPageView(page: page)
+            }
+            .navigationDestination(for: Ticket.self) { ticket in
+                TicketEditView(ticket: ticket)
             }
             .navigationDestination(for: NavigationPage.self) { subPage in
                 switch subPage {
@@ -130,9 +130,6 @@ struct PracticalPageView: View {
                         AcknowledgementsList()
                             .navigationTitle("#CreditsPageTitle")
                             .scrollContentBackground(.hidden)
-                    }
-                    .safeAreaInset(edge: .bottom) {
-                        Color.clear.frame(height: UIDevice.current.hasNotch ? 88 : 66)
                     }
                 case .source:
                     SourceView()

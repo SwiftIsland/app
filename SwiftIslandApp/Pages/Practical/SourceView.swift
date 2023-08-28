@@ -99,9 +99,6 @@ struct SourceView: View {
             }
             .scrollContentBackground(.hidden)
             .navigationBarTitleDisplayMode(.inline)
-            .safeAreaInset(edge: .bottom) {
-                Color.clear.frame(height: UIDevice.current.hasNotch ? 88 : 66)
-            }
         }
     }
 }

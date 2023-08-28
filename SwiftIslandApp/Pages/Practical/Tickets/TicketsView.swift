@@ -15,7 +15,6 @@ struct TicketsView: View {
     @State var currentTicket: Ticket = Ticket.empty
     @State var answers: [Int:[Answer]] = [:]
     
-    
     func accomodation(for ticket: Ticket) -> String? {
         // TODO: select the correct question, not just the first
         return answers[ticket.id]?.first?.humanizedResponse
@@ -96,11 +95,12 @@ struct TicketsView: View {
                 }
                 .tabViewStyle(.page(indexDisplayMode: .automatic))
                 .indexViewStyle(.page(backgroundDisplayMode: colorScheme == .light ? .always : .automatic))
-                .safeAreaInset(edge: .bottom) {
-                    Color.clear.frame(height: UIDevice.current.hasNotch ? 88 : 66)
-                }
             }
         }
+        .onChange(of: appDataModel.tickets, perform: { tickets in
+            guard let currentTicket = tickets.first(where: { $0.id == self.currentTicket.id }) else { return }
+            self.currentTicket = currentTicket
+        })
         .task {
             answers = (try? await appDataModel.fetchAnswers(for: appDataModel.tickets)) ?? [:]
         }
@@ -112,7 +112,6 @@ struct TicketsView: View {
                 }
             }
         }
-
     }
 }
 

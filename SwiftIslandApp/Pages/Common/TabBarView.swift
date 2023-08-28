@@ -7,6 +7,12 @@ import SwiftUI
 import Defaults
 import SwiftIslandDataLogic
 
+private enum Tab: CaseIterable {
+    case home
+    case practical
+    case schedule
+}
+
 struct TabBarView: View {
     @Namespace private var namespace
     @State private var selectedItem: Tab = .home
@@ -15,25 +21,48 @@ struct TabBarView: View {
     @State private var isShowingMentor = false
     @EnvironmentObject private var appDataModel: AppDataModel
 
+    @Default(.userIsActivated) private var userIsActivated
+
     var body: some View {
+        let tabs: [Tab] = {
+            if userIsActivated {
+                return [.home, .practical, .schedule]
+            } else {
+                return [.home, .practical]
+            }
+        }()
+
         ZStack {
-            ZStack(alignment: .bottom) {
-                switch selectedItem {
-                case .home:
-                    ConferencePageView(namespace: namespace, isShowingMentor: $isShowingMentor)
-                case .practical:
-                    PracticalPageView()
-                case .schedule:
-                    NavigationStack {
-                        ScheduleView()
+            TabView(selection: $selectedItem) {
+                ForEach(tabs, id:\.self) { tab in
+                    switch tab {
+                    case .home:
+                        ConferencePageView(namespace: namespace, isShowingMentor: $isShowingMentor)
+                            .tabItem {
+                                Label("Conference", systemImage: "person.3")
+                                    .environment(\.symbolVariants, tab == selectedItem ? .fill : .none)
+                            }
+                            .tag(tab)
+                    case .practical:
+                        PracticalPageView()
+                            .tabItem {
+                                Label("Practical", systemImage: "wallet.pass")
+                                    .environment(\.symbolVariants, tab == selectedItem ? .fill : .none)
+                            }
+                            .tag(tab)
+                    case .schedule:
+                        NavigationStack {
+                            ScheduleView()
+                        }
+                        .tabItem {
+                            Label("Schedule", systemImage: "calendar.day.timeline.left")
+                                .environment(\.symbolVariants, tab == selectedItem ? .fill : .none)
+                        }
+                        .tag(tab)
                     }
                 }
             }
-            .safeAreaInset(edge: .bottom) {
-                TabBarBarView(selectedItem: $selectedItem)
-                    .opacity(isShowingMentor ? 0 : 1)
-            }
-            
+            .accentColor(.questionMarkColor)
         }.onAppear {
             handleAppAction()
         }.onChange(of: appActionTriggered) { newValue in
