@@ -168,11 +168,11 @@ struct PracticalPageView_Previews: PreviewProvider {
 }
 
 // MARK: - Sub section: At the conference
-let spotTheSealActive = true
 
 struct SectionAtTheConference: View {
     let iconMaxWidth: CGFloat
     @EnvironmentObject private var appDataModel: AppDataModel
+    @Default(.puzzleStatus) var puzzleStatus
 
     @Binding var navPath: NavigationPath
 
@@ -202,7 +202,7 @@ struct SectionAtTheConference: View {
                     }
                 }
             }
-            if (spotTheSealActive) {
+            if (!puzzleStatus.isEmpty) {
                 NavigationLink(value: NavigationPage.spotTheSeal) {
                     HStack {
                         Image("seal").resizable().aspectRatio(contentMode:.fit)
