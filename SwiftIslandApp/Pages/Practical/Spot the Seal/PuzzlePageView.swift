@@ -41,9 +41,9 @@ extension Puzzle {
     var color: Color {
         switch (state) {
         case .NotFound: return .clear
-        case .Found, .Nearby: return .yellow
-        case .Activated: return .orange
-        case .Solved: return .red
+        case .Found, .Nearby: return .ticketText
+        case .Activated: return .yellowDark
+        case .Solved: return .questionMarkColor
         }
     }
 }
