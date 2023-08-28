@@ -579,8 +579,8 @@
 		B3733D722A9951600069D490 /* Spot the Seal */ = {
 			isa = PBXGroup;
 			children = (
-				B3733D752A9951B10069D490 /* PuzzleItemView.swift */,
 				B3733D762A9951B10069D490 /* PuzzlePageView.swift */,
+				B3733D752A9951B10069D490 /* PuzzleItemView.swift */,
 				B3733D732A9951B10069D490 /* PuzzleView.swift */,
 				B354DDE42A9BEEE700C24461 /* Utils.swift */,
 			);

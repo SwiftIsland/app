@@ -25,6 +25,7 @@ final class AppDataModel: ObservableObject {
     @Published var events: [Event] = []
     @Published var locations: [Location] = []
     @Published var tickets: [Ticket] = []
+    @Published var puzzles: [Puzzle] = []
 
     private let logger = Logger(
         subsystem: Bundle.main.bundleIdentifier!,
@@ -57,6 +58,11 @@ final class AppDataModel: ObservableObject {
     @MainActor
     func fetchLocations() async {
         self.locations = await dataLogic.fetchLocations()
+    }
+    
+    @MainActor
+    func fetchPuzzles() async {
+        self.puzzles = await dataLogic.fetchPuzzles()
     }
 
     /// Fetches items for packing list. If none are stored locally, it'll get the list from Firebase.
@@ -118,10 +124,6 @@ final class AppDataModel: ObservableObject {
     func fetchAnswers(for tickets: [Ticket]) async throws -> [Int:[Answer]] {
         try await dataLogic.fetchAnswers(for: tickets, in: Secrets.checkinListSlug)
     }
-    
-    func fetchPuzzles() async throws -> [Puzzle] {
-        try await dataLogic.fetchPuzzles()
-    }
 }
 
 private extension AppDataModel {
@@ -136,25 +138,25 @@ private extension AppDataModel {
             appState = .loaded
         }
     }
-
+    
     /// Fetches all the mentors from Firebase
     /// - Returns: Array of `Mentor`
     func fetchMentors() async -> [Mentor] {
         await dataLogic.fetchMentors()
     }
-
+    
     /// Fetches all the pages from Firebase and stores
     /// - Returns: Array of `Page`
     func fetchPages() async -> [Page] {
         await dataLogic.fetchPages()
     }
-
+    
     /// Fetches all the activities
     /// - Returns: Array of `Activity`
     func fetchActivities() async -> [Activity] {
         await dataLogic.fetchActivities()
     }
-
+    
     func fetchEvents() async -> [Event] {
         await dataLogic.fetchEvents()
     }

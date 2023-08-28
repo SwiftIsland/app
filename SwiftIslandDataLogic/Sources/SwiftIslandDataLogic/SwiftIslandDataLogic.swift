@@ -45,7 +45,7 @@ public protocol DataLogic {
     
     func fetchAnswers(for tickets: [Ticket], in checkinList: String) async throws -> [Int:[Answer]]
     
-    func fetchPuzzles() async throws -> [Puzzle]
+    func fetchPuzzles() async -> [Puzzle]
 }
 
 public enum DataLogicError: Error {

@@ -62,9 +62,9 @@ struct PuzzlePageView: View {
                 Text("Loading...")
             } else {
                 LazyVGrid(columns: columns, spacing: spacing) {
-                    ForEach($items) { puzzle in
-                        NavigationLink(value: puzzle.wrappedValue, label: {
-                            PuzzleItemView(puzzle: puzzle.wrappedValue, isCurrent: (puzzle.wrappedValue.slug == currentPuzzleSlug))
+                    ForEach(appDataModel.puzzles) { puzzle in
+                        NavigationLink(value: puzzle, label: {
+                            PuzzleItemView(puzzle: puzzle, isCurrent: (puzzle.slug == currentPuzzleSlug))
                         }).isDetailLink(false)
                     }
                 }
@@ -79,7 +79,7 @@ struct PuzzlePageView: View {
             }
         }
         .task {
-            items = (try? await appDataModel.fetchPuzzles()) ?? []
+            await appDataModel.fetchPuzzles()
         }
         
     }
