@@ -9,6 +9,7 @@ import SwiftIslandDataLogic
 
 extension Defaults.Keys {
     static let puzzleStatus = Key<[String: PuzzleState]>("puzzleStatus", default: [:])
+    static let puzzleHints = Key<[String: String]>("puzzleHints", default: [:])
 }
 
 enum PuzzleState: String, Defaults.Serializable {
@@ -48,34 +49,48 @@ extension Puzzle {
     }
 }
 
-let spacing: CGFloat = 0
+
+struct PuzzleGrid: View {
+    @EnvironmentObject private var appDataModel: AppDataModel
+    @State var currentPuzzleSlug: String?
+    private let spacing: CGFloat = 0
+    private let columns = Array(repeatElement(GridItem(.flexible(minimum: 44), spacing: 0), count: 4))
+    var body: some View {
+        LazyVGrid(columns: columns, spacing: spacing) {
+            ForEach(appDataModel.puzzles) { puzzle in
+                NavigationLink(value: puzzle, label: {
+                    PuzzleItemView(puzzle: puzzle, isCurrent: (puzzle.slug == currentPuzzleSlug))
+                }).disabled(puzzle.state == .NotFound)
+            }
+        }
+        .padding(20)
+        .navigationTitle("Spot the Seal")
+        .navigationBarItems(trailing: Button("Reset", action: { Defaults.reset(.puzzleStatus) }))
+        .navigationDestination(for: Puzzle.self) { puzzle in
+            PuzzleView(puzzle: puzzle)
+        }
+    }
+}
 
 struct PuzzlePageView: View {
     @EnvironmentObject private var appDataModel: AppDataModel
     @Default(.puzzleStatus) var puzzleStatus
-    @State var items: [Puzzle] = []
+    @Default(.puzzleHints) var puzzleHints
     @State var currentPuzzleSlug: String?
-    let columns = Array(repeatElement(GridItem(.flexible(minimum: 44), spacing: 0), count: 4))
     var body: some View {
         VStack {
-            if (items.count == 0) {
+            if (appDataModel.puzzles.count == 0) {
                 Text("Loading...")
             } else {
-                LazyVGrid(columns: columns, spacing: spacing) {
-                    ForEach(appDataModel.puzzles) { puzzle in
-                        NavigationLink(value: puzzle, label: {
-                            PuzzleItemView(puzzle: puzzle, isCurrent: (puzzle.slug == currentPuzzleSlug))
-                        }).isDetailLink(false)
+                PuzzleGrid(currentPuzzleSlug: currentPuzzleSlug)
+                Text("Hints").font(.title)
+                ForEach(puzzleHints.keys.sorted(), id: \.self) { slug in
+                    if let hint = puzzleHints[slug] {
+                        let _ = print(hint, slug, puzzleStatus[slug])
+                        let status = puzzleStatus[slug]
+                        Text(hint).strikethrough(status != nil && status != .NotFound)
                     }
                 }
-                .padding(20)
-                .navigationTitle("Spot the Seal")
-                .navigationBarItems(trailing: Button("Reset", action: { Defaults.reset(.puzzleStatus) }))
-                .navigationDestination(for: Puzzle.self) { puzzle in
-                    PuzzleView(puzzle: puzzle)
-                }
-                Text("Hints").font(.title)
-                // TODO add all hints here
             }
         }
         .task {
@@ -87,7 +102,8 @@ struct PuzzlePageView: View {
 
 struct PuzzlePageView_Previews: PreviewProvider {
     static var previews: some View {
-        PuzzlePageView()
+        let appDataModel = AppDataModel()
+        PuzzlePageView().environmentObject(appDataModel)
     }
 }
 

@@ -39,21 +39,22 @@ struct PDFViewUI : UIViewRepresentable {
     
 }
 struct PuzzleView: View {
+    @EnvironmentObject private var appDataModel: AppDataModel
+    @Default(.puzzleStatus) var puzzleStatus
     @State var puzzle: Puzzle
     @State var solution: String = ""
-    @Default(.puzzleStatus) var puzzleStatus
+    
     var body: some View {
-        
         VStack(alignment: .center) {
             let url = Bundle.main.url(forResource: puzzle.filename, withExtension: "pdf")
             if let url = url {
                 ZStack {
-                    PDFViewUI(url: url)        
+                    PDFViewUI(url: url)
                         .padding(1)
                     Image("frame")
                         .resizable(capInsets: EdgeInsets(),resizingMode: .stretch)
                         .allowsHitTesting(false)
-                        .colorInvert()                        
+                        .colorInvert()
                     }
                 .aspectRatio(1, contentMode: .fit)
             }
@@ -64,6 +65,9 @@ struct PuzzleView: View {
                     Button("Check") {
                         do {
                             let hint = try decrypt(value: puzzle.encryptedHint, solution: solution, type: Hint.self)
+                            if let forPuzzle = appDataModel.puzzles.first(where: { $0.number == hint.forPuzzle }) {
+                                Defaults[.puzzleHints][forPuzzle.slug] = hint.text
+                            }
                             withAnimation {
                                 puzzle.state = .Solved
                             }
