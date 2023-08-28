@@ -16,14 +16,16 @@ jobs:
       - name: Select correct xcode
         run: sudo xcode-select -s '/Applications/Xcode_14.3.1.app'
       - name: Create dummy Secrets.json file
-        run: echo '{ }' >> /Users/runner/work/app/app/SwiftIslandApp/SwiftIslandApp/Resources/Secrets.json
+        run: echo '{ }' >> /Users/runner/work/app/app/SwiftIslandApp/Resources/Secrets.json
       - name: Build and test
         run: |
           xcodebuild \
+            clean \
             test \
             -project SwiftIslandApp.xcodeproj \
             -scheme SwiftIsland \
             -configuration "Debug" \
             -showBuildTimingSummary \
             -destination 'platform=iOS Simulator,name=iPhone 14' \
+            -clonedSourcePackagesDirPath ~/clonedSourcePackagesDirPath \
             "COMPILER_INDEX_STORE_ENABLE=NO" | xcbeautify
