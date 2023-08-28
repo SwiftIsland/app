@@ -81,11 +81,14 @@ struct PuzzlePageView: View {
             } else {
                 PuzzleGrid(currentPuzzleSlug: currentPuzzleSlug)
                 Text("Hints").font(.title)
-                ForEach(puzzleHints.keys.sorted(), id: \.self) { slug in
-                    if let hint = puzzleHints[slug] {
-                        let _ = print(hint, slug, puzzleStatus[slug])
-                        let status = puzzleStatus[slug]
-                        Text(hint).strikethrough(status != nil && status != .NotFound)
+                VStack(alignment: .leading) {
+                    Text("Put your phone against any seal you discover ").strikethrough(!puzzleStatus.isEmpty)
+                    ForEach(puzzleHints.keys.sorted(), id: \.self) { slug in
+                        if let hint = puzzleHints[slug] {
+                            let status = puzzleStatus[slug]
+                            let usedHint = status != nil && status != .NotFound
+                            Text(hint).strikethrough(usedHint)
+                        }
                     }
                 }
             }
