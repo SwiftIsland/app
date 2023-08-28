@@ -16,7 +16,7 @@ jobs:
       - name: Select correct xcode
         run: sudo xcode-select -s '/Applications/Xcode_14.3.1.app'
       - name: Create dummy Secrets.json file
-        run: echo '{ }' >> SwiftIslandApp/Resources/Secrets.json
+        run: echo '{ }' >> /Users/runner/work/app/app/SwiftIslandApp/SwiftIslandApp/Resources/Secrets.json
       - name: Build and test
         run: |
           xcodebuild \
