@@ -16,10 +16,14 @@ func encrypt<T : Encodable>(value: T, solution: String) throws -> String {
     return base64
 }
 
+enum DecryptError: Error {
+    case failedDecoding
+}
+
 let decoder = JSONDecoder()
-func decrypt<T : Decodable>(value: String, solution: String, type: T.Type) throws -> T? {
-    guard let data = Data(base64Encoded: value.data(using: .utf8)!) else {
-        return nil
+func decrypt<T : Decodable>(value: String, solution: String, type: T.Type) throws -> T {
+    guard let valueData = value.data(using: .utf8), let data = Data(base64Encoded: valueData) else {
+        throw DecryptError.failedDecoding
     }
     let sealedBox = try ChaChaPoly.SealedBox(combined: data)
     let key = solution.lowercased().padding(toLength: 32, withPad: " ", startingAt: 0)
