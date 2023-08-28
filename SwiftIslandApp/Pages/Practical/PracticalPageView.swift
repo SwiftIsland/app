@@ -205,8 +205,11 @@ struct SectionAtTheConference: View {
             if (!puzzleStatus.isEmpty) {
                 NavigationLink(value: NavigationPage.spotTheSeal) {
                     HStack {
-                        Image("seal").resizable().aspectRatio(contentMode:.fit)
+                        Image("seal")
+                            .resizable()
+                            .renderingMode(.template)
                             .foregroundColor(.questionMarkColor)
+                            .aspectRatio(contentMode:.fit)
                             .frame(maxWidth: iconMaxWidth)
                         Text("Spot the Seal")
                             .dynamicTypeSize(.small ... .medium)
