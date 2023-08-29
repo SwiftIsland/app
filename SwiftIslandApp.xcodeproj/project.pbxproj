@@ -88,6 +88,11 @@
 		B332ADFA2A9A813C00557AA7 /* game-of-life.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B332ADF42A9A813B00557AA7 /* game-of-life.pdf */; };
 		B332ADFB2A9A813C00557AA7 /* marquee.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B332ADF52A9A813C00557AA7 /* marquee.pdf */; };
 		B332ADFC2A9A813C00557AA7 /* mills.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B332ADF62A9A813C00557AA7 /* mills.pdf */; };
+		B35057F12A9DD19700B71436 /* elements.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B35057F02A9DD19700B71436 /* elements.pdf */; };
+		B35057F32A9DD1F900B71436 /* the-key.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B35057F22A9DD1F900B71436 /* the-key.pdf */; };
+		B35057F52A9DD20800B71436 /* safe.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B35057F42A9DD20800B71436 /* safe.pdf */; };
+		B35057F92A9DD23C00B71436 /* farmers-wedding.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B35057F82A9DD23C00B71436 /* farmers-wedding.pdf */; };
+		B35057FB2A9DD24400B71436 /* mystery-museum.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B35057FA2A9DD24400B71436 /* mystery-museum.pdf */; };
 		B354DDE52A9BEEE700C24461 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B354DDE42A9BEEE700C24461 /* Utils.swift */; };
 		B3733D772A9951B10069D490 /* PuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3733D732A9951B10069D490 /* PuzzleView.swift */; };
 		B3733D792A9951B10069D490 /* PuzzleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3733D752A9951B10069D490 /* PuzzleItemView.swift */; };
@@ -207,6 +212,11 @@
 		B332ADF42A9A813B00557AA7 /* game-of-life.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "game-of-life.pdf"; sourceTree = "<group>"; };
 		B332ADF52A9A813C00557AA7 /* marquee.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = marquee.pdf; sourceTree = "<group>"; };
 		B332ADF62A9A813C00557AA7 /* mills.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = mills.pdf; sourceTree = "<group>"; };
+		B35057F02A9DD19700B71436 /* elements.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = elements.pdf; sourceTree = "<group>"; };
+		B35057F22A9DD1F900B71436 /* the-key.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "the-key.pdf"; sourceTree = "<group>"; };
+		B35057F42A9DD20800B71436 /* safe.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = safe.pdf; sourceTree = "<group>"; };
+		B35057F82A9DD23C00B71436 /* farmers-wedding.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "farmers-wedding.pdf"; sourceTree = "<group>"; };
+		B35057FA2A9DD24400B71436 /* mystery-museum.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "mystery-museum.pdf"; sourceTree = "<group>"; };
 		B354DDE42A9BEEE700C24461 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		B3733D732A9951B10069D490 /* PuzzleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuzzleView.swift; sourceTree = "<group>"; };
 		B3733D752A9951B10069D490 /* PuzzleItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuzzleItemView.swift; sourceTree = "<group>"; };
@@ -566,6 +576,11 @@
 		B332ADF02A9A812500557AA7 /* Puzzles */ = {
 			isa = PBXGroup;
 			children = (
+				B35057FA2A9DD24400B71436 /* mystery-museum.pdf */,
+				B35057F82A9DD23C00B71436 /* farmers-wedding.pdf */,
+				B35057F42A9DD20800B71436 /* safe.pdf */,
+				B35057F22A9DD1F900B71436 /* the-key.pdf */,
+				B35057F02A9DD19700B71436 /* elements.pdf */,
 				B332ADF22A9A813B00557AA7 /* double-names.pdf */,
 				B332ADF42A9A813B00557AA7 /* game-of-life.pdf */,
 				B332ADF52A9A813C00557AA7 /* marquee.pdf */,
@@ -737,10 +752,15 @@
 				2AEDC49B2A4A031000CD0180 /* Assets.xcassets in Resources */,
 				B332ADFA2A9A813C00557AA7 /* game-of-life.pdf in Resources */,
 				B332ADFC2A9A813C00557AA7 /* mills.pdf in Resources */,
+				B35057F32A9DD1F900B71436 /* the-key.pdf in Resources */,
 				2AECBFB52A95DD58001FBFA9 /* Secrets.json in Resources */,
 				B332ADF72A9A813C00557AA7 /* truchet-tiles.pdf in Resources */,
+				B35057F12A9DD19700B71436 /* elements.pdf in Resources */,
+				B35057F92A9DD23C00B71436 /* farmers-wedding.pdf in Resources */,
 				2A16EB3C2A4CDB3600CC881D /* WorkSans-Bold.ttf in Resources */,
 				B332ADF92A9A813C00557AA7 /* valuta.pdf in Resources */,
+				B35057FB2A9DD24400B71436 /* mystery-museum.pdf in Resources */,
+				B35057F52A9DD20800B71436 /* safe.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
