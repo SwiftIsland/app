@@ -16,9 +16,9 @@ struct Hint: Decodable, Encodable {
 struct PDFViewUI : UIViewRepresentable {
     let pdfView = PDFView()
     var url: URL?
-    init(url : URL) {
+    init(url : URL, backgroundColor: Color = .gray) {
         self.url = url
-        self.pdfView.backgroundColor = UIColor(white: 0.9, alpha: 1)
+        self.pdfView.backgroundColor = UIColor(backgroundColor)
 
         self.pdfView.pageShadowsEnabled = false
         self.pdfView.pageBreakMargins = UIEdgeInsets()
@@ -40,6 +40,7 @@ struct PDFViewUI : UIViewRepresentable {
 }
 struct PuzzleView: View {
     @EnvironmentObject private var appDataModel: AppDataModel
+    @Environment(\.colorScheme) var colorScheme
     @Default(.puzzleStatus) var puzzleStatus
     @State var puzzle: Puzzle
     @State var solution: String = ""
@@ -48,18 +49,25 @@ struct PuzzleView: View {
         VStack(alignment: .center) {
             let url = Bundle.main.url(forResource: puzzle.filename, withExtension: "pdf")
             if let url = url {
+                let frameColor: Color = colorScheme == .light ? .black : .white
+                let pdfBackgroundColor = colorScheme == .light ?
+                Color(white: 0.9) : Color(white: 0.1)
                 ZStack {
-                    PDFViewUI(url: url)
-                        .padding(1)
+                    PDFViewUI(url: url, backgroundColor: pdfBackgroundColor)
                     Image("frame")
+                        .renderingMode(.template)
                         .resizable(capInsets: EdgeInsets(),resizingMode: .stretch)
+                        .foregroundColor(frameColor)
                         .allowsHitTesting(false)
                         .colorInvert()
                     }
                 .aspectRatio(1, contentMode: .fit)
             }
             if (puzzle.state != .Solved) {
-                Text(puzzle.question)
+                Text("\(puzzle.question) (\(puzzle.answerLength))").font(.headline)
+                if let tip = puzzle.tip {
+                    Text(tip).font(.footnote)
+                }
                 HStack(spacing: 20) {
                     TextField("Solution", text:$solution)
                     Button("Check") {
@@ -73,7 +81,6 @@ struct PuzzleView: View {
                             }
                                 
                         } catch {
-                            print("Wrong16 \(error)")
                             solution = ""
                         }
                     }
@@ -90,6 +97,7 @@ struct PuzzleView: View {
 struct PuzzleView_Previews: PreviewProvider {
     @State static var puzzle = Puzzle.forPreview(number: "16", filename: "marquee")
     static var previews: some View {
-        PuzzleView( puzzle: $puzzle.wrappedValue)
+        PuzzleView( puzzle: $puzzle.wrappedValue).preferredColorScheme(.light)
+        PuzzleView( puzzle: $puzzle.wrappedValue).preferredColorScheme(.dark)
     }
 }

@@ -29,10 +29,9 @@ struct PuzzleItemView: View {
     var body: some View {
         let stack = ZStack {
             
-            Text("\(puzzle.id)")
+            Text("\(puzzle.number)")
                 .font(.custom("WorkSans-Bold", size: 30))
-                .foregroundColor(.black)
-            Rectangle().stroke(style: StrokeStyle(lineWidth: 2)).foregroundColor(.black)                         
+            Rectangle().stroke(style: StrokeStyle(lineWidth: 2))  
             Image("stamp")
                 .renderingMode(.template)
                 .resizable(capInsets: EdgeInsets(), resizingMode:.stretch)
@@ -97,6 +96,10 @@ struct PuzzleItemView_Previews: PreviewProvider {
         Grid {
             PuzzleItemView(puzzle: Puzzle.forPreview(number: "1"))
             PuzzleItemView(puzzle: Puzzle.forPreview(number: "15"))
-        }
+        }.preferredColorScheme(.light)
+        Grid {
+            PuzzleItemView(puzzle: Puzzle.forPreview(number: "1"))
+            PuzzleItemView(puzzle: Puzzle.forPreview(number: "15"))
+        }.preferredColorScheme(.dark)
     }
 }
