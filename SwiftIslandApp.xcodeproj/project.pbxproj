@@ -88,6 +88,7 @@
 		B332ADFA2A9A813C00557AA7 /* game-of-life.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B332ADF42A9A813B00557AA7 /* game-of-life.pdf */; };
 		B332ADFB2A9A813C00557AA7 /* marquee.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B332ADF52A9A813C00557AA7 /* marquee.pdf */; };
 		B332ADFC2A9A813C00557AA7 /* mills.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B332ADF62A9A813C00557AA7 /* mills.pdf */; };
+		B340138F2A9EA479008A9C21 /* rebus.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B340138E2A9EA479008A9C21 /* rebus.pdf */; };
 		B35057F12A9DD19700B71436 /* elements.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B35057F02A9DD19700B71436 /* elements.pdf */; };
 		B35057F32A9DD1F900B71436 /* the-key.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B35057F22A9DD1F900B71436 /* the-key.pdf */; };
 		B35057F52A9DD20800B71436 /* safe.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B35057F42A9DD20800B71436 /* safe.pdf */; };
@@ -212,6 +213,7 @@
 		B332ADF42A9A813B00557AA7 /* game-of-life.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "game-of-life.pdf"; sourceTree = "<group>"; };
 		B332ADF52A9A813C00557AA7 /* marquee.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = marquee.pdf; sourceTree = "<group>"; };
 		B332ADF62A9A813C00557AA7 /* mills.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = mills.pdf; sourceTree = "<group>"; };
+		B340138E2A9EA479008A9C21 /* rebus.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = rebus.pdf; sourceTree = "<group>"; };
 		B35057F02A9DD19700B71436 /* elements.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = elements.pdf; sourceTree = "<group>"; };
 		B35057F22A9DD1F900B71436 /* the-key.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "the-key.pdf"; sourceTree = "<group>"; };
 		B35057F42A9DD20800B71436 /* safe.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = safe.pdf; sourceTree = "<group>"; };
@@ -576,6 +578,7 @@
 		B332ADF02A9A812500557AA7 /* Puzzles */ = {
 			isa = PBXGroup;
 			children = (
+				B340138E2A9EA479008A9C21 /* rebus.pdf */,
 				B35057FA2A9DD24400B71436 /* mystery-museum.pdf */,
 				B35057F82A9DD23C00B71436 /* farmers-wedding.pdf */,
 				B35057F42A9DD20800B71436 /* safe.pdf */,
@@ -750,6 +753,7 @@
 				2A16EB642A4F6CC200CC881D /* GoogleService-Info.plist in Resources */,
 				2A37FB982A7D3EFC0062E63A /* Acknowledgements.plist in Resources */,
 				2AEDC49B2A4A031000CD0180 /* Assets.xcassets in Resources */,
+				B340138F2A9EA479008A9C21 /* rebus.pdf in Resources */,
 				B332ADFA2A9A813C00557AA7 /* game-of-life.pdf in Resources */,
 				B332ADFC2A9A813C00557AA7 /* mills.pdf in Resources */,
 				B35057F32A9DD1F900B71436 /* the-key.pdf in Resources */,
