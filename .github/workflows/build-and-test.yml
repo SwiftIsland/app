@@ -28,4 +28,4 @@ jobs:
             -showBuildTimingSummary \
             -destination 'platform=iOS Simulator,name=iPhone 14' \
             -clonedSourcePackagesDirPath ~/clonedSourcePackagesDirPath \
-            "COMPILER_INDEX_STORE_ENABLE=NO" | xcbeautify
+            "COMPILER_INDEX_STORE_ENABLE=NO"
