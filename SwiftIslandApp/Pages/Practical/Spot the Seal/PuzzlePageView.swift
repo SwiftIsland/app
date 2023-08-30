@@ -109,10 +109,3 @@ struct PuzzlePageView_Previews: PreviewProvider {
     }
 }
 
-// Flow:
-// Tap NFC: get a yellow stamp
-// Open puzzle view, with other user nearby: highlight shared stamps by pulsating
-// Tap pulsating stamp: flip and make orange
-// Tap orange stamp: open puzzle
-// Find solution to puzzle: make stamp red (and still flipped)
-// Every solved puzzle has a hint, that is shown below the puzzle page
