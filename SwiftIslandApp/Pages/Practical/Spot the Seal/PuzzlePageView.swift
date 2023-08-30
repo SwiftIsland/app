@@ -21,6 +21,7 @@ enum PuzzleState: String, Defaults.Serializable {
     
     var next: PuzzleState {
         switch(self) {
+        // Not all states are currently used, they were part of an more elaborate flow we had in mind initially. Currently we only use .NotFound, .Found and .Solved
         case .NotFound: return .Found
         case .Found: return .Nearby
         case .Nearby: return .Activated
