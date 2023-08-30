@@ -42,9 +42,9 @@ extension Puzzle {
     var color: Color {
         switch (state) {
         case .NotFound: return .clear
-        case .Found, .Nearby: return .ticketText
+        case .Found, .Nearby: return .questionMarkColor
         case .Activated: return .yellowDark
-        case .Solved: return .questionMarkColor
+        case .Solved: return .green
         }
     }
 }
