@@ -85,7 +85,11 @@ struct PuzzleView: View {
                     }
                 }
             } else {
-                Image(systemName: "checkmark.seal").resizable().aspectRatio(contentMode: .fit).foregroundColor(.questionMarkColor).frame(width: 100)
+                Image(systemName: "checkmark.seal")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .foregroundColor(.green)
+                    .frame(width: 100)
             }
         }.padding(20)
             .navigationTitle(puzzle.title)
