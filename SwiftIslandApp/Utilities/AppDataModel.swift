@@ -138,25 +138,25 @@ private extension AppDataModel {
             appState = .loaded
         }
     }
-    
+
     /// Fetches all the mentors from Firebase
     /// - Returns: Array of `Mentor`
     func fetchMentors() async -> [Mentor] {
         await dataLogic.fetchMentors()
     }
-    
+
     /// Fetches all the pages from Firebase and stores
     /// - Returns: Array of `Page`
     func fetchPages() async -> [Page] {
         await dataLogic.fetchPages()
     }
-    
+
     /// Fetches all the activities
     /// - Returns: Array of `Activity`
     func fetchActivities() async -> [Activity] {
         await dataLogic.fetchActivities()
     }
-    
+
     func fetchEvents() async -> [Event] {
         await dataLogic.fetchEvents()
     }
