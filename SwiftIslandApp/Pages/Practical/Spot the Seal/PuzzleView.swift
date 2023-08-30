@@ -50,8 +50,7 @@ struct PuzzleView: View {
             let url = Bundle.main.url(forResource: puzzle.filename, withExtension: "pdf")
             if let url = url {
                 let frameColor: Color = colorScheme == .light ? .black : .white
-                let pdfBackgroundColor = colorScheme == .light ?
-                Color(white: 0.9) : Color(white: 0.1)
+                let pdfBackgroundColor = colorScheme == .light ? Color(white: 0.9) : Color(white: 0.1)
                 ZStack {
                     PDFViewUI(url: url, backgroundColor: pdfBackgroundColor)
                     Image("frame")
