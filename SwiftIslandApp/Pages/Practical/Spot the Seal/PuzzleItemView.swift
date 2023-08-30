@@ -73,31 +73,6 @@ struct PuzzleItemView: View {
                 }
         case .Solved, .NotFound, .Nearby, .Activated:
             stack
-    //        stack.onTapGesture {
-    //            let next = puzzle.state.next
-    //            puzzle.state = next
-    //            switch(next) {
-    //            case .Found:
-    //                scale = 20
-    //                withAnimation(.easeInOut(duration: 0.3)) {
-    //                    scale = 1
-    //                }
-    //            case .Nearby:
-    //                scale = 1
-    //                let baseAnimation = Animation.easeInOut(duration: 0.2)
-    //                let repeated = baseAnimation.repeatForever(autoreverses: true)
-    //                withAnimation(repeated) {
-    //                    scale = 1.07
-    //                }
-    //            case .Activated:
-    //                flipAngle = 0
-    //                scale = 1
-    //                withAnimation(Animation.easeInOut(duration: 0.25)) {
-    //                    flipAngle = 180
-    //                }
-    //            default:
-    //                scale = 1
-    //            }
         }
     }
 }
