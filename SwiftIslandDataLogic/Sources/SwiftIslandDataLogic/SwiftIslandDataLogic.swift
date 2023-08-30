@@ -44,7 +44,8 @@ public protocol DataLogic {
     func fetchTicket(slug: String, from checkinList: String) async throws -> Ticket
     
     func fetchAnswers(for tickets: [Ticket], in checkinList: String) async throws -> [Int:[Answer]]
-        
+    
+    func fetchPuzzles() async -> [Puzzle]
 }
 
 public enum DataLogicError: Error {
@@ -167,6 +168,11 @@ public class SwiftIslandDataLogic: DataLogic, ObservableObject {
             result[ticket.id] = allAnswers.filter({ $0.ticketId == ticket.id })
         }
         return result
+    }
+    
+    public func fetchPuzzles() async -> [Puzzle] {
+        let request = AllPuzzlesRequest()
+        return await fetchFromFirebase(forRequest: request).sorted(by: { $0.order < $1.order })
     }
 }
 

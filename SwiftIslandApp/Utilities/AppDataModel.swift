@@ -25,6 +25,7 @@ final class AppDataModel: ObservableObject {
     @Published var events: [Event] = []
     @Published var locations: [Location] = []
     @Published var tickets: [Ticket] = []
+    @Published var puzzles: [Puzzle] = []
 
     private let logger = Logger(
         subsystem: Bundle.main.bundleIdentifier!,
@@ -57,6 +58,11 @@ final class AppDataModel: ObservableObject {
     @MainActor
     func fetchLocations() async {
         self.locations = await dataLogic.fetchLocations()
+    }
+    
+    @MainActor
+    func fetchPuzzles() async {
+        self.puzzles = await dataLogic.fetchPuzzles()
     }
 
     /// Fetches items for packing list. If none are stored locally, it'll get the list from Firebase.

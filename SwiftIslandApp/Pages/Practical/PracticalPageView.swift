@@ -18,6 +18,7 @@ enum NavigationPage {
     case acknowledgement
     case source
     case tickets
+    case spotTheSeal
 }
 
 struct PracticalPageView: View {
@@ -133,8 +134,11 @@ struct PracticalPageView: View {
                     }
                 case .source:
                     SourceView()
+                case .spotTheSeal:
+                    PuzzlePageView()
                 }
             }
+
         }
         .tint(.questionMarkColor)
     }
@@ -168,6 +172,7 @@ struct PracticalPageView_Previews: PreviewProvider {
 struct SectionAtTheConference: View {
     let iconMaxWidth: CGFloat
     @EnvironmentObject private var appDataModel: AppDataModel
+    @Default(.puzzleStatus) var puzzleStatus
 
     @Binding var navPath: NavigationPath
 
@@ -196,6 +201,20 @@ struct SectionAtTheConference: View {
                             .dynamicTypeSize(.small ... .medium)
                     }
                 }
+            }
+            if (!puzzleStatus.isEmpty) {
+                NavigationLink(value: NavigationPage.spotTheSeal) {
+                    HStack {
+                        Image("seal")
+                            .resizable()
+                            .renderingMode(.template)
+                            .foregroundColor(.questionMarkColor)
+                            .aspectRatio(contentMode:.fit)
+                            .frame(maxWidth: iconMaxWidth)
+                        Text("Spot the Seal")
+                            .dynamicTypeSize(.small ... .medium)
+                    }
+                }                
             }
         }
     }
