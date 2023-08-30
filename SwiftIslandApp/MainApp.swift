@@ -38,7 +38,7 @@ struct MainApp: App {
             }
             .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { activity in
                 if let url = activity.webpageURL {
-                    handleOpenURL(url)
+                   handleOpenURL(url)
                 }
             }
             .sheet(isPresented: .constant(currentPuzzleSlug != nil), onDismiss: {
