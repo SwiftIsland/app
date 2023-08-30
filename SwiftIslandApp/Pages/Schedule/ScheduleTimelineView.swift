@@ -9,10 +9,10 @@ struct ScheduleTimelineView: View {
     @Binding var hourSpacing: Double
     @Binding var hourHeight: Double
     @State private var timelineOffset: Double = 0
-
+    
     // Timer for updating the position of the timeline
     private let timer = Timer.publish(every: 60, on: .main, in: .common).autoconnect()
-
+    
     var body: some View {
         GeometryReader { _ in
             VStack {
@@ -31,7 +31,7 @@ struct ScheduleTimelineView: View {
             calculateOffset()
         }
     }
-
+    
     func calculateOffset() {
         let actualHourHeight = hourHeight + hourSpacing
         let heightPerSecond = (actualHourHeight / 60) / 60

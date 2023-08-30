@@ -9,7 +9,7 @@ import SwiftIslandDataLogic
 
 struct MapView: View {
     @EnvironmentObject private var appDataModel: AppDataModel
-
+    
     @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 53.11478763673313,
                                                                                   longitude: 4.8972633598615065),
                                                    span: MKCoordinateSpan(latitudeDelta: 0.01,
@@ -17,7 +17,7 @@ struct MapView: View {
     @State private var showFilterPopover = false
     @State private var locationTypes: [LocationTypeSelection] = []
     @State private var filteredLocation: [Location] = []
-
+    
     var body: some View {
         Map(coordinateRegion: $region, annotationItems: filteredLocation) { location in
             MapAnnotation(coordinate: location.coordinate, anchorPoint: CGPoint(x: 0.5, y: 0.9)) {
@@ -79,7 +79,7 @@ struct MapView: View {
             filteredLocation = appDataModel.locations.filter { selectedTypes.contains($0.type) }
         }
     }
-
+    
     func filterTypes() {
         self.locationTypes = appDataModel.locations.map { $0.type }.unique().map { LocationTypeSelection(locationType: $0, isSelected: true) }
     }
@@ -88,7 +88,7 @@ struct MapView: View {
 struct MapView_Previews: PreviewProvider {
     static var previews: some View {
         let appDataModel = AppDataModel()
-
+        
         let locations = [
             Location.forPreview(id: "0", title: "End or minor street", type: .venue, coordinate: CLLocationCoordinate2D(latitude: 53.114887, longitude: 4.897275)),
             Location.forPreview(id: "1", title: "Bungalow", type: .bungalow, coordinate: CLLocationCoordinate2D(latitude: 53.114039, longitude: 4.896798)),
@@ -98,7 +98,7 @@ struct MapView_Previews: PreviewProvider {
             Location.forPreview(id: "5", title: "Restaurant", type: .restaurant, coordinate: CLLocationCoordinate2D(latitude: 53.114767, longitude: 4.897045))
         ]
         appDataModel.locations = locations
-
+        
         return NavigationStack {
             MapView()
                 .environmentObject(appDataModel)
@@ -108,7 +108,7 @@ struct MapView_Previews: PreviewProvider {
 
 private struct LocationTypeSelection: Identifiable, Equatable {
     var id: String { locationType.id }
-
+    
     let locationType: LocationType
     var isSelected = false
 }

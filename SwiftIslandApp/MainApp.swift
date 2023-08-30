@@ -13,7 +13,7 @@ struct MainApp: App {
     init() {
         SwiftIslandDataLogic.configure()
     }
-
+    
     @StateObject private var appDataModel = AppDataModel()
     @State private var appActionTriggered: AppActions?
     @State private var showTicketAlert = false
@@ -38,7 +38,7 @@ struct MainApp: App {
             }
             .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { activity in
                 if let url = activity.webpageURL {
-                   handleOpenURL(url)
+                    handleOpenURL(url)
                 }
             }
             .sheet(isPresented: .constant(currentPuzzleSlug != nil), onDismiss: {
@@ -66,11 +66,11 @@ struct MainApp: App {
 private extension MainApp {
     func handleOpenURL(_ url: URL) {
         guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true), components.host == "swiftisland.nl" else { return }
-
+        
         let actions = components.queryItems?.compactMap { URLTask(rawValue: $0) }
         actions?.forEach { handleUrlTask($0) }
     }
-
+    
     func handleUrlTask(_ urlTask: URLTask) {
         switch urlTask {
         case .action(let appAction):
@@ -97,10 +97,10 @@ private extension MainApp {
         }
         
     }
-
+    
     func handleAppAction(_ appAction: AppActions) {
         appActionTriggered = appAction
-
+        
         switch appAction {
         case .atTheConference:
             Defaults[.userIsActivated] = true
@@ -108,7 +108,7 @@ private extension MainApp {
             Defaults[.userIsActivated] = false
         }
     }
-
+    
     /// This method handles the storing of the ticket to the keychain and presenting the result
     /// - Parameter slug: The slug to store
     func handleTicketSlug(_ slug: String) async throws {

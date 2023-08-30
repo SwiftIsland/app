@@ -55,7 +55,7 @@ struct ConferencePageContentView: View {
                                          selectedMentor: $selectedMentor)
                 }
 
-                // Removed for now.
+// Removed for now.
 //                        ConferenceBoxFAQ()
 //                            .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
 //                            .scrollContentBackground(.hidden)

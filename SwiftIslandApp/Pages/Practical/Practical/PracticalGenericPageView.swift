@@ -8,11 +8,11 @@ import SwiftIslandDataLogic
 
 struct PracticalGenericPageView: View {
     let page: Page
-
+    
     var body: some View {
         ZStack {
             LinearGradient.defaultBackground
-
+            
             List {
                 Section {
                     if page.imageName != "" {
@@ -44,13 +44,13 @@ struct PracticalGenericPageView_Previews: PreviewProvider {
                             title: "At schiphol",
                             imageName: "schiphol")
         ]
-
+        
         Group {
             ForEach(pages, id: \.self) { page in
                 PracticalGenericPageView(page: page)
                     .preferredColorScheme(.light)
                     .previewDisplayName("\(page.title) Light")
-
+                
                 PracticalGenericPageView(page: page)
                     .preferredColorScheme(.dark)
                     .previewDisplayName("\(page.title) Dark")

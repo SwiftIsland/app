@@ -28,10 +28,10 @@ struct TicketEditView: View {
                 }
             }
             .confirmationDialog("Are you sure you want to\n delete this ticket from the app?", isPresented: $showDeleteConfirmation, titleVisibility: .visible) {
-                    Button("Delete", role: .destructive) {
-                        showDeleteConfirmation = false
-                        try? appDataModel.removeTicket(ticket: ticket)
-                    }
+                Button("Delete", role: .destructive) {
+                    showDeleteConfirmation = false
+                    try? appDataModel.removeTicket(ticket: ticket)
+                }
             }
     }
 }
@@ -40,7 +40,7 @@ struct TicketEditView_Previews: PreviewProvider {
     static var previews: some View {
         let appDataModel = AppDataModel()
         let ticket = Ticket.forPreview(firstName: "Paul", lastName: "Peelen")
-
+        
         NavigationStack {
             TicketEditView(ticket: ticket)
         }.environmentObject(appDataModel)
