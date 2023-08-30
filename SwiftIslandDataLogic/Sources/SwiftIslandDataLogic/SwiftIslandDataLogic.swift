@@ -172,7 +172,7 @@ public class SwiftIslandDataLogic: DataLogic, ObservableObject {
     
     public func fetchPuzzles() async -> [Puzzle] {
         let request = AllPuzzlesRequest()
-        return await fetchFromFirebase(forRequest: request)
+        return await fetchFromFirebase(forRequest: request).sorted(by: { $0.order < $1.order })
     }
 }
 
