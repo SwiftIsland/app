@@ -21,7 +21,7 @@ struct TicketsView: View {
 
     var body: some View {
         VStack {
-            if appDataModel.tickets.count == 0 {
+            if appDataModel.tickets.isEmpty {
                 VStack(spacing: 10) {
                     Image(systemName: "ticket").resizable().aspectRatio(contentMode: .fit).foregroundColor(Color.questionMarkColor).frame(width: 50)
                     Text("Add tickets by pasting your ti.to/tickets URL")
@@ -104,7 +104,7 @@ struct TicketsView: View {
         }
         .navigationTitle("Tickets")
         .toolbar {
-            if appDataModel.tickets.count > 0 {
+            if appDataModel.tickets.isEmpty {
                 ToolbarItem {
                     TicketAddButton(currentTicket: $currentTicket)
                 }

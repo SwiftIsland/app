@@ -17,7 +17,7 @@ struct SourceView: View {
                             .font(.callout)
                             .fontWeight(.semibold)
                             .padding(.bottom, 4)
-                        Text("This app is created by Paul Peelen for use with the Swift Island 2023 conference. Swift Island owns a copy of the source code given that the code is shared publicly via Github to anyone interested in improving this app for future conferences.\n\nThe source code will be shared at the start of the conference.")
+                        Text("This app is created by Paul Peelen for use with the Swift Island 2023 conference. Swift Island owns a copy of the source code given that the code is shared publicly via Github to anyone interested in improving this app for future conferences.\n\nThe source code will be shared at the start of the conference.") // swiftlint:disable:this line_length
                             .font(.callout)
                     }
                 } header: {

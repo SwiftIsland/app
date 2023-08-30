@@ -40,7 +40,7 @@ struct TicketEditView_Previews: PreviewProvider {
     static var previews: some View {
         let appDataModel = AppDataModel()
         let ticket = Ticket.forPreview(firstName: "Paul", lastName: "Peelen")
-        
+
         NavigationStack {
             TicketEditView(ticket: ticket)
         }.environmentObject(appDataModel)

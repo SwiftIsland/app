@@ -147,7 +147,7 @@ private extension SectionAtTheConferenceNotActivated {
             }
         }
     }
-    
+
     func getLocation() {
         Task {
             do {

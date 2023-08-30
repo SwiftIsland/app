@@ -18,7 +18,8 @@ struct ConferencePageContentView: View {
 
     @State private var nextEvent: Event?
 
-    @Default(.userIsActivated) private var userIsActivated
+    @Default(.userIsActivated)
+    private var userIsActivated
 
     var body: some View {
         GeometryReader { geo in
@@ -28,11 +29,12 @@ struct ConferencePageContentView: View {
                     ConferenceBoxTicket()
                         .padding(.vertical, 6)
 
-                    ConferenceBoxMentors(namespace: namespace,
-                                         geo: geo,
-                                         isShowingMentor: $isShowingMentor,
-                                         mayShowMentorNextMentor: $mayShowMentorNextMentor,
-                                         selectedMentor: $selectedMentor)
+                    ConferenceBoxMentors(
+                        namespace: namespace,
+                        geo: geo,
+                        isShowingMentor: $isShowingMentor,
+                        mayShowMentorNextMentor: $mayShowMentorNextMentor,
+                        selectedMentor: $selectedMentor)
 
                     if let nextEvent {
                         ConferenceBoxEvent(event: nextEvent)
@@ -48,17 +50,17 @@ struct ConferencePageContentView: View {
                         ProgressView()
                     }
 
-                    ConferenceBoxMentors(namespace: namespace,
-                                         geo: geo,
-                                         isShowingMentor: $isShowingMentor,
-                                         mayShowMentorNextMentor: $mayShowMentorNextMentor,
-                                         selectedMentor: $selectedMentor)
+                    ConferenceBoxMentors(
+                        namespace: namespace,
+                        geo: geo,
+                        isShowingMentor: $isShowingMentor,
+                        mayShowMentorNextMentor: $mayShowMentorNextMentor,
+                        selectedMentor: $selectedMentor)
                 }
-
-// Removed for now.
-//                        ConferenceBoxFAQ()
-//                            .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
-//                            .scrollContentBackground(.hidden)
+                // Removed for now.
+                //                        ConferenceBoxFAQ()
+                //                            .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
+                //                            .scrollContentBackground(.hidden)
             }
             .onAppear {
                 Task {

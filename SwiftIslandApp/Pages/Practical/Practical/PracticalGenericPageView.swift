@@ -8,14 +8,14 @@ import SwiftIslandDataLogic
 
 struct PracticalGenericPageView: View {
     let page: Page
-    
+
     var body: some View {
         ZStack {
             LinearGradient.defaultBackground
-            
+
             List {
                 Section {
-                    if page.imageName != "" {
+                    if !page.imageName.isEmpty {
                         VStack {
                             Image(page.imageName)
                                 .resizable()
@@ -40,17 +40,19 @@ struct PracticalGenericPageView: View {
 struct PracticalGenericPageView_Previews: PreviewProvider {
     static var previews: some View {
         let pages: [Page] = [
-            Page.forPreview(id: "schiphol",
-                            title: "At schiphol",
-                            imageName: "schiphol")
+            Page.forPreview(
+                id: "schiphol",
+                title: "At schiphol",
+                imageName: "schiphol"
+            )
         ]
-        
+
         Group {
             ForEach(pages, id: \.self) { page in
                 PracticalGenericPageView(page: page)
                     .preferredColorScheme(.light)
                     .previewDisplayName("\(page.title) Light")
-                
+
                 PracticalGenericPageView(page: page)
                     .preferredColorScheme(.dark)
                     .previewDisplayName("\(page.title) Dark")

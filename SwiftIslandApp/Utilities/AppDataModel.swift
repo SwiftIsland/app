@@ -46,7 +46,7 @@ final class AppDataModel: ObservableObject {
     /// Checks the event list and pick the next event from it
     /// - Returns: The next event, if there is any
     func nextEvent() async -> Event? {
-        if events.count == 0 {
+        if events.isEmpty {
             self.events = await fetchEvents()
         }
 

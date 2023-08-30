@@ -7,14 +7,14 @@ import SwiftUI
 
 struct SwiftIslandLogo: View {
     let isAnimating: Bool
-    
+
     @State private var shapeColorsTopLeft = Color.yellowDark
     @State private var shapeColorsTopRight = Color.yellowLight
     @State private var shapeColorsMiddleLeft = Color.orangeLight
     @State private var shapeColorsMiddleRight = Color.orangeDark
     @State private var shapeColorsBottomLeft = Color.redDark
     @State private var shapeColorsBottomRight = Color.redLight
-    
+
     @State private var animationDuration = 0.75 * 6
     @State private var rotationTopLeft = 0.0
     @State private var rotationTopRight = 0.0
@@ -24,8 +24,8 @@ struct SwiftIslandLogo: View {
     @State private var rotationBottomRight = 0.0
     @State private var animateIn = false
     @State private var anchor: UnitPoint = .bottom
-    
-    
+
+
     var body: some View {
         VStack(spacing: 0) {
             HStack(spacing: 0) {
@@ -71,7 +71,7 @@ struct SwiftIslandLogo: View {
                         anchor: anchor,
                         perspective: 0
                     )
-                
+
                     .percentageOffset(x: 0.25)
                     .onReceive(Timer.publish(every: animationDuration, on: .main, in: .common).autoconnect()) { _ in
                         animateRotation(rotation: $rotationMiddleLeft, order: 2, reverse: true)
@@ -117,7 +117,7 @@ struct SwiftIslandLogo: View {
                         anchor: anchor,
                         perspective: 0
                     )
-                
+
                     .percentageOffset(x: -0.75)
                     .onReceive(Timer.publish(every: animationDuration, on: .main, in: .common).autoconnect()) { _ in
                         animateRotation(rotation: $rotationBottomLeft, order: 5)
@@ -127,7 +127,7 @@ struct SwiftIslandLogo: View {
         .shadow(radius: 0)
         .padding(0)
     }
-    
+
     private func animateRotation(rotation: Binding<Double>, order: Int = 0, reverse: Bool = false) {
         if isAnimating {
             withAnimation(.interpolatingSpring(mass: 1, stiffness: 200, damping: 40, initialVelocity: 0).delay(0.75 * Double(order))) {
@@ -168,12 +168,12 @@ struct SwiftIslandLogo_Previews: PreviewProvider {
 private struct Triangle: Shape {
     func path(in rect: CGRect) -> Path {
         var path = Path()
-        
+
         path.move(to: CGPoint(x: rect.midX, y: rect.minY))
         path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY))
         path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
         path.addLine(to: CGPoint(x: rect.midX, y: rect.minY))
-        
+
         return path
     }
 }
