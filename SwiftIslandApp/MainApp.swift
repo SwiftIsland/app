@@ -45,8 +45,10 @@ struct MainApp: App {
                 currentPuzzleSlug = nil
             }) {
                 NavigationStack {
-                    PuzzlePageView(currentPuzzleSlug: $currentPuzzleSlug.wrappedValue).environmentObject(appDataModel)
+                    PuzzlePageView(currentPuzzleSlug: $currentPuzzleSlug.wrappedValue)
                 }
+                .tint(.questionMarkColor)
+                .environmentObject(appDataModel)
             }
             // TODO: Make this a navigation path to the actual ticket
             .alert("Ticket Added", isPresented: $showTicketAlert, actions: {
