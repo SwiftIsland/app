@@ -65,9 +65,10 @@ struct PuzzleGrid: View {
         }
         .padding(20)
         .navigationTitle("Spot the Seal")
-        .navigationBarItems(trailing: Button("Reset", action: { Defaults.reset(.puzzleStatus)
-            Defaults.reset(.puzzleHints)
-        }))
+//        .navigationBarItems(trailing: Button("Reset", action: {
+//            Defaults.reset(.puzzleStatus)
+//            Defaults.reset(.puzzleHints)
+//        }))
     }
 }
 

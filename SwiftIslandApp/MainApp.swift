@@ -86,9 +86,14 @@ private extension MainApp {
                 }
             }
         case .seal(let slug):
-            let currentStatus = Defaults[.puzzleStatus][slug]
-            if currentStatus == nil || currentStatus == .NotFound {
-                Defaults[.puzzleStatus][slug] = .Found
+            if slug == "reset" {
+                Defaults.reset(.puzzleStatus)
+                Defaults.reset(.puzzleHints)
+            } else {
+                let currentStatus = Defaults[.puzzleStatus][slug]
+                if currentStatus == nil || currentStatus == .NotFound {
+                    Defaults[.puzzleStatus][slug] = .Found
+                }
             }
             currentPuzzleSlug = slug
         }
