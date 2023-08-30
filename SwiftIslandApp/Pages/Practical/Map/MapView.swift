@@ -95,7 +95,7 @@ struct MapView_Previews: PreviewProvider {
             Location.forPreview(id: "2", title: "Far away bathroom, good luck!", type: .restroom, coordinate: CLLocationCoordinate2D(latitude: 53.114564, longitude: 4.896030)),
             Location.forPreview(id: "3", title: "Lots of water", type: .poi, coordinate: CLLocationCoordinate2D(latitude: 53.115704, longitude: 4.900839)),
             Location.forPreview(id: "4", title: "Second bathroom", type: .restroom, coordinate: CLLocationCoordinate2D(latitude: 53.114941, longitude: 4.897107)),
-            Location.forPreview(id: "5", title: "Restaurant", type: .restaurant, coordinate: CLLocationCoordinate2D(latitude: 53.114767, longitude: 4.897045)),
+            Location.forPreview(id: "5", title: "Restaurant", type: .restaurant, coordinate: CLLocationCoordinate2D(latitude: 53.114767, longitude: 4.897045))
         ]
         appDataModel.locations = locations
 

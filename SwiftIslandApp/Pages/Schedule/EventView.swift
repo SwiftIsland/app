@@ -64,7 +64,7 @@ struct EventView: View {
                 }
             }
             .foregroundColor(.primary)
-            .overlay{
+            .overlay {
                 RoundedRectangle(cornerRadius: 6)
                     .stroke(mainColor, lineWidth: 1)
                     .frame(maxHeight: .infinity)

@@ -12,13 +12,11 @@ public struct FAQItem: Response {
 }
 
 extension FAQItem {
-
     public static func forPreview(id: String = "1",
                                   question: String = "Lorum ipsum",
                                   answer: String = "Oh yes!") -> FAQItem {
         FAQItem(id: id, question: question, answer: answer)
     }
-
 }
 
 extension FAQItem: Hashable { }

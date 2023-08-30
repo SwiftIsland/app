@@ -38,7 +38,7 @@ struct PacklistView: View {
                                 VStack(alignment: .leading) {
                                     Text(packingItem.title)
                                         .font(.body)
-                                        .foregroundColor(.primary)                                        
+                                        .foregroundColor(.primary)
                                     if packingItem.subTitle != "" {
                                         Text(packingItem.subTitle)
                                             .font(.footnote)

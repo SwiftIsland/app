@@ -8,7 +8,6 @@ import SwiftUI
 import SwiftIslandDataLogic
 
 struct UpNextProvider: TimelineProvider {
-
     let dataLogic = SwiftIslandDataLogic()
 
     init() {

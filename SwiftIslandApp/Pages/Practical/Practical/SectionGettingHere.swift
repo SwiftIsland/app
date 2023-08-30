@@ -79,7 +79,7 @@ struct SectionGettingHere: View {
             }
             .listRowInsets(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
 
-            ForEach(pages, id:\.self) { subPage in
+            ForEach(pages, id: \.self) { subPage in
                 getLink(forSubPage: subPage)
             }
 

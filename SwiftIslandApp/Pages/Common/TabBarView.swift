@@ -34,7 +34,7 @@ struct TabBarView: View {
 
         ZStack {
             TabView(selection: $selectedItem) {
-                ForEach(tabs, id:\.self) { tab in
+                ForEach(tabs, id: \.self) { tab in
                     switch tab {
                     case .home:
                         ConferencePageView(namespace: namespace, isShowingMentor: $isShowingMentor)
@@ -65,9 +65,9 @@ struct TabBarView: View {
             .accentColor(.questionMarkColor)
         }.onAppear {
             handleAppAction()
-        }.onChange(of: appActionTriggered) { newValue in
+        }.onChange(of: appActionTriggered) { _ in
             handleAppAction()
-        }.onChange(of: appDataModel.tickets) { newValue in
+        }.onChange(of: appDataModel.tickets) { _ in
             // TODO: Open the ticket page
         }
     }

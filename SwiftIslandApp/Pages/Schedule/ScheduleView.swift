@@ -7,7 +7,6 @@ import SwiftUI
 import SwiftIslandDataLogic
 
 struct ScheduleView: View {
-
     private struct EventPositions {
         var id: String
         var sharePositionWith: [String] = []
@@ -64,7 +63,7 @@ struct ScheduleView: View {
                         let boxWidth = (width / Double(event.columnCount + 1)) - boxSpacing
                         EventView(event: event)
                             .offset(CGSize(width: boxWidth * Double(event.column) + (boxSpacing * Double(event.column)), height: (event.coordinates?.minY ?? 0)))
-                            .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y:5)
+                            .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: 5)
                             .frame(width: boxWidth, height: event.coordinates?.height ?? 20)
                     }
                     .padding(.top, 12)
@@ -107,7 +106,7 @@ struct ScheduleView: View {
                 }
             }
         }
-        .onChange(of: selectedDayTag) { newValue in
+        .onChange(of: selectedDayTag) { _ in
             showPopover = false
             self.selectedDate = Calendar.current.date(from: DateComponents(year: 2023, month: 9, day: selectedDayTag))
             updateContent()

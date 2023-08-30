@@ -46,7 +46,7 @@ struct PracticalGenericPageView_Previews: PreviewProvider {
         ]
 
         Group {
-            ForEach(pages, id:\.self) { page in
+            ForEach(pages, id: \.self) { page in
                 PracticalGenericPageView(page: page)
                     .preferredColorScheme(.light)
                     .previewDisplayName("\(page.title) Light")

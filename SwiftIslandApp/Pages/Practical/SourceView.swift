@@ -30,7 +30,7 @@ struct SourceView: View {
                             }
                             .frame(maxWidth: UIScreen.main.bounds.width / 2, maxHeight: UIScreen.main.bounds.width / 2)
                         .padding(0)
-                        HStack() {
+                        HStack {
                             Spacer()
                             Button {
                                 let url = URL(string: "https://PaulPeelen.com")!
@@ -95,7 +95,6 @@ struct SourceView: View {
                 } header: {
                     Text("Links")
                 }
-
             }
             .scrollContentBackground(.hidden)
             .navigationBarTitleDisplayMode(.inline)

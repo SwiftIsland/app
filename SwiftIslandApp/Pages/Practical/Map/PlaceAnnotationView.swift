@@ -73,7 +73,8 @@ struct PlaceAnnotationView_Previews: PreviewProvider {
                     PlaceAnnotationView(location: Location.forPreview(type: .restroom))
                     PlaceAnnotationView(location: Location.forPreview(type: .parking))
                     PlaceAnnotationView(location: Location.forPreview(type: .unknown))
-                }            }
+                }
+            }
             .previewDisplayName("Dark")
             .preferredColorScheme(.dark)
         }

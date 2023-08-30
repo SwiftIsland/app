@@ -76,7 +76,7 @@ final class AppDataModel: ObservableObject {
 
         return Defaults[.packingItems]
     }
-    
+
 
     func updateTickets() async -> [Ticket] {
         let storedTickets: [Ticket] = (try? KeychainManager.shared.get(key: .tickets) ?? []) ?? []
@@ -89,8 +89,8 @@ final class AppDataModel: ObservableObject {
         }
         return updatedTickets
     }
-    
-    
+
+
     func updateTicket(slug: String, add: Bool = true) async throws -> Ticket? {
         let ticket = try await dataLogic.fetchTicket(slug: slug, from: Secrets.checkinListSlug)
         if let index = tickets.firstIndex(where: { $0.slug == ticket.slug }) {
@@ -109,7 +109,7 @@ final class AppDataModel: ObservableObject {
         try KeychainManager.shared.store(key: .tickets, data: tickets)
         return ticket
     }
-    
+
     func removeTicket(ticket: Ticket) throws {
         guard let index = tickets.firstIndex(where: { $0.id == ticket.id }) else { return }
         Task {
@@ -120,8 +120,8 @@ final class AppDataModel: ObservableObject {
             try KeychainManager.shared.store(key: .tickets, data: tickets)
         }
     }
-    
-    func fetchAnswers(for tickets: [Ticket]) async throws -> [Int:[Answer]] {
+
+    func fetchAnswers(for tickets: [Ticket]) async throws -> [Int: [Answer]] {
         try await dataLogic.fetchAnswers(for: tickets, in: Secrets.checkinListSlug)
     }
 }

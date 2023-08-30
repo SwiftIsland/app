@@ -22,7 +22,6 @@ enum NavigationPage {
 }
 
 struct PracticalPageView: View {
-
     private let iconMaxWidth: CGFloat = 32
     @State private var pages: [Page] = []
     @State private var navigationPath = NavigationPath()
@@ -104,7 +103,6 @@ struct PracticalPageView: View {
                         Text("App version: \(Bundle.main.appVersionLong) (\(Bundle.main.appBuild))")
                             .dynamicTypeSize(.small ... .medium)
                     }
-
                 }
                 .scrollContentBackground(.hidden)
             }

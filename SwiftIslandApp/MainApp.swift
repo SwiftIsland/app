@@ -15,8 +15,8 @@ struct MainApp: App {
     }
 
     @StateObject private var appDataModel = AppDataModel()
-    @State private var appActionTriggered: AppActions? = nil
-    @State private var showTicketAlert: Bool = false
+    @State private var appActionTriggered: AppActions?
+    @State private var showTicketAlert = false
     @State private var showTicketMessage: String = ""
     @State private var currentPuzzleSlug: String?
 
@@ -64,7 +64,6 @@ struct MainApp: App {
 }
 
 private extension MainApp {
-
     func handleOpenURL(_ url: URL) {
         guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true), components.host == "swiftisland.nl" else { return }
 
@@ -80,8 +79,7 @@ private extension MainApp {
             Task {
                 do {
                     try await handleTicketSlug(slug)
-                }
-                catch {
+                } catch {
                     print(error)
                 }
             }

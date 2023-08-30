@@ -12,7 +12,7 @@ extension View {
 }
 
 
-struct PercentageOffset: ViewModifier  {
+struct PercentageOffset: ViewModifier {
     let x: Double
     let y: Double
 
@@ -20,7 +20,7 @@ struct PercentageOffset: ViewModifier  {
 
     func body(content: Content) -> some View {
         content
-            .background( GeometryReader { geo in Color.clear.onAppear { size = geo.size }})
+            .background( GeometryReader { geo in Color.clear.onAppear { size = geo.size } })
             .offset(x: size.width * x, y: size.height * y)
     }
 }

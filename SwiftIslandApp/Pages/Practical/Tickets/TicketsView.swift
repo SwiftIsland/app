@@ -7,22 +7,21 @@ import SwiftUI
 import SwiftIslandDataLogic
 import UIKit
 import CoreImage
-import CoreImage.CIFilterBuiltins
 
 struct TicketsView: View {
     @Environment(\.colorScheme) var colorScheme
     @EnvironmentObject private var appDataModel: AppDataModel
-    @State var currentTicket: Ticket = Ticket.empty
-    @State var answers: [Int:[Answer]] = [:]
-    
+    @State var currentTicket = Ticket.empty
+    @State var answers: [Int: [Answer]] = [:]
+
     func accomodation(for ticket: Ticket) -> String? {
         // TODO: select the correct question, not just the first
         return answers[ticket.id]?.first?.humanizedResponse
     }
-    
+
     var body: some View {
         VStack {
-            if (appDataModel.tickets.count == 0 ) {
+            if appDataModel.tickets.count == 0 {
                 VStack(spacing: 10) {
                     Image(systemName: "ticket").resizable().aspectRatio(contentMode: .fit).foregroundColor(Color.questionMarkColor).frame(width: 50)
                     Text("Add tickets by pasting your ti.to/tickets URL")
@@ -80,7 +79,6 @@ struct TicketsView: View {
                                 .foregroundColor(.secondary)
                                 .font(.title3)
                                 .opacity(accomodation == nil ? 0 : 1)
-
                             }
                             Image(uiImage: ticket.qrCode!).resizable().scaledToFit()
                                 .frame(width: 200, height: 200)
@@ -107,7 +105,7 @@ struct TicketsView: View {
         .navigationTitle("Tickets")
         .toolbar {
             if appDataModel.tickets.count > 0 {
-                ToolbarItem() {
+                ToolbarItem {
                     TicketAddButton(currentTicket: $currentTicket)
                 }
             }
@@ -121,8 +119,8 @@ struct TicketsView_Previews: PreviewProvider {
     static var previews: some View {
         let appDataModel = AppDataModel()
 
-        let ticket1 = Ticket.forPreview(firstName: "Sidney" , lastName: "de Koning", releaseTitle: "Organizer Ticket")
-        let ticket2 = Ticket.forPreview(firstName: "Paul" , lastName: "Peelen")
+        let ticket1 = Ticket.forPreview(firstName: "Sidney", lastName: "de Koning", releaseTitle: "Organizer Ticket")
+        let ticket2 = Ticket.forPreview(firstName: "Paul", lastName: "Peelen")
 
         appDataModel.tickets = [ ticket1, ticket2 ]
 

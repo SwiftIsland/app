@@ -27,7 +27,7 @@ struct SectionAtTheConferenceNotActivated: View {
     var body: some View {
         Section(header: Text("At the conference")) {
             VStack(alignment: .center) {
-                HStack{
+                HStack {
                     Spacer()
                     Image(systemName: "qrcode.viewfinder")
                         .foregroundColor(.questionMarkColor)
@@ -125,7 +125,6 @@ struct SectionAtTheConferenceNotActivated: View {
 }
 
 private extension SectionAtTheConferenceNotActivated {
-
     func resetActionStatus() {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
             withAnimation {

@@ -27,7 +27,7 @@ struct ScheduleTimelineView: View {
                 calculateOffset()
             }
         }
-        .onReceive(timer) { time in
+        .onReceive(timer) { _ in
             calculateOffset()
         }
     }

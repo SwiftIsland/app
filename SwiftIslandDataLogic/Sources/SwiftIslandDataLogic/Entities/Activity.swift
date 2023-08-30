@@ -28,7 +28,6 @@ extension Activity: Identifiable { }
 extension Activity: Hashable { }
 
 public extension Activity {
-
     /// Only meant to be used for Preview purposes. Might change in the future.
     /// - Parameters:
     ///   - id: The ID of the activity

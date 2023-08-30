@@ -19,32 +19,27 @@ struct TicketEditView: View {
             .toolbarColorScheme(.dark, for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
             .toolbar {
-                ToolbarItem() {
+                ToolbarItem {
                     Button {
                         showDeleteConfirmation = true
                     } label: {
                         Image(systemName: "trash")
                     }
-
                 }
             }
             .confirmationDialog("Are you sure you want to\n delete this ticket from the app?", isPresented: $showDeleteConfirmation, titleVisibility: .visible) {
-
                     Button("Delete", role: .destructive) {
                         showDeleteConfirmation = false
                         try? appDataModel.removeTicket(ticket: ticket)
-
                     }
-                }
-
-
+            }
     }
 }
 
 struct TicketEditView_Previews: PreviewProvider {
     static var previews: some View {
         let appDataModel = AppDataModel()
-        let ticket = Ticket.forPreview(firstName: "Paul" , lastName: "Peelen")
+        let ticket = Ticket.forPreview(firstName: "Paul", lastName: "Peelen")
 
         NavigationStack {
             TicketEditView(ticket: ticket)
