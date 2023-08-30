@@ -147,6 +147,8 @@ internal class DataLogicMock: DataLogic {
     var fetchTicketReturnValue = Ticket.forPreview()
     
     var fetchAnswersReturnValue: [Int:[Answer]] = [:]
+    
+    var fetchPuzzlesReturnValue: [Puzzle] = []
 
     required init() { }
 
@@ -188,6 +190,10 @@ internal class DataLogicMock: DataLogic {
     
     func fetchAnswers(for tickets: [Ticket], in checkinList: String) async throws -> [Int:[Answer]] {
         return fetchAnswersReturnValue
+    }
+    
+    func fetchPuzzles() async -> [Puzzle] {
+        return fetchPuzzlesReturnValue
     }
 
 }
