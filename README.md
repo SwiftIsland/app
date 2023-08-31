@@ -42,22 +42,24 @@ This app is mainly build by [Paul Peelen](https://paulpeelen.com) [[Github](http
 This project applies [_The Official Kodeco Swift Style Guide_](https://github.com/kodecocodes/swift-style-guide) (formally known as Ray Wenderlich Swift Style Guide), with a few exceptions which are mentioned below.
 This project uses [SwiftLint](https://github.com/realm/SwiftLint) to enforce the code style. PR's with violations of the SwiftLint rules will not be approved.
 
-### `line_limit`
+### Exceptions
+
+#### `line_limit`
 The line limit is changed from 120 to 200 for warnings and 300 for errors. The only exception where `line_limit` may be disabled is in use with long texts. Prefered is to line break these and join, but in this case it is ok to disable.
 
-### `indentation_width`
+#### `indentation_width`
 The `indentation_width` for this project is `4` instead of `2`.
 
-### `force_unwrapping`
+#### `force_unwrapping`
 Force unwrapping is discouraged, with two exceptions:
-#### Exception 1
+##### Exception 1
 When creating an `URL` from `String` and the string is in human readable format inside the code. Example:
 ```
 let url = URL(string: "https://swiftisland.nl")! // swiftlint:disable:this force_unwrap
 ```
 Any creation of dynamic `URL` may not disable this rule. This may only be disabled on line level, meaning using `:this` format.
 
-#### Exception 2
+##### Exception 2
 Use in Preview code. When creating a preview for a SwiftUI view, at times mock code is used. It is OK to force_unwrap, but prefered not to do so if possible.
 
 Example:
