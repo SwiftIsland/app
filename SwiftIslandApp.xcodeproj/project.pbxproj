@@ -795,6 +795,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"$(SDKROOT)/Acknowledgements.plist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
