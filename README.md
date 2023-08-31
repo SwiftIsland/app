@@ -39,7 +39,8 @@ If you wish to access ticket functionality you need to have a Tito token. This t
 This app is mainly build by [Paul Peelen](https://paulpeelen.com) [[Github](https://github.com/ppeelen)] [[Twitter](https://twitter.com/ppeelen)], for use for Swift Island 2023.
 
 ## Code Style
-This project applies [_The Official Kodeco Swift Style Guide_](https://github.com/kodecocodes/swift-style-guide) (formally known as Ray Wenderlich Swift Style Guide), with a few exceptions:
+This project applies [_The Official Kodeco Swift Style Guide_](https://github.com/kodecocodes/swift-style-guide) (formally known as Ray Wenderlich Swift Style Guide), with a few exceptions which are mentioned below.
+This project uses [SwiftLint](https://github.com/realm/SwiftLint) to enforce the code style. PR's with violations of the SwiftLint rules will not be approved.
 
 ### `line_limit`
 The line limit is changed from 120 to 200 for warnings and 300 for errors. The only exception where `line_limit` may be disabled is in use with long texts. Prefered is to line break these and join, but in this case it is ok to disable.
