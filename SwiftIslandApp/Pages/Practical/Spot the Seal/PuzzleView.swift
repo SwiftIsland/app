@@ -36,6 +36,23 @@ struct PDFViewUI: UIViewRepresentable {
         // Empty
     }
 }
+
+struct ShakeEffect: GeometryEffect {
+    func effectValue(size: CGSize) -> ProjectionTransform {
+        return ProjectionTransform(CGAffineTransform(translationX: -30 * sin(position * 2 * .pi), y: 0))
+    }
+
+    init(shakes: Int) {
+        position = CGFloat(shakes)
+    }
+
+    var position: CGFloat
+    var animatableData: CGFloat {
+        get { position }
+        set { position = newValue }
+    }
+}
+
 struct PuzzleView: View {
     @EnvironmentObject private var appDataModel: AppDataModel
 
@@ -47,6 +64,7 @@ struct PuzzleView: View {
 
     @State var puzzle: Puzzle
     @State var solution: String = ""
+    @State var invalidAttempts = 0
 
     var body: some View {
         VStack(alignment: .center) {
@@ -72,6 +90,8 @@ struct PuzzleView: View {
                 }
                 HStack(spacing: 20) {
                     TextField("Solution", text: $solution)
+                        .disableAutocorrection(true)
+                        .modifier(ShakeEffect(shakes: invalidAttempts * 2))
                     Button("Check") {
                         do {
                             let hint = try decrypt(value: puzzle.encryptedHint, solution: solution, type: Hint.self)
@@ -82,7 +102,9 @@ struct PuzzleView: View {
                                 puzzle.state = .solved
                             }
                         } catch {
-                            solution = ""
+                            withAnimation(.linear) {
+                                invalidAttempts += 1
+                            }
                         }
                     }
                 }
