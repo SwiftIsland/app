@@ -12,7 +12,11 @@ struct ConferenceBoxWeather: View {
 
     @State var weather: CurrentWeather?
 
-    private let myFormatter = MeasurementFormatter()
+    private let measureFormatter: MeasurementFormatter = {
+        let formatter = MeasurementFormatter()
+        formatter.unitStyle = .medium
+        return formatter
+    }()
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -33,15 +37,13 @@ struct ConferenceBoxWeather: View {
                             .font(.system(size: 82))
                             .fontWeight(.light)
                             .foregroundColor(.white)
-                        Text(myFormatter.string(from: weather.temperature))
+                            .shadow(color: .white, radius: 0.3, x: 0, y: 0.3)
+                        Text(measureFormatter.string(from: weather.temperature))
                             .padding(5)
                             .fontWeight(.light)
                             .font(.title)
                             .foregroundColor(.white)
-                        Text("The weather right now @ Texel, the Netherlands.")
-                            .font(.caption)
-                            .fontWeight(.light)
-                            .foregroundColor(.white)
+                            .shadow(color: .white, radius: 0.3, x: 0, y: 0.3)
                     } else {
                         ProgressView()
                             .tint(.white)
@@ -52,6 +54,12 @@ struct ConferenceBoxWeather: View {
                 RoundedRectangle(cornerRadius: 10, style: .continuous)
             }
             .padding(.horizontal)
+            Text("The weather right now @ Texel, the Netherlands.")
+                .font(.caption)
+                .foregroundColor(.secondary)
+                .padding(.horizontal, 20)
+                .padding(.top, 0)
+                .padding(.bottom, 12)
         }
         .onAppear {
             if !isPreview {
