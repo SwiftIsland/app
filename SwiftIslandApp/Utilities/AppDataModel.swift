@@ -28,7 +28,7 @@ final class AppDataModel: ObservableObject {
     @Published var puzzles: [Puzzle] = []
 
     private let logger = Logger(
-        subsystem: Bundle.main.bundleIdentifier!,
+        subsystem: Bundle.main.bundleIdentifier!, // swiftlint:disable:this force_unwrapping
         category: String(describing: AppDataModel.self)
     )
 
@@ -50,7 +50,9 @@ final class AppDataModel: ObservableObject {
             self.events = await fetchEvents()
         }
 
-        return events.sorted(by: { $0.startDate < $1.startDate }).first(where: { $0.startDate > Date() })
+        return events
+            .sorted { $0.startDate < $1.startDate }
+            .first { $0.startDate > Date() }
     }
 
     /// Fetches all the stored locations
@@ -59,7 +61,7 @@ final class AppDataModel: ObservableObject {
     func fetchLocations() async {
         self.locations = await dataLogic.fetchLocations()
     }
-    
+
     @MainActor
     func fetchPuzzles() async {
         self.puzzles = await dataLogic.fetchPuzzles()
@@ -162,7 +164,7 @@ private extension AppDataModel {
     }
 }
 
-private struct Secrets {
+private enum Secrets {
     private static func secrets() throws -> [String: String] {
         let fileName = "Secrets"
         guard let path = Bundle.main.path(forResource: fileName, ofType: "json") else { return [:] }

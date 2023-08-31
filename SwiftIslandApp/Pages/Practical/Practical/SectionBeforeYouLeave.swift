@@ -34,9 +34,9 @@ struct SectionBeforeYouLeave: View {
                         .dynamicTypeSize(.small ... .medium)
                 }
             }
-            if let joinSlack = appDataModel.pages.first(where: { $0.id == "joinSlack" }) {
+            if let joinSlack = appDataModel.pages.first(where: { $0.id == "joinSlack" }), let url = URL(string: joinSlack.content) {
                 Button {
-                    UIApplication.shared.open(URL(string: joinSlack.content)!)
+                    UIApplication.shared.open(url)
                 } label: {
                     HStack {
                         Image(systemName: "message")

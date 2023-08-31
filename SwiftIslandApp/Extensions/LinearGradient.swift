@@ -7,9 +7,11 @@ import SwiftUI
 
 extension LinearGradient {
     static var defaultBackground: some View {
-        LinearGradient(colors: [.conferenceBackgroundFrom, .conferenceBackgroundTo],
-                       startPoint: UnitPoint(x: 0, y: 0.1),
-                       endPoint: UnitPoint(x: 1, y: 1))
-            .ignoresSafeArea()
+        LinearGradient(
+            colors: [.conferenceBackgroundFrom, .conferenceBackgroundTo],
+            startPoint: UnitPoint(x: 0, y: 0.1),
+            endPoint: UnitPoint(x: 1, y: 1)
+        )
+        .ignoresSafeArea()
     }
 }

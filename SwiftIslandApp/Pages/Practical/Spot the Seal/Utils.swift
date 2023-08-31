@@ -7,7 +7,7 @@ import Foundation
 import CryptoKit
 
 let encoder = JSONEncoder()
-func encrypt<T : Encodable>(value: T, solution: String) throws -> String {
+func encrypt<T: Encodable>(value: T, solution: String) throws -> String {
     let json = try encoder.encode(value)
     let key = solution.lowercased().padding(toLength: 32, withPad: " ", startingAt: 0)
     let symmetricKey = SymmetricKey(data: key.data(using: .utf8)!)
@@ -21,7 +21,7 @@ enum DecryptError: Error {
 }
 
 let decoder = JSONDecoder()
-func decrypt<T : Decodable>(value: String, solution: String, type: T.Type) throws -> T {
+func decrypt<T: Decodable>(value: String, solution: String, type: T.Type) throws -> T {
     guard let valueData = value.data(using: .utf8), let data = Data(base64Encoded: valueData) else {
         throw DecryptError.failedDecoding
     }

@@ -20,10 +20,12 @@ struct ConferencePageView: View {
             ZStack {
                 LinearGradient.defaultBackground
 
-                ConferencePageContentView(namespace: namespace,
-                                          isShowingMentor: $isShowingMentor,
-                                          mayShowMentorNextMentor: $mayShowMentorNextMentor,
-                                          selectedMentor: $selectedMentor)
+                ConferencePageContentView(
+                    namespace: namespace,
+                    isShowingMentor: $isShowingMentor,
+                    mayShowMentorNextMentor: $mayShowMentorNextMentor,
+                    selectedMentor: $selectedMentor
+                )
 
                 // The Mentor view when a mentor is selected
                 if let mentor = selectedMentor, isShowingMentor {

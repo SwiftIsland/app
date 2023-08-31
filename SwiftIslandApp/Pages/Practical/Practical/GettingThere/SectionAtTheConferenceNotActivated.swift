@@ -19,7 +19,9 @@ struct SectionAtTheConferenceNotActivated: View {
     @State private var isShowingLocationPermissionView = false
     @State private var actionStatus: ActionStatus = .idle
     @State private var showingAlert = false
-    @Default(.userIsActivated) private var userIsActivated
+
+    @Default(.userIsActivated)
+    private var userIsActivated
 
     private let hasNFC = NFCManager.deviceHasNFCSupport()
     @StateObject private var locationManager = LocationManager()
@@ -109,17 +111,19 @@ struct SectionAtTheConferenceNotActivated: View {
                 case .shareLocation:
                     getAuthorization()
                 case .openSettings:
-                    UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!)
+                    UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!) // swiftlint:disable:this force_unwrapping
                 }
             }
             .presentationDetents([.medium])
         }
         .alert(isPresented: $showingAlert) {
-            Alert(title: Text(userIsActivated ? "👋🏻" : "😢"),
-                  message: Text(userIsActivated ?
-                                "Welcome! Glad to see you have arrived!\n\nPlease make sure to check-in if you haven't already.\nThere are now a few new options available on this page." :
-                                    "Unfortunately it doesn't look like you are on the island just yet.\n\nPlease give it a go later or try the QR code \(hasNFC ? "or NFC tag " : "")at the reception."),
-                  dismissButton: .default(Text("Got it!")))
+            Alert(
+                title: Text(userIsActivated ? "👋🏻" : "😢"),
+                message: Text(userIsActivated ?
+                    "Welcome! Glad to see you have arrived!\n\nPlease make sure to check-in if you haven't already.\nThere are now a few new options available on this page." :
+                    "Unfortunately it doesn't look like you are on the island just yet.\n\nPlease give it a go later or try the QR code \(hasNFC ? "or NFC tag " : "")at the reception."),
+                dismissButton: .default(Text("Got it!"))
+            )
         }
     }
 }

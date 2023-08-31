@@ -18,7 +18,7 @@ class PuzzleItemViewModel: ObservableObject {
     @Published var puzzle: Puzzle
     @Published var scale: Double = 1
     @Published var flipAngle: CGFloat = 0
-    @Published var isCurrent: Bool = false
+    @Published var isCurrent = false
 
     init(puzzle: Puzzle, isCurrent: Bool = false) {
         self.puzzle = puzzle
@@ -29,7 +29,9 @@ class PuzzleItemViewModel: ObservableObject {
 
 struct PuzzleItemView: View {
     @StateObject var viewModel: PuzzleItemViewModel
-    @Environment(\.colorScheme) var colorScheme
+
+    @Environment(\.colorScheme)
+    private var colorScheme
 
     init(puzzle: Puzzle, isCurrent: Bool = false) {
         _viewModel = StateObject(wrappedValue: PuzzleItemViewModel(puzzle: puzzle, isCurrent: isCurrent))
@@ -41,30 +43,30 @@ struct PuzzleItemView: View {
         let stack = ZStack {
             Text("\(puzzle.number)")
                 .font(.custom("WorkSans-Bold", size: 30))
-            Rectangle().stroke(style: StrokeStyle(lineWidth: 2))  
+            Rectangle().stroke(style: StrokeStyle(lineWidth: 2))
             Image("stamp")
                 .renderingMode(.template)
-                .resizable(capInsets: EdgeInsets(), resizingMode:.stretch)
+                .resizable(capInsets: EdgeInsets(), resizingMode: .stretch)
                 .aspectRatio(1, contentMode: .fit)
                 .foregroundColor(puzzle.color)
                 .rotationEffect(viewModel.angle, anchor: .center)
                 .rotation3DEffect(
                     .degrees(viewModel.flipAngle),
-                                          axis: (x: 0.0, y: 1.0, z: 0.0),
-                                          anchor: .center,
-                                          anchorZ: 0.0,
-                                          perspective: 1.0
+                    axis: (x: 0.0, y: 1.0, z: 0.0),
+                    anchor: .center,
+                    anchorZ: 0.0,
+                    perspective: 1.0
                 )
                 .offset(x: viewModel.x, y: viewModel.y)
                 .scaleEffect(viewModel.scale)
         }
             .aspectRatio(1, contentMode: .fit)
             .foregroundColor(color)
-        switch (puzzle.state) {
+        switch puzzle.state {
         case .found:
             stack
                 .onAppear {
-                    if (viewModel.isCurrent) {
+                    if viewModel.isCurrent {
                         viewModel.scale = 20
                         withAnimation(.easeInOut(duration: 0.3)) {
                             viewModel.scale = 1

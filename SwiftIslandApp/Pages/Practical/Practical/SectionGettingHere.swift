@@ -19,7 +19,7 @@ private enum SubPage {
             systemName = "ticket"
         case .schiphol:
             systemName = "airplane.arrival"
-		case .travel:
+        case .travel:
 			systemName = "backpack"
         }
 
@@ -32,7 +32,7 @@ private enum SubPage {
             return "Hassle Free Ticket"
         case .schiphol:
             return "At Schiphol"
-		case .travel:
+        case .travel:
 			return "Travel instructions"
         }
     }
@@ -43,7 +43,7 @@ private enum SubPage {
             return "hassleFree"
         case .schiphol:
             return "schiphol"
-		case .travel:
+        case .travel:
 			return "travel"
         }
     }
@@ -102,19 +102,19 @@ struct SectionGettingHere: View {
         }
         .confirmationDialog("Which app would you like to use?", isPresented: $directionSheetShowing, titleVisibility: .visible) {
             Button("Apple Maps") {
-                let url = URL(string: "https://maps.apple.com/?address=Stuifweg%2013,%201794%20HA%20Oosterend,%20Netherlands&auid=15837284651049995092&ll=53.114790,4.897070&lsp=9902&q=Prins%20Hendrik")!
+                let url = URL(string: "https://maps.apple.com/?address=Stuifweg%2013,%201794%20HA%20Oosterend,%20Netherlands&auid=15837284651049995092&ll=53.114790,4.897070&lsp=9902&q=Prins%20Hendrik")! // swiftlint:disable:this force_unwrapping
                 UIApplication.shared.open(url)
             }
             .textCase(.none)
 
             Button("Google Maps") {
-                let url = URL(string: "https://www.google.com/maps/dir//Hotel+%26+Bungalowpark+Prins+Hendrik,+Stuifweg+13,+1794+HA+Oosterend,+Netherlands/@53.1148617,4.8945168,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x47cf330bcf64f887:0x71984ae59f28af64!2m2!1d4.8972431!2d53.1148524?entry=ttu")!
+                let url = URL(string: "https://www.google.com/maps/dir//Hotel+%26+Bungalowpark+Prins+Hendrik,+Stuifweg+13,+1794+HA+Oosterend,+Netherlands/@53.1148617,4.8945168,17z/data=!4m8!4m7!1m0!1m5!1m1!1s0x47cf330bcf64f887:0x71984ae59f28af64!2m2!1d4.8972431!2d53.1148524?entry=ttu")! // swiftlint:disable:this force_unwrapping
                 UIApplication.shared.open(url)
             }
             .textCase(.none)
 
             Button("Waze") {
-                let url = URL(string: "https://ul.waze.com/ul?place=ChIJh_hkzwszz0cRZK8on-VKmHE&ll=53.11485850%2C4.89709170&navigate=yes")!
+                let url = URL(string: "https://ul.waze.com/ul?place=ChIJh_hkzwszz0cRZK8on-VKmHE&ll=53.11485850%2C4.89709170&navigate=yes")! // swiftlint:disable:this force_unwrapping
                 UIApplication.shared.open(url)
             }
             .textCase(.none)

@@ -9,7 +9,8 @@ import Defaults
 struct ConferenceHeaderView: View {
     private let startDate = Date(timeIntervalSince1970: 1693897200)
 
-    @Default(.userIsActivated) private var userIsActivated
+    @Default(.userIsActivated)
+    private var userIsActivated
 
     var body: some View {
         VStack(spacing: 13) {

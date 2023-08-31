@@ -18,9 +18,9 @@ enum PuzzleState: String, Defaults.Serializable {
     case nearby = "Nearby"
     case activated = "Activated"
     case solved = "Solved"
-    
+
     var next: PuzzleState {
-        switch(self) {
+        switch self {
         // Not all states are currently used, they were part of an more elaborate flow we had in mind initially. Currently we only use .NotFound, .Found and .Solved
         case .notFound: return .found
         case .found: return .nearby
@@ -41,7 +41,7 @@ extension Puzzle {
         }
     }
     var color: Color {
-        switch (state) {
+        switch state {
         case .notFound: return .clear
         case .found, .nearby: return .questionMarkColor
         case .activated: return .yellowDark
@@ -59,9 +59,10 @@ struct PuzzleGrid: View {
     var body: some View {
         LazyVGrid(columns: columns, spacing: spacing) {
             ForEach(appDataModel.puzzles) { puzzle in
-                NavigationLink(value: puzzle, label: {
+                NavigationLink(value: puzzle) {
                     PuzzleItemView(puzzle: puzzle, isCurrent: (puzzle.slug == currentPuzzleSlug))
-                }).disabled(puzzle.state == .notFound)
+                }
+                .disabled(puzzle.state == .notFound)
             }
         }
         .padding(20)
@@ -71,8 +72,12 @@ struct PuzzleGrid: View {
 
 struct PuzzlePageView: View {
     @EnvironmentObject private var appDataModel: AppDataModel
-    @Default(.puzzleStatus) var puzzleStatus
-    @Default(.puzzleHints) var puzzleHints
+
+    @Default(.puzzleStatus)
+    var puzzleStatus
+    @Default(.puzzleHints)
+    var puzzleHints
+
     @State var currentPuzzleSlug: String?
     var body: some View {
         VStack {
@@ -99,7 +104,6 @@ struct PuzzlePageView: View {
         .navigationDestination(for: Puzzle.self) { puzzle in
             PuzzleView(puzzle: puzzle)
         }
-        
     }
 }
 
@@ -109,4 +113,3 @@ struct PuzzlePageView_Previews: PreviewProvider {
         PuzzlePageView().environmentObject(appDataModel)
     }
 }
-

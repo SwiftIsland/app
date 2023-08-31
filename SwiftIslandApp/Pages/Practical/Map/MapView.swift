@@ -10,10 +10,15 @@ import SwiftIslandDataLogic
 struct MapView: View {
     @EnvironmentObject private var appDataModel: AppDataModel
 
-    @State private var region = MKCoordinateRegion(center: CLLocationCoordinate2D(latitude: 53.11478763673313,
-                                                                                  longitude: 4.8972633598615065),
-                                                   span: MKCoordinateSpan(latitudeDelta: 0.01,
-                                                                          longitudeDelta: 0.01))
+    @State private var region = MKCoordinateRegion(
+        center: CLLocationCoordinate2D(
+            latitude: 53.11478763673313,
+            longitude: 4.8972633598615065),
+        span: MKCoordinateSpan(
+            latitudeDelta: 0.01,
+            longitudeDelta: 0.01
+        )
+    )
     @State private var showFilterPopover = false
     @State private var locationTypes: [LocationTypeSelection] = []
     @State private var filteredLocation: [Location] = []
@@ -41,9 +46,11 @@ struct MapView: View {
                 } label: {
                     Image(systemName: "slider.horizontal.3")
                         .foregroundColor(.questionMarkColor)
-                        .popover(isPresented: $showFilterPopover,
-                                 attachmentAnchor: .point(.bottom),
-                                 arrowEdge: .top) {
+                        .popover(
+                            isPresented: $showFilterPopover,
+                            attachmentAnchor: .point(.bottom),
+                            arrowEdge: .top
+                        ) {
                             VStack(alignment: .leading) {
                                 Text("Select types to show")
                                     .foregroundColor(.secondary)

@@ -6,10 +6,12 @@
 import SwiftUI
 import SwiftIslandDataLogic
 import UIKit
-import CoreImage
+import CoreImage.CIFilterBuiltins
 
 struct TicketsView: View {
-    @Environment(\.colorScheme) var colorScheme
+    @Environment(\.colorScheme)
+    var colorScheme
+
     @EnvironmentObject private var appDataModel: AppDataModel
     @State var currentTicket = Ticket.empty
     @State var answers: [Int: [Answer]] = [:]
@@ -20,7 +22,7 @@ struct TicketsView: View {
     }
 
     var body: some View {
-        VStack {
+        VStack { // swiftlint:disable:this trailing_closure
             if appDataModel.tickets.isEmpty {
                 VStack(spacing: 10) {
                     Image(systemName: "ticket").resizable().aspectRatio(contentMode: .fit).foregroundColor(Color.questionMarkColor).frame(width: 50)
@@ -37,28 +39,29 @@ struct TicketsView: View {
                                 if ticket.editURL != nil {
                                     HStack {
                                         Spacer()
-                                        NavigationLink(destination: {
-                                            TicketEditView(ticket: ticket)
-                                                .safeAreaInset(edge: .bottom) {
-                                                    Color.clear.frame(height: UIDevice.current.hasNotch ? 46 : 58)
-                                                }
-                                                .onDisappear {
-                                                    Task {
-                                                        do {
-                                                            if let ticket = try await appDataModel.updateTicket(slug: ticket.slug, add: false) {
-                                                                currentTicket = ticket
+                                        NavigationLink(
+                                            destination: {
+                                                TicketEditView(ticket: ticket)
+                                                    .safeAreaInset(edge: .bottom) {
+                                                        Color.clear.frame(height: UIDevice.current.hasNotch ? 46 : 58)
+                                                    }
+                                                    .onDisappear {
+                                                        Task {
+                                                            do {
+                                                                if let ticket = try await appDataModel.updateTicket(slug: ticket.slug, add: false) {
+                                                                    currentTicket = ticket
+                                                                }
+                                                            } catch {
+                                                                // TODO: some error handling here, but it's pretty unlikely that the ticket suddenly does not exist
                                                             }
-                                                        } catch {
-                                                            // TODO: some error handling here, but it's pretty unlikely that the ticket suddenly does not exist
                                                         }
                                                     }
-                                                }
-                                        }, label: {
-                                            Image(systemName: "pencil.circle")
-                                                .resizable()
-                                                .frame(width: 25, height: 25)
-                                                .foregroundColor(.questionMarkColor)
-                                        })
+                                            }, label: {
+                                                Image(systemName: "pencil.circle")
+                                                    .resizable()
+                                                    .frame(width: 25, height: 25)
+                                                    .foregroundColor(.questionMarkColor)
+                                            })
                                     }
                                 }
                             }
@@ -80,8 +83,12 @@ struct TicketsView: View {
                                 .font(.title3)
                                 .opacity(accomodation == nil ? 0 : 1)
                             }
-                            Image(uiImage: ticket.qrCode!).resizable().scaledToFit()
-                                .frame(width: 200, height: 200)
+                            if let qrCode = ticket.qrCode {
+                                Image(uiImage: qrCode)
+                                    .resizable()
+                                    .scaledToFit()
+                                    .frame(width: 200, height: 200)
+                            }
                         }
                         .padding(20)
                         .frame(maxWidth: .infinity)
@@ -149,8 +156,9 @@ extension Ticket {
     var qrCode: UIImage? {
         filter.message = Data(slug.utf8)
         let qrTransform = CGAffineTransform(scaleX: 12, y: 12)
-        guard let ciImage = filter.outputImage?.transformed(by: qrTransform),
-              let cgImage = context.createCGImage(ciImage, from: ciImage.extent)
+        guard
+            let ciImage = filter.outputImage?.transformed(by: qrTransform),
+            let cgImage = context.createCGImage(ciImage, from: ciImage.extent)
         else { return nil }
         return UIImage(cgImage: cgImage)
     }

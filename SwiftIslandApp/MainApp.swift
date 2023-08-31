@@ -41,15 +41,20 @@ struct MainApp: App {
                     handleOpenURL(url)
                 }
             }
-            .sheet(isPresented: .constant(currentPuzzleSlug != nil), onDismiss: {
-                currentPuzzleSlug = nil
-            }) {
-                NavigationStack {
-                    PuzzlePageView(currentPuzzleSlug: $currentPuzzleSlug.wrappedValue)
+
+            .sheet(
+                isPresented: .constant(currentPuzzleSlug != nil),
+                onDismiss: {
+                    currentPuzzleSlug = nil
+                },
+                content: {
+                    NavigationStack {
+                        PuzzlePageView(currentPuzzleSlug: $currentPuzzleSlug.wrappedValue)
+                    }
+                    .tint(.questionMarkColor)
+                    .environmentObject(appDataModel)
                 }
-                .tint(.questionMarkColor)
-                .environmentObject(appDataModel)
-            }
+            )
             // TODO: Make this a navigation path to the actual ticket
             .alert("Ticket Added", isPresented: $showTicketAlert, actions: {
                 Button("OK") {
@@ -95,7 +100,6 @@ private extension MainApp {
             }
             currentPuzzleSlug = slug
         }
-        
     }
 
     func handleAppAction(_ appAction: AppActions) {

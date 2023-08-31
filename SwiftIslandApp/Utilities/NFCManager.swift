@@ -6,7 +6,7 @@
 import Foundation
 import CoreNFC
 
-class NFCManager {
+enum NFCManager {
     static func deviceHasNFCSupport() -> Bool {
         NFCNDEFReaderSession.readingAvailable
     }

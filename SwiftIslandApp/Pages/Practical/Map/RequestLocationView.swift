@@ -13,7 +13,8 @@ enum RequestLocationAction {
 }
 
 struct RequestLocationView: View {
-    @Environment(\.dismiss) var dismiss
+    @Environment(\.dismiss)
+    var dismiss
 
     let locationManager = CLLocationManager()
 
@@ -34,7 +35,7 @@ struct RequestLocationView: View {
                 Text("Location permission")
                     .font(.title)
                     .fontWeight(.light)
-                Text("We need your location permission in order to verify that you are at the conference.\n\nWe do not store your location and once you are confirmed to be at the conference, we will not further use your location information.")
+                Text("We need your location permission in order to verify that you are at the conference.\n\nWe do not store your location and once you are confirmed to be at the conference, we will not further use your location information.") // swiftlint:disable:this line_length
                     .multilineTextAlignment(.center)
                 if case .denied = authorizationStatus {
                     Text("Unfortunately you have denied this app to access your location. If you wish to give this app access, you need to change the settings.")
@@ -73,11 +74,11 @@ struct RequestLocationView: View {
 struct RequestLocationView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            RequestLocationView(selectedAction: { _ in })
+            RequestLocationView { _ in }
                 .preferredColorScheme(.light)
                 .environment(\.sizeCategory, .extraSmall)
                 .previewDisplayName("Light")
-            RequestLocationView(selectedAction: { _ in })
+            RequestLocationView { _ in }
                 .environment(\.sizeCategory, .extraExtraExtraLarge)
                 .preferredColorScheme(.dark)
                 .previewDisplayName("Dark")

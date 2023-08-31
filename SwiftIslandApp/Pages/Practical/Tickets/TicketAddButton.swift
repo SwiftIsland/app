@@ -50,9 +50,10 @@ struct TicketAddButton: View {
         }
     }
     var body: some View {
-        PasteButton(payloadType: String.self, onPaste: { strings in
+        PasteButton(payloadType: String.self) { strings in
             addTicketFromPasteBoard(text: strings.first)
-        }).alert("Failed to paste ticket URL", isPresented: $presentFailedPasteAlert) {
+        }
+        .alert("Failed to paste ticket URL", isPresented: $presentFailedPasteAlert) {
             Button("OK") {
                 presentFailedPasteAlert = false
                 failedPasteAlert = nil

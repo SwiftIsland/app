@@ -33,7 +33,7 @@ struct SourceView: View {
                         HStack {
                             Spacer()
                             Button {
-                                let url = URL(string: "https://PaulPeelen.com")!
+                                let url = URL(string: "https://PaulPeelen.com")! // swiftlint:disable:this force_unwrapping
                                 UIApplication.shared.open(url)
                             } label: {
                                 Image(systemName: "globe.europe.africa")
@@ -44,7 +44,7 @@ struct SourceView: View {
                             }
                             Spacer()
                             Button {
-                                let url = URL(string: "https://mastodon.nu/@ppeelen")!
+                                let url = URL(string: "https://mastodon.nu/@ppeelen")! // swiftlint:disable:this force_unwrapping
                                 UIApplication.shared.open(url)
                             } label: {
                                 Image("mastodon-icon")
@@ -55,7 +55,7 @@ struct SourceView: View {
                             }
                             Spacer()
                             Button {
-                                let url = URL(string: "https://www.twitter.com/ppeelen")!
+                                let url = URL(string: "https://www.twitter.com/ppeelen")! // swiftlint:disable:this force_unwrapping
                                 UIApplication.shared.open(url)
                             } label: {
                                 Image("twitter-icon")
@@ -73,7 +73,7 @@ struct SourceView: View {
                 Section {
                     HStack {
                         Button("Twitter @SwiftIslandNL") {
-                            let url = URL(string: "https://www.twitter.com/swiftislandnl")!
+                            let url = URL(string: "https://www.twitter.com/swiftislandnl")! // swiftlint:disable:this force_unwrapping
                             UIApplication.shared.open(url)
                         }
                         Spacer()
@@ -82,7 +82,7 @@ struct SourceView: View {
                     HStack {
                         VStack(alignment: .leading) {
                             Button("Swift Island @ Github") {
-                                let url = URL(string: "https://www.github.com/SwiftIsland/app")!
+                                let url = URL(string: "https://www.github.com/SwiftIsland/app")! // swiftlint:disable:this force_unwrapping
                                 UIApplication.shared.open(url)
                             }
                             Text("_The repo might not yet be public, but when it is... you'll find it here._")

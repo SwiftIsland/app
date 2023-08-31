@@ -44,7 +44,7 @@ public protocol DataLogic {
     func fetchTicket(slug: String, from checkinList: String) async throws -> Ticket
 
     func fetchAnswers(for tickets: [Ticket], in checkinList: String) async throws -> [Int: [Answer]]
-    
+
     func fetchPuzzles() async -> [Puzzle]
 }
 
@@ -168,7 +168,7 @@ public class SwiftIslandDataLogic: DataLogic, ObservableObject {
         }
         return result
     }
-    
+
     public func fetchPuzzles() async -> [Puzzle] {
         let request = AllPuzzlesRequest()
         return await fetchFromFirebase(forRequest: request).sorted(by: { $0.order < $1.order })

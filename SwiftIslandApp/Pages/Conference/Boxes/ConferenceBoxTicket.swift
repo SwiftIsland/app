@@ -10,7 +10,7 @@ struct ConferenceBoxTicket: View {
         ZStack {
             Image("BoxTicketBackground")
             Button(action: {
-                UIApplication.shared.open(URL(string: "https://ti.to/swiftisland/2023")!)
+                UIApplication.shared.open(URL(string: "https://ti.to/swiftisland/2023")!) // swiftlint:disable:this force_unwrapping
             }, label: {
                 Text("Buy Tickets")
                     .padding(.vertical, 8)
