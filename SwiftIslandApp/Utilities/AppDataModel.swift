@@ -28,7 +28,7 @@ final class AppDataModel: ObservableObject {
     @Published var puzzles: [Puzzle] = []
 
     private let logger = Logger(
-        subsystem: Bundle.main.bundleIdentifier!,
+        subsystem: Bundle.main.bundleIdentifier!, // swiftlint:disable:this force_unwrapping
         category: String(describing: AppDataModel.self)
     )
 
@@ -46,11 +46,13 @@ final class AppDataModel: ObservableObject {
     /// Checks the event list and pick the next event from it
     /// - Returns: The next event, if there is any
     func nextEvent() async -> Event? {
-        if events.count == 0 {
+        if events.isEmpty {
             self.events = await fetchEvents()
         }
 
-        return events.sorted(by: { $0.startDate < $1.startDate }).first(where: { $0.startDate > Date() })
+        return events
+            .sorted { $0.startDate < $1.startDate }
+            .first { $0.startDate > Date() }
     }
 
     /// Fetches all the stored locations
@@ -59,7 +61,7 @@ final class AppDataModel: ObservableObject {
     func fetchLocations() async {
         self.locations = await dataLogic.fetchLocations()
     }
-    
+
     @MainActor
     func fetchPuzzles() async {
         self.puzzles = await dataLogic.fetchPuzzles()
@@ -76,7 +78,7 @@ final class AppDataModel: ObservableObject {
 
         return Defaults[.packingItems]
     }
-    
+
 
     func updateTickets() async -> [Ticket] {
         let storedTickets: [Ticket] = (try? KeychainManager.shared.get(key: .tickets) ?? []) ?? []
@@ -89,8 +91,8 @@ final class AppDataModel: ObservableObject {
         }
         return updatedTickets
     }
-    
-    
+
+
     func updateTicket(slug: String, add: Bool = true) async throws -> Ticket? {
         let ticket = try await dataLogic.fetchTicket(slug: slug, from: Secrets.checkinListSlug)
         if let index = tickets.firstIndex(where: { $0.slug == ticket.slug }) {
@@ -109,7 +111,7 @@ final class AppDataModel: ObservableObject {
         try KeychainManager.shared.store(key: .tickets, data: tickets)
         return ticket
     }
-    
+
     func removeTicket(ticket: Ticket) throws {
         guard let index = tickets.firstIndex(where: { $0.id == ticket.id }) else { return }
         Task {
@@ -120,8 +122,8 @@ final class AppDataModel: ObservableObject {
             try KeychainManager.shared.store(key: .tickets, data: tickets)
         }
     }
-    
-    func fetchAnswers(for tickets: [Ticket]) async throws -> [Int:[Answer]] {
+
+    func fetchAnswers(for tickets: [Ticket]) async throws -> [Int: [Answer]] {
         try await dataLogic.fetchAnswers(for: tickets, in: Secrets.checkinListSlug)
     }
 }
@@ -162,7 +164,7 @@ private extension AppDataModel {
     }
 }
 
-private struct Secrets {
+private enum Secrets {
     private static func secrets() throws -> [String: String] {
         let fileName = "Secrets"
         guard let path = Bundle.main.path(forResource: fileName, ofType: "json") else { return [:] }

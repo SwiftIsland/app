@@ -9,8 +9,8 @@ import SwiftIslandDataLogic
 struct TicketAddButton: View {
     @EnvironmentObject private var appDataModel: AppDataModel
     @Binding var currentTicket: Ticket
-    @State var failedPasteAlert: String? = nil
-    @State var presentFailedPasteAlert: Bool = false
+    @State var failedPasteAlert: String?
+    @State var presentFailedPasteAlert = false
 
     func addTicketFromPasteBoard(text: String?) {
         guard let text = text else {
@@ -46,14 +46,14 @@ struct TicketAddButton: View {
             } catch {
                 presentFailedPasteAlert = true
                 failedPasteAlert = "Failed to find ticket\n\n\(error)"
-
             }
         }
     }
     var body: some View {
-        PasteButton(payloadType: String.self, onPaste: { strings in
+        PasteButton(payloadType: String.self) { strings in
             addTicketFromPasteBoard(text: strings.first)
-        }).alert("Failed to paste ticket URL", isPresented: $presentFailedPasteAlert) {
+        }
+        .alert("Failed to paste ticket URL", isPresented: $presentFailedPasteAlert) {
             Button("OK") {
                 presentFailedPasteAlert = false
                 failedPasteAlert = nil
@@ -65,7 +65,7 @@ struct TicketAddButton: View {
 }
 
 struct TicketAddButton_Previews: PreviewProvider {
-    @State static var ticket: Ticket = Ticket.forPreview()
+    @State static var ticket = Ticket.forPreview()
     static var previews: some View {
         TicketAddButton(currentTicket: $ticket)
     }

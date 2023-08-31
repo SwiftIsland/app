@@ -34,7 +34,7 @@ public struct Ticket {
 }
 
 extension Ticket: Decodable, Encodable {
-    enum CodingKeys : String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case id = "id"
         case slug = "slug"
         case firstName = "first_name"
@@ -52,32 +52,32 @@ extension Ticket: Equatable { }
 extension Ticket: Hashable { }
 
 extension Ticket {
-    public static let empty: Ticket = Ticket()
-    
+    public static let empty = Ticket()
+
     public var name: String {
         return "\(firstName) \(lastName)"
     }
-    
+
     public var title: String {
         return releaseTitle
     }
-    
+
     public var icon: String {
-        switch(releaseTitle.lowercased()) {
+        switch releaseTitle.lowercased() {
         case "conference ticket": return "ticket.fill"
         case "hassle-free travel": return "bus.fill"
         case "super early bird": return "bird"
         case "child ticket": return "figure.and.child.holdinghands"
-        case "mentor ticket","mentor ticket without hassle free travel": return "graduationcap"
+        case "mentor ticket", "mentor ticket without hassle free travel": return "graduationcap"
         case "significant other ❤️": return "heart.circle.fill"
         default: return "ticket.fill"
         }
     }
-    
+
     public var titoURL: URL? {
         URL(string: "https://ti.to/swiftisland/2023/tickets/\(slug)")
     }
-    
+
     public var editURL: URL? {
         URL(string: "https://ti.to/swiftisland/2023/tickets/\(slug)/settings")
     }
@@ -93,8 +93,8 @@ extension Ticket {
                                   releaseTitle: String = "Conference Ticket",
                                   reference: String = "R2D2-1",
                                   registrationReference: String = "R2D2",
-                                  createdAt: Date = Date(timeIntervalSinceNow: ((60*60)*24)*5), // 5 days ago
-                                  updatedAt: Date = Date(timeIntervalSinceNow: ((60*60)*24)*1)) -> Ticket { // 1 day ago
+                                  createdAt: Date = Date(timeIntervalSinceNow: ((60 * 60) * 24) * 5), // 5 days ago
+                                  updatedAt: Date = Date(timeIntervalSinceNow: ((60 * 60) * 24) * 1)) -> Ticket { // 1 day ago
         Ticket(id: id,
                slug: slug,
                firstName: firstName,
@@ -118,7 +118,7 @@ public struct Answer {
 }
 
 extension Answer: Decodable {
-    enum CodingKeys : String, CodingKey {
+    enum CodingKeys: String, CodingKey {
         case id = "id"
         case ticketId = "ticket_id"
         case questionId = "question_id"

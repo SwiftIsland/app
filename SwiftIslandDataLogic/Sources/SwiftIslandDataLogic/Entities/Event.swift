@@ -38,7 +38,6 @@ extension Event: Identifiable { }
 extension Event: Equatable { }
 
 extension Event {
-
     /// Only meant to be used for Preview purposes. Might change in the future.
     ///
     /// - Parameters:
@@ -49,10 +48,10 @@ extension Event {
     ///   - duration: The duration of the event in seconds.
     /// - Returns: an ``Event``
     public static func forPreview(id: String = "1",
-                           startDate: Date = Date(timeIntervalSinceNow: 60*60),
-                           endDate: Date = Date(timeIntervalSinceNow: (60*60)*2),
+                           startDate: Date = Date(timeIntervalSinceNow: 60 * 60),
+                           endDate: Date = Date(timeIntervalSinceNow: (60 * 60) * 2),
                            activity: Activity = Activity.forPreview(),
-                           duration: TimeInterval = 60*60) -> Event {
+                           duration: TimeInterval = 60 * 60) -> Event {
         Event(id: id, startDate: startDate, endDate: endDate, activity: activity, duration: duration)
     }
 

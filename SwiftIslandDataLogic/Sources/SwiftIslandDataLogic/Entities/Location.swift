@@ -22,22 +22,22 @@ public struct Location: Response {
     private enum CodingKeys: CodingKey {
         case id, title, coordinate, type
     }
-    
+
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         self.id = try container.decode(String.self, forKey: .id)
         self.title = try container.decode(String.self, forKey: .title)
         let type = try container.decode(String.self, forKey: .type)
         self.type = LocationType(rawValue: type) ?? .unknown
-        
+
         let coordinates = try container.decode([String: Double].self, forKey: .coordinate)
         guard let latitude = coordinates["latitude"], let longitude = coordinates["longitude"] else {
             throw LocationError.parsingErrorDataNotFound
         }
-        
+
         self.coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
     }
-    
+
     internal init(id: String, title: String, type: LocationType, coordinate: CLLocationCoordinate2D) {
         self.id = id
         self.title = title
@@ -80,7 +80,7 @@ extension CLLocationCoordinate2D: Codable {
         try container.encode(longitude)
         try container.encode(latitude)
     }
-    
+
     public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
         let longitude = try container.decode(CLLocationDegrees.self)

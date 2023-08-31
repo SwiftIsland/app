@@ -38,8 +38,8 @@ struct PacklistView: View {
                                 VStack(alignment: .leading) {
                                     Text(packingItem.title)
                                         .font(.body)
-                                        .foregroundColor(.primary)                                        
-                                    if packingItem.subTitle != "" {
+                                        .foregroundColor(.primary)
+                                    if !packingItem.subTitle.isEmpty {
                                         Text(packingItem.subTitle)
                                             .font(.footnote)
                                             .foregroundColor(.secondary)
@@ -82,7 +82,7 @@ struct PacklistView: View {
                                     Text(packingItem.title)
                                         .font(.body)
                                         .foregroundColor(.primary)
-                                    if packingItem.subTitle != "" {
+                                    if !packingItem.subTitle.isEmpty {
                                         Text(packingItem.subTitle)
                                             .font(.footnote)
                                             .foregroundColor(.secondary)

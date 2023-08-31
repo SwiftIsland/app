@@ -13,17 +13,19 @@ struct ConferencePageView: View {
 
     @State private var selectedMentor: Mentor?
     @Binding var isShowingMentor: Bool
-    @State private var mayShowMentorNextMentor: Bool = true
+    @State private var mayShowMentorNextMentor = true
 
     var body: some View {
         NavigationStack {
             ZStack {
                 LinearGradient.defaultBackground
 
-                ConferencePageContentView(namespace: namespace,
-                                          isShowingMentor: $isShowingMentor,
-                                          mayShowMentorNextMentor: $mayShowMentorNextMentor,
-                                          selectedMentor: $selectedMentor)
+                ConferencePageContentView(
+                    namespace: namespace,
+                    isShowingMentor: $isShowingMentor,
+                    mayShowMentorNextMentor: $mayShowMentorNextMentor,
+                    selectedMentor: $selectedMentor
+                )
 
                 // The Mentor view when a mentor is selected
                 if let mentor = selectedMentor, isShowingMentor {

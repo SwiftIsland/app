@@ -22,11 +22,11 @@ extension Color {
     static var logoText: Color {
         Color("LogoText")
     }
-    
+
     static var conferenceBackgroundFrom: Color {
         Color("ConferenceBackgroundFrom")
     }
-    
+
     static var conferenceBackgroundTo: Color {
         Color("ConferenceBackgroundTo")
     }
@@ -44,27 +44,27 @@ extension Color {
     }
 
     // Swift Island Logo Colors
-    
+
     static var yellowLight: Color {
         Color("yellowLight")
     }
-    
+
     static var yellowDark: Color {
         Color("yellowDark")
     }
-    
+
     static var orangeLight: Color {
         Color("orangeLight")
     }
-    
+
     static var orangeDark: Color {
         Color("orangeDark")
     }
-    
+
     static var redLight: Color {
         Color("redLight")
     }
-    
+
     static var redDark: Color {
         Color("redDark")
     }

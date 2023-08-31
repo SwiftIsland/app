@@ -9,11 +9,11 @@ let package = Package(
     products: [
         .library(
             name: "SwiftIslandDataLogic",
-            targets: ["SwiftIslandDataLogic"]),
+            targets: ["SwiftIslandDataLogic"])
     ],
     dependencies: [
         .package(url: "https://github.com/sindresorhus/Defaults.git", from: "7.1.0"),
-        .package(url: "https://github.com/firebase/firebase-ios-sdk.git", from: "10.11.0"),
+        .package(url: "https://github.com/firebase/firebase-ios-sdk.git", from: "10.11.0")
     ],
     targets: [
         .target(
@@ -25,6 +25,6 @@ let package = Package(
             ]),
         .testTarget(
             name: "SwiftIslandDataLogicTests",
-            dependencies: ["SwiftIslandDataLogic"]),
+            dependencies: ["SwiftIslandDataLogic"])
     ]
 )

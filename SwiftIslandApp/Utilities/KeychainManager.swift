@@ -4,7 +4,6 @@
 //
 
 import Foundation
-import Foundation
 
 enum MigrationErrors: Error {
     case unableToEncode
@@ -87,7 +86,6 @@ class KeychainManager: KeychainManaging {
 }
 
 private extension KeychainManager {
-
     func get(key: KeychainAttrAccount) throws -> Data? {
         let queryLoad = [
             kSecClass: kSecClassGenericPassword,

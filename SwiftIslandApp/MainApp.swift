@@ -15,8 +15,8 @@ struct MainApp: App {
     }
 
     @StateObject private var appDataModel = AppDataModel()
-    @State private var appActionTriggered: AppActions? = nil
-    @State private var showTicketAlert: Bool = false
+    @State private var appActionTriggered: AppActions?
+    @State private var showTicketAlert = false
     @State private var showTicketMessage: String = ""
     @State private var currentPuzzleSlug: String?
 
@@ -38,18 +38,23 @@ struct MainApp: App {
             }
             .onContinueUserActivity(NSUserActivityTypeBrowsingWeb) { activity in
                 if let url = activity.webpageURL {
-                   handleOpenURL(url)
+                    handleOpenURL(url)
                 }
             }
-            .sheet(isPresented: .constant(currentPuzzleSlug != nil), onDismiss: {
-                currentPuzzleSlug = nil
-            }) {
-                NavigationStack {
-                    PuzzlePageView(currentPuzzleSlug: $currentPuzzleSlug.wrappedValue)
+
+            .sheet(
+                isPresented: .constant(currentPuzzleSlug != nil),
+                onDismiss: {
+                    currentPuzzleSlug = nil
+                },
+                content: {
+                    NavigationStack {
+                        PuzzlePageView(currentPuzzleSlug: $currentPuzzleSlug.wrappedValue)
+                    }
+                    .tint(.questionMarkColor)
+                    .environmentObject(appDataModel)
                 }
-                .tint(.questionMarkColor)
-                .environmentObject(appDataModel)
-            }
+            )
             // TODO: Make this a navigation path to the actual ticket
             .alert("Ticket Added", isPresented: $showTicketAlert, actions: {
                 Button("OK") {
@@ -64,7 +69,6 @@ struct MainApp: App {
 }
 
 private extension MainApp {
-
     func handleOpenURL(_ url: URL) {
         guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true), components.host == "swiftisland.nl" else { return }
 
@@ -80,8 +84,7 @@ private extension MainApp {
             Task {
                 do {
                     try await handleTicketSlug(slug)
-                }
-                catch {
+                } catch {
                     print(error)
                 }
             }
@@ -91,13 +94,12 @@ private extension MainApp {
                 Defaults.reset(.puzzleHints)
             } else {
                 let currentStatus = Defaults[.puzzleStatus][slug]
-                if currentStatus == nil || currentStatus == .NotFound {
-                    Defaults[.puzzleStatus][slug] = .Found
+                if currentStatus == nil || currentStatus == .notFound {
+                    Defaults[.puzzleStatus][slug] = .found
                 }
             }
             currentPuzzleSlug = slug
         }
-        
     }
 
     func handleAppAction(_ appAction: AppActions) {

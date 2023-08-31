@@ -12,7 +12,6 @@ let ticketJSON = """
         """
 
 final class AddDataModelTests: XCTestCase {
-
     var dataLogicMock: DataLogicMock!
 
     override func setUpWithError() throws {
@@ -127,7 +126,6 @@ final class AddDataModelTests: XCTestCase {
 }
 
 internal class DataLogicMock: DataLogic {
-    
     static var configureInvokeCount = 0
 
     var fetchLocationsReturnValue: [Location] = []
@@ -143,11 +141,11 @@ internal class DataLogicMock: DataLogic {
     var fetchPackingListItemsFromFirebaseReturnValue: [PackingItem] = []
 
     var fetchFAQItemsReturnValue: [FAQItem] = []
-    
+
     var fetchTicketReturnValue = Ticket.forPreview()
-    
-    var fetchAnswersReturnValue: [Int:[Answer]] = [:]
-    
+
+    var fetchAnswersReturnValue: [Int: [Answer]] = [:]
+
     var fetchPuzzlesReturnValue: [Puzzle] = []
 
     required init() { }
@@ -183,17 +181,16 @@ internal class DataLogicMock: DataLogic {
     func fetchFAQItems() async -> [FAQItem] {
         return fetchFAQItemsReturnValue
     }
-    
+
     func fetchTicket(slug: String, from checkinList: String) async throws -> Ticket {
         return fetchTicketReturnValue
     }
-    
-    func fetchAnswers(for tickets: [Ticket], in checkinList: String) async throws -> [Int:[Answer]] {
+
+    func fetchAnswers(for tickets: [Ticket], in checkinList: String) async throws -> [Int: [Answer]] {
         return fetchAnswersReturnValue
     }
-    
+
     func fetchPuzzles() async -> [Puzzle] {
         return fetchPuzzlesReturnValue
     }
-
 }

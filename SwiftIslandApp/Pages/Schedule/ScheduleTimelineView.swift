@@ -27,7 +27,7 @@ struct ScheduleTimelineView: View {
                 calculateOffset()
             }
         }
-        .onReceive(timer) { time in
+        .onReceive(timer) { _ in
             calculateOffset()
         }
     }
@@ -45,8 +45,10 @@ struct ScheduleTimelineView_Previews: PreviewProvider {
         ScrollView {
             VStack {
                 ZStack {
-                    ScheduleTimelineView(hourSpacing: .constant(24),
-                                         hourHeight: .constant(30))
+                    ScheduleTimelineView(
+                        hourSpacing: .constant(24),
+                        hourHeight: .constant(30)
+                    )
                 }
                 .frame(height: 580)
                 Spacer()

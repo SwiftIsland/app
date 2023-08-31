@@ -17,7 +17,7 @@ struct SourceView: View {
                             .font(.callout)
                             .fontWeight(.semibold)
                             .padding(.bottom, 4)
-                        Text("This app is created by Paul Peelen for use with the Swift Island 2023 conference. Swift Island owns a copy of the source code given that the code is shared publicly via Github to anyone interested in improving this app for future conferences.\n\nThe source code will be shared at the start of the conference.")
+                        Text("This app is created by Paul Peelen for use with the Swift Island 2023 conference. Swift Island owns a copy of the source code given that the code is shared publicly via Github to anyone interested in improving this app for future conferences.\n\nThe source code will be shared at the start of the conference.") // swiftlint:disable:this line_length
                             .font(.callout)
                     }
                 } header: {
@@ -30,10 +30,10 @@ struct SourceView: View {
                             }
                             .frame(maxWidth: UIScreen.main.bounds.width / 2, maxHeight: UIScreen.main.bounds.width / 2)
                         .padding(0)
-                        HStack() {
+                        HStack {
                             Spacer()
                             Button {
-                                let url = URL(string: "https://PaulPeelen.com")!
+                                let url = URL(string: "https://PaulPeelen.com")! // swiftlint:disable:this force_unwrapping
                                 UIApplication.shared.open(url)
                             } label: {
                                 Image(systemName: "globe.europe.africa")
@@ -44,7 +44,7 @@ struct SourceView: View {
                             }
                             Spacer()
                             Button {
-                                let url = URL(string: "https://mastodon.nu/@ppeelen")!
+                                let url = URL(string: "https://mastodon.nu/@ppeelen")! // swiftlint:disable:this force_unwrapping
                                 UIApplication.shared.open(url)
                             } label: {
                                 Image("mastodon-icon")
@@ -55,7 +55,7 @@ struct SourceView: View {
                             }
                             Spacer()
                             Button {
-                                let url = URL(string: "https://www.twitter.com/ppeelen")!
+                                let url = URL(string: "https://www.twitter.com/ppeelen")! // swiftlint:disable:this force_unwrapping
                                 UIApplication.shared.open(url)
                             } label: {
                                 Image("twitter-icon")
@@ -73,7 +73,7 @@ struct SourceView: View {
                 Section {
                     HStack {
                         Button("Twitter @SwiftIslandNL") {
-                            let url = URL(string: "https://www.twitter.com/swiftislandnl")!
+                            let url = URL(string: "https://www.twitter.com/swiftislandnl")! // swiftlint:disable:this force_unwrapping
                             UIApplication.shared.open(url)
                         }
                         Spacer()
@@ -82,7 +82,7 @@ struct SourceView: View {
                     HStack {
                         VStack(alignment: .leading) {
                             Button("Swift Island @ Github") {
-                                let url = URL(string: "https://www.github.com/SwiftIsland/app")!
+                                let url = URL(string: "https://www.github.com/SwiftIsland/app")! // swiftlint:disable:this force_unwrapping
                                 UIApplication.shared.open(url)
                             }
                             Text("_The repo might not yet be public, but when it is... you'll find it here._")
@@ -95,7 +95,6 @@ struct SourceView: View {
                 } header: {
                     Text("Links")
                 }
-
             }
             .scrollContentBackground(.hidden)
             .navigationBarTitleDisplayMode(.inline)

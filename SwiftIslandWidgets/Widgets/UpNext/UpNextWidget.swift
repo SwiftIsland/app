@@ -18,5 +18,4 @@ struct UpNextWidget: Widget {
         .description("The next event at the conference.")
         .supportedFamilies([.systemSmall, .systemMedium])
     }
-
 }

@@ -7,7 +7,6 @@ import SwiftUI
 import SwiftIslandDataLogic
 
 struct ScheduleView: View {
-
     private struct EventPositions {
         var id: String
         var sharePositionWith: [String] = []
@@ -25,14 +24,15 @@ struct ScheduleView: View {
 
     private let startHourOfDay = 6
     private var hours: [String] {
-        let df = DateFormatter()
-        df.dateFormat = Locale.is24Hour ? "HH:mm" : "h a"
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = Locale.is24Hour ? "HH:mm" : "h a"
 
         var hours: [String] = []
 
         for hour in startHourOfDay...24 {
-            let date = Date().atHour(hour)!
-            hours.append(df.string(from: date))
+            if let date = Date().atHour(hour) {
+                hours.append(dateFormatter.string(from: date))
+            }
         }
 
         return hours
@@ -64,7 +64,7 @@ struct ScheduleView: View {
                         let boxWidth = (width / Double(event.columnCount + 1)) - boxSpacing
                         EventView(event: event)
                             .offset(CGSize(width: boxWidth * Double(event.column) + (boxSpacing * Double(event.column)), height: (event.coordinates?.minY ?? 0)))
-                            .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y:5)
+                            .shadow(color: .black.opacity(0.1), radius: 5, x: 0, y: 5)
                             .frame(width: boxWidth, height: event.coordinates?.height ?? 20)
                     }
                     .padding(.top, 12)
@@ -85,9 +85,11 @@ struct ScheduleView: View {
                                 RoundedRectangle(cornerRadius: 5, style: .continuous)
                                     .fill(Color(UIColor.tertiarySystemGroupedBackground))
                             )
-                            .popover(isPresented: $showPopover,
-                                     attachmentAnchor: .point(.bottom),
-                                     arrowEdge: .top) {
+                            .popover(
+                                isPresented: $showPopover,
+                                attachmentAnchor: .point(.bottom),
+                                arrowEdge: .top
+                            ) {
                                 VStack(alignment: .trailing) {
                                     Text("Select day")
                                         .font(.caption)
@@ -107,7 +109,7 @@ struct ScheduleView: View {
                 }
             }
         }
-        .onChange(of: selectedDayTag) { newValue in
+        .onChange(of: selectedDayTag) { _ in
             showPopover = false
             self.selectedDate = Calendar.current.date(from: DateComponents(year: 2023, month: 9, day: selectedDayTag))
             updateContent()
@@ -137,12 +139,14 @@ struct ScheduleView: View {
         let actualHourHeight = hourHeight + hourSpacing
         let heightPerSecond = (actualHourHeight / 60) / 60
 
+        guard let selectedDate else { return }
+
         // Go over each event and check if there is another event ongoing at the same time
         events.forEach { event in
             let activity = event.activity
             var event = event
 
-            let secondsSinceStartOfDay = abs(selectedDate!.atHour(startHourOfDay)?.timeIntervalSince(event.startDate) ?? 0)
+            let secondsSinceStartOfDay = abs(selectedDate.atHour(startHourOfDay)?.timeIntervalSince(event.startDate) ?? 0)
 
             let frame = CGRect(x: 0, y: secondsSinceStartOfDay * heightPerSecond, width: 60, height: activity.duration * heightPerSecond)
             event.coordinates = frame
@@ -158,7 +162,7 @@ struct ScheduleView: View {
             let returnList = eventList.map {
                 var event = $0
                 if positionedEvents.contains(where: { $0.id == event.id }) {
-                    event.columnCount = event.columnCount + 1
+                    event.columnCount += 1
                 }
                 return event
             }
@@ -185,10 +189,12 @@ struct ScheduleView_Previews: PreviewProvider {
     static var previews: some View {
         let appDataModel = AppDataModel()
 
+        // swiftlint:disable force_unwrapping
         let selectedDate = Calendar.current.date(from: DateComponents(year: 2023, month: 9, day: 4, hour: 9))!
         let secondDate = Calendar.current.date(from: DateComponents(year: 2023, month: 9, day: 4, hour: 10))!
         let thirdDate = Calendar.current.date(from: DateComponents(year: 2023, month: 9, day: 4, hour: 7, minute: 15))!
         let fouthDate = Calendar.current.date(from: DateComponents(year: 2023, month: 9, day: 4, hour: 7, minute: 30))!
+        // swiftlint:enable force_unwrapping
         let events = [
             Event.forPreview(startDate: selectedDate),
             Event.forPreview(id: "2", startDate: secondDate, activity: Activity.forPreview(id: "2", type: .socialActivity)),
@@ -218,7 +224,7 @@ struct ScheduleView_Previews: PreviewProvider {
 
 private extension Locale {
     static var is24Hour: Bool {
-        let dateFormat = DateFormatter.dateFormat(fromTemplate: "j", options: 0, locale: Locale.current)!
+        guard let dateFormat = DateFormatter.dateFormat(fromTemplate: "j", options: 0, locale: Locale.current) else { return false }
         return dateFormat.firstIndex(of: "a") != nil
     }
 }

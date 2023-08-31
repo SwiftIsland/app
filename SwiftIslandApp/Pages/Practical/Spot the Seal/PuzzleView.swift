@@ -13,18 +13,17 @@ struct Hint: Decodable, Encodable {
     let forPuzzle: String
 }
 
-struct PDFViewUI : UIViewRepresentable {
+struct PDFViewUI: UIViewRepresentable {
     let pdfView = PDFView()
     var url: URL?
-    init(url : URL, backgroundColor: Color = .gray) {
+    init(url: URL, backgroundColor: Color = .gray) {
         self.url = url
         self.pdfView.backgroundColor = UIColor(backgroundColor)
 
         self.pdfView.pageShadowsEnabled = false
         self.pdfView.pageBreakMargins = UIEdgeInsets()
-
     }
-    
+
     func makeUIView(context: Context) -> UIView {
         if let url = url {
             pdfView.document = PDFDocument(url: url)
@@ -32,19 +31,23 @@ struct PDFViewUI : UIViewRepresentable {
         pdfView.scaleFactor = 0.1
         return pdfView
     }
-    
+
     func updateUIView(_ uiView: UIView, context: Context) {
         // Empty
     }
-    
 }
 struct PuzzleView: View {
     @EnvironmentObject private var appDataModel: AppDataModel
-    @Environment(\.colorScheme) var colorScheme
-    @Default(.puzzleStatus) var puzzleStatus
+
+    @Environment(\.colorScheme)
+    private var colorScheme
+
+    @Default(.puzzleStatus)
+    private var puzzleStatus
+
     @State var puzzle: Puzzle
     @State var solution: String = ""
-    
+
     var body: some View {
         VStack(alignment: .center) {
             let url = Bundle.main.url(forResource: puzzle.filename, withExtension: "pdf")
@@ -55,20 +58,20 @@ struct PuzzleView: View {
                     PDFViewUI(url: url, backgroundColor: pdfBackgroundColor)
                     Image("frame")
                         .renderingMode(.template)
-                        .resizable(capInsets: EdgeInsets(),resizingMode: .stretch)
+                        .resizable(capInsets: EdgeInsets(), resizingMode: .stretch)
                         .foregroundColor(frameColor)
                         .allowsHitTesting(false)
                         .colorInvert()
-                    }
+                }
                 .aspectRatio(1, contentMode: .fit)
             }
-            if (puzzle.state != .Solved) {
+            if puzzle.state != .solved {
                 Text("\(puzzle.question) (\(puzzle.answerLength))").font(.headline)
                 if let tip = puzzle.tip {
                     Text(tip).font(.footnote)
                 }
                 HStack(spacing: 20) {
-                    TextField("Solution", text:$solution)
+                    TextField("Solution", text: $solution)
                     Button("Check") {
                         do {
                             let hint = try decrypt(value: puzzle.encryptedHint, solution: solution, type: Hint.self)
@@ -76,9 +79,8 @@ struct PuzzleView: View {
                                 Defaults[.puzzleHints][forPuzzle.slug] = hint.text
                             }
                             withAnimation {
-                                puzzle.state = .Solved
+                                puzzle.state = .solved
                             }
-                                
                         } catch {
                             solution = ""
                         }
@@ -93,7 +95,6 @@ struct PuzzleView: View {
             }
         }.padding(20)
             .navigationTitle(puzzle.title)
-     
     }
 }
 

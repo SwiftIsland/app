@@ -67,7 +67,6 @@ final class LocationManager: NSObject, ObservableObject {
 
         return isCoordinateInTexel || isCoordinateInIngaro
     }
-
 }
 
 extension LocationManager: CLLocationManagerDelegate {

@@ -21,7 +21,8 @@ struct TabBarView: View {
     @State private var isShowingMentor = false
     @EnvironmentObject private var appDataModel: AppDataModel
 
-    @Default(.userIsActivated) private var userIsActivated
+    @Default(.userIsActivated)
+    private var userIsActivated
 
     var body: some View {
         let tabs: [Tab] = {
@@ -34,7 +35,7 @@ struct TabBarView: View {
 
         ZStack {
             TabView(selection: $selectedItem) {
-                ForEach(tabs, id:\.self) { tab in
+                ForEach(tabs, id: \.self) { tab in
                     switch tab {
                     case .home:
                         ConferencePageView(namespace: namespace, isShowingMentor: $isShowingMentor)
@@ -63,11 +64,14 @@ struct TabBarView: View {
                 }
             }
             .accentColor(.questionMarkColor)
-        }.onAppear {
+        }
+        .onAppear {
             handleAppAction()
-        }.onChange(of: appActionTriggered) { newValue in
+        }
+        .onChange(of: appActionTriggered) { _ in
             handleAppAction()
-        }.onChange(of: appDataModel.tickets) { newValue in
+        }
+        .onChange(of: appDataModel.tickets) { _ in
             // TODO: Open the ticket page
         }
     }
@@ -101,7 +105,8 @@ struct TabbarView_Previews: PreviewProvider {
 
 
 extension View {
-    @inlinable func reverseMask<Mask: View>(
+    @inlinable
+    func reverseMask<Mask: View>(
         alignment: Alignment = .center,
         @ViewBuilder _ mask: () -> Mask
     ) -> some View {

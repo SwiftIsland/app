@@ -22,12 +22,12 @@ enum NavigationPage {
 }
 
 struct PracticalPageView: View {
-
     private let iconMaxWidth: CGFloat = 32
     @State private var pages: [Page] = []
     @State private var navigationPath = NavigationPath()
 
-    @Default(.userIsActivated) private var userIsActivated
+    @Default(.userIsActivated)
+    private var userIsActivated
 
     var body: some View {
         NavigationStack(path: $navigationPath) {
@@ -79,7 +79,7 @@ struct PracticalPageView: View {
                             }
                             .buttonStyle(.plain)
                         }
-                        Link(destination: URL(string: "https://apps.apple.com/app/id1468876096?action=write-review")!) {
+                        Link(destination: URL(string: "https://apps.apple.com/app/id1468876096?action=write-review")!) { // swiftlint:disable:this force_unwrapping
                             HStack(alignment: .center) {
                                 Image(systemName: "star.fill")
                                     .foregroundColor(.questionMarkColor)
@@ -104,7 +104,6 @@ struct PracticalPageView: View {
                         Text("App version: \(Bundle.main.appVersionLong) (\(Bundle.main.appBuild))")
                             .dynamicTypeSize(.small ... .medium)
                     }
-
                 }
                 .scrollContentBackground(.hidden)
             }
@@ -138,7 +137,6 @@ struct PracticalPageView: View {
                     PuzzlePageView()
                 }
             }
-
         }
         .tint(.questionMarkColor)
     }
@@ -171,8 +169,11 @@ struct PracticalPageView_Previews: PreviewProvider {
 
 struct SectionAtTheConference: View {
     let iconMaxWidth: CGFloat
+
     @EnvironmentObject private var appDataModel: AppDataModel
-    @Default(.puzzleStatus) var puzzleStatus
+
+    @Default(.puzzleStatus)
+    private var puzzleStatus
 
     @Binding var navPath: NavigationPath
 
@@ -202,19 +203,19 @@ struct SectionAtTheConference: View {
                     }
                 }
             }
-            if (!puzzleStatus.isEmpty) {
+            if !puzzleStatus.isEmpty {
                 NavigationLink(value: NavigationPage.spotTheSeal) {
                     HStack {
                         Image("seal")
                             .resizable()
                             .renderingMode(.template)
                             .foregroundColor(.questionMarkColor)
-                            .aspectRatio(contentMode:.fit)
+                            .aspectRatio(contentMode: .fit)
                             .frame(maxWidth: iconMaxWidth)
                         Text("Spot the Seal")
                             .dynamicTypeSize(.small ... .medium)
                     }
-                }                
+                }
             }
         }
     }

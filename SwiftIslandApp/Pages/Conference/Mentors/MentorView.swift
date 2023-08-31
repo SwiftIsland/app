@@ -29,7 +29,7 @@ struct MentorView: View {
                                 .resizable()
                                 .scaledToFill()
                                 .frame(width: geometry.size.width, height: isShowContent ? geometry.size.height * 0.6 : geometry.size.height)
-                                .border(Color(.sRGB, red: 150/255, green: 150/255, blue: 150/255, opacity: 0.1), width: isShowContent ? 0 : 1)
+                                .border(Color(.sRGB, red: 150 / 255, green: 150 / 255, blue: 150 / 255, opacity: 0.1), width: isShowContent ? 0 : 1)
                                 .cornerRadius(15)
                                 .overlay(
                                     MentorExcerptView(namespace: namespace, headline: "\(mentor.name)", isShowContent: $isShowContent)

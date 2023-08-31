@@ -42,7 +42,7 @@ struct EventDetailsView: View {
                         Text("Mentors")
                             .font(.footnote)
                             .foregroundColor(.secondary)
-                        ForEach(event.activity.mentors, id:\.self) { mentor in
+                        ForEach(event.activity.mentors, id: \.self) { mentor in
                             Text(mentor)
                         }
                     }

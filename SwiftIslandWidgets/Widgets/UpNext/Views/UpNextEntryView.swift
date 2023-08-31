@@ -5,7 +5,7 @@
 
 import WidgetKit
 import SwiftUI
-//import TobbeHelpers
+// import TobbeHelpers
 
 struct UpNextEntryView: View {
     @Environment(\.widgetFamily) var widgetFamily
@@ -42,4 +42,3 @@ struct UpNextEntryView_Previews: PreviewProvider {
             .previewDisplayName("System medium")
     }
 }
-
