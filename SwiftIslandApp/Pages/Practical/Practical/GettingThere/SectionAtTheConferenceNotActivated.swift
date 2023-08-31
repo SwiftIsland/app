@@ -111,7 +111,8 @@ struct SectionAtTheConferenceNotActivated: View {
                 case .shareLocation:
                     getAuthorization()
                 case .openSettings:
-                    UIApplication.shared.open(URL(string: UIApplication.openSettingsURLString)!) // swiftlint:disable:this force_unwrapping
+                    guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
+                    UIApplication.shared.open(url)
                 }
             }
             .presentationDetents([.medium])
