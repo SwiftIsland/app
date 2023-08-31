@@ -67,9 +67,18 @@ struct PuzzleItemView: View {
             stack
                 .onAppear {
                     if viewModel.isCurrent {
-                        viewModel.scale = 20
-                        withAnimation(.easeInOut(duration: 0.3)) {
+                        viewModel.scale = 50
+                        withAnimation(.easeInOut(duration: 0.3).delay(0.1)) {
                             viewModel.scale = 1
+                        }
+                        Task {
+                            try await Task.sleep(until: .now + .seconds(1.0), clock: .continuous)
+                            viewModel.scale = 1
+                            let baseAnimation = Animation.easeInOut(duration: 0.2)
+                            let repeated = baseAnimation.repeatForever(autoreverses: true)
+                            withAnimation(repeated) {
+                                viewModel.scale = 1.07
+                            }
                         }
                     }
                 }
