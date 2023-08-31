@@ -13,20 +13,20 @@ extension Defaults.Keys {
 }
 
 enum PuzzleState: String, Defaults.Serializable {
-    case NotFound = "Not Found"
-    case Found = "Found"
-    case Nearby = "Nearby"
-    case Activated = "Activated"
-    case Solved = "Solved"
+    case notFound = "Not Found"
+    case found = "Found"
+    case nearby = "Nearby"
+    case activated = "Activated"
+    case solved = "Solved"
     
     var next: PuzzleState {
         switch(self) {
         // Not all states are currently used, they were part of an more elaborate flow we had in mind initially. Currently we only use .NotFound, .Found and .Solved
-        case .NotFound: return .Found
-        case .Found: return .Nearby
-        case .Nearby: return .Activated
-        case .Activated: return .Solved
-        case .Solved: return .NotFound
+        case .notFound: return .found
+        case .found: return .nearby
+        case .nearby: return .activated
+        case .activated: return .solved
+        case .solved: return .notFound
         }
     }
 }
@@ -34,7 +34,7 @@ enum PuzzleState: String, Defaults.Serializable {
 extension Puzzle {
     var state: PuzzleState {
         get {
-            Defaults[.puzzleStatus][slug] ?? .NotFound
+            Defaults[.puzzleStatus][slug] ?? .notFound
         }
         set(newValue) {
             Defaults[.puzzleStatus][slug] = newValue
@@ -42,10 +42,10 @@ extension Puzzle {
     }
     var color: Color {
         switch (state) {
-        case .NotFound: return .clear
-        case .Found, .Nearby: return .questionMarkColor
-        case .Activated: return .yellowDark
-        case .Solved: return .green
+        case .notFound: return .clear
+        case .found, .nearby: return .questionMarkColor
+        case .activated: return .yellowDark
+        case .solved: return .green
         }
     }
 }
@@ -61,7 +61,7 @@ struct PuzzleGrid: View {
             ForEach(appDataModel.puzzles) { puzzle in
                 NavigationLink(value: puzzle, label: {
                     PuzzleItemView(puzzle: puzzle, isCurrent: (puzzle.slug == currentPuzzleSlug))
-                }).disabled(puzzle.state == .NotFound)
+                }).disabled(puzzle.state == .notFound)
             }
         }
         .padding(20)
@@ -76,7 +76,7 @@ struct PuzzlePageView: View {
     @State var currentPuzzleSlug: String?
     var body: some View {
         VStack {
-            if (appDataModel.puzzles.count == 0) {
+            if appDataModel.puzzles.isEmpty {
                 Text("Loading...")
             } else {
                 PuzzleGrid(currentPuzzleSlug: currentPuzzleSlug)
@@ -86,7 +86,7 @@ struct PuzzlePageView: View {
                     ForEach(puzzleHints.keys.sorted(), id: \.self) { slug in
                         if let hint = puzzleHints[slug] {
                             let status = puzzleStatus[slug]
-                            let usedHint = status != nil && status != .NotFound
+                            let usedHint = status != nil && status != .notFound
                             Text(hint).strikethrough(usedHint)
                         }
                     }

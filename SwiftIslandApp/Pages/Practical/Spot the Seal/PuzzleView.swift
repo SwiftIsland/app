@@ -62,7 +62,7 @@ struct PuzzleView: View {
                     }
                 .aspectRatio(1, contentMode: .fit)
             }
-            if (puzzle.state != .Solved) {
+            if (puzzle.state != .solved) {
                 Text("\(puzzle.question) (\(puzzle.answerLength))").font(.headline)
                 if let tip = puzzle.tip {
                     Text(tip).font(.footnote)
@@ -76,7 +76,7 @@ struct PuzzleView: View {
                                 Defaults[.puzzleHints][forPuzzle.slug] = hint.text
                             }
                             withAnimation {
-                                puzzle.state = .Solved
+                                puzzle.state = .solved
                             }
                                 
                         } catch {

@@ -23,7 +23,7 @@ class PuzzleItemViewModel: ObservableObject {
     init(puzzle: Puzzle, isCurrent: Bool = false) {
         self.puzzle = puzzle
         self.isCurrent = isCurrent
-        self.flipAngle = puzzle.state == .Solved ? 180 : 0
+        self.flipAngle = puzzle.state == .solved ? 180 : 0
     }
 }
 
@@ -61,7 +61,7 @@ struct PuzzleItemView: View {
             .aspectRatio(1, contentMode: .fit)
             .foregroundColor(color)
         switch (puzzle.state) {
-        case .Found:
+        case .found:
             stack
                 .onAppear {
                     if (viewModel.isCurrent) {
@@ -71,7 +71,7 @@ struct PuzzleItemView: View {
                         }
                     }
                 }
-        case .Solved, .NotFound, .Nearby, .Activated:
+        case .solved, .notFound, .nearby, .activated:
             stack
         }
     }

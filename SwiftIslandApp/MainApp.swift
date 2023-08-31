@@ -89,8 +89,8 @@ private extension MainApp {
                 Defaults.reset(.puzzleHints)
             } else {
                 let currentStatus = Defaults[.puzzleStatus][slug]
-                if currentStatus == nil || currentStatus == .NotFound {
-                    Defaults[.puzzleStatus][slug] = .Found
+                if currentStatus == nil || currentStatus == .notFound {
+                    Defaults[.puzzleStatus][slug] = .found
                 }
             }
             currentPuzzleSlug = slug
