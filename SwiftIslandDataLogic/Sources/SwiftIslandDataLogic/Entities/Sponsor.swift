@@ -42,6 +42,7 @@ extension Sponsor {
 
 }
 
-public struct SponsorAPIResponse: Decodable {
-    let apps: [Sponsor]
+public struct Sponsors: Decodable {
+    public let apps: [Sponsor]
+    public let content: [Sponsor]?
 }

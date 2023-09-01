@@ -47,7 +47,7 @@ public protocol DataLogic {
 
     func fetchPuzzles() async -> [Puzzle]
     
-    func fetchSponsors() async throws -> [Sponsor]
+    func fetchSponsors() async throws -> Sponsors
 }
 
 public enum DataLogicError: Error {
@@ -164,10 +164,10 @@ public class SwiftIslandDataLogic: DataLogic, ObservableObject {
         return try await fetchModel(Array<Answer>.self, from: url)
     }
     
-    public func fetchSponsors() async throws -> [Sponsor] {
+    public func fetchSponsors() async throws -> Sponsors {
         let url = URL(string: "https://swiftisland.nl/api/sponsors.json")!
-        let response = try await fetchModel(SponsorAPIResponse.self, from: url)
-        return response.apps
+        let response = try await fetchModel(Sponsors.self, from: url)
+        return response
     }
 
     public func fetchAnswers(for tickets: [Ticket], in checkinList: String) async throws -> [Int: [Answer]] {
