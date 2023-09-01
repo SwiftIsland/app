@@ -29,6 +29,7 @@ final class AppDataModel: ObservableObject {
     @Published var tickets: [Ticket] = []
     @Published var weather: Weather?
     @Published var puzzles: [Puzzle] = []
+    @Published var sponsors: [Sponsor] = []
 
     private let logger = Logger(
         subsystem: Bundle.main.bundleIdentifier!, // swiftlint:disable:this force_unwrapping
@@ -159,8 +160,9 @@ private extension AppDataModel {
             pages = await fetchPages()
             activities = await fetchActivities()
             events = await fetchEvents()
-            tickets = await updateTickets()
             appState = .loaded
+            tickets = await updateTickets()
+            sponsors = await fetchSponsors()
         }
     }
 
@@ -193,6 +195,13 @@ private extension AppDataModel {
             self.weather = try await weatherService.weather(for: weatherLocation)
         } catch {
             logger.error("Unable to retrieve the weather for location, error: \(error, privacy: .public)")
+
+    func fetchSponsors() async -> [Sponsor] {
+        do {
+            return try await dataLogic.fetchSponsors()
+        } catch {
+            print(error)
+            return []
         }
     }
 }
