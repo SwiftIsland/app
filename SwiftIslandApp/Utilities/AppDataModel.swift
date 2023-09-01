@@ -82,7 +82,7 @@ final class AppDataModel: ObservableObject {
                 storedItems.contains { $0.id == newPackingItem.id }
             }
 
-            if firebaseItems.count > 0 { // Store the new set to user defaults
+            if !firebaseItems.isEmpty { // Store the new set to user defaults
                 storedItems += firebaseItems
                 Defaults[.packingItems] = storedItems
             }
