@@ -10,6 +10,7 @@ struct ConferenceBoxSponsors: View {
     @Environment(\.colorScheme)
     var colorScheme
     @EnvironmentObject private var appDataModel: AppDataModel
+    @Binding var navPath: NavigationPath
     @State var currentSponsor = Sponsor()
 
     var body: some View {

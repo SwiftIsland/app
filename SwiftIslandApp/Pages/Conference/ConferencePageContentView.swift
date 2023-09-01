@@ -12,6 +12,7 @@ struct ConferencePageContentView: View {
 
     @EnvironmentObject private var appDataModel: AppDataModel
 
+    @Binding var navPath: NavigationPath
     @Binding var isShowingMentor: Bool
     @Binding var mayShowMentorNextMentor: Bool
     @Binding var selectedMentor: Mentor?
@@ -65,7 +66,7 @@ struct ConferencePageContentView: View {
                 //                        ConferenceBoxFAQ()
                 //                            .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
                 //                            .scrollContentBackground(.hidden)
-                ConferenceBoxSponsors()
+                ConferenceBoxSponsors(navPath: $navPath)
             }
             .onAppear {
                 Task {
