@@ -70,15 +70,25 @@ final class AppDataModel: ObservableObject {
     /// Fetches items for packing list. If none are stored locally, it'll get the list from Firebase.
     /// - Returns: Array of `PackingItem`
     func fetchPackingListItems() async -> [PackingItem] {
-        if Defaults[.packingItems].isEmpty {
-            let firebaseItems = await dataLogic.fetchPackingListItemsFromFirebase()
-            Defaults[.packingItems] = firebaseItems
-            return firebaseItems
+        var firebaseItems = await dataLogic.fetchPackingListItemsFromFirebase()
+        var storedItems = Defaults[.packingItems]
+
+        if !storedItems.isEmpty { // if we already have stored the packing items, only add new aditions
+            firebaseItems.removeAll { newPackingItem in
+                storedItems.contains { $0.id == newPackingItem.id }
+            }
+
+            if firebaseItems.count > 0 { // Store the new set to user defaults
+                storedItems += firebaseItems
+                Defaults[.packingItems] = storedItems
+            }
+
+            return storedItems
         }
 
-        return Defaults[.packingItems]
+        Defaults[.packingItems] = firebaseItems
+        return firebaseItems
     }
-
 
     func updateTickets() async -> [Ticket] {
         let storedTickets: [Ticket] = (try? KeychainManager.shared.get(key: .tickets) ?? []) ?? []
