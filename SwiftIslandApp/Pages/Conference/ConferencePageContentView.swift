@@ -66,7 +66,7 @@ struct ConferencePageContentView: View {
                 //                        ConferenceBoxFAQ()
                 //                            .frame(width: geo.size.width, height: geo.size.height, alignment: .center)
                 //                            .scrollContentBackground(.hidden)
-                ConferenceBoxSponsors(navPath: $navPath)
+                ConferenceBoxSponsors()
             }
             .onAppear {
                 Task {

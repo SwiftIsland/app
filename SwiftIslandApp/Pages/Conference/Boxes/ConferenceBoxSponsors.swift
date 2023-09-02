@@ -8,7 +8,6 @@ import SwiftIslandDataLogic
 
 struct ConferenceBoxSponsors: View {
     @EnvironmentObject private var appDataModel: AppDataModel
-    @Binding var navPath: NavigationPath
     private let spacing: CGFloat = 20
     private let columns = Array(repeatElement(GridItem(.flexible(minimum: 44), spacing: 20), count: 3))
     @State private var currentSponsor: Sponsor?
@@ -79,11 +78,9 @@ struct ConferenceBoxSponsors: View {
 
 struct ConferenceBoxSponsors_Previews: PreviewProvider {
     @Namespace static var namespace
-    @State static var navPath = NavigationPath()
-
     static var previews: some View {
         let appDataModel = AppDataModel()
-        return ConferenceBoxSponsors(navPath: $navPath)
+        return ConferenceBoxSponsors()
             .environmentObject(appDataModel)
     }
 }
