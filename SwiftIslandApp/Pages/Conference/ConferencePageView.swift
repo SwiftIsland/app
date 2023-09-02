@@ -16,7 +16,7 @@ struct ConferencePageView: View {
     @State private var mayShowMentorNextMentor = true
 
     var body: some View {
-        NavigationStack() {
+        NavigationStack {
             ZStack {
                 LinearGradient.defaultBackground
 
