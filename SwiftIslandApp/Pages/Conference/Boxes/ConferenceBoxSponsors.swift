@@ -5,6 +5,11 @@
 
 import SwiftUI
 import SwiftIslandDataLogic
+import CachedAsyncImage
+
+extension URLCache {
+    static let imageCache = URLCache(memoryCapacity: 512_000_000, diskCapacity: 10_000_000_000)
+}
 
 struct ConferenceBoxSponsors: View {
     @EnvironmentObject private var appDataModel: AppDataModel
@@ -27,7 +32,7 @@ struct ConferenceBoxSponsors: View {
                             currentSponsor = sponsor
                         } label: {
                             VStack {
-                                AsyncImage(url: sponsor.image) { image in
+                                CachedAsyncImage(url: sponsor.image) { image in
                                     image.resizable().aspectRatio(1, contentMode: .fit)
                                 } placeholder: {
                                     Rectangle()
@@ -47,7 +52,7 @@ struct ConferenceBoxSponsors: View {
                                 currentSponsor = sponsor
                             } label: {
                                 VStack {
-                                    AsyncImage(url: sponsor.image) { image in
+                                    CachedAsyncImage(url: sponsor.image) { image in
                                         image.resizable().aspectRatio(contentMode: .fit)
                                     } placeholder: {
                                         Rectangle()
