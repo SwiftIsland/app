@@ -202,7 +202,7 @@ private extension AppDataModel {
         do {
             return try await dataLogic.fetchSponsors()
         } catch {
-            print(error)
+            logger.error("Unable to fetch sponsor information, error: \(error, privacy: .public)")
             return nil
         }
     }
