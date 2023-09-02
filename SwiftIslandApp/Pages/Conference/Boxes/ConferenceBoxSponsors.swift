@@ -11,6 +11,7 @@ struct ConferenceBoxSponsors: View {
     @Binding var navPath: NavigationPath
     private let spacing: CGFloat = 20
     private let columns = Array(repeatElement(GridItem(.flexible(minimum: 44), spacing: 20), count: 3))
+    @State private var currentSponsor: Sponsor?
 
     var body: some View {
         if let sponsors = appDataModel.sponsors {
@@ -23,7 +24,9 @@ struct ConferenceBoxSponsors: View {
                     .padding(.bottom, 0)
                 LazyVGrid(columns: columns, spacing: spacing) {
                     ForEach(sponsors.apps) { sponsor in
-                        NavigationLink(value: sponsor) {
+                        Button {
+                            currentSponsor = sponsor
+                        } label: {
                             VStack {
                                 AsyncImage(url: sponsor.image) { image in
                                     image.resizable().aspectRatio(1, contentMode: .fit)
@@ -41,7 +44,9 @@ struct ConferenceBoxSponsors: View {
                 if let content = sponsors.content {
                     VStack {
                         ForEach(content) { sponsor in
-                            NavigationLink(value: sponsor) {
+                            Button {
+                                currentSponsor = sponsor
+                            } label: {
                                 VStack {
                                     AsyncImage(url: sponsor.image) { image in
                                         image.resizable().aspectRatio(contentMode: .fit)
@@ -60,11 +65,10 @@ struct ConferenceBoxSponsors: View {
                 }
             }
             .padding(EdgeInsets(top: 20, leading: 0, bottom: 20, trailing: 0))
-            .navigationDestination(for: Sponsor.self) { sponsor in
-                SafariWebView(url: sponsor.url) {
-                    navPath.removeLast()
-                }
-                .navigationTitle(sponsor.title)
+            .sheet(item: $currentSponsor) {
+                currentSponsor = nil
+            } content: { sponsor in
+                SafariWebView(url: sponsor.url)
             }
         } else {
             EmptyView()
