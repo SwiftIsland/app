@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "Social Profile Image.jpg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
