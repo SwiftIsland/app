@@ -12,7 +12,6 @@ struct ConferencePageContentView: View {
 
     @EnvironmentObject private var appDataModel: AppDataModel
 
-    @Binding var navPath: NavigationPath
     @Binding var isShowingMentor: Bool
     @Binding var mayShowMentorNextMentor: Bool
     @Binding var selectedMentor: Mentor?

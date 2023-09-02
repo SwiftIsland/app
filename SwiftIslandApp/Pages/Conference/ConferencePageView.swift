@@ -11,19 +11,17 @@ struct ConferencePageView: View {
 
     @EnvironmentObject private var appDataModel: AppDataModel
 
-    @State private var navigationPath = NavigationPath()
     @State private var selectedMentor: Mentor?
     @Binding var isShowingMentor: Bool
     @State private var mayShowMentorNextMentor = true
 
     var body: some View {
-        NavigationStack(path: $navigationPath) {
+        NavigationStack() {
             ZStack {
                 LinearGradient.defaultBackground
 
                 ConferencePageContentView(
                     namespace: namespace,
-                    navPath: $navigationPath,
                     isShowingMentor: $isShowingMentor,
                     mayShowMentorNextMentor: $mayShowMentorNextMentor,
                     selectedMentor: $selectedMentor
