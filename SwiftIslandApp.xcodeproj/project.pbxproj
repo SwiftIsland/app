@@ -96,6 +96,7 @@
 		B35057F92A9DD23C00B71436 /* farmers-wedding.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B35057F82A9DD23C00B71436 /* farmers-wedding.pdf */; };
 		B35057FB2A9DD24400B71436 /* mystery-museum.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B35057FA2A9DD24400B71436 /* mystery-museum.pdf */; };
 		B354DDE52A9BEEE700C24461 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B354DDE42A9BEEE700C24461 /* Utils.swift */; };
+		B362F5E12AA1044F00AFE1EE /* ConferenceBoxSponsors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B362F5E02AA1044F00AFE1EE /* ConferenceBoxSponsors.swift */; };
 		B3733D772A9951B10069D490 /* PuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3733D732A9951B10069D490 /* PuzzleView.swift */; };
 		B3733D792A9951B10069D490 /* PuzzleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3733D752A9951B10069D490 /* PuzzleItemView.swift */; };
 		B3733D7A2A9951B10069D490 /* PuzzlePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3733D762A9951B10069D490 /* PuzzlePageView.swift */; };
@@ -223,6 +224,7 @@
 		B35057F82A9DD23C00B71436 /* farmers-wedding.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "farmers-wedding.pdf"; sourceTree = "<group>"; };
 		B35057FA2A9DD24400B71436 /* mystery-museum.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "mystery-museum.pdf"; sourceTree = "<group>"; };
 		B354DDE42A9BEEE700C24461 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		B362F5E02AA1044F00AFE1EE /* ConferenceBoxSponsors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxSponsors.swift; sourceTree = "<group>"; };
 		B3733D732A9951B10069D490 /* PuzzleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuzzleView.swift; sourceTree = "<group>"; };
 		B3733D752A9951B10069D490 /* PuzzleItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuzzleItemView.swift; sourceTree = "<group>"; };
 		B3733D762A9951B10069D490 /* PuzzlePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuzzlePageView.swift; sourceTree = "<group>"; };
@@ -316,6 +318,7 @@
 				2A16EB442A4F622800CC881D /* ConferenceBoxTicket.swift */,
 				2A37FB692A7B06AE0062E63A /* ConferenceBoxMentors.swift */,
 				2AE45DA82A7D617400AF2B9D /* ConferenceBoxWeather.swift */,
+				B362F5E02AA1044F00AFE1EE /* ConferenceBoxSponsors.swift */,
 			);
 			path = Boxes;
 			sourceTree = "<group>";
@@ -853,6 +856,7 @@
 				2AB3AE902A77FF0E00F3ECB2 /* KeychainManager.swift in Sources */,
 				2AB3AF672A78199600F3ECB2 /* SafariWebView.swift in Sources */,
 				2A18CE462A77403800969214 /* EventDetailsView.swift in Sources */,
+				B362F5E12AA1044F00AFE1EE /* ConferenceBoxSponsors.swift in Sources */,
 				2A18CE3B2A76E71900969214 /* PacklistView.swift in Sources */,
 				2AEDC4C62A4A08AF00CD0180 /* TabBarView.swift in Sources */,
 				2AEDC4972A4A030F00CD0180 /* MainApp.swift in Sources */,

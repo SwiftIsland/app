@@ -46,6 +46,8 @@ public protocol DataLogic {
     func fetchAnswers(for tickets: [Ticket], in checkinList: String) async throws -> [Int: [Answer]]
 
     func fetchPuzzles() async -> [Puzzle]
+    
+    func fetchSponsors() async throws -> Sponsors
 }
 
 public enum DataLogicError: Error {
@@ -156,8 +158,15 @@ public class SwiftIslandDataLogic: DataLogic, ObservableObject {
     }
 
     public func fetchAnswers(for checkinList: String) async throws -> [Answer] {
-        let url = URL(string: "https://checkin.tito.io/checkin_lists/\(checkinList)/answers")!
+        guard let url = URL(string: "https://checkin.tito.io/checkin_lists/\(checkinList)/answers") else {
+            throw DataLogicError.incorrectSlug
+        }
         return try await fetchModel(Array<Answer>.self, from: url)
+    }
+    
+    public func fetchSponsors() async throws -> Sponsors {
+        let url = URL(string: "https://swiftisland.nl/api/sponsors.json")!
+        return try await fetchModel(Sponsors.self, from: url)
     }
 
     public func fetchAnswers(for tickets: [Ticket], in checkinList: String) async throws -> [Int: [Answer]] {
