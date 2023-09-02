@@ -9,7 +9,6 @@ import SwiftIslandDataLogic
 struct ConferenceBoxSponsors: View {
     @EnvironmentObject private var appDataModel: AppDataModel
     @Binding var navPath: NavigationPath
-    @State var currentSponsor = Sponsor()
     private let spacing: CGFloat = 20
     private let columns = Array(repeatElement(GridItem(.flexible(minimum: 44), spacing: 20), count: 3))
 
