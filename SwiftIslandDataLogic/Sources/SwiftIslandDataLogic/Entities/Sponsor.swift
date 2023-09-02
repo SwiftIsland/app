@@ -27,8 +27,6 @@ extension Sponsor: Hashable, Identifiable {
     public var id: String {
         return title
     }
-    
-    
 }
 
 extension Sponsor {
@@ -39,10 +37,19 @@ extension Sponsor {
             image: image
         )
     }
-
 }
 
 public struct Sponsors: Decodable {
     public let apps: [Sponsor]
     public let content: [Sponsor]?
 }
+
+extension Sponsors {
+    public static func forPreview(apps: [Sponsor] = [], content: [Sponsor]? = nil) -> Sponsors {
+        Sponsors(
+            apps: apps,
+            content: content
+        )
+    }
+}
+
