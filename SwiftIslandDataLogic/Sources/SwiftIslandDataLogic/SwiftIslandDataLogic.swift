@@ -166,8 +166,7 @@ public class SwiftIslandDataLogic: DataLogic, ObservableObject {
     
     public func fetchSponsors() async throws -> Sponsors {
         let url = URL(string: "https://swiftisland.nl/api/sponsors.json")!
-        let response = try await fetchModel(Sponsors.self, from: url)
-        return response
+        return try await fetchModel(Sponsors.self, from: url)
     }
 
     public func fetchAnswers(for tickets: [Ticket], in checkinList: String) async throws -> [Int: [Answer]] {
