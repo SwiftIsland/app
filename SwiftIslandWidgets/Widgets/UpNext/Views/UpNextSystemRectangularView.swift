@@ -10,13 +10,11 @@ struct UpNextSystemRectangularView: View {
 	var entry: UpNextProvider.Entry
 
 	var body: some View {
-		
 		ZStack {
 			if let event = entry.event {
 				AccessoryWidgetBackground()
 					.cornerRadius(10)
 				VStack(alignment: .leading) {
-					
 					VStack(alignment: .leading, spacing: 0) {
 						HStack {
 							Circle()
@@ -31,7 +29,7 @@ struct UpNextSystemRectangularView: View {
 							.font(.body)
 							.minimumScaleFactor(0.5)
 							.padding(.bottom, 2)
-						
+
 						Spacer()
 						Text(event.startDate.relativeDateDisplay())
 							.font(.footnote)
@@ -43,7 +41,6 @@ struct UpNextSystemRectangularView: View {
 			} else {
 				if entry.isTooFarInTheFuture {
 					VStack(alignment: .leading, spacing: 0) {
-						
 						Text("Up Next:")
 							.font(.caption)
 							.fontWeight(.light)
@@ -54,7 +51,6 @@ struct UpNextSystemRectangularView: View {
 							.multilineTextAlignment(.leading)
 					}
 					.padding()
-					
 				} else {
 					VStack(alignment: .center) {
 						Image("Logo")

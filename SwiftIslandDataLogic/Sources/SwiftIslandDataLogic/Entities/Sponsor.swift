@@ -11,7 +11,7 @@ public struct Sponsor: Decodable {
     public let title: String
     public let url: URL
     public let image: URL
-    
+
     internal init(title: String, url: URL, image: URL) {
         self.title = title
         self.url = url
@@ -52,4 +52,3 @@ extension Sponsors {
         )
     }
 }
-

@@ -7,8 +7,6 @@ import WidgetKit
 import SwiftIslandDataLogic
 
 struct UpNextSystemCircularView: View {
-	
-	
 	var body: some View {
 		ZStack {
 //			AccessoryWidgetBackground()
@@ -38,4 +36,3 @@ struct UpNextSystemCircularView_Previews: PreviewProvider {
 			.previewDisplayName("Circular dark")
 	}
 }
-

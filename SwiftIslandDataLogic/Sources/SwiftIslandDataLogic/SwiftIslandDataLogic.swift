@@ -46,7 +46,7 @@ public protocol DataLogic {
     func fetchAnswers(for tickets: [Ticket], in checkinList: String) async throws -> [Int: [Answer]]
 
     func fetchPuzzles() async -> [Puzzle]
-    
+
     func fetchSponsors() async throws -> Sponsors
 }
 
@@ -163,7 +163,7 @@ public class SwiftIslandDataLogic: DataLogic, ObservableObject {
         }
         return try await fetchModel(Array<Answer>.self, from: url)
     }
-    
+
     public func fetchSponsors() async throws -> Sponsors {
         let url = URL(string: "https://swiftisland.nl/api/sponsors.json")!
         return try await fetchModel(Sponsors.self, from: url)

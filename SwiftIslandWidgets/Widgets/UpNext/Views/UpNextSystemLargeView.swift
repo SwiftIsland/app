@@ -14,15 +14,12 @@ struct UpNextSystemLargeView: View {
 			LinearGradient.defaultBackground
 			if let event = entry.event {
 				VStack(alignment: .leading) {
-					
 					VStack(alignment: .leading, spacing: 0) {
-						
 						Text(event.activity.type.rawValue)
 							.font(.caption)
 							.foregroundColor(event.activity.type.color)
 							.fontWeight(.light)
 						HStack {
-							
 							Circle()
 								.fill(event.activity.type.color)
 								.frame(width: 7)
@@ -46,9 +43,8 @@ struct UpNextSystemLargeView: View {
 								.foregroundColor(.secondary)
 								.lineLimit(6)
 								.padding(.bottom, 8)
-							
 						}
-											
+
 						Spacer()
 						HStack {
 							Text(event.startDate.formatted())

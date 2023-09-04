@@ -23,6 +23,6 @@ struct UpNextWidget: Widget {
 			// Add Support to Lock Screen widgets
 			.accessoryCircular,
 			.accessoryRectangular,
-			.accessoryInline,])
+			.accessoryInline ])
     }
 }
