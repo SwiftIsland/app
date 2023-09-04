@@ -17,12 +17,18 @@ struct UpNextEntryView: View {
             UpNextSystemSmallView(entry: entry)
         case .systemMedium:
             UpNextSystemMediumView(entry: entry)
+        case .systemLarge:
+            UpNextSystemLargeView(entry: entry)
         case .accessoryInline:
             if let event = entry.event {
-                Text("Next event \(event.startDate.relativeDateDisplay())")
+                Text("🦭 \(event.activity.title)")
             } else {
-                Text("No more events.")
+                Text("🦭 What's next?")
             }
+        case .accessoryCircular:
+            UpNextSystemCircularView()
+        case .accessoryRectangular:
+            UpNextSystemRectangularView(entry: entry)
         default:
             Text("No support for requested size")
         }
@@ -35,10 +41,19 @@ struct UpNextEntryView_Previews: PreviewProvider {
             .previewContext(WidgetPreviewContext(family: .accessoryInline))
             .previewDisplayName("Inline")
         UpNextEntryView(entry: UpNextEntry.forPreview())
+            .previewContext(WidgetPreviewContext(family: .accessoryCircular))
+            .previewDisplayName("Circular")
+        UpNextEntryView(entry: UpNextEntry.forPreview())
+            .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
+            .previewDisplayName("Rectangular")
+        UpNextEntryView(entry: UpNextEntry.forPreview())
             .previewContext(WidgetPreviewContext(family: .systemSmall))
             .previewDisplayName("Small")
         UpNextEntryView(entry: UpNextEntry.forPreview())
             .previewContext(WidgetPreviewContext(family: .systemMedium))
             .previewDisplayName("System medium")
+        UpNextEntryView(entry: UpNextEntry.forPreview())
+            .previewContext(WidgetPreviewContext(family: .systemLarge))
+            .previewDisplayName("System large")
     }
 }

@@ -1,13 +1,12 @@
 //
-// Created by Paul Peelen for the use in the Swift Island app
+// Created by Sidney de Koning for the use in the Swift Island app
 // Copyright © 2023 AppTrix AB. All rights reserved.
 //
-
 import SwiftUI
 import WidgetKit
 import SwiftIslandDataLogic
 
-struct UpNextSystemMediumView: View {
+struct UpNextSystemLargeView: View {
     var entry: UpNextProvider.Entry
 
     var body: some View {
@@ -28,19 +27,32 @@ struct UpNextSystemMediumView: View {
                                 .font(.title)
                         }
                         .padding(.bottom, 8)
-                        Text(event.activity.description)
-                            .font(.footnote)
-                            .foregroundColor(.secondary)
-                            .lineLimit(2)
-                            .padding(.bottom, 8)
+                        HStack {
+                            Image("SofíaSwidarowicz")
+                                .resizable()
+                                .aspectRatio(CGSize(width: 1, height: 1), contentMode: .fit)
+                                .frame(width: 64)
+                                .shadow(color: .primary.opacity(0.2), radius: 5, x: 0, y: 0)
+                                .clipShape(Circle())
+                                .overlay(Circle().stroke(Color.orange, lineWidth: 1))
+                                .scaledToFit()
+                                .padding()
+                            Spacer()
+                            Text(event.activity.description)
+                                .font(.body)
+                                .foregroundColor(.secondary)
+                                .lineLimit(6)
+                                .padding(.bottom, 8)
+                        }
+
                         Spacer()
                         HStack {
                             Text(event.startDate.formatted())
-                                .font(.caption)
+                                .font(.subheadline)
                                 .foregroundColor(.secondary)
                             Spacer()
                             Text(event.startDate.relativeDateDisplay())
-                                .font(.caption)
+                                .font(.subheadline)
                         }
                     }
                     .padding()
@@ -63,7 +75,7 @@ struct UpNextSystemMediumView: View {
                             .resizable()
                             .aspectRatio(CGSize(width: 1, height: 1), contentMode: .fit)
                             .frame(width: 36)
-                            .shadow(color: .primary.opacity(0.2), radius: 10, x: 0, y: 0)
+                            .shadow(color: .primary.opacity(0.2), radius: 5, x: 0, y: 0)
                         Text("Swift Island is over ;(\nSee you again next year?")
                             .font(.footnote)
                             .fontWeight(.light)
@@ -76,41 +88,41 @@ struct UpNextSystemMediumView: View {
     }
 }
 
-struct UpNextSystemMedium_Previews: PreviewProvider {
+struct UpNextSystemLargeView_Previews: PreviewProvider {
     static var previews: some View {
-        UpNextSystemMediumView(entry: UpNextEntry.forPreview())
-            .previewContext(WidgetPreviewContext(family: .systemMedium))
+        UpNextSystemLargeView(entry: UpNextEntry.forPreview())
+            .previewContext(WidgetPreviewContext(family: .systemLarge))
             .preferredColorScheme(.light)
-            .previewDisplayName("Medium light")
+            .previewDisplayName("Large light")
 
-        UpNextSystemMediumView(entry: UpNextEntry.forPreview())
-            .previewContext(WidgetPreviewContext(family: .systemMedium))
+        UpNextSystemLargeView(entry: UpNextEntry.forPreview())
+            .previewContext(WidgetPreviewContext(family: .systemLarge))
             .preferredColorScheme(.dark)
-            .previewDisplayName("Medium dark")
+            .previewDisplayName("Large dark")
 
-        UpNextSystemMediumView(entry: UpNextEntry.forPreview())
-            .previewContext(WidgetPreviewContext(family: .systemMedium))
+        UpNextSystemLargeView(entry: UpNextEntry.forPreview())
+            .previewContext(WidgetPreviewContext(family: .systemLarge))
             .preferredColorScheme(.dark)
             .dynamicTypeSize(.xxxLarge)
-            .previewDisplayName("Medium dark xxxLarge font")
+            .previewDisplayName("Large dark xxxLarge font")
 
-        UpNextSystemMediumView(entry: UpNextEntry.isTooFarAhead())
-            .previewContext(WidgetPreviewContext(family: .systemMedium))
+        UpNextSystemLargeView(entry: UpNextEntry.isTooFarAhead())
+            .previewContext(WidgetPreviewContext(family: .systemLarge))
             .preferredColorScheme(.light)
             .previewDisplayName("Too early light")
 
-        UpNextSystemMediumView(entry: UpNextEntry.isTooFarAhead())
-            .previewContext(WidgetPreviewContext(family: .systemMedium))
+        UpNextSystemLargeView(entry: UpNextEntry.isTooFarAhead())
+            .previewContext(WidgetPreviewContext(family: .systemLarge))
             .preferredColorScheme(.dark)
             .previewDisplayName("Too early dark")
 
-        UpNextSystemMediumView(entry: UpNextEntry.noMoreEvents())
-            .previewContext(WidgetPreviewContext(family: .systemMedium))
+        UpNextSystemLargeView(entry: UpNextEntry.noMoreEvents())
+            .previewContext(WidgetPreviewContext(family: .systemLarge))
             .preferredColorScheme(.light)
             .previewDisplayName("No more events light")
 
-        UpNextSystemMediumView(entry: UpNextEntry.noMoreEvents())
-            .previewContext(WidgetPreviewContext(family: .systemMedium))
+        UpNextSystemLargeView(entry: UpNextEntry.noMoreEvents())
+            .previewContext(WidgetPreviewContext(family: .systemLarge))
             .preferredColorScheme(.dark)
             .previewDisplayName("No more events dark")
     }

@@ -16,6 +16,13 @@ struct UpNextWidget: Widget {
         }
         .configurationDisplayName("Up Next")
         .description("The next event at the conference.")
-        .supportedFamilies([.systemSmall, .systemMedium])
+        .supportedFamilies([
+            .systemSmall,
+            .systemMedium,
+            .systemLarge,
+            // Add Support to Lock Screen widgets
+            .accessoryCircular,
+            .accessoryRectangular,
+            .accessoryInline ])
     }
 }
