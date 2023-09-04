@@ -48,7 +48,7 @@ struct UpNextSystemSmallView: View {
                     VStack(alignment: .center) {
                         Text("Up Next")
                             .font(.body)
-						Text("Sure, _early bird gets the worm_, but you are a little too early 😉\n\nCheck back here a few days before the event.")
+                        Text("Sure, _early bird gets the worm_, but you are a little too early 😉\n\nCheck back here a few days before the event.")
                             .font(.footnote)
                             .fontWeight(.light)
                             .multilineTextAlignment(.center)
@@ -62,7 +62,7 @@ struct UpNextSystemSmallView: View {
                             .frame(width: 36)
                             .shadow(color: .primary.opacity(0.2), radius: 5, x: 0, y: 0)
                             .padding(.top, 8)
-						Text("Swift Island is over ;(\nSee you again next year?")
+                        Text("Swift Island is over ;(\nSee you again next year?")
                             .font(.footnote)
                             .fontWeight(.light)
                             .multilineTextAlignment(.center)

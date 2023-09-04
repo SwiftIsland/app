@@ -64,7 +64,7 @@ struct UpNextSystemMediumView: View {
                             .aspectRatio(CGSize(width: 1, height: 1), contentMode: .fit)
                             .frame(width: 36)
                             .shadow(color: .primary.opacity(0.2), radius: 10, x: 0, y: 0)
-						Text("Swift Island is over ;(\nSee you again next year?")
+                        Text("Swift Island is over ;(\nSee you again next year?")
                             .font(.footnote)
                             .fontWeight(.light)
                             .multilineTextAlignment(.center)

@@ -17,18 +17,18 @@ struct UpNextEntryView: View {
             UpNextSystemSmallView(entry: entry)
         case .systemMedium:
             UpNextSystemMediumView(entry: entry)
-		case .systemLarge:
-			UpNextSystemLargeView(entry: entry)
+        case .systemLarge:
+            UpNextSystemLargeView(entry: entry)
         case .accessoryInline:
             if let event = entry.event {
-				Text("🦭 \(event.activity.title)")
+                Text("🦭 \(event.activity.title)")
             } else {
                 Text("🦭 What's next?")
             }
-		case .accessoryCircular:
-			UpNextSystemCircularView()
-		case .accessoryRectangular:
-			UpNextSystemRectangularView(entry: entry)
+        case .accessoryCircular:
+            UpNextSystemCircularView()
+        case .accessoryRectangular:
+            UpNextSystemRectangularView(entry: entry)
         default:
             Text("No support for requested size")
         }
@@ -37,13 +37,13 @@ struct UpNextEntryView: View {
 
 struct UpNextEntryView_Previews: PreviewProvider {
     static var previews: some View {
-		UpNextEntryView(entry: UpNextEntry.forPreview())
-			.previewContext(WidgetPreviewContext(family: .accessoryInline))
-			.previewDisplayName("Inline")
-		UpNextEntryView(entry: UpNextEntry.forPreview())
-			.previewContext(WidgetPreviewContext(family: .accessoryCircular))
-			.previewDisplayName("Circular")
-		UpNextEntryView(entry: UpNextEntry.forPreview())
+        UpNextEntryView(entry: UpNextEntry.forPreview())
+            .previewContext(WidgetPreviewContext(family: .accessoryInline))
+            .previewDisplayName("Inline")
+        UpNextEntryView(entry: UpNextEntry.forPreview())
+            .previewContext(WidgetPreviewContext(family: .accessoryCircular))
+            .previewDisplayName("Circular")
+        UpNextEntryView(entry: UpNextEntry.forPreview())
             .previewContext(WidgetPreviewContext(family: .accessoryRectangular))
             .previewDisplayName("Rectangular")
         UpNextEntryView(entry: UpNextEntry.forPreview())
@@ -52,8 +52,8 @@ struct UpNextEntryView_Previews: PreviewProvider {
         UpNextEntryView(entry: UpNextEntry.forPreview())
             .previewContext(WidgetPreviewContext(family: .systemMedium))
             .previewDisplayName("System medium")
-		UpNextEntryView(entry: UpNextEntry.forPreview())
-			.previewContext(WidgetPreviewContext(family: .systemLarge))
-			.previewDisplayName("System large")
+        UpNextEntryView(entry: UpNextEntry.forPreview())
+            .previewContext(WidgetPreviewContext(family: .systemLarge))
+            .previewDisplayName("System large")
     }
 }
