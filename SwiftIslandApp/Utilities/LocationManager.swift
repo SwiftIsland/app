@@ -25,19 +25,23 @@ final class LocationManager: NSObject, ObservableObject {
     /// Requests the user’s permission to use location services while the app is in use.
     /// - Returns: Constants indicating the app's authorization to use location services.
     func requestAuthorization() async -> CLAuthorizationStatus {
-        await withCheckedContinuation { continuation in
+        let status = await withCheckedContinuation { continuation in
             requestAuthorizationContinuation = continuation
             coreLocationManager.requestWhenInUseAuthorization()
         }
+        requestAuthorizationContinuation = nil
+        return status
     }
 
     /// Requests the one-time delivery of the user’s current location.
     /// - Returns: The latitude and longitude associated with a location, if recieved
     func requestLocation() async throws -> CLLocationCoordinate2D? {
-        try await withCheckedThrowingContinuation { continuation in
+        let location = try await withCheckedThrowingContinuation { continuation in
             requestLocationContinuation = continuation
             coreLocationManager.requestLocation()
         }
+        requestLocationContinuation = nil
+        return location
     }
 
     /// Determines if the given coordinates lie within the boundaries of Texel in the Netherlands or Ingarö in Stockholm.
