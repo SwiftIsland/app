@@ -17,7 +17,15 @@ struct ScheduleView: View {
 
     @State private var hourSpacing = 24.0
     @State private var hourHeight = 25.0
-    @State private var selectedDate: Date? = Calendar.current.date(from: DateComponents(year: 2023, month: 9, day: 4))
+    @State private var selectedDate: Date? = {
+        if let start = Calendar.current.date(from: DateComponents(year: 2023, month: 9, day: 4)),
+            let end = Calendar.current.date(from: DateComponents(year: 2023, month: 9, day: 7)),
+            let now = Calendar.current.date(from: Calendar.current.dateComponents([.year, .month, .day], from: Date.now)) {
+            return min(end, max(start, now))
+        } else {
+            return Calendar.current.date(from: DateComponents(year: 2023, month: 9, day: 4))
+        }
+    }()
     @State private var showPopover = false
     @State private var selectedDayTag = 4
     @State private var events: [Event] = []
