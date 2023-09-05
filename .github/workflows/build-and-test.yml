@@ -9,6 +9,8 @@ jobs:
     name: Build and Test the app
     runs-on: macos-13
     steps:
+      - name: Trust fingerprint for packages
+        run: defaults write com.apple.dt.Xcode IDESkipPackagePluginFingerprintValidatation -bool YES
       - name: Checkout repo
         uses: actions/checkout@v3
         with:
