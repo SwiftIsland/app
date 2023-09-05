@@ -35,7 +35,7 @@ struct ScheduleTimelineView: View {
     func calculateOffset() {
         let actualHourHeight = hourHeight + hourSpacing
         let heightPerSecond = (actualHourHeight / 60) / 60
-        let secondsSinceStartOfDay = abs(Date().atHour(0)?.timeIntervalSinceNow ?? 0)
+        let secondsSinceStartOfDay = abs(Date().atHour(6)?.timeIntervalSinceNow ?? 0)
         timelineOffset = secondsSinceStartOfDay * heightPerSecond
     }
 }

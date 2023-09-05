@@ -115,6 +115,16 @@ struct ScheduleView: View {
             updateContent()
         }
         .onAppear {
+            let calendar = Calendar.current
+
+            if let tuesday = calendar.date(from: DateComponents(year: 2023, month: 9, day: 5)), calendar.isDateInToday(tuesday) {
+                selectedDate = tuesday
+            } else if let wednesday = calendar.date(from: DateComponents(year: 2023, month: 9, day: 5)), calendar.isDateInToday(wednesday) {
+                selectedDate = wednesday
+            } else if let thursday = calendar.date(from: DateComponents(year: 2023, month: 9, day: 6)), calendar.isDateInToday(thursday) {
+                selectedDate = thursday
+            }
+
             updateContent()
         }
     }
