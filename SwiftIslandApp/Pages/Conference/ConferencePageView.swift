@@ -45,6 +45,10 @@ struct ConferencePageView: View {
             }
         }
         .accentColor(.white)
+        .onDisappear {
+            isShowingMentor = false
+            selectedMentor = nil
+        }
     }
 }
 

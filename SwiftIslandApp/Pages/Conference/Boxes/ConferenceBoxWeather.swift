@@ -49,6 +49,11 @@ struct ConferenceBoxWeather: View {
                             .tint(.white)
                     }
                 }
+                Text(" Weather")
+                    .font(.caption.bold())
+                    .foregroundColor(.white)
+                    .frame(maxHeight: .infinity, alignment: .bottomLeading)
+                    .padding(10)
             }
             .mask {
                 RoundedRectangle(cornerRadius: 10, style: .continuous)
