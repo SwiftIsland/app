@@ -49,11 +49,21 @@ struct ConferenceBoxWeather: View {
                             .tint(.white)
                     }
                 }
-                Text(" Weather")
-                    .font(.caption.bold())
-                    .foregroundColor(.white)
-                    .frame(maxHeight: .infinity, alignment: .bottomLeading)
-                    .padding(10)
+                HStack {
+                    Text(" Weather")
+                        .font(.caption.bold())
+                        .foregroundColor(.white)
+                    Button(action: {
+                        UIApplication.shared.open(URL(string: "https://weatherkit.apple.com/legal-attribution.html")!) // swiftlint:disable:this force_unwrapping
+                    }, label: {
+                        Text("legal")
+                            .font(.caption2)
+                            .foregroundColor(.white.opacity(0.8))
+                            .underline()
+                    })
+                }
+                .frame(maxHeight: .infinity, alignment: .bottomLeading)
+                .padding(10)
             }
             .mask {
                 RoundedRectangle(cornerRadius: 10, style: .continuous)
