@@ -1274,8 +1274,8 @@
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ppeelen/SimpleCalendar.git";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
 			};
 		};
 		2AFA65E82A9E9371004A13F8 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {

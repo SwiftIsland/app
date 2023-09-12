@@ -131,8 +131,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/ppeelen/SimpleCalendar.git",
       "state" : {
-        "branch" : "main",
-        "revision" : "f5ab82f56ec1023ccd2cb5ac8231b8f454af9a05"
+        "revision" : "e4f24de7f2461dea758eed6d244af68ec8aa0c0b",
+        "version" : "1.0.0"
       }
     },
     {
