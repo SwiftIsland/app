@@ -127,6 +127,15 @@
       }
     },
     {
+      "identity" : "simplecalendar",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/ppeelen/SimpleCalendar.git",
+      "state" : {
+        "branch" : "main",
+        "revision" : "f5ab82f56ec1023ccd2cb5ac8231b8f454af9a05"
+      }
+    },
+    {
       "identity" : "sourcekitten",
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/jpsim/SourceKitten.git",

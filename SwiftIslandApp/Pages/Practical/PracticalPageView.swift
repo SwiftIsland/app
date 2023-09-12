@@ -119,7 +119,7 @@ struct PracticalPageView: View {
                 case .map:
                     MapView()
                 case .schedule:
-                    ScheduleView()
+                    EventScheduleView()
                 case .tickets:
                     TicketsView()
                 case .packlist:
