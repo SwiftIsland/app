@@ -53,7 +53,7 @@ struct TabBarView: View {
                             .tag(tab)
                     case .schedule:
                         NavigationStack {
-                            ScheduleView()
+                            EventScheduleView()
                         }
                         .tabItem {
                             Label("Schedule", systemImage: "calendar.day.timeline.left")

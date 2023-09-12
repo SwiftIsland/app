@@ -27,13 +27,13 @@ struct ConferenceBoxEvent: View {
                             .multilineTextAlignment(.center)
                             .padding()
                     } else {
-                        Text(event.activity.type.rawValue)
+                        Text(event.calendarActivity.activityType.name)
                             .font(.caption)
                             .foregroundColor(.secondary)
                             .fontWeight(.light)
                         HStack {
                             Circle()
-                                .fill(event.activity.type.color)
+                                .fill(event.calendarActivity.activityType.color)
                                 .frame(width: 7)
                             Text(event.activity.title)
                                 .font(.title)
