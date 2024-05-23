@@ -29,12 +29,12 @@ struct ConferencePageContentView: View {
                     ConferenceBoxTicket()
                         .padding(.vertical, 6)
 
-                    ConferenceBoxMentors(
-                        namespace: namespace,
-                        geo: geo,
-                        isShowingMentor: $isShowingMentor,
-                        mayShowMentorNextMentor: $mayShowMentorNextMentor,
-                        selectedMentor: $selectedMentor)
+//                    ConferenceBoxMentors(
+//                        namespace: namespace,
+//                        geo: geo,
+//                        isShowingMentor: $isShowingMentor,
+//                        mayShowMentorNextMentor: $mayShowMentorNextMentor,
+//                        selectedMentor: $selectedMentor)
 
                     ConferenceBoxWeather()
 

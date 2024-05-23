@@ -151,6 +151,6 @@ enum URLTask {
 }
 
 enum AppActions: String {
-    case atTheConference = "attheconference"
+    case atTheConference = "ihavearrived"
     case atHome = "athome"
 }

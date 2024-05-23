@@ -17,7 +17,7 @@ struct ScheduleView: View {
 
     @State private var hourSpacing = 24.0
     @State private var hourHeight = 25.0
-    @State private var selectedDate: Date? = Calendar.current.date(from: DateComponents(year: 2023, month: 9, day: 4))
+    @State private var selectedDate: Date? = Calendar.current.date(from: DateComponents(year: 2024, month: 8, day: 26))
     @State private var showPopover = false
     @State private var selectedDayTag = 4
     @State private var events: [Event] = []
@@ -111,17 +111,17 @@ struct ScheduleView: View {
         }
         .onChange(of: selectedDayTag) { _ in
             showPopover = false
-            self.selectedDate = Calendar.current.date(from: DateComponents(year: 2023, month: 9, day: selectedDayTag))
+            self.selectedDate = Calendar.current.date(from: DateComponents(year: 2024, month: 8, day: selectedDayTag))
             updateContent()
         }
         .onAppear {
             let calendar = Calendar.current
 
-            if let tuesday = calendar.date(from: DateComponents(year: 2023, month: 9, day: 5)), calendar.isDateInToday(tuesday) {
+            if let tuesday = calendar.date(from: DateComponents(year: 2024, month: 9, day: 5)), calendar.isDateInToday(tuesday) {
                 selectedDate = tuesday
-            } else if let wednesday = calendar.date(from: DateComponents(year: 2023, month: 9, day: 5)), calendar.isDateInToday(wednesday) {
+            } else if let wednesday = calendar.date(from: DateComponents(year: 2024, month: 9, day: 5)), calendar.isDateInToday(wednesday) {
                 selectedDate = wednesday
-            } else if let thursday = calendar.date(from: DateComponents(year: 2023, month: 9, day: 6)), calendar.isDateInToday(thursday) {
+            } else if let thursday = calendar.date(from: DateComponents(year: 2024, month: 9, day: 6)), calendar.isDateInToday(thursday) {
                 selectedDate = thursday
             }
 
@@ -200,10 +200,10 @@ struct ScheduleView_Previews: PreviewProvider {
         let appDataModel = AppDataModel()
 
         // swiftlint:disable force_unwrapping
-        let selectedDate = Calendar.current.date(from: DateComponents(year: 2023, month: 9, day: 4, hour: 9))!
-        let secondDate = Calendar.current.date(from: DateComponents(year: 2023, month: 9, day: 4, hour: 10))!
-        let thirdDate = Calendar.current.date(from: DateComponents(year: 2023, month: 9, day: 4, hour: 7, minute: 15))!
-        let fouthDate = Calendar.current.date(from: DateComponents(year: 2023, month: 9, day: 4, hour: 7, minute: 30))!
+        let selectedDate = Calendar.current.date(from: DateComponents(year: 2024, month: 8, day: 27, hour: 9))!
+        let secondDate = Calendar.current.date(from: DateComponents(year: 2024, month: 8, day: 27, hour: 10))!
+        let thirdDate = Calendar.current.date(from: DateComponents(year: 2024, month: 8, day: 27, hour: 7, minute: 15))!
+        let fouthDate = Calendar.current.date(from: DateComponents(year: 2024, month: 8, day: 27, hour: 7, minute: 30))!
         // swiftlint:enable force_unwrapping
         let events = [
             Event.forPreview(startDate: selectedDate),
