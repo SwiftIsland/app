@@ -7,7 +7,7 @@ on:
 jobs:
   buildAndTest:
     name: Build and Test the app
-    runs-on: macos-13
+    runs-on: macos-14
     steps:
       - name: Trust fingerprint for packages
         run: defaults write com.apple.dt.Xcode IDESkipPackagePluginFingerprintValidatation -bool YES
