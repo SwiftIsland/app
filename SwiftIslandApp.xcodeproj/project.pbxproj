@@ -22,12 +22,11 @@
 		2A18CE462A77403800969214 /* EventDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A18CE452A77403800969214 /* EventDetailsView.swift */; };
 		2A37FB6A2A7B06AE0062E63A /* ConferenceBoxMentors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A37FB692A7B06AE0062E63A /* ConferenceBoxMentors.swift */; };
 		2A37FB902A7C14CB0062E63A /* UIDevice+HasNotch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A37FB8F2A7C14CB0062E63A /* UIDevice+HasNotch.swift */; };
-		2A37FB932A7D3EB20062E63A /* AckGen in Frameworks */ = {isa = PBXBuildFile; productRef = 2A37FB922A7D3EB20062E63A /* AckGen */; };
-		2A37FB952A7D3EB20062E63A /* AckGenUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2A37FB942A7D3EB20062E63A /* AckGenUI */; };
-		2A37FB982A7D3EFC0062E63A /* Acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2A37FB972A7D3EFC0062E63A /* Acknowledgements.plist */; };
 		2A37FB9A2A7D3F890062E63A /* Bundle+Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A37FB992A7D3F890062E63A /* Bundle+Version.swift */; };
 		2A3AB6592A7871030089CF7E /* SwiftIslandDataLogic in Frameworks */ = {isa = PBXBuildFile; productRef = 2A3AB6582A7871030089CF7E /* SwiftIslandDataLogic */; };
 		2A3AB65B2A78744B0089CF7E /* ActivityType+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3AB65A2A78744B0089CF7E /* ActivityType+Color.swift */; };
+		2A659B272BFFEA9D00A57501 /* AckGen in Frameworks */ = {isa = PBXBuildFile; productRef = 2A659B262BFFEA9D00A57501 /* AckGen */; };
+		2A659B292BFFEA9D00A57501 /* AckGenUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2A659B282BFFEA9D00A57501 /* AckGenUI */; };
 		2A7F12772A6401C4007C28EA /* NFCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F12762A6401C4007C28EA /* NFCManager.swift */; };
 		2A7F12792A640730007C28EA /* ScrollViewOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F12782A640730007C28EA /* ScrollViewOffset.swift */; };
 		2A7F127F2A6488EC007C28EA /* RequestLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F127E2A6488EC007C28EA /* RequestLocationView.swift */; };
@@ -83,6 +82,7 @@
 		2AEDC4C32A4A089100CD0180 /* ConferencePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEDC4C22A4A089100CD0180 /* ConferencePageView.swift */; };
 		2AEDC4C62A4A08AF00CD0180 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEDC4C52A4A08AF00CD0180 /* TabBarView.swift */; };
 		2AF19ED32A7B04A500134E0B /* ConferencePageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF19ED22A7B04A500134E0B /* ConferencePageContentView.swift */; };
+		2AFC45FC2BFFEF8200B135F5 /* Acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AFC45FB2BFFEF8200B135F5 /* Acknowledgements.plist */; };
 		2E19CADE2A7EEC9700177B61 /* UpNextSystemLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E19CADD2A7EEC9700177B61 /* UpNextSystemLargeView.swift */; };
 		2E19CAE02A7EF7B100177B61 /* UpNextSystemRectangularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E19CADF2A7EF7B100177B61 /* UpNextSystemRectangularView.swift */; };
 		2E19CAE22A7EFD9800177B61 /* UpNextSystemCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E19CAE12A7EFD9800177B61 /* UpNextSystemCircularView.swift */; };
@@ -157,11 +157,22 @@
 		2A18CE452A77403800969214 /* EventDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailsView.swift; sourceTree = "<group>"; };
 		2A37FB692A7B06AE0062E63A /* ConferenceBoxMentors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxMentors.swift; sourceTree = "<group>"; };
 		2A37FB8F2A7C14CB0062E63A /* UIDevice+HasNotch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIDevice+HasNotch.swift"; sourceTree = "<group>"; };
-		2A37FB972A7D3EFC0062E63A /* Acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Acknowledgements.plist; sourceTree = "<group>"; };
 		2A37FB992A7D3F890062E63A /* Bundle+Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bundle+Version.swift"; sourceTree = "<group>"; };
 		2A3AB6562A7870C80089CF7E /* SwiftIslandDataLogic */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SwiftIslandDataLogic; sourceTree = "<group>"; };
 		2A3AB65A2A78744B0089CF7E /* ActivityType+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityType+Color.swift"; sourceTree = "<group>"; };
 		2A542B9C2AA0C4F500E8C0C8 /* ci_post_clone.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_post_clone.sh; sourceTree = "<group>"; };
+		2A659B132BFFE2B100A57501 /* SwiftIslandApp-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SwiftIslandApp-Debug.xcconfig"; sourceTree = "<group>"; };
+		2A659B142BFFE2B100A57501 /* SwiftIslandApp-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SwiftIslandApp-Release.xcconfig"; sourceTree = "<group>"; };
+		2A659B152BFFE2B100A57501 /* SwiftIslandApp-Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SwiftIslandApp-Shared.xcconfig"; sourceTree = "<group>"; };
+		2A659B172BFFE2B100A57501 /* SwiftIslandAppTests-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SwiftIslandAppTests-Debug.xcconfig"; sourceTree = "<group>"; };
+		2A659B182BFFE2B100A57501 /* SwiftIslandAppTests-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SwiftIslandAppTests-Release.xcconfig"; sourceTree = "<group>"; };
+		2A659B192BFFE2B100A57501 /* SwiftIslandAppTests-Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SwiftIslandAppTests-Shared.xcconfig"; sourceTree = "<group>"; };
+		2A659B1B2BFFE2B100A57501 /* SwiftIslandWidgetsExtension-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SwiftIslandWidgetsExtension-Debug.xcconfig"; sourceTree = "<group>"; };
+		2A659B1C2BFFE2B100A57501 /* SwiftIslandWidgetsExtension-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SwiftIslandWidgetsExtension-Release.xcconfig"; sourceTree = "<group>"; };
+		2A659B1D2BFFE2B100A57501 /* SwiftIslandWidgetsExtension-Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SwiftIslandWidgetsExtension-Shared.xcconfig"; sourceTree = "<group>"; };
+		2A659B1F2BFFE2B100A57501 /* Project-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Project-Debug.xcconfig"; sourceTree = "<group>"; };
+		2A659B202BFFE2B100A57501 /* Project-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Project-Release.xcconfig"; sourceTree = "<group>"; };
+		2A659B212BFFE2B100A57501 /* Project-Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Project-Shared.xcconfig"; sourceTree = "<group>"; };
 		2A7AF8DA2BFFCCF400038E0D /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		2A7F12762A6401C4007C28EA /* NFCManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCManager.swift; sourceTree = "<group>"; };
 		2A7F12782A640730007C28EA /* ScrollViewOffset.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollViewOffset.swift; sourceTree = "<group>"; };
@@ -215,6 +226,7 @@
 		2AEDC4C22A4A089100CD0180 /* ConferencePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferencePageView.swift; sourceTree = "<group>"; };
 		2AEDC4C52A4A08AF00CD0180 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		2AF19ED22A7B04A500134E0B /* ConferencePageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferencePageContentView.swift; sourceTree = "<group>"; };
+		2AFC45FB2BFFEF8200B135F5 /* Acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Acknowledgements.plist; sourceTree = "<group>"; };
 		2E19CADD2A7EEC9700177B61 /* UpNextSystemLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpNextSystemLargeView.swift; sourceTree = "<group>"; };
 		2E19CADF2A7EF7B100177B61 /* UpNextSystemRectangularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpNextSystemRectangularView.swift; sourceTree = "<group>"; };
 		2E19CAE12A7EFD9800177B61 /* UpNextSystemCircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpNextSystemCircularView.swift; sourceTree = "<group>"; };
@@ -258,8 +270,8 @@
 			files = (
 				2A7F128B2A69CB2C007C28EA /* Defaults in Frameworks */,
 				2A3AB6592A7871030089CF7E /* SwiftIslandDataLogic in Frameworks */,
-				2A37FB932A7D3EB20062E63A /* AckGen in Frameworks */,
-				2A37FB952A7D3EB20062E63A /* AckGenUI in Frameworks */,
+				2A659B272BFFEA9D00A57501 /* AckGen in Frameworks */,
+				2A659B292BFFEA9D00A57501 /* AckGenUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,6 +377,65 @@
 				2A987AC82A7AE4AF00EE15DF /* SwiftUI.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2A659B162BFFE2B100A57501 /* SwiftIslandApp */ = {
+			isa = PBXGroup;
+			children = (
+				2A659B132BFFE2B100A57501 /* SwiftIslandApp-Debug.xcconfig */,
+				2A659B142BFFE2B100A57501 /* SwiftIslandApp-Release.xcconfig */,
+				2A659B152BFFE2B100A57501 /* SwiftIslandApp-Shared.xcconfig */,
+			);
+			path = SwiftIslandApp;
+			sourceTree = "<group>";
+		};
+		2A659B1A2BFFE2B100A57501 /* SwiftIslandAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				2A659B172BFFE2B100A57501 /* SwiftIslandAppTests-Debug.xcconfig */,
+				2A659B182BFFE2B100A57501 /* SwiftIslandAppTests-Release.xcconfig */,
+				2A659B192BFFE2B100A57501 /* SwiftIslandAppTests-Shared.xcconfig */,
+			);
+			path = SwiftIslandAppTests;
+			sourceTree = "<group>";
+		};
+		2A659B1E2BFFE2B100A57501 /* SwiftIslandWidgetsExtension */ = {
+			isa = PBXGroup;
+			children = (
+				2A659B1B2BFFE2B100A57501 /* SwiftIslandWidgetsExtension-Debug.xcconfig */,
+				2A659B1C2BFFE2B100A57501 /* SwiftIslandWidgetsExtension-Release.xcconfig */,
+				2A659B1D2BFFE2B100A57501 /* SwiftIslandWidgetsExtension-Shared.xcconfig */,
+			);
+			path = SwiftIslandWidgetsExtension;
+			sourceTree = "<group>";
+		};
+		2A659B222BFFE2B100A57501 /* xcconfig */ = {
+			isa = PBXGroup;
+			children = (
+				2A659B162BFFE2B100A57501 /* SwiftIslandApp */,
+				2A659B1A2BFFE2B100A57501 /* SwiftIslandAppTests */,
+				2A659B1E2BFFE2B100A57501 /* SwiftIslandWidgetsExtension */,
+				2A659B1F2BFFE2B100A57501 /* Project-Debug.xcconfig */,
+				2A659B202BFFE2B100A57501 /* Project-Release.xcconfig */,
+				2A659B212BFFE2B100A57501 /* Project-Shared.xcconfig */,
+			);
+			path = xcconfig;
+			sourceTree = "<group>";
+		};
+		2A659B232BFFE2B100A57501 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				2A659B222BFFE2B100A57501 /* xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		2A659B242BFFE2B100A57501 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				2A659B232BFFE2B100A57501 /* Config */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 		2A7F12752A6401B9007C28EA /* Utilities */ = {
@@ -508,6 +579,7 @@
 		2AEDC48A2A4A030F00CD0180 = {
 			isa = PBXGroup;
 			children = (
+				2A659B242BFFE2B100A57501 /* Shared */,
 				2AECBFB12A95D769001FBFA9 /* ci_scripts */,
 				2A3AB6552A7870C80089CF7E /* Packages */,
 				2AEDC4952A4A030F00CD0180 /* SwiftIslandApp */,
@@ -515,7 +587,7 @@
 				2A987ACA2A7AE4AF00EE15DF /* SwiftIslandWidgets */,
 				2AEDC4942A4A030F00CD0180 /* Products */,
 				2A3AB6572A7871030089CF7E /* Frameworks */,
-				2A37FB972A7D3EFC0062E63A /* Acknowledgements.plist */,
+				2AFC45FB2BFFEF8200B135F5 /* Acknowledgements.plist */,
 				2A16EB632A4F6CC200CC881D /* GoogleService-Info.plist */,
 				2A16EB422A4CDEFC00CC881D /* SwiftIslandApp-Info.plist */,
 			);
@@ -677,8 +749,8 @@
 			packageProductDependencies = (
 				2A7F128A2A69CB2C007C28EA /* Defaults */,
 				2A3AB6582A7871030089CF7E /* SwiftIslandDataLogic */,
-				2A37FB922A7D3EB20062E63A /* AckGen */,
-				2A37FB942A7D3EB20062E63A /* AckGenUI */,
+				2A659B262BFFEA9D00A57501 /* AckGen */,
+				2A659B282BFFEA9D00A57501 /* AckGenUI */,
 			);
 			productName = SwiftIsland;
 			productReference = 2AEDC4932A4A030F00CD0180 /* Swift Island.app */;
@@ -713,7 +785,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1430;
-				LastUpgradeCheck = 1430;
+				LastUpgradeCheck = 1530;
 				ORGANIZATIONNAME = "AppTrix AB";
 				TargetAttributes = {
 					2A987AC42A7AE4AF00EE15DF = {
@@ -739,8 +811,8 @@
 			mainGroup = 2AEDC48A2A4A030F00CD0180;
 			packageReferences = (
 				2A7F12892A69CB2C007C28EA /* XCRemoteSwiftPackageReference "Defaults" */,
-				2A37FB912A7D3EB20062E63A /* XCRemoteSwiftPackageReference "AckGen" */,
 				2AFA65E82A9E9371004A13F8 /* XCRemoteSwiftPackageReference "SwiftLint" */,
+				2A659B252BFFEA6400A57501 /* XCRemoteSwiftPackageReference "AckGen" */,
 			);
 			productRefGroup = 2AEDC4942A4A030F00CD0180 /* Products */;
 			projectDirPath = "";
@@ -771,8 +843,8 @@
 				2AEDC49E2A4A031000CD0180 /* Preview Assets.xcassets in Resources */,
 				B332ADF82A9A813C00557AA7 /* double-names.pdf in Resources */,
 				B332ADFB2A9A813C00557AA7 /* marquee.pdf in Resources */,
+				2AFC45FC2BFFEF8200B135F5 /* Acknowledgements.plist in Resources */,
 				2A16EB642A4F6CC200CC881D /* GoogleService-Info.plist in Resources */,
-				2A37FB982A7D3EFC0062E63A /* Acknowledgements.plist in Resources */,
 				2AEDC49B2A4A031000CD0180 /* Assets.xcassets in Resources */,
 				B340138F2A9EA479008A9C21 /* rebus.pdf in Resources */,
 				B332ADFA2A9A813C00557AA7 /* game-of-life.pdf in Resources */,
@@ -934,6 +1006,7 @@
 /* Begin XCBuildConfiguration section */
 		2A987ADB2A7AE4B000EE15DF /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A659B1B2BFFE2B100A57501 /* SwiftIslandWidgetsExtension-Debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
@@ -950,7 +1023,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.5.0;
+				MARKETING_VERSION = "${MARKETING_VERSION}";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.swiftisland.app.widgets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -963,6 +1036,7 @@
 		};
 		2A987ADC2A7AE4B000EE15DF /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A659B1C2BFFE2B100A57501 /* SwiftIslandWidgetsExtension-Release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
@@ -979,7 +1053,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				MARKETING_VERSION = 2.5.0;
+				MARKETING_VERSION = "${MARKETING_VERSION}";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.swiftisland.app.widgets;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -992,8 +1066,10 @@
 		};
 		2AEDC4B52A4A031100CD0180 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A659B1F2BFFE2B100A57501 /* Project-Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -1026,6 +1102,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1052,8 +1129,10 @@
 		};
 		2AEDC4B62A4A031100CD0180 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A659B202BFFE2B100A57501 /* Project-Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -1086,6 +1165,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1106,6 +1186,7 @@
 		};
 		2AEDC4B82A4A031100CD0180 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A659B132BFFE2B100A57501 /* SwiftIslandApp-Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1132,7 +1213,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0.0;
+				MARKETING_VERSION = "${MARKETING_VERSION}";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.swiftisland.app;
 				PRODUCT_NAME = "Swift Island";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1147,6 +1228,7 @@
 		};
 		2AEDC4B92A4A031100CD0180 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A659B142BFFE2B100A57501 /* SwiftIslandApp-Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1173,7 +1255,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 3.0.0;
+				MARKETING_VERSION = "${MARKETING_VERSION}";
 				PRODUCT_BUNDLE_IDENTIFIER = nl.swiftisland.app;
 				PRODUCT_NAME = "Swift Island";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1188,6 +1270,7 @@
 		};
 		2AEDC4BB2A4A031100CD0180 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A659B172BFFE2B100A57501 /* SwiftIslandAppTests-Debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1196,18 +1279,19 @@
 				DEVELOPMENT_TEAM = V38QRBT6X5;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "${MARKETING_VERSION}";
 				PRODUCT_BUNDLE_IDENTIFIER = se.apptrix.SwiftIslandTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swift Island.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Swift Island";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swift Island.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)Swift Island";
 			};
 			name = Debug;
 		};
 		2AEDC4BC2A4A031100CD0180 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2A659B182BFFE2B100A57501 /* SwiftIslandAppTests-Release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1216,13 +1300,13 @@
 				DEVELOPMENT_TEAM = V38QRBT6X5;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = "${MARKETING_VERSION}";
 				PRODUCT_BUNDLE_IDENTIFIER = se.apptrix.SwiftIslandTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swift Island.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Swift Island";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Swift Island.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)Swift Island";
 			};
 			name = Release;
 		};
@@ -1268,12 +1352,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		2A37FB912A7D3EB20062E63A /* XCRemoteSwiftPackageReference "AckGen" */ = {
+		2A659B252BFFEA6400A57501 /* XCRemoteSwiftPackageReference "AckGen" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/MartinP7r/AckGen.git";
+			repositoryURL = "https://github.com/ppeelen/AckGen";
 			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.1.7;
+				branch = main;
+				kind = branch;
 			};
 		};
 		2A7F12892A69CB2C007C28EA /* XCRemoteSwiftPackageReference "Defaults" */ = {
@@ -1295,19 +1379,19 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		2A37FB922A7D3EB20062E63A /* AckGen */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2A37FB912A7D3EB20062E63A /* XCRemoteSwiftPackageReference "AckGen" */;
-			productName = AckGen;
-		};
-		2A37FB942A7D3EB20062E63A /* AckGenUI */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2A37FB912A7D3EB20062E63A /* XCRemoteSwiftPackageReference "AckGen" */;
-			productName = AckGenUI;
-		};
 		2A3AB6582A7871030089CF7E /* SwiftIslandDataLogic */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SwiftIslandDataLogic;
+		};
+		2A659B262BFFEA9D00A57501 /* AckGen */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A659B252BFFEA6400A57501 /* XCRemoteSwiftPackageReference "AckGen" */;
+			productName = AckGen;
+		};
+		2A659B282BFFEA9D00A57501 /* AckGenUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A659B252BFFEA6400A57501 /* XCRemoteSwiftPackageReference "AckGen" */;
+			productName = AckGenUI;
 		};
 		2A7F128A2A69CB2C007C28EA /* Defaults */ = {
 			isa = XCSwiftPackageProductDependency;
