@@ -216,7 +216,6 @@
 		2AE4400D2A717CE4009078E3 /* EventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventView.swift; sourceTree = "<group>"; };
 		2AE45DA62A7D42B800AF2B9D /* SourceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceView.swift; sourceTree = "<group>"; };
 		2AE45DA82A7D617400AF2B9D /* ConferenceBoxWeather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxWeather.swift; sourceTree = "<group>"; };
-		2AECBFB22A95D792001FBFA9 /* ci_pre_xcodebuild.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_pre_xcodebuild.sh; sourceTree = "<group>"; };
 		2AECBFB42A95DB43001FBFA9 /* Secrets.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Secrets.json; sourceTree = "<group>"; };
 		2AEDC4932A4A030F00CD0180 /* Swift Island.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Swift Island.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AEDC4962A4A030F00CD0180 /* MainApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainApp.swift; sourceTree = "<group>"; };
@@ -569,7 +568,6 @@
 		2AECBFB12A95D769001FBFA9 /* ci_scripts */ = {
 			isa = PBXGroup;
 			children = (
-				2AECBFB22A95D792001FBFA9 /* ci_pre_xcodebuild.sh */,
 				2A542B9C2AA0C4F500E8C0C8 /* ci_post_clone.sh */,
 			);
 			path = ci_scripts;
