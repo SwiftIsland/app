@@ -7,7 +7,7 @@ import SwiftUI
 import Defaults
 
 struct ConferenceHeaderView: View {
-    private let startDate = Date(timeIntervalSince1970: 1693897200)
+    private let startDate = Date(timeIntervalSince1970: 1724749200)
 
     @Default(.userIsActivated)
     private var userIsActivated
@@ -31,7 +31,7 @@ struct ConferenceHeaderView: View {
                 VStack {
                     Image("CalendarIcon")
                     VStack {
-                        Text("Sept 5-6")
+                        Text("Aug 27-29")
                             .font(.custom("WorkSans-Bold", size: 18))
                         Text(startDate.relativeDateDisplay())
                             .font(.custom("WorkSans-Regular", size: 14))

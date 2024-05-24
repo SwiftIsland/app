@@ -1,0 +1,29 @@
+{
+  "configurations" : [
+    {
+      "id" : "C5A080B0-6501-44F9-87F1-2D44F54E7CE8",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:SwiftIslandApp.xcodeproj",
+      "identifier" : "2AEDC4922A4A030F00CD0180",
+      "name" : "SwiftIslandApp"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:SwiftIslandApp.xcodeproj",
+        "identifier" : "2AEDC4A22A4A031100CD0180",
+        "name" : "SwiftIslandAppTests"
+      }
+    }
+  ],
+  "version" : 1
+}

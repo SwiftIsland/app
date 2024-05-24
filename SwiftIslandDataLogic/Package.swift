@@ -12,8 +12,8 @@ let package = Package(
             targets: ["SwiftIslandDataLogic"])
     ],
     dependencies: [
-        .package(url: "https://github.com/sindresorhus/Defaults.git", from: "7.1.0"),
-        .package(url: "https://github.com/firebase/firebase-ios-sdk.git", from: "10.11.0")
+        .package(url: "https://github.com/sindresorhus/Defaults.git", from: "8.0.0"),
+        .package(url: "https://github.com/firebase/firebase-ios-sdk.git", from: "10.26.0")
     ],
     targets: [
         .target(
