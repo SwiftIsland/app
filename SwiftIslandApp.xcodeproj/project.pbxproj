@@ -40,7 +40,6 @@
 		2A7F12962A6B14CD007C28EA /* AppDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F12952A6B14CD007C28EA /* AppDataModel.swift */; };
 		2A7F12982A6B19E0007C28EA /* SwiftIslandLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F12972A6B19E0007C28EA /* SwiftIslandLogo.swift */; };
 		2A987A9F2A7ADDF200EE15DF /* AddDataModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A987A9E2A7ADDF200EE15DF /* AddDataModelTests.swift */; };
-		2A987AA12A7ADF5A00EE15DF /* SwiftIslandDataLogic in Frameworks */ = {isa = PBXBuildFile; productRef = 2A987AA02A7ADF5A00EE15DF /* SwiftIslandDataLogic */; };
 		2A987AC72A7AE4AF00EE15DF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A987AC62A7AE4AF00EE15DF /* WidgetKit.framework */; };
 		2A987AC92A7AE4AF00EE15DF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A987AC82A7AE4AF00EE15DF /* SwiftUI.framework */; };
 		2A987ACC2A7AE4AF00EE15DF /* SwiftIslandWidgetsBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A987ACB2A7AE4AF00EE15DF /* SwiftIslandWidgetsBundle.swift */; };
@@ -198,6 +197,7 @@
 		2A987AE72A7AE70400EE15DF /* UpNextSystemMediumView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpNextSystemMediumView.swift; sourceTree = "<group>"; };
 		2A987AEA2A7AE76A00EE15DF /* UpNextEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpNextEntry.swift; sourceTree = "<group>"; };
 		2A987AF42A7AEAEC00EE15DF /* UpNextSystemSmallView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpNextSystemSmallView.swift; sourceTree = "<group>"; };
+		2A9B6C852C0137810020F758 /* SwiftIsland.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = SwiftIsland.xctestplan; sourceTree = "<group>"; };
 		2AB3AE8F2A77FF0E00F3ECB2 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
 		2AB3AF662A78199600F3ECB2 /* SafariWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariWebView.swift; sourceTree = "<group>"; };
 		2AC7DCF02A58B5E600DB9F6D /* ConferenceBoxFAQ.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxFAQ.swift; sourceTree = "<group>"; };
@@ -279,7 +279,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2A987AA12A7ADF5A00EE15DF /* SwiftIslandDataLogic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -579,6 +578,7 @@
 		2AEDC48A2A4A030F00CD0180 = {
 			isa = PBXGroup;
 			children = (
+				2A9B6C852C0137810020F758 /* SwiftIsland.xctestplan */,
 				2A659B242BFFE2B100A57501 /* Shared */,
 				2AECBFB12A95D769001FBFA9 /* ci_scripts */,
 				2A3AB6552A7870C80089CF7E /* Packages */,
@@ -733,11 +733,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2AEDC4B72A4A031100CD0180 /* Build configuration list for PBXNativeTarget "SwiftIslandApp" */;
 			buildPhases = (
+				2A37FB962A7D3EBE0062E63A /* Generating Acknowledgement */,
 				2AEDC48F2A4A030F00CD0180 /* Sources */,
 				2AEDC4902A4A030F00CD0180 /* Frameworks */,
 				2AEDC4912A4A030F00CD0180 /* Resources */,
 				2A987AD92A7AE4B000EE15DF /* Embed Foundation Extensions */,
-				2A37FB962A7D3EBE0062E63A /* Generating Acknowledgement */,
 			);
 			buildRules = (
 			);
@@ -771,7 +771,6 @@
 			);
 			name = SwiftIslandAppTests;
 			packageProductDependencies = (
-				2A987AA02A7ADF5A00EE15DF /* SwiftIslandDataLogic */,
 			);
 			productName = SwiftIslandTests;
 			productReference = 2AEDC4A32A4A031100CD0180 /* SwiftIslandAppTests.xctest */;
@@ -873,6 +872,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		2A37FB962A7D3EBE0062E63A /* Generating Acknowledgement */ = {
 			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
 			buildActionMask = 2147483647;
 			files = (
 			);
@@ -888,7 +888,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "DIR=$PROJECT_TEMP_DIR/../../../SourcePackages/checkouts/AckGen\nif [ -d \"$DIR\" ]; then\n  cd $DIR\n  SDKROOT=(xcrun --sdk macosx --show-sdk-path)\n  swift run ackgen\nelse\n  echo \"warning: AckGen not found. Please install the package via SPM (https://github.com/MartinP7r/AckGen#installation)\"\nfi\n";
+			shellScript = "#!/usr/bin/env \nDIR=$PROJECT_TEMP_DIR/../../../SourcePackages/checkouts/AckGen\nif [ -d \"$DIR\" ]; then\n    cd $DIR\n    SDKROOT=(xcrun --sdk macosx --show-sdk-path)\n    swift run ackgen\nelse\n    echo \"warning: AckGen not found. Please install the package via SPM (https://github.com/MartinP7r/AckGen#installation)\"\nfi\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -1198,6 +1198,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftIslandApp/Preview Content\"";
 				DEVELOPMENT_TEAM = V38QRBT6X5;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SwiftIslandApp-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Swift Island";
@@ -1240,6 +1241,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"SwiftIslandApp/Preview Content\"";
 				DEVELOPMENT_TEAM = V38QRBT6X5;
 				ENABLE_PREVIEWS = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "SwiftIslandApp-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Swift Island";
@@ -1397,10 +1399,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 2A7F12892A69CB2C007C28EA /* XCRemoteSwiftPackageReference "Defaults" */;
 			productName = Defaults;
-		};
-		2A987AA02A7ADF5A00EE15DF /* SwiftIslandDataLogic */ = {
-			isa = XCSwiftPackageProductDependency;
-			productName = SwiftIslandDataLogic;
 		};
 		2A987AF12A7AEA3700EE15DF /* SwiftIslandDataLogic */ = {
 			isa = XCSwiftPackageProductDependency;
