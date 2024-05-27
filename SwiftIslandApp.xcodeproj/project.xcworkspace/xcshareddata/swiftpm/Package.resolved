@@ -12,10 +12,10 @@
     {
       "identity" : "ackgen",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/ppeelen/AckGen",
+      "location" : "https://github.com/MartinP7r/AckGen.git",
       "state" : {
-        "branch" : "main",
-        "revision" : "941ac329a251deb8b022860f326b4ce931ac43b7"
+        "revision" : "b0510489615f2b0dfd0e44da91645d8cc28e728c",
+        "version" : "0.1.8"
       }
     },
     {
