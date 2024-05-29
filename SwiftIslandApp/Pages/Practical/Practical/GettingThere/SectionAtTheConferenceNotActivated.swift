@@ -59,6 +59,21 @@ struct SectionAtTheConferenceNotActivated: View {
                         .multilineTextAlignment(.center)
                 }
             }
+            .sheet(isPresented: $isShowingLocationPermissionView) {
+                RequestLocationView { action in
+                    isShowingLocationPermissionView.toggle()
+                    switch action {
+                    case .canceled:
+                        actionStatus = .failed
+                    case .shareLocation:
+                        getAuthorization()
+                    case .openSettings:
+                        guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
+                        UIApplication.shared.open(url)
+                    }
+                }
+                .presentationDetents([.medium])
+            }
             Button {
                 guard case .idle = actionStatus else { return }
                 actionStatus = .checking
@@ -101,21 +116,6 @@ struct SectionAtTheConferenceNotActivated: View {
                     }
                 }
             }
-        }
-        .sheet(isPresented: $isShowingLocationPermissionView) {
-            RequestLocationView { action in
-                isShowingLocationPermissionView.toggle()
-                switch action {
-                case .canceled:
-                    actionStatus = .failed
-                case .shareLocation:
-                    getAuthorization()
-                case .openSettings:
-                    guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
-                    UIApplication.shared.open(url)
-                }
-            }
-            .presentationDetents([.medium])
         }
         .alert(isPresented: $showingAlert) {
             Alert(
