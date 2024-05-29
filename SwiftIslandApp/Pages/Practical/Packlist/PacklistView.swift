@@ -111,6 +111,12 @@ struct PacklistView: View {
             }
             .scrollContentBackground(.hidden)
             .onAppear {
+
+                if !Defaults[.isPacklistSetupFor2024] {
+                    Defaults[.packingItems] = []
+                    Defaults[.isPacklistSetupFor2024] = true
+                }
+                
                 Task {
                     self.packingItems = await appDataModel.fetchPackingListItems()
                 }

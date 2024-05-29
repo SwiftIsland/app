@@ -52,12 +52,12 @@ struct ConferencePageContentView: View {
                         ProgressView()
                     }
 
-                    ConferenceBoxMentors(
-                        namespace: namespace,
-                        geo: geo,
-                        isShowingMentor: $isShowingMentor,
-                        mayShowMentorNextMentor: $mayShowMentorNextMentor,
-                        selectedMentor: $selectedMentor)
+//                    ConferenceBoxMentors(
+//                        namespace: namespace,
+//                        geo: geo,
+//                        isShowingMentor: $isShowingMentor,
+//                        mayShowMentorNextMentor: $mayShowMentorNextMentor,
+//                        selectedMentor: $selectedMentor)
 
                     ConferenceBoxWeather()
                 }
