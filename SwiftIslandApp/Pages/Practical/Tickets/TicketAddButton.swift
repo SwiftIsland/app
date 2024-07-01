@@ -29,6 +29,9 @@ struct TicketAddButton: View {
             return
         }
         var path = url.pathComponents
+        if (path.last == "settings") {
+            let _ = path.popLast()
+        }
         let slug = path.popLast()
         guard let slug = slug, path.last == "tickets" else {
             presentFailedPasteAlert = true
