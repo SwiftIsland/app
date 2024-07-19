@@ -84,19 +84,28 @@ struct MentorView: View {
     }
 }
 
-struct MentorView_Previews: PreviewProvider {
-    @Namespace static var namespace
+#Preview("No content") {
+    @Namespace var namespace
+    let mentor = Mentor.forPreview()
 
-    static var previews: some View {
-        let mentor = Mentor.forPreview()
+    return MentorView(namespace: namespace, mentor: mentor, isShowContent: .constant(false))
+        .previewDisplayName("No content")
 
-        Group {
-            MentorView(namespace: namespace, mentor: mentor, isShowContent: .constant(false))
-                .previewDisplayName("No content")
-            MentorView(namespace: namespace, mentor: mentor, isShowContent: .constant(true))
-                .coordinateSpace(name: "Show content")
-        }
+    return Group {
+
+        MentorView(namespace: namespace, mentor: mentor, isShowContent: .constant(true))
+            .coordinateSpace(name: "Show content")
+            .ignoresSafeArea()
     }
+}
+
+#Preview("Show content") {
+    @Namespace var namespace
+    let mentor = Mentor.forPreview()
+
+    return MentorView(namespace: namespace, mentor: mentor, isShowContent: .constant(true))
+        .coordinateSpace(name: "Show content")
+        .ignoresSafeArea()
 }
 
 struct MentorExcerptView: View {

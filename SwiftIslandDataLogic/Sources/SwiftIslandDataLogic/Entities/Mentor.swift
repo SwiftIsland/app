@@ -13,6 +13,36 @@ public struct Mentor: Response {
     public let web: URL?
     public let linkedIn: URL?
     public let order: Int
+
+    init(description: String, imageName: String, name: String, twitter: URL?, web: URL?, linkedIn: URL?, order: Int) {
+        self.description = description
+        self.imageName = imageName
+        self.name = name
+        self.twitter = twitter
+        self.web = web
+        self.linkedIn = linkedIn
+        self.order = order
+    }
+
+    init(description: String, imageName: String, name: String, twitter: String?, web: URL?, linkedIn: String?, order: Int) {
+        self.description = description
+        self.imageName = imageName
+        self.name = name
+        if let twitter {
+            self.twitter = URL(string: "https://x.com/\(twitter)")
+        } else {
+            self.twitter = nil
+        }
+        self.web = web
+        if let linkedIn {
+            self.linkedIn = URL(string: "https://linkedin.com/in/\(linkedIn)")
+        } else {
+            self.linkedIn = nil
+        }
+        self.order = order
+    }
+
+
 }
 
 extension Mentor: Identifiable {
@@ -21,12 +51,12 @@ extension Mentor: Identifiable {
 
 extension Mentor {
     public static func forPreview(description: String = "Lorem ipsum dolor sit amet, **consectetur adipiscing elit**. _Proin vitae cursus_ lectus. Mauris feugiat ipsum sed vulputate gravida. Nunc a risus ac odio consequat ornare nec sit amet arcu. In laoreet elit egestas sem ornare, at maximus sem maximus. Nulla molestie suscipit mollis. Cras gravida pellentesque mattis. Etiam at nisl lorem. Nullam viverra non arcu eget elementum. Nullam a velit laoreet, luctus risus at, dapibus dolor. Aliquam nec euismod augue, id lacinia nulla.",
-                           imageName: String = ["JordiBruin", "AndreyVolodin", "MaximCramer"].randomElement()!,
-                           name: String = "John Appleseed",
-                           twitter: URL? = nil,
-                           web: URL? = nil,
-                           linkedIn: URL? = nil,
-                           order: Int = 0) -> Mentor {
+                                  imageName: String = ["speaker-paul-2024", "speaker-manu-2024", "speaker-malin-2024"].randomElement()!,
+                                  name: String = "John Appleseed",
+                                  twitter: String? = ["ppeelen", "x"].randomElement(),
+                                  web: URL? = nil,
+                                  linkedIn: String? = nil,
+                                  order: Int = 0) -> Mentor {
         Mentor(
             description: description,
             imageName: imageName,
