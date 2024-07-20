@@ -10,9 +10,9 @@ public struct Mentor: Response {
     public let imageName: String
     public let name: String
     public let twitter: String?
-    public let web: URL?
+    public let web: String?
     public let linkedIn: String?
-    public let mastodon: URL?
+    public let mastodon: String?
     public let order: Int
 
     public var twitterUrl: URL? {
@@ -20,9 +20,19 @@ public struct Mentor: Response {
         return URL(string: "https://twitter.com/\(twitter)")
     }
 
+    public var webUrl: URL? {
+        guard let web else { return nil }
+        return URL(string: web)
+    }
+
     public var linkedInUrl: URL? {
         guard let linkedIn else { return nil }
         return URL(string: "https://linkedin.com/in/\(linkedIn)")
+    }
+
+    public var mastodonUrl: URL? {
+        guard let mastodon else { return nil }
+        return URL(string: mastodon)
     }
 }
 
@@ -35,9 +45,9 @@ extension Mentor {
                                   imageName: String = ["speaker-paul-2024", "speaker-manu-2024", "speaker-malin-2024"].randomElement()!,
                                   name: String = "John Appleseed",
                                   twitter: String? = ["ppeelen", "x"].randomElement(),
-                                  web: URL? = URL(string: "https://www.swiftisland.nl"),
+                                  web: String? = "https://www.swiftisland.nl",
                                   linkedIn: String? = "ppeelen",
-                                  mastodon: URL? = nil,
+                                  mastodon: String? = nil,
                                   order: Int = 0) -> Mentor {
         Mentor(
             description: description,

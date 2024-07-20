@@ -141,7 +141,7 @@ struct MentorExcerptView: View {
                         HStack {
                             if isShowContent {
                                 Spacer()
-                                if let web = mentor.web {
+                                if let web = mentor.webUrl {
                                     Button(action: {
                                         showUrl = web
                                     }, label: {
@@ -151,14 +151,13 @@ struct MentorExcerptView: View {
                                     .padding(0)
                                     .foregroundColor(.red)
                                 }
-                                if let twitter = mentor.twitterUrl {
+                                if let mastodon = mentor.mastodonUrl {
                                     Button(action: {
-                                        showUrl = twitter
+                                        showUrl = mastodon
                                     }, label: {
-                                        Image("x")
+                                        Image("mastodon")
                                     })
                                     .buttonStyle(.plain)
-                                    .padding(0)
                                 }
                                 if let linkedin = mentor.linkedInUrl {
                                     Button(action: {
@@ -167,6 +166,15 @@ struct MentorExcerptView: View {
                                         Image("linkedin")
                                     })
                                     .buttonStyle(.plain)
+                                }
+                                if let twitter = mentor.twitterUrl {
+                                    Button(action: {
+                                        showUrl = twitter
+                                    }, label: {
+                                        Image("x")
+                                    })
+                                    .buttonStyle(.plain)
+                                    .padding(0)
                                 }
                             }
                         }
