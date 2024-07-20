@@ -15,6 +15,10 @@ struct ConferenceBoxWeather: View {
     private let measureFormatter: MeasurementFormatter = {
         let formatter = MeasurementFormatter()
         formatter.unitStyle = .medium
+
+        let numberFormatter = NumberFormatter()
+        numberFormatter.generatesDecimalNumbers = false
+        formatter.numberFormatter = numberFormatter
         return formatter
     }()
 
