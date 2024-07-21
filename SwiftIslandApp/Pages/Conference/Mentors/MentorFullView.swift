@@ -13,64 +13,59 @@ struct MentorFullView: View {
     @Binding var isShowingContent: Bool
 
     var body: some View {
-        ScrollViewOffset {
-            VStack {
-                ZStack {
-                    Color.background
-                        .cornerRadius(15)
-                    VStack(alignment: .leading) {
-                        ZStack(alignment: .bottomLeading) {
-                            MentorImage(namespace: namespace, mentor: mentor)
-                            VStack(alignment: .leading) {
+        GeometryReader(content: { geometry in
+            ScrollViewOffset {
+                VStack {
+                    ZStack(alignment: .bottomLeading) {
+                        MentorImage(namespace: namespace, mentor: mentor)
+                        VStack(alignment: .leading) {
+                            HStack {
+                                Text(mentor.name)
+                                    .padding(.horizontal, 8)
+                                    .padding(.vertical, 3)
+                                    .foregroundStyle(.pink)
+                                    .background(.white)
+                                    .font(.system(size: 20))
+                                    .fontWeight(.semibold)
+                                Spacer()
                                 HStack {
-                                    Text(mentor.name)
-                                        .padding(.horizontal, 8)
-                                        .padding(.vertical, 3)
-                                        .foregroundStyle(.pink)
-                                        .background(.white)
-                                        .font(.system(size: 20))
-                                        .fontWeight(.semibold)
                                     Spacer()
-                                    HStack {
-                                        Spacer()
-                                        if let web = mentor.webUrl {
-                                            LinkButton(url: web, imageName: "web")
-                                        }
-                                        if let mastodon = mentor.mastodonUrl {
-                                            LinkButton(url: mastodon, imageName: "mastodon")
-                                        }
-                                        if let linkedin = mentor.linkedInUrl {
-                                            LinkButton(url: linkedin, imageName: "linkedin")
-                                        }
-                                        if let twitter = mentor.twitterUrl {
-                                            LinkButton(url: twitter, imageName: "x")
-                                        }
+                                    if let web = mentor.webUrl {
+                                        LinkButton(url: web, imageName: "web")
                                     }
-                                    .padding(.trailing, 20)
+                                    if let mastodon = mentor.mastodonUrl {
+                                        LinkButton(url: mastodon, imageName: "mastodon")
+                                    }
+                                    if let linkedin = mentor.linkedInUrl {
+                                        LinkButton(url: linkedin, imageName: "linkedin")
+                                    }
+                                    if let twitter = mentor.twitterUrl {
+                                        LinkButton(url: twitter, imageName: "x")
+                                    }
                                 }
+                                .padding(.trailing, 20)
                             }
-                            .matchedGeometryEffect(id: "\(mentor.id)-mentorExcerptView", in: namespace)
-                            .frame(maxWidth: .infinity, alignment: .bottomLeading)
-                            .padding(.bottom, 18)
-                            .padding(.leading, 20)
                         }
-                        Text(mentor.description)
-                            .foregroundColor(Color(.darkGray))
-                            .font(.system(.body, design: .rounded))
-                            .padding(.horizontal)
-                            .padding(.vertical, 20)
-                            .transition(.move(edge: .bottom))
-                        Spacer()
+                        .matchedGeometryEffect(id: "\(mentor.id)-mentorExcerptView", in: namespace)
+                        .frame(maxWidth: .infinity, alignment: .bottomLeading)
+                        .padding(.bottom, 18)
+                        .padding(.leading, 20)
                     }
+                    Text(mentor.description)
+                        .foregroundColor(Color(.darkGray))
+                        .font(.system(.body, design: .rounded))
+                        .padding(.horizontal)
+                        .padding(.vertical, 20)
+                        .transition(.move(edge: .bottom))
+                }
+                .frame(idealHeight: geometry.size.height, alignment: .topLeading)
+                .background(.white)
+            } onOffsetChange: { offset in
+                if offset > 115 {
+                    dismissView()
                 }
             }
-            .frame(maxWidth: .infinity)
-        } onOffsetChange: { offset in
-            if offset > 115 {
-                dismissView()
-            }
-        }
-        .background(.white)
+        })
     }
 
     func dismissView() {
