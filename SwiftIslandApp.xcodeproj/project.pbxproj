@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		2A090BD72A71B0E9003553D2 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A090BD62A71B0E9003553D2 /* MapView.swift */; };
 		2A090BD92A71BAFF003553D2 /* PlaceAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A090BD82A71BAFF003553D2 /* PlaceAnnotationView.swift */; };
-		2A16EB362A4CDA4200CC881D /* ConferenceHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A16EB352A4CDA4200CC881D /* ConferenceHeaderView.swift */; };
 		2A16EB3B2A4CDB3600CC881D /* WorkSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A16EB392A4CDB3600CC881D /* WorkSans-Regular.ttf */; };
 		2A16EB3C2A4CDB3600CC881D /* WorkSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A16EB3A2A4CDB3600CC881D /* WorkSans-Bold.ttf */; };
 		2A16EB412A4CDD4A00CC881D /* Color+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A16EB402A4CDD4A00CC881D /* Color+Helper.swift */; };
@@ -25,6 +24,7 @@
 		2A37FB9A2A7D3F890062E63A /* Bundle+Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A37FB992A7D3F890062E63A /* Bundle+Version.swift */; };
 		2A3AB6592A7871030089CF7E /* SwiftIslandDataLogic in Frameworks */ = {isa = PBXBuildFile; productRef = 2A3AB6582A7871030089CF7E /* SwiftIslandDataLogic */; };
 		2A3AB65B2A78744B0089CF7E /* ActivityType+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3AB65A2A78744B0089CF7E /* ActivityType+Color.swift */; };
+		2A5D16BF2C4DB4C500B4902F /* MentorImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A5D16BE2C4DB4C400B4902F /* MentorImage.swift */; };
 		2A77AD8E2C0527AE00610250 /* AckGen in Frameworks */ = {isa = PBXBuildFile; productRef = 2A77AD8D2C0527AE00610250 /* AckGen */; };
 		2A77AD902C0527AE00610250 /* AckGenUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2A77AD8F2C0527AE00610250 /* AckGenUI */; };
 		2A7F12772A6401C4007C28EA /* NFCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F12762A6401C4007C28EA /* NFCManager.swift */; };
@@ -39,6 +39,10 @@
 		2A7F12902A69D9C7007C28EA /* PracticalGenericPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F128F2A69D9C7007C28EA /* PracticalGenericPageView.swift */; };
 		2A7F12962A6B14CD007C28EA /* AppDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F12952A6B14CD007C28EA /* AppDataModel.swift */; };
 		2A7F12982A6B19E0007C28EA /* SwiftIslandLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F12972A6B19E0007C28EA /* SwiftIslandLogo.swift */; };
+		2A937BDA2C4D70F0003ABA5C /* ConferenceHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A937BD92C4D70F0003ABA5C /* ConferenceHeaderView.swift */; };
+		2A937BDC2C4D76CD003ABA5C /* MentorBoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A937BDB2C4D76CD003ABA5C /* MentorBoxView.swift */; };
+		2A937BDE2C4D8145003ABA5C /* MentorFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A937BDD2C4D8145003ABA5C /* MentorFullView.swift */; };
+		2A937BE02C4D8990003ABA5C /* ConferenceBoxMentors2024.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A937BDF2C4D8990003ABA5C /* ConferenceBoxMentors2024.swift */; };
 		2A987A9F2A7ADDF200EE15DF /* AddDataModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A987A9E2A7ADDF200EE15DF /* AddDataModelTests.swift */; };
 		2A987AC72A7AE4AF00EE15DF /* WidgetKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A987AC62A7AE4AF00EE15DF /* WidgetKit.framework */; };
 		2A987AC92A7AE4AF00EE15DF /* SwiftUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A987AC82A7AE4AF00EE15DF /* SwiftUI.framework */; };
@@ -142,7 +146,6 @@
 /* Begin PBXFileReference section */
 		2A090BD62A71B0E9003553D2 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		2A090BD82A71BAFF003553D2 /* PlaceAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAnnotationView.swift; sourceTree = "<group>"; };
-		2A16EB352A4CDA4200CC881D /* ConferenceHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceHeaderView.swift; sourceTree = "<group>"; };
 		2A16EB392A4CDB3600CC881D /* WorkSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Regular.ttf"; sourceTree = "<group>"; };
 		2A16EB3A2A4CDB3600CC881D /* WorkSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "WorkSans-Bold.ttf"; sourceTree = "<group>"; };
 		2A16EB402A4CDD4A00CC881D /* Color+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Helper.swift"; sourceTree = "<group>"; };
@@ -160,6 +163,7 @@
 		2A3AB6562A7870C80089CF7E /* SwiftIslandDataLogic */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = SwiftIslandDataLogic; sourceTree = "<group>"; };
 		2A3AB65A2A78744B0089CF7E /* ActivityType+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivityType+Color.swift"; sourceTree = "<group>"; };
 		2A542B9C2AA0C4F500E8C0C8 /* ci_post_clone.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = ci_post_clone.sh; sourceTree = "<group>"; };
+		2A5D16BE2C4DB4C400B4902F /* MentorImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorImage.swift; sourceTree = "<group>"; };
 		2A659B132BFFE2B100A57501 /* SwiftIslandApp-Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SwiftIslandApp-Debug.xcconfig"; sourceTree = "<group>"; };
 		2A659B142BFFE2B100A57501 /* SwiftIslandApp-Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SwiftIslandApp-Release.xcconfig"; sourceTree = "<group>"; };
 		2A659B152BFFE2B100A57501 /* SwiftIslandApp-Shared.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "SwiftIslandApp-Shared.xcconfig"; sourceTree = "<group>"; };
@@ -184,6 +188,10 @@
 		2A7F128F2A69D9C7007C28EA /* PracticalGenericPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticalGenericPageView.swift; sourceTree = "<group>"; };
 		2A7F12952A6B14CD007C28EA /* AppDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDataModel.swift; sourceTree = "<group>"; };
 		2A7F12972A6B19E0007C28EA /* SwiftIslandLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftIslandLogo.swift; sourceTree = "<group>"; };
+		2A937BD92C4D70F0003ABA5C /* ConferenceHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceHeaderView.swift; sourceTree = "<group>"; };
+		2A937BDB2C4D76CD003ABA5C /* MentorBoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorBoxView.swift; sourceTree = "<group>"; };
+		2A937BDD2C4D8145003ABA5C /* MentorFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorFullView.swift; sourceTree = "<group>"; };
+		2A937BDF2C4D8990003ABA5C /* ConferenceBoxMentors2024.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxMentors2024.swift; sourceTree = "<group>"; };
 		2A987A9E2A7ADDF200EE15DF /* AddDataModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddDataModelTests.swift; sourceTree = "<group>"; };
 		2A987AC52A7AE4AF00EE15DF /* SwiftIslandWidgetsExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = SwiftIslandWidgetsExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		2A987AC62A7AE4AF00EE15DF /* WidgetKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WidgetKit.framework; path = System/Library/Frameworks/WidgetKit.framework; sourceTree = SDKROOT; };
@@ -287,7 +295,7 @@
 		2A16EB342A4CDA3200CC881D /* HeaderView */ = {
 			isa = PBXGroup;
 			children = (
-				2A16EB352A4CDA4200CC881D /* ConferenceHeaderView.swift */,
+				2A937BD92C4D70F0003ABA5C /* ConferenceHeaderView.swift */,
 			);
 			path = HeaderView;
 			sourceTree = "<group>";
@@ -337,6 +345,7 @@
 				2A37FB692A7B06AE0062E63A /* ConferenceBoxMentors.swift */,
 				2AE45DA82A7D617400AF2B9D /* ConferenceBoxWeather.swift */,
 				B362F5E02AA1044F00AFE1EE /* ConferenceBoxSponsors.swift */,
+				2A937BDF2C4D8990003ABA5C /* ConferenceBoxMentors2024.swift */,
 			);
 			path = Boxes;
 			sourceTree = "<group>";
@@ -540,6 +549,9 @@
 			isa = PBXGroup;
 			children = (
 				2A17F0C12A6075BF0055E214 /* MentorView.swift */,
+				2A937BDB2C4D76CD003ABA5C /* MentorBoxView.swift */,
+				2A937BDD2C4D8145003ABA5C /* MentorFullView.swift */,
+				2A5D16BE2C4DB4C400B4902F /* MentorImage.swift */,
 			);
 			path = Mentors;
 			sourceTree = "<group>";
@@ -920,13 +932,16 @@
 				2A7F12982A6B19E0007C28EA /* SwiftIslandLogo.swift in Sources */,
 				2AEDC4C32A4A089100CD0180 /* ConferencePageView.swift in Sources */,
 				B3733D792A9951B10069D490 /* PuzzleItemView.swift in Sources */,
+				2A937BE02C4D8990003ABA5C /* ConferenceBoxMentors2024.swift in Sources */,
 				2A7F12792A640730007C28EA /* ScrollViewOffset.swift in Sources */,
-				2A16EB362A4CDA4200CC881D /* ConferenceHeaderView.swift in Sources */,
+				2A937BDA2C4D70F0003ABA5C /* ConferenceHeaderView.swift in Sources */,
 				B3C626442A94956A002754A8 /* TicketEditView.swift in Sources */,
+				2A937BDC2C4D76CD003ABA5C /* MentorBoxView.swift in Sources */,
 				B3F443032A9765E700AFDF43 /* TicketAddButton.swift in Sources */,
 				2A37FB9A2A7D3F890062E63A /* Bundle+Version.swift in Sources */,
 				2AE43FAC2A6B1A8C009078E3 /* View+PercentageOffset.swift in Sources */,
 				2AF19ED32A7B04A500134E0B /* ConferencePageContentView.swift in Sources */,
+				2A5D16BF2C4DB4C500B4902F /* MentorImage.swift in Sources */,
 				2AE45DA72A7D42B800AF2B9D /* SourceView.swift in Sources */,
 				2A18CE422A773D3A00969214 /* SectionBeforeYouLeave.swift in Sources */,
 				2AB3AE902A77FF0E00F3ECB2 /* KeychainManager.swift in Sources */,
@@ -961,6 +976,7 @@
 				2AE4400E2A717CE4009078E3 /* EventView.swift in Sources */,
 				B3F7EEF42A86D6BB001D69B6 /* TicketsView.swift in Sources */,
 				2AC7DD0F2A59F37D00DB9F6D /* PracticalPageView.swift in Sources */,
+				2A937BDE2C4D8145003ABA5C /* MentorFullView.swift in Sources */,
 				2AE45DA92A7D617400AF2B9D /* ConferenceBoxWeather.swift in Sources */,
 				2AE440062A705E5C009078E3 /* ScheduleCalendarView.swift in Sources */,
 				2AC7DD072A58CD2000DB9F6D /* FAQListView.swift in Sources */,

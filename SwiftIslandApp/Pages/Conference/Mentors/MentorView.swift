@@ -14,72 +14,10 @@ struct MentorView: View {
     @State private var offset: CGSize = .zero
 
     var body: some View {
-        GeometryReader { geometry in
-            ZStack(alignment: .topTrailing) {
-                // Hack for having the bottom of the scrollview not show the view behind... need to find a better solution when there is time.
-                Color.background
-                    .frame(width: geometry.size.width, height: geometry.size.height)
-                    .offset(CGSize(width: 0, height: geometry.size.height / 2))
-                ScrollViewOffset {
-                    ZStack {
-                        Color.background
-                            .cornerRadius(15)
-                        VStack(alignment: .leading) {
-                            Image(mentor.imageName)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: geometry.size.width, height: isShowContent ? geometry.size.height * 0.6 : geometry.size.height)
-                                .border(Color(.sRGB, red: 150 / 255, green: 150 / 255, blue: 150 / 255, opacity: 0.1), width: isShowContent ? 0 : 1)
-                                .cornerRadius(15)
-                                .overlay(
-                                    MentorExcerptView(namespace: namespace, mentor: mentor, isShowContent: $isShowContent)
-                                        .cornerRadius(isShowContent ? 0 : 15)
-                                        .offset(CGSize(width: 0, height: !isShowContent ? 10 : 0))
-                                        .matchedGeometryEffect(id: "\(mentor.id)-mentorExcerptView", in: namespace)
-                                )
-                                .matchedGeometryEffect(id: "\(mentor.id)-imageName", in: namespace)
-                            // Content
-                            if isShowContent {
-                                Text(mentor.description)
-                                    .foregroundColor(Color(.darkGray))
-                                    .font(.system(.body, design: .rounded))
-                                    .padding(.horizontal)
-                                    .padding(.bottom, 20)
-                                    .transition(.move(edge: .bottom))
-                            }
-                        }
-                    }
-                } onOffsetChange: { offset in
-                    if offset > 115 {
-                        dismissView()
-                    }
-                }
-                .scrollDisabled(!isShowContent)
-
-                // Close button
-                if isShowContent {
-                    HStack {
-                        Spacer()
-
-                        Button {
-                            dismissView()
-                        } label: {
-                            Image(systemName: "xmark.circle.fill")
-                                .font(.system(size: 26))
-                                .foregroundColor(.background)
-                                .opacity(0.7)
-                        }
-                    }
-                    .padding(.top, 50)
-                    .padding(.trailing)
-                }
+        ScrollView {
+            HStack {
+                
             }
-        }
-    }
-
-    func dismissView() {
-        withAnimation(.interactiveSpring(response: 0.55, dampingFraction: 0.8)) {
-            isShowContent = false
         }
     }
 }

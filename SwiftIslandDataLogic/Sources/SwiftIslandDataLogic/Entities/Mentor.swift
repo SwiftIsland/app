@@ -43,7 +43,7 @@ extension Mentor: Identifiable {
 extension Mentor {
     public static func forPreview(description: String = "Lorem ipsum dolor sit amet, **consectetur adipiscing elit**. _Proin vitae cursus_ lectus. Mauris feugiat ipsum sed vulputate gravida. Nunc a risus ac odio consequat ornare nec sit amet arcu. In laoreet elit egestas sem ornare, at maximus sem maximus. Nulla molestie suscipit mollis. Cras gravida pellentesque mattis. Etiam at nisl lorem. Nullam viverra non arcu eget elementum. Nullam a velit laoreet, luctus risus at, dapibus dolor. Aliquam nec euismod augue, id lacinia nulla.",
                                   imageName: String = ["speaker-paul-2024", "speaker-manu-2024", "speaker-malin-2024"].randomElement()!,
-                                  name: String = "John Appleseed",
+                                  name: String = ["John Appleseed", "Paul Peelen", "Manu Carrasco Molina"].randomElement()!,
                                   twitter: String? = ["ppeelen", "x"].randomElement(),
                                   web: String? = "https://www.swiftisland.nl",
                                   linkedIn: String? = "ppeelen",

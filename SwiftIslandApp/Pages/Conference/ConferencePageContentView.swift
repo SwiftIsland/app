@@ -24,43 +24,28 @@ struct ConferencePageContentView: View {
     var body: some View {
         GeometryReader { geo in
             ScrollView(.vertical) {
+                ConferenceHeaderView()
+                    .padding(.top, 20)
                 if !userIsActivated {
-                    ConferenceHeaderView()
                     ConferenceBoxTicket()
                         .padding(.vertical, 6)
-
-                    ConferenceBoxMentors(
-                        namespace: namespace,
-                        geo: geo,
-                        isShowingMentor: $isShowingMentor,
-                        mayShowMentorNextMentor: $mayShowMentorNextMentor,
-                        selectedMentor: $selectedMentor)
-
-                    ConferenceBoxWeather()
-
-                    if let nextEvent {
-                        ConferenceBoxEvent(event: nextEvent)
-                    } else {
-                        ProgressView()
-                    }
-                } else {
-                    ConferenceHeaderView()
-
-                    if let nextEvent {
-                        ConferenceBoxEvent(event: nextEvent)
-                    } else {
-                        ProgressView()
-                    }
-
-                    ConferenceBoxMentors(
-                        namespace: namespace,
-                        geo: geo,
-                        isShowingMentor: $isShowingMentor,
-                        mayShowMentorNextMentor: $mayShowMentorNextMentor,
-                        selectedMentor: $selectedMentor)
-
-                    ConferenceBoxWeather()
                 }
+
+
+                ConferenceBoxMentors2024(
+                    namespace: namespace,
+                    isShowingMentor: $isShowingMentor,
+                    mayShowMentorNextMentor: $mayShowMentorNextMentor,
+                    selectedMentor: $selectedMentor)
+
+//                if let nextEvent {
+//                    ConferenceBoxEvent(event: nextEvent)
+//                } else {
+//                    ProgressView()
+//                }
+
+//                ConferenceBoxWeather()
+
                 // Removed for now.
                 //                        ConferenceBoxFAQ()
                 //                            .frame(width: geo.size.width, height: geo.size.height, alignment: .center)

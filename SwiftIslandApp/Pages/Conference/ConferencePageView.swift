@@ -29,7 +29,7 @@ struct ConferencePageView: View {
 
                 // The Mentor view when a mentor is selected
                 if let mentor = selectedMentor, isShowingMentor {
-                    MentorView(namespace: namespace, mentor: mentor, isShowContent: $isShowingMentor)
+                    MentorFullView(namespace: namespace, mentor: mentor, isShowingContent: $isShowingMentor)
                         .matchedGeometryEffect(id: mentor.id, in: namespace)
                         .ignoresSafeArea()
                         .onDisappear {
