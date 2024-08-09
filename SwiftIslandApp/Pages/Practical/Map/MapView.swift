@@ -10,29 +10,26 @@ import SwiftIslandDataLogic
 struct MapView: View {
     @EnvironmentObject private var appDataModel: AppDataModel
 
-    @State private var region = MKCoordinateRegion(
-        center: CLLocationCoordinate2D(
-            latitude: 53.11478763673313,
-            longitude: 4.8972633598615065),
-        span: MKCoordinateSpan(
-            latitudeDelta: 0.01,
-            longitudeDelta: 0.01
-        )
-    )
     @State private var showFilterPopover = false
     @State private var locationTypes: [LocationTypeSelection] = []
     @State private var filteredLocation: [Location] = []
 
+    @State private var cameraPosition = MapCameraPosition.region(MKCoordinateRegion(
+        center: CLLocationCoordinate2D(
+            latitude: 53.11478763673313,
+            longitude: 4.8972633598615065
+        ),
+        span: MKCoordinateSpan(
+            latitudeDelta: 0.01,
+            longitudeDelta: 0.01
+        )
+    ))
+
     var body: some View {
-        Map(coordinateRegion: $region, annotationItems: filteredLocation) { location in
-            MapAnnotation(coordinate: location.coordinate, anchorPoint: CGPoint(x: 0.5, y: 0.9)) {
-                PlaceAnnotationView(location: location)
-            }
-        }
-        .onAppear {
-            Task {
-                if !isPreview {
-                    await appDataModel.fetchLocations()
+        Map(position: $cameraPosition) {
+            ForEach(filteredLocation) { location in
+                Annotation("", coordinate: location.coordinate) {
+                    PlaceAnnotationView(location: location)
                 }
             }
         }
@@ -78,12 +75,17 @@ struct MapView: View {
             filteredLocation = appDataModel.locations
             filterTypes()
         }
-        .onChange(of: appDataModel.locations) { _ in
+        .onChange(of: appDataModel.locations) { _, _ in
             filterTypes()
         }
-        .onChange(of: locationTypes) { _ in
+        .onChange(of: locationTypes) { _, _ in
             let selectedTypes = locationTypes.filter { $0.isSelected }.map { $0.locationType }
             filteredLocation = appDataModel.locations.filter { selectedTypes.contains($0.type) }
+        }
+        .task {
+            if !isPreview {
+                await appDataModel.fetchLocations()
+            }
         }
     }
 

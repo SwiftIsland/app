@@ -94,15 +94,9 @@ extension URL: Identifiable {
     @Namespace var namespace
     let mentor = Mentor.forPreview()
 
-    return MentorView(namespace: namespace, mentor: mentor, isShowContent: .constant(false))
-        .previewDisplayName("No content")
-
-    return Group {
-
-        MentorView(namespace: namespace, mentor: mentor, isShowContent: .constant(true))
-            .coordinateSpace(name: "Show content")
-            .ignoresSafeArea()
-    }
+    return MentorView(namespace: namespace, mentor: mentor, isShowContent: .constant(true))
+        .ignoresSafeArea()
+        .coordinateSpace(name: "Show content")
 }
 
 #Preview("Show content") {
