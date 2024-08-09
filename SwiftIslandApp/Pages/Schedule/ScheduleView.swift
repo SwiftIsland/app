@@ -109,7 +109,7 @@ struct ScheduleView: View {
                 }
             }
         }
-        .onChange(of: selectedDayTag) { _ in
+        .onChange(of: selectedDayTag) { _, _ in
             showPopover = false
             self.selectedDate = Calendar.current.date(from: DateComponents(year: 2024, month: 8, day: selectedDayTag))
             updateContent()

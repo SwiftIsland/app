@@ -68,10 +68,10 @@ struct TabBarView: View {
         .onAppear {
             handleAppAction()
         }
-        .onChange(of: appActionTriggered) { _ in
+        .onChange(of: appActionTriggered) { _, _ in
             handleAppAction()
         }
-        .onChange(of: appDataModel.tickets) { _ in
+        .onChange(of: appDataModel.tickets) { _, _ in
             // TODO: Open the ticket page
         }
     }
