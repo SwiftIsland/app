@@ -32,7 +32,7 @@ struct MentorView: View {
                                 .border(Color(.sRGB, red: 150 / 255, green: 150 / 255, blue: 150 / 255, opacity: 0.1), width: isShowContent ? 0 : 1)
                                 .cornerRadius(15)
                                 .overlay(
-                                    MentorExcerptView(namespace: namespace, headline: "\(mentor.name)", isShowContent: $isShowContent)
+                                    MentorExcerptView(namespace: namespace, mentor: mentor, isShowContent: $isShowContent)
                                         .cornerRadius(isShowContent ? 0 : 15)
                                         .offset(CGSize(width: 0, height: !isShowContent ? 10 : 0))
                                         .matchedGeometryEffect(id: "\(mentor.id)-mentorExcerptView", in: namespace)
@@ -84,26 +84,42 @@ struct MentorView: View {
     }
 }
 
-struct MentorView_Previews: PreviewProvider {
-    @Namespace static var namespace
-
-    static var previews: some View {
-        let mentor = Mentor.forPreview()
-
-        Group {
-            MentorView(namespace: namespace, mentor: mentor, isShowContent: .constant(false))
-                .previewDisplayName("No content")
-            MentorView(namespace: namespace, mentor: mentor, isShowContent: .constant(true))
-                .coordinateSpace(name: "Show content")
-        }
+extension URL: Identifiable {
+    public var id: String {
+        absoluteString
     }
+}
+
+#Preview("No content") {
+    @Namespace var namespace
+    let mentor = Mentor.forPreview()
+
+    return MentorView(namespace: namespace, mentor: mentor, isShowContent: .constant(false))
+        .previewDisplayName("No content")
+
+    return Group {
+
+        MentorView(namespace: namespace, mentor: mentor, isShowContent: .constant(true))
+            .coordinateSpace(name: "Show content")
+            .ignoresSafeArea()
+    }
+}
+
+#Preview("Show content") {
+    @Namespace var namespace
+    let mentor = Mentor.forPreview()
+
+    return MentorView(namespace: namespace, mentor: mentor, isShowContent: .constant(true))
+        .coordinateSpace(name: "Show content")
+        .ignoresSafeArea()
 }
 
 struct MentorExcerptView: View {
     var namespace: Namespace.ID
-    let headline: String
+    let mentor: Mentor
 
     @Binding var isShowContent: Bool
+    @State private var showUrl: URL?
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -114,23 +130,66 @@ struct MentorExcerptView: View {
                 .background(isShowContent ? Color.background : .clear)
                 .overlay(
                     HStack {
-                        VStack(alignment: .leading) {
-                            Text(headline)
-                                .font(.title2)
-                                .fontWeight(isShowContent ? .bold : .light)
-                                .foregroundColor(.primary)
-                                .minimumScaleFactor(0.1)
-                                .lineLimit(2)
-                                .padding(.bottom, isShowContent ? 5 : 0)
-                                .matchedGeometryEffect(id: "\(headline)-headline", in: namespace)
-                        }
-                        .padding(.horizontal)
-                        .padding(.bottom)
-
+                        Text(mentor.name)
+                            .font(.title2)
+                            .fontWeight(isShowContent ? .bold : .light)
+                            .foregroundColor(.primary)
+                            .minimumScaleFactor(0.1)
+                            .lineLimit(2)
+                            .padding(.bottom, isShowContent ? 5 : 0)
                         Spacer()
+                        HStack {
+                            if isShowContent {
+                                Spacer()
+                                if let web = mentor.webUrl {
+                                    Button(action: {
+                                        showUrl = web
+                                    }, label: {
+                                        Image("web")
+                                    })
+                                    .buttonStyle(.plain)
+                                    .padding(0)
+                                    .foregroundColor(.red)
+                                }
+                                if let mastodon = mentor.mastodonUrl {
+                                    Button(action: {
+                                        showUrl = mastodon
+                                    }, label: {
+                                        Image("mastodon")
+                                    })
+                                    .buttonStyle(.plain)
+                                }
+                                if let linkedin = mentor.linkedInUrl {
+                                    Button(action: {
+                                        showUrl = linkedin
+                                    }, label: {
+                                        Image("linkedin")
+                                    })
+                                    .buttonStyle(.plain)
+                                }
+                                if let twitter = mentor.twitterUrl {
+                                    Button(action: {
+                                        showUrl = twitter
+                                    }, label: {
+                                        Image("x")
+                                    })
+                                    .buttonStyle(.plain)
+                                    .padding(0)
+                                }
+                            }
+                        }
+                        .foregroundColor(.primary)
                     }
-            )
+                        .matchedGeometryEffect(id: "\(mentor.name)-headline", in: namespace)
+                        .padding(.horizontal)
+                )
         }
         .foregroundColor(.clear)
+        .sheet(item: $showUrl) {
+            showUrl = nil
+        } content: { url in
+            SafariWebView(url: url)
+                .ignoresSafeArea()
+        }
     }
 }

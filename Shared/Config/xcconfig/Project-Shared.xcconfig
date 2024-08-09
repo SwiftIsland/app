@@ -5,7 +5,7 @@
 // https://buildsettingextractor.com
 //
 
-MARKETING_VERSION                             = 3.0.0
+MARKETING_VERSION                             = 3.1.0
 
 ALWAYS_SEARCH_USER_PATHS                      = NO
 CLANG_ANALYZER_NONNULL                        = YES
@@ -46,6 +46,6 @@ GCC_WARN_UNDECLARED_SELECTOR                  = YES
 GCC_WARN_UNINITIALIZED_AUTOS                  = YES_AGGRESSIVE
 GCC_WARN_UNUSED_FUNCTION                      = YES
 GCC_WARN_UNUSED_VARIABLE                      = YES
-IPHONEOS_DEPLOYMENT_TARGET                    = 16.4
+IPHONEOS_DEPLOYMENT_TARGET                    = 17.0
 MTL_FAST_MATH                                 = YES
 SDKROOT                                       = iphoneos
