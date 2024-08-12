@@ -808,7 +808,6 @@
 			mainGroup = 2AEDC48A2A4A030F00CD0180;
 			packageReferences = (
 				2A7F12892A69CB2C007C28EA /* XCRemoteSwiftPackageReference "Defaults" */,
-				2AFA65E82A9E9371004A13F8 /* XCRemoteSwiftPackageReference "SwiftLint" */,
 				2A77AD8C2C05272B00610250 /* XCRemoteSwiftPackageReference "AckGen" */,
 			);
 			productRefGroup = 2AEDC4942A4A030F00CD0180 /* Products */;
@@ -1221,7 +1220,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -1264,7 +1263,7 @@
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
