@@ -91,7 +91,7 @@ public class SwiftIslandDataLogic: DataLogic, ObservableObject {
     /// Fetches all the mentors from Firebase
     /// - Returns: Array of `Mentor`
     public func fetchMentors() async -> [Mentor] {
-        [Mentor.forPreview()]
+        Mentor.forWorkshop()
     }
 
     /// Fetches all the pages from Firebase and stores
