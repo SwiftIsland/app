@@ -25,6 +25,8 @@
 		2A37FB9A2A7D3F890062E63A /* Bundle+Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A37FB992A7D3F890062E63A /* Bundle+Version.swift */; };
 		2A3AB6592A7871030089CF7E /* SwiftIslandDataLogic in Frameworks */ = {isa = PBXBuildFile; productRef = 2A3AB6582A7871030089CF7E /* SwiftIslandDataLogic */; };
 		2A3AB65B2A78744B0089CF7E /* ActivityType+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A3AB65A2A78744B0089CF7E /* ActivityType+Color.swift */; };
+		2A77AD8E2C0527AE00610250 /* AckGen in Frameworks */ = {isa = PBXBuildFile; productRef = 2A77AD8D2C0527AE00610250 /* AckGen */; };
+		2A77AD902C0527AE00610250 /* AckGenUI in Frameworks */ = {isa = PBXBuildFile; productRef = 2A77AD8F2C0527AE00610250 /* AckGenUI */; };
 		2A7F12772A6401C4007C28EA /* NFCManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F12762A6401C4007C28EA /* NFCManager.swift */; };
 		2A7F12792A640730007C28EA /* ScrollViewOffset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F12782A640730007C28EA /* ScrollViewOffset.swift */; };
 		2A7F127F2A6488EC007C28EA /* RequestLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A7F127E2A6488EC007C28EA /* RequestLocationView.swift */; };
@@ -267,6 +269,8 @@
 			files = (
 				2A7F128B2A69CB2C007C28EA /* Defaults in Frameworks */,
 				2A3AB6592A7871030089CF7E /* SwiftIslandDataLogic in Frameworks */,
+				2A77AD8E2C0527AE00610250 /* AckGen in Frameworks */,
+				2A77AD902C0527AE00610250 /* AckGenUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -727,6 +731,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2AEDC4B72A4A031100CD0180 /* Build configuration list for PBXNativeTarget "SwiftIslandApp" */;
 			buildPhases = (
+				2A37FB962A7D3EBE0062E63A /* Generating Acknowledgement */,
 				2AEDC48F2A4A030F00CD0180 /* Sources */,
 				2AEDC4902A4A030F00CD0180 /* Frameworks */,
 				2AEDC4912A4A030F00CD0180 /* Resources */,
@@ -742,6 +747,8 @@
 			packageProductDependencies = (
 				2A7F128A2A69CB2C007C28EA /* Defaults */,
 				2A3AB6582A7871030089CF7E /* SwiftIslandDataLogic */,
+				2A77AD8D2C0527AE00610250 /* AckGen */,
+				2A77AD8F2C0527AE00610250 /* AckGenUI */,
 			);
 			productName = SwiftIsland;
 			productReference = 2AEDC4932A4A030F00CD0180 /* Swift Island.app */;
@@ -801,6 +808,7 @@
 			mainGroup = 2AEDC48A2A4A030F00CD0180;
 			packageReferences = (
 				2A7F12892A69CB2C007C28EA /* XCRemoteSwiftPackageReference "Defaults" */,
+				2A77AD8C2C05272B00610250 /* XCRemoteSwiftPackageReference "AckGen" */,
 			);
 			productRefGroup = 2AEDC4942A4A030F00CD0180 /* Products */;
 			projectDirPath = "";
@@ -857,6 +865,29 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A37FB962A7D3EBE0062E63A /* Generating Acknowledgement */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Generating Acknowledgement";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(SDKROOT)/Acknowledgements.plist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "#!/usr/bin/env \nDIR=$PROJECT_TEMP_DIR/../../../SourcePackages/checkouts/AckGen\nif [ -d \"$DIR\" ]; then\n    cd $DIR\n    SDKROOT=(xcrun --sdk macosx --show-sdk-path)\n    swift run ackgen\nelse\n    echo \"warning: AckGen not found. Please install the package via SPM (https://github.com/MartinP7r/AckGen#installation)\"\nfi\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2A987AC12A7AE4AF00EE15DF /* Sources */ = {
@@ -1320,6 +1351,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		2A77AD8C2C05272B00610250 /* XCRemoteSwiftPackageReference "AckGen" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MartinP7r/AckGen.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.1.8;
+			};
+		};
 		2A7F12892A69CB2C007C28EA /* XCRemoteSwiftPackageReference "Defaults" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/sindresorhus/Defaults";
@@ -1342,6 +1381,16 @@
 		2A3AB6582A7871030089CF7E /* SwiftIslandDataLogic */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SwiftIslandDataLogic;
+		};
+		2A77AD8D2C0527AE00610250 /* AckGen */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A77AD8C2C05272B00610250 /* XCRemoteSwiftPackageReference "AckGen" */;
+			productName = AckGen;
+		};
+		2A77AD8F2C0527AE00610250 /* AckGenUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 2A77AD8C2C05272B00610250 /* XCRemoteSwiftPackageReference "AckGen" */;
+			productName = AckGenUI;
 		};
 		2A7F128A2A69CB2C007C28EA /* Defaults */ = {
 			isa = XCSwiftPackageProductDependency;
