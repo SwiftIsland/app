@@ -740,7 +740,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				2AFA65EA2A9E9395004A13F8 /* PBXTargetDependency */,
 				2A987AD82A7AE4B000EE15DF /* PBXTargetDependency */,
 			);
 			name = SwiftIslandApp;
@@ -808,7 +807,6 @@
 			mainGroup = 2AEDC48A2A4A030F00CD0180;
 			packageReferences = (
 				2A7F12892A69CB2C007C28EA /* XCRemoteSwiftPackageReference "Defaults" */,
-				2AFA65E82A9E9371004A13F8 /* XCRemoteSwiftPackageReference "SwiftLint" */,
 				2A77AD8C2C05272B00610250 /* XCRemoteSwiftPackageReference "AckGen" */,
 			);
 			productRefGroup = 2AEDC4942A4A030F00CD0180 /* Products */;
@@ -994,10 +992,6 @@
 			isa = PBXTargetDependency;
 			target = 2AEDC4922A4A030F00CD0180 /* SwiftIslandApp */;
 			targetProxy = 2AEDC4A42A4A031100CD0180 /* PBXContainerItemProxy */;
-		};
-		2AFA65EA2A9E9395004A13F8 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			productRef = 2AFA65E92A9E9395004A13F8 /* SwiftLintPlugin */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1368,14 +1362,6 @@
 				minimumVersion = 8.0.0;
 			};
 		};
-		2AFA65E82A9E9371004A13F8 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/realm/SwiftLint";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.52.4;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1401,11 +1387,6 @@
 		2A987AF12A7AEA3700EE15DF /* SwiftIslandDataLogic */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = SwiftIslandDataLogic;
-		};
-		2AFA65E92A9E9395004A13F8 /* SwiftLintPlugin */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 2AFA65E82A9E9371004A13F8 /* XCRemoteSwiftPackageReference "SwiftLint" */;
-			productName = "plugin:SwiftLintPlugin";
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
