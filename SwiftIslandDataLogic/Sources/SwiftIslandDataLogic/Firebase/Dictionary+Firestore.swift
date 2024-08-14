@@ -1,5 +1,4 @@
-import Foundation
-import Firebase
+/*import Foundation
 import CoreLocation
 
 extension Dictionary where Key: ExpressibleByStringLiteral, Value: Any {
@@ -27,3 +26,4 @@ extension Dictionary where Key: ExpressibleByStringLiteral, Value: Any {
         return try? JSONDecoder().decode(T.self, from: data)
     }
 }
+*/
