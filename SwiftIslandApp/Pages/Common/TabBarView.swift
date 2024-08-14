@@ -96,9 +96,15 @@ struct TabbarView_Previews: PreviewProvider {
         Group {
             TabBarView(appActionTriggered: .constant(nil))
                 .previewDisplayName("Light mode")
+                .environmentObject(AppDataModel())
             TabBarView(appActionTriggered: .constant(nil))
                 .preferredColorScheme(.dark)
                 .previewDisplayName("Dark mode")
+                .environmentObject(AppDataModel())
+            TabBarView(appActionTriggered: .constant(nil))
+                .previewDisplayName("iPhone 15 Pro max")
+                .previewDevice("iPhone 15 Pro Max")
+                .environmentObject(AppDataModel())
         }
     }
 }
