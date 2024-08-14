@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -251,6 +251,20 @@
 		B3F443022A9765E700AFDF43 /* TicketAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketAddButton.swift; sourceTree = "<group>"; };
 		B3F7EEF32A86D6BB001D69B6 /* TicketsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		2ADABD022C6D4A910094FE3B /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				MentorListView.swift,
+			);
+			target = 2AEDC4922A4A030F00CD0180 /* SwiftIslandApp */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		2ADABCFF2C6D4A840094FE3B /* Mentor */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (2ADABD022C6D4A910094FE3B /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = Mentor; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		2A987AC22A7AE4AF00EE15DF /* Frameworks */ = {
@@ -635,6 +649,7 @@
 		2AEDC4C02A4A086F00CD0180 /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				2ADABCFF2C6D4A840094FE3B /* Mentor */,
 				2AEDC4C42A4A08A600CD0180 /* Common */,
 				2AEDC4C12A4A087400CD0180 /* Conference */,
 				2AC7DD0C2A59F36C00DB9F6D /* Practical */,
@@ -1114,7 +1129,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -1171,7 +1186,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

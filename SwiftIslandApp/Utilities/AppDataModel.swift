@@ -41,10 +41,8 @@ final class AppDataModel: ObservableObject {
 
     init(dataLogic: DataLogic = SwiftIslandDataLogic()) {
         self.dataLogic = dataLogic
-        if !isShowingPreview() {
-            Task {
-                await fetchData()
-            }
+        Task {
+            await fetchData()
         }
     }
 
