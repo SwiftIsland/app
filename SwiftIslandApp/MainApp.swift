@@ -95,7 +95,26 @@ private extension MainApp {
             if slug == "reset" {
                 Defaults.reset(.puzzleStatus)
                 Defaults.reset(.puzzleHints)
+                currentPuzzleSlug = nil
             } else {
+                findSlug(slug: slug, key: key)
+            }
+        }
+    }
+    
+    func findSlug(slug: String, key: String) {
+        if slug == "reset" {
+            Defaults.reset(.puzzleStatus)
+            Defaults.reset(.puzzleHints)
+        } else {
+            let currentStatus = Defaults[.puzzleStatus][slug]
+            if currentStatus == nil || currentStatus == .notFound {
+                Defaults[.puzzleStatus][slug] = .found
+            }
+            if let puzzle = appDataModel.puzzles.first(where: { $0.slug == slug }) {
+                if let hint = try? decrypt(value: puzzle.encryptedHint, solution: key, type: Hint.self) {
+                    Defaults[.puzzleHints][puzzle.slug] = hint
+                }
             }
             currentPuzzleSlug = slug
         }
