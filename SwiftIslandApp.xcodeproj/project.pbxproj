@@ -1011,7 +1011,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = V38QRBT6X5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftIslandWidgets/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Swift Island Widgets";
@@ -1041,7 +1041,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = V38QRBT6X5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftIslandWidgets/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Swift Island Widgets";
