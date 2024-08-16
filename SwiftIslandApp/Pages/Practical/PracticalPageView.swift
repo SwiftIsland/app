@@ -200,7 +200,7 @@ struct SectionAtTheConference: View {
                     Image(systemName: "wave.3.right")
                         .foregroundColor(.questionMarkColor)
                         .frame(maxWidth: iconMaxWidth)
-                    Text("Scan NFC Tags")
+                    Text("Connections")
                         .dynamicTypeSize(.small ... .medium)
                 }
             }
