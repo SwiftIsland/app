@@ -92,7 +92,6 @@ private extension MainApp {
                 }
             }
         case .seal(let slug, let key):
-            print("Seal: \(urlTask)")
             if slug == "reset" {
                 Defaults.reset(.puzzleStatus)
                 Defaults.reset(.puzzleHints)
