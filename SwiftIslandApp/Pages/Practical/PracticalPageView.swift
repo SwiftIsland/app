@@ -19,6 +19,7 @@ enum NavigationPage {
     case source
     case tickets
     case spotTheSeal
+    case nfc
 }
 
 struct PracticalPageView: View {
@@ -135,6 +136,8 @@ struct PracticalPageView: View {
                     SourceView()
                 case .spotTheSeal:
                     PuzzlePageView()
+                case .nfc:
+                    NFCPageView()
                 }
             }
         }
@@ -189,6 +192,15 @@ struct SectionAtTheConference: View {
                         .foregroundColor(.questionMarkColor)
                         .frame(maxWidth: iconMaxWidth)
                     Text("Checkout the schedule")
+                        .dynamicTypeSize(.small ... .medium)
+                }
+            }
+            NavigationLink(value: NavigationPage.nfc) {
+                HStack {
+                    Image(systemName: "wave.3.right")
+                        .foregroundColor(.questionMarkColor)
+                        .frame(maxWidth: iconMaxWidth)
+                    Text("Scan NFC Tags")
                         .dynamicTypeSize(.small ... .medium)
                 }
             }

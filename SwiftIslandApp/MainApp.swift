@@ -64,6 +64,7 @@ struct MainApp: App {
             }, message: {
                 Text("\(showTicketMessage)\n\nYou can find your ticket under Practical → Before you leave → Tickets")
             })
+            
         }
     }
 }
