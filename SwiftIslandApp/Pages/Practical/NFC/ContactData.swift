@@ -6,8 +6,13 @@
 //
 
 import Foundation
+import Defaults
 
-struct ContactData: Decodable, Encodable {
+extension Defaults.Keys {
+    static let contacts = Key<[TimeInterval: ContactData]>("contacts", default: [:])
+}
+
+struct ContactData: Decodable, Encodable, Hashable, Defaults.Serializable {
     var name: String = ""
     var company: String = ""
     var address: String = ""
@@ -37,11 +42,12 @@ struct ContactData: Decodable, Encodable {
         return data?.base64EncodedString()
     }
     
-    init(base64Encoded: String) {
+    init?(base64Encoded: String) {
         if let data = Data(base64Encoded: base64Encoded), let contact = try? JSONDecoder().decode(ContactData.self, from: data) {
             self = contact
             return
         }
+        return nil
     }
     
     init(name: String, company: String, address: String, phone: String, email: String, url: String) {

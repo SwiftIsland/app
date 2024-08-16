@@ -7,6 +7,7 @@ import Foundation
 
 import SwiftUI
 import CoreNFC
+import Defaults
 
 
 struct NFCPageView: View {
@@ -14,7 +15,14 @@ struct NFCPageView: View {
     @State private var isWriteNFCSheetPresented = false
     var body: some View {
         VStack {
-            Text("TBD")
+            let contacts = Defaults[.contacts]
+            let sortedKeys = contacts.keys.sorted().reversed()
+            let sortedArray = sortedKeys.compactMap { (key) -> ContactData? in
+                return contacts[key]
+            }
+            ForEach(sortedArray, id: \.self) { item in
+                Text(item.name)
+            }
         }
         .navigationTitle("Connections")
         .toolbar {

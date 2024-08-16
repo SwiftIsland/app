@@ -81,7 +81,10 @@ private extension MainApp {
     }
     
     func addContact(contact: String) {
-        // TODO
+        guard let contact = ContactData(base64Encoded: contact) else {
+            return
+        }
+        Defaults[.contacts][Date().timeIntervalSinceReferenceDate] = contact
     }
     
     func findSlug(slug: String, key: String) {
