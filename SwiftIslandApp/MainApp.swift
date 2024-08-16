@@ -15,16 +15,15 @@ struct MainApp: App {
     }
 
     @StateObject private var appDataModel = AppDataModel()
-    @State private var appActionTriggered: AppActions?
+    @State private var urlTaskTriggered: URLTask?
     @State private var showTicketAlert = false
     @State private var showTicketMessage: String = ""
-    @State private var currentPuzzleSlug: String?
 
     var body: some Scene {
         WindowGroup {
             ZStack {
                 if case .loaded = appDataModel.appState {
-                    TabBarView(appActionTriggered: $appActionTriggered)
+                    TabBarView(urlTaskTriggered: $urlTaskTriggered)
                         .environmentObject(appDataModel)
                 } else {
                     SwiftIslandLogo(isAnimating: true)
@@ -41,30 +40,6 @@ struct MainApp: App {
                     handleOpenURL(url)
                 }
             }
-
-            .sheet(
-                isPresented: .constant(currentPuzzleSlug != nil),
-                onDismiss: {
-                    currentPuzzleSlug = nil
-                },
-                content: {
-                    NavigationStack {
-                        PuzzlePageView(currentPuzzleSlug: $currentPuzzleSlug.wrappedValue)
-                    }
-                    .tint(.questionMarkColor)
-                    .environmentObject(appDataModel)
-                }
-            )
-            // TODO: Make this a navigation path to the actual ticket
-            .alert("Ticket Added", isPresented: $showTicketAlert, actions: {
-                Button("OK") {
-                    showTicketAlert = false
-                    showTicketMessage = ""
-                }
-            }, message: {
-                Text("\(showTicketMessage)\n\nYou can find your ticket under Practical → Before you leave → Tickets")
-            })
-            
         }
     }
 }
@@ -95,13 +70,14 @@ private extension MainApp {
             if slug == "reset" {
                 Defaults.reset(.puzzleStatus)
                 Defaults.reset(.puzzleHints)
-                currentPuzzleSlug = nil
+                appDataModel.currentPuzzleSlug = nil
             } else {
                 findSlug(slug: slug, key: key)
             }
         case .contact(let contact):
             addContact(contact: contact)
         }
+        urlTaskTriggered = urlTask
     }
     
     func addContact(contact: String) {
@@ -122,13 +98,11 @@ private extension MainApp {
                     Defaults[.puzzleHints][puzzle.slug] = hint
                 }
             }
-            currentPuzzleSlug = slug
+            appDataModel.currentPuzzleSlug = slug
         }
     }
 
     func handleAppAction(_ appAction: AppActions) {
-        appActionTriggered = appAction
-
         switch appAction {
         case .atTheConference:
             Defaults[.userIsActivated] = true
@@ -152,7 +126,7 @@ private extension MainApp {
     }
 }
 
-enum URLTask {
+enum URLTask: Equatable {
     case action(appAction: AppActions)
     case ticket(slug: String)
     case seal(slug: String, key: String)

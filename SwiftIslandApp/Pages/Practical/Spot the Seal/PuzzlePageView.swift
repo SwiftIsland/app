@@ -53,13 +53,12 @@ extension Puzzle {
 
 struct PuzzleGrid: View {
     @EnvironmentObject private var appDataModel: AppDataModel
-    @State var currentPuzzleSlug: String?
     private let spacing: CGFloat = 0
     private let columns = Array(repeatElement(GridItem(.flexible(minimum: 44), spacing: 0), count: 4))
     var body: some View {
         LazyVGrid(columns: columns, spacing: spacing) {
             ForEach(appDataModel.puzzles) { puzzle in
-                PuzzleItemView(puzzle: puzzle, isCurrent: (puzzle.slug == currentPuzzleSlug))
+                PuzzleItemView(puzzle: puzzle, isCurrent: (puzzle.slug == appDataModel.currentPuzzleSlug))
             }
         }
     }
@@ -73,7 +72,6 @@ struct PuzzlePageView: View {
     @Default(.puzzleHints)
     var puzzleHints
     
-    @State var currentPuzzleSlug: String?
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
@@ -102,7 +100,7 @@ struct PuzzlePageView: View {
                         }
                     }
                     Spacer()
-                    PuzzleGrid(currentPuzzleSlug: currentPuzzleSlug)
+                    PuzzleGrid()
                 }
             }
             .padding(20)
