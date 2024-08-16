@@ -72,8 +72,10 @@ private extension MainApp {
     func handleOpenURL(_ url: URL) {
         guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true), components.host == "swiftisland.nl" else { return }
 
-        let actions = components.queryItems?.compactMap { URLTask(rawValue: $0) }
-        actions?.forEach { handleUrlTask($0) }
+        if let items = components.queryItems {
+            guard let task = URLTask(items: items) else { return }
+            handleUrlTask(task)
+        }
     }
 
     func handleUrlTask(_ urlTask: URLTask) {
@@ -88,14 +90,30 @@ private extension MainApp {
                     print(error)
                 }
             }
-        case .seal(let slug):
+        case .seal(let slug, let key):
+            print("Seal: \(urlTask)")
             if slug == "reset" {
                 Defaults.reset(.puzzleStatus)
                 Defaults.reset(.puzzleHints)
+                currentPuzzleSlug = nil
             } else {
-                let currentStatus = Defaults[.puzzleStatus][slug]
-                if currentStatus == nil || currentStatus == .notFound {
-                    Defaults[.puzzleStatus][slug] = .found
+                findSlug(slug: slug, key: key)
+            }
+        }
+    }
+    
+    func findSlug(slug: String, key: String) {
+        if slug == "reset" {
+            Defaults.reset(.puzzleStatus)
+            Defaults.reset(.puzzleHints)
+        } else {
+            let currentStatus = Defaults[.puzzleStatus][slug]
+            if currentStatus == nil || currentStatus == .notFound {
+                Defaults[.puzzleStatus][slug] = .found
+            }
+            if let puzzle = appDataModel.puzzles.first(where: { $0.slug == slug }) {
+                if let hint = try? decrypt(value: puzzle.encryptedHint, solution: key, type: Hint.self) {
+                    Defaults[.puzzleHints][puzzle.slug] = hint
                 }
             }
             currentPuzzleSlug = slug
@@ -131,19 +149,31 @@ private extension MainApp {
 enum URLTask {
     case action(appAction: AppActions)
     case ticket(slug: String)
-    case seal(slug: String)
+    case seal(slug: String, key: String)
 
-    init?(rawValue: URLQueryItem) {
-        switch rawValue.name {
+    init?(items: [URLQueryItem]) {
+        for item in items {
+            if let task = URLTask.parseItem(item: item, allItems: items) {
+                self = task
+                return
+            }
+        }
+        return nil
+    }
+    
+    static func parseItem(item: URLQueryItem, allItems: [URLQueryItem]) -> URLTask? {
+        switch item.name {
         case "action":
-            guard let value = rawValue.value, let actionTriggered = AppActions(rawValue: value) else { return nil }
-            self = .action(appAction: actionTriggered)
+            guard let value = item.value, let actionTriggered = AppActions(rawValue: value) else { return nil }
+            return .action(appAction: actionTriggered)
         case "ticket":
-            guard let value = rawValue.value else { return nil }
-            self = .ticket(slug: value)
+            guard let value = item.value else { return nil }
+            return .ticket(slug: value)
         case "seal":
-            guard let value = rawValue.value else { return nil }
-            self = .seal(slug: value)
+            guard let value = item.value, let key
+                    = allItems.first(where: {$0.name == "key"})?.value else { return nil }
+            
+            return .seal(slug: value, key: key)
         default:
             return nil
         }

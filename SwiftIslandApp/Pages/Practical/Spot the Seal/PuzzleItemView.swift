@@ -19,7 +19,7 @@ class PuzzleItemViewModel: ObservableObject {
     @Published var scale: Double = 1
     @Published var flipAngle: CGFloat = 0
     @Published var isCurrent = false
-
+    
     init(puzzle: Puzzle, isCurrent: Bool = false) {
         self.puzzle = puzzle
         self.isCurrent = isCurrent
@@ -29,14 +29,14 @@ class PuzzleItemViewModel: ObservableObject {
 
 struct PuzzleItemView: View {
     @StateObject var viewModel: PuzzleItemViewModel
-
+    
     @Environment(\.colorScheme)
     private var colorScheme
-
+    
     init(puzzle: Puzzle, isCurrent: Bool = false) {
         _viewModel = StateObject(wrappedValue: PuzzleItemViewModel(puzzle: puzzle, isCurrent: isCurrent))
     }
-
+    
     var body: some View {
         let color: Color = colorScheme == .light ? .black : .white
         let puzzle = viewModel.puzzle
