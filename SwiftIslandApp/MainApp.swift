@@ -99,7 +99,13 @@ private extension MainApp {
             } else {
                 findSlug(slug: slug, key: key)
             }
+        case .contact(let contact):
+            addContact(contact: contact)
         }
+    }
+    
+    func addContact(contact: String) {
+        // TODO
     }
     
     func findSlug(slug: String, key: String) {
@@ -150,6 +156,7 @@ enum URLTask {
     case action(appAction: AppActions)
     case ticket(slug: String)
     case seal(slug: String, key: String)
+    case contact(contact: String)
 
     init?(items: [URLQueryItem]) {
         for item in items {
@@ -169,6 +176,9 @@ enum URLTask {
         case "ticket":
             guard let value = item.value else { return nil }
             return .ticket(slug: value)
+        case "contact":
+            guard let value = item.value else { return nil }
+            return .contact(contact: value)
         case "seal":
             guard let value = item.value, let key
                     = allItems.first(where: {$0.name == "key"})?.value else { return nil }
