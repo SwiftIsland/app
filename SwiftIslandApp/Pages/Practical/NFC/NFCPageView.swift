@@ -13,9 +13,9 @@ import Defaults
 struct NFCPageView: View {
     @State var readerDelegate: NFCReaderDelegate = NFCReaderDelegate()
     @State private var isWriteNFCSheetPresented = false
+    @Default(.contacts) var contacts
     var body: some View {
         VStack {
-            let contacts = Defaults[.contacts]
             let sortedKeys = contacts.keys.sorted().reversed()
             let sortedArray = sortedKeys.compactMap { (key) -> ContactData? in
                 return contacts[key]
