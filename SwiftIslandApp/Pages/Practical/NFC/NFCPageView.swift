@@ -15,26 +15,31 @@ struct NFCPageView: View {
     @State private var isWriteNFCSheetPresented = false
     @Default(.contacts) var contacts
     var body: some View {
-        ScrollView {
-            VStack {
-                let timestamps = contacts.keys.sorted().reversed()
-                let groupedByDate = Dictionary(grouping: timestamps) { (timestamp) -> DateComponents in
+        List {
+            let timestamps = contacts.keys.sorted().reversed()
+            let groupedByDate = Dictionary(grouping: timestamps) { (timestamp) -> DateComponents in
 
-                    let date = Calendar.current.dateComponents([.day, .year, .month], from: (Date(timeIntervalSinceReferenceDate: timestamp)))
+                let date = Calendar.current.dateComponents([.day, .year, .month], from: (Date(timeIntervalSinceReferenceDate: timestamp)))
 
-                    return date
-                }
-                let _ = print(groupedByDate)
-                let items = Array<DateComponents>(groupedByDate.keys)
-                ForEach(items, id: \.self) { (component: DateComponents) in
-                    if let intervals = groupedByDate[component],
-                       let date = Calendar.current.date(from: component) {
-                        Section(date.formatted(date: .long, time: .omitted)) {
-                            ForEach(intervals, id: \.self) { interval in
-                                if let contact = contacts[interval] {
-                                    ConnectionRow(timestamp: interval, contact: contact)
+                return date
+            }
+            let _ = print(groupedByDate)
+            let items = Array<DateComponents>(groupedByDate.keys)
+            ForEach(items, id: \.self) { (component: DateComponents) in
+                if let intervals = groupedByDate[component],
+                   let date = Calendar.current.date(from: component) {
+                    Section(date.formatted(date: .long, time: .omitted)) {
+                        ForEach(intervals, id: \.self) { interval in
+                            if let contact = contacts[interval] {
+                                ConnectionRow(timestamp: interval, contact: contact).swipeActions {
+                                    Button(action: {
+                                        // TODO confirmation
+                                        Defaults[.contacts].removeValue(forKey: interval)
+                                    }) {
+                                        Label("Delete", systemImage: "trash")
+                                    }
+                                    .tint(.red)
                                 }
-    
                             }
                         }
                     }
