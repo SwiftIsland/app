@@ -107,6 +107,7 @@
 		B3B01ED02C70002300FFBAC9 /* ContactData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B01ECC2C70002300FFBAC9 /* ContactData.swift */; };
 		B3B01ED32C70013700FFBAC9 /* NFCPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B01ED22C70013700FFBAC9 /* NFCPageView.swift */; };
 		B3B01ED52C7001C200FFBAC9 /* WriteNFCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B01ED42C7001C200FFBAC9 /* WriteNFCView.swift */; };
+		B3B01ED72C71357A00FFBAC9 /* ConnectionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B01ED62C71357A00FFBAC9 /* ConnectionRow.swift */; };
 		B3C626422A942291002754A8 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C626412A942291002754A8 /* WebView.swift */; };
 		B3C626442A94956A002754A8 /* TicketEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C626432A94956A002754A8 /* TicketEditView.swift */; };
 		B3F443032A9765E700AFDF43 /* TicketAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F443022A9765E700AFDF43 /* TicketAddButton.swift */; };
@@ -256,6 +257,7 @@
 		B3B01ECC2C70002300FFBAC9 /* ContactData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactData.swift; sourceTree = "<group>"; };
 		B3B01ED22C70013700FFBAC9 /* NFCPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCPageView.swift; sourceTree = "<group>"; };
 		B3B01ED42C7001C200FFBAC9 /* WriteNFCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteNFCView.swift; sourceTree = "<group>"; };
+		B3B01ED62C71357A00FFBAC9 /* ConnectionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionRow.swift; sourceTree = "<group>"; };
 		B3C626412A942291002754A8 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		B3C626432A94956A002754A8 /* TicketEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketEditView.swift; sourceTree = "<group>"; };
 		B3F443022A9765E700AFDF43 /* TicketAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketAddButton.swift; sourceTree = "<group>"; };
@@ -683,6 +685,7 @@
 				B3B01ED22C70013700FFBAC9 /* NFCPageView.swift */,
 				B30E2E1B2C6F9B5E007A48E5 /* NFCDelegates.swift */,
 				B3B01ED42C7001C200FFBAC9 /* WriteNFCView.swift */,
+				B3B01ED62C71357A00FFBAC9 /* ConnectionRow.swift */,
 			);
 			path = NFC;
 			sourceTree = "<group>";
@@ -988,6 +991,7 @@
 				B3F7EEF42A86D6BB001D69B6 /* TicketsView.swift in Sources */,
 				2AC7DD0F2A59F37D00DB9F6D /* PracticalPageView.swift in Sources */,
 				2AE45DA92A7D617400AF2B9D /* ConferenceBoxWeather.swift in Sources */,
+				B3B01ED72C71357A00FFBAC9 /* ConnectionRow.swift in Sources */,
 				2AE440062A705E5C009078E3 /* ScheduleCalendarView.swift in Sources */,
 				2AC7DD072A58CD2000DB9F6D /* FAQListView.swift in Sources */,
 				2A16EB452A4F622800CC881D /* ConferenceBoxTicket.swift in Sources */,
