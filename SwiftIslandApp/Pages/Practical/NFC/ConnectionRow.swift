@@ -9,6 +9,7 @@ import Defaults
 struct ConnectionRow: View {
     var timestamp: TimeInterval
     var contact: ContactData
+    @Binding var contactToSave: ContactData?
     @State private var showingDeleteConfirmation = false
     @State var expanded: Bool = false
     var body: some View {
@@ -47,6 +48,13 @@ struct ConnectionRow: View {
                 Label("Delete", systemImage: "trash")
             }
             .tint(.red)
+            Button(action: {
+                contactToSave = contact
+            }) {
+                Label("Add Contact", systemImage: "person.crop.circle.badge.plus")
+            }
+            .tint(.green)
+
         }.confirmationDialog("Are you sure you want to delete this item?", isPresented: $showingDeleteConfirmation, titleVisibility: .visible) {
             Button("Delete", role: .destructive) {
                 Defaults[.contacts].removeValue(forKey: timestamp)
@@ -61,5 +69,9 @@ struct ConnectionRow: View {
 #Preview {
     let time = Date().timeIntervalSinceReferenceDate
     let contact = ContactData(name: "Niels van Hoorn", company: "Framer", phone: "", email: "", url: "")
-    return ConnectionRow(timestamp: time, contact: contact)
+    let contactToSave = Binding<ContactData?> {
+        nil
+    } set: { _ in
+    }
+    return ConnectionRow(timestamp: time, contact: contact, contactToSave: contactToSave)
 }
