@@ -17,6 +17,9 @@ struct ConferenceBoxMentors: View {
     @Binding var mayShowMentorNextMentor: Bool
     @Binding var selectedMentor: Mentor?
 
+    private let maxHeight: CGFloat = 300
+    private let aspectRatio: CGFloat = 1.5
+
     var body: some View {
         VStack(alignment: .leading) {
             Text("Mentors this year".uppercased())
@@ -45,12 +48,13 @@ struct ConferenceBoxMentors: View {
                                     debugPrint("Too soon to show next mentor animation")
                                 }
                             }
-                            .frame(width: geo.size.width * 0.8)
-                            .frame(minHeight: geo.size.width * 0.80)
+                            .aspectRatio(aspectRatio, contentMode: .fit)
+                            .frame(minHeight: min(geo.size.width * 0.80, maxHeight), maxHeight: maxHeight)
                     }
                 }
             }
-            .frame(minHeight: geo.size.width * 0.80)
+            .aspectRatio(aspectRatio, contentMode: .fit)
+            .frame(minHeight: min(geo.size.width * 0.80, maxHeight))
         }
     }
 }

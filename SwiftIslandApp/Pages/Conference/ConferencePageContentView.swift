@@ -75,3 +75,15 @@ struct ConferencePageContentView: View {
         }
     }
 }
+
+#Preview {
+    @Previewable @Namespace var namespace
+
+    return ConferencePageContentView(
+        namespace: namespace,
+        isShowingMentor: .constant(false),
+        mayShowMentorNextMentor: .constant(true),
+        selectedMentor: .constant(Mentor.forPreview())
+    )
+    .environmentObject(AppDataModel())
+}

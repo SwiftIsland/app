@@ -94,9 +94,9 @@ extension URL: @retroactive Identifiable {
     @Previewable @Namespace var namespace
     let mentor = Mentor.forPreview()
 
-    return MentorView(namespace: namespace, mentor: mentor, isShowContent: .constant(true))
+    return MentorView(namespace: namespace, mentor: mentor, isShowContent: .constant(false))
         .ignoresSafeArea()
-        .coordinateSpace(name: "Show content")
+        .coordinateSpace(name: "No content")
 }
 
 #Preview("Show content") {
