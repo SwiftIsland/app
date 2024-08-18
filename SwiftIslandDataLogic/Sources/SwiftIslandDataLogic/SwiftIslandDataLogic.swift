@@ -1,7 +1,5 @@
 import SwiftUI
 import os.log
-//import Firebase
-//import FirebaseFirestore
 
 /// This is the protocol definition for ``SwiftIslandDataLogic``, which can be used for dependency injection
 public protocol DataLogic {

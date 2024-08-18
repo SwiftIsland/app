@@ -5,8 +5,6 @@
 
 import Foundation
 import CoreLocation
-//import Firebase
-//import FirebaseFirestoreSwift
 import SwiftUI
 
 public enum LocationError: Error {
