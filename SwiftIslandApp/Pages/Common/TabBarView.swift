@@ -40,6 +40,7 @@ struct TabBarView: View {
                 }
             }
             .accentColor(.questionMarkColor)
+            .tabViewStyle(.sidebarAdaptable)
         }
         .onAppear {
             handleAppAction()
