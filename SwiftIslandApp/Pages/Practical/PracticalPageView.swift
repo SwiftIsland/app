@@ -19,12 +19,13 @@ enum NavigationPage {
     case source
     case tickets
     case spotTheSeal
+    case nfc
 }
 
 struct PracticalPageView: View {
     private let iconMaxWidth: CGFloat = 32
     @State private var pages: [Page] = []
-    @State private var navigationPath = NavigationPath()
+    @Binding var navigationPath : NavigationPath
 
     @Default(.userIsActivated)
     private var userIsActivated
@@ -135,6 +136,8 @@ struct PracticalPageView: View {
                     SourceView()
                 case .spotTheSeal:
                     PuzzlePageView()
+                case .nfc:
+                    NFCPageView()
                 }
             }
         }
@@ -145,8 +148,10 @@ struct PracticalPageView: View {
 // MARK: - Preview
 
 struct PracticalPageView_Previews: PreviewProvider {
+    @State static var navigationPath = NavigationPath()
     static var previews: some View {
         let appDataModel = AppDataModel()
+        
         appDataModel.pages = [
             Page.forPreview(id: "schiphol", imageName: "schiphol"),
             Page.forPreview(id: "joinSlack", content: "https://join.slack.com/t/swiftisland/shared_invite/abc-123-def", imageName: ""),
@@ -154,10 +159,10 @@ struct PracticalPageView_Previews: PreviewProvider {
         ]
 
         return Group {
-            PracticalPageView()
+            PracticalPageView(navigationPath: $navigationPath)
                 .previewDisplayName("Light mode")
                 .environmentObject(appDataModel)
-            PracticalPageView()
+            PracticalPageView(navigationPath: $navigationPath)
                 .preferredColorScheme(.dark)
                 .previewDisplayName("Dark mode")
                 .environmentObject(appDataModel)
@@ -189,6 +194,15 @@ struct SectionAtTheConference: View {
                         .foregroundColor(.questionMarkColor)
                         .frame(maxWidth: iconMaxWidth)
                     Text("Checkout the schedule")
+                        .dynamicTypeSize(.small ... .medium)
+                }
+            }
+            NavigationLink(value: NavigationPage.nfc) {
+                HStack {
+                    Image(systemName: "wave.3.right")
+                        .foregroundColor(.questionMarkColor)
+                        .frame(maxWidth: iconMaxWidth)
+                    Text("Connections")
                         .dynamicTypeSize(.small ... .medium)
                 }
             }
