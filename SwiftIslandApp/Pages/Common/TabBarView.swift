@@ -7,7 +7,7 @@ import SwiftUI
 import Defaults
 import SwiftIslandDataLogic
 
-private enum Tab: CaseIterable {
+private enum Tabs: CaseIterable {
     case home
     case practical
     case schedule
@@ -15,7 +15,7 @@ private enum Tab: CaseIterable {
 
 struct TabBarView: View {
     @Namespace private var namespace
-    @State private var selectedItem: Tab = .home
+    @State private var selectedItem: Tabs = .home
     @Binding var appActionTriggered: AppActions?
 
     @State private var isShowingMentor = false
@@ -25,41 +25,17 @@ struct TabBarView: View {
     private var userIsActivated
 
     var body: some View {
-        let tabs: [Tab] = {
-            if userIsActivated {
-                return [.home, .practical, .schedule]
-            } else {
-                return [.home, .practical]
-            }
-        }()
-
         ZStack {
             TabView(selection: $selectedItem) {
-                ForEach(tabs, id: \.self) { tab in
-                    switch tab {
-                    case .home:
-                        ConferencePageView(namespace: namespace, isShowingMentor: $isShowingMentor)
-                            .tabItem {
-                                Label("Conference", systemImage: "person.3")
-                                    .environment(\.symbolVariants, tab == selectedItem ? .fill : .none)
-                            }
-                            .tag(tab)
-                    case .practical:
-                        PracticalPageView()
-                            .tabItem {
-                                Label("Practical", systemImage: "wallet.pass")
-                                    .environment(\.symbolVariants, tab == selectedItem ? .fill : .none)
-                            }
-                            .tag(tab)
-                    case .schedule:
-                        NavigationStack {
-                            ScheduleView()
-                        }
-                        .tabItem {
-                            Label("Schedule", systemImage: "calendar.day.timeline.left")
-                                .environment(\.symbolVariants, tab == selectedItem ? .fill : .none)
-                        }
-                        .tag(tab)
+                Tab("Conference", systemImage: "person.3", value: .home) {
+                    ConferencePageView(namespace: namespace, isShowingMentor: $isShowingMentor)
+                }
+                Tab("Practical", systemImage: "wallet.pass", value: .practical) {
+                    PracticalPageView()
+                }
+                Tab("Schedule", systemImage: "calendar", value: .schedule) {
+                    NavigationStack {
+                        ScheduleView()
                     }
                 }
             }
