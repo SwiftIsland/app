@@ -95,10 +95,11 @@ struct ScheduleView: View {
                                         .font(.caption)
                                         .foregroundColor(.secondary)
                                     Picker("Select conference day", selection: $selectedDayTag) {
-                                        Text("Monday").tag(4) // 4th of September
-                                        Text("Tuesday").tag(5)
-                                        Text("Wednesday").tag(6)
-                                        Text("Thursday").tag(7)
+                                        Text("Monday").tag(26)
+                                        Text("Tuesday").tag(27)
+                                        Text("Wednesday").tag(28)
+                                        Text("Thursday").tag(29)
+                                        Text("Friday").tag(30)
                                     }
                                     .pickerStyle(.segmented)
                                 }
@@ -116,13 +117,16 @@ struct ScheduleView: View {
         }
         .onAppear {
             let calendar = Calendar.current
-
-            if let tuesday = calendar.date(from: DateComponents(year: 2024, month: 9, day: 5)), calendar.isDateInToday(tuesday) {
+            if let monday = calendar.date(from: DateComponents(year: 2024, month: 8, day: 26)), calendar.isDateInToday(monday) {
+                selectedDate = monday
+            } else if let tuesday = calendar.date(from: DateComponents(year: 2024, month: 8, day: 27)), calendar.isDateInToday(tuesday) {
                 selectedDate = tuesday
-            } else if let wednesday = calendar.date(from: DateComponents(year: 2024, month: 9, day: 5)), calendar.isDateInToday(wednesday) {
+            } else if let wednesday = calendar.date(from: DateComponents(year: 2024, month: 8, day: 28)), calendar.isDateInToday(wednesday) {
                 selectedDate = wednesday
-            } else if let thursday = calendar.date(from: DateComponents(year: 2024, month: 9, day: 6)), calendar.isDateInToday(thursday) {
+            } else if let thursday = calendar.date(from: DateComponents(year: 2024, month: 8, day: 29)), calendar.isDateInToday(thursday) {
                 selectedDate = thursday
+            } else if let friday = calendar.date(from: DateComponents(year: 2024, month: 8, day: 20)), calendar.isDateInToday(friday) {
+                selectedDate = friday
             }
 
             updateContent()
