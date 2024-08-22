@@ -67,6 +67,7 @@ struct TabBarView: View {
                 } header: {
                     Label("Mentors", systemImage: "graduationcap")
                 }
+                .defaultVisibility(.hidden, for: .tabBar)
             }
             .accentColor(.questionMarkColor)
             .tabViewStyle(.sidebarAdaptable)
