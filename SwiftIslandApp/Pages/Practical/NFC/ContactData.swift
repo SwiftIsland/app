@@ -8,6 +8,7 @@
 import Foundation
 import Defaults
 import Contacts
+import SwiftIslandDataLogic
 
 extension Defaults.Keys {
     static let contacts = Key<[TimeInterval: ContactData]>("contacts", default: [:])
@@ -86,7 +87,7 @@ struct ContactData: Decodable, Encodable, Hashable, Defaults.Serializable {
         self.url = url
     }
     
-    
-    
-    
+    mutating func update(with ticket: Ticket) {
+        self.name = ticket.name
+    }
 }
