@@ -88,6 +88,7 @@ struct TabBarView: View {
                     Label("Mentors", systemImage: "graduationcap")
                 }
                 .defaultVisibility(.hidden, for: .tabBar)
+                .customizationID("mentorList")
             }
             .tabViewCustomization($tabViewCustomization)
             .accentColor(.questionMarkColor)
