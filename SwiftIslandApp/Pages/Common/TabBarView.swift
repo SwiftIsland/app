@@ -12,6 +12,21 @@ private enum Tabs {
     case practical
     case schedule
     case mentors(Mentor)
+
+    var customizationID: String {
+        switch self {
+        case .mentors(let mentor):
+            mentor.customizationID
+        default:
+            "SwiftIsland.\(self.hashValue)"
+        }
+    }
+}
+
+extension Mentor {
+    var customizationID: String {
+        "SwiftIsland.Mentor.\(self.name)"
+    }
 }
 
 extension Tabs: Hashable {
@@ -42,6 +57,8 @@ struct TabBarView: View {
     @Default(.userIsActivated)
     private var userIsActivated
 
+    @AppStorage("sidebarCustomizations") var tabViewCustomization: TabViewCustomization
+
     var body: some View {
         ZStack {
             TabView(selection: $selectedItem) {
@@ -51,11 +68,13 @@ struct TabBarView: View {
                 Tab("Practical", systemImage: "wallet.pass", value: .practical) {
                     PracticalPageView()
                 }
+                .customizationID(Tabs.practical.customizationID)
                 Tab("Schedule", systemImage: "calendar", value: .schedule) {
                     NavigationStack {
                         ScheduleView()
                     }
                 }
+                .customizationID(Tabs.schedule.customizationID)
                 TabSection {
                     ForEach(appDataModel.mentors) { mentor in
                         Tab(mentor.name, systemImage: "graduationcap", value: Tabs.mentors(mentor)) {
@@ -63,12 +82,14 @@ struct TabBarView: View {
                                 MentorPageView(mentor: mentor)
                             }
                         }
+                        .customizationID(mentor.customizationID)
                     }
                 } header: {
                     Label("Mentors", systemImage: "graduationcap")
                 }
                 .defaultVisibility(.hidden, for: .tabBar)
             }
+            .tabViewCustomization($tabViewCustomization)
             .accentColor(.questionMarkColor)
             .tabViewStyle(.sidebarAdaptable)
         }
