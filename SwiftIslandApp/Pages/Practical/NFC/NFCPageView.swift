@@ -35,15 +35,7 @@ struct NFCPageView: View {
                     Section(date.formatted(date: .long, time: .omitted)) {
                         ForEach(intervals, id: \.self) { interval in
                             if let contact = contacts[interval] {
-                                ConnectionRow(timestamp: interval, contact: contact).swipeActions {
-                                    Button(action: {
-                                        // TODO confirmation
-                                        Defaults[.contacts].removeValue(forKey: interval)
-                                    }) {
-                                        Label("Delete", systemImage: "trash")
-                                    }
-                                    .tint(.red)
-                                }
+                                ConnectionRow(timestamp: interval, contact: contact)
                             }
                         }
                     }

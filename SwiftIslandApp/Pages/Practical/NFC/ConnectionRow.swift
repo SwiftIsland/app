@@ -4,10 +4,12 @@
 //
 
 import SwiftUI
+import Defaults
 
 struct ConnectionRow: View {
     var timestamp: TimeInterval
     var contact: ContactData
+    @State private var showingDeleteConfirmation = false
     @State var expanded: Bool = false
     var body: some View {
         HStack {
@@ -40,6 +42,20 @@ struct ConnectionRow: View {
         }.onTapGesture {
             withAnimation {
                 expanded = !expanded
+            }
+        }.swipeActions {
+            Button(action: {
+                showingDeleteConfirmation = true
+            }) {
+                Label("Delete", systemImage: "trash")
+            }
+            .tint(.red)
+        }.confirmationDialog("Are you sure you want to delete this item?", isPresented: $showingDeleteConfirmation, titleVisibility: .visible) {
+            Button("Delete", role: .destructive) {
+                Defaults[.contacts].removeValue(forKey: timestamp)
+            }
+            Button("Cancel", role: .cancel) {
+                showingDeleteConfirmation = false
             }
         }
     }
