@@ -55,7 +55,7 @@ struct NFCPageView: View {
                 Button {
                     isWriteNFCSheetPresented = true
                 } label: {
-                    Text("Your Tag")
+                    Text("Write Your Own Tag")
                 }
             }
         }
