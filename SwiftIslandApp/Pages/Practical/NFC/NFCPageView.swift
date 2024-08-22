@@ -24,7 +24,10 @@ struct NFCPageView: View {
                 return date
             }
             let _ = print(groupedByDate)
-            let items = Array<DateComponents>(groupedByDate.keys)
+            let items = Array<DateComponents>(groupedByDate.keys).sorted(by: {
+                Calendar.current.date(from: $0) ?? Date.distantFuture >
+                    Calendar.current.date(from: $1) ?? Date.distantFuture
+            })
             ForEach(items, id: \.self) { (component: DateComponents) in
                 if let intervals = groupedByDate[component],
                    let date = Calendar.current.date(from: component) {
