@@ -84,14 +84,14 @@ struct MentorView: View {
     }
 }
 
-extension URL: Identifiable {
+extension URL: @retroactive Identifiable { // For iOS18, added @retroactive
     public var id: String {
         absoluteString
     }
 }
 
 #Preview("No content") {
-    @Namespace var namespace
+    @Previewable @Namespace var namespace // For iOS18, added @Previewable
     let mentor = Mentor.forPreview()
 
     return MentorView(namespace: namespace, mentor: mentor, isShowContent: .constant(true))
@@ -100,7 +100,7 @@ extension URL: Identifiable {
 }
 
 #Preview("Show content") {
-    @Namespace var namespace
+    @Previewable @Namespace var namespace // For iOS18, added @Previewable
     let mentor = Mentor.forPreview()
 
     return MentorView(namespace: namespace, mentor: mentor, isShowContent: .constant(true))

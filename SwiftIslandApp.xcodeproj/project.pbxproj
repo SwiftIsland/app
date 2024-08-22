@@ -81,7 +81,12 @@
 		2AEDC4C32A4A089100CD0180 /* ConferencePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEDC4C22A4A089100CD0180 /* ConferencePageView.swift */; };
 		2AEDC4C62A4A08AF00CD0180 /* TabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEDC4C52A4A08AF00CD0180 /* TabBarView.swift */; };
 		2AF19ED32A7B04A500134E0B /* ConferencePageContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AF19ED22A7B04A500134E0B /* ConferencePageContentView.swift */; };
+		2AFAA1FE2C77D492005C4C7A /* MentorListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFAA1FB2C77D492005C4C7A /* MentorListView.swift */; };
+		2AFAA1FF2C77D492005C4C7A /* MentorPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFAA1FC2C77D492005C4C7A /* MentorPageView.swift */; };
 		2AFC45FC2BFFEF8200B135F5 /* Acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2AFC45FB2BFFEF8200B135F5 /* Acknowledgements.plist */; };
+		2AFC76752C79EB48008B5E11 /* MatchedGeometryExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFC76732C79EB48008B5E11 /* MatchedGeometryExample.swift */; };
+		2AFC76762C79EB48008B5E11 /* NavigationDestinationExample.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFC76742C79EB48008B5E11 /* NavigationDestinationExample.swift */; };
+		2AFC767D2C79ECD3008B5E11 /* ConferenceBoxMentorsWorkshop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AFC767C2C79ECD3008B5E11 /* ConferenceBoxMentorsWorkshop.swift */; };
 		2E19CADE2A7EEC9700177B61 /* UpNextSystemLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E19CADD2A7EEC9700177B61 /* UpNextSystemLargeView.swift */; };
 		2E19CAE02A7EF7B100177B61 /* UpNextSystemRectangularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E19CADF2A7EF7B100177B61 /* UpNextSystemRectangularView.swift */; };
 		2E19CAE22A7EFD9800177B61 /* UpNextSystemCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E19CAE12A7EFD9800177B61 /* UpNextSystemCircularView.swift */; };
@@ -225,7 +230,12 @@
 		2AEDC4C22A4A089100CD0180 /* ConferencePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferencePageView.swift; sourceTree = "<group>"; };
 		2AEDC4C52A4A08AF00CD0180 /* TabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarView.swift; sourceTree = "<group>"; };
 		2AF19ED22A7B04A500134E0B /* ConferencePageContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferencePageContentView.swift; sourceTree = "<group>"; };
+		2AFAA1FB2C77D492005C4C7A /* MentorListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorListView.swift; sourceTree = "<group>"; };
+		2AFAA1FC2C77D492005C4C7A /* MentorPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorPageView.swift; sourceTree = "<group>"; };
 		2AFC45FB2BFFEF8200B135F5 /* Acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Acknowledgements.plist; sourceTree = "<group>"; };
+		2AFC76732C79EB48008B5E11 /* MatchedGeometryExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchedGeometryExample.swift; sourceTree = "<group>"; };
+		2AFC76742C79EB48008B5E11 /* NavigationDestinationExample.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDestinationExample.swift; sourceTree = "<group>"; };
+		2AFC767C2C79ECD3008B5E11 /* ConferenceBoxMentorsWorkshop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxMentorsWorkshop.swift; sourceTree = "<group>"; };
 		2E19CADD2A7EEC9700177B61 /* UpNextSystemLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpNextSystemLargeView.swift; sourceTree = "<group>"; };
 		2E19CADF2A7EF7B100177B61 /* UpNextSystemRectangularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpNextSystemRectangularView.swift; sourceTree = "<group>"; };
 		2E19CAE12A7EFD9800177B61 /* UpNextSystemCircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpNextSystemCircularView.swift; sourceTree = "<group>"; };
@@ -604,6 +614,7 @@
 		2AEDC4952A4A030F00CD0180 /* SwiftIslandApp */ = {
 			isa = PBXGroup;
 			children = (
+				2AFAA1FD2C77D492005C4C7A /* WorkshopiPadOs */,
 				2A16EB3D2A4CDB3A00CC881D /* Extensions */,
 				2AEDC4C02A4A086F00CD0180 /* Pages */,
 				2AEDC49C2A4A031000CD0180 /* Preview Content */,
@@ -662,6 +673,34 @@
 				2AEDC4C52A4A08AF00CD0180 /* TabBarView.swift */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		2AFAA1FD2C77D492005C4C7A /* WorkshopiPadOs */ = {
+			isa = PBXGroup;
+			children = (
+				2AFC767B2C79EBBE008B5E11 /* Sidebar */,
+				2AFC76782C79EB5F008B5E11 /* Zoom */,
+			);
+			path = WorkshopiPadOs;
+			sourceTree = "<group>";
+		};
+		2AFC76782C79EB5F008B5E11 /* Zoom */ = {
+			isa = PBXGroup;
+			children = (
+				2AFC76732C79EB48008B5E11 /* MatchedGeometryExample.swift */,
+				2AFC76742C79EB48008B5E11 /* NavigationDestinationExample.swift */,
+				2AFC767C2C79ECD3008B5E11 /* ConferenceBoxMentorsWorkshop.swift */,
+			);
+			path = Zoom;
+			sourceTree = "<group>";
+		};
+		2AFC767B2C79EBBE008B5E11 /* Sidebar */ = {
+			isa = PBXGroup;
+			children = (
+				2AFAA1FB2C77D492005C4C7A /* MentorListView.swift */,
+				2AFAA1FC2C77D492005C4C7A /* MentorPageView.swift */,
+			);
+			path = Sidebar;
 			sourceTree = "<group>";
 		};
 		B332ADF02A9A812500557AA7 /* Puzzles */ = {
@@ -921,6 +960,7 @@
 				2A7F12792A640730007C28EA /* ScrollViewOffset.swift in Sources */,
 				2A16EB362A4CDA4200CC881D /* ConferenceHeaderView.swift in Sources */,
 				B3C626442A94956A002754A8 /* TicketEditView.swift in Sources */,
+				2AFC767D2C79ECD3008B5E11 /* ConferenceBoxMentorsWorkshop.swift in Sources */,
 				B3F443032A9765E700AFDF43 /* TicketAddButton.swift in Sources */,
 				2A37FB9A2A7D3F890062E63A /* Bundle+Version.swift in Sources */,
 				2AE43FAC2A6B1A8C009078E3 /* View+PercentageOffset.swift in Sources */,
@@ -934,6 +974,8 @@
 				2A18CE3B2A76E71900969214 /* PacklistView.swift in Sources */,
 				2AEDC4C62A4A08AF00CD0180 /* TabBarView.swift in Sources */,
 				2AEDC4972A4A030F00CD0180 /* MainApp.swift in Sources */,
+				2AFC76752C79EB48008B5E11 /* MatchedGeometryExample.swift in Sources */,
+				2AFC76762C79EB48008B5E11 /* NavigationDestinationExample.swift in Sources */,
 				2AE43FFF2A702999009078E3 /* ConferenceBoxEvent.swift in Sources */,
 				2A7F12832A648C59007C28EA /* SwiftIslandButtonStyle.swift in Sources */,
 				2A7F12902A69D9C7007C28EA /* PracticalGenericPageView.swift in Sources */,
@@ -969,6 +1011,8 @@
 				2A7F12882A65E354007C28EA /* SectionAtTheConferenceNotActivated.swift in Sources */,
 				2AC7DD0B2A58D07E00DB9F6D /* View+Preview.swift in Sources */,
 				2A37FB902A7C14CB0062E63A /* UIDevice+HasNotch.swift in Sources */,
+				2AFAA1FE2C77D492005C4C7A /* MentorListView.swift in Sources */,
+				2AFAA1FF2C77D492005C4C7A /* MentorPageView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

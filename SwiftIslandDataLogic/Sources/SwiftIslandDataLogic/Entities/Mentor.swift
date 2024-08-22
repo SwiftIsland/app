@@ -74,3 +74,17 @@ extension Mentor {
             ]
         }
 }
+
+extension Mentor: Hashable {
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(description)
+        hasher.combine(imageName)
+        hasher.combine(name)
+        hasher.combine(twitter)
+        hasher.combine(web)
+        hasher.combine(linkedIn)
+        hasher.combine(mastodon)
+        hasher.combine(order)
+    }
+}

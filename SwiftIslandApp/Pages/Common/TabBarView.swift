@@ -120,3 +120,9 @@ extension View {
         )
     }
 }
+
+extension Mentor: @retroactive Transferable {
+    public static var transferRepresentation: some TransferRepresentation {
+        CodableRepresentation(contentType: .content)
+    }
+}
