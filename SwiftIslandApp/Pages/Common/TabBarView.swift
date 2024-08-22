@@ -12,6 +12,7 @@ private enum Tabs {
     case practical
     case schedule
     case mentors(Mentor)
+    case search
 
     var customizationID: String {
         switch self {
@@ -38,6 +39,8 @@ extension Tabs: Hashable {
             "practical"
         case .schedule:
             "schedule"
+        case .search:
+            "search"
         case .mentors(let mentor):
             mentor.id
         }
@@ -75,6 +78,9 @@ struct TabBarView: View {
                     }
                 }
                 .customizationID(Tabs.schedule.customizationID)
+                Tab(value: .search, role: .search) {
+                    MentorListView()
+                }
                 TabSection {
                     ForEach(appDataModel.mentors) { mentor in
                         Tab(mentor.name, systemImage: "graduationcap", value: Tabs.mentors(mentor)) {
