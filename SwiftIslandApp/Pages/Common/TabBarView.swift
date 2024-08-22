@@ -11,6 +11,7 @@ private enum Tabs: CaseIterable {
     case home
     case practical
     case schedule
+    case mentors
 }
 
 struct TabBarView: View {
@@ -20,6 +21,8 @@ struct TabBarView: View {
 
     @State private var isShowingMentor = false
     @EnvironmentObject private var appDataModel: AppDataModel
+
+    @State var mentorPath: NavigationPath = .init()
 
     @Default(.userIsActivated)
     private var userIsActivated
@@ -36,6 +39,14 @@ struct TabBarView: View {
                 Tab("Schedule", systemImage: "calendar", value: .schedule) {
                     NavigationStack {
                         ScheduleView()
+                    }
+                }
+                Tab("Mentors", systemImage: "graduationcap", value: .mentors) {
+                    NavigationStack {
+                        MentorListView()
+                            .navigationDestination(for: Mentor.self) { mentor in
+                                MentorPageView(mentor: mentor)
+                            }
                     }
                 }
             }
