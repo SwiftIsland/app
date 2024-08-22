@@ -7,11 +7,26 @@ import SwiftUI
 import Defaults
 import SwiftIslandDataLogic
 
-private enum Tabs: CaseIterable {
+private enum Tabs {
     case home
     case practical
     case schedule
-    case mentors
+    case mentors(Mentor)
+}
+
+extension Tabs: Hashable {
+    var id: String {
+        switch self {
+        case .home:
+            "home"
+        case .practical:
+            "practical"
+        case .schedule:
+            "schedule"
+        case .mentors(let mentor):
+            mentor.id
+        }
+    }
 }
 
 struct TabBarView: View {
@@ -41,13 +56,16 @@ struct TabBarView: View {
                         ScheduleView()
                     }
                 }
-                Tab("Mentors", systemImage: "graduationcap", value: .mentors) {
-                    NavigationStack {
-                        MentorListView()
-                            .navigationDestination(for: Mentor.self) { mentor in
+                TabSection {
+                    ForEach(appDataModel.mentors) { mentor in
+                        Tab(mentor.name, systemImage: "graduationcap", value: Tabs.mentors(mentor)) {
+                            NavigationStack(path: $mentorPath) {
                                 MentorPageView(mentor: mentor)
                             }
+                        }
                     }
+                } header: {
+                    Label("Mentors", systemImage: "graduationcap")
                 }
             }
             .accentColor(.questionMarkColor)
