@@ -19,9 +19,6 @@ struct ConnectionRow: View {
                     Text(contact.company).font(.custom("WorkSans-Regular", size: 18))
                 }
                 if (expanded) {
-                    if (!contact.address.isEmpty) {
-                        Text(contact.address).font(.custom("WorkSans-Regular", size: 14))
-                    }
                     if (!contact.phone.isEmpty) {
                         Text(contact.phone).font(.custom("WorkSans-Regular", size: 14))
                     }
@@ -63,6 +60,6 @@ struct ConnectionRow: View {
 
 #Preview {
     let time = Date().timeIntervalSinceReferenceDate
-    let contact = ContactData(name: "Niels van Hoorn", company: "Framer", address: "", phone: "", email: "", url: "")
+    let contact = ContactData(name: "Niels van Hoorn", company: "Framer", phone: "", email: "", url: "")
     return ConnectionRow(timestamp: time, contact: contact)
 }

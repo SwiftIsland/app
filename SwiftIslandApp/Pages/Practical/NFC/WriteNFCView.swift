@@ -8,7 +8,7 @@ import CoreNFC
 
 struct WriteNFCView: View {
     let writerDelegate: NFCWriterDelegate = NFCWriterDelegate()
-    @State private var contact: ContactData = ContactData(name: "Niels", company: "Framer", address: "Test", phone: "", email: "niels@swiftisland.nl", url: "https://swiftisland.nl")
+    @State private var contact: ContactData = ContactData(name: "", company: "", phone: "", email: "", url: "")
 
     var body: some View {
         NavigationStack {

@@ -15,7 +15,6 @@ extension Defaults.Keys {
 struct ContactData: Decodable, Encodable, Hashable, Defaults.Serializable {
     var name: String = ""
     var company: String = ""
-    var address: String = ""
     var phone: String = ""
     var email: String = ""
     var url: String = ""
@@ -50,10 +49,9 @@ struct ContactData: Decodable, Encodable, Hashable, Defaults.Serializable {
         return nil
     }
     
-    init(name: String, company: String, address: String, phone: String, email: String, url: String) {
+    init(name: String, company: String, phone: String, email: String, url: String) {
         self.name = name
         self.company = company
-        self.address = address
         self.phone = phone
         self.email = email
         self.url = url
