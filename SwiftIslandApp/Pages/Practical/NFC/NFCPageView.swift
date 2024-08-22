@@ -14,16 +14,17 @@ struct NFCPageView: View {
     @State var readerDelegate: NFCReaderDelegate = NFCReaderDelegate()
     @State private var isWriteNFCSheetPresented = false
     @Default(.contacts) var contacts
+    func groupedItems() -> Dictionary<DateComponents,[TimeInterval]> {
+        let timestamps = contacts.keys.sorted().reversed()
+        let groupedByDate = Dictionary(grouping: timestamps) { (timestamp) -> DateComponents in
+            let date = Calendar.current.dateComponents([.day, .year, .month], from: (Date(timeIntervalSinceReferenceDate: timestamp)))
+            return date
+        }
+        return groupedByDate
+    }
     var body: some View {
         List {
-            let timestamps = contacts.keys.sorted().reversed()
-            let groupedByDate = Dictionary(grouping: timestamps) { (timestamp) -> DateComponents in
-
-                let date = Calendar.current.dateComponents([.day, .year, .month], from: (Date(timeIntervalSinceReferenceDate: timestamp)))
-
-                return date
-            }
-            let _ = print(groupedByDate)
+            let groupedByDate = groupedItems()
             let items = Array<DateComponents>(groupedByDate.keys).sorted(by: {
                 Calendar.current.date(from: $0) ?? Date.distantFuture >
                     Calendar.current.date(from: $1) ?? Date.distantFuture
