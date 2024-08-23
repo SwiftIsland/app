@@ -125,10 +125,38 @@ struct TabBarView: View {
                     favoriteMentors.append(contentsOf: mentors)
                 }
                 .defaultVisibility(.hidden, for: .tabBar)
+                .badge(favoriteMentors.count)
             }
             .tabViewCustomization($tabViewCustomization)
             .accentColor(.questionMarkColor)
             .tabViewStyle(.sidebarAdaptable)
+            .tabViewSidebarHeader {
+                Image("Logo")
+                VStack {
+                    Text("Swift")
+                        .font(.custom("WorkSans-Bold", size: 64))
+                    Text("Island")
+                        .font(.custom("WorkSans-Regular", size: 60))
+                        .offset(y: -20)
+
+                }
+                .foregroundStyle(.logoText)
+            }
+            .tabViewSidebarFooter {
+                VStack(spacing: 8) {
+                    Button {
+                        tabViewCustomization.resetVisibility()
+                        tabViewCustomization.resetSectionOrder()
+                    } label: {
+                        Text("Reset sidebar")
+                            .font(.footnote)
+                    }
+
+                    Text("App version \(Bundle.main.appVersionLong) (\(Bundle.main.appBuild))")
+                        .font(.footnote)
+                        .foregroundStyle(.secondary)
+                }
+            }
         }
         .onAppear {
             handleAppAction()
