@@ -26,7 +26,7 @@ struct EventDetailsView: View {
                     }
                     .padding(.bottom, 8)
                     HStack {
-                        Text(event.startDate.formatted())
+                        Text("\(event.startDate.formatted(date: .omitted, time: .shortened)) - \(event.endDate.formatted(date: .omitted, time: .shortened)), \(Int(event.activity.duration / 60)) min")
                             .font(.caption)
                             .foregroundColor(.secondary)
                         Spacer()
