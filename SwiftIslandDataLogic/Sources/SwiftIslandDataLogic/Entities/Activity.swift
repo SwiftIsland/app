@@ -21,6 +21,7 @@ public struct Activity: Response {
     public let mentors: [String]
     public let type: ActivityType
     public let duration: Double
+    public let location: String
 }
 
 extension Activity: Identifiable { }
@@ -42,13 +43,15 @@ public extension Activity {
                            description: String = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vestibulum maximus quam, eget egestas nisi accumsan eget. Phasellus egestas tristique tortor, vel interdum lorem porta non.",
                            mentors: [String] = [],
                            type: ActivityType = .workshop,
-                           duration: Double = 60 * 60) -> Activity {
+                           duration: Double = 60 * 60,
+                           location: String = "") -> Activity {
         Activity(id: id,
                  title: title,
                  description: description,
                  mentors: mentors,
                  type: type,
-                 duration: duration)
+                 duration: duration,
+                 location: location)
     }
 }
 
