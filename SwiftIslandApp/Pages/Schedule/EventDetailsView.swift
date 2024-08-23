@@ -45,8 +45,9 @@ struct EventDetailsView: View {
                         Text("Mentors")
                             .font(.footnote)
                             .foregroundColor(.secondary)
-                        ForEach(event.activity.mentors, id: \.self) { mentor in
-                            Text(mentor)
+                        let mentors = event.activity.mentors.compactMap({ mentorId in appDataModel.mentors.first(where: {$0.id == mentorId })})
+                        ForEach(mentors, id: \.self) { mentor in
+                            Text(mentor.name)
                         }
                     }
                     Spacer()

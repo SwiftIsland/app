@@ -6,6 +6,7 @@
 import Foundation
 
 public struct Mentor: Response {
+    public let id: String
     public let description: String
     public let imageName: String
     public let name: String
@@ -36,12 +37,11 @@ public struct Mentor: Response {
     }
 }
 
-extension Mentor: Identifiable {
-    public var id: String { name }
+extension Mentor: Identifiable, Hashable {
 }
 
 extension Mentor {
-    public static func forPreview(description: String = "Lorem ipsum dolor sit amet, **consectetur adipiscing elit**. _Proin vitae cursus_ lectus. Mauris feugiat ipsum sed vulputate gravida. Nunc a risus ac odio consequat ornare nec sit amet arcu. In laoreet elit egestas sem ornare, at maximus sem maximus. Nulla molestie suscipit mollis. Cras gravida pellentesque mattis. Etiam at nisl lorem. Nullam viverra non arcu eget elementum. Nullam a velit laoreet, luctus risus at, dapibus dolor. Aliquam nec euismod augue, id lacinia nulla.",
+    public static func forPreview(id: String = "1", description: String = "Lorem ipsum dolor sit amet, **consectetur adipiscing elit**. _Proin vitae cursus_ lectus. Mauris feugiat ipsum sed vulputate gravida. Nunc a risus ac odio consequat ornare nec sit amet arcu. In laoreet elit egestas sem ornare, at maximus sem maximus. Nulla molestie suscipit mollis. Cras gravida pellentesque mattis. Etiam at nisl lorem. Nullam viverra non arcu eget elementum. Nullam a velit laoreet, luctus risus at, dapibus dolor. Aliquam nec euismod augue, id lacinia nulla.",
                                   imageName: String = ["speaker-paul-2024", "speaker-manu-2024", "speaker-malin-2024"].randomElement()!,
                                   name: String = "John Appleseed",
                                   twitter: String? = ["ppeelen", "x"].randomElement(),
@@ -50,6 +50,7 @@ extension Mentor {
                                   mastodon: String? = nil,
                                   order: Int = 0) -> Mentor {
         Mentor(
+            id: id,
             description: description,
             imageName: imageName,
             name: name,
