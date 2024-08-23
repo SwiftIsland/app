@@ -13,6 +13,7 @@ private enum Tabs {
     case schedule
     case mentors(Mentor)
     case search
+    case mentorList
 
     var customizationID: String {
         switch self {
@@ -41,6 +42,8 @@ extension Tabs: Hashable {
             "schedule"
         case .search:
             "search"
+        case .mentorList:
+            "mentorList"
         case .mentors(let mentor):
             mentor.id
         }
@@ -56,6 +59,8 @@ struct TabBarView: View {
     @EnvironmentObject private var appDataModel: AppDataModel
 
     @State var mentorPath: NavigationPath = .init()
+
+    @State private var favoriteMentors: [Mentor] = []
 
     @Default(.userIsActivated)
     private var userIsActivated
@@ -95,6 +100,31 @@ struct TabBarView: View {
                 }
                 .defaultVisibility(.hidden, for: .tabBar)
                 .customizationID("mentorList")
+
+                TabSection {
+                    ForEach(favoriteMentors) { mentor in
+                        Tab(mentor.name, systemImage: "graduationcap", value: Tabs.mentors(mentor)) {
+                            NavigationStack(path: $mentorPath) {
+                                MentorPageView(mentor: mentor)
+                            }
+                        }
+                        .customizationID("favMentor.\(mentor.customizationID)")
+                    }
+
+                    Tab("Mentor list", systemImage: "graduationcap", value: .mentorList) {
+                        NavigationStack {
+                            MentorListView()
+                        }
+                    }
+                    .customizationBehavior(.disabled, for: .sidebar, .tabBar)
+                } header: {
+                    Label("My favorite mentors", systemImage: "heart")
+                }
+                .customizationID(Tabs.mentorList.customizationID)
+                .dropDestination(for: Mentor.self) { mentors in
+                    favoriteMentors.append(contentsOf: mentors)
+                }
+                .defaultVisibility(.hidden, for: .tabBar)
             }
             .tabViewCustomization($tabViewCustomization)
             .accentColor(.questionMarkColor)
