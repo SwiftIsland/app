@@ -27,7 +27,7 @@ struct ConferenceBoxEvent: View {
                             .multilineTextAlignment(.center)
                             .padding()
                     } else {
-                        Text(event.activity.type.rawValue)
+                        Text(event.activity.type.description)
                             .font(.caption)
                             .foregroundColor(.secondary)
                             .fontWeight(.light)

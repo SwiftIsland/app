@@ -20,7 +20,7 @@ extension ActivityType {
         case .transport:
             return .orangeDark
         case .inviteOnly:
-            return .purple
+            return .blue
         }
     }
 }
