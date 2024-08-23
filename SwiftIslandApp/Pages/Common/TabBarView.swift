@@ -57,6 +57,7 @@ struct TabBarView: View {
 
     @State private var isShowingMentor = false
     @EnvironmentObject private var appDataModel: AppDataModel
+    @Environment(\.horizontalSizeClass) private var horizontalSizeClass
 
     @State var mentorPath: NavigationPath = .init()
 
@@ -100,6 +101,7 @@ struct TabBarView: View {
                 }
                 .defaultVisibility(.hidden, for: .tabBar)
                 .customizationID("mentorList")
+                .hidden(horizontalSizeClass == .compact)
 
                 TabSection {
                     ForEach(favoriteMentors) { mentor in
@@ -126,6 +128,7 @@ struct TabBarView: View {
                 }
                 .defaultVisibility(.hidden, for: .tabBar)
                 .badge(favoriteMentors.count)
+                .hidden(horizontalSizeClass == .compact)
             }
             .tabViewCustomization($tabViewCustomization)
             .accentColor(.questionMarkColor)
