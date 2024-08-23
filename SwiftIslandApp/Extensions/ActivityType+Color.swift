@@ -12,7 +12,7 @@ extension ActivityType {
         case .workshop:
             return .purple
         case .socialActivity:
-            return .yellowDark
+            return .yellowDarker
         case .meal:
             return .green
         case .mandatoryEventActivity:
