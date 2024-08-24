@@ -37,6 +37,7 @@ struct ConferenceBoxMentorsWorkshop: View {
                                         ExcerptView(mentor: mentor)
                                     )
                             }
+                            .matchedTransitionSource(id: mentor.id, in: namespace)
                             .aspectRatio(aspectRatio, contentMode: .fit)
                             .frame(maxHeight: maxHeight)
                             .mask {
@@ -48,6 +49,7 @@ struct ConferenceBoxMentorsWorkshop: View {
                 }
                 .navigationDestination(for: Mentor.self) { mentor in
                     MentorPageView(mentor: mentor)
+                        .navigationTransition(.zoom(sourceID: mentor.id, in: namespace))
                 }
             }
         }
