@@ -8,11 +8,19 @@ import Foundation
 import SwiftUI
 import CoreNFC
 import Defaults
+import ContactsUI
 
 
 struct NFCPageView: View {
     @State var readerDelegate: NFCReaderDelegate = NFCReaderDelegate()
     @State private var isWriteNFCSheetPresented = false
+    @State private var contactToSave: ContactData? = nil
+    var isContactSheetPresented: Binding<Bool> {
+        return Binding<Bool>(
+            get: { contactToSave != nil },
+            set: { _ in }
+        )
+    }
     @Default(.contacts) var contacts
     func groupedItems() -> Dictionary<DateComponents,[TimeInterval]> {
         let timestamps = contacts.keys.sorted().reversed()
@@ -32,13 +40,7 @@ struct NFCPageView: View {
             ForEach(items, id: \.self) { (component: DateComponents) in
                 if let intervals = groupedByDate[component],
                    let date = Calendar.current.date(from: component) {
-                    Section(date.formatted(date: .long, time: .omitted)) {
-                        ForEach(intervals, id: \.self) { interval in
-                            if let contact = contacts[interval] {
-                                ConnectionRow(timestamp: interval, contact: contact)
-                            }
-                        }
-                    }
+                    ConnectionSection(contacts: contacts, date: date, intervals: intervals, contactToSave: $contactToSave)
                 }
             }
         }
@@ -54,6 +56,17 @@ struct NFCPageView: View {
         }
         .sheet(isPresented: $isWriteNFCSheetPresented) {
             WriteNFCView()
+        }
+        .sheet(isPresented: isContactSheetPresented, onDismiss: {
+            contactToSave = nil
+        }) {
+            if let contact = contactToSave {
+                NavigationStack {
+                    ContactViewConroller(contact: contact.CNContact)
+                        .navigationTitle("Contact")
+                }
+                
+            }
         }
     }
 
@@ -79,12 +92,29 @@ struct NFCPageView: View {
         nfcSession.alertMessage = "Hold your phone against an attendee's NFC tag"
         nfcSession.begin()
     }
-
 }
 
 
 struct NFCPageView_Previews: PreviewProvider {
     static var previews: some View {
         NFCPageView()
+    }
+}
+
+struct ConnectionSection: View {
+    let contacts: [TimeInterval:ContactData]
+    let date: Date
+    let intervals: [TimeInterval]
+    
+    @Binding var contactToSave: ContactData?
+
+    var body: some View {
+        Section(date.formatted(date: .long, time: .omitted)) {
+            ForEach(intervals, id: \.self) { interval in
+                if let contact = contacts[interval] {
+                    ConnectionRow(timestamp: interval, contact: contact, contactToSave: $contactToSave)
+                }
+            }
+        }
     }
 }

@@ -7,6 +7,7 @@
 
 import Foundation
 import Defaults
+import Contacts
 
 extension Defaults.Keys {
     static let contacts = Key<[TimeInterval: ContactData]>("contacts", default: [:])
@@ -34,6 +35,34 @@ struct ContactData: Decodable, Encodable, Hashable, Defaults.Serializable {
         END:VCARD
         """
         return card
+    }
+    
+    var CNContact: CNMutableContact {
+        // Create a new contact
+        let newContact = CNMutableContact()
+        newContact.givenName = name
+        if (!company.isEmpty) {
+            newContact.organizationName = company
+        }
+        if (!phone.isEmpty) {
+            newContact.phoneNumbers = [CNLabeledValue(
+                label: CNLabelPhoneNumberMobile,
+                value: CNPhoneNumber(stringValue: phone)
+            )]
+        }
+        if (!email.isEmpty) {
+            newContact.emailAddresses = [CNLabeledValue(
+                label: CNLabelWork,
+                value: email as NSString
+            )]
+        }
+        if (!url.isEmpty) {
+            newContact.urlAddresses = [CNLabeledValue(
+                label: CNLabelURLAddressHomePage,
+                value: url as NSString
+            )]
+        }
+        return newContact
     }
     
     var base64Encoded: String? {
