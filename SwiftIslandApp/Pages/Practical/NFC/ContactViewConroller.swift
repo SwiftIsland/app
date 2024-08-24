@@ -6,11 +6,19 @@
 import SwiftUI
 import ContactsUI
 
-struct ContactViewConroller: UIViewControllerRepresentable {
+@objc class ContactViewControllerDelegate: NSObject, CNContactViewControllerDelegate {
+    func contactViewController(_ viewController: CNContactViewController, didCompleteWith contact: CNContact?) {
+        
+    }
+}
+
+struct ContactViewConroller: UIViewControllerRepresentable  {
     let contact: CNContact
     func makeUIViewController(context: Context) -> UIViewController {
-        let viewController = CNContactViewController(forNewContact: contact)
-        
+        let viewController = CNContactViewController(forUnknownContact: contact)
+        viewController.contactStore = CNContactStore()
+        viewController.allowsActions = true
+        viewController.allowsEditing = true
         return viewController
     }
     

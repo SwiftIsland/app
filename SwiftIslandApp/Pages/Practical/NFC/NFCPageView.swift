@@ -61,7 +61,11 @@ struct NFCPageView: View {
             contactToSave = nil
         }) {
             if let contact = contactToSave {
-                ContactViewConroller(contact: contact.CNContact)
+                NavigationStack {
+                    ContactViewConroller(contact: contact.CNContact)
+                        .navigationTitle("Contact")
+                }
+                
             }
         }
     }
