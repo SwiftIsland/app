@@ -15,17 +15,7 @@ struct WriteNFCView: View {
         NavigationStack {
             VStack {
                 if (NFCReaderSession.readingAvailable) {
-                    Text("Input your details below to write this data to your NFC Tag.")
-                    Button {
-                        // TODO: don't use only the first ticket
-                        if let ticket = appDataModel.tickets.first {
-                            contact.update(with: ticket)
-                        } else {
-                            // TODO: Show error
-                        }
-                    } label: {
-                        Text("Use Data from Ticket")
-                    }.padding(20)
+                    Text("Input your details below to write this data to your NFC Tag.").padding(20)
                     ContactLine(label: "Name", placeholder: "Taylor Swift", value: $contact.name)
                     ContactLine(label: "Company", placeholder: "Swift Island", value: $contact.company)
                     ContactLine(label: "Phone", placeholder: "+31612345678", value: $contact.phone)
@@ -41,6 +31,10 @@ struct WriteNFCView: View {
             }
             .padding(20)
             .navigationTitle("Write Your Own Tag")
+        }.onAppear {
+            if let ticket = appDataModel.tickets.first {
+                contact.update(with: ticket)
+            }
         }
     }
     

@@ -89,5 +89,15 @@ struct ContactData: Decodable, Encodable, Hashable, Defaults.Serializable {
     
     mutating func update(with ticket: Ticket) {
         self.name = ticket.name
+        if let email = ticket.email {
+            self.email = email
+        }
+        if let company = ticket.companyName {
+            self.company = company
+        }
+        if let phone = ticket.phoneNumber {
+            self.phone = phone
+        }
+        
     }
 }
