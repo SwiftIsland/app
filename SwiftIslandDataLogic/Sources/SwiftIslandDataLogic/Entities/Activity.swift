@@ -77,9 +77,8 @@ public enum ActivityType: String, Codable, CaseIterable {
     
     public var description: String {
         switch self {
-        case .socialActivity: return "Shift Island"
         case .mandatoryEventActivity: return "Workshop"
-        case .transport: return "Logistics"
+        case .transport: return "General"
         case .inviteOnly: return "Shift Island"
         default: return rawValue
         }
