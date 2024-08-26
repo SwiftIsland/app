@@ -1,7 +1,5 @@
 import SwiftUI
 import os.log
-import Firebase
-import FirebaseFirestore
 
 /// This is the protocol definition for ``SwiftIslandDataLogic``, which can be used for dependency injection
 public protocol DataLogic {
@@ -74,7 +72,6 @@ public class SwiftIslandDataLogic: DataLogic, ObservableObject {
 
     /// Configures SwiftIslandDataLogic's dependencies. Required to be run at launch.
     public static func configure() {
-        FirebaseApp.configure()
     }
 
     private let logger = Logger(
@@ -85,22 +82,19 @@ public class SwiftIslandDataLogic: DataLogic, ObservableObject {
     /// Fetches all the stored locations
     /// - Returns: Array of `Location`
     public func fetchLocations() async -> [Location] {
-        let request = AllLocationsRequest()
-        return await fetchFromFirebase(forRequest: request)
+        [Location.forPreview()]
     }
 
     /// Fetches all the mentors from Firebase
     /// - Returns: Array of `Mentor`
     public func fetchMentors() async -> [Mentor] {
-        let request = AllMentorsRequest()
-        return await fetchFromFirebase(forRequest: request).sorted(by: { $0.order < $1.order })
+        Mentor.forWorkshop()
     }
 
     /// Fetches all the pages from Firebase and stores
     /// - Returns: Array of `Page`
     public func fetchPages() async -> [Page] {
-        let request = AllPagesRequest()
-        return await fetchFromFirebase(forRequest: request)
+        [Page.forPreview()]
     }
 
     /// Fetches all the activities available.
@@ -109,41 +103,23 @@ public class SwiftIslandDataLogic: DataLogic, ObservableObject {
     /// - Returns: Array of `Activity`
     @discardableResult
     public func fetchActivities() async -> [Activity] {
-        let request = AllActivitiesRequest()
-
-        let activities = await fetchFromFirebase(forRequest: request)
-        self.activities = activities
-        return activities
+        [Activity.forPreview()]
     }
 
     /// Fetches the db events from firebase and converts them to a `Event`
     /// - Returns: Array of `Event`
     public func fetchEvents() async -> [Event] {
-        if activities.isEmpty {
-            await fetchActivities()
-        }
-
-        let request = AllEventsRequest()
-        let dbEvents = await fetchFromFirebase(forRequest: request)
-
-        let events: [Event] = dbEvents.compactMap { dbEvent in
-            guard let activity = activities.first(where: { $0.id == dbEvent.activityId }) else { return nil }
-            return Event(dbEvent: dbEvent, activity: activity)
-        }.sorted(by: { $0.startDate < $1.startDate })
-
-        return events
+        [Event.forPreview()]
     }
 
     /// Fetches the default setup of the packing items available on Firebase. Should only be fetched once per instance
     /// - Returns: Array of `PackingItem` from firebase
     public func fetchPackingListItemsFromFirebase() async -> [PackingItem] {
-        let request = AllPackingListItems()
-        return await fetchFromFirebase(forRequest: request).sorted(by: { $0.order < $1.order })
+        [PackingItem.forPreview()]
     }
 
     public func fetchFAQItems() async -> [FAQItem] {
-        let request = AllFAQRequest()
-        return await fetchFromFirebase(forRequest: request)
+        [FAQItem.forPreview()]
     }
 
     public func fetchTicket(slug: String, from checkinList: String) async throws -> Ticket {
@@ -179,24 +155,11 @@ public class SwiftIslandDataLogic: DataLogic, ObservableObject {
     }
 
     public func fetchPuzzles() async -> [Puzzle] {
-        let request = AllPuzzlesRequest()
-        return await fetchFromFirebase(forRequest: request).sorted(by: { $0.order < $1.order })
+        [Puzzle.forPreview()]
     }
 }
 
 private extension SwiftIslandDataLogic {
-    /// Performs the fetch on Firebase with a logger if an issue arrises
-    /// - Parameter request: The request to preform
-    /// - Returns: The output
-    func fetchFromFirebase<R: Request>(forRequest request: R) async -> [R.Output] {
-        do {
-            return try await Firestore.get(request: request)
-        } catch {
-            logger.error("Error getting documents for request with path \(request.path): \(error, privacy: .public)")
-            return []
-        }
-    }
-
     func fetchModel<M: Decodable>(_ model: M.Type, from url: URL, decoder: JSONDecoder = JSONDecoder()) async throws -> M {
         var urlRequest = URLRequest(url: url)
         urlRequest.setValue("application/json", forHTTPHeaderField: "Accept")
