@@ -74,4 +74,13 @@ public enum ActivityType: String, Codable, CaseIterable {
 
     /// An activity only for those that have received an invitation
     case inviteOnly = "Invite only activity"
+    
+    public var description: String {
+        switch self {
+        case .mandatoryEventActivity: return "Workshop"
+        case .transport: return "General"
+        case .inviteOnly: return "Shift Island"
+        default: return rawValue
+        }
+    }
 }

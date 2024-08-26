@@ -10,17 +10,17 @@ extension ActivityType {
     var color: Color {
         switch self {
         case .workshop:
-            return .purple
+            return .orangeDark
         case .socialActivity:
             return .yellowDarker
         case .meal:
             return .green
         case .mandatoryEventActivity:
-            return .redDark
-        case .transport:
-            return .orangeDark
-        case .inviteOnly:
             return .purple
+        case .transport:
+            return .redLight
+        case .inviteOnly:
+            return .blue
         }
     }
 }

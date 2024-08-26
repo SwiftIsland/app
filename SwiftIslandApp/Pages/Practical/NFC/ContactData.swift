@@ -7,6 +7,8 @@
 
 import Foundation
 import Defaults
+import Contacts
+import SwiftIslandDataLogic
 
 extension Defaults.Keys {
     static let contacts = Key<[TimeInterval: ContactData]>("contacts", default: [:])
@@ -36,6 +38,34 @@ struct ContactData: Decodable, Encodable, Hashable, Defaults.Serializable {
         return card
     }
     
+    var CNContact: CNMutableContact {
+        // Create a new contact
+        let newContact = CNMutableContact()
+        newContact.givenName = name
+        if (!company.isEmpty) {
+            newContact.organizationName = company
+        }
+        if (!phone.isEmpty) {
+            newContact.phoneNumbers = [CNLabeledValue(
+                label: CNLabelPhoneNumberMobile,
+                value: CNPhoneNumber(stringValue: phone)
+            )]
+        }
+        if (!email.isEmpty) {
+            newContact.emailAddresses = [CNLabeledValue(
+                label: CNLabelWork,
+                value: email as NSString
+            )]
+        }
+        if (!url.isEmpty) {
+            newContact.urlAddresses = [CNLabeledValue(
+                label: CNLabelURLAddressHomePage,
+                value: url as NSString
+            )]
+        }
+        return newContact
+    }
+    
     var base64Encoded: String? {
         let data = try? JSONEncoder().encode(self)
         return data?.base64EncodedString()
@@ -57,7 +87,17 @@ struct ContactData: Decodable, Encodable, Hashable, Defaults.Serializable {
         self.url = url
     }
     
-    
-    
-    
+    mutating func update(with ticket: Ticket) {
+        self.name = ticket.name
+        if let email = ticket.email {
+            self.email = email
+        }
+        if let company = ticket.companyName {
+            self.company = company
+        }
+        if let phone = ticket.phoneNumber {
+            self.phone = phone
+        }
+        
+    }
 }
