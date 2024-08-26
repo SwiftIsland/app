@@ -85,6 +85,8 @@
 		2E19CADE2A7EEC9700177B61 /* UpNextSystemLargeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E19CADD2A7EEC9700177B61 /* UpNextSystemLargeView.swift */; };
 		2E19CAE02A7EF7B100177B61 /* UpNextSystemRectangularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E19CADF2A7EF7B100177B61 /* UpNextSystemRectangularView.swift */; };
 		2E19CAE22A7EFD9800177B61 /* UpNextSystemCircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2E19CAE12A7EFD9800177B61 /* UpNextSystemCircularView.swift */; };
+		B30E2E172C6E5E71007A48E5 /* Hint.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E2E162C6E5E71007A48E5 /* Hint.swift */; };
+		B30E2E1C2C6F9B5E007A48E5 /* NFCDelegates.swift in Sources */ = {isa = PBXBuildFile; fileRef = B30E2E1B2C6F9B5E007A48E5 /* NFCDelegates.swift */; };
 		B332ADF72A9A813C00557AA7 /* truchet-tiles.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B332ADF12A9A813900557AA7 /* truchet-tiles.pdf */; };
 		B332ADF82A9A813C00557AA7 /* double-names.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B332ADF22A9A813B00557AA7 /* double-names.pdf */; };
 		B332ADF92A9A813C00557AA7 /* valuta.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B332ADF32A9A813B00557AA7 /* valuta.pdf */; };
@@ -99,9 +101,14 @@
 		B35057FB2A9DD24400B71436 /* mystery-museum.pdf in Resources */ = {isa = PBXBuildFile; fileRef = B35057FA2A9DD24400B71436 /* mystery-museum.pdf */; };
 		B354DDE52A9BEEE700C24461 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B354DDE42A9BEEE700C24461 /* Utils.swift */; };
 		B362F5E12AA1044F00AFE1EE /* ConferenceBoxSponsors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B362F5E02AA1044F00AFE1EE /* ConferenceBoxSponsors.swift */; };
-		B3733D772A9951B10069D490 /* PuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3733D732A9951B10069D490 /* PuzzleView.swift */; };
 		B3733D792A9951B10069D490 /* PuzzleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3733D752A9951B10069D490 /* PuzzleItemView.swift */; };
 		B3733D7A2A9951B10069D490 /* PuzzlePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3733D762A9951B10069D490 /* PuzzlePageView.swift */; };
+		B3B01ECF2C70002300FFBAC9 /* Payload.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B01ECB2C70002200FFBAC9 /* Payload.swift */; };
+		B3B01ED02C70002300FFBAC9 /* ContactData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B01ECC2C70002300FFBAC9 /* ContactData.swift */; };
+		B3B01ED32C70013700FFBAC9 /* NFCPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B01ED22C70013700FFBAC9 /* NFCPageView.swift */; };
+		B3B01ED52C7001C200FFBAC9 /* WriteNFCView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B01ED42C7001C200FFBAC9 /* WriteNFCView.swift */; };
+		B3B01ED72C71357A00FFBAC9 /* ConnectionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B01ED62C71357A00FFBAC9 /* ConnectionRow.swift */; };
+		B3B01ED92C71524000FFBAC9 /* ContactViewConroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3B01ED82C71524000FFBAC9 /* ContactViewConroller.swift */; };
 		B3C626422A942291002754A8 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C626412A942291002754A8 /* WebView.swift */; };
 		B3C626442A94956A002754A8 /* TicketEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3C626432A94956A002754A8 /* TicketEditView.swift */; };
 		B3F443032A9765E700AFDF43 /* TicketAddButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3F443022A9765E700AFDF43 /* TicketAddButton.swift */; };
@@ -229,6 +236,8 @@
 		2E19CADD2A7EEC9700177B61 /* UpNextSystemLargeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpNextSystemLargeView.swift; sourceTree = "<group>"; };
 		2E19CADF2A7EF7B100177B61 /* UpNextSystemRectangularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpNextSystemRectangularView.swift; sourceTree = "<group>"; };
 		2E19CAE12A7EFD9800177B61 /* UpNextSystemCircularView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpNextSystemCircularView.swift; sourceTree = "<group>"; };
+		B30E2E162C6E5E71007A48E5 /* Hint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hint.swift; sourceTree = "<group>"; };
+		B30E2E1B2C6F9B5E007A48E5 /* NFCDelegates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCDelegates.swift; sourceTree = "<group>"; };
 		B332ADF12A9A813900557AA7 /* truchet-tiles.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "truchet-tiles.pdf"; sourceTree = "<group>"; };
 		B332ADF22A9A813B00557AA7 /* double-names.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "double-names.pdf"; sourceTree = "<group>"; };
 		B332ADF32A9A813B00557AA7 /* valuta.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = valuta.pdf; sourceTree = "<group>"; };
@@ -243,9 +252,14 @@
 		B35057FA2A9DD24400B71436 /* mystery-museum.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "mystery-museum.pdf"; sourceTree = "<group>"; };
 		B354DDE42A9BEEE700C24461 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		B362F5E02AA1044F00AFE1EE /* ConferenceBoxSponsors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceBoxSponsors.swift; sourceTree = "<group>"; };
-		B3733D732A9951B10069D490 /* PuzzleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuzzleView.swift; sourceTree = "<group>"; };
 		B3733D752A9951B10069D490 /* PuzzleItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuzzleItemView.swift; sourceTree = "<group>"; };
 		B3733D762A9951B10069D490 /* PuzzlePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PuzzlePageView.swift; sourceTree = "<group>"; };
+		B3B01ECB2C70002200FFBAC9 /* Payload.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Payload.swift; sourceTree = "<group>"; };
+		B3B01ECC2C70002300FFBAC9 /* ContactData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactData.swift; sourceTree = "<group>"; };
+		B3B01ED22C70013700FFBAC9 /* NFCPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NFCPageView.swift; sourceTree = "<group>"; };
+		B3B01ED42C7001C200FFBAC9 /* WriteNFCView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WriteNFCView.swift; sourceTree = "<group>"; };
+		B3B01ED62C71357A00FFBAC9 /* ConnectionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionRow.swift; sourceTree = "<group>"; };
+		B3B01ED82C71524000FFBAC9 /* ContactViewConroller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewConroller.swift; sourceTree = "<group>"; };
 		B3C626412A942291002754A8 /* WebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		B3C626432A94956A002754A8 /* TicketEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketEditView.swift; sourceTree = "<group>"; };
 		B3F443022A9765E700AFDF43 /* TicketAddButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketAddButton.swift; sourceTree = "<group>"; };
@@ -525,6 +539,7 @@
 		2AC7DD0C2A59F36C00DB9F6D /* Practical */ = {
 			isa = PBXGroup;
 			children = (
+				B30E2E182C6F99F8007A48E5 /* NFC */,
 				B3733D722A9951600069D490 /* Spot the Seal */,
 				B3F7EEF52A86D6C5001D69B6 /* Tickets */,
 				2A18CE402A773CFE00969214 /* Practical */,
@@ -664,6 +679,20 @@
 			path = Common;
 			sourceTree = "<group>";
 		};
+		B30E2E182C6F99F8007A48E5 /* NFC */ = {
+			isa = PBXGroup;
+			children = (
+				B3B01ECC2C70002300FFBAC9 /* ContactData.swift */,
+				B3B01ECB2C70002200FFBAC9 /* Payload.swift */,
+				B3B01ED22C70013700FFBAC9 /* NFCPageView.swift */,
+				B30E2E1B2C6F9B5E007A48E5 /* NFCDelegates.swift */,
+				B3B01ED42C7001C200FFBAC9 /* WriteNFCView.swift */,
+				B3B01ED62C71357A00FFBAC9 /* ConnectionRow.swift */,
+				B3B01ED82C71524000FFBAC9 /* ContactViewConroller.swift */,
+			);
+			path = NFC;
+			sourceTree = "<group>";
+		};
 		B332ADF02A9A812500557AA7 /* Puzzles */ = {
 			isa = PBXGroup;
 			children = (
@@ -688,8 +717,8 @@
 			children = (
 				B3733D762A9951B10069D490 /* PuzzlePageView.swift */,
 				B3733D752A9951B10069D490 /* PuzzleItemView.swift */,
-				B3733D732A9951B10069D490 /* PuzzleView.swift */,
 				B354DDE42A9BEEE700C24461 /* Utils.swift */,
+				B30E2E162C6E5E71007A48E5 /* Hint.swift */,
 			);
 			path = "Spot the Seal";
 			sourceTree = "<group>";
@@ -916,7 +945,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B3733D772A9951B10069D490 /* PuzzleView.swift in Sources */,
 				2A7F12982A6B19E0007C28EA /* SwiftIslandLogo.swift in Sources */,
 				2AEDC4C32A4A089100CD0180 /* ConferencePageView.swift in Sources */,
 				B3733D792A9951B10069D490 /* PuzzleItemView.swift in Sources */,
@@ -930,6 +958,7 @@
 				2AE45DA72A7D42B800AF2B9D /* SourceView.swift in Sources */,
 				2A18CE422A773D3A00969214 /* SectionBeforeYouLeave.swift in Sources */,
 				2AB3AE902A77FF0E00F3ECB2 /* KeychainManager.swift in Sources */,
+				B3B01ED02C70002300FFBAC9 /* ContactData.swift in Sources */,
 				2AB3AF672A78199600F3ECB2 /* SafariWebView.swift in Sources */,
 				2A18CE462A77403800969214 /* EventDetailsView.swift in Sources */,
 				B362F5E12AA1044F00AFE1EE /* ConferenceBoxSponsors.swift in Sources */,
@@ -937,6 +966,7 @@
 				2AEDC4C62A4A08AF00CD0180 /* TabBarView.swift in Sources */,
 				2AEDC4972A4A030F00CD0180 /* MainApp.swift in Sources */,
 				2AE43FFF2A702999009078E3 /* ConferenceBoxEvent.swift in Sources */,
+				B30E2E172C6E5E71007A48E5 /* Hint.swift in Sources */,
 				2A7F12832A648C59007C28EA /* SwiftIslandButtonStyle.swift in Sources */,
 				2A7F12902A69D9C7007C28EA /* PracticalGenericPageView.swift in Sources */,
 				2AE440012A702BC0009078E3 /* Date+Formatting.swift in Sources */,
@@ -949,11 +979,13 @@
 				B354DDE52A9BEEE700C24461 /* Utils.swift in Sources */,
 				B3C626422A942291002754A8 /* WebView.swift in Sources */,
 				2AC7DCF12A58B5E600DB9F6D /* ConferenceBoxFAQ.swift in Sources */,
+				B3B01ED32C70013700FFBAC9 /* NFCPageView.swift in Sources */,
 				2A17F0C22A6075BF0055E214 /* MentorView.swift in Sources */,
 				2A7F12772A6401C4007C28EA /* NFCManager.swift in Sources */,
 				2A16EB412A4CDD4A00CC881D /* Color+Helper.swift in Sources */,
 				2A7F128D2A69CC39007C28EA /* Defaults.swift in Sources */,
 				2ACF55A42A605BA300C051FC /* GettingThereMapView.swift in Sources */,
+				B3B01ECF2C70002300FFBAC9 /* Payload.swift in Sources */,
 				2A7F127F2A6488EC007C28EA /* RequestLocationView.swift in Sources */,
 				B3733D7A2A9951B10069D490 /* PuzzlePageView.swift in Sources */,
 				2A7F12812A64891F007C28EA /* LinearGradient.swift in Sources */,
@@ -962,14 +994,18 @@
 				B3F7EEF42A86D6BB001D69B6 /* TicketsView.swift in Sources */,
 				2AC7DD0F2A59F37D00DB9F6D /* PracticalPageView.swift in Sources */,
 				2AE45DA92A7D617400AF2B9D /* ConferenceBoxWeather.swift in Sources */,
+				B3B01ED72C71357A00FFBAC9 /* ConnectionRow.swift in Sources */,
 				2AE440062A705E5C009078E3 /* ScheduleCalendarView.swift in Sources */,
 				2AC7DD072A58CD2000DB9F6D /* FAQListView.swift in Sources */,
 				2A16EB452A4F622800CC881D /* ConferenceBoxTicket.swift in Sources */,
 				2AE440082A706211009078E3 /* ScheduleTimelineView.swift in Sources */,
 				2A090BD72A71B0E9003553D2 /* MapView.swift in Sources */,
+				B3B01ED52C7001C200FFBAC9 /* WriteNFCView.swift in Sources */,
 				2A3AB65B2A78744B0089CF7E /* ActivityType+Color.swift in Sources */,
 				2A7F12882A65E354007C28EA /* SectionAtTheConferenceNotActivated.swift in Sources */,
+				B3B01ED92C71524000FFBAC9 /* ContactViewConroller.swift in Sources */,
 				2AC7DD0B2A58D07E00DB9F6D /* View+Preview.swift in Sources */,
+				B30E2E1C2C6F9B5E007A48E5 /* NFCDelegates.swift in Sources */,
 				2A37FB902A7C14CB0062E63A /* UIDevice+HasNotch.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1011,7 +1047,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = V38QRBT6X5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftIslandWidgets/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Swift Island Widgets";
@@ -1041,7 +1077,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = V38QRBT6X5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SwiftIslandWidgets/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = "Swift Island Widgets";
@@ -1201,6 +1237,7 @@
 				INFOPLIST_FILE = "SwiftIslandApp-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Swift Island";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NFCReaderUsageDescription = "You can use NFC tags to share contact details throughout the conference";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We only use your location to verify that you are at the conference. Once we know, we don't use it anymore.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -1244,6 +1281,7 @@
 				INFOPLIST_FILE = "SwiftIslandApp-Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "Swift Island";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_NFCReaderUsageDescription = "You can use NFC tags to share contact details throughout the conference";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "We only use your location to verify that you are at the conference. Once we know, we don't use it anymore.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;

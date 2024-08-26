@@ -37,7 +37,7 @@ struct FAQListView: View {
             }
             .navigationTitle("FAQ")
             .listRowBackground(Color.clear)
-            .onChange(of: searchText) { _ in
+            .onChange(of: searchText) { _, _ in
                 isSearching = !searchText.isEmpty
             }
             .searchable(text: $searchText, placement: .navigationBarDrawer(displayMode: .always), prompt: "Search") {
@@ -46,21 +46,15 @@ struct FAQListView: View {
                         .searchCompletion("\(faqItem.question)")
                 }
             }
-            .onAppear {
+            .task {
                 if !isPreview {
-                    fetchFAQ(scrollViewProxy: scrollViewProxy)
+                    let faqs: [FAQItem] = await dataLogic.fetchFAQItems()
+                    self.faqList = Array(faqs.prefix(upTo: 4))
+
+                    if let preselectedItem {
+                        scrollViewProxy.scrollTo(preselectedItem.id)
+                    }
                 }
-            }
-        }
-    }
-
-    private func fetchFAQ(scrollViewProxy: ScrollViewProxy) {
-        Task {
-            let faqs: [FAQItem] = await dataLogic.fetchFAQItems()
-            self.faqList = Array(faqs.prefix(upTo: 4))
-
-            if let preselectedItem {
-                scrollViewProxy.scrollTo(preselectedItem.id)
             }
         }
     }

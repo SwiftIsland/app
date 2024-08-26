@@ -15,8 +15,11 @@ public struct Ticket {
     let registrationReference: String
     let createdAt: Date
     let updatedAt: Date
-
-    internal init(id: Int, slug: String, firstName: String, lastName: String, releaseTitle: String, reference: String, registrationReference: String, createdAt: Date, updatedAt: Date) {
+    public let email: String?
+    public let companyName: String?
+    public let phoneNumber: String?
+    
+    internal init(id: Int, slug: String, firstName: String, lastName: String, releaseTitle: String, reference: String, registrationReference: String, createdAt: Date, updatedAt: Date, email: String?, companyName: String?, phoneNumber: String?) {
         self.id = id
         self.slug = slug
         self.firstName = firstName
@@ -26,10 +29,13 @@ public struct Ticket {
         self.registrationReference = registrationReference
         self.createdAt = createdAt
         self.updatedAt = updatedAt
+        self.email = email
+        self.companyName = companyName
+        self.phoneNumber = phoneNumber
     }
-
+    
     init() {
-        self.init(id: 0, slug: "", firstName: "", lastName: "", releaseTitle: "", reference: "", registrationReference: "", createdAt: Date(), updatedAt: Date())
+        self.init(id: 0, slug: "", firstName: "", lastName: "", releaseTitle: "", reference: "", registrationReference: "", createdAt: Date(), updatedAt: Date(), email: nil, companyName: nil, phoneNumber: nil)
     }
 }
 
@@ -44,6 +50,9 @@ extension Ticket: Decodable, Encodable {
         case registrationReference = "registration_reference"
         case createdAt = "created_at"
         case updatedAt = "updated_at"
+        case email = "email"
+        case companyName = "company_name"
+        case phoneNumber = "phone_number"
     }
 }
 
@@ -75,11 +84,11 @@ extension Ticket {
     }
 
     public var titoURL: URL? {
-        URL(string: "https://ti.to/swiftisland/2023/tickets/\(slug)")
+        URL(string: "https://ti.to/swiftisland/2024/tickets/\(slug)")
     }
 
     public var editURL: URL? {
-        URL(string: "https://ti.to/swiftisland/2023/tickets/\(slug)/settings")
+        URL(string: "https://ti.to/swiftisland/2024/tickets/\(slug)/settings")
     }
 }
 
@@ -103,7 +112,7 @@ extension Ticket {
                reference: reference,
                registrationReference: registrationReference,
                createdAt: createdAt,
-               updatedAt: updatedAt)
+               updatedAt: updatedAt, email: nil, companyName: nil, phoneNumber: nil)
     }
 }
 

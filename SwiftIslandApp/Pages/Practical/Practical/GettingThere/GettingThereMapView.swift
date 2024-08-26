@@ -7,7 +7,7 @@ import SwiftUI
 import MapKit
 
 struct GettingThereMapView: View {
-    @State private var region = MKCoordinateRegion(
+    @State private var cameraPosition = MapCameraPosition.region(MKCoordinateRegion(
         center: CLLocationCoordinate2D(
             latitude: 53.11478763673313,
             longitude: 4.8972633598615065
@@ -16,15 +16,18 @@ struct GettingThereMapView: View {
             latitudeDelta: 0.5,
             longitudeDelta: 0.5
         )
-    )
+    ))
 
     let locations: [GettingThereLocation]
 
     var body: some View {
-        Map(coordinateRegion: $region, annotationItems: locations) {
-            MapMarker(coordinate: $0.coordinate)
+        Map(position: $cameraPosition) {
+            Marker(coordinate: CLLocationCoordinate2D(
+                latitude: 53.11478763673313,
+                longitude: 4.8972633598615065
+            )) { }
         }
-            .ignoresSafeArea()
+        .ignoresSafeArea()
     }
 }
 

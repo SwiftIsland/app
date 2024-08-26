@@ -15,16 +15,15 @@ struct MainApp: App {
     }
 
     @StateObject private var appDataModel = AppDataModel()
-    @State private var appActionTriggered: AppActions?
+    @State private var urlTaskTriggered: URLTask?
     @State private var showTicketAlert = false
     @State private var showTicketMessage: String = ""
-    @State private var currentPuzzleSlug: String?
 
     var body: some Scene {
         WindowGroup {
             ZStack {
                 if case .loaded = appDataModel.appState {
-                    TabBarView(appActionTriggered: $appActionTriggered)
+                    TabBarView(urlTaskTriggered: $urlTaskTriggered)
                         .environmentObject(appDataModel)
                 } else {
                     SwiftIslandLogo(isAnimating: true)
@@ -41,29 +40,6 @@ struct MainApp: App {
                     handleOpenURL(url)
                 }
             }
-
-            .sheet(
-                isPresented: .constant(currentPuzzleSlug != nil),
-                onDismiss: {
-                    currentPuzzleSlug = nil
-                },
-                content: {
-                    NavigationStack {
-                        PuzzlePageView(currentPuzzleSlug: $currentPuzzleSlug.wrappedValue)
-                    }
-                    .tint(.questionMarkColor)
-                    .environmentObject(appDataModel)
-                }
-            )
-            // TODO: Make this a navigation path to the actual ticket
-            .alert("Ticket Added", isPresented: $showTicketAlert, actions: {
-                Button("OK") {
-                    showTicketAlert = false
-                    showTicketMessage = ""
-                }
-            }, message: {
-                Text("\(showTicketMessage)\n\nYou can find your ticket under Practical → Before you leave → Tickets")
-            })
         }
     }
 }
@@ -72,8 +48,10 @@ private extension MainApp {
     func handleOpenURL(_ url: URL) {
         guard let components = URLComponents(url: url, resolvingAgainstBaseURL: true), components.host == "swiftisland.nl" else { return }
 
-        let actions = components.queryItems?.compactMap { URLTask(rawValue: $0) }
-        actions?.forEach { handleUrlTask($0) }
+        if let items = components.queryItems {
+            guard let task = URLTask(items: items) else { return }
+            handleUrlTask(task)
+        }
     }
 
     func handleUrlTask(_ urlTask: URLTask) {
@@ -88,23 +66,46 @@ private extension MainApp {
                     print(error)
                 }
             }
-        case .seal(let slug):
+        case .seal(let slug, let key):
             if slug == "reset" {
                 Defaults.reset(.puzzleStatus)
                 Defaults.reset(.puzzleHints)
+                appDataModel.currentPuzzleSlug = nil
             } else {
-                let currentStatus = Defaults[.puzzleStatus][slug]
-                if currentStatus == nil || currentStatus == .notFound {
-                    Defaults[.puzzleStatus][slug] = .found
+                findSlug(slug: slug, key: key)
+            }
+        case .contact(let contact):
+            addContact(contact: contact)
+        }
+        urlTaskTriggered = urlTask
+    }
+    
+    func addContact(contact: String) {
+        guard let contact = ContactData(base64Encoded: contact) else {
+            return
+        }
+        Defaults[.contacts][Date().timeIntervalSinceReferenceDate] = contact
+    }
+    
+    func findSlug(slug: String, key: String) {
+        if slug == "reset" {
+            Defaults.reset(.puzzleStatus)
+            Defaults.reset(.puzzleHints)
+        } else {
+            let currentStatus = Defaults[.puzzleStatus][slug]
+            if currentStatus == nil || currentStatus == .notFound {
+                Defaults[.puzzleStatus][slug] = .found
+            }
+            if let puzzle = appDataModel.puzzles.first(where: { $0.slug == slug }) {
+                if let hint = try? decrypt(value: puzzle.encryptedHint, solution: key, type: Hint.self) {
+                    Defaults[.puzzleHints][puzzle.slug] = hint
                 }
             }
-            currentPuzzleSlug = slug
+            appDataModel.currentPuzzleSlug = slug
         }
     }
 
     func handleAppAction(_ appAction: AppActions) {
-        appActionTriggered = appAction
-
         switch appAction {
         case .atTheConference:
             Defaults[.userIsActivated] = true
@@ -128,22 +129,38 @@ private extension MainApp {
     }
 }
 
-enum URLTask {
+enum URLTask: Equatable {
     case action(appAction: AppActions)
     case ticket(slug: String)
-    case seal(slug: String)
+    case seal(slug: String, key: String)
+    case contact(contact: String)
 
-    init?(rawValue: URLQueryItem) {
-        switch rawValue.name {
+    init?(items: [URLQueryItem]) {
+        for item in items {
+            if let task = URLTask.parseItem(item: item, allItems: items) {
+                self = task
+                return
+            }
+        }
+        return nil
+    }
+    
+    static func parseItem(item: URLQueryItem, allItems: [URLQueryItem]) -> URLTask? {
+        switch item.name {
         case "action":
-            guard let value = rawValue.value, let actionTriggered = AppActions(rawValue: value) else { return nil }
-            self = .action(appAction: actionTriggered)
+            guard let value = item.value, let actionTriggered = AppActions(rawValue: value) else { return nil }
+            return .action(appAction: actionTriggered)
         case "ticket":
-            guard let value = rawValue.value else { return nil }
-            self = .ticket(slug: value)
+            guard let value = item.value else { return nil }
+            return .ticket(slug: value)
+        case "contact":
+            guard let value = item.value else { return nil }
+            return .contact(contact: value)
         case "seal":
-            guard let value = rawValue.value else { return nil }
-            self = .seal(slug: value)
+            guard let value = item.value, let key
+                    = allItems.first(where: {$0.name == "key"})?.value else { return nil }
+            
+            return .seal(slug: value, key: key)
         default:
             return nil
         }

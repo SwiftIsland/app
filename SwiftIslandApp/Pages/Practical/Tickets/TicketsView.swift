@@ -102,7 +102,7 @@ struct TicketsView: View {
                 .indexViewStyle(.page(backgroundDisplayMode: colorScheme == .light ? .always : .automatic))
             }
         }
-        .onChange(of: appDataModel.tickets, perform: { tickets in
+        .onChange(of: appDataModel.tickets, { _, tickets in
             guard let currentTicket = tickets.first(where: { $0.id == self.currentTicket.id }) else { return }
             self.currentTicket = currentTicket
         })

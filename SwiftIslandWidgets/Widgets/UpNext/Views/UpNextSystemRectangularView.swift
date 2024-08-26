@@ -20,7 +20,7 @@ struct UpNextSystemRectangularView: View {
                             Circle()
                                 .fill(event.activity.type.color)
                                 .frame(width: 5)
-                            Text(event.activity.type.rawValue)
+                            Text(event.activity.type.description)
                                 .font(.body)
                                 .foregroundColor(event.activity.type.color)
                                 .fontWeight(.light)

@@ -16,7 +16,8 @@ private enum Tab: CaseIterable {
 struct TabBarView: View {
     @Namespace private var namespace
     @State private var selectedItem: Tab = .home
-    @Binding var appActionTriggered: AppActions?
+    @State private var practicalNavigationPath = NavigationPath()
+    @Binding var urlTaskTriggered: URLTask?
 
     @State private var isShowingMentor = false
     @EnvironmentObject private var appDataModel: AppDataModel
@@ -45,7 +46,7 @@ struct TabBarView: View {
                             }
                             .tag(tab)
                     case .practical:
-                        PracticalPageView()
+                        PracticalPageView(navigationPath: $practicalNavigationPath)
                             .tabItem {
                                 Label("Practical", systemImage: "wallet.pass")
                                     .environment(\.symbolVariants, tab == selectedItem ? .fill : .none)
@@ -66,27 +67,47 @@ struct TabBarView: View {
             .accentColor(.questionMarkColor)
         }
         .onAppear {
-            handleAppAction()
+            handleURLTask()
         }
-        .onChange(of: appActionTriggered) { _ in
-            handleAppAction()
+        .onChange(of: urlTaskTriggered) { _, _ in
+            handleURLTask()
         }
-        .onChange(of: appDataModel.tickets) { _ in
+        .onChange(of: appDataModel.tickets) { _, _ in
             // TODO: Open the ticket page
         }
     }
 
 
-    func handleAppAction() {
-        if let appActionTriggered {
-            switch appActionTriggered {
-            case .atTheConference:
+    func handleURLTask() {
+        if let urlTaskTriggered {
+            switch urlTaskTriggered {
+            case .action(let appAction):
+                switch appAction {
+                case .atTheConference:
+                    selectedItem = .practical
+                case .atHome:
+                    selectedItem = .home
+                }
+            case .seal:
+                if !practicalNavigationPath.isEmpty {
+                    practicalNavigationPath = NavigationPath()
+                }
+                practicalNavigationPath.append(NavigationPage.spotTheSeal)
                 selectedItem = .practical
-            case .atHome:
-                selectedItem = .home
+            case .contact:
+                if !practicalNavigationPath.isEmpty {
+                    practicalNavigationPath = NavigationPath()
+                }
+                practicalNavigationPath.append(NavigationPage.nfc)
+                selectedItem = .practical
+            case .ticket:
+                if !practicalNavigationPath.isEmpty {
+                    practicalNavigationPath = NavigationPath()
+                }
+                practicalNavigationPath.append(NavigationPage.tickets)
+                selectedItem = .practical
             }
-
-            self.appActionTriggered = nil
+            self.urlTaskTriggered = nil
         }
     }
 }
@@ -94,9 +115,9 @@ struct TabBarView: View {
 struct TabbarView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
-            TabBarView(appActionTriggered: .constant(nil))
+            TabBarView(urlTaskTriggered: .constant(nil))
                 .previewDisplayName("Light mode")
-            TabBarView(appActionTriggered: .constant(nil))
+            TabBarView(urlTaskTriggered: .constant(nil))
                 .preferredColorScheme(.dark)
                 .previewDisplayName("Dark mode")
         }

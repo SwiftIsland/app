@@ -8,12 +8,12 @@ import SwiftIslandDataLogic
 
 struct EventDetailsView: View {
     let event: Event
-
+    @EnvironmentObject private var appDataModel: AppDataModel
     var body: some View {
         VStack(alignment: .leading) {
             ZStack {
                 VStack(alignment: .leading, spacing: 0) {
-                    Text(event.activity.type.rawValue)
+                    Text(event.activity.type.description)
                         .font(.caption)
                         .foregroundColor(event.activity.type.color)
                         .fontWeight(.light)
@@ -25,8 +25,11 @@ struct EventDetailsView: View {
                             .font(.title)
                     }
                     .padding(.bottom, 8)
+                    
+                    let location = appDataModel.locations.first(where: { $0.id == event.activity.location })
+                    let locationString = location.map({" @ \($0.title)"}) ?? ""
                     HStack {
-                        Text(event.startDate.formatted())
+                        Text("\(event.startDate.formatted(date: .omitted, time: .shortened)) - \(event.endDate.formatted(date: .omitted, time: .shortened))\(locationString)")
                             .font(.caption)
                             .foregroundColor(.secondary)
                         Spacer()
@@ -42,8 +45,9 @@ struct EventDetailsView: View {
                         Text("Mentors")
                             .font(.footnote)
                             .foregroundColor(.secondary)
-                        ForEach(event.activity.mentors, id: \.self) { mentor in
-                            Text(mentor)
+                        let mentors = event.activity.mentors.compactMap({ mentorId in appDataModel.mentors.first(where: {$0.id == mentorId })})
+                        ForEach(mentors, id: \.self) { mentor in
+                            Text(mentor.name)
                         }
                     }
                     Spacer()
@@ -51,6 +55,11 @@ struct EventDetailsView: View {
             }
         }
         .padding()
+        .task {
+            if !isPreview {
+                await appDataModel.fetchLocations()
+            }
+        }
     }
 }
 

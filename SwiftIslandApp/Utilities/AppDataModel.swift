@@ -29,6 +29,7 @@ final class AppDataModel: ObservableObject {
     @Published var tickets: [Ticket] = []
     @Published var weather: Weather?
     @Published var puzzles: [Puzzle] = []
+    @Published var currentPuzzleSlug: String? = nil
     @Published var sponsors: Sponsors?
 
     private let logger = Logger(

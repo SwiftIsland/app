@@ -52,7 +52,7 @@ struct EventView: View {
                 .padding(.horizontal, 8)
                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                 .background(.ultraThinMaterial)
-                .background(mainColor.opacity(0.30), in: RoundedRectangle(cornerRadius: 8, style: .continuous))
+                .background(mainColor.opacity(0.20), in: RoundedRectangle(cornerRadius: 8, style: .continuous))
                 .overlay {
                     HStack {
                         Rectangle()
