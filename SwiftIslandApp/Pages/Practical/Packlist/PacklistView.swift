@@ -112,9 +112,9 @@ struct PacklistView: View {
             .scrollContentBackground(.hidden)
             .onAppear {
 
-                if !Defaults[.isPacklistSetupFor2024] {
+                if !Defaults[.isPacklistSetupFor2025] {
                     Defaults[.packingItems] = []
-                    Defaults[.isPacklistSetupFor2024] = true
+                    Defaults[.isPacklistSetupFor2025] = true
                 }
                 
                 Task {

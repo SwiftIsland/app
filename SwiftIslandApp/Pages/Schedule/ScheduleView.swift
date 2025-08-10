@@ -17,9 +17,9 @@ struct ScheduleView: View {
 
     @State private var hourSpacing = 24.0
     @State private var hourHeight = 25.0
-    @State private var selectedDate: Date? = Calendar.current.date(from: DateComponents(year: 2024, month: 8, day: 26))
+    @State private var selectedDate: Date? = Calendar.current.date(from: DateComponents(year: 2025, month: 9, day: 1))
     @State private var showPopover = false
-    @State private var selectedDayTag = 4
+    @State private var selectedDayTag = 1
     @State private var events: [Event] = []
 
     private let startHourOfDay = 6
@@ -95,11 +95,11 @@ struct ScheduleView: View {
                                         .font(.caption)
                                         .foregroundColor(.secondary)
                                     Picker("Select conference day", selection: $selectedDayTag) {
-                                        Text("Monday").tag(26)
-                                        Text("Tuesday").tag(27)
-                                        Text("Wednesday").tag(28)
-                                        Text("Thursday").tag(29)
-                                        Text("Friday").tag(30)
+                                        Text("Monday").tag(1)
+                                        Text("Tuesday").tag(2)
+                                        Text("Wednesday").tag(3)
+                                        Text("Thursday").tag(4)
+                                        Text("Friday").tag(5)
                                     }
                                     .pickerStyle(.segmented)
                                 }
@@ -112,20 +112,20 @@ struct ScheduleView: View {
         }
         .onChange(of: selectedDayTag) { _, _ in
             showPopover = false
-            self.selectedDate = Calendar.current.date(from: DateComponents(year: 2024, month: 8, day: selectedDayTag))
+            self.selectedDate = Calendar.current.date(from: DateComponents(year: 2025, month: 9, day: selectedDayTag))
             updateContent()
         }
         .onAppear {
             let calendar = Calendar.current
-            if let monday = calendar.date(from: DateComponents(year: 2024, month: 8, day: 26)), calendar.isDateInToday(monday) {
+            if let monday = calendar.date(from: DateComponents(year: 2025, month: 9, day: 1)), calendar.isDateInToday(monday) {
                 selectedDate = monday
-            } else if let tuesday = calendar.date(from: DateComponents(year: 2024, month: 8, day: 27)), calendar.isDateInToday(tuesday) {
+            } else if let tuesday = calendar.date(from: DateComponents(year: 2025, month: 9, day: 2)), calendar.isDateInToday(tuesday) {
                 selectedDate = tuesday
-            } else if let wednesday = calendar.date(from: DateComponents(year: 2024, month: 8, day: 28)), calendar.isDateInToday(wednesday) {
+            } else if let wednesday = calendar.date(from: DateComponents(year: 2025, month: 9, day: 3)), calendar.isDateInToday(wednesday) {
                 selectedDate = wednesday
-            } else if let thursday = calendar.date(from: DateComponents(year: 2024, month: 8, day: 29)), calendar.isDateInToday(thursday) {
+            } else if let thursday = calendar.date(from: DateComponents(year: 2025, month: 9, day: 4)), calendar.isDateInToday(thursday) {
                 selectedDate = thursday
-            } else if let friday = calendar.date(from: DateComponents(year: 2024, month: 8, day: 20)), calendar.isDateInToday(friday) {
+            } else if let friday = calendar.date(from: DateComponents(year: 2025, month: 9, day: 5)), calendar.isDateInToday(friday) {
                 selectedDate = friday
             }
 
@@ -204,10 +204,10 @@ struct ScheduleView_Previews: PreviewProvider {
         let appDataModel = AppDataModel()
 
         // swiftlint:disable force_unwrapping
-        let selectedDate = Calendar.current.date(from: DateComponents(year: 2024, month: 8, day: 27, hour: 9))!
-        let secondDate = Calendar.current.date(from: DateComponents(year: 2024, month: 8, day: 27, hour: 10))!
-        let thirdDate = Calendar.current.date(from: DateComponents(year: 2024, month: 8, day: 27, hour: 7, minute: 15))!
-        let fouthDate = Calendar.current.date(from: DateComponents(year: 2024, month: 8, day: 27, hour: 7, minute: 30))!
+        let selectedDate = Calendar.current.date(from: DateComponents(year: 2025, month: 9, day: 1, hour: 9))!
+        let secondDate = Calendar.current.date(from: DateComponents(year: 2025, month: 9, day: 1, hour: 10))!
+        let thirdDate = Calendar.current.date(from: DateComponents(year: 2025, month: 9, day: 1, hour: 7, minute: 15))!
+        let fouthDate = Calendar.current.date(from: DateComponents(year: 2025, month: 9, day: 1, hour: 7, minute: 30))!
         // swiftlint:enable force_unwrapping
         let events = [
             Event.forPreview(startDate: selectedDate),

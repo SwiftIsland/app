@@ -84,11 +84,11 @@ extension Ticket {
     }
 
     public var titoURL: URL? {
-        URL(string: "https://ti.to/swiftisland/2024/tickets/\(slug)")
+        URL(string: "https://ti.to/swiftisland/2025/tickets/\(slug)")
     }
 
     public var editURL: URL? {
-        URL(string: "https://ti.to/swiftisland/2024/tickets/\(slug)/settings")
+        URL(string: "https://ti.to/swiftisland/2025/tickets/\(slug)/settings")
     }
 }
 
