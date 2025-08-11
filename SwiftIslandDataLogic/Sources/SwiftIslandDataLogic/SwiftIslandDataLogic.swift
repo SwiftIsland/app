@@ -92,8 +92,13 @@ public class SwiftIslandDataLogic: DataLogic, ObservableObject {
     /// Fetches all the mentors from Firebase
     /// - Returns: Array of `Mentor`
     public func fetchMentors() async -> [Mentor] {
-        let request = AllMentorsRequest()
-        return await fetchFromFirebase(forRequest: request).sorted(by: { $0.order < $1.order })
+        do {
+            let data = try await DataSync.fetchURL("api/mentors.json")
+            return try JSONDecoder().decode([Mentor].self, from: data)
+        } catch {
+            print("Failed to load mentors: \(error)")
+            return []
+        }
     }
 
     /// Fetches all the pages from Firebase and stores

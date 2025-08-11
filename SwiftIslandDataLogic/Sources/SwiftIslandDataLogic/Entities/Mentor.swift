@@ -7,8 +7,8 @@ import Foundation
 
 public struct Mentor: Response {
     public let id: String
-    public let description: String
-    public let imageName: String
+    public let biography: String
+    public let imageName: String = "speaker-sofia-2025"
     public let name: String
     public let twitter: String?
     public let web: String?

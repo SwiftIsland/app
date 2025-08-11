@@ -25,22 +25,22 @@ struct MentorView: View {
                         Color.background
                             .cornerRadius(15)
                         VStack(alignment: .leading) {
-                            Image(mentor.imageName)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: geometry.size.width, height: isShowContent ? geometry.size.height * 0.6 : geometry.size.height)
-                                .border(Color(.sRGB, red: 150 / 255, green: 150 / 255, blue: 150 / 255, opacity: 0.1), width: isShowContent ? 0 : 1)
-                                .cornerRadius(15)
-                                .overlay(
-                                    MentorExcerptView(namespace: namespace, mentor: mentor, isShowContent: $isShowContent)
-                                        .cornerRadius(isShowContent ? 0 : 15)
-                                        .offset(CGSize(width: 0, height: !isShowContent ? 10 : 0))
-                                        .matchedGeometryEffect(id: "\(mentor.id)-mentorExcerptView", in: namespace)
-                                )
-                                .matchedGeometryEffect(id: "\(mentor.id)-imageName", in: namespace)
+                                Image(mentor.imageName)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: geometry.size.width, height: isShowContent ? geometry.size.height * 0.6 : geometry.size.height)
+                                    .border(Color(.sRGB, red: 150 / 255, green: 150 / 255, blue: 150 / 255, opacity: 0.1), width: isShowContent ? 0 : 1)
+                                    .cornerRadius(15)
+                                    .overlay(
+                                        MentorExcerptView(namespace: namespace, mentor: mentor, isShowContent: $isShowContent)
+                                            .cornerRadius(isShowContent ? 0 : 15)
+                                            .offset(CGSize(width: 0, height: !isShowContent ? 10 : 0))
+                                            .matchedGeometryEffect(id: "\(mentor.id)-mentorExcerptView", in: namespace)
+                                    )
+                                    .matchedGeometryEffect(id: "\(mentor.id)-imageName", in: namespace)
                             // Content
                             if isShowContent {
-                                Text(mentor.description)
+                                Text(mentor.biography)
                                     .foregroundColor(Color(.darkGray))
                                     .font(.system(.body, design: .rounded))
                                     .padding(.horizontal)
