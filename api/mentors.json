@@ -1,0 +1,260 @@
+[
+  {
+    "mastodon" : "https:\/\/mastodon.social\/@feli@iosdev.space",
+    "order" : 9,
+    "twitter" : "",
+    "linkedin" : "",
+    "lastModified" : "2025-06-24T08:44:00.000Z",
+    "year" : "2025",
+    "id" : "21cf454e-b360-803a-94f4-f7ec1e62e6a8",
+    "biography" : "Feli is an iOS Engineer at Spotify and a strong advocate for accessibility and usability. She’s often seen at conferences creating sketchnotes of talks but occasionally, she switches perspectives and takes the speaker stage herself. With a love of learning and adventure, Feli approaches everything with a passion for the unexpected – including her pizza toppings, where pineapple always has a place.",
+    "role" : "Speaker",
+    "createdAt" : "2025-06-24T08:43:00.000Z",
+    "name" : "Feli Bernutz",
+    "image" : [
+      {
+        "type" : "file",
+        "name" : "feli-speaker.jpeg",
+        "url_expires_at" : "2025-08-11T14:04:46.089Z",
+        "original_url" : "https:\/\/prod-files-secure.s3.us-west-2.amazonaws.com\/f700fc5e-43a2-490b-9ef1-f04ef9359af2\/263b4691-c079-4aab-a0ea-dc5301486a5e\/feli-speaker.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4665LEKOYGC%2F20250811%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250811T130446Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIC%2FHLfyIhwp0TX4QHlEYTS%2F9HQBKkMGJFhpENSH7OZbIAiBupGeFhyqAia22Gu3Zk3qcYDaSP%2B1Rc79PvhoQrxtu1CqIBAju%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMJqUJGSyBb8HWGm%2FYKtwD063C3klnQedtPdIjdRFUBLMzvdXmAwI6gcUS84NL2mDHap91fcFbLCw65gawLVFOj5svX7Ps%2B%2B9%2FyyD6upnZjB2efmd1MvkJrWMeBvRRoscYWZGBmjg2iWAHgTQtJfz6godkSOnKtp8K9tEXuAeMHeTeKN%2B%2FT0Nus0rx5JnJe7T70R8QM5kgjJN%2FYrtizngBf1pT9CMOqSE7m2s9P%2FjiQJGHz6x9EbVImAJdkeCXzuzdTM8P%2Fmrhoz4O96tqZchYjRm7%2BYep7SFPgMc9P36ECBa5IvvWtEh1lIRfoeicNU5Nkw09Llto7kpgqFYg73fD7WZ%2BJKKmaTNtULKchJYj3qfe6ekIM6e3OMHkrJz4MLp%2F8ZTOPJpf6RGfjC3Ynb9LNV2taI7fgOpq3JrDN9q7we0crVdes%2Bl%2FQf36hUzsCPDERiyR7HpDJCanDOklji627oVsH9H2Ha95uFfFQOwEvsNf9RUiTV32apHrHvVfVrIli6v0g%2FxCy3IiWQf7M2FROWS%2FMZMR8VSvQdf4IGIAefwwHtPc%2F25nQt8vHAjF1Ffa%2F2h%2BP6XktY6BPRZ2yyjmTsIPuXNZbf%2FBNyPUnvzCwwzcG1uB8U96MQqk%2FMMIziIttBlt7B7XTS1yb24wnsfnxAY6pgFkGlEQdUDXi028G%2FveBNpZw%2FxejQtj%2FofI1iTR2ANARB7rhLYWRLcK2mVtzhNZoUg7nNG9O0A%2BmnuHKlw%2Bfo9eYXwqj0BgeMv98%2BRZ5zqSgHvllPyFKVihbqztO8UNcEYUFkm14jwImsYkIQXkMMMKkVxzhEpZxSA1nr6ycy2tjTofLZ7RheatiUSDTptJ11ANRf3qKDcqeY1iZTHdq9JTIdcxHUr1&X-Amz-Signature=47f69889d3919b706861da920ae067634a707f987ef5336a44936d0fc7de4585&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+        "url" : "images\/21cf454eb360803a94f4f7ec1e62e6a8_image.jpeg"
+      }
+    ],
+    "title" : "Feli Bernutz",
+    "published" : false
+  },
+  {
+    "mastodon" : "",
+    "order" : 10,
+    "twitter" : "",
+    "linkedin" : "https:\/\/www.linkedin.com\/in\/fennande\/",
+    "lastModified" : "2025-08-08T10:32:00.000Z",
+    "year" : "2025",
+    "id" : "21cf454e-b360-8044-9930-f544c4ebf0f7",
+    "biography" : "Fennande van der Meulen, with 25 years of experience in organizations under her belt, focuses on culture, change, workplace happiness, and social safety. With more than 10 years of experience in the field of workplace happiness, she is one of the most well-known experts in the Netherlands. She put Happy Office on the map and launched the International Week of Workplace Happiness in 2018, which has now spread across more than 55 countries. You can turn to her for an interactive session about how you can take control of your own workplace happiness and what role emotions play in this process.",
+    "role" : "Speaker",
+    "createdAt" : "2025-06-24T07:05:00.000Z",
+    "name" : "Fennande van der Meulen",
+    "image" : [
+      {
+        "url" : "images\/21cf454eb36080449930f544c4ebf0f7_image.png",
+        "original_url" : "https:\/\/prod-files-secure.s3.us-west-2.amazonaws.com\/f700fc5e-43a2-490b-9ef1-f04ef9359af2\/0a95ef64-2516-4c8b-bdeb-d008f12cf134\/Fennande_hek_headshot.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4665LEKOYGC%2F20250811%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250811T130446Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIC%2FHLfyIhwp0TX4QHlEYTS%2F9HQBKkMGJFhpENSH7OZbIAiBupGeFhyqAia22Gu3Zk3qcYDaSP%2B1Rc79PvhoQrxtu1CqIBAju%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMJqUJGSyBb8HWGm%2FYKtwD063C3klnQedtPdIjdRFUBLMzvdXmAwI6gcUS84NL2mDHap91fcFbLCw65gawLVFOj5svX7Ps%2B%2B9%2FyyD6upnZjB2efmd1MvkJrWMeBvRRoscYWZGBmjg2iWAHgTQtJfz6godkSOnKtp8K9tEXuAeMHeTeKN%2B%2FT0Nus0rx5JnJe7T70R8QM5kgjJN%2FYrtizngBf1pT9CMOqSE7m2s9P%2FjiQJGHz6x9EbVImAJdkeCXzuzdTM8P%2Fmrhoz4O96tqZchYjRm7%2BYep7SFPgMc9P36ECBa5IvvWtEh1lIRfoeicNU5Nkw09Llto7kpgqFYg73fD7WZ%2BJKKmaTNtULKchJYj3qfe6ekIM6e3OMHkrJz4MLp%2F8ZTOPJpf6RGfjC3Ynb9LNV2taI7fgOpq3JrDN9q7we0crVdes%2Bl%2FQf36hUzsCPDERiyR7HpDJCanDOklji627oVsH9H2Ha95uFfFQOwEvsNf9RUiTV32apHrHvVfVrIli6v0g%2FxCy3IiWQf7M2FROWS%2FMZMR8VSvQdf4IGIAefwwHtPc%2F25nQt8vHAjF1Ffa%2F2h%2BP6XktY6BPRZ2yyjmTsIPuXNZbf%2FBNyPUnvzCwwzcG1uB8U96MQqk%2FMMIziIttBlt7B7XTS1yb24wnsfnxAY6pgFkGlEQdUDXi028G%2FveBNpZw%2FxejQtj%2FofI1iTR2ANARB7rhLYWRLcK2mVtzhNZoUg7nNG9O0A%2BmnuHKlw%2Bfo9eYXwqj0BgeMv98%2BRZ5zqSgHvllPyFKVihbqztO8UNcEYUFkm14jwImsYkIQXkMMMKkVxzhEpZxSA1nr6ycy2tjTofLZ7RheatiUSDTptJ11ANRf3qKDcqeY1iZTHdq9JTIdcxHUr1&X-Amz-Signature=a1d42493d8cede68e62fe9c5db74b77efffaf0ba6f8379327b1c478f4fbc75a0&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+        "name" : "Fennande hek headshot.png",
+        "url_expires_at" : "2025-08-11T14:04:46.089Z",
+        "type" : "file"
+      }
+    ],
+    "title" : "Fennande van der Meulen",
+    "published" : false
+  },
+  {
+    "mastodon" : "https:\/\/mastodon.social\/@warpling",
+    "order" : 11,
+    "twitter" : "",
+    "linkedin" : "",
+    "lastModified" : "2025-06-24T08:44:00.000Z",
+    "year" : "2025",
+    "id" : "21cf454e-b360-8092-a54a-de86afe97f4c",
+    "biography" : "",
+    "role" : "Speaker",
+    "createdAt" : "2025-06-24T07:05:00.000Z",
+    "name" : "Ryan McLeod",
+    "image" : [
+
+    ],
+    "title" : "Ryan McLeod",
+    "published" : false
+  },
+  {
+    "mastodon" : "https:\/\/mastodon.social\/@0xTim@hachyderm.io",
+    "order" : 2,
+    "twitter" : "https:\/\/twitter.com\/0xTim",
+    "linkedin" : "https:\/\/www.linkedin.com\/in\/timjcondon\/",
+    "lastModified" : "2025-06-24T07:51:00.000Z",
+    "year" : "2025",
+    "id" : "218f454e-b360-8090-bdaf-c9da1f5fb8b5",
+    "biography" : "Tim is a Swift developer from Manchester, UK and one half of the Vapor Core Team. He sits on the Swift Server Workgroup and delivers talks and workshops on Vapor and server-side Swift around the world. He runs Broken Hands, a server-side Swift consultancy and works with clients around the world to help them deploy Swift on their backends. He also co-organises the  ServerSide.swift  conference – the world’s first and only conference focused on server-side Swift.",
+    "role" : "Mentor",
+    "createdAt" : "2025-06-20T18:15:00.000Z",
+    "name" : "Tim Condon",
+    "image" : [
+      {
+        "original_url" : "https:\/\/prod-files-secure.s3.us-west-2.amazonaws.com\/f700fc5e-43a2-490b-9ef1-f04ef9359af2\/1c3c2217-1407-40b0-b6fc-a033e184fa48\/Tim.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4665LEKOYGC%2F20250811%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250811T130446Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIC%2FHLfyIhwp0TX4QHlEYTS%2F9HQBKkMGJFhpENSH7OZbIAiBupGeFhyqAia22Gu3Zk3qcYDaSP%2B1Rc79PvhoQrxtu1CqIBAju%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMJqUJGSyBb8HWGm%2FYKtwD063C3klnQedtPdIjdRFUBLMzvdXmAwI6gcUS84NL2mDHap91fcFbLCw65gawLVFOj5svX7Ps%2B%2B9%2FyyD6upnZjB2efmd1MvkJrWMeBvRRoscYWZGBmjg2iWAHgTQtJfz6godkSOnKtp8K9tEXuAeMHeTeKN%2B%2FT0Nus0rx5JnJe7T70R8QM5kgjJN%2FYrtizngBf1pT9CMOqSE7m2s9P%2FjiQJGHz6x9EbVImAJdkeCXzuzdTM8P%2Fmrhoz4O96tqZchYjRm7%2BYep7SFPgMc9P36ECBa5IvvWtEh1lIRfoeicNU5Nkw09Llto7kpgqFYg73fD7WZ%2BJKKmaTNtULKchJYj3qfe6ekIM6e3OMHkrJz4MLp%2F8ZTOPJpf6RGfjC3Ynb9LNV2taI7fgOpq3JrDN9q7we0crVdes%2Bl%2FQf36hUzsCPDERiyR7HpDJCanDOklji627oVsH9H2Ha95uFfFQOwEvsNf9RUiTV32apHrHvVfVrIli6v0g%2FxCy3IiWQf7M2FROWS%2FMZMR8VSvQdf4IGIAefwwHtPc%2F25nQt8vHAjF1Ffa%2F2h%2BP6XktY6BPRZ2yyjmTsIPuXNZbf%2FBNyPUnvzCwwzcG1uB8U96MQqk%2FMMIziIttBlt7B7XTS1yb24wnsfnxAY6pgFkGlEQdUDXi028G%2FveBNpZw%2FxejQtj%2FofI1iTR2ANARB7rhLYWRLcK2mVtzhNZoUg7nNG9O0A%2BmnuHKlw%2Bfo9eYXwqj0BgeMv98%2BRZ5zqSgHvllPyFKVihbqztO8UNcEYUFkm14jwImsYkIQXkMMMKkVxzhEpZxSA1nr6ycy2tjTofLZ7RheatiUSDTptJ11ANRf3qKDcqeY1iZTHdq9JTIdcxHUr1&X-Amz-Signature=6fd87283807c617eb004714244293a91fd5a8671bdb989a3e9ea04870d648d52&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+        "url" : "images\/218f454eb3608090bdafc9da1f5fb8b5_image.jpg",
+        "name" : "Tim.jpg",
+        "type" : "file",
+        "url_expires_at" : "2025-08-11T14:04:46.089Z"
+      }
+    ],
+    "title" : "Tim Condon",
+    "published" : true
+  },
+  {
+    "mastodon" : "",
+    "order" : 1,
+    "twitter" : "https:\/\/twitter.com\/JaninaKutyn",
+    "linkedin" : "https:\/\/www.linkedin.com\/in\/janinakutyn\/",
+    "lastModified" : "2025-06-23T16:35:00.000Z",
+    "year" : "2025",
+    "id" : "218f454e-b360-802e-9aee-cb4af43f18d6",
+    "biography" : "Janina Kutyn has worked across the tech spectrum: from scrappy startups and agencies, to global brands like adidas and ING, and she even spent six years at Apple building products like Apple Music and the TV App. Now as an indie developer, she’s interested in creating apps that are not only beautiful and high-performing, but also make a positive social impact. When she’s not writing software, she’s writing children’s books. ",
+    "role" : "Mentor",
+    "createdAt" : "2025-06-20T18:15:00.000Z",
+    "name" : "Janina Kutyn",
+    "image" : [
+      {
+        "url" : "images\/218f454eb360802e9aeecb4af43f18d6_image.jpg",
+        "url_expires_at" : "2025-08-11T14:04:46.089Z",
+        "name" : "AUG2022-121.jpg",
+        "type" : "file",
+        "original_url" : "https:\/\/prod-files-secure.s3.us-west-2.amazonaws.com\/f700fc5e-43a2-490b-9ef1-f04ef9359af2\/a176410b-a84e-4bcf-a244-e0c3206d4036\/AUG2022-121.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4665LEKOYGC%2F20250811%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250811T130446Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIC%2FHLfyIhwp0TX4QHlEYTS%2F9HQBKkMGJFhpENSH7OZbIAiBupGeFhyqAia22Gu3Zk3qcYDaSP%2B1Rc79PvhoQrxtu1CqIBAju%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMJqUJGSyBb8HWGm%2FYKtwD063C3klnQedtPdIjdRFUBLMzvdXmAwI6gcUS84NL2mDHap91fcFbLCw65gawLVFOj5svX7Ps%2B%2B9%2FyyD6upnZjB2efmd1MvkJrWMeBvRRoscYWZGBmjg2iWAHgTQtJfz6godkSOnKtp8K9tEXuAeMHeTeKN%2B%2FT0Nus0rx5JnJe7T70R8QM5kgjJN%2FYrtizngBf1pT9CMOqSE7m2s9P%2FjiQJGHz6x9EbVImAJdkeCXzuzdTM8P%2Fmrhoz4O96tqZchYjRm7%2BYep7SFPgMc9P36ECBa5IvvWtEh1lIRfoeicNU5Nkw09Llto7kpgqFYg73fD7WZ%2BJKKmaTNtULKchJYj3qfe6ekIM6e3OMHkrJz4MLp%2F8ZTOPJpf6RGfjC3Ynb9LNV2taI7fgOpq3JrDN9q7we0crVdes%2Bl%2FQf36hUzsCPDERiyR7HpDJCanDOklji627oVsH9H2Ha95uFfFQOwEvsNf9RUiTV32apHrHvVfVrIli6v0g%2FxCy3IiWQf7M2FROWS%2FMZMR8VSvQdf4IGIAefwwHtPc%2F25nQt8vHAjF1Ffa%2F2h%2BP6XktY6BPRZ2yyjmTsIPuXNZbf%2FBNyPUnvzCwwzcG1uB8U96MQqk%2FMMIziIttBlt7B7XTS1yb24wnsfnxAY6pgFkGlEQdUDXi028G%2FveBNpZw%2FxejQtj%2FofI1iTR2ANARB7rhLYWRLcK2mVtzhNZoUg7nNG9O0A%2BmnuHKlw%2Bfo9eYXwqj0BgeMv98%2BRZ5zqSgHvllPyFKVihbqztO8UNcEYUFkm14jwImsYkIQXkMMMKkVxzhEpZxSA1nr6ycy2tjTofLZ7RheatiUSDTptJ11ANRf3qKDcqeY1iZTHdq9JTIdcxHUr1&X-Amz-Signature=7d54e1741d638852ccc74d7616fca723f5a3606811f1ea0993f1e434179d05b0&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+      }
+    ],
+    "title" : "Janina Kutyn",
+    "published" : true
+  },
+  {
+    "mastodon" : "",
+    "order" : 7,
+    "twitter" : "",
+    "linkedin" : "https:\/\/www.linkedin.com\/in\/celina-landgraf-520564180\/",
+    "lastModified" : "2025-06-24T07:03:00.000Z",
+    "year" : "2025",
+    "id" : "218f454e-b360-803b-a6ba-e1c1d3cb7ef7",
+    "biography" : "Celina is a mobile iOS dev, building smooth, modern apps using SwiftUI, Combine & async\/await. Recently, she’s been diving into the backend world with NestJS. Raised by teachers, she’s always loved mentoring – guiding teammates from zero to launch. Swift Island marks first official workshop gig… and she’s hyped! When she’s not coding, you’ll find her upside-down doing acrobatic yoga (especially icarian) or geeking out over trust and balance in movement and tech.",
+    "role" : "Mentor",
+    "createdAt" : "2025-06-20T18:14:00.000Z",
+    "name" : "Celina Landgraf",
+    "image" : [
+      {
+        "url" : "images\/218f454eb360803ba6bae1c1d3cb7ef7_image.jpg",
+        "type" : "file",
+        "url_expires_at" : "2025-08-11T14:04:46.089Z",
+        "original_url" : "https:\/\/prod-files-secure.s3.us-west-2.amazonaws.com\/f700fc5e-43a2-490b-9ef1-f04ef9359af2\/b9f9df4f-b550-43c5-86be-726a84c823b6\/Image_from_iOS.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4665LEKOYGC%2F20250811%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250811T130446Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIC%2FHLfyIhwp0TX4QHlEYTS%2F9HQBKkMGJFhpENSH7OZbIAiBupGeFhyqAia22Gu3Zk3qcYDaSP%2B1Rc79PvhoQrxtu1CqIBAju%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMJqUJGSyBb8HWGm%2FYKtwD063C3klnQedtPdIjdRFUBLMzvdXmAwI6gcUS84NL2mDHap91fcFbLCw65gawLVFOj5svX7Ps%2B%2B9%2FyyD6upnZjB2efmd1MvkJrWMeBvRRoscYWZGBmjg2iWAHgTQtJfz6godkSOnKtp8K9tEXuAeMHeTeKN%2B%2FT0Nus0rx5JnJe7T70R8QM5kgjJN%2FYrtizngBf1pT9CMOqSE7m2s9P%2FjiQJGHz6x9EbVImAJdkeCXzuzdTM8P%2Fmrhoz4O96tqZchYjRm7%2BYep7SFPgMc9P36ECBa5IvvWtEh1lIRfoeicNU5Nkw09Llto7kpgqFYg73fD7WZ%2BJKKmaTNtULKchJYj3qfe6ekIM6e3OMHkrJz4MLp%2F8ZTOPJpf6RGfjC3Ynb9LNV2taI7fgOpq3JrDN9q7we0crVdes%2Bl%2FQf36hUzsCPDERiyR7HpDJCanDOklji627oVsH9H2Ha95uFfFQOwEvsNf9RUiTV32apHrHvVfVrIli6v0g%2FxCy3IiWQf7M2FROWS%2FMZMR8VSvQdf4IGIAefwwHtPc%2F25nQt8vHAjF1Ffa%2F2h%2BP6XktY6BPRZ2yyjmTsIPuXNZbf%2FBNyPUnvzCwwzcG1uB8U96MQqk%2FMMIziIttBlt7B7XTS1yb24wnsfnxAY6pgFkGlEQdUDXi028G%2FveBNpZw%2FxejQtj%2FofI1iTR2ANARB7rhLYWRLcK2mVtzhNZoUg7nNG9O0A%2BmnuHKlw%2Bfo9eYXwqj0BgeMv98%2BRZ5zqSgHvllPyFKVihbqztO8UNcEYUFkm14jwImsYkIQXkMMMKkVxzhEpZxSA1nr6ycy2tjTofLZ7RheatiUSDTptJ11ANRf3qKDcqeY1iZTHdq9JTIdcxHUr1&X-Amz-Signature=05d0e4ac42439e4a4e802d2410e5d0043d7797a3e287f99ccae46ce9201b38c5&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+        "name" : "Image from iOS.jpg"
+      }
+    ],
+    "title" : "Celina Landgraf",
+    "published" : true
+  },
+  {
+    "mastodon" : "",
+    "order" : 5,
+    "twitter" : "https:\/\/x.com\/burcukutluay",
+    "linkedin" : "https:\/\/www.linkedin.com\/in\/burcukutluay\/",
+    "lastModified" : "2025-06-24T07:15:00.000Z",
+    "year" : "2025",
+    "id" : "218f454e-b360-8062-8aa7-df52586f3b68",
+    "biography" : "Burcu is a Senior iOS engineer, engineering mentor, and passionate public speaker with 10+ years of experience turning ideas into powerful mobile apps across finance, e-commerce, travel, and startups. She’s all about building great products, helping engineers grow, and making complex things simple on Apple platforms. When she’s not coding or speaking at tech events, you’ll probably find her jamming on her guitar or lost in her favorite tunes.",
+    "role" : "Mentor",
+    "createdAt" : "2025-06-20T18:14:00.000Z",
+    "name" : "Burcu K. Kutluay",
+    "image" : [
+      {
+        "type" : "file",
+        "url" : "images\/218f454eb36080628aa7df52586f3b68_image.jpeg",
+        "url_expires_at" : "2025-08-11T14:04:46.089Z",
+        "original_url" : "https:\/\/prod-files-secure.s3.us-west-2.amazonaws.com\/f700fc5e-43a2-490b-9ef1-f04ef9359af2\/3c4df5a6-0d80-4cf4-bf1c-1f81f27dbc7b\/burcu.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4665LEKOYGC%2F20250811%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250811T130446Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIC%2FHLfyIhwp0TX4QHlEYTS%2F9HQBKkMGJFhpENSH7OZbIAiBupGeFhyqAia22Gu3Zk3qcYDaSP%2B1Rc79PvhoQrxtu1CqIBAju%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMJqUJGSyBb8HWGm%2FYKtwD063C3klnQedtPdIjdRFUBLMzvdXmAwI6gcUS84NL2mDHap91fcFbLCw65gawLVFOj5svX7Ps%2B%2B9%2FyyD6upnZjB2efmd1MvkJrWMeBvRRoscYWZGBmjg2iWAHgTQtJfz6godkSOnKtp8K9tEXuAeMHeTeKN%2B%2FT0Nus0rx5JnJe7T70R8QM5kgjJN%2FYrtizngBf1pT9CMOqSE7m2s9P%2FjiQJGHz6x9EbVImAJdkeCXzuzdTM8P%2Fmrhoz4O96tqZchYjRm7%2BYep7SFPgMc9P36ECBa5IvvWtEh1lIRfoeicNU5Nkw09Llto7kpgqFYg73fD7WZ%2BJKKmaTNtULKchJYj3qfe6ekIM6e3OMHkrJz4MLp%2F8ZTOPJpf6RGfjC3Ynb9LNV2taI7fgOpq3JrDN9q7we0crVdes%2Bl%2FQf36hUzsCPDERiyR7HpDJCanDOklji627oVsH9H2Ha95uFfFQOwEvsNf9RUiTV32apHrHvVfVrIli6v0g%2FxCy3IiWQf7M2FROWS%2FMZMR8VSvQdf4IGIAefwwHtPc%2F25nQt8vHAjF1Ffa%2F2h%2BP6XktY6BPRZ2yyjmTsIPuXNZbf%2FBNyPUnvzCwwzcG1uB8U96MQqk%2FMMIziIttBlt7B7XTS1yb24wnsfnxAY6pgFkGlEQdUDXi028G%2FveBNpZw%2FxejQtj%2FofI1iTR2ANARB7rhLYWRLcK2mVtzhNZoUg7nNG9O0A%2BmnuHKlw%2Bfo9eYXwqj0BgeMv98%2BRZ5zqSgHvllPyFKVihbqztO8UNcEYUFkm14jwImsYkIQXkMMMKkVxzhEpZxSA1nr6ycy2tjTofLZ7RheatiUSDTptJ11ANRf3qKDcqeY1iZTHdq9JTIdcxHUr1&X-Amz-Signature=6b99de84ba4505601d8f737b46fd886ad411c0395885dabf330811c0e6432857&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+        "name" : "burcu.jpeg"
+      }
+    ],
+    "title" : "Burcu K. Kutluay",
+    "published" : true
+  },
+  {
+    "mastodon" : "https:\/\/mastodon.social\/@brunoscheele",
+    "order" : 6,
+    "twitter" : "https:\/\/x.com\/brunoscheele",
+    "linkedin" : "https:\/\/www.linkedin.com\/in\/bruno-scheele-2a08aa295\/",
+    "lastModified" : "2025-06-24T07:25:00.000Z",
+    "year" : "2025",
+    "id" : "218f454e-b360-8068-99ad-dcb7ea9b252a",
+    "biography" : "Bruno Scheele has been developing apps since 2010 and has worked for many different clients, from small to big. His interest in making software that can be used by anyone and everyone, leads him to consider inclusivity in all aspects of development. Accessibility especially has captured his imagination and he now strives to keep learning more about this whole new world and help companies and organizations make truly usable apps for everyone.",
+    "role" : "Mentor",
+    "createdAt" : "2025-06-20T18:14:00.000Z",
+    "name" : "Bruno Scheele",
+    "image" : [
+      {
+        "url_expires_at" : "2025-08-11T14:04:46.089Z",
+        "name" : "BrunoScheele_AIUpscaled.jpg",
+        "url" : "images\/218f454eb360806899addcb7ea9b252a_image.jpg",
+        "type" : "file",
+        "original_url" : "https:\/\/prod-files-secure.s3.us-west-2.amazonaws.com\/f700fc5e-43a2-490b-9ef1-f04ef9359af2\/2d3c5a26-b415-48c0-b435-12709fd39b0f\/BrunoScheele_AIUpscaled.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4665LEKOYGC%2F20250811%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250811T130446Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIC%2FHLfyIhwp0TX4QHlEYTS%2F9HQBKkMGJFhpENSH7OZbIAiBupGeFhyqAia22Gu3Zk3qcYDaSP%2B1Rc79PvhoQrxtu1CqIBAju%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMJqUJGSyBb8HWGm%2FYKtwD063C3klnQedtPdIjdRFUBLMzvdXmAwI6gcUS84NL2mDHap91fcFbLCw65gawLVFOj5svX7Ps%2B%2B9%2FyyD6upnZjB2efmd1MvkJrWMeBvRRoscYWZGBmjg2iWAHgTQtJfz6godkSOnKtp8K9tEXuAeMHeTeKN%2B%2FT0Nus0rx5JnJe7T70R8QM5kgjJN%2FYrtizngBf1pT9CMOqSE7m2s9P%2FjiQJGHz6x9EbVImAJdkeCXzuzdTM8P%2Fmrhoz4O96tqZchYjRm7%2BYep7SFPgMc9P36ECBa5IvvWtEh1lIRfoeicNU5Nkw09Llto7kpgqFYg73fD7WZ%2BJKKmaTNtULKchJYj3qfe6ekIM6e3OMHkrJz4MLp%2F8ZTOPJpf6RGfjC3Ynb9LNV2taI7fgOpq3JrDN9q7we0crVdes%2Bl%2FQf36hUzsCPDERiyR7HpDJCanDOklji627oVsH9H2Ha95uFfFQOwEvsNf9RUiTV32apHrHvVfVrIli6v0g%2FxCy3IiWQf7M2FROWS%2FMZMR8VSvQdf4IGIAefwwHtPc%2F25nQt8vHAjF1Ffa%2F2h%2BP6XktY6BPRZ2yyjmTsIPuXNZbf%2FBNyPUnvzCwwzcG1uB8U96MQqk%2FMMIziIttBlt7B7XTS1yb24wnsfnxAY6pgFkGlEQdUDXi028G%2FveBNpZw%2FxejQtj%2FofI1iTR2ANARB7rhLYWRLcK2mVtzhNZoUg7nNG9O0A%2BmnuHKlw%2Bfo9eYXwqj0BgeMv98%2BRZ5zqSgHvllPyFKVihbqztO8UNcEYUFkm14jwImsYkIQXkMMMKkVxzhEpZxSA1nr6ycy2tjTofLZ7RheatiUSDTptJ11ANRf3qKDcqeY1iZTHdq9JTIdcxHUr1&X-Amz-Signature=456b719a2b0c60ac51b9ee2c64204e242bf65a1f2c79c4c157ebc9fb79ebc160&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+      }
+    ],
+    "title" : "Bruno Scheele",
+    "published" : true
+  },
+  {
+    "mastodon" : "https:\/\/mastodon.social\/@franklefebvre",
+    "order" : 8,
+    "twitter" : "https:\/\/x.com\/franklefebvre",
+    "linkedin" : "https:\/\/www.linkedin.com\/in\/franklefebvre\/",
+    "lastModified" : "2025-06-24T07:27:00.000Z",
+    "year" : "2025",
+    "id" : "218f454e-b360-8048-a38d-d8597c57e7a4",
+    "biography" : "Frank has been developing software for Apple platforms since 1985. As a freelance developer, he usually works on low-level and AV-related software for macOS, iOS and visionOS, as well as server-side Swift applications. He is also an Apple-certified trainer, and he provides mentoring on server-side Swift and iOS development with SwiftUI.",
+    "role" : "Mentor",
+    "createdAt" : "2025-06-20T18:14:00.000Z",
+    "name" : "Frank Lefebvre",
+    "image" : [
+      {
+        "original_url" : "https:\/\/prod-files-secure.s3.us-west-2.amazonaws.com\/f700fc5e-43a2-490b-9ef1-f04ef9359af2\/57ad7b19-feed-4d74-9fc7-690207e5093f\/Frank_profile_picture.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4665LEKOYGC%2F20250811%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250811T130446Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIC%2FHLfyIhwp0TX4QHlEYTS%2F9HQBKkMGJFhpENSH7OZbIAiBupGeFhyqAia22Gu3Zk3qcYDaSP%2B1Rc79PvhoQrxtu1CqIBAju%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMJqUJGSyBb8HWGm%2FYKtwD063C3klnQedtPdIjdRFUBLMzvdXmAwI6gcUS84NL2mDHap91fcFbLCw65gawLVFOj5svX7Ps%2B%2B9%2FyyD6upnZjB2efmd1MvkJrWMeBvRRoscYWZGBmjg2iWAHgTQtJfz6godkSOnKtp8K9tEXuAeMHeTeKN%2B%2FT0Nus0rx5JnJe7T70R8QM5kgjJN%2FYrtizngBf1pT9CMOqSE7m2s9P%2FjiQJGHz6x9EbVImAJdkeCXzuzdTM8P%2Fmrhoz4O96tqZchYjRm7%2BYep7SFPgMc9P36ECBa5IvvWtEh1lIRfoeicNU5Nkw09Llto7kpgqFYg73fD7WZ%2BJKKmaTNtULKchJYj3qfe6ekIM6e3OMHkrJz4MLp%2F8ZTOPJpf6RGfjC3Ynb9LNV2taI7fgOpq3JrDN9q7we0crVdes%2Bl%2FQf36hUzsCPDERiyR7HpDJCanDOklji627oVsH9H2Ha95uFfFQOwEvsNf9RUiTV32apHrHvVfVrIli6v0g%2FxCy3IiWQf7M2FROWS%2FMZMR8VSvQdf4IGIAefwwHtPc%2F25nQt8vHAjF1Ffa%2F2h%2BP6XktY6BPRZ2yyjmTsIPuXNZbf%2FBNyPUnvzCwwzcG1uB8U96MQqk%2FMMIziIttBlt7B7XTS1yb24wnsfnxAY6pgFkGlEQdUDXi028G%2FveBNpZw%2FxejQtj%2FofI1iTR2ANARB7rhLYWRLcK2mVtzhNZoUg7nNG9O0A%2BmnuHKlw%2Bfo9eYXwqj0BgeMv98%2BRZ5zqSgHvllPyFKVihbqztO8UNcEYUFkm14jwImsYkIQXkMMMKkVxzhEpZxSA1nr6ycy2tjTofLZ7RheatiUSDTptJ11ANRf3qKDcqeY1iZTHdq9JTIdcxHUr1&X-Amz-Signature=b403f6d45d0ecab9cc146655141c881019823349753541fbbf076aaf1bfa1251&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+        "url_expires_at" : "2025-08-11T14:04:46.089Z",
+        "name" : "Frank profile picture.jpg",
+        "url" : "images\/218f454eb3608048a38dd8597c57e7a4_image.jpg",
+        "type" : "file"
+      }
+    ],
+    "title" : "Frank Lefebvre",
+    "published" : true
+  },
+  {
+    "mastodon" : "",
+    "order" : 4,
+    "twitter" : "",
+    "linkedin" : "https:\/\/www.linkedin.com\/in\/jsolsma\/",
+    "lastModified" : "2025-06-23T16:29:00.000Z",
+    "year" : "2025",
+    "id" : "218f454e-b360-8057-b247-fb8d110ba1de",
+    "biography" : "John is a Senior Engineering Manager and iOS Solution Architect with 12 years of mobile app development experience. He has led iOS projects for major clients like Apple and AT&T, including a pioneering eSIM installation app. Currently, he leads the platform iOS team at  Care.com . He holds a Computer Science degree from the University of Iowa and completed UT’s AI\/ML graduate program in 2022. In his free time, he enjoys mountain biking, travel, and amateur auto racing.",
+    "role" : "Mentor",
+    "createdAt" : "2025-06-20T18:14:00.000Z",
+    "name" : "John Solsma",
+    "image" : [
+      {
+        "original_url" : "https:\/\/prod-files-secure.s3.us-west-2.amazonaws.com\/f700fc5e-43a2-490b-9ef1-f04ef9359af2\/c407d879-d15c-4535-a919-99af1920b785\/john_edit.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4665LEKOYGC%2F20250811%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250811T130446Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIC%2FHLfyIhwp0TX4QHlEYTS%2F9HQBKkMGJFhpENSH7OZbIAiBupGeFhyqAia22Gu3Zk3qcYDaSP%2B1Rc79PvhoQrxtu1CqIBAju%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMJqUJGSyBb8HWGm%2FYKtwD063C3klnQedtPdIjdRFUBLMzvdXmAwI6gcUS84NL2mDHap91fcFbLCw65gawLVFOj5svX7Ps%2B%2B9%2FyyD6upnZjB2efmd1MvkJrWMeBvRRoscYWZGBmjg2iWAHgTQtJfz6godkSOnKtp8K9tEXuAeMHeTeKN%2B%2FT0Nus0rx5JnJe7T70R8QM5kgjJN%2FYrtizngBf1pT9CMOqSE7m2s9P%2FjiQJGHz6x9EbVImAJdkeCXzuzdTM8P%2Fmrhoz4O96tqZchYjRm7%2BYep7SFPgMc9P36ECBa5IvvWtEh1lIRfoeicNU5Nkw09Llto7kpgqFYg73fD7WZ%2BJKKmaTNtULKchJYj3qfe6ekIM6e3OMHkrJz4MLp%2F8ZTOPJpf6RGfjC3Ynb9LNV2taI7fgOpq3JrDN9q7we0crVdes%2Bl%2FQf36hUzsCPDERiyR7HpDJCanDOklji627oVsH9H2Ha95uFfFQOwEvsNf9RUiTV32apHrHvVfVrIli6v0g%2FxCy3IiWQf7M2FROWS%2FMZMR8VSvQdf4IGIAefwwHtPc%2F25nQt8vHAjF1Ffa%2F2h%2BP6XktY6BPRZ2yyjmTsIPuXNZbf%2FBNyPUnvzCwwzcG1uB8U96MQqk%2FMMIziIttBlt7B7XTS1yb24wnsfnxAY6pgFkGlEQdUDXi028G%2FveBNpZw%2FxejQtj%2FofI1iTR2ANARB7rhLYWRLcK2mVtzhNZoUg7nNG9O0A%2BmnuHKlw%2Bfo9eYXwqj0BgeMv98%2BRZ5zqSgHvllPyFKVihbqztO8UNcEYUFkm14jwImsYkIQXkMMMKkVxzhEpZxSA1nr6ycy2tjTofLZ7RheatiUSDTptJ11ANRf3qKDcqeY1iZTHdq9JTIdcxHUr1&X-Amz-Signature=38c029f0be863c0d16f0d67b971a7149b5b23d5664389e6e477940baa81cfe89&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+        "url_expires_at" : "2025-08-11T14:04:46.089Z",
+        "name" : "john_edit.jpeg",
+        "url" : "images\/218f454eb3608057b247fb8d110ba1de_image.jpeg",
+        "type" : "file"
+      }
+    ],
+    "title" : "John Solsma",
+    "published" : true
+  },
+  {
+    "mastodon" : "",
+    "order" : 3,
+    "twitter" : "",
+    "linkedin" : "https:\/\/www.linkedin.com\/in\/sofiadiniz\/",
+    "lastModified" : "2025-06-23T16:31:00.000Z",
+    "year" : "2025",
+    "id" : "218f454e-b360-804a-a7cf-f78cbdc7a0a3",
+    "biography" : "Sofia is a 2x Swift Student Challenge winner who began her iOS journey at the Apple Developer Academy. Passionate about accessibility and building apps, she has now crafted projects on iPadOS, watchOS, iOS, and visionOS. When she’s not coding, she enjoys traveling, reading, and learning Italian.",
+    "role" : "Mentor",
+    "createdAt" : "2025-06-20T18:12:00.000Z",
+    "name" : "Sofia Diniz",
+    "image" : [
+      {
+        "name" : "DSCF5103-2_Original.jpg",
+        "url" : "images\/218f454eb360804aa7cff78cbdc7a0a3_image.jpg",
+        "url_expires_at" : "2025-08-11T14:04:46.089Z",
+        "type" : "file",
+        "original_url" : "https:\/\/prod-files-secure.s3.us-west-2.amazonaws.com\/f700fc5e-43a2-490b-9ef1-f04ef9359af2\/e6c84198-d2f0-47d6-8e5c-f8d67c38e8ff\/DSCF5103-2_Original.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4665LEKOYGC%2F20250811%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250811T130446Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjELX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLXdlc3QtMiJGMEQCIC%2FHLfyIhwp0TX4QHlEYTS%2F9HQBKkMGJFhpENSH7OZbIAiBupGeFhyqAia22Gu3Zk3qcYDaSP%2B1Rc79PvhoQrxtu1CqIBAju%2F%2F%2F%2F%2F%2F%2F%2F%2F%2F8BEAAaDDYzNzQyMzE4MzgwNSIMJqUJGSyBb8HWGm%2FYKtwD063C3klnQedtPdIjdRFUBLMzvdXmAwI6gcUS84NL2mDHap91fcFbLCw65gawLVFOj5svX7Ps%2B%2B9%2FyyD6upnZjB2efmd1MvkJrWMeBvRRoscYWZGBmjg2iWAHgTQtJfz6godkSOnKtp8K9tEXuAeMHeTeKN%2B%2FT0Nus0rx5JnJe7T70R8QM5kgjJN%2FYrtizngBf1pT9CMOqSE7m2s9P%2FjiQJGHz6x9EbVImAJdkeCXzuzdTM8P%2Fmrhoz4O96tqZchYjRm7%2BYep7SFPgMc9P36ECBa5IvvWtEh1lIRfoeicNU5Nkw09Llto7kpgqFYg73fD7WZ%2BJKKmaTNtULKchJYj3qfe6ekIM6e3OMHkrJz4MLp%2F8ZTOPJpf6RGfjC3Ynb9LNV2taI7fgOpq3JrDN9q7we0crVdes%2Bl%2FQf36hUzsCPDERiyR7HpDJCanDOklji627oVsH9H2Ha95uFfFQOwEvsNf9RUiTV32apHrHvVfVrIli6v0g%2FxCy3IiWQf7M2FROWS%2FMZMR8VSvQdf4IGIAefwwHtPc%2F25nQt8vHAjF1Ffa%2F2h%2BP6XktY6BPRZ2yyjmTsIPuXNZbf%2FBNyPUnvzCwwzcG1uB8U96MQqk%2FMMIziIttBlt7B7XTS1yb24wnsfnxAY6pgFkGlEQdUDXi028G%2FveBNpZw%2FxejQtj%2FofI1iTR2ANARB7rhLYWRLcK2mVtzhNZoUg7nNG9O0A%2BmnuHKlw%2Bfo9eYXwqj0BgeMv98%2BRZ5zqSgHvllPyFKVihbqztO8UNcEYUFkm14jwImsYkIQXkMMMKkVxzhEpZxSA1nr6ycy2tjTofLZ7RheatiUSDTptJ11ANRf3qKDcqeY1iZTHdq9JTIdcxHUr1&X-Amz-Signature=861e9527dad1ef093dfab18afa1353f469bac56996f8c4f8f3135c6410e977d4&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+      }
+    ],
+    "title" : "Sofia Diniz",
+    "published" : true
+  }
+]
