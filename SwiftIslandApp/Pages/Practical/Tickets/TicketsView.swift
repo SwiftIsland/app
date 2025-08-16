@@ -134,10 +134,8 @@ struct TicketsView: View {
         }
         .navigationTitle("Tickets")
         .toolbar {
-            if appDataModel.tickets.isEmpty {
-                ToolbarItem {
-                    TicketAddButton(currentTicket: $currentTicket)
-                }
+            ToolbarItem {
+                TicketAddButton(currentTicket: $currentTicket)
             }
         }
     }
