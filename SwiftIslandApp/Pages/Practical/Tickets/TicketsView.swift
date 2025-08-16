@@ -23,7 +23,7 @@ struct TicketsView: View {
 
     var body: some View {
         VStack { // swiftlint:disable:this trailing_closure
-            if appDataModel.tickets.isEmpty {
+            if appDataModel.tickets.isEmpty || $currentTicket.wrappedValue == Ticket.empty {
                 VStack(spacing: 10) {
                     Image(systemName: "ticket").resizable().aspectRatio(contentMode: .fit).foregroundColor(Color.questionMarkColor).frame(width: 50)
                     Text("Add tickets by pasting your ti.to/tickets URL")
@@ -100,6 +100,11 @@ struct TicketsView: View {
                 }
                 .tabViewStyle(.page(indexDisplayMode: .automatic))
                 .indexViewStyle(.page(backgroundDisplayMode: colorScheme == .light ? .always : .automatic))
+            }
+        }
+        .onAppear {
+            if let firstTicket = appDataModel.tickets.first, self.currentTicket == Ticket.empty {
+                self.currentTicket = firstTicket
             }
         }
         .onChange(of: appDataModel.tickets, { _, tickets in
