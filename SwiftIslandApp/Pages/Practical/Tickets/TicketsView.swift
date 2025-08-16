@@ -8,6 +8,11 @@ import SwiftIslandDataLogic
 import UIKit
 import CoreImage.CIFilterBuiltins
 
+
+// TODO: base this off the questions API: https://ti.to/docs/api/checkin#questions
+let accomodationQuestionId: Int = 1183436
+let barQuestionId: Int = 1204285
+
 struct TicketsView: View {
     @Environment(\.colorScheme)
     var colorScheme
@@ -17,10 +22,14 @@ struct TicketsView: View {
     @State var answers: [Int: [Answer]] = [:]
 
     func accomodation(for ticket: Ticket) -> String? {
-        // TODO: select the correct question, not just the first
-        return answers[ticket.id]?.first?.humanizedResponse
+        return answers[ticket.id]?.first(where: {$0.questionId == accomodationQuestionId})?.humanizedResponse
     }
 
+    func barTab(for ticket: Ticket) -> String? {
+        return answers[ticket.id]?.first(where: {$0.questionId == barQuestionId})?.humanizedResponse
+    }
+
+    
     var body: some View {
         VStack { // swiftlint:disable:this trailing_closure
             if appDataModel.tickets.isEmpty || $currentTicket.wrappedValue == Ticket.empty {
@@ -82,6 +91,15 @@ struct TicketsView: View {
                                 .foregroundColor(.secondary)
                                 .font(.title3)
                                 .opacity(accomodation == nil ? 0 : 1)
+                                let bartab = barTab(for: ticket)
+                                HStack(spacing: 0) {
+                                    Text(" ")
+                                    Image(systemName: "wineglass.fill")
+                                    Text("   Bar tab \(bartab ?? "TBD")")
+                                }
+                                .foregroundColor(.secondary)
+                                .font(.title3)
+                                .opacity(bartab == nil ? 0 : 1)
                             }
                             if let qrCode = ticket.qrCode {
                                 Image(uiImage: qrCode)
