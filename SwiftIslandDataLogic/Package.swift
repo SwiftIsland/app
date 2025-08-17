@@ -12,16 +12,13 @@ let package = Package(
             targets: ["SwiftIslandDataLogic"])
     ],
     dependencies: [
-        .package(url: "https://github.com/sindresorhus/Defaults.git", from: "8.0.0"),
-        .package(url: "https://github.com/firebase/firebase-ios-sdk.git", from: "10.26.0")
+        .package(url: "https://github.com/sindresorhus/Defaults.git", from: "8.0.0")
     ],
     targets: [
         .target(
             name: "SwiftIslandDataLogic",
             dependencies: [
-                .product(name: "Defaults", package: "Defaults"),
-                .product(name: "FirebaseFirestoreSwift", package: "firebase-ios-sdk"),
-                .product(name: "FirebaseFirestore", package: "firebase-ios-sdk")
+                .product(name: "Defaults", package: "Defaults")
             ]),
         .testTarget(
             name: "SwiftIslandDataLogicTests",

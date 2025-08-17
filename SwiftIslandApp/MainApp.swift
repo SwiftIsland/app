@@ -4,7 +4,6 @@
 //
 
 import SwiftUI
-import Firebase
 import Defaults
 import SwiftIslandDataLogic
 
