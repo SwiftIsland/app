@@ -1,5 +1,15 @@
 [
   {
+    "activity" : "256f454e-b360-8061-8bce-e95df2da0c2b",
+    "createdAt" : 1756159500,
+    "id" : "25af454e-b360-8013-90c0-c6c138848cf9",
+    "lastModified" : 1756159500,
+    "startDate" : {
+      "start" : 1756971000
+    },
+    "title" : "Journal sessie (1)"
+  },
+  {
     "activity" : "254f454e-b360-810c-bec3-f668492deccc",
     "createdAt" : 1755811680,
     "id" : "256f454e-b360-81c7-9730-cddaf2bdbeba",
@@ -80,16 +90,6 @@
     "title" : "Dag opening Niels en Sid"
   },
   {
-    "activity" : "",
-    "createdAt" : 1755811680,
-    "id" : "256f454e-b360-8123-b1bb-c4a703dd6133",
-    "lastModified" : 1755811680,
-    "startDate" : {
-      "start" : 1756969200
-    },
-    "title" : "Crew brief"
-  },
-  {
     "activity" : "254f454e-b360-810c-bec3-f668492deccc",
     "createdAt" : 1755811680,
     "id" : "256f454e-b360-815e-9b6b-ed0cae0b0e49",
@@ -128,16 +128,6 @@
       "start" : 1756908000
     },
     "title" : "Workshop 2 - Tim, Burcu, Bruno, Frank"
-  },
-  {
-    "activity" : "",
-    "createdAt" : 1755811680,
-    "id" : "256f454e-b360-8138-9ff1-da5fbab7c413",
-    "lastModified" : 1755811680,
-    "startDate" : {
-      "start" : 1756904400
-    },
-    "title" : "Pitches"
   },
   {
     "activity" : "254f454e-b360-8143-98c9-ddac7c6bafc9",
