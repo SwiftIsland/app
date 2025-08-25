@@ -6,14 +6,14 @@
     "image" : [
 
     ],
-    "lastModified" : 1755638280,
+    "lastModified" : 1755815100,
     "linkedin" : "",
     "mastodon" : "",
-    "name" : "Sidney de Koning",
+    "name" : "Sid de Koning",
     "order" : 0,
     "published" : false,
     "role" : "Organizer",
-    "title" : "Sidney de Koning",
+    "title" : "Sid de Koning",
     "twitter" : "",
     "year" : "2025"
   },
@@ -81,7 +81,7 @@
   },
   {
     "createdAt" : 1750748700,
-    "description" : "Ryan McLeod is a California-born interaction and game designer now based in the Netherlands. Driven to solve unconventional problems through novel interfaces, he created the no-touch, sensor driven puzzle game Blackbox. Blackbox’s fourth-wall-breaking iOS debut and evolutionary leap to visionOS earned Ryan not one, but two Apple Design Awards. When he isn’t building new puzzles, you might see him speeding around Amsterdam on his bike, foraging for ingredients in parks, and making ice cream.",
+    "description" : "Ryan McLeod is a California-born interaction and game designer now based in the Netherlands. Driven to solve unconventional problems through novel interfaces, he created the no-touch, sensor driven puzzle game Blackbox. Blackbox’s fourth-wall-breaking iOS debut and evolutionary leap to visionOS earned Ryan not one, but two Apple Design Awards. When he isn’t building new puzzles, you might see him speeding around Amsterdam on his bike, foraging for ingredients in parks, and making ice cream.",
     "id" : "21cf454e-b360-8092-a54a-de86afe97f4c",
     "image" : [
       {
@@ -90,7 +90,7 @@
         "url" : "images\/21cf454eb3608092a54ade86afe97f4c_image.jpeg"
       }
     ],
-    "lastModified" : 1755637920,
+    "lastModified" : 1756069620,
     "linkedin" : "",
     "mastodon" : "https:\/\/mastodon.social\/@warpling",
     "name" : "Ryan McLeod",

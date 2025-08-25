@@ -3,45 +3,120 @@
     "slug": "ldvmtxvart",
     "order": 0,
     "number": "1",
-    "title": "1",
+    "title": "🪗",
     "question": "Who has been learning to play button accordion?",
-    "encrypted": "aT1B4YaW0zmQOIIwH5L0Owm7Dm+5GyNiievsnoqpF8vriP8PBLlhvZroZxHXlA7uX4NEg5TrDckqzUc=",
-    "emojis": ["🪗","🎶"]
+    "encrypted": "4riGW9gMwjmXqFZTHG+RGI0uTG+PvCmx61YfAenK158mcHsVsdfWe5dnuHHhaiK1GUaR6zNjKu58iHo=",
+    "emojis": [
+      "🪗",
+      "🎶",
+      "🎵",
+      "🎼",
+      "🦭"
+    ]
   },
   {
     "slug": "ezlmeqjovv",
     "order": 1,
     "number": "2",
-    "title": "2",
+    "title": "🧪",
     "question": "Who has a masters in Chemistry?",
-    "encrypted": "+wa2lxx9wPuztUNJOVI2KBLleLzHeZ/M5nlrx7KiLx+xDbf6cbU9XUt/Ao3MDrgrEjMW",
-    "emojis": ["🧪","⚗️","🔬","⚛️"]
+    "encrypted": "8I2B+AY99mbKRGVBYim29kk78yc/BFsN4o3oJWMiVN/gK3luGcdpvL+IHOPM8BTqA0Qr",
+    "emojis": [
+      "🧪",
+      "⚗️",
+      "🔬",
+      "⚛️",
+      "🎉"
+    ]
   },
   {
     "slug": "lzgwpfwcsc",
     "order": 2,
     "number": "3",
-    "title": "3",
+    "title": "✈️",
     "question": "Who can fall asleep in a plane instantly?",
-    "encrypted": "1gBn7RC49Bcx5RUS3SFw9vbl4VsQbQlZkhdZh+lZBe6XEVqSHRsOKSjKhkSGatG3OGWo",
-    "emojis": ["✈️","😴","💤","🛫","☁️"]
+    "encrypted": "a/pPcprkOMGtm14P5U5nP0kjKUrv567Z2nG2104a6P0wtcbbzICUd8PIhv+/KnmyyHZo",
+    "emojis": [
+      "✈️",
+      "😴",
+      "💤",
+      "🛫",
+      "☁️"
+    ]
   },
   {
     "slug": "rxnjxqnsbj",
     "order": 3,
     "number": "4",
-    "title": "4",
+    "title": "⛳",
     "question": "Who has been a junior Dutch minigolf champion two times?",
-    "encrypted": "DLv/AGhbRwsDM7JLJx0lipkojaO2roNlKX3JgccxSD8EWSoj/KC1rNvu2IL5LmOZvNPpCZUj",
-    "emojis": ["⛳","🏌️","🇳🇱","🏆","🥇"]
+    "encrypted": "IOzLVCvWLl/GDqefevLLd114f4bsXGl81NRCqTOHKqbKN3KWYy3Wq5+YxFH4HXLIlUXkSQ3F",
+    "emojis": [
+      "⛳",
+      "🏌️",
+      "🇳🇱",
+      "🏆",
+      "🥇"
+    ]
   },
   {
-    "slug": "hklsxarifb",
+    "slug": "cafcntuneb",
     "order": 4,
     "number": "5",
-    "title": "5",
-    "question": "Who used to have long hair?",
-    "encrypted": "lvBjiNw/Gti+9mXswxlSyRM+OdWBjnsj2EPqPvJtBElm2EANQtAsdytp1Zs6xZ0JtWwZCg==",
-    "emojis": ["💇","💇‍♂️","✂️","💫","🦭"]
+    "title": "💇",
+    "question": "Who used to have longer hair than his girlfriend?",
+    "encrypted": "GKr7yoRbWc+9yxYUd5+gJRWWwW6RRE9UxuezyywDNPiVuqhwKAJpapybBXShxeTlUODSqg==",
+    "emojis": [
+      "💇",
+      "💇‍♂️",
+      "✂️",
+      "💫",
+      "🦭"
+    ]
+  },
+  {
+    "slug": "jrerjowxkf",
+    "order": 5,
+    "number": "6",
+    "title": "👍",
+    "question": "Who has hitchhikers thumbs?",
+    "encrypted": "CsZHDPID+id4wfDUhG3ot4Hrc9zLPEKQ/zUJ60wX/TQFo8AKSTooQWC+07YxszMirQf7JS+OaNvW",
+    "emojis": [
+      "👍",
+      "🤏",
+      "🚗",
+      "🛣️",
+      "🦭"
+    ]
+  },
+  {
+    "slug": "pzrefrmjlp",
+    "order": 6,
+    "number": "7",
+    "title": "💃",
+    "question": "Who can tap dance?",
+    "encrypted": "JqN23Wv58wVGVUdbEX60QJBQnhpAt4Yvm4z1DYorCVPJ16n7JPHEKNmBnkJW3mXCk1Q=",
+    "emojis": [
+      "💃",
+      "🕺",
+      "👠",
+      "🥁",
+      "🎵"
+    ]
+  },
+  {
+    "slug": "lpqybmtwne",
+    "order": 7,
+    "number": "8",
+    "title": "🐢",
+    "question": "Who I grew up with a tortoise?",
+    "encrypted": "bhlvgSs4RIoJD+/K49xZcbZMwnjxUpLtEsGdQ8Bo83M/naXb6V0XT9XTXGVckM6UqA==",
+    "emojis": [
+      "🐢",
+      "👶",
+      "🏠",
+      "🌱",
+      "💕"
+    ]
   }
 ]

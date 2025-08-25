@@ -1,11 +1,20 @@
 [
   {
     "checked" : false,
+    "createdAt" : 1756070760,
+    "id" : "61",
+    "lastModified" : 1756115220,
+    "order" : 61,
+    "subTitle" : "Most places in the Netherlands take debit (Maestro) and credit cards. Our conference venue Prins Hendrik does too. If you want to be extra prepared, you can add some cash (e.g. €50) to your wallet.",
+    "title" : "Cash money"
+  },
+  {
+    "checked" : false,
     "createdAt" : 1755634680,
     "id" : "60",
-    "lastModified" : 1755634680,
+    "lastModified" : 1756070580,
     "order" : 60,
-    "subTitle" : "For if you want to participate our morning sessions: yoga, mediation or running. Think pants\/shorts, shirt and shoes.",
+    "subTitle" : "For if you want to participate our morning sessions: ballet warmup, mediation or running. Think workout gear\/pants\/shorts, shirt and shoes.",
     "title" : "Workout gear"
   },
   {
@@ -93,9 +102,9 @@
     "checked" : false,
     "createdAt" : 1755634680,
     "id" : "49",
-    "lastModified" : 1755634680,
+    "lastModified" : 1756070700,
     "order" : 49,
-    "subTitle" : "You will need it for the hottub, sauna and cold dip in the sea",
+    "subTitle" : "You will need it for the hottub, and evening swim in the sea",
     "title" : "Swimming gear"
   },
   {
@@ -120,10 +129,10 @@
     "checked" : false,
     "createdAt" : 1755634680,
     "id" : "33",
-    "lastModified" : 1755634680,
+    "lastModified" : 1756070700,
     "order" : 33,
     "subTitle" : "",
-    "title" : "Hat"
+    "title" : "Hat\/Cap"
   },
   {
     "checked" : false,

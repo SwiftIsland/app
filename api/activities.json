@@ -27,10 +27,10 @@
   },
   {
     "createdAt" : 1755634560,
-    "description" : "",
+    "description" : "With 25 years of experience in organizations under her belt, Fennande focuses on culture, change, workplace happiness, and social safety. With more than 10 years of experience in the field of workplace happiness, she is one of the most well-known experts in the Netherlands. She put Happy Office on the map and launched the International Week of Workplace Happiness in 2018, which has now spread across more than 55 countries.\n\nYou can turn to her for an interactive session about how you can take control of your own workplace happiness and what role emotions play in this process.",
     "duration" : 3600,
     "id" : "254f454e-b360-8143-98c9-ddac7c6bafc9",
-    "lastModified" : 1755814020,
+    "lastModified" : 1756069440,
     "location" : "254f454e-b360-81e8-91be-cfa2ad567516",
     "mentors" : [
       "21cf454e-b360-8044-9930-f544c4ebf0f7"
@@ -53,10 +53,10 @@
   },
   {
     "createdAt" : 1755634560,
-    "description" : "",
+    "description" : "Please take part in our yearly ‘cold dip’ at night in the Dutch ocean",
     "duration" : 1800,
     "id" : "254f454e-b360-812a-912e-ed259081cf7c",
-    "lastModified" : 1755814080,
+    "lastModified" : 1756069500,
     "location" : "254f454e-b360-8112-9155-cf2e58896cb4",
     "mentors" : [
 
@@ -131,10 +131,10 @@
   },
   {
     "createdAt" : 1755634560,
-    "description" : "",
+    "description" : "Ryan McLeod is a California-born interaction and game designer now based in the Netherlands. Driven to solve unconventional problems through novel interfaces, he created the no-touch, sensor driven puzzle game Blackbox. Blackbox’s fourth-wall-breaking iOS debut and evolutionary leap to visionOS earned Ryan not one, but two Apple Design Awards. When he isn’t building new puzzles, you might see him speeding around Amsterdam on his bike, foraging for ingredients in parks, and making ice cream.",
     "duration" : 3600,
     "id" : "254f454e-b360-813d-91be-e25be4335b7a",
-    "lastModified" : 1755814140,
+    "lastModified" : 1756069620,
     "location" : "254f454e-b360-81e8-91be-cfa2ad567516",
     "mentors" : [
       "21cf454e-b360-8092-a54a-de86afe97f4c"
@@ -160,20 +160,21 @@
     "description" : "Sidney and Niels will be opening the conference",
     "duration" : 900,
     "id" : "254f454e-b360-8104-baf1-effcc3c04a9b",
-    "lastModified" : 1755635220,
+    "lastModified" : 1755814980,
     "location" : "254f454e-b360-81e8-91be-cfa2ad567516",
     "mentors" : [
-
+      "254f454e-b360-81a2-85c0-da7625a3ef03",
+      "254f454e-b360-8199-b281-d8b7e3c22a5a"
     ],
     "title" : "🎼 Keynote \/ Welcome",
     "type" : "Transport"
   },
   {
     "createdAt" : 1755634560,
-    "description" : "",
+    "description" : "Feli discovered sketchnoting in 2018 and has since used it to make complex talks and ideas more engaging and memorable. She sees it as a tool anyone can use—no drawing skills required—to stay focused, capture key insights, and create vibrant summaries at conferences. For 2025, her vision is to bring introductory sketchnoting workshops to iOS conferences, where attendees can learn the basics, immediately apply them in talks, and leave with personal visual records of what they’ve learned.\n\nWe have a dedicated space in your journal for this one!",
     "duration" : 3600,
     "id" : "254f454e-b360-8106-b8c8-f68b8945046f",
-    "lastModified" : 1755814140,
+    "lastModified" : 1756069920,
     "location" : "254f454e-b360-81e8-91be-cfa2ad567516",
     "mentors" : [
       "21cf454e-b360-803a-94f4-f7ec1e62e6a8"
@@ -302,10 +303,10 @@
   },
   {
     "createdAt" : 1755634560,
-    "description" : "",
+    "description" : "After you arrive at the Swift Island venue, unpack and get to your table for an amazingly delicious meal.\nAlways a treat and always a surprise. But we guarantee it's delicious!\n\nVega and vegan options available.",
     "duration" : 10800,
     "id" : "254f454e-b360-81e7-b93b-f7c34a3af8cd",
-    "lastModified" : 1755814200,
+    "lastModified" : 1756070460,
     "location" : "254f454e-b360-81e7-9972-ee5c76a296c6",
     "mentors" : [
 
