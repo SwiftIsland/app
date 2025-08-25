@@ -32,6 +32,20 @@ if [ -d "${API_SOURCE_DIR}" ]; then
         echo "📄 Copied: ${relative_path}"
     done
     
+    # Copy image files
+    find "${API_SOURCE_DIR}" -type f \( -name "*.jpg" -o -name "*.jpeg" -o -name "*.png" -o -name "*.gif" -o -name "*.svg" \) | while read -r file; do
+        # Get relative path from api directory
+        relative_path="${file#${API_SOURCE_DIR}/}"
+        destination="${API_BUNDLE_DIR}/${relative_path}"
+        
+        # Create subdirectories if needed
+        mkdir -p "$(dirname "${destination}")"
+        
+        # Copy file
+        cp "${file}" "${destination}"
+        echo "🖼️  Copied: ${relative_path}"
+    done
+    
     echo "✅ Successfully copied API data to app bundle"
 else
     echo "⚠️  Warning: API source directory not found at ${API_SOURCE_DIR}"
