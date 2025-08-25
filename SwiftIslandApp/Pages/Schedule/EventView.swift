@@ -27,12 +27,12 @@ struct EventView: View {
                         .dynamicTypeSize(.small ... .large)
                     if (event.duration / 60) < 60 {
                         if event.columnCount > 0 {
-                            Text("\(event.startDate.formatted(date: .omitted, time: .shortened)), \(Int(event.duration / 60)) min")
+                            Text("\(event.startDate.formatted(date: .omitted, time: .shortened)), \(formatDuration(event.duration))")
                                 .foregroundColor(mainColor)
                                 .font(.caption2)
                                 .dynamicTypeSize(.small ... .large)
                         } else {
-                            Text("\(event.startDate.formatted(date: .omitted, time: .shortened)) - \(endDate.formatted(date: .omitted, time: .shortened)), \(Int(event.duration / 60)) min")
+                            Text("\(event.startDate.formatted(date: .omitted, time: .shortened)) - \(endDate.formatted(date: .omitted, time: .shortened)), \(formatDuration(event.duration))")
                                 .foregroundColor(mainColor)
                                 .font(.caption2)
                                 .dynamicTypeSize(.small ... .large)
@@ -42,7 +42,7 @@ struct EventView: View {
                             .foregroundColor(mainColor)
                             .font(.caption2)
                             .dynamicTypeSize(.small ... .large)
-                        Text("Duration: \(Int(event.duration / 60)) min")
+                        Text("Duration: \(formatDuration(event.duration))")
                             .foregroundColor(mainColor)
                             .font(.caption2)
                             .dynamicTypeSize(.small ... .large)
@@ -80,6 +80,23 @@ struct EventView: View {
         .sheet(isPresented: $showEventSheet) {
             EventDetailsView(event: event)
                 .presentationDetents([.medium])
+        }
+    }
+    
+    private func formatDuration(_ duration: TimeInterval) -> String {
+        let totalMinutes = Int(duration / 60)
+        let hours = totalMinutes / 60
+        let minutes = totalMinutes % 60
+        
+        if totalMinutes < 60 {
+            // Less than 1 hour: show as minutes only
+            return "\(totalMinutes) min"
+        } else if minutes == 0 {
+            // Round hours: show as "X hours"
+            return hours == 1 ? "1 hour" : "\(hours) hours"
+        } else {
+            // Mixed hours and minutes: show as "XhYm"
+            return "\(hours)h\(minutes)m"
         }
     }
 }
