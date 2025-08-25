@@ -168,7 +168,7 @@ struct MentorExcerptView: View {
                                     Button(action: {
                                         showUrl = twitter
                                     }, label: {
-                                        Image("x")
+                                        Image("X")
                                     })
                                     .buttonStyle(.plain)
                                     .padding(0)
