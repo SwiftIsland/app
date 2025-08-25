@@ -1,5 +1,14 @@
 [
   {
+    "createdAt" : 1756146480,
+    "id" : "A4D9F82C-7B13-4E98-93B5-3E2A4D6F8D19",
+    "lastModified" : 1756146660,
+    "latitude" : 53.114365,
+    "longitude" : 4.897063,
+    "title" : "The Hatch",
+    "type" : "venue"
+  },
+  {
     "createdAt" : 1755634440,
     "id" : "D991CA37-CF8D-4C83-8BF9-D8B7034EBA67",
     "lastModified" : 1755814320,
@@ -38,19 +47,19 @@
   {
     "createdAt" : 1755634440,
     "id" : "72CC15BC-A4B3-42EE-8149-BEBA00F259A5",
-    "lastModified" : 1755814500,
-    "latitude" : 53.1144956373313,
-    "longitude" : 4.896839228788062,
+    "lastModified" : 1756146780,
+    "latitude" : 53.114654,
+    "longitude" : 4.897237,
     "title" : "Hottub",
     "type" : "poi"
   },
   {
     "createdAt" : 1755634440,
     "id" : "5F3B4D2F-8A50-4EDF-9752-D1968D206690",
-    "lastModified" : 1755814260,
+    "lastModified" : 1756146480,
     "latitude" : 53.11464833839303,
     "longitude" : 4.897341952753361,
-    "title" : "The Anchor",
+    "title" : "The Dock",
     "type" : "venue"
   },
   {
@@ -74,9 +83,9 @@
   {
     "createdAt" : 1755634440,
     "id" : "41650822-4D5F-4203-853F-1E98AD74794F",
-    "lastModified" : 1755634440,
-    "latitude" : 53.11475831498307,
-    "longitude" : 4.8972177443724325,
+    "lastModified" : 1756146720,
+    "latitude" : 53.114989,
+    "longitude" : 4.897377,
     "title" : "Parking",
     "type" : "parking"
   }
