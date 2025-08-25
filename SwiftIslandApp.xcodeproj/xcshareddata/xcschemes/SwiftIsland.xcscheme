@@ -87,7 +87,12 @@
          <EnvironmentVariable
             key = "SWIFTISLAND_USE_BUNDLED_DATA"
             value = "YES"
-            isEnabled = "YES">
+            isEnabled = "NO">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "SWIFTISLAND_BRANCH"
+            value = "feature/sponsor-images"
+            isEnabled = "NO">
          </EnvironmentVariable>
       </EnvironmentVariables>
    </LaunchAction>

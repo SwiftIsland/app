@@ -1,382 +1,342 @@
 [
   {
-    "id" : "25af454e-b360-8067-a6c9-d62c8dda4847",
-    "link" : "https:\/\/www.alfredapp.com\/",
-    "title" : "Alfred",
-    "name" : "Alfred",
-    "type" : "App",
-    "createdAt" : "2025-08-25T16:49:00.000Z",
+    "active" : true,
+    "createdAt" : 1756140540,
     "icon" : [
       {
         "name" : "alfred.png",
         "type" : "file",
-        "url" : "..\/SwiftIsland-app\/api\/images\/25af454eb3608067a6c9d62c8dda4847_icon.png",
-        "original_url" : "https:\/\/prod-files-secure.s3.us-west-2.amazonaws.com\/f700fc5e-43a2-490b-9ef1-f04ef9359af2\/4d2ae8b3-b1b6-430f-bf8b-04437027ead3\/alfred.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667DXGYKCN%2F20250825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250825T170410Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAkaCXVzLXdlc3QtMiJHMEUCIQCjmErajXz7WsKFosGa9ntorm9vuCDftPWZAYGKSnq9QAIgNfVC9LmnMB2c0d1Ujh8z1dmkdwcVVVscj4vNqRcwtxwq%2FwMIYhAAGgw2Mzc0MjMxODM4MDUiDOd0BxZEj6rS0FLM7yrcA%2FWKMOS7WmIrDdcocz95HstbHB5RlLAva7mfAiazOaKO9ee84dEg7kGBzPDsydyUgDzifeZ2GOycWUrsLwyJUEhzTCmz8JRLfGvbUmcbGZ5412z09Vp7PpxssK3unsCfE0J%2FWxhYgo9FaWyBe19dBvkKlhQrKbS%2B1QP0wxzjfim5Hsdw%2BQ0RsPROXccGh7AUdmmrLqmRhcG12pCNQTbOKbupV%2BZ1%2BvZo2twBpYqaDugI%2FPgdNuJfUBvvNmb%2FsBFY5rD%2FmmoFC8ekVgDRzmhIe5vwqYN%2Fw5qB8aDzIVt225xmd2Hy%2BlrkNSDKYDuDA%2BmhLJboOrCfjXH7iDDJsDxCql7kuT0VVDb0%2Bd8Wb0P5vU2RvB47aNu7kUZpfJEDL%2ByysmbHuhoAH5bfkbS5JKyOp4odK82db94Kz0I3LQ9LsQ5X1ANnDtZHsDUgyELdF1ajHoZzwHeXRY41hyaNQUxwq6R%2BnwbWFWT07Ex2KK44uzm1YXlV23tj8rf5kwTK%2FQF3NmHxs34SEOr4vn9TqF6zqHIKVehhscr1RxCRtjrV0kNSIsBMy0qhRv9OEMfOBMstQDrsp5UxQUzW1gmxZ24kbES6FYuA0WpWncS9uvt8qsrqlK5JW9DG%2B6RTt2roMPWcssUGOqUBgPgXwMwrrilvGLcaYfTzihVoo%2FF%2FtYzJ9ui9rKyN52eQn39rjmYFXKfNSajEFBan85sfvgrNeYxCWQA03VNiZBxElGcN1bNUZ8CvOxid4HO6nasjX82C%2Bd8QBv6MquWXpuEW6QOdyG06ZgJYYpAgjf1hwoPbwa0Qe1EhaWbU19ebYo8YYMGKcnX24Ps80jXZ3kdh9iMnGXbTKRZSGEqJ9TemP1sZ&X-Amz-Signature=56b47ebfd7e2c4c8dbe0d505666cdb27213ae066736beaeb1ac8c79410f08fed&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-        "url_expires_at" : "2025-08-25T18:04:10.847Z"
+        "url" : "images\/25af454eb3608067a6c9d62c8dda4847_icon.png"
       }
     ],
-    "active" : true,
-    "lastModified" : "2025-08-25T17:03:00.000Z"
+    "id" : "25af454e-b360-8067-a6c9-d62c8dda4847",
+    "lastModified" : 1756141380,
+    "link" : "https:\/\/www.alfredapp.com\/",
+    "name" : "Alfred",
+    "title" : "Alfred",
+    "type" : "App"
   },
   {
-    "id" : "25af454e-b360-8009-946f-e637b437bd02",
-    "link" : "https:\/\/www.apollooneapp.com\/",
-    "title" : "Apollo One Pro Edition",
-    "name" : "Apollo One Pro Edition",
-    "type" : "App",
-    "createdAt" : "2025-08-25T16:49:00.000Z",
+    "active" : true,
+    "createdAt" : 1756140540,
     "icon" : [
       {
-        "original_url" : "https:\/\/prod-files-secure.s3.us-west-2.amazonaws.com\/f700fc5e-43a2-490b-9ef1-f04ef9359af2\/0f5d475c-e381-4ca7-816b-cee9cc776a9a\/apolloone.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667DXGYKCN%2F20250825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250825T170410Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAkaCXVzLXdlc3QtMiJHMEUCIQCjmErajXz7WsKFosGa9ntorm9vuCDftPWZAYGKSnq9QAIgNfVC9LmnMB2c0d1Ujh8z1dmkdwcVVVscj4vNqRcwtxwq%2FwMIYhAAGgw2Mzc0MjMxODM4MDUiDOd0BxZEj6rS0FLM7yrcA%2FWKMOS7WmIrDdcocz95HstbHB5RlLAva7mfAiazOaKO9ee84dEg7kGBzPDsydyUgDzifeZ2GOycWUrsLwyJUEhzTCmz8JRLfGvbUmcbGZ5412z09Vp7PpxssK3unsCfE0J%2FWxhYgo9FaWyBe19dBvkKlhQrKbS%2B1QP0wxzjfim5Hsdw%2BQ0RsPROXccGh7AUdmmrLqmRhcG12pCNQTbOKbupV%2BZ1%2BvZo2twBpYqaDugI%2FPgdNuJfUBvvNmb%2FsBFY5rD%2FmmoFC8ekVgDRzmhIe5vwqYN%2Fw5qB8aDzIVt225xmd2Hy%2BlrkNSDKYDuDA%2BmhLJboOrCfjXH7iDDJsDxCql7kuT0VVDb0%2Bd8Wb0P5vU2RvB47aNu7kUZpfJEDL%2ByysmbHuhoAH5bfkbS5JKyOp4odK82db94Kz0I3LQ9LsQ5X1ANnDtZHsDUgyELdF1ajHoZzwHeXRY41hyaNQUxwq6R%2BnwbWFWT07Ex2KK44uzm1YXlV23tj8rf5kwTK%2FQF3NmHxs34SEOr4vn9TqF6zqHIKVehhscr1RxCRtjrV0kNSIsBMy0qhRv9OEMfOBMstQDrsp5UxQUzW1gmxZ24kbES6FYuA0WpWncS9uvt8qsrqlK5JW9DG%2B6RTt2roMPWcssUGOqUBgPgXwMwrrilvGLcaYfTzihVoo%2FF%2FtYzJ9ui9rKyN52eQn39rjmYFXKfNSajEFBan85sfvgrNeYxCWQA03VNiZBxElGcN1bNUZ8CvOxid4HO6nasjX82C%2Bd8QBv6MquWXpuEW6QOdyG06ZgJYYpAgjf1hwoPbwa0Qe1EhaWbU19ebYo8YYMGKcnX24Ps80jXZ3kdh9iMnGXbTKRZSGEqJ9TemP1sZ&X-Amz-Signature=246ec7d28adf11a0ca01e7db75b2a86ba096295899701fd6fba8f3a55b91fea1&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
+        "name" : "apolloone.png",
         "type" : "file",
-        "url_expires_at" : "2025-08-25T18:04:10.847Z",
-        "url" : "..\/SwiftIsland-app\/api\/images\/25af454eb3608009946fe637b437bd02_icon.png",
-        "name" : "apolloone.png"
+        "url" : "images\/25af454eb3608009946fe637b437bd02_icon.png"
       }
     ],
-    "active" : true,
-    "lastModified" : "2025-08-25T17:03:00.000Z"
+    "id" : "25af454e-b360-8009-946f-e637b437bd02",
+    "lastModified" : 1756141380,
+    "link" : "https:\/\/www.apollooneapp.com\/",
+    "name" : "Apollo One Pro Edition",
+    "title" : "Apollo One Pro Edition",
+    "type" : "App"
   },
   {
-    "id" : "25af454e-b360-80f6-8c27-caddd5fa84e1",
-    "link" : "https:\/\/www.barebones.com\/products\/bbedit\/",
-    "title" : "BBEdit",
-    "name" : "BBEdit",
-    "type" : "App",
-    "createdAt" : "2025-08-25T16:49:00.000Z",
+    "active" : true,
+    "createdAt" : 1756140540,
     "icon" : [
       {
         "name" : "bbedit.png",
-        "original_url" : "https:\/\/prod-files-secure.s3.us-west-2.amazonaws.com\/f700fc5e-43a2-490b-9ef1-f04ef9359af2\/538613ee-2f8b-4b4f-9075-466579ed01e6\/bbedit.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667DXGYKCN%2F20250825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250825T170410Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAkaCXVzLXdlc3QtMiJHMEUCIQCjmErajXz7WsKFosGa9ntorm9vuCDftPWZAYGKSnq9QAIgNfVC9LmnMB2c0d1Ujh8z1dmkdwcVVVscj4vNqRcwtxwq%2FwMIYhAAGgw2Mzc0MjMxODM4MDUiDOd0BxZEj6rS0FLM7yrcA%2FWKMOS7WmIrDdcocz95HstbHB5RlLAva7mfAiazOaKO9ee84dEg7kGBzPDsydyUgDzifeZ2GOycWUrsLwyJUEhzTCmz8JRLfGvbUmcbGZ5412z09Vp7PpxssK3unsCfE0J%2FWxhYgo9FaWyBe19dBvkKlhQrKbS%2B1QP0wxzjfim5Hsdw%2BQ0RsPROXccGh7AUdmmrLqmRhcG12pCNQTbOKbupV%2BZ1%2BvZo2twBpYqaDugI%2FPgdNuJfUBvvNmb%2FsBFY5rD%2FmmoFC8ekVgDRzmhIe5vwqYN%2Fw5qB8aDzIVt225xmd2Hy%2BlrkNSDKYDuDA%2BmhLJboOrCfjXH7iDDJsDxCql7kuT0VVDb0%2Bd8Wb0P5vU2RvB47aNu7kUZpfJEDL%2ByysmbHuhoAH5bfkbS5JKyOp4odK82db94Kz0I3LQ9LsQ5X1ANnDtZHsDUgyELdF1ajHoZzwHeXRY41hyaNQUxwq6R%2BnwbWFWT07Ex2KK44uzm1YXlV23tj8rf5kwTK%2FQF3NmHxs34SEOr4vn9TqF6zqHIKVehhscr1RxCRtjrV0kNSIsBMy0qhRv9OEMfOBMstQDrsp5UxQUzW1gmxZ24kbES6FYuA0WpWncS9uvt8qsrqlK5JW9DG%2B6RTt2roMPWcssUGOqUBgPgXwMwrrilvGLcaYfTzihVoo%2FF%2FtYzJ9ui9rKyN52eQn39rjmYFXKfNSajEFBan85sfvgrNeYxCWQA03VNiZBxElGcN1bNUZ8CvOxid4HO6nasjX82C%2Bd8QBv6MquWXpuEW6QOdyG06ZgJYYpAgjf1hwoPbwa0Qe1EhaWbU19ebYo8YYMGKcnX24Ps80jXZ3kdh9iMnGXbTKRZSGEqJ9TemP1sZ&X-Amz-Signature=4b7bed3fcc91a21db2be382d86fb29765cad45de3a87997af902d09bbb2aa88e&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-        "url" : "..\/SwiftIsland-app\/api\/images\/25af454eb36080f68c27caddd5fa84e1_icon.png",
-        "url_expires_at" : "2025-08-25T18:04:10.847Z",
-        "type" : "file"
+        "type" : "file",
+        "url" : "images\/25af454eb36080f68c27caddd5fa84e1_icon.png"
       }
     ],
-    "active" : true,
-    "lastModified" : "2025-08-25T17:03:00.000Z"
+    "id" : "25af454e-b360-80f6-8c27-caddd5fa84e1",
+    "lastModified" : 1756141380,
+    "link" : "https:\/\/www.barebones.com\/products\/bbedit\/",
+    "name" : "BBEdit",
+    "title" : "BBEdit",
+    "type" : "App"
   },
   {
-    "id" : "25af454e-b360-80f4-bcf0-c08d93b8fd8b",
-    "link" : "https:\/\/bear.app\/",
-    "title" : "Bear",
-    "name" : "Bear",
-    "type" : "App",
-    "createdAt" : "2025-08-25T16:49:00.000Z",
+    "active" : true,
+    "createdAt" : 1756140540,
     "icon" : [
       {
-        "url_expires_at" : "2025-08-25T18:04:10.847Z",
-        "type" : "file",
-        "original_url" : "https:\/\/prod-files-secure.s3.us-west-2.amazonaws.com\/f700fc5e-43a2-490b-9ef1-f04ef9359af2\/6037fc2c-8752-433d-a661-217e9c072a6a\/bear.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667DXGYKCN%2F20250825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250825T170410Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAkaCXVzLXdlc3QtMiJHMEUCIQCjmErajXz7WsKFosGa9ntorm9vuCDftPWZAYGKSnq9QAIgNfVC9LmnMB2c0d1Ujh8z1dmkdwcVVVscj4vNqRcwtxwq%2FwMIYhAAGgw2Mzc0MjMxODM4MDUiDOd0BxZEj6rS0FLM7yrcA%2FWKMOS7WmIrDdcocz95HstbHB5RlLAva7mfAiazOaKO9ee84dEg7kGBzPDsydyUgDzifeZ2GOycWUrsLwyJUEhzTCmz8JRLfGvbUmcbGZ5412z09Vp7PpxssK3unsCfE0J%2FWxhYgo9FaWyBe19dBvkKlhQrKbS%2B1QP0wxzjfim5Hsdw%2BQ0RsPROXccGh7AUdmmrLqmRhcG12pCNQTbOKbupV%2BZ1%2BvZo2twBpYqaDugI%2FPgdNuJfUBvvNmb%2FsBFY5rD%2FmmoFC8ekVgDRzmhIe5vwqYN%2Fw5qB8aDzIVt225xmd2Hy%2BlrkNSDKYDuDA%2BmhLJboOrCfjXH7iDDJsDxCql7kuT0VVDb0%2Bd8Wb0P5vU2RvB47aNu7kUZpfJEDL%2ByysmbHuhoAH5bfkbS5JKyOp4odK82db94Kz0I3LQ9LsQ5X1ANnDtZHsDUgyELdF1ajHoZzwHeXRY41hyaNQUxwq6R%2BnwbWFWT07Ex2KK44uzm1YXlV23tj8rf5kwTK%2FQF3NmHxs34SEOr4vn9TqF6zqHIKVehhscr1RxCRtjrV0kNSIsBMy0qhRv9OEMfOBMstQDrsp5UxQUzW1gmxZ24kbES6FYuA0WpWncS9uvt8qsrqlK5JW9DG%2B6RTt2roMPWcssUGOqUBgPgXwMwrrilvGLcaYfTzihVoo%2FF%2FtYzJ9ui9rKyN52eQn39rjmYFXKfNSajEFBan85sfvgrNeYxCWQA03VNiZBxElGcN1bNUZ8CvOxid4HO6nasjX82C%2Bd8QBv6MquWXpuEW6QOdyG06ZgJYYpAgjf1hwoPbwa0Qe1EhaWbU19ebYo8YYMGKcnX24Ps80jXZ3kdh9iMnGXbTKRZSGEqJ9TemP1sZ&X-Amz-Signature=aa078f0a221e7deba1c3d2cd732494dda3d2c058d05b6535d98b973562e50531&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
         "name" : "bear.png",
-        "url" : "..\/SwiftIsland-app\/api\/images\/25af454eb36080f4bcf0c08d93b8fd8b_icon.png"
+        "type" : "file",
+        "url" : "images\/25af454eb36080f4bcf0c08d93b8fd8b_icon.png"
       }
     ],
-    "active" : true,
-    "lastModified" : "2025-08-25T17:03:00.000Z"
+    "id" : "25af454e-b360-80f4-bcf0-c08d93b8fd8b",
+    "lastModified" : 1756141380,
+    "link" : "https:\/\/bear.app\/",
+    "name" : "Bear",
+    "title" : "Bear",
+    "type" : "App"
   },
   {
-    "id" : "25af454e-b360-8099-bf5d-d6a665fc77cc",
-    "link" : "https:\/\/www.blackboxpuzzles.com\/",
-    "title" : "Blackbox",
-    "name" : "Blackbox",
-    "type" : "App",
-    "createdAt" : "2025-08-25T16:49:00.000Z",
+    "active" : true,
+    "createdAt" : 1756140540,
     "icon" : [
       {
-        "type" : "file",
-        "original_url" : "https:\/\/prod-files-secure.s3.us-west-2.amazonaws.com\/f700fc5e-43a2-490b-9ef1-f04ef9359af2\/1d264d13-6217-4d12-bc04-ea5707255b9a\/blackbox.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667DXGYKCN%2F20250825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250825T170410Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAkaCXVzLXdlc3QtMiJHMEUCIQCjmErajXz7WsKFosGa9ntorm9vuCDftPWZAYGKSnq9QAIgNfVC9LmnMB2c0d1Ujh8z1dmkdwcVVVscj4vNqRcwtxwq%2FwMIYhAAGgw2Mzc0MjMxODM4MDUiDOd0BxZEj6rS0FLM7yrcA%2FWKMOS7WmIrDdcocz95HstbHB5RlLAva7mfAiazOaKO9ee84dEg7kGBzPDsydyUgDzifeZ2GOycWUrsLwyJUEhzTCmz8JRLfGvbUmcbGZ5412z09Vp7PpxssK3unsCfE0J%2FWxhYgo9FaWyBe19dBvkKlhQrKbS%2B1QP0wxzjfim5Hsdw%2BQ0RsPROXccGh7AUdmmrLqmRhcG12pCNQTbOKbupV%2BZ1%2BvZo2twBpYqaDugI%2FPgdNuJfUBvvNmb%2FsBFY5rD%2FmmoFC8ekVgDRzmhIe5vwqYN%2Fw5qB8aDzIVt225xmd2Hy%2BlrkNSDKYDuDA%2BmhLJboOrCfjXH7iDDJsDxCql7kuT0VVDb0%2Bd8Wb0P5vU2RvB47aNu7kUZpfJEDL%2ByysmbHuhoAH5bfkbS5JKyOp4odK82db94Kz0I3LQ9LsQ5X1ANnDtZHsDUgyELdF1ajHoZzwHeXRY41hyaNQUxwq6R%2BnwbWFWT07Ex2KK44uzm1YXlV23tj8rf5kwTK%2FQF3NmHxs34SEOr4vn9TqF6zqHIKVehhscr1RxCRtjrV0kNSIsBMy0qhRv9OEMfOBMstQDrsp5UxQUzW1gmxZ24kbES6FYuA0WpWncS9uvt8qsrqlK5JW9DG%2B6RTt2roMPWcssUGOqUBgPgXwMwrrilvGLcaYfTzihVoo%2FF%2FtYzJ9ui9rKyN52eQn39rjmYFXKfNSajEFBan85sfvgrNeYxCWQA03VNiZBxElGcN1bNUZ8CvOxid4HO6nasjX82C%2Bd8QBv6MquWXpuEW6QOdyG06ZgJYYpAgjf1hwoPbwa0Qe1EhaWbU19ebYo8YYMGKcnX24Ps80jXZ3kdh9iMnGXbTKRZSGEqJ9TemP1sZ&X-Amz-Signature=e518af7e6003e95b94d8b0af8e60c80512c2039bde0ae57e2db9620d3f7c7f5f&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-        "url_expires_at" : "2025-08-25T18:04:10.847Z",
         "name" : "blackbox.png",
-        "url" : "..\/SwiftIsland-app\/api\/images\/25af454eb3608099bf5dd6a665fc77cc_icon.png"
+        "type" : "file",
+        "url" : "images\/25af454eb3608099bf5dd6a665fc77cc_icon.png"
       }
     ],
-    "active" : true,
-    "lastModified" : "2025-08-25T17:03:00.000Z"
+    "id" : "25af454e-b360-8099-bf5d-d6a665fc77cc",
+    "lastModified" : 1756141380,
+    "link" : "https:\/\/www.blackboxpuzzles.com\/",
+    "name" : "Blackbox",
+    "title" : "Blackbox",
+    "type" : "App"
   },
   {
-    "id" : "25af454e-b360-8096-990f-d34f9d90b246",
-    "link" : "https:\/\/www.charlesproxy.com\/",
-    "title" : "Charles",
-    "name" : "Charles",
-    "type" : "App",
-    "createdAt" : "2025-08-25T16:49:00.000Z",
+    "active" : true,
+    "createdAt" : 1756140540,
     "icon" : [
       {
-        "type" : "file",
         "name" : "charles.png",
-        "url_expires_at" : "2025-08-25T18:04:10.847Z",
-        "original_url" : "https:\/\/prod-files-secure.s3.us-west-2.amazonaws.com\/f700fc5e-43a2-490b-9ef1-f04ef9359af2\/5c424eea-ae11-4db2-8bd8-fa659ff44d28\/charles.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667DXGYKCN%2F20250825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250825T170410Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAkaCXVzLXdlc3QtMiJHMEUCIQCjmErajXz7WsKFosGa9ntorm9vuCDftPWZAYGKSnq9QAIgNfVC9LmnMB2c0d1Ujh8z1dmkdwcVVVscj4vNqRcwtxwq%2FwMIYhAAGgw2Mzc0MjMxODM4MDUiDOd0BxZEj6rS0FLM7yrcA%2FWKMOS7WmIrDdcocz95HstbHB5RlLAva7mfAiazOaKO9ee84dEg7kGBzPDsydyUgDzifeZ2GOycWUrsLwyJUEhzTCmz8JRLfGvbUmcbGZ5412z09Vp7PpxssK3unsCfE0J%2FWxhYgo9FaWyBe19dBvkKlhQrKbS%2B1QP0wxzjfim5Hsdw%2BQ0RsPROXccGh7AUdmmrLqmRhcG12pCNQTbOKbupV%2BZ1%2BvZo2twBpYqaDugI%2FPgdNuJfUBvvNmb%2FsBFY5rD%2FmmoFC8ekVgDRzmhIe5vwqYN%2Fw5qB8aDzIVt225xmd2Hy%2BlrkNSDKYDuDA%2BmhLJboOrCfjXH7iDDJsDxCql7kuT0VVDb0%2Bd8Wb0P5vU2RvB47aNu7kUZpfJEDL%2ByysmbHuhoAH5bfkbS5JKyOp4odK82db94Kz0I3LQ9LsQ5X1ANnDtZHsDUgyELdF1ajHoZzwHeXRY41hyaNQUxwq6R%2BnwbWFWT07Ex2KK44uzm1YXlV23tj8rf5kwTK%2FQF3NmHxs34SEOr4vn9TqF6zqHIKVehhscr1RxCRtjrV0kNSIsBMy0qhRv9OEMfOBMstQDrsp5UxQUzW1gmxZ24kbES6FYuA0WpWncS9uvt8qsrqlK5JW9DG%2B6RTt2roMPWcssUGOqUBgPgXwMwrrilvGLcaYfTzihVoo%2FF%2FtYzJ9ui9rKyN52eQn39rjmYFXKfNSajEFBan85sfvgrNeYxCWQA03VNiZBxElGcN1bNUZ8CvOxid4HO6nasjX82C%2Bd8QBv6MquWXpuEW6QOdyG06ZgJYYpAgjf1hwoPbwa0Qe1EhaWbU19ebYo8YYMGKcnX24Ps80jXZ3kdh9iMnGXbTKRZSGEqJ9TemP1sZ&X-Amz-Signature=c3b4864fe9646c07ab48031e4cfc1d7018ddbf4208569d52929c8ea6a88d48b7&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-        "url" : "..\/SwiftIsland-app\/api\/images\/25af454eb3608096990fd34f9d90b246_icon.png"
-      }
-    ],
-    "active" : true,
-    "lastModified" : "2025-08-25T17:03:00.000Z"
-  },
-  {
-    "id" : "25af454e-b360-80f0-8ee5-d7a7ce30bc3e",
-    "link" : "https:\/\/cleanshot.com\/",
-    "title" : "CleanShot",
-    "name" : "CleanShot",
-    "type" : "App",
-    "createdAt" : "2025-08-25T16:49:00.000Z",
-    "icon" : [
-      {
         "type" : "file",
-        "name" : "cleanshot.png",
-        "url" : "..\/SwiftIsland-app\/api\/images\/25af454eb36080f08ee5d7a7ce30bc3e_icon.png",
-        "url_expires_at" : "2025-08-25T18:04:10.847Z",
-        "original_url" : "https:\/\/prod-files-secure.s3.us-west-2.amazonaws.com\/f700fc5e-43a2-490b-9ef1-f04ef9359af2\/6e4be962-b7fe-49c3-83b4-9f29d9edd571\/cleanshot.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667DXGYKCN%2F20250825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250825T170410Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAkaCXVzLXdlc3QtMiJHMEUCIQCjmErajXz7WsKFosGa9ntorm9vuCDftPWZAYGKSnq9QAIgNfVC9LmnMB2c0d1Ujh8z1dmkdwcVVVscj4vNqRcwtxwq%2FwMIYhAAGgw2Mzc0MjMxODM4MDUiDOd0BxZEj6rS0FLM7yrcA%2FWKMOS7WmIrDdcocz95HstbHB5RlLAva7mfAiazOaKO9ee84dEg7kGBzPDsydyUgDzifeZ2GOycWUrsLwyJUEhzTCmz8JRLfGvbUmcbGZ5412z09Vp7PpxssK3unsCfE0J%2FWxhYgo9FaWyBe19dBvkKlhQrKbS%2B1QP0wxzjfim5Hsdw%2BQ0RsPROXccGh7AUdmmrLqmRhcG12pCNQTbOKbupV%2BZ1%2BvZo2twBpYqaDugI%2FPgdNuJfUBvvNmb%2FsBFY5rD%2FmmoFC8ekVgDRzmhIe5vwqYN%2Fw5qB8aDzIVt225xmd2Hy%2BlrkNSDKYDuDA%2BmhLJboOrCfjXH7iDDJsDxCql7kuT0VVDb0%2Bd8Wb0P5vU2RvB47aNu7kUZpfJEDL%2ByysmbHuhoAH5bfkbS5JKyOp4odK82db94Kz0I3LQ9LsQ5X1ANnDtZHsDUgyELdF1ajHoZzwHeXRY41hyaNQUxwq6R%2BnwbWFWT07Ex2KK44uzm1YXlV23tj8rf5kwTK%2FQF3NmHxs34SEOr4vn9TqF6zqHIKVehhscr1RxCRtjrV0kNSIsBMy0qhRv9OEMfOBMstQDrsp5UxQUzW1gmxZ24kbES6FYuA0WpWncS9uvt8qsrqlK5JW9DG%2B6RTt2roMPWcssUGOqUBgPgXwMwrrilvGLcaYfTzihVoo%2FF%2FtYzJ9ui9rKyN52eQn39rjmYFXKfNSajEFBan85sfvgrNeYxCWQA03VNiZBxElGcN1bNUZ8CvOxid4HO6nasjX82C%2Bd8QBv6MquWXpuEW6QOdyG06ZgJYYpAgjf1hwoPbwa0Qe1EhaWbU19ebYo8YYMGKcnX24Ps80jXZ3kdh9iMnGXbTKRZSGEqJ9TemP1sZ&X-Amz-Signature=c6f1f89e69d6a3bf08be56e17b4ead24f5d93d9320179f80202f91397c5c4673&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+        "url" : "images\/25af454eb3608096990fd34f9d90b246_icon.png"
       }
     ],
-    "active" : true,
-    "lastModified" : "2025-08-25T17:03:00.000Z"
+    "id" : "25af454e-b360-8096-990f-d34f9d90b246",
+    "lastModified" : 1756141380,
+    "link" : "https:\/\/www.charlesproxy.com\/",
+    "name" : "Charles",
+    "title" : "Charles",
+    "type" : "App"
   },
   {
-    "id" : "25af454e-b360-80df-b6a6-d7dd7f53dd19",
-    "link" : "https:\/\/framer.com",
-    "title" : "Framer",
-    "name" : "Framer",
-    "type" : "App",
-    "createdAt" : "2025-08-25T16:49:00.000Z",
+    "active" : true,
+    "createdAt" : 1756140540,
     "icon" : [
       {
-        "original_url" : "https:\/\/prod-files-secure.s3.us-west-2.amazonaws.com\/f700fc5e-43a2-490b-9ef1-f04ef9359af2\/2c3975c5-cd91-41f4-8d6e-0ec4fa69e803\/framer.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667DXGYKCN%2F20250825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250825T170410Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAkaCXVzLXdlc3QtMiJHMEUCIQCjmErajXz7WsKFosGa9ntorm9vuCDftPWZAYGKSnq9QAIgNfVC9LmnMB2c0d1Ujh8z1dmkdwcVVVscj4vNqRcwtxwq%2FwMIYhAAGgw2Mzc0MjMxODM4MDUiDOd0BxZEj6rS0FLM7yrcA%2FWKMOS7WmIrDdcocz95HstbHB5RlLAva7mfAiazOaKO9ee84dEg7kGBzPDsydyUgDzifeZ2GOycWUrsLwyJUEhzTCmz8JRLfGvbUmcbGZ5412z09Vp7PpxssK3unsCfE0J%2FWxhYgo9FaWyBe19dBvkKlhQrKbS%2B1QP0wxzjfim5Hsdw%2BQ0RsPROXccGh7AUdmmrLqmRhcG12pCNQTbOKbupV%2BZ1%2BvZo2twBpYqaDugI%2FPgdNuJfUBvvNmb%2FsBFY5rD%2FmmoFC8ekVgDRzmhIe5vwqYN%2Fw5qB8aDzIVt225xmd2Hy%2BlrkNSDKYDuDA%2BmhLJboOrCfjXH7iDDJsDxCql7kuT0VVDb0%2Bd8Wb0P5vU2RvB47aNu7kUZpfJEDL%2ByysmbHuhoAH5bfkbS5JKyOp4odK82db94Kz0I3LQ9LsQ5X1ANnDtZHsDUgyELdF1ajHoZzwHeXRY41hyaNQUxwq6R%2BnwbWFWT07Ex2KK44uzm1YXlV23tj8rf5kwTK%2FQF3NmHxs34SEOr4vn9TqF6zqHIKVehhscr1RxCRtjrV0kNSIsBMy0qhRv9OEMfOBMstQDrsp5UxQUzW1gmxZ24kbES6FYuA0WpWncS9uvt8qsrqlK5JW9DG%2B6RTt2roMPWcssUGOqUBgPgXwMwrrilvGLcaYfTzihVoo%2FF%2FtYzJ9ui9rKyN52eQn39rjmYFXKfNSajEFBan85sfvgrNeYxCWQA03VNiZBxElGcN1bNUZ8CvOxid4HO6nasjX82C%2Bd8QBv6MquWXpuEW6QOdyG06ZgJYYpAgjf1hwoPbwa0Qe1EhaWbU19ebYo8YYMGKcnX24Ps80jXZ3kdh9iMnGXbTKRZSGEqJ9TemP1sZ&X-Amz-Signature=69f3f6b2a9b5c842ceb9b93b99b9d7937d1b0deb1f28d457bb054ad62286f14f&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-        "url" : "..\/SwiftIsland-app\/api\/images\/25af454eb36080dfb6a6d7dd7f53dd19_icon.png",
+        "name" : "cleanshot.png",
+        "type" : "file",
+        "url" : "images\/25af454eb36080f08ee5d7a7ce30bc3e_icon.png"
+      }
+    ],
+    "id" : "25af454e-b360-80f0-8ee5-d7a7ce30bc3e",
+    "lastModified" : 1756141380,
+    "link" : "https:\/\/cleanshot.com\/",
+    "name" : "CleanShot",
+    "title" : "CleanShot",
+    "type" : "App"
+  },
+  {
+    "active" : true,
+    "createdAt" : 1756140540,
+    "icon" : [
+      {
         "name" : "framer.png",
         "type" : "file",
-        "url_expires_at" : "2025-08-25T18:04:10.847Z"
+        "url" : "images\/25af454eb36080dfb6a6d7dd7f53dd19_icon.png"
       }
     ],
-    "active" : true,
-    "lastModified" : "2025-08-25T17:03:00.000Z"
+    "id" : "25af454e-b360-80df-b6a6-d7dd7f53dd19",
+    "lastModified" : 1756141380,
+    "link" : "https:\/\/framer.com",
+    "name" : "Framer",
+    "title" : "Framer",
+    "type" : "App"
   },
   {
-    "id" : "25af454e-b360-806c-bb82-da32c75ab633",
-    "link" : "https:\/\/kaleidoscope.app\/",
-    "title" : "Kaleidoscope",
-    "name" : "Kaleidoscope",
-    "type" : "App",
-    "createdAt" : "2025-08-25T16:49:00.000Z",
+    "active" : true,
+    "createdAt" : 1756140540,
     "icon" : [
       {
         "name" : "kaleidoscope.png",
-        "url_expires_at" : "2025-08-25T18:04:10.847Z",
-        "original_url" : "https:\/\/prod-files-secure.s3.us-west-2.amazonaws.com\/f700fc5e-43a2-490b-9ef1-f04ef9359af2\/7da7f4de-3a1b-43ab-9ecf-8538978a31fc\/kaleidoscope.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667DXGYKCN%2F20250825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250825T170410Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAkaCXVzLXdlc3QtMiJHMEUCIQCjmErajXz7WsKFosGa9ntorm9vuCDftPWZAYGKSnq9QAIgNfVC9LmnMB2c0d1Ujh8z1dmkdwcVVVscj4vNqRcwtxwq%2FwMIYhAAGgw2Mzc0MjMxODM4MDUiDOd0BxZEj6rS0FLM7yrcA%2FWKMOS7WmIrDdcocz95HstbHB5RlLAva7mfAiazOaKO9ee84dEg7kGBzPDsydyUgDzifeZ2GOycWUrsLwyJUEhzTCmz8JRLfGvbUmcbGZ5412z09Vp7PpxssK3unsCfE0J%2FWxhYgo9FaWyBe19dBvkKlhQrKbS%2B1QP0wxzjfim5Hsdw%2BQ0RsPROXccGh7AUdmmrLqmRhcG12pCNQTbOKbupV%2BZ1%2BvZo2twBpYqaDugI%2FPgdNuJfUBvvNmb%2FsBFY5rD%2FmmoFC8ekVgDRzmhIe5vwqYN%2Fw5qB8aDzIVt225xmd2Hy%2BlrkNSDKYDuDA%2BmhLJboOrCfjXH7iDDJsDxCql7kuT0VVDb0%2Bd8Wb0P5vU2RvB47aNu7kUZpfJEDL%2ByysmbHuhoAH5bfkbS5JKyOp4odK82db94Kz0I3LQ9LsQ5X1ANnDtZHsDUgyELdF1ajHoZzwHeXRY41hyaNQUxwq6R%2BnwbWFWT07Ex2KK44uzm1YXlV23tj8rf5kwTK%2FQF3NmHxs34SEOr4vn9TqF6zqHIKVehhscr1RxCRtjrV0kNSIsBMy0qhRv9OEMfOBMstQDrsp5UxQUzW1gmxZ24kbES6FYuA0WpWncS9uvt8qsrqlK5JW9DG%2B6RTt2roMPWcssUGOqUBgPgXwMwrrilvGLcaYfTzihVoo%2FF%2FtYzJ9ui9rKyN52eQn39rjmYFXKfNSajEFBan85sfvgrNeYxCWQA03VNiZBxElGcN1bNUZ8CvOxid4HO6nasjX82C%2Bd8QBv6MquWXpuEW6QOdyG06ZgJYYpAgjf1hwoPbwa0Qe1EhaWbU19ebYo8YYMGKcnX24Ps80jXZ3kdh9iMnGXbTKRZSGEqJ9TemP1sZ&X-Amz-Signature=21ef00b3396132f94ac57d963820910db3b83dcb2e01f5e79a71417565bad6a7&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
         "type" : "file",
-        "url" : "..\/SwiftIsland-app\/api\/images\/25af454eb360806cbb82da32c75ab633_icon.png"
+        "url" : "images\/25af454eb360806cbb82da32c75ab633_icon.png"
       }
     ],
-    "active" : true,
-    "lastModified" : "2025-08-25T17:03:00.000Z"
+    "id" : "25af454e-b360-806c-bb82-da32c75ab633",
+    "lastModified" : 1756141380,
+    "link" : "https:\/\/kaleidoscope.app\/",
+    "name" : "Kaleidoscope",
+    "title" : "Kaleidoscope",
+    "type" : "App"
   },
   {
-    "id" : "25af454e-b360-800b-bce1-ed2e81e45b59",
-    "link" : "https:\/\/www.mindnode.com\/",
-    "title" : "MindNode",
-    "name" : "MindNode",
-    "type" : "App",
-    "createdAt" : "2025-08-25T16:49:00.000Z",
+    "active" : true,
+    "createdAt" : 1756140540,
     "icon" : [
       {
-        "url_expires_at" : "2025-08-25T18:04:10.847Z",
-        "type" : "file",
         "name" : "mindnode.png",
-        "original_url" : "https:\/\/prod-files-secure.s3.us-west-2.amazonaws.com\/f700fc5e-43a2-490b-9ef1-f04ef9359af2\/133ade5d-d3b7-4758-8878-b7a01b697b3d\/mindnode.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667DXGYKCN%2F20250825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250825T170410Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAkaCXVzLXdlc3QtMiJHMEUCIQCjmErajXz7WsKFosGa9ntorm9vuCDftPWZAYGKSnq9QAIgNfVC9LmnMB2c0d1Ujh8z1dmkdwcVVVscj4vNqRcwtxwq%2FwMIYhAAGgw2Mzc0MjMxODM4MDUiDOd0BxZEj6rS0FLM7yrcA%2FWKMOS7WmIrDdcocz95HstbHB5RlLAva7mfAiazOaKO9ee84dEg7kGBzPDsydyUgDzifeZ2GOycWUrsLwyJUEhzTCmz8JRLfGvbUmcbGZ5412z09Vp7PpxssK3unsCfE0J%2FWxhYgo9FaWyBe19dBvkKlhQrKbS%2B1QP0wxzjfim5Hsdw%2BQ0RsPROXccGh7AUdmmrLqmRhcG12pCNQTbOKbupV%2BZ1%2BvZo2twBpYqaDugI%2FPgdNuJfUBvvNmb%2FsBFY5rD%2FmmoFC8ekVgDRzmhIe5vwqYN%2Fw5qB8aDzIVt225xmd2Hy%2BlrkNSDKYDuDA%2BmhLJboOrCfjXH7iDDJsDxCql7kuT0VVDb0%2Bd8Wb0P5vU2RvB47aNu7kUZpfJEDL%2ByysmbHuhoAH5bfkbS5JKyOp4odK82db94Kz0I3LQ9LsQ5X1ANnDtZHsDUgyELdF1ajHoZzwHeXRY41hyaNQUxwq6R%2BnwbWFWT07Ex2KK44uzm1YXlV23tj8rf5kwTK%2FQF3NmHxs34SEOr4vn9TqF6zqHIKVehhscr1RxCRtjrV0kNSIsBMy0qhRv9OEMfOBMstQDrsp5UxQUzW1gmxZ24kbES6FYuA0WpWncS9uvt8qsrqlK5JW9DG%2B6RTt2roMPWcssUGOqUBgPgXwMwrrilvGLcaYfTzihVoo%2FF%2FtYzJ9ui9rKyN52eQn39rjmYFXKfNSajEFBan85sfvgrNeYxCWQA03VNiZBxElGcN1bNUZ8CvOxid4HO6nasjX82C%2Bd8QBv6MquWXpuEW6QOdyG06ZgJYYpAgjf1hwoPbwa0Qe1EhaWbU19ebYo8YYMGKcnX24Ps80jXZ3kdh9iMnGXbTKRZSGEqJ9TemP1sZ&X-Amz-Signature=07b66eb2442677c3136dfdf1429430ba71fbf3782b2a87bcae472f8a429ebfef&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-        "url" : "..\/SwiftIsland-app\/api\/images\/25af454eb360800bbce1ed2e81e45b59_icon.png"
+        "type" : "file",
+        "url" : "images\/25af454eb360800bbce1ed2e81e45b59_icon.png"
       }
     ],
-    "active" : true,
-    "lastModified" : "2025-08-25T17:03:00.000Z"
+    "id" : "25af454e-b360-800b-bce1-ed2e81e45b59",
+    "lastModified" : 1756141380,
+    "link" : "https:\/\/www.mindnode.com\/",
+    "name" : "MindNode",
+    "title" : "MindNode",
+    "type" : "App"
   },
   {
-    "id" : "25af454e-b360-8008-ad00-f4ef950a239c",
-    "link" : "https:\/\/www.omnigroup.com\/omnifocus\/",
-    "title" : "Omnifocus",
-    "name" : "Omnifocus",
-    "type" : "App",
-    "createdAt" : "2025-08-25T16:49:00.000Z",
+    "active" : true,
+    "createdAt" : 1756140540,
     "icon" : [
       {
         "name" : "omnifocus.png",
-        "url_expires_at" : "2025-08-25T18:04:10.847Z",
-        "url" : "..\/SwiftIsland-app\/api\/images\/25af454eb3608008ad00f4ef950a239c_icon.png",
         "type" : "file",
-        "original_url" : "https:\/\/prod-files-secure.s3.us-west-2.amazonaws.com\/f700fc5e-43a2-490b-9ef1-f04ef9359af2\/90451118-7e62-48e5-8e25-a4142e71e98a\/omnifocus.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667DXGYKCN%2F20250825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250825T170410Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAkaCXVzLXdlc3QtMiJHMEUCIQCjmErajXz7WsKFosGa9ntorm9vuCDftPWZAYGKSnq9QAIgNfVC9LmnMB2c0d1Ujh8z1dmkdwcVVVscj4vNqRcwtxwq%2FwMIYhAAGgw2Mzc0MjMxODM4MDUiDOd0BxZEj6rS0FLM7yrcA%2FWKMOS7WmIrDdcocz95HstbHB5RlLAva7mfAiazOaKO9ee84dEg7kGBzPDsydyUgDzifeZ2GOycWUrsLwyJUEhzTCmz8JRLfGvbUmcbGZ5412z09Vp7PpxssK3unsCfE0J%2FWxhYgo9FaWyBe19dBvkKlhQrKbS%2B1QP0wxzjfim5Hsdw%2BQ0RsPROXccGh7AUdmmrLqmRhcG12pCNQTbOKbupV%2BZ1%2BvZo2twBpYqaDugI%2FPgdNuJfUBvvNmb%2FsBFY5rD%2FmmoFC8ekVgDRzmhIe5vwqYN%2Fw5qB8aDzIVt225xmd2Hy%2BlrkNSDKYDuDA%2BmhLJboOrCfjXH7iDDJsDxCql7kuT0VVDb0%2Bd8Wb0P5vU2RvB47aNu7kUZpfJEDL%2ByysmbHuhoAH5bfkbS5JKyOp4odK82db94Kz0I3LQ9LsQ5X1ANnDtZHsDUgyELdF1ajHoZzwHeXRY41hyaNQUxwq6R%2BnwbWFWT07Ex2KK44uzm1YXlV23tj8rf5kwTK%2FQF3NmHxs34SEOr4vn9TqF6zqHIKVehhscr1RxCRtjrV0kNSIsBMy0qhRv9OEMfOBMstQDrsp5UxQUzW1gmxZ24kbES6FYuA0WpWncS9uvt8qsrqlK5JW9DG%2B6RTt2roMPWcssUGOqUBgPgXwMwrrilvGLcaYfTzihVoo%2FF%2FtYzJ9ui9rKyN52eQn39rjmYFXKfNSajEFBan85sfvgrNeYxCWQA03VNiZBxElGcN1bNUZ8CvOxid4HO6nasjX82C%2Bd8QBv6MquWXpuEW6QOdyG06ZgJYYpAgjf1hwoPbwa0Qe1EhaWbU19ebYo8YYMGKcnX24Ps80jXZ3kdh9iMnGXbTKRZSGEqJ9TemP1sZ&X-Amz-Signature=fdc778be2312e0c4ed7411e1ede189565957774da3237ec7e73cc528296f22ca&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+        "url" : "images\/25af454eb3608008ad00f4ef950a239c_icon.png"
       }
     ],
-    "active" : true,
-    "lastModified" : "2025-08-25T17:03:00.000Z"
+    "id" : "25af454e-b360-8008-ad00-f4ef950a239c",
+    "lastModified" : 1756141380,
+    "link" : "https:\/\/www.omnigroup.com\/omnifocus\/",
+    "name" : "Omnifocus",
+    "title" : "Omnifocus",
+    "type" : "App"
   },
   {
-    "id" : "25af454e-b360-8032-82d1-e94903b7b33e",
-    "link" : "https:\/\/apps.apple.com\/nl\/app\/planetfinder-pro\/id6667116182",
-    "title" : "PlanetFinder Pro",
-    "name" : "PlanetFinder Pro",
-    "type" : "App",
-    "createdAt" : "2025-08-25T16:49:00.000Z",
+    "active" : true,
+    "createdAt" : 1756140540,
     "icon" : [
       {
-        "type" : "file",
-        "original_url" : "https:\/\/prod-files-secure.s3.us-west-2.amazonaws.com\/f700fc5e-43a2-490b-9ef1-f04ef9359af2\/d23d6a70-11c3-4f03-9e50-242daad1969e\/icon_generated9_18_jun_2025.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667DXGYKCN%2F20250825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250825T170410Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAkaCXVzLXdlc3QtMiJHMEUCIQCjmErajXz7WsKFosGa9ntorm9vuCDftPWZAYGKSnq9QAIgNfVC9LmnMB2c0d1Ujh8z1dmkdwcVVVscj4vNqRcwtxwq%2FwMIYhAAGgw2Mzc0MjMxODM4MDUiDOd0BxZEj6rS0FLM7yrcA%2FWKMOS7WmIrDdcocz95HstbHB5RlLAva7mfAiazOaKO9ee84dEg7kGBzPDsydyUgDzifeZ2GOycWUrsLwyJUEhzTCmz8JRLfGvbUmcbGZ5412z09Vp7PpxssK3unsCfE0J%2FWxhYgo9FaWyBe19dBvkKlhQrKbS%2B1QP0wxzjfim5Hsdw%2BQ0RsPROXccGh7AUdmmrLqmRhcG12pCNQTbOKbupV%2BZ1%2BvZo2twBpYqaDugI%2FPgdNuJfUBvvNmb%2FsBFY5rD%2FmmoFC8ekVgDRzmhIe5vwqYN%2Fw5qB8aDzIVt225xmd2Hy%2BlrkNSDKYDuDA%2BmhLJboOrCfjXH7iDDJsDxCql7kuT0VVDb0%2Bd8Wb0P5vU2RvB47aNu7kUZpfJEDL%2ByysmbHuhoAH5bfkbS5JKyOp4odK82db94Kz0I3LQ9LsQ5X1ANnDtZHsDUgyELdF1ajHoZzwHeXRY41hyaNQUxwq6R%2BnwbWFWT07Ex2KK44uzm1YXlV23tj8rf5kwTK%2FQF3NmHxs34SEOr4vn9TqF6zqHIKVehhscr1RxCRtjrV0kNSIsBMy0qhRv9OEMfOBMstQDrsp5UxQUzW1gmxZ24kbES6FYuA0WpWncS9uvt8qsrqlK5JW9DG%2B6RTt2roMPWcssUGOqUBgPgXwMwrrilvGLcaYfTzihVoo%2FF%2FtYzJ9ui9rKyN52eQn39rjmYFXKfNSajEFBan85sfvgrNeYxCWQA03VNiZBxElGcN1bNUZ8CvOxid4HO6nasjX82C%2Bd8QBv6MquWXpuEW6QOdyG06ZgJYYpAgjf1hwoPbwa0Qe1EhaWbU19ebYo8YYMGKcnX24Ps80jXZ3kdh9iMnGXbTKRZSGEqJ9TemP1sZ&X-Amz-Signature=e7c0fbfc66fb9a065db5e77e1c8919d3c064d2abaa2c54ec3568ee8d70e72428&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
         "name" : "icon_generated9 18 jun 2025.png",
-        "url" : "..\/SwiftIsland-app\/api\/images\/25af454eb360803282d1e94903b7b33e_icon.png",
-        "url_expires_at" : "2025-08-25T18:04:10.847Z"
+        "type" : "file",
+        "url" : "images\/25af454eb360803282d1e94903b7b33e_icon.png"
       }
     ],
-    "active" : true,
-    "lastModified" : "2025-08-25T17:03:00.000Z"
+    "id" : "25af454e-b360-8032-82d1-e94903b7b33e",
+    "lastModified" : 1756141380,
+    "link" : "https:\/\/apps.apple.com\/nl\/app\/planetfinder-pro\/id6667116182",
+    "name" : "PlanetFinder Pro",
+    "title" : "PlanetFinder Pro",
+    "type" : "App"
   },
   {
-    "id" : "25af454e-b360-80e5-aae6-e885cc15632f",
-    "link" : "https:\/\/soulver.app\/",
-    "title" : "Soulver",
-    "name" : "Soulver",
-    "type" : "App",
-    "createdAt" : "2025-08-25T16:49:00.000Z",
+    "active" : true,
+    "createdAt" : 1756140540,
     "icon" : [
       {
         "name" : "soulver.png",
-        "url_expires_at" : "2025-08-25T18:04:10.847Z",
         "type" : "file",
-        "original_url" : "https:\/\/prod-files-secure.s3.us-west-2.amazonaws.com\/f700fc5e-43a2-490b-9ef1-f04ef9359af2\/90cc7e12-b711-499b-8ec5-e2b6a3c7d80a\/soulver.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667DXGYKCN%2F20250825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250825T170410Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAkaCXVzLXdlc3QtMiJHMEUCIQCjmErajXz7WsKFosGa9ntorm9vuCDftPWZAYGKSnq9QAIgNfVC9LmnMB2c0d1Ujh8z1dmkdwcVVVscj4vNqRcwtxwq%2FwMIYhAAGgw2Mzc0MjMxODM4MDUiDOd0BxZEj6rS0FLM7yrcA%2FWKMOS7WmIrDdcocz95HstbHB5RlLAva7mfAiazOaKO9ee84dEg7kGBzPDsydyUgDzifeZ2GOycWUrsLwyJUEhzTCmz8JRLfGvbUmcbGZ5412z09Vp7PpxssK3unsCfE0J%2FWxhYgo9FaWyBe19dBvkKlhQrKbS%2B1QP0wxzjfim5Hsdw%2BQ0RsPROXccGh7AUdmmrLqmRhcG12pCNQTbOKbupV%2BZ1%2BvZo2twBpYqaDugI%2FPgdNuJfUBvvNmb%2FsBFY5rD%2FmmoFC8ekVgDRzmhIe5vwqYN%2Fw5qB8aDzIVt225xmd2Hy%2BlrkNSDKYDuDA%2BmhLJboOrCfjXH7iDDJsDxCql7kuT0VVDb0%2Bd8Wb0P5vU2RvB47aNu7kUZpfJEDL%2ByysmbHuhoAH5bfkbS5JKyOp4odK82db94Kz0I3LQ9LsQ5X1ANnDtZHsDUgyELdF1ajHoZzwHeXRY41hyaNQUxwq6R%2BnwbWFWT07Ex2KK44uzm1YXlV23tj8rf5kwTK%2FQF3NmHxs34SEOr4vn9TqF6zqHIKVehhscr1RxCRtjrV0kNSIsBMy0qhRv9OEMfOBMstQDrsp5UxQUzW1gmxZ24kbES6FYuA0WpWncS9uvt8qsrqlK5JW9DG%2B6RTt2roMPWcssUGOqUBgPgXwMwrrilvGLcaYfTzihVoo%2FF%2FtYzJ9ui9rKyN52eQn39rjmYFXKfNSajEFBan85sfvgrNeYxCWQA03VNiZBxElGcN1bNUZ8CvOxid4HO6nasjX82C%2Bd8QBv6MquWXpuEW6QOdyG06ZgJYYpAgjf1hwoPbwa0Qe1EhaWbU19ebYo8YYMGKcnX24Ps80jXZ3kdh9iMnGXbTKRZSGEqJ9TemP1sZ&X-Amz-Signature=b0b03ca8358d9c31821a3f79cccb971f1f3c026593db429e657f1011646214e2&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-        "url" : "..\/SwiftIsland-app\/api\/images\/25af454eb36080e5aae6e885cc15632f_icon.png"
+        "url" : "images\/25af454eb36080e5aae6e885cc15632f_icon.png"
       }
     ],
-    "active" : true,
-    "lastModified" : "2025-08-25T17:03:00.000Z"
+    "id" : "25af454e-b360-80e5-aae6-e885cc15632f",
+    "lastModified" : 1756141380,
+    "link" : "https:\/\/soulver.app\/",
+    "name" : "Soulver",
+    "title" : "Soulver",
+    "type" : "App"
   },
   {
-    "id" : "25af454e-b360-801a-b05f-ce40d0935204",
-    "link" : "https:\/\/culturedcode.com\/things\/",
-    "title" : "Things",
-    "name" : "Things",
-    "type" : "App",
-    "createdAt" : "2025-08-25T16:49:00.000Z",
+    "active" : true,
+    "createdAt" : 1756140540,
     "icon" : [
       {
-        "original_url" : "https:\/\/prod-files-secure.s3.us-west-2.amazonaws.com\/f700fc5e-43a2-490b-9ef1-f04ef9359af2\/afa0799e-68db-457c-809a-cb09382938b2\/things.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667DXGYKCN%2F20250825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250825T170410Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAkaCXVzLXdlc3QtMiJHMEUCIQCjmErajXz7WsKFosGa9ntorm9vuCDftPWZAYGKSnq9QAIgNfVC9LmnMB2c0d1Ujh8z1dmkdwcVVVscj4vNqRcwtxwq%2FwMIYhAAGgw2Mzc0MjMxODM4MDUiDOd0BxZEj6rS0FLM7yrcA%2FWKMOS7WmIrDdcocz95HstbHB5RlLAva7mfAiazOaKO9ee84dEg7kGBzPDsydyUgDzifeZ2GOycWUrsLwyJUEhzTCmz8JRLfGvbUmcbGZ5412z09Vp7PpxssK3unsCfE0J%2FWxhYgo9FaWyBe19dBvkKlhQrKbS%2B1QP0wxzjfim5Hsdw%2BQ0RsPROXccGh7AUdmmrLqmRhcG12pCNQTbOKbupV%2BZ1%2BvZo2twBpYqaDugI%2FPgdNuJfUBvvNmb%2FsBFY5rD%2FmmoFC8ekVgDRzmhIe5vwqYN%2Fw5qB8aDzIVt225xmd2Hy%2BlrkNSDKYDuDA%2BmhLJboOrCfjXH7iDDJsDxCql7kuT0VVDb0%2Bd8Wb0P5vU2RvB47aNu7kUZpfJEDL%2ByysmbHuhoAH5bfkbS5JKyOp4odK82db94Kz0I3LQ9LsQ5X1ANnDtZHsDUgyELdF1ajHoZzwHeXRY41hyaNQUxwq6R%2BnwbWFWT07Ex2KK44uzm1YXlV23tj8rf5kwTK%2FQF3NmHxs34SEOr4vn9TqF6zqHIKVehhscr1RxCRtjrV0kNSIsBMy0qhRv9OEMfOBMstQDrsp5UxQUzW1gmxZ24kbES6FYuA0WpWncS9uvt8qsrqlK5JW9DG%2B6RTt2roMPWcssUGOqUBgPgXwMwrrilvGLcaYfTzihVoo%2FF%2FtYzJ9ui9rKyN52eQn39rjmYFXKfNSajEFBan85sfvgrNeYxCWQA03VNiZBxElGcN1bNUZ8CvOxid4HO6nasjX82C%2Bd8QBv6MquWXpuEW6QOdyG06ZgJYYpAgjf1hwoPbwa0Qe1EhaWbU19ebYo8YYMGKcnX24Ps80jXZ3kdh9iMnGXbTKRZSGEqJ9TemP1sZ&X-Amz-Signature=b43f745b42edc8be1e32ad495a8abd6fe3687fb617af0a7cc3ff37471b11b999&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-        "type" : "file",
         "name" : "things.png",
-        "url_expires_at" : "2025-08-25T18:04:10.847Z",
-        "url" : "..\/SwiftIsland-app\/api\/images\/25af454eb360801ab05fce40d0935204_icon.png"
+        "type" : "file",
+        "url" : "images\/25af454eb360801ab05fce40d0935204_icon.png"
       }
     ],
-    "active" : true,
-    "lastModified" : "2025-08-25T17:03:00.000Z"
+    "id" : "25af454e-b360-801a-b05f-ce40d0935204",
+    "lastModified" : 1756141380,
+    "link" : "https:\/\/culturedcode.com\/things\/",
+    "name" : "Things",
+    "title" : "Things",
+    "type" : "App"
   },
   {
-    "id" : "25af454e-b360-8012-98c7-f954aa409b30",
-    "link" : "https:\/\/www.git-tower.com\/",
-    "title" : "Tower",
-    "name" : "Tower",
-    "type" : "App",
-    "createdAt" : "2025-08-25T16:49:00.000Z",
+    "active" : true,
+    "createdAt" : 1756140540,
     "icon" : [
       {
-        "original_url" : "https:\/\/prod-files-secure.s3.us-west-2.amazonaws.com\/f700fc5e-43a2-490b-9ef1-f04ef9359af2\/eaad197a-ec44-49ef-b977-c3526c01126e\/tower.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667DXGYKCN%2F20250825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250825T170410Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAkaCXVzLXdlc3QtMiJHMEUCIQCjmErajXz7WsKFosGa9ntorm9vuCDftPWZAYGKSnq9QAIgNfVC9LmnMB2c0d1Ujh8z1dmkdwcVVVscj4vNqRcwtxwq%2FwMIYhAAGgw2Mzc0MjMxODM4MDUiDOd0BxZEj6rS0FLM7yrcA%2FWKMOS7WmIrDdcocz95HstbHB5RlLAva7mfAiazOaKO9ee84dEg7kGBzPDsydyUgDzifeZ2GOycWUrsLwyJUEhzTCmz8JRLfGvbUmcbGZ5412z09Vp7PpxssK3unsCfE0J%2FWxhYgo9FaWyBe19dBvkKlhQrKbS%2B1QP0wxzjfim5Hsdw%2BQ0RsPROXccGh7AUdmmrLqmRhcG12pCNQTbOKbupV%2BZ1%2BvZo2twBpYqaDugI%2FPgdNuJfUBvvNmb%2FsBFY5rD%2FmmoFC8ekVgDRzmhIe5vwqYN%2Fw5qB8aDzIVt225xmd2Hy%2BlrkNSDKYDuDA%2BmhLJboOrCfjXH7iDDJsDxCql7kuT0VVDb0%2Bd8Wb0P5vU2RvB47aNu7kUZpfJEDL%2ByysmbHuhoAH5bfkbS5JKyOp4odK82db94Kz0I3LQ9LsQ5X1ANnDtZHsDUgyELdF1ajHoZzwHeXRY41hyaNQUxwq6R%2BnwbWFWT07Ex2KK44uzm1YXlV23tj8rf5kwTK%2FQF3NmHxs34SEOr4vn9TqF6zqHIKVehhscr1RxCRtjrV0kNSIsBMy0qhRv9OEMfOBMstQDrsp5UxQUzW1gmxZ24kbES6FYuA0WpWncS9uvt8qsrqlK5JW9DG%2B6RTt2roMPWcssUGOqUBgPgXwMwrrilvGLcaYfTzihVoo%2FF%2FtYzJ9ui9rKyN52eQn39rjmYFXKfNSajEFBan85sfvgrNeYxCWQA03VNiZBxElGcN1bNUZ8CvOxid4HO6nasjX82C%2Bd8QBv6MquWXpuEW6QOdyG06ZgJYYpAgjf1hwoPbwa0Qe1EhaWbU19ebYo8YYMGKcnX24Ps80jXZ3kdh9iMnGXbTKRZSGEqJ9TemP1sZ&X-Amz-Signature=9d587d87ccdb8cfce4b671bb5c0ac4b932e9c128bee7626037915e51541cee68&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
         "name" : "tower.png",
-        "url" : "..\/SwiftIsland-app\/api\/images\/25af454eb360801298c7f954aa409b30_icon.png",
         "type" : "file",
-        "url_expires_at" : "2025-08-25T18:04:10.847Z"
+        "url" : "images\/25af454eb360801298c7f954aa409b30_icon.png"
       }
     ],
-    "active" : true,
-    "lastModified" : "2025-08-25T17:03:00.000Z"
+    "id" : "25af454e-b360-8012-98c7-f954aa409b30",
+    "lastModified" : 1756141380,
+    "link" : "https:\/\/www.git-tower.com\/",
+    "name" : "Tower",
+    "title" : "Tower",
+    "type" : "App"
   },
   {
-    "id" : "25af454e-b360-80ee-b1a4-da4ba30f7f28",
-    "link" : "https:\/\/xscopeapp.com\/",
-    "title" : "xScope",
-    "name" : "xScope",
-    "type" : "App",
-    "createdAt" : "2025-08-25T16:46:00.000Z",
+    "active" : true,
+    "createdAt" : 1756140360,
     "icon" : [
       {
-        "url_expires_at" : "2025-08-25T18:04:10.847Z",
-        "original_url" : "https:\/\/prod-files-secure.s3.us-west-2.amazonaws.com\/f700fc5e-43a2-490b-9ef1-f04ef9359af2\/16f4f8a7-1a52-4b6f-b695-a33fa79c171f\/xscope.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667DXGYKCN%2F20250825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250825T170410Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAkaCXVzLXdlc3QtMiJHMEUCIQCjmErajXz7WsKFosGa9ntorm9vuCDftPWZAYGKSnq9QAIgNfVC9LmnMB2c0d1Ujh8z1dmkdwcVVVscj4vNqRcwtxwq%2FwMIYhAAGgw2Mzc0MjMxODM4MDUiDOd0BxZEj6rS0FLM7yrcA%2FWKMOS7WmIrDdcocz95HstbHB5RlLAva7mfAiazOaKO9ee84dEg7kGBzPDsydyUgDzifeZ2GOycWUrsLwyJUEhzTCmz8JRLfGvbUmcbGZ5412z09Vp7PpxssK3unsCfE0J%2FWxhYgo9FaWyBe19dBvkKlhQrKbS%2B1QP0wxzjfim5Hsdw%2BQ0RsPROXccGh7AUdmmrLqmRhcG12pCNQTbOKbupV%2BZ1%2BvZo2twBpYqaDugI%2FPgdNuJfUBvvNmb%2FsBFY5rD%2FmmoFC8ekVgDRzmhIe5vwqYN%2Fw5qB8aDzIVt225xmd2Hy%2BlrkNSDKYDuDA%2BmhLJboOrCfjXH7iDDJsDxCql7kuT0VVDb0%2Bd8Wb0P5vU2RvB47aNu7kUZpfJEDL%2ByysmbHuhoAH5bfkbS5JKyOp4odK82db94Kz0I3LQ9LsQ5X1ANnDtZHsDUgyELdF1ajHoZzwHeXRY41hyaNQUxwq6R%2BnwbWFWT07Ex2KK44uzm1YXlV23tj8rf5kwTK%2FQF3NmHxs34SEOr4vn9TqF6zqHIKVehhscr1RxCRtjrV0kNSIsBMy0qhRv9OEMfOBMstQDrsp5UxQUzW1gmxZ24kbES6FYuA0WpWncS9uvt8qsrqlK5JW9DG%2B6RTt2roMPWcssUGOqUBgPgXwMwrrilvGLcaYfTzihVoo%2FF%2FtYzJ9ui9rKyN52eQn39rjmYFXKfNSajEFBan85sfvgrNeYxCWQA03VNiZBxElGcN1bNUZ8CvOxid4HO6nasjX82C%2Bd8QBv6MquWXpuEW6QOdyG06ZgJYYpAgjf1hwoPbwa0Qe1EhaWbU19ebYo8YYMGKcnX24Ps80jXZ3kdh9iMnGXbTKRZSGEqJ9TemP1sZ&X-Amz-Signature=9150cc7b4084a37420f5804675403e28729a3eefccdc54a60177262e0238b418&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
         "name" : "xscope.png",
-        "url" : "..\/SwiftIsland-app\/api\/images\/25af454eb36080eeb1a4da4ba30f7f28_icon.png",
-        "type" : "file"
-      }
-    ],
-    "active" : true,
-    "lastModified" : "2025-08-25T17:03:00.000Z"
-  },
-  {
-    "id" : "25af454e-b360-8057-ba56-ff6527afd572",
-    "link" : "https:\/\/agenda.com\/",
-    "title" : "Agenda",
-    "name" : "Agenda",
-    "type" : "App",
-    "createdAt" : "2025-08-25T16:46:00.000Z",
-    "icon" : [
-      {
-        "url" : "..\/SwiftIsland-app\/api\/images\/25af454eb3608057ba56ff6527afd572_icon.png",
-        "url_expires_at" : "2025-08-25T18:04:10.847Z",
-        "name" : "agenda.png",
-        "original_url" : "https:\/\/prod-files-secure.s3.us-west-2.amazonaws.com\/f700fc5e-43a2-490b-9ef1-f04ef9359af2\/768bba29-6bf9-4b85-a87d-6363f81659e2\/agenda.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667DXGYKCN%2F20250825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250825T170410Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAkaCXVzLXdlc3QtMiJHMEUCIQCjmErajXz7WsKFosGa9ntorm9vuCDftPWZAYGKSnq9QAIgNfVC9LmnMB2c0d1Ujh8z1dmkdwcVVVscj4vNqRcwtxwq%2FwMIYhAAGgw2Mzc0MjMxODM4MDUiDOd0BxZEj6rS0FLM7yrcA%2FWKMOS7WmIrDdcocz95HstbHB5RlLAva7mfAiazOaKO9ee84dEg7kGBzPDsydyUgDzifeZ2GOycWUrsLwyJUEhzTCmz8JRLfGvbUmcbGZ5412z09Vp7PpxssK3unsCfE0J%2FWxhYgo9FaWyBe19dBvkKlhQrKbS%2B1QP0wxzjfim5Hsdw%2BQ0RsPROXccGh7AUdmmrLqmRhcG12pCNQTbOKbupV%2BZ1%2BvZo2twBpYqaDugI%2FPgdNuJfUBvvNmb%2FsBFY5rD%2FmmoFC8ekVgDRzmhIe5vwqYN%2Fw5qB8aDzIVt225xmd2Hy%2BlrkNSDKYDuDA%2BmhLJboOrCfjXH7iDDJsDxCql7kuT0VVDb0%2Bd8Wb0P5vU2RvB47aNu7kUZpfJEDL%2ByysmbHuhoAH5bfkbS5JKyOp4odK82db94Kz0I3LQ9LsQ5X1ANnDtZHsDUgyELdF1ajHoZzwHeXRY41hyaNQUxwq6R%2BnwbWFWT07Ex2KK44uzm1YXlV23tj8rf5kwTK%2FQF3NmHxs34SEOr4vn9TqF6zqHIKVehhscr1RxCRtjrV0kNSIsBMy0qhRv9OEMfOBMstQDrsp5UxQUzW1gmxZ24kbES6FYuA0WpWncS9uvt8qsrqlK5JW9DG%2B6RTt2roMPWcssUGOqUBgPgXwMwrrilvGLcaYfTzihVoo%2FF%2FtYzJ9ui9rKyN52eQn39rjmYFXKfNSajEFBan85sfvgrNeYxCWQA03VNiZBxElGcN1bNUZ8CvOxid4HO6nasjX82C%2Bd8QBv6MquWXpuEW6QOdyG06ZgJYYpAgjf1hwoPbwa0Qe1EhaWbU19ebYo8YYMGKcnX24Ps80jXZ3kdh9iMnGXbTKRZSGEqJ9TemP1sZ&X-Amz-Signature=1bf2268c1a137cfe90c42c013de65720db124867866286f57ce6dff34f84d7ed&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-        "type" : "file"
-      }
-    ],
-    "active" : true,
-    "lastModified" : "2025-08-25T17:03:00.000Z"
-  },
-  {
-    "id" : "25af454e-b360-80b8-a13c-f25f6c9fd4a5",
-    "link" : "https:\/\/flyingmeat.com\/",
-    "title" : "Acorn",
-    "name" : "Acorn",
-    "type" : "App",
-    "createdAt" : "2025-08-25T16:46:00.000Z",
-    "icon" : [
-      {
         "type" : "file",
-        "url_expires_at" : "2025-08-25T18:04:10.847Z",
-        "url" : "..\/SwiftIsland-app\/api\/images\/25af454eb36080b8a13cf25f6c9fd4a5_icon.png",
-        "name" : "acorn.png",
-        "original_url" : "https:\/\/prod-files-secure.s3.us-west-2.amazonaws.com\/f700fc5e-43a2-490b-9ef1-f04ef9359af2\/d88ca9c5-4685-411c-81aa-ffa019bd22b6\/acorn.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667DXGYKCN%2F20250825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250825T170410Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAkaCXVzLXdlc3QtMiJHMEUCIQCjmErajXz7WsKFosGa9ntorm9vuCDftPWZAYGKSnq9QAIgNfVC9LmnMB2c0d1Ujh8z1dmkdwcVVVscj4vNqRcwtxwq%2FwMIYhAAGgw2Mzc0MjMxODM4MDUiDOd0BxZEj6rS0FLM7yrcA%2FWKMOS7WmIrDdcocz95HstbHB5RlLAva7mfAiazOaKO9ee84dEg7kGBzPDsydyUgDzifeZ2GOycWUrsLwyJUEhzTCmz8JRLfGvbUmcbGZ5412z09Vp7PpxssK3unsCfE0J%2FWxhYgo9FaWyBe19dBvkKlhQrKbS%2B1QP0wxzjfim5Hsdw%2BQ0RsPROXccGh7AUdmmrLqmRhcG12pCNQTbOKbupV%2BZ1%2BvZo2twBpYqaDugI%2FPgdNuJfUBvvNmb%2FsBFY5rD%2FmmoFC8ekVgDRzmhIe5vwqYN%2Fw5qB8aDzIVt225xmd2Hy%2BlrkNSDKYDuDA%2BmhLJboOrCfjXH7iDDJsDxCql7kuT0VVDb0%2Bd8Wb0P5vU2RvB47aNu7kUZpfJEDL%2ByysmbHuhoAH5bfkbS5JKyOp4odK82db94Kz0I3LQ9LsQ5X1ANnDtZHsDUgyELdF1ajHoZzwHeXRY41hyaNQUxwq6R%2BnwbWFWT07Ex2KK44uzm1YXlV23tj8rf5kwTK%2FQF3NmHxs34SEOr4vn9TqF6zqHIKVehhscr1RxCRtjrV0kNSIsBMy0qhRv9OEMfOBMstQDrsp5UxQUzW1gmxZ24kbES6FYuA0WpWncS9uvt8qsrqlK5JW9DG%2B6RTt2roMPWcssUGOqUBgPgXwMwrrilvGLcaYfTzihVoo%2FF%2FtYzJ9ui9rKyN52eQn39rjmYFXKfNSajEFBan85sfvgrNeYxCWQA03VNiZBxElGcN1bNUZ8CvOxid4HO6nasjX82C%2Bd8QBv6MquWXpuEW6QOdyG06ZgJYYpAgjf1hwoPbwa0Qe1EhaWbU19ebYo8YYMGKcnX24Ps80jXZ3kdh9iMnGXbTKRZSGEqJ9TemP1sZ&X-Amz-Signature=cd30d9d923626ed82de341d431389ead97b73c06e07489801b590aa5e40a10a1&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject"
+        "url" : "images\/25af454eb36080eeb1a4da4ba30f7f28_icon.png"
       }
     ],
-    "active" : true,
-    "lastModified" : "2025-08-25T17:03:00.000Z"
+    "id" : "25af454e-b360-80ee-b1a4-da4ba30f7f28",
+    "lastModified" : 1756141380,
+    "link" : "https:\/\/xscopeapp.com\/",
+    "name" : "xScope",
+    "title" : "xScope",
+    "type" : "App"
   },
   {
-    "id" : "254f454e-b360-80d7-a29d-d6f961a4d8d3",
-    "link" : "https:\/\/dimsumthinking.com\/",
-    "title" : "Daniel Steinberg",
-    "name" : "Daniel Steinberg",
-    "type" : "Book",
-    "createdAt" : "2025-08-19T20:30:00.000Z",
+    "active" : true,
+    "createdAt" : 1756140360,
     "icon" : [
       {
-        "original_url" : "https:\/\/prod-files-secure.s3.us-west-2.amazonaws.com\/f700fc5e-43a2-490b-9ef1-f04ef9359af2\/e3f46c0e-94d5-4f21-b2b2-dfafba942254\/dim_sum_thinking.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667DXGYKCN%2F20250825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250825T170410Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAkaCXVzLXdlc3QtMiJHMEUCIQCjmErajXz7WsKFosGa9ntorm9vuCDftPWZAYGKSnq9QAIgNfVC9LmnMB2c0d1Ujh8z1dmkdwcVVVscj4vNqRcwtxwq%2FwMIYhAAGgw2Mzc0MjMxODM4MDUiDOd0BxZEj6rS0FLM7yrcA%2FWKMOS7WmIrDdcocz95HstbHB5RlLAva7mfAiazOaKO9ee84dEg7kGBzPDsydyUgDzifeZ2GOycWUrsLwyJUEhzTCmz8JRLfGvbUmcbGZ5412z09Vp7PpxssK3unsCfE0J%2FWxhYgo9FaWyBe19dBvkKlhQrKbS%2B1QP0wxzjfim5Hsdw%2BQ0RsPROXccGh7AUdmmrLqmRhcG12pCNQTbOKbupV%2BZ1%2BvZo2twBpYqaDugI%2FPgdNuJfUBvvNmb%2FsBFY5rD%2FmmoFC8ekVgDRzmhIe5vwqYN%2Fw5qB8aDzIVt225xmd2Hy%2BlrkNSDKYDuDA%2BmhLJboOrCfjXH7iDDJsDxCql7kuT0VVDb0%2Bd8Wb0P5vU2RvB47aNu7kUZpfJEDL%2ByysmbHuhoAH5bfkbS5JKyOp4odK82db94Kz0I3LQ9LsQ5X1ANnDtZHsDUgyELdF1ajHoZzwHeXRY41hyaNQUxwq6R%2BnwbWFWT07Ex2KK44uzm1YXlV23tj8rf5kwTK%2FQF3NmHxs34SEOr4vn9TqF6zqHIKVehhscr1RxCRtjrV0kNSIsBMy0qhRv9OEMfOBMstQDrsp5UxQUzW1gmxZ24kbES6FYuA0WpWncS9uvt8qsrqlK5JW9DG%2B6RTt2roMPWcssUGOqUBgPgXwMwrrilvGLcaYfTzihVoo%2FF%2FtYzJ9ui9rKyN52eQn39rjmYFXKfNSajEFBan85sfvgrNeYxCWQA03VNiZBxElGcN1bNUZ8CvOxid4HO6nasjX82C%2Bd8QBv6MquWXpuEW6QOdyG06ZgJYYpAgjf1hwoPbwa0Qe1EhaWbU19ebYo8YYMGKcnX24Ps80jXZ3kdh9iMnGXbTKRZSGEqJ9TemP1sZ&X-Amz-Signature=defd87d89621dabcea7b5008da6779055c52f597353526bcdbdd5085b93eb65c&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-        "name" : "dim_sum_thinking.png",
-        "url" : "..\/SwiftIsland-app\/api\/images\/254f454eb36080d7a29dd6f961a4d8d3_icon.png",
-        "url_expires_at" : "2025-08-25T18:04:10.847Z",
-        "type" : "file"
+        "name" : "agenda.png",
+        "type" : "file",
+        "url" : "images\/25af454eb3608057ba56ff6527afd572_icon.png"
       }
     ],
-    "active" : true,
-    "lastModified" : "2025-08-19T20:35:00.000Z"
+    "id" : "25af454e-b360-8057-ba56-ff6527afd572",
+    "lastModified" : 1756141380,
+    "link" : "https:\/\/agenda.com\/",
+    "name" : "Agenda",
+    "title" : "Agenda",
+    "type" : "App"
   },
   {
-    "id" : "254f454e-b360-80ee-a257-c071f1b48e5f",
-    "link" : "https:\/\/daisydiskapp.com",
-    "title" : "DaisyDisk",
-    "name" : "DaisyDisk",
-    "type" : "App",
-    "createdAt" : "2025-08-19T20:29:00.000Z",
+    "active" : true,
+    "createdAt" : 1756140360,
+    "icon" : [
+      {
+        "name" : "acorn.png",
+        "type" : "file",
+        "url" : "images\/25af454eb36080b8a13cf25f6c9fd4a5_icon.png"
+      }
+    ],
+    "id" : "25af454e-b360-80b8-a13c-f25f6c9fd4a5",
+    "lastModified" : 1756141380,
+    "link" : "https:\/\/flyingmeat.com\/",
+    "name" : "Acorn",
+    "title" : "Acorn",
+    "type" : "App"
+  },
+  {
+    "active" : true,
+    "createdAt" : 1755635400,
+    "icon" : [
+      {
+        "name" : "dim_sum_thinking.png",
+        "type" : "file",
+        "url" : "images\/254f454eb36080d7a29dd6f961a4d8d3_icon.png"
+      }
+    ],
+    "id" : "254f454e-b360-80d7-a29d-d6f961a4d8d3",
+    "lastModified" : 1755635700,
+    "link" : "https:\/\/dimsumthinking.com\/",
+    "name" : "Daniel Steinberg",
+    "title" : "Daniel Steinberg",
+    "type" : "Book"
+  },
+  {
+    "active" : true,
+    "createdAt" : 1755635340,
     "icon" : [
       {
         "name" : "daisydisk.png",
         "type" : "file",
-        "url_expires_at" : "2025-08-25T18:04:10.847Z",
-        "original_url" : "https:\/\/prod-files-secure.s3.us-west-2.amazonaws.com\/f700fc5e-43a2-490b-9ef1-f04ef9359af2\/80e0471a-4641-4b37-8f10-7411e67fdd92\/daisydisk.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=ASIAZI2LB4667DXGYKCN%2F20250825%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20250825T170410Z&X-Amz-Expires=3600&X-Amz-Security-Token=IQoJb3JpZ2luX2VjEAkaCXVzLXdlc3QtMiJHMEUCIQCjmErajXz7WsKFosGa9ntorm9vuCDftPWZAYGKSnq9QAIgNfVC9LmnMB2c0d1Ujh8z1dmkdwcVVVscj4vNqRcwtxwq%2FwMIYhAAGgw2Mzc0MjMxODM4MDUiDOd0BxZEj6rS0FLM7yrcA%2FWKMOS7WmIrDdcocz95HstbHB5RlLAva7mfAiazOaKO9ee84dEg7kGBzPDsydyUgDzifeZ2GOycWUrsLwyJUEhzTCmz8JRLfGvbUmcbGZ5412z09Vp7PpxssK3unsCfE0J%2FWxhYgo9FaWyBe19dBvkKlhQrKbS%2B1QP0wxzjfim5Hsdw%2BQ0RsPROXccGh7AUdmmrLqmRhcG12pCNQTbOKbupV%2BZ1%2BvZo2twBpYqaDugI%2FPgdNuJfUBvvNmb%2FsBFY5rD%2FmmoFC8ekVgDRzmhIe5vwqYN%2Fw5qB8aDzIVt225xmd2Hy%2BlrkNSDKYDuDA%2BmhLJboOrCfjXH7iDDJsDxCql7kuT0VVDb0%2Bd8Wb0P5vU2RvB47aNu7kUZpfJEDL%2ByysmbHuhoAH5bfkbS5JKyOp4odK82db94Kz0I3LQ9LsQ5X1ANnDtZHsDUgyELdF1ajHoZzwHeXRY41hyaNQUxwq6R%2BnwbWFWT07Ex2KK44uzm1YXlV23tj8rf5kwTK%2FQF3NmHxs34SEOr4vn9TqF6zqHIKVehhscr1RxCRtjrV0kNSIsBMy0qhRv9OEMfOBMstQDrsp5UxQUzW1gmxZ24kbES6FYuA0WpWncS9uvt8qsrqlK5JW9DG%2B6RTt2roMPWcssUGOqUBgPgXwMwrrilvGLcaYfTzihVoo%2FF%2FtYzJ9ui9rKyN52eQn39rjmYFXKfNSajEFBan85sfvgrNeYxCWQA03VNiZBxElGcN1bNUZ8CvOxid4HO6nasjX82C%2Bd8QBv6MquWXpuEW6QOdyG06ZgJYYpAgjf1hwoPbwa0Qe1EhaWbU19ebYo8YYMGKcnX24Ps80jXZ3kdh9iMnGXbTKRZSGEqJ9TemP1sZ&X-Amz-Signature=215d2ab5a6e598502fa4d5ebe828360f24a6c07237d4ef5ad81388df4b30932b&X-Amz-SignedHeaders=host&x-amz-checksum-mode=ENABLED&x-id=GetObject",
-        "url" : "..\/SwiftIsland-app\/api\/images\/254f454eb36080eea257c071f1b48e5f_icon.png"
+        "url" : "images\/254f454eb36080eea257c071f1b48e5f_icon.png"
       }
     ],
-    "active" : true,
-    "lastModified" : "2025-08-25T16:53:00.000Z"
+    "id" : "254f454e-b360-80ee-a257-c071f1b48e5f",
+    "lastModified" : 1756140780,
+    "link" : "https:\/\/daisydiskapp.com",
+    "name" : "DaisyDisk",
+    "title" : "DaisyDisk",
+    "type" : "App"
   }
 ]
