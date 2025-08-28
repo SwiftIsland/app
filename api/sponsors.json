@@ -1,6 +1,40 @@
 [
   {
     "active" : true,
+    "createdAt" : 1756374120,
+    "icon" : [
+      {
+        "name" : "SwiftLee.png",
+        "type" : "file",
+        "url" : "images\/25df454eb36080e3b2daffd58b71640b_icon.png"
+      }
+    ],
+    "id" : "25df454e-b360-80e3-b2da-ffd58b71640b",
+    "lastModified" : 1756374840,
+    "link" : "https:\/\/courses.avanderlee.com\/",
+    "name" : "SwiftLee",
+    "title" : "SwiftLee",
+    "type" : "Book"
+  },
+  {
+    "active" : true,
+    "createdAt" : 1756374060,
+    "icon" : [
+      {
+        "name" : "rocketsim-app-icon.BIDtbpyG_Z137s7m.png",
+        "type" : "file",
+        "url" : "images\/25df454eb36080488fdcff9c3940d6a7_icon.png"
+      }
+    ],
+    "id" : "25df454e-b360-8048-8fdc-ff9c3940d6a7",
+    "lastModified" : 1756378980,
+    "link" : "https:\/\/www.rocketsim.app\/",
+    "name" : "RocketSim",
+    "title" : "RocketSim",
+    "type" : "App"
+  },
+  {
+    "active" : true,
     "createdAt" : 1756140540,
     "icon" : [
       {
