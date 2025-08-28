@@ -21,7 +21,9 @@ struct ConferenceBoxSponsors: View {
                 .padding(.top, 6)
                 .padding(.bottom, 0)
             LazyVGrid(columns: columns, spacing: spacing) {
-                ForEach(appDataModel.sponsors.filter({$0.type == .app})) { sponsor in
+                ForEach(appDataModel.sponsors.filter({$0.type == .app}).sorted(by: { a, b in
+                    a.name < b.name
+                })) { sponsor in
                     Button {
                         currentSponsor = sponsor
                     } label: {
@@ -37,7 +39,9 @@ struct ConferenceBoxSponsors: View {
                 }
             }
             VStack {
-                ForEach(appDataModel.sponsors.filter({$0.type == .book})) { sponsor in
+                ForEach(appDataModel.sponsors.filter({$0.type == .book}).sorted(by: { a, b in
+                    a.name < b.name
+                })) { sponsor in
                     Button {
                         currentSponsor = sponsor
                     } label: {
