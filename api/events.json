@@ -1,5 +1,16 @@
 [
   {
+    "activity" : "254f454e-b360-81e7-b93b-f7c34a3af8cd",
+    "createdAt" : 1756406940,
+    "id" : "25df454e-b360-8067-83a9-c69e9e7e205d",
+    "lastModified" : 1756407000,
+    "startDate" : {
+      "end" : 1756753200,
+      "start" : 1756742400
+    },
+    "title" : "Dinner at Prins Hendrik"
+  },
+  {
     "activity" : "256f454e-b360-8061-8bce-e95df2da0c2b",
     "createdAt" : 1756159500,
     "id" : "25af454e-b360-8013-90c0-c6c138848cf9",
@@ -264,8 +275,9 @@
     "activity" : "254f454e-b360-810c-bec3-f668492deccc",
     "createdAt" : 1755811680,
     "id" : "256f454e-b360-8133-b335-c9ce0dc3ab02",
-    "lastModified" : 1755811800,
+    "lastModified" : 1756407000,
     "startDate" : {
+      "end" : 1756800000,
       "start" : 1756792800
     },
     "title" : "Ontbijt"
@@ -274,8 +286,9 @@
     "activity" : "254f454e-b360-8148-9e2b-e524d68951be",
     "createdAt" : 1755811680,
     "id" : "256f454e-b360-81be-91bd-f88ec448ecf1",
-    "lastModified" : 1755811800,
+    "lastModified" : 1756407060,
     "startDate" : {
+      "end" : 1756794600,
       "start" : 1756792800
     },
     "title" : "Meditatie"
@@ -284,8 +297,9 @@
     "activity" : "254f454e-b360-810f-920b-ccae9afccd71",
     "createdAt" : 1755811680,
     "id" : "256f454e-b360-8170-8b73-d6e75479188e",
-    "lastModified" : 1755811800,
+    "lastModified" : 1756407360,
     "startDate" : {
+      "end" : 1756792800,
       "start" : 1756792800
     },
     "title" : "Sport"

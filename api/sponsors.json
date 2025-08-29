@@ -1,6 +1,23 @@
 [
   {
     "active" : true,
+    "createdAt" : 1756384620,
+    "icon" : [
+      {
+        "name" : "raycast.png",
+        "type" : "file",
+        "url" : "images\/25df454eb36080d1a36ce0852d67eaf7_icon.png"
+      }
+    ],
+    "id" : "25df454e-b360-80d1-a36c-e0852d67eaf7",
+    "lastModified" : 1756384680,
+    "link" : "https:\/\/www.raycast.com\/",
+    "name" : "Raycast",
+    "title" : "Raycast",
+    "type" : "App"
+  },
+  {
+    "active" : true,
     "createdAt" : 1756374120,
     "icon" : [
       {
@@ -225,13 +242,13 @@
     "createdAt" : 1756140540,
     "icon" : [
       {
-        "name" : "icon_generated9 18 jun 2025.png",
+        "name" : "mac1024.png",
         "type" : "file",
         "url" : "images\/25af454eb360803282d1e94903b7b33e_icon.png"
       }
     ],
     "id" : "25af454e-b360-8032-82d1-e94903b7b33e",
-    "lastModified" : 1756141380,
+    "lastModified" : 1756388220,
     "link" : "https:\/\/apps.apple.com\/nl\/app\/planetfinder-pro\/id6667116182",
     "name" : "PlanetFinder Pro",
     "title" : "PlanetFinder Pro",
