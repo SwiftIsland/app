@@ -1,6 +1,23 @@
 [
   {
     "active" : true,
+    "createdAt" : 1756590420,
+    "icon" : [
+      {
+        "name" : "Bezel3-AppIcon.png",
+        "type" : "file",
+        "url" : "images\/25ff454eb3608064b063d1325a736c87_icon.png"
+      }
+    ],
+    "id" : "25ff454e-b360-8064-b063-d1325a736c87",
+    "lastModified" : 1756590480,
+    "link" : "https:\/\/nonstrict.eu\/bezel\/",
+    "name" : "Bezel",
+    "title" : "Bezel",
+    "type" : "App"
+  },
+  {
+    "active" : true,
     "createdAt" : 1756384620,
     "icon" : [
       {

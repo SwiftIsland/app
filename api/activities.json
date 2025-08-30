@@ -1,5 +1,18 @@
 [
   {
+    "createdAt" : 1756565220,
+    "description" : "",
+    "duration" : 900,
+    "id" : "25ff454e-b360-804d-baef-e491f73364d8",
+    "lastModified" : 1756565340,
+    "location" : "",
+    "mentors" : [
+
+    ],
+    "title" : "🙆🏼‍♀️ Morning Stretching",
+    "type" : "Invite only activity"
+  },
+  {
     "createdAt" : 1755811920,
     "description" : "Come and join us for the explaination of our Journal and to fill in the first pages and start a habit",
     "duration" : 1800,
@@ -56,12 +69,12 @@
     "description" : "Please take part in our yearly ‘cold dip’ at night in the Dutch ocean",
     "duration" : 1800,
     "id" : "254f454e-b360-812a-912e-ed259081cf7c",
-    "lastModified" : 1756069500,
+    "lastModified" : 1756565220,
     "location" : "254f454e-b360-8112-9155-cf2e58896cb4",
     "mentors" : [
 
     ],
-    "title" : "🥶 Shift Island: Cold dip",
+    "title" : "🏊 Shift Island: Evening swim",
     "type" : "Invite only activity"
   },
   {
@@ -95,7 +108,7 @@
     "description" : "A guided mediation by Sidney. This might include some breathwork and a warmup to start your day. We have sheepskins for you to sit or lay on. Bring\/put on some relaxing clothes. This session will be given at the Playground.",
     "duration" : 900,
     "id" : "254f454e-b360-8148-9e2b-e524d68951be",
-    "lastModified" : 1756407120,
+    "lastModified" : 1756476120,
     "location" : "254f454e-b360-8153-b138-f13b75c33815",
     "mentors" : [
       "254f454e-b360-8199-b281-d8b7e3c22a5a"

@@ -1,5 +1,46 @@
 [
   {
+    "activity" : "25ff454e-b360-804d-baef-e491f73364d8",
+    "createdAt" : 1756565400,
+    "id" : "25ff454e-b360-8092-a8d8-fe20df06ecef",
+    "lastModified" : 1756590540,
+    "startDate" : {
+      "start" : 1756966500
+    },
+    "title" : "Morning Stretching"
+  },
+  {
+    "activity" : "25ff454e-b360-804d-baef-e491f73364d8",
+    "createdAt" : 1756565400,
+    "id" : "25ff454e-b360-801a-9849-eabacd475714",
+    "lastModified" : 1756590540,
+    "startDate" : {
+      "start" : 1756880100
+    },
+    "title" : "Morning Stretching"
+  },
+  {
+    "activity" : "25ff454e-b360-804d-baef-e491f73364d8",
+    "createdAt" : 1756565280,
+    "id" : "25ff454e-b360-80cf-a2ad-f909313e98f7",
+    "lastModified" : 1756590540,
+    "startDate" : {
+      "start" : 1756793700
+    },
+    "title" : "Morning Stretching"
+  },
+  {
+    "activity" : "254f454e-b360-8148-9e2b-e524d68951be",
+    "createdAt" : 1756476120,
+    "id" : "25ef454e-b360-808c-b1fa-c7ae87613480",
+    "lastModified" : 1756476240,
+    "startDate" : {
+      "end" : 1756881000,
+      "start" : 1756879200
+    },
+    "title" : "Meditatie"
+  },
+  {
     "activity" : "254f454e-b360-81e7-b93b-f7c34a3af8cd",
     "createdAt" : 1756406940,
     "id" : "25df454e-b360-8067-83a9-c69e9e7e205d",
@@ -14,11 +55,11 @@
     "activity" : "256f454e-b360-8061-8bce-e95df2da0c2b",
     "createdAt" : 1756159500,
     "id" : "25af454e-b360-8013-90c0-c6c138848cf9",
-    "lastModified" : 1756159500,
+    "lastModified" : 1756565400,
     "startDate" : {
       "start" : 1756971000
     },
-    "title" : "Journal sessie (1)"
+    "title" : "Journal sessie"
   },
   {
     "activity" : "254f454e-b360-810c-bec3-f668492deccc",
