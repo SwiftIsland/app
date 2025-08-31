@@ -1,5 +1,26 @@
 [
   {
+    "activity" : "254f454e-b360-810f-920b-ccae9afccd71",
+    "createdAt" : 1756652340,
+    "id" : "260f454e-b360-8012-af0f-ede785b4d0bd",
+    "lastModified" : 1756652340,
+    "startDate" : {
+      "start" : 1756965600
+    },
+    "title" : "Sport"
+  },
+  {
+    "activity" : "254f454e-b360-8148-9e2b-e524d68951be",
+    "createdAt" : 1756652280,
+    "id" : "260f454e-b360-807b-b80a-fdf59e9d6217",
+    "lastModified" : 1756652280,
+    "startDate" : {
+      "end" : 1756966500,
+      "start" : 1756965600
+    },
+    "title" : "Meditatie"
+  },
+  {
     "activity" : "25ff454e-b360-804d-baef-e491f73364d8",
     "createdAt" : 1756565400,
     "id" : "25ff454e-b360-8092-a8d8-fe20df06ecef",
@@ -33,9 +54,9 @@
     "activity" : "254f454e-b360-8148-9e2b-e524d68951be",
     "createdAt" : 1756476120,
     "id" : "25ef454e-b360-808c-b1fa-c7ae87613480",
-    "lastModified" : 1756476240,
+    "lastModified" : 1756652220,
     "startDate" : {
-      "end" : 1756881000,
+      "end" : 1756880100,
       "start" : 1756879200
     },
     "title" : "Meditatie"
@@ -327,9 +348,9 @@
     "activity" : "254f454e-b360-8148-9e2b-e524d68951be",
     "createdAt" : 1755811680,
     "id" : "256f454e-b360-81be-91bd-f88ec448ecf1",
-    "lastModified" : 1756407060,
+    "lastModified" : 1756652280,
     "startDate" : {
-      "end" : 1756794600,
+      "end" : 1756793700,
       "start" : 1756792800
     },
     "title" : "Meditatie"
@@ -338,9 +359,8 @@
     "activity" : "254f454e-b360-810f-920b-ccae9afccd71",
     "createdAt" : 1755811680,
     "id" : "256f454e-b360-8170-8b73-d6e75479188e",
-    "lastModified" : 1756407360,
+    "lastModified" : 1756652340,
     "startDate" : {
-      "end" : 1756792800,
       "start" : 1756792800
     },
     "title" : "Sport"
