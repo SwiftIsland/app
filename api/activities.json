@@ -1,11 +1,11 @@
 [
   {
     "createdAt" : 1756565220,
-    "description" : "",
+    "description" : "Margo will guide you through a morning stretch and warmup session. Bring a water bottle, easy workout cloths and a towel",
     "duration" : 900,
     "id" : "25ff454e-b360-804d-baef-e491f73364d8",
-    "lastModified" : 1756565340,
-    "location" : "",
+    "lastModified" : 1756676940,
+    "location" : "254f454e-b360-8153-b138-f13b75c33815",
     "mentors" : [
 
     ],
@@ -66,10 +66,10 @@
   },
   {
     "createdAt" : 1755634560,
-    "description" : "Please take part in our yearly ‘cold dip’ at night in the Dutch ocean",
-    "duration" : 1800,
+    "description" : "Please take part in our yearly ‘cold dip’ at night in the Dutch ocean. ",
+    "duration" : 7200,
     "id" : "254f454e-b360-812a-912e-ed259081cf7c",
-    "lastModified" : 1756565220,
+    "lastModified" : 1756677360,
     "location" : "254f454e-b360-8112-9155-cf2e58896cb4",
     "mentors" : [
 
@@ -105,10 +105,10 @@
   },
   {
     "createdAt" : 1755634560,
-    "description" : "A guided mediation by Sidney. This might include some breathwork and a warmup to start your day. We have sheepskins for you to sit or lay on. Bring\/put on some relaxing clothes. This session will be given at the Playground.",
+    "description" : "A guided mediation by Sidney. This might include some breathwork and a warmup to start your day. We have sheepskins for you to sit or lay on. Bring a water bottle, easy (workout) clothes and a towel. This session will be given at the Playground.",
     "duration" : 900,
     "id" : "254f454e-b360-8148-9e2b-e524d68951be",
-    "lastModified" : 1756476120,
+    "lastModified" : 1756676880,
     "location" : "254f454e-b360-8153-b138-f13b75c33815",
     "mentors" : [
       "254f454e-b360-8199-b281-d8b7e3c22a5a"
@@ -121,7 +121,7 @@
     "description" : "Workshop: \nJanina\nCelina\nFrank\nJohn",
     "duration" : 7200,
     "id" : "254f454e-b360-81ec-8632-cdf5eb03f012",
-    "lastModified" : 1756153740,
+    "lastModified" : 1756676940,
     "location" : "",
     "mentors" : [
 
@@ -237,9 +237,9 @@
   {
     "createdAt" : 1755634560,
     "description" : "Always a treat and always a surprise. But we guarantee it's delicious!\n\nVega and vegan options available.",
-    "duration" : 10800,
+    "duration" : 7200,
     "id" : "254f454e-b360-819f-a90b-ecc99a743147",
-    "lastModified" : 1755635160,
+    "lastModified" : 1756677480,
     "location" : "254f454e-b360-81e7-9972-ee5c76a296c6",
     "mentors" : [
 

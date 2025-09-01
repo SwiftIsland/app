@@ -1,5 +1,26 @@
 [
   {
+    "activity" : "254f454e-b360-8153-b9bb-e32d7dff6554",
+    "createdAt" : 1756677060,
+    "id" : "260f454e-b360-80ab-9fcc-d7e5e6be8f32",
+    "lastModified" : 1756677180,
+    "startDate" : {
+      "end" : 1757065500,
+      "start" : 1757056500
+    },
+    "title" : "Bus Texel → Schiphol"
+  },
+  {
+    "activity" : "",
+    "createdAt" : 1756677060,
+    "id" : "260f454e-b360-80fa-a4f5-c655ac8ff64a",
+    "lastModified" : 1756677060,
+    "startDate" : {
+
+    },
+    "title" : ""
+  },
+  {
     "activity" : "254f454e-b360-810f-920b-ccae9afccd71",
     "createdAt" : 1756652340,
     "id" : "260f454e-b360-8012-af0f-ede785b4d0bd",
@@ -96,8 +117,9 @@
     "activity" : "254f454e-b360-812a-912e-ed259081cf7c",
     "createdAt" : 1755811680,
     "id" : "256f454e-b360-81d5-8abb-c7616c749929",
-    "lastModified" : 1756068840,
+    "lastModified" : 1756677360,
     "startDate" : {
+      "end" : 1757017800,
       "start" : 1757010600
     },
     "title" : "Avondprogramma"
@@ -106,8 +128,9 @@
     "activity" : "254f454e-b360-819f-a90b-ecc99a743147",
     "createdAt" : 1755811680,
     "id" : "256f454e-b360-818f-8acc-f214d8b3a6a5",
-    "lastModified" : 1756068360,
+    "lastModified" : 1756677480,
     "startDate" : {
+      "end" : 1757008800,
       "start" : 1757001600
     },
     "title" : "Dinner - 3 gangen"
@@ -226,8 +249,9 @@
     "activity" : "254f454e-b360-81ec-8632-cdf5eb03f012",
     "createdAt" : 1755811680,
     "id" : "256f454e-b360-8107-9a4d-dc03f665a655",
-    "lastModified" : 1756068720,
+    "lastModified" : 1756677840,
     "startDate" : {
+      "end" : 1756893600,
       "start" : 1756887300
     },
     "title" : "Workshop 1 - Janina, Celine, Frank, John"
