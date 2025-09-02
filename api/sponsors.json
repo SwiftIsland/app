@@ -1,6 +1,57 @@
 [
   {
     "active" : true,
+    "createdAt" : 1756828080,
+    "icon" : [
+      {
+        "name" : "https:\/\/www.getvivid.app\/images\/AppIcon_rounded.png",
+        "type" : "external",
+        "url" : "images\/262f454eb36080fba4efd8508f4de27b_icon.png"
+      }
+    ],
+    "id" : "262f454e-b360-80fb-a4ef-d8508f4de27b",
+    "lastModified" : 1756828200,
+    "link" : "getvivid.app",
+    "name" : "Vivid",
+    "title" : "Vivid",
+    "type" : "App"
+  },
+  {
+    "active" : true,
+    "createdAt" : 1756804980,
+    "icon" : [
+      {
+        "name" : "macwhisper.png",
+        "type" : "file",
+        "url" : "images\/262f454eb360806f94e5f2b28a29de77_icon.png"
+      }
+    ],
+    "id" : "262f454e-b360-806f-94e5-f2b28a29de77",
+    "lastModified" : 1756805160,
+    "link" : "https:\/\/macwhisper.com",
+    "name" : "MacWhisper",
+    "title" : "MacWhisper",
+    "type" : "App"
+  },
+  {
+    "active" : true,
+    "createdAt" : 1756804980,
+    "icon" : [
+      {
+        "name" : "appicon.png",
+        "type" : "file",
+        "url" : "images\/262f454eb3608013a661cb422f059ada_icon.png"
+      }
+    ],
+    "id" : "262f454e-b360-8013-a661-cb422f059ada",
+    "lastModified" : 1756805040,
+    "link" : "https:\/\/getclicker.app\/",
+    "name" : "Clicker",
+    "title" : "Clicker",
+    "type" : "App"
+  },
+  {
+    "active" : true,
     "createdAt" : 1756758300,
     "icon" : [
       {
