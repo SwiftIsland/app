@@ -104,13 +104,13 @@
     "title" : "Ontbijt"
   },
   {
-    "activity" : "254f454e-b360-812a-912e-ed259081cf7c",
+    "activity" : "254f454e-b360-8169-94ca-df8b83208442",
     "createdAt" : 1755811680,
     "id" : "256f454e-b360-81d5-8abb-c7616c749929",
-    "lastModified" : 1756677360,
+    "lastModified" : 1756919760,
     "startDate" : {
-      "end" : 1757017800,
-      "start" : 1757010600
+      "end" : 1757023200,
+      "start" : 1757016000
     },
     "title" : "Avondprogramma"
   },
