@@ -3,10 +3,10 @@
     "activity" : "254f454e-b360-8153-b9bb-e32d7dff6554",
     "createdAt" : 1756677060,
     "id" : "260f454e-b360-80ab-9fcc-d7e5e6be8f32",
-    "lastModified" : 1756677180,
+    "lastModified" : 1756970520,
     "startDate" : {
       "end" : 1757065500,
-      "start" : 1757056500
+      "start" : 1757055600
     },
     "title" : "Bus Texel → Schiphol"
   },
@@ -97,9 +97,10 @@
     "activity" : "254f454e-b360-810c-bec3-f668492deccc",
     "createdAt" : 1755811680,
     "id" : "256f454e-b360-81c7-9730-cddaf2bdbeba",
-    "lastModified" : 1755811740,
+    "lastModified" : 1756972260,
     "startDate" : {
-      "start" : 1757052000
+      "end" : 1757059200,
+      "start" : 1757050200
     },
     "title" : "Ontbijt"
   },
